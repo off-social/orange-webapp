@@ -23,3 +23,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-headline);
 }
+
+html {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}

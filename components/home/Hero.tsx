@@ -14,10 +14,16 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import DrivingSustainablePrinting from "./DrivingSustainablePrinting";
+import IndustryPresence from "./IndustryPresence";
 import LogoMarquee from "./LogoMarquee";
+import MeetRocketBuiltProduction from "./MeetRocketBuiltProduction";
 import MovingToDigital from "./MovingToDigital";
+import ScrollVideos from "./ScrollVideos";
 import StatsSection from "./StatsSection";
 import TextilePrinting from "./TextilePrinting";
+import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
+import ThePowerOfOrange from "./ThePowerOfOrange";
 
 const Home = () => {
   const [value, setValue] = useState(0);
@@ -217,29 +223,28 @@ const Home = () => {
         container
         spacing={2}
         sx={{
-          mt: 14,
+          mt: { xs: 6, md: 14 },
           bgcolor: "#F7F8F7",
           px: { xs: 2, md: 0 },
+          pb: { xs: 4, md: 0 },
         }}
       >
         {/* Left Image */}
         <Grid size={{ xs: 12, md: 6 }} sx={{ mt: { xs: 4, md: 8 } }}>
-          <div
-            style={{
+          <Box
+            sx={{
               position: "relative",
               width: "100%",
-              height: "500px",
+              height: { xs: "280px", sm: "380px", md: "500px" }, // fixed height mobile pe
             }}
           >
             <Image
               src="/printer.png"
               alt="printer"
               fill
-              style={{
-                objectFit: "contain",
-              }}
+              style={{ objectFit: "contain" }}
             />
-          </div>
+          </Box>
         </Grid>
 
         {/* Right Content */}
@@ -247,12 +252,13 @@ const Home = () => {
           size={{ xs: 12, md: 6 }}
           sx={{
             p: 2,
-            mt: { xs: 2, md: 8 },
+            mt: { xs: 0, md: 8 }, // mobile pe extra top margin hataya
+            mb: { xs: 4, md: 0 },
           }}
         >
           <Typography
             sx={{
-              fontSize: { xs: "28px", md: "36px" },
+              fontSize: { xs: "24px", md: "36px" }, // mobile pe thoda chhota
               color: "#000",
               fontWeight: 400,
               textAlign: "center",
@@ -263,31 +269,16 @@ const Home = () => {
 
           <Typography
             sx={{
-              fontSize: { xs: "14px", md: "16px" },
+              fontSize: { xs: "13px", md: "16px" },
               color: "#000",
               fontWeight: 300,
               textAlign: "center",
-              mb: { xs: 5, md: 10 },
+              mb: { xs: 4, md: 10 }, // mobile pe kam margin
             }}
           >
             Textile printers engineered for peak performance
           </Typography>
 
-          {/* <Grid sx={{ mt: 5 }}>
-            <Image
-              src="/image.png"
-              alt="printer"
-              width={598}
-              height={400}
-              style={{w
-                width: "100%",
-                maxWidth: "598px",
-                height: "auto",
-                display: "block",
-                margin: "0 auto",
-              }}
-            />
-          </Grid> */}
           <StatsSection />
         </Grid>
       </Grid>
@@ -402,24 +393,24 @@ const Home = () => {
       <Grid size={12}>
         <MovingToDigital />
       </Grid>
-      {/* <Grid size={12}>
+      <Grid size={12}>
         <MeetRocketBuiltProduction />
-      </Grid> */}
-      {/* <Grid size={12}>
+      </Grid>
+      <Grid size={12}>
         <ThePowerOfOrange />
-      </Grid> */}
-      {/* <Grid size={12}>
+      </Grid>
+      <Grid size={12}>
         <ScrollVideos />
-      </Grid> */}
-      {/* <Grid size={12}>
+      </Grid>
+      <Grid size={12}>
         <TheFutureofDigitalPrinting />
-      </Grid> */}
-      {/* <Grid size={12}>
+      </Grid>
+      <Grid size={12}>
         <IndustryPresence />
-      </Grid> */}
-      {/* <Grid size={12}>
+      </Grid>
+      <Grid size={12}>
         <DrivingSustainablePrinting />
-      </Grid> */}
+      </Grid>
     </>
   );
 };

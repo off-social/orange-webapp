@@ -129,10 +129,11 @@ export default function StatsSection() {
   return (
     <Box
       ref={ref}
+      // width: "80%" → mobile pe 100% kar do
       sx={{
         display: "flex",
         alignItems: "center",
-        width: "80%",
+        width: { xs: "100%", md: "80%" }, // ✅ yeh change karo
         maxWidth: { xs: "100%", md: "650px" },
         mx: "auto",
         py: { xs: 1, md: 2 },

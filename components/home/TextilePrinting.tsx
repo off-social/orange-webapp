@@ -176,7 +176,7 @@ const TextilePrinting = () => {
                 key={index}
                 sx={{
                   width: { xs: "90vw", md: "55vw" },
-                  height: "auto",
+                  height: "25vw",
                   position: "relative",
                   flexShrink: 0,
                   scrollSnapAlign: "center",

@@ -1,11 +1,28 @@
+import { Grid } from "@mui/material";
+import Image from "next/image";
+import DigitalTextilePrinters from "./DigitalTextilePrinters";
+import Inks from "./Inks";
+import LabelPrinters from "./LabelPrinters";
+import PublicationPrinters from "./PublicationPrinters";
+
 export default function ProductsPage() {
-    return (
-        <main className="mx-auto max-w-7xl px-6 py-16">
-
-            <h1 className="text-4xl font-bold">
-                Products
-            </h1>
-
-        </main>
-    );
+  return (
+    <>
+      <Grid size={12}>
+        <Image src="/empty.png" alt="Products" width={1920} height={1080} />
+      </Grid>
+      <Grid size={12}>
+        <DigitalTextilePrinters />
+      </Grid>
+      <Grid size={12}>
+        <LabelPrinters />
+      </Grid>
+      <Grid size={12}>
+        <PublicationPrinters />
+      </Grid>
+      <Grid size={12}>
+        <Inks />
+      </Grid>
+    </>
+  );
 }

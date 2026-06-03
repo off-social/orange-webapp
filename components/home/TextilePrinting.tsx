@@ -175,12 +175,14 @@ const TextilePrinting = () => {
               <Box
                 key={index}
                 sx={{
-                  width: { xs: "90vw", md: "55vw" },
-                  height: "25vw",
+                  width: { xs: "85vw", md: "55vw" },
+                  height: { xs: "220px", md: "22vw" },
                   position: "relative",
                   flexShrink: 0,
                   scrollSnapAlign: "center",
-                  aspectRatio: "16/9",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 <Image
@@ -188,7 +190,12 @@ const TextilePrinting = () => {
                   alt={`preview-${index}`}
                   width={900}
                   height={500}
-                  style={{ objectFit: "cover", borderRadius: "20px" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain", // ← cover se contain
+                    borderRadius: "20px",
+                  }}
                 />
               </Box>
             ))}

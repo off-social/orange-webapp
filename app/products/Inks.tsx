@@ -67,7 +67,7 @@ export default function Inks() {
               fontWeight: 600,
               color: "#222",
               px: { xs: 2, md: 4 },
-              mx: { md: 6 },
+              mx: { md: 4 },
 
               "&.Mui-selected": {
                 color: "#000",

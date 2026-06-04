@@ -34,7 +34,23 @@ const buttons = [
   {
     name: "MS",
     image: "/ms.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    previewImage: [
+      {
+        src: "/testing.png",
+        name: "JP7",
+        desc: "High-Speed Precision Textile Printing Machine",
+      },
+      {
+        src: "/testing.png",
+        name: "JPK Evo",
+        desc: "High-Speed Precision Textile Printing Machine",
+      },
+      {
+        src: "/testing.png",
+        name: "Minilario",
+        desc: "High-Speed Precision Textile Printing Machine",
+      },
+    ],
   },
   {
     name: "Rado",

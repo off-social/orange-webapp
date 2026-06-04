@@ -38,11 +38,12 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <Box sx={{ position: "relative" }}>
-        <Image
-          src="/built-with-precision.png"
-          alt="Built with precision"
-          width={1200}
-          height={700}
+        <video
+          src="/homePageVideo.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
             width: "100%",
             height: "auto",
@@ -55,12 +56,12 @@ const Home = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: 12, sm: 40, md: 95 },
+            bottom: { xs: 12, sm: 40, md: 50 },
             left: { xs: 12, sm: 20, md: 40 },
             right: { xs: 12, sm: 20, md: 40 },
             background:
               "linear-gradient(153deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%)",
-            backdropFilter: "blur(19px)",
+            backdropFilter: "blur(1px)",
             borderRadius: "16px",
             p: { xs: "16px 18px", sm: "22px 32px", md: "30px 52px" },
             display: "flex",

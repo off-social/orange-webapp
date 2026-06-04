@@ -1,31 +1,74 @@
 "use client";
 
-import { Box, Button, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Tab,
+  Tabs,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-const buttons = [
+type PreviewImage = {
+  src: string;
+  name: string;
+  desc: string;
+};
+
+type RadoTab = {
+  label: string;
+  previewImage: PreviewImage[];
+};
+
+type BrandItem = {
+  name: string;
+  image: string;
+  previewImage: PreviewImage[];
+  tabs?: RadoTab[];
+};
+
+const buttons: BrandItem[] = [
   {
     name: "Colorix",
     image: "/colorix.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    previewImage: [
+      {
+        src: "/PositionPro1.png",
+        name: "K24 Digital Textile Printer",
+        desc: "K24 Digital Textile Printer",
+      },
+      {
+        src: "/FabPro1i1.png",
+        name: "K24 Digital Textile Printer",
+        desc: "K24 Digital Textile Printer",
+      },
+      {
+        src: "/FabPro2i1.png",
+        name: "K24 Digital Textile Printer",
+        desc: "K24 Digital Textile Printer",
+      },
+    ],
   },
   {
     name: "Homer",
     image: "/homer.png",
     previewImage: [
       {
-        src: "/img1.png",
+        src: "/K241.png",
         name: "K24 Digital Textile Printer",
         desc: "High-Speed Precision Textile Printing Machine",
       },
       {
-        src: "/img1.png",
+        src: "/K641.png",
         name: "K24 Pro Model",
         desc: "Advanced Fabric Printing Solution",
       },
       {
-        src: "/img1.png",
+        src: "/K321.png",
         name: "K24 Ultra",
         desc: "Industrial Grade Textile Printer",
       },
@@ -34,27 +77,107 @@ const buttons = [
   {
     name: "MS",
     image: "/ms.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    previewImage: [
+      { src: "/JP701.png", name: "K24 Ultra", desc: "K24 Ultra" },
+      { src: "/JPK-Evo01.png", name: "K24 Ultra", desc: "K24 Ultra" },
+      { src: "/Minilario01.png", name: "K24 Ultra", desc: "K24 Ultra" },
+    ],
   },
   {
     name: "Rado",
     image: "/rado.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    previewImage: [],
+    tabs: [
+      {
+        label: "Foil",
+        previewImage: [
+          {
+            src: "/radoimg1.png",
+            name: "Rado Foil",
+            desc: "Foil Printing Machine",
+          },
+          {
+            src: "/radoimg2.png",
+            name: "Rado Foil Pro",
+            desc: "Advanced Foil Printer",
+          },
+        ],
+      },
+      {
+        label: "Alpha",
+        previewImage: [
+          {
+            src: "/radoimgAlpha1.png",
+            name: "Rado Alpha",
+            desc: "Alpha Series Printer",
+          },
+          {
+            src: "/radoimgAlpha2.png",
+            name: "Rado Alpha Pro",
+            desc: "Alpha Pro Series Printer",
+          },
+          {
+            src: "/radoimgAlpha3.png",
+            name: "Rado Alpha Pro",
+            desc: "Alpha Pro Series Printer",
+          },
+          {
+            src: "/radoimgAlpha4.png",
+            name: "Rado Alpha Pro",
+            desc: "Alpha Pro Series Printer",
+          },
+        ],
+      },
+      {
+        label: "Sub Pro",
+        previewImage: [
+          {
+            src: "/radoimgA1.png",
+            name: "Rado Sub Pro",
+            desc: "Sublimation Pro Printer",
+          },
+          {
+            src: "/radoimgA2.png",
+            name: "Rado Sub Pro Max",
+            desc: "Sublimation Pro Max Printer",
+          },
+        ],
+      },
+    ],
   },
   {
     name: "Pengda",
     image: "/pengda.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    previewImage: [
+      { src: "/Pengda1.png", name: "Pengda", desc: "Pengda Printer" },
+    ],
   },
 ];
+
+const RADO_INDEX = 3;
 
 export default function DigitalTextilePrinters() {
   const [selected, setSelected] = useState(1);
   const [activeImg, setActiveImg] = useState(0);
+  const [radoTab, setRadoTab] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleBrandChange = (index: number) => {
     setSelected(index);
+    setActiveImg(0);
+    setRadoTab(0);
+    setTimeout(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 50);
+  };
+
+  const handleRadoTabChange = (_: React.SyntheticEvent, newValue: number) => {
+    setRadoTab(newValue);
     setActiveImg(0);
     setTimeout(() => {
       if (scrollRef.current) {
@@ -63,11 +186,15 @@ export default function DigitalTextilePrinters() {
     }, 50);
   };
 
-  // ✅ Document 1 ki carousel logic: scrollWidth / length
+  const activePreviewImages =
+    selected === RADO_INDEX
+      ? (buttons[RADO_INDEX].tabs?.[radoTab]?.previewImage ?? [])
+      : (buttons[selected]?.previewImage ?? []);
+
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
+    const slideWidth = el.scrollWidth / activePreviewImages.length;
     const index = Math.round(el.scrollLeft / slideWidth);
     setActiveImg(index);
   };
@@ -75,7 +202,7 @@ export default function DigitalTextilePrinters() {
   const handlePrev = () => {
     const el = scrollRef.current;
     if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
+    const slideWidth = el.scrollWidth / activePreviewImages.length;
     const newIndex = Math.max(0, activeImg - 1);
     el.scrollTo({ left: newIndex * slideWidth, behavior: "smooth" });
   };
@@ -83,16 +210,13 @@ export default function DigitalTextilePrinters() {
   const handleNext = () => {
     const el = scrollRef.current;
     if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
-    const newIndex = Math.min(
-      buttons[selected].previewImage.length - 1,
-      activeImg + 1,
-    );
+    const slideWidth = el.scrollWidth / activePreviewImages.length;
+    const newIndex = Math.min(activePreviewImages.length - 1, activeImg + 1);
     el.scrollTo({ left: newIndex * slideWidth, behavior: "smooth" });
   };
 
-  const currentImg = buttons[selected]?.previewImage?.[activeImg];
-  const animKey = `${selected}-${activeImg}`;
+  const currentImg = activePreviewImages[activeImg];
+  const animKey = `${selected}-${radoTab}-${activeImg}`;
 
   return (
     <>
@@ -129,20 +253,15 @@ export default function DigitalTextilePrinters() {
           High-Speed Fabric Printing Systems
         </Typography>
       </Grid>
+
       <Box sx={{ width: "100%", overflow: "hidden" }}>
         {/* Fade keyframe */}
         <style>{`
-        @keyframes fadeSlideUp {
-          from {
-            opacity: 0;
-            transform: translateY(8px);
+          @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0);   }
           }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+        `}</style>
 
         {/* Brand Buttons */}
         <Box
@@ -189,7 +308,44 @@ export default function DigitalTextilePrinters() {
             </Button>
           ))}
         </Box>
-        {buttons[selected]?.previewImage && (
+
+        {/* ── Rado Tabs (only when Rado is selected) ── */}
+        {selected === RADO_INDEX && (
+          <Box sx={{ mt: 4 }}>
+            <Tabs
+              value={radoTab}
+              onChange={handleRadoTabChange}
+              centered={!isMobile}
+              variant={isMobile ? "scrollable" : "standard"}
+              scrollButtons={isMobile ? "auto" : false}
+              allowScrollButtonsMobile
+              sx={{
+                "& .MuiTabs-indicator": {
+                  backgroundColor: "#F7931E",
+                  height: "3px",
+                },
+                "& .MuiTab-root": {
+                  textTransform: "none",
+                  fontSize: { xs: "14px", sm: "16px", md: "18px" },
+                  fontWeight: 600,
+                  color: "#222",
+                  px: { xs: 2, md: 4 },
+                  mx: { md: 6 },
+                  "&.Mui-selected": {
+                    color: "#000",
+                  },
+                },
+              }}
+            >
+              {buttons[RADO_INDEX].tabs?.map((tab, i) => (
+                <Tab key={i} label={tab.label} />
+              ))}
+            </Tabs>
+          </Box>
+        )}
+
+        {/* Carousel */}
+        {activePreviewImages.length > 0 && (
           <Box sx={{ width: "100%", mt: 5, overflow: "hidden" }}>
             <Box
               ref={scrollRef}
@@ -209,7 +365,7 @@ export default function DigitalTextilePrinters() {
                 "&::-webkit-scrollbar": { display: "none" },
               }}
             >
-              {buttons[selected].previewImage.map((img, index) => (
+              {activePreviewImages.map((img, index) => (
                 <Box
                   key={index}
                   sx={{
@@ -231,7 +387,7 @@ export default function DigitalTextilePrinters() {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "contain", // ← cover se contain
+                      objectFit: "contain",
                       borderRadius: "20px",
                     }}
                   />
@@ -240,6 +396,8 @@ export default function DigitalTextilePrinters() {
             </Box>
           </Box>
         )}
+
+        {/* Name / desc + nav arrows */}
         {currentImg && currentImg.name && currentImg.desc && (
           <>
             <Box
@@ -290,14 +448,12 @@ export default function DigitalTextilePrinters() {
                     border: "1px solid #ddd",
                     color: "#404040",
                     bgcolor: "#D9D9D9",
-
                     "&.Mui-disabled": {
                       bgcolor: "#E0E0E0",
                       color: "#999",
                       border: "1px solid #E0E0E0",
                       opacity: 0.7,
                     },
-
                     "&:hover": {
                       border: "1px solid #000",
                       color: "#F7931E",
@@ -309,9 +465,7 @@ export default function DigitalTextilePrinters() {
                 </Button>
                 <Button
                   onClick={handleNext}
-                  disabled={
-                    activeImg === buttons[selected].previewImage.length - 1
-                  }
+                  disabled={activeImg === activePreviewImages.length - 1}
                   sx={{
                     minWidth: "40px",
                     width: "40px",
@@ -320,14 +474,12 @@ export default function DigitalTextilePrinters() {
                     border: "1px solid #ddd",
                     color: "#404040",
                     bgcolor: "#D9D9D9",
-
                     "&.Mui-disabled": {
                       bgcolor: "#E0E0E0",
                       color: "#999",
                       border: "1px solid #E0E0E0",
                       opacity: 0.7,
                     },
-
                     "&:hover": {
                       border: "1px solid #000",
                       color: "#F7931E",
@@ -347,8 +499,6 @@ export default function DigitalTextilePrinters() {
                 mt: 3,
                 gap: 2,
                 px: { xs: 2, md: "25%" },
-                // mb: { xs: 4, md: 0 },
-                // mb: { xs: 4, md: 0 },
                 mb: 10,
                 animation:
                   "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",

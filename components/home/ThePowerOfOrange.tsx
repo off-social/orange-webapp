@@ -1,229 +1,150 @@
 "use client";
 
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
-const ThePowerOfOrange = () => {
-  const [isMobile, setIsMobile] = useState(false);
+const POINTS = [
+  { label: "High-speed textile production", icon: "/rocket-01.png" },
+  { label: "Improved production efficiency", icon: "/chart-increase.png" },
+  { label: "On-demand design printing", icon: "/printer-3d.svg" },
+  { label: "Consistent print quality", icon: "/tick-double-01.png" },
+  { label: "Lower operational waste", icon: "/waste-restore.png" },
+  { label: "Reduced setup time", icon: "/time-quarter-pass.png" },
+];
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 600);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+const TextContent = ({ sm }: { sm?: boolean }) => (
+  <>
+    <Typography
+      sx={{
+        color: "#707070",
+        fontSize: sm ? "12px" : { xs: "10px", md: "16px" },
+        fontWeight: 400,
+        lineHeight: "25.6px",
+        letterSpacing: sm ? "6px" : { xs: "5px", md: "10px" },
+        textTransform: "uppercase",
+        mb: "8px",
+      }}
+    >
+      Built for Efficiency
+    </Typography>
 
-  const points = [
-    "High-speed textile production",
-    "On-demand design printing",
-    "Consistent print quality",
-    "Lower operational waste",
-    "Reduced setup time",
-    "Improved production efficiency",
-  ];
+    <Typography
+      component="h2"
+      sx={{
+        color: "#333",
+        fontSize: sm ? "28px" : { xs: "24px", md: "40px" },
+        fontWeight: 500,
+        lineHeight: sm ? "38px" : { xs: "32px", md: "52px" },
+        letterSpacing: sm ? "-0.5px" : { xs: "-0.5px", md: "-1px" },
+      }}
+    >
+      The Power of{" "}
+      <Box component="span" sx={{ color: "#F6891F" }}>Orange</Box>
+    </Typography>
 
-  // Mobile: normal flow layout
-  if (isMobile) {
-    return (
-      <Grid size={12}>
-        <Box sx={{ bgcolor: "#fff", px: 3, pt: 5, pb: 4 }}>
-          <Typography
-            sx={{
-              color: "#000",
-              fontSize: "28px",
-              fontWeight: 700,
-              lineHeight: "38px",
-            }}
-          >
-            The Power of{" "}
-            <Box component="span" sx={{ color: "#FF7A00" }}>
-              Orange
-            </Box>
+    <Typography
+      sx={{
+        color: "#707070",
+        fontSize: "14px",
+        fontWeight: 500,
+        lineHeight: "22.4px",
+        mt: "8px",
+        maxWidth: "380px",
+        display: sm ? "block" : { xs: "block", sm: "block" },
+      }}
+    >
+      Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit ullamcorper.
+    </Typography>
+
+    <Box sx={{ mt: sm ? "20px" : { xs: "16px", md: "24px" }, display: "flex", flexDirection: "column", gap: sm ? "10px" : { xs: "10px", md: "12px" } }}>
+      {POINTS.map(({ label, icon }, index) => (
+        <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Image
+            src={icon}
+            alt={label}
+            width={sm ? 18 : 20}
+            height={sm ? 18 : 20}
+            style={{ flexShrink: 0, objectFit: "contain" }}
+          />
+          <Typography sx={{ fontSize: sm ? "13px" : { xs: "12px", md: "14px" }, fontWeight: 500, color: "#404040", lineHeight: "22.4px" }}>
+            {label}
           </Typography>
-          <Typography
-            sx={{
-              color: "#9B9B9B",
-              fontSize: "10px",
-              fontWeight: 500,
-              letterSpacing: "8px",
-              textTransform: "uppercase",
-              mt: 1,
-            }}
-          >
-            Built for Efficiency
-          </Typography>
-          <Box sx={{ width: "100%", mt: 3 }}>
-            <Image
-              src="/thePowerOfOrangeMobile.png"
-              alt="The Power of Orange"
-              width={600}
-              height={600}
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </Box>
-          <Box sx={{ mt: 3 }}>
-            {points.map((item, index) => (
-              <Box key={index}>
-                <Typography
-                  sx={{
-                    py: 1.2,
-                    fontSize: "14px",
-                    fontWeight: 500,
-                    color: "#404040",
-                  }}
-                >
-                  {item}
-                </Typography>
-                {index !== points.length - 1 && (
-                  <Box
-                    sx={{
-                      height: "1px",
-                      width: "100%",
-                      bgcolor: "rgba(0,0,0,0.15)",
-                    }}
-                  />
-                )}
-              </Box>
-            ))}
-          </Box>
-          <Box sx={{ mt: 4 }}>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#000",
-                color: "#fff",
-                borderRadius: "24px",
-                textTransform: "none",
-                fontSize: "14px",
-                px: 4,
-                py: 1.2,
-                "&:hover": { bgcolor: "#222" },
-              }}
-            >
-              Know More
-            </Button>
-          </Box>
         </Box>
-      </Grid>
-    );
-  }
+      ))}
+    </Box>
 
-  // Tablet & Desktop (600px+): image as background, content overlaid using paddingTop trick
-  return (
-    <Grid size={12}>
-      <Box
+    <Box sx={{ mt: sm ? "20px" : { xs: "20px", md: "28px" } }}>
+      <Button
         sx={{
-          position: "relative",
-          width: "100%",
-          // Image aspect ratio is 1920x1080 = 56.25%
-          // paddingTop makes the box exactly the same height as the image
-          paddingTop: "56.25%",
-          overflow: "hidden",
+          bgcolor: "#111", color: "#fff", borderRadius: "8px",
+          textTransform: "none", fontSize: sm ? "13px" : { xs: "12px", md: "14px" },
+          fontWeight: 500, px: sm ? "20px" : { xs: "18px", md: "28px" },
+          py: sm ? "9px" : { xs: "8px", md: "10px" },
+          display: "flex", alignItems: "center", gap: "8px",
+          "&:hover": { bgcolor: "#333" },
         }}
       >
-        {/* Background Image — fills the padded box exactly */}
-        <Box sx={{ position: "absolute", inset: 0 }}>
+        Know More
+        <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain" }} />
+      </Button>
+    </Box>
+  </>
+);
+
+const ThePowerOfOrange = () => {
+  return (
+    <>
+      {/* ── MOBILE (xs only) — text block + image stacked ── */}
+      <Box sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column", bgcolor: "#fff" }}>
+        <Box sx={{ px: "16px", pt: "40px", pb: "28px" }}>
+          <TextContent />
+        </Box>
+        <Box sx={{ width: "100%", aspectRatio: "4/3", position: "relative" }}>
           <Image
-            src="/thePowerOfOrange.png"
-            alt="background"
+            src="/thePowerofOrange1.png"
+            alt="The Power of Orange"
             fill
-            style={{ objectFit: "cover" }}
-            priority
+            style={{ objectFit: "cover", objectPosition: "right center" }}
           />
         </Box>
+      </Box>
 
-        {/* Content — positioned inside the same padded box */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            pl: { sm: "6%", md: "8%" },
-            pr: { sm: "45%", md: "52%" },
-            py: { sm: "4%", md: "5%" },
-          }}
-        >
-          <Typography
-            sx={{
-              color: "#000",
-              fontSize: { sm: "28px", md: "36px", lg: "44px" },
-              fontWeight: 700,
-              lineHeight: 1.3,
-            }}
-          >
-            The Power of{" "}
-            <Box component="span" sx={{ color: "#FF7A00" }}>
-              Orange
-            </Box>
-          </Typography>
-
-          <Typography
-            sx={{
-              color: "#9B9B9B",
-              fontSize: { sm: "10px", md: "13px", lg: "16px" },
-              fontWeight: 500,
-              letterSpacing: { sm: "8px", md: "12px", lg: "14px" },
-              textTransform: "uppercase",
-              mt: 0.5,
-            }}
-          >
-            Built for Efficiency
-          </Typography>
-
-          <Box
-            sx={{ mt: { sm: 2, md: 3, lg: 4 }, flex: 1, overflow: "hidden" }}
-          >
-            {points.map((item, index) => (
-              <Box key={index}>
-                <Typography
-                  sx={{
-                    py: { sm: 0.6, md: 1, lg: 1.5 },
-                    fontSize: { sm: "13px", md: "16px", lg: "20px" },
-                    fontWeight: 500,
-                    color: "#404040",
-                  }}
-                >
-                  {item}
-                </Typography>
-                {index !== points.length - 1 && (
-                  <Box
-                    sx={{
-                      height: "1px",
-                      width: "68%",
-                      bgcolor: "rgba(0,0,0,0.15)",
-                    }}
-                  />
-                )}
-              </Box>
-            ))}
-          </Box>
-
-          <Box sx={{ mt: { sm: 2, md: 3 } }}>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#000",
-                color: "#fff",
-                borderRadius: "24px",
-                textTransform: "none",
-                fontSize: { sm: "13px", md: "15px", lg: "16px" },
-                px: { sm: 3, md: 4 },
-                py: 1.2,
-                "&:hover": { bgcolor: "#222" },
-              }}
-            >
-              Know More
-            </Button>
-          </Box>
+      {/* ── TABLET (sm) — overlay, text left ── */}
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block", md: "none" },
+          position: "relative",
+          width: "100%",
+          aspectRatio: "16/9",
+          overflow: "hidden",
+          bgcolor: "#fff",
+        }}
+      >
+        <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} />
+        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 38%, rgba(255,255,255,0.3) 58%, rgba(255,255,255,0) 72%)", pointerEvents: "none" }} />
+        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "58%", display: "flex", flexDirection: "column", justifyContent: "center", pl: "40px", pr: "20px" }}>
+          <TextContent sm />
         </Box>
       </Box>
-    </Grid>
+
+      {/* ── DESKTOP (md+) — overlay, text left ── */}
+      <Box
+        sx={{
+          display: { xs: "none", sm: "none", md: "block" },
+          position: "relative",
+          width: "100%",
+          aspectRatio: { md: "16/8", lg: "16/7" },
+          overflow: "hidden",
+          bgcolor: "#fff",
+        }}
+      >
+        <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
+        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 70%)", pointerEvents: "none" }} />
+        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "52%", display: "flex", flexDirection: "column", justifyContent: "center", pl: { md: "64px", lg: "120px" }, pr: "32px" }}>
+          <TextContent />
+        </Box>
+      </Box>
+    </>
   );
 };
 

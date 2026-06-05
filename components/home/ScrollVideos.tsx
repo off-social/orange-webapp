@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import Image from "next/image";
 import { useRef } from "react";
 
 const videos = [
@@ -15,95 +16,137 @@ const ScrollVideos = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -500 : 500,
-      behavior: "smooth",
-    });
+    scrollRef.current.scrollBy({ left: direction === "left" ? -440 : 440, behavior: "smooth" });
   };
 
-  const showButtons = videos.length >= 4;
-
   return (
-    <div className="col-span-12 bg-[#D9D9D9] py-12 md:py-20">
-      {/* Heading */}
-      <h2 className="text-center text-3xl md:text-[40px] font-semibold leading-tight">
-        Trusted by Industry Leaders
-      </h2>
+    <div
+      className="
+        w-full flex flex-col items-center
+        bg-[#EFEFEF]
+        py-10 px-4
+        sm:py-14 sm:px-10
+        lg:py-20 lg:px-[168px]
+        gap-8 sm:gap-10 lg:gap-16
+      "
+    >
+      {/* Header */}
+      <div className="flex flex-col w-full" style={{ gap: "8px" }}>
 
-      <p className="text-center text-base text-[#404040] mt-2">
-        Our printers are trusted by textile manufacturers across India
-      </p>
+        {/* Title */}
+        <h2
+          style={{
+            color: "#333",
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 500,
+            lineHeight: "130%",
+            letterSpacing: "-1px",
+            margin: 0,
+          }}
+          className="text-2xl sm:text-[32px] lg:text-[40px]"
+        >
+          Trusted by Industry Leaders
+        </h2>
 
-      {/* Scroll Area */}
-      <div className="mt-10 relative flex justify-center items-center">
-        {/* LEFT BUTTON */}
-        {showButtons && (
-          <button
-            onClick={() => scroll("left")}
-            className="
-              absolute left-1.5 md:left-5 top-1/2 -translate-y-1/2 z-10
-              bg-white w-12 h-12 rounded-full
-              flex items-center justify-center
-              shadow-[0_8px_20px_rgba(0,0,0,0.15)]
-              hover:bg-white transition-colors
-            "
-            aria-label="Scroll left"
+        {/* Subtitle + YouTube link */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+          <p
+            style={{
+              color: "#707070",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "22.4px",
+              margin: 0,
+            }}
           >
-            <ChevronLeft />
-          </button>
-        )}
+            Our printers are trusted by textile manufacturers across India.
+          </p>
 
-        {/* VIDEO CONTAINER */}
+          <a
+            href="https://www.youtube.com/@OrangeOWorldwide"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 whitespace-nowrap hover:opacity-70 transition-opacity flex-shrink-0"
+            style={{
+              color: "#333",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "13px",
+              fontWeight: 500,
+              lineHeight: "20.8px",
+              textDecoration: "underline",
+            }}
+          >
+            <Image src="/youtube-filled.svg" alt="youtube" width={18} height={18} style={{ objectFit: "contain" }} />
+            Visit Our YouTube Channel
+            <Image src="/shareIcon.svg" alt="share" width={14} height={14} style={{ objectFit: "contain" }} />
+          </a>
+        </div>
+      </div>
+
+      {/* Video slider */}
+      <div className="relative w-full">
+
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className="
+            flex
+            w-10 h-10 rounded-full bg-white border border-[#E0E0E0] shadow-md
+            items-center justify-center hover:bg-gray-50 transition-colors
+            absolute top-1/2 -translate-y-1/2 z-10
+            -left-3 sm:-left-5 lg:-left-14
+          "
+          aria-label="Scroll left"
+        >
+          <ChevronLeft sx={{ fontSize: 20, color: "#555" }} />
+        </button>
+
+        {/* Video cards */}
         <div
           ref={scrollRef}
           className="
-            bg-[#F2F2F2] rounded-[18px] p-2
-            flex gap-2
-            w-fit max-w-[95vw]
+            flex gap-3
             overflow-x-auto
             [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
+            w-full
           "
         >
-          {videos.map((video, index) => (
+          {videos.map((src, index) => (
             <div
               key={index}
               className="
-                min-w-[320px] md:min-w-[420px]
-                flex-shrink-0
-                rounded-xl overflow-hidden
-                aspect-video
-                shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+                min-w-[260px] sm:min-w-[300px] lg:min-w-[360px]
+                flex-shrink-0 rounded-xl overflow-hidden aspect-video shadow-sm
               "
             >
               <iframe
-                src={video}
+                src={src}
                 width="100%"
                 height="100%"
                 title={`video-${index}`}
                 frameBorder="0"
                 allowFullScreen
-                style={{ border: 0 }}
+                style={{ border: 0, display: "block" }}
               />
             </div>
           ))}
         </div>
 
-        {/* RIGHT BUTTON */}
-        {showButtons && (
-          <button
-            onClick={() => scroll("right")}
-            className="
-              absolute right-1.5 md:right-5 top-1/2 -translate-y-1/2 z-10
-              bg-white w-12 h-12 rounded-full
-              flex items-center justify-center
-              shadow-[0_8px_20px_rgba(0,0,0,0.15)]
-              hover:bg-white transition-colors
-            "
-            aria-label="Scroll right"
-          >
-            <ChevronRight />
-          </button>
-        )}
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className="
+            flex
+            w-10 h-10 rounded-full bg-white border border-[#E0E0E0] shadow-md
+            items-center justify-center hover:bg-gray-50 transition-colors
+            absolute top-1/2 -translate-y-1/2 z-10
+            -right-3 sm:-right-5 lg:-right-14
+          "
+          aria-label="Scroll right"
+        >
+          <ChevronRight sx={{ fontSize: 20, color: "#555" }} />
+        </button>
       </div>
     </div>
   );

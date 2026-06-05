@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 
 const navLinks = [
-  { label: "Home", to: "/" },
+  { label: "Our Services", to: "/services" },
   { label: "Products", to: "/products" },
   { label: "Green Edge Series", to: "/green-edge-series" },
   { label: "About", to: "/about" },
@@ -130,15 +130,15 @@ export default function Navbar() {
                 href="/contact"
                 variant="contained"
                 sx={{
-                  bgcolor: "#fff",
-                  color: "#000",
+                  bgcolor: "#F7931E",
+                  color: "#fff",
                   borderRadius: "20px",
                   px: 3,
                   py: 1,
                   textTransform: "none",
-                  minWidth: "110px", // Add fixed minimum width
+                  minWidth: "110px",
                   "&:hover": {
-                    bgcolor: "#ececec",
+                    bgcolor: "#e8820d",
                   },
                 }}
               >
@@ -222,10 +222,11 @@ export default function Navbar() {
             href="/contact"
             variant="contained"
             sx={{
-              bgcolor: "#fff",
-              color: "#000",
+              bgcolor: "#F7931E",
+              color: "#fff",
               borderRadius: "20px",
               textTransform: "none",
+              "&:hover": { bgcolor: "#e8820d" },
             }}
           >
             Contact Us

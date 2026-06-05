@@ -1,6 +1,11 @@
 "use client";
 
-import { Box, Grid, Typography } from "@mui/material";
+import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
+import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
+import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
+import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 const AnimatedDigitalGraph = () => {
@@ -92,25 +97,15 @@ const AnimatedDigitalGraph = () => {
 
       const bezierPt = (
         p0: { x: number; y: number },
-        cp1x: number,
-        cp1y: number,
-        cp2x: number,
-        cp2y: number,
+        cp1x: number, cp1y: number,
+        cp2x: number, cp2y: number,
         p1: { x: number; y: number },
         t: number,
       ) => {
         const mt = 1 - t;
         return {
-          x:
-            mt * mt * mt * p0.x +
-            3 * mt * mt * t * cp1x +
-            3 * mt * t * t * cp2x +
-            t * t * t * p1.x,
-          y:
-            mt * mt * mt * p0.y +
-            3 * mt * mt * t * cp1y +
-            3 * mt * t * t * cp2y +
-            t * t * t * p1.y,
+          x: mt*mt*mt*p0.x + 3*mt*mt*t*cp1x + 3*mt*t*t*cp2x + t*t*t*p1.x,
+          y: mt*mt*mt*p0.y + 3*mt*mt*t*cp1y + 3*mt*t*t*cp2y + t*t*t*p1.y,
         };
       };
 
@@ -119,15 +114,7 @@ const AnimatedDigitalGraph = () => {
         const tScaled = progress * total;
         const si = Math.min(Math.floor(tScaled), total - 1);
         const { cp1x, cp1y, cp2x, cp2y } = getCP(si);
-        return bezierPt(
-          pts[si],
-          cp1x,
-          cp1y,
-          cp2x,
-          cp2y,
-          pts[si + 1],
-          tScaled - si,
-        );
+        return bezierPt(pts[si], cp1x, cp1y, cp2x, cp2y, pts[si + 1], tScaled - si);
       };
 
       const drawStatic = () => {
@@ -144,11 +131,7 @@ const AnimatedDigitalGraph = () => {
           ctx.fillStyle = "#9C9C9C";
           ctx.font = `${fs}px Inter, Arial, sans-serif`;
           ctx.textAlign = "right";
-          ctx.fillText(
-            v === 0 ? "0K" : `${v / 1000}K`,
-            PAD_L - 5,
-            y + fs * 0.35,
-          );
+          ctx.fillText(v === 0 ? "0K" : `${v / 1000}K`, PAD_L - 5, y + fs * 0.35);
         });
         ctx.textAlign = "center";
         ctx.fillStyle = "#9C9C9C";
@@ -159,79 +142,41 @@ const AnimatedDigitalGraph = () => {
         ctx.restore();
       };
 
-      const DURATION = 1500;
+      const DURATION = 1800;
       let startTime: number | null = null;
 
       const animate = (ts: number) => {
         if (!startTime) startTime = ts;
         const progress = Math.min((ts - startTime) / DURATION, 1);
+        const eased = progress < 1 ? 1 - Math.pow(1 - progress, 2) : 1;
 
         drawStatic();
 
-        const clipX = toX(X_MIN + (X_MAX - X_MIN) * progress) + 4;
+        const clipX = toX(X_MIN + (X_MAX - X_MIN) * eased) + 4;
         ctx.save();
         ctx.beginPath();
         ctx.rect(0, 0, clipX, H);
         ctx.clip();
 
-        const fillPath = new Path2D();
-        fillPath.moveTo(pts[0].x, toY(0));
-        fillPath.lineTo(pts[0].x, pts[0].y);
-        for (let i = 0; i < pts.length - 1; i++) {
-          const { cp1x, cp1y, cp2x, cp2y } = getCP(i);
-          fillPath.bezierCurveTo(
-            cp1x,
-            cp1y,
-            cp2x,
-            cp2y,
-            pts[i + 1].x,
-            pts[i + 1].y,
-          );
-        }
-        fillPath.lineTo(pts[pts.length - 1].x, toY(0));
-        fillPath.closePath();
-
-        const grad = ctx.createLinearGradient(0, PAD_T, 0, PAD_T + CH);
-        grad.addColorStop(1, "rgba(245,166,35,0.01)");
-        ctx.fillStyle = grad;
-        ctx.fill(fillPath);
-
         const linePath = new Path2D();
         linePath.moveTo(pts[0].x, pts[0].y);
         for (let i = 0; i < pts.length - 1; i++) {
           const { cp1x, cp1y, cp2x, cp2y } = getCP(i);
-          linePath.bezierCurveTo(
-            cp1x,
-            cp1y,
-            cp2x,
-            cp2y,
-            pts[i + 1].x,
-            pts[i + 1].y,
-          );
+          linePath.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, pts[i + 1].x, pts[i + 1].y);
         }
         ctx.strokeStyle = "#E8960A";
-        ctx.lineWidth = SIZE < 280 ? 2.5 : 4;
+        ctx.lineWidth = SIZE < 280 ? 2.5 : 3.5;
         ctx.lineJoin = "round";
         ctx.lineCap = "round";
-        ctx.stroke(linePath);
-        ctx.strokeStyle = "#FFBE3D";
-        ctx.lineWidth = 1.5;
         ctx.stroke(linePath);
 
         ctx.restore();
 
-        const tip = getTip(progress);
-        const dotR = SIZE * 0.04;
-        const glowR = SIZE * 0.055;
-        const grd = ctx.createRadialGradient(
-          tip.x,
-          tip.y,
-          1,
-          tip.x,
-          tip.y,
-          glowR,
-        );
-        grd.addColorStop(0, "rgba(100,180,230,0.55)");
+        const tip = getTip(eased);
+        const dotR = SIZE * 0.022;
+        const glowR = SIZE * 0.034;
+        const grd = ctx.createRadialGradient(tip.x, tip.y, 1, tip.x, tip.y, glowR);
+        grd.addColorStop(0, "rgba(100,180,230,0.5)");
         grd.addColorStop(1, "rgba(100,180,230,0)");
         ctx.beginPath();
         ctx.arc(tip.x, tip.y, glowR, 0, Math.PI * 2);
@@ -269,75 +214,115 @@ const AnimatedDigitalGraph = () => {
   );
 };
 
-const MovingToDigital = () => {
-  const points = [
-    "Save up to 40% on short-run costs",
-    "Print-on-demand manufacturing",
-    "Faster product launches",
-    "Reduced inventory costs",
-    "Improved working capital efficiency",
-  ];
+const POINTS = [
+  { icon: <LocalOfferOutlinedIcon fontSize="small" />, text: "Save up to 40% on short-run costs" },
+  { icon: <PrintOutlinedIcon fontSize="small" />, text: "Print-on-demand manufacturing" },
+  { icon: <RocketLaunchOutlinedIcon fontSize="small" />, text: "Faster product launches" },
+  { icon: <InventoryOutlinedIcon fontSize="small" />, text: "Reduced inventory costs" },
+  { icon: <ShowChartOutlinedIcon fontSize="small" />, text: "Improved working capital efficiency" },
+];
 
+const MovingToDigital = () => {
   return (
-    <Grid
-      container
-      sx={{
-        px: { xs: 3, sm: 5, md: 14 },
-        py: { xs: 5, md: 8 },
-        alignItems: "center",
-      }}
-    >
-      <Grid size={{ xs: 12, md: 6 }}>
+    <Box sx={{ px: { xs: "16px", sm: "40px", md: "64px", lg: "168px" }, py: { xs: "48px", sm: "64px", md: "80px", lg: "100px" } }}>
+      {/* Header — centered */}
+      <Box sx={{ mb: { xs: "32px", sm: "40px", md: "56px" }, textAlign: "center", display: "flex", flexDirection: "column", gap: "8px", alignItems: "center" }}>
         <Typography
           sx={{
-            letterSpacing: { xs: "6px", sm: "10px", md: "12px" },
-            fontSize: { xs: 10, sm: 12, md: 14 },
-            fontWeight: 500,
-            color: "#9C9C9C",
+            color: "#707070",
+            fontSize: { xs: "10px", sm: "12px", md: "16px" },
+            fontWeight: 400,
+            lineHeight: "25.6px",
+            letterSpacing: { xs: "4px", sm: "6px", md: "10px" },
+            textTransform: "uppercase",
           }}
         >
-          INDUSTRY SHIFT
+          Industry Shift
         </Typography>
-
         <Typography
           sx={{
-            mt: 1,
-            fontSize: { xs: 28, sm: 34, md: 40 },
+            color: "#333",
+            fontSize: { xs: "22px", sm: "30px", md: "40px" },
             fontWeight: 500,
-            color: "#000",
-            lineHeight: "120%",
-            mb: 4,
-            width: { xs: "100%", md: "460px" },
+            lineHeight: { xs: "30px", sm: "40px", md: "52px" },
+            letterSpacing: { xs: "-0.5px", md: "-1px" },
           }}
         >
           Why Industries are Moving to Digital
         </Typography>
+        <Typography
+          sx={{
+            color: "#707070",
+            fontSize: { xs: "13px", md: "14px" },
+            fontWeight: 500,
+            lineHeight: "22.4px",
+            maxWidth: "600px",
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
+          ullamcorper. Eleifend duis donec cras quam ipsum auctor ut semper in..
+        </Typography>
+      </Box>
 
-        <AnimatedDigitalGraph />
-      </Grid>
-
-      <Grid size={{ xs: 12, md: 6 }}>
-        <Box sx={{ pl: { xs: 0, md: 8 }, mt: { xs: 5, md: 16 } }}>
-          {points.map((item, index) => (
-            <Box key={index}>
-              <Typography
-                sx={{
-                  fontSize: { xs: "16px", sm: "18px", md: "20px" },
-                  color: "#404040",
-                  py: 1.5,
-                  fontWeight: 600,
-                }}
-              >
-                {item}
-              </Typography>
-              {index !== points.length - 1 && (
-                <Box sx={{ borderBottom: "1px solid #D8D8D8" }} />
-              )}
-            </Box>
-          ))}
+      {/* Chart + Benefits — equal halves, 120px gap */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: { xs: "32px", sm: "40px", md: "60px", lg: "120px" },
+          alignItems: { xs: "stretch", sm: "center" },
+        }}
+      >
+        {/* Chart */}
+        <Box sx={{ flex: "1 1 0", minWidth: 0 }}>
+          <AnimatedDigitalGraph />
         </Box>
-      </Grid>
-    </Grid>
+
+        {/* Benefits list */}
+        <Box sx={{ flex: "1 1 0", minWidth: 0 }}>
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            {POINTS.map((item, index) => (
+              <Box key={index}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    py: { xs: "14px", md: "18px" },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      border: "1px solid #e0e0e0",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      color: "#555",
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                      color: "#404040",
+                      fontWeight: 500,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {item.text}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

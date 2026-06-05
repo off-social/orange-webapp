@@ -123,46 +123,37 @@ const TheFutureofDigitalPrinting = () => {
           </div>
         </div>
 
-        {/* ── DESKTOP: original layout ── */}
-        <div className="hidden md:block pt-20">
-          <h1 className="text-[40px] font-medium text-black leading-[120%]">
-            Building the Future of
-          </h1>
-          <h1 className="text-[40px] font-medium text-[#F6891F] leading-[120%]">
-            Digital Printing
-          </h1>
+        {/* ── DESKTOP: updated layout ── */}
+        <div className="hidden md:block" style={{ paddingTop: "80px" }}>
 
-          <p className="text-base font-light text-[#404040] leading-[160%] w-[700px] text-center mx-auto mt-3">
+          {/* Heading group */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+            <h1 style={{ color: "#333", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "40px", fontWeight: 500, lineHeight: "52px", letterSpacing: "-1px", margin: 0 }}>
+              Building the Future of
+            </h1>
+            <h1 style={{ color: "#F6891F", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "40px", fontWeight: 500, lineHeight: "52px", letterSpacing: "-1px", margin: 0 }}>
+              Digital Printing
+            </h1>
+          </div>
+
+          {/* Description — 8px gap from heading */}
+          <p style={{ color: "#707070", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 500, lineHeight: "22.4px", maxWidth: "680px", margin: "8px auto 0" }}>
             Orange O Tec engineers high-performance digital printing solutions
             built for precision, consistency, and scale, with a vision to lead
             global innovation through intelligent, sustainable, and future-ready
             technologies.
           </p>
 
-          <div className="relative">
+          {/* Image — 18px gap from description */}
+          <div style={{ marginTop: "18px" }}>
             <Image
-              src="/digitalPrinting.png"
+              src="/DigitalOrnage1.png"
               alt="The Future of Digital Printing"
               width={1920}
               height={1080}
               draggable={false}
               className="w-full h-auto block"
             />
-
-            <div className="absolute top-10 left-1/2 -translate-x-1/2">
-              <Link
-                href="#"
-                className="
-                  inline-block px-5 py-2
-                  text-white bg-black border border-black
-                  rounded-[19.58px] text-sm
-                  hover:bg-[#333] hover:border-[#333]
-                  transition-colors
-                "
-              >
-                Know More
-              </Link>
-            </div>
           </div>
         </div>
       </div>

@@ -1,11 +1,17 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import type { Metadata } from "next";
-import { Stack_Sans_Headline } from "next/font/google";
+import { Architects_Daughter, Stack_Sans_Headline } from "next/font/google";
 import "./globals.css";
 
 const stackSansHeadline = Stack_Sans_Headline({
   variable: "--font-stack-sans-headline",
+  subsets: ["latin"],
+});
+
+const architectsDaughter = Architects_Daughter({
+  weight: "400",
+  variable: "--font-architects-daughter",
   subsets: ["latin"],
 });
 
@@ -23,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${stackSansHeadline.variable} h-full antialiased`}
+      className={`${stackSansHeadline.variable} ${architectsDaughter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

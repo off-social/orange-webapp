@@ -1,163 +1,241 @@
 "use client";
 
+import OGButton from "@/components/ui/OGButton";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-const buttons = [
+type Product = { src: string; name: string; desc: string };
+type Brand = { name: string; image: string; products: Product[] };
+
+const BRANDS: Brand[] = [
   {
     name: "Colorix",
     image: "/colorix.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    products: [
+      {
+        src: "/PositionPro1.png",
+        name: "Position Pro Digital Textile Printer",
+        desc: "Precision Positioning for High-Speed Fabric Printing.",
+      },
+      {
+        src: "/FabPro1i1.png",
+        name: "FabPro 1i Digital Textile Printer (Made in India)",
+        desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality",
+      },
+      {
+        src: "/FabPro2i1.png",
+        name: "FabPro 2i Digital Textile Printer (Made in India)",
+        desc: "High-Speed Precision Textile Printing.",
+      },
+    ],
   },
   {
     name: "Homer",
     image: "/homer.png",
-    previewImage: [
+    products: [
       {
-        src: "/img1.png",
+        src: "/K241.png",
         name: "K24 Digital Textile Printer",
-        desc: "High-Speed Precision Textile Printing Machine",
+        desc: "Engineered for Exceptional Precision & Consistent Print Accuracy.",
       },
       {
-        src: "/img1.png",
-        name: "K24 Pro Model",
-        desc: "Advanced Fabric Printing Solution",
+        src: "/K641.png",
+        name: "K64 Digital Textile Printer",
+        desc: "Advanced Precision for Superior Fabric Print Quality.",
       },
       {
-        src: "/img1.png",
-        name: "K24 Ultra",
-        desc: "Industrial Grade Textile Printer",
+        src: "/K321.png",
+        name: "K32 Digital Textile Printer",
+        desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
       },
     ],
   },
   {
     name: "MS",
     image: "/ms.png",
-    previewImage: [
+    products: [
       {
-        src: "/testing.png",
-        name: "JP7",
-        desc: "High-Speed Precision Textile Printing Machine",
+        src: "/JP701.png",
+        name: "JP7 Industrial Digital Textile Printer",
+        desc: "Intelligent Printing for Demanding Production Environments.",
       },
       {
-        src: "/testing.png",
-        name: "JPK Evo",
-        desc: "High-Speed Precision Textile Printing Machine",
+        src: "/JPK-Evo01.png",
+        name: "JPK Evo Industrial Digital Textile Printer",
+        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
       },
       {
-        src: "/testing.png",
-        name: "Minilario",
-        desc: "High-Speed Precision Textile Printing Machine",
+        src: "/Minilario01.png",
+        name: "Minilario Industrial Digital Textile Printer",
+        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
       },
     ],
   },
   {
     name: "Rado",
     image: "/rado.png",
-    previewImage: [{ src: "/img1.png", name: "", desc: "" }],
+    products: [
+      {
+        src: "/radoimg1.png",
+        name: "FoilJet 8 Head Digital Printer",
+        desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
+      },
+      {
+        src: "/radoimg2.png",
+        name: "FoilJet 16 Head Digital Printer",
+        desc: "Designed for Large-Scale Printing with Consistent Results.",
+      },
+      {
+        src: "/radoimgAlpha1.png",
+        name: "Alpha II Industrial Sublimation Printer",
+        desc: "Built for Continuous Production and Exceptional Transfer Quality.",
+      },
+      {
+        src: "/radoimgAlpha2.png",
+        name: "Alpha III Industrial Sublimation Printer",
+        desc: "Built for Maximum Output and Uninterrupted Production.",
+      },
+      {
+        src: "/radoimgAlpha3.png",
+        name: "Alpha 15 Industrial Sublimation Printer",
+        desc: "Built for Ultra-High Production and Industrial-Grade Performance.",
+      },
+      {
+        src: "/radoimgAlpha4.png",
+        name: "Alpha 16 Industrial Sublimation Printer",
+        desc: "Combining Power, Precision, and Production Efficiency.",
+      },
+      {
+        src: "/radoimgA1.png",
+        name: "SubPro S-16 Industrial Sublimation Printer",
+        desc: "Designed to Handle Demanding Production with Ease.",
+      },
+      {
+        src: "/radoimgA2.png",
+        name: "SubPro II Industrial Dye-Sublimation Printer",
+        desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
+      },
+    ],
   },
 ];
 
+const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
+
+const NAV_BTN_SX = {
+  minWidth: "48px",
+  width: "48px",
+  height: "48px",
+  borderRadius: "100px",
+  border: "1px solid #e0e0e0",
+  color: "#111",
+  bgcolor: "#fff",
+  "&:hover": { border: "1px solid #111", bgcolor: "#f5f5f5" },
+};
+
 const TextilePrinting = () => {
-  const [selected, setSelected] = useState(1);
+  const [selectedBrand, setSelectedBrand] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const currentProducts = BRANDS[selectedBrand].products;
+
+  const getSlideWidth = () => {
+    const el = scrollRef.current;
+    return el ? el.scrollWidth / currentProducts.length : 0;
+  };
+
+  const scrollToIndex = (index: number) => {
+    scrollRef.current?.scrollTo({
+      left: index * getSlideWidth(),
+      behavior: "smooth",
+    });
+  };
+
   const handleBrandChange = (index: number) => {
-    setSelected(index);
+    setSelectedBrand(index);
     setActiveImg(0);
-    setTimeout(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      }
-    }, 50);
+    setTimeout(
+      () => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }),
+      50,
+    );
   };
 
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
-    const index = Math.round(el.scrollLeft / slideWidth);
-    setActiveImg(index);
+    setActiveImg(Math.round(el.scrollLeft / getSlideWidth()));
   };
 
-  const handlePrev = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
-    const newIndex = Math.max(0, activeImg - 1);
-    el.scrollTo({ left: newIndex * slideWidth, behavior: "smooth" });
-  };
-
-  const handleNext = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const slideWidth = el.scrollWidth / buttons[selected].previewImage.length;
-    const newIndex = Math.min(
-      buttons[selected].previewImage.length - 1,
-      activeImg + 1,
-    );
-    el.scrollTo({ left: newIndex * slideWidth, behavior: "smooth" });
-  };
-
-  const currentImg = buttons[selected]?.previewImage?.[activeImg];
-
-  // Unique key — jab bhi image/brand change ho, fade re-trigger ho
-  const animKey = `${selected}-${activeImg}`;
+  const currentProduct = currentProducts[activeImg];
+  const animKey = `${selectedBrand}-${activeImg}`;
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
-      {/* Fade keyframe */}
       <style>{`
-  @keyframes fadeSlideUp {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`}</style>
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(8px); }
+          to   { opacity: 1; transform: translateY(0);   }
+        }
+      `}</style>
 
-      {/* Brand Buttons */}
+      {/* Brand Selector */}
       <Box
         sx={{
           display: "flex",
-          flexWrap: { xs: "wrap", md: "nowrap" },
-          justifyContent: "center",
-          gap: { xs: 1.5, md: 3 },
+          flexWrap: { xs: "wrap", sm: "nowrap" },
+          gap: { xs: "8px", md: "16px" },
           mt: 3,
-          px: { xs: 2, md: 0 },
+          px: { xs: 1, md: 0 },
         }}
       >
-        {buttons.map((item, index) => (
+        {BRANDS.map((brand, index) => (
           <Button
-            key={index}
+            key={brand.name}
             onClick={() => handleBrandChange(index)}
             sx={{
-              width: { xs: "calc(50% - 6px)", md: "150px" },
-              height: { xs: "44px", md: "50px" },
+              flex: { xs: "0 0 calc(50% - 4px)", sm: "1 0 0" },
+              height: { xs: "84px", sm: "100px", md: "115px" },
               border:
-                selected === index ? "1px solid #F7931E" : "1px solid #D9D9D9",
-              borderRadius: "12px",
+                selectedBrand === index
+                  ? "2px solid #F6891F"
+                  : "1px solid #e0e0e0",
+              borderRadius: "16px",
               background: "#fff",
-              transition: "0.3s",
-              "&:hover": { border: "1px solid #F7931E", background: "#fff" },
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: { xs: "6px", md: "8px" },
+              transition: "0.2s",
+              px: 1,
+              "&:hover": { borderColor: "#F6891F" },
             }}
           >
             <Box
               sx={{
-                width: { xs: "80px", md: "100px" },
-                height: "30px",
+                width: { xs: "70px", sm: "90px", md: "120px" },
+                height: { xs: "38px", sm: "46px", md: "54px" },
                 position: "relative",
               }}
             >
               <Image
-                src={item.image}
-                alt={item.name}
+                src={brand.products[0].src}
+                alt={brand.products[0].name}
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                width: { xs: "48px", sm: "60px", md: "72px" },
+                height: "16px",
+                position: "relative",
+              }}
+            >
+              <Image
+                src={brand.image}
+                alt={brand.name}
                 fill
                 style={{ objectFit: "contain" }}
               />
@@ -166,179 +244,179 @@ const TextilePrinting = () => {
         ))}
       </Box>
 
-      {/* Image Scroll Section */}
-      {buttons[selected]?.previewImage && (
-        <Box sx={{ width: "100%", mt: 5, overflow: "hidden" }}>
-          <Box
-            ref={scrollRef}
-            onScroll={handleScroll}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: { xs: "5%", md: "20%" },
-              px: { xs: "5vw", md: "20vw" },
-              width: "100%",
-              overflowX: "scroll",
-              overflowY: "hidden",
-              scrollBehavior: "smooth",
-              scrollSnapType: "x mandatory",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              "&::-webkit-scrollbar": { display: "none" },
-            }}
-          >
-            {buttons[selected].previewImage.map((img, index) => (
-              <Box
-                key={index}
-                sx={{
-                  width: { xs: "85vw", md: "55vw" },
-                  height: { xs: "220px", md: "22vw" },
-                  position: "relative",
-                  flexShrink: 0,
-                  scrollSnapAlign: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  src={img.src}
-                  alt={`preview-${index}`}
-                  width={900}
-                  height={500}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain", // ← cover se contain
-                    borderRadius: "20px",
-                  }}
-                />
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      )}
+      {/* Product Image Carousel — arrows float on left/right edges */}
+      <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
+        {/* Left arrow */}
+        <Button
+          onClick={() => scrollToIndex(Math.max(0, activeImg - 1))}
+          sx={{
+            ...NAV_BTN_SX,
+            position: "absolute",
+            left: { xs: "8px", md: "24px" },
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+          }}
+        >
+          ←
+        </Button>
 
-      {currentImg && currentImg.name && currentImg.desc && (
-        <>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              px: { xs: 2, md: "25%" },
-              mt: 3,
-            }}
-          >
+        <Box
+          ref={scrollRef}
+          onScroll={handleScroll}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: { xs: "5%", sm: "8%", md: "20%" },
+            px: { xs: "8vw", sm: "10vw", md: "20vw" },
+            width: "100%",
+            overflowX: "scroll",
+            overflowY: "hidden",
+            scrollSnapType: "x mandatory",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          {currentProducts.map((product, index) => (
             <Box
-              key={animKey}
+              key={index}
               sx={{
-                animation:
-                  "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                width: { xs: "80vw", sm: "65vw", md: "55vw" },
+                height: { xs: "180px", sm: "240px", md: "22vw" },
+                flexShrink: 0,
+                scrollSnapAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: { xs: "20px", md: "32px" },
-                  fontWeight: 700,
-                  color: "#404040",
+              <Image
+                src={product.src}
+                alt={product.name}
+                width={900}
+                height={500}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  borderRadius: "20px",
                 }}
-              >
-                {currentImg.name}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: { xs: "13px", md: "16px" },
-                  fontWeight: 300,
-                  color: "#404040",
-                }}
-              >
-                {currentImg.desc}
-              </Typography>
+              />
             </Box>
+          ))}
+        </Box>
 
-            <Box sx={{ display: "flex", gap: 2 }}>
-              <Button
-                onClick={handlePrev}
-                sx={{
-                  minWidth: "40px",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  border: "1px solid #ddd",
-                  color: "#404040",
-                  bgcolor: "#D9D9D9",
-                  "&:hover": {
-                    border: "1px solid #000",
-                    color: "#F7931E",
-                    bgcolor: "#404040",
-                  },
-                }}
-              >
-                ←
-              </Button>
-              <Button
-                onClick={handleNext}
-                sx={{
-                  minWidth: "40px",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  border: "1px solid #ddd",
-                  color: "#404040",
-                  bgcolor: "#D9D9D9",
-                  "&:hover": {
-                    border: "1px solid #000",
-                    color: "#F7931E",
-                    bgcolor: "#404040",
-                  },
-                }}
-              >
-                →
-              </Button>
-            </Box>
-          </Box>
+        {/* Right arrow */}
+        <Button
+          onClick={() =>
+            scrollToIndex(Math.min(currentProducts.length - 1, activeImg + 1))
+          }
+          sx={{
+            ...NAV_BTN_SX,
+            position: "absolute",
+            right: { xs: "8px", md: "24px" },
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+          }}
+        >
+          →
+        </Button>
+      </Box>
 
+      {/* Product Info & Actions — centered */}
+      {currentProduct && (
+        <>
           <Box
             key={animKey}
             sx={{
-              display: "flex",
-              mt: 3,
-              gap: 2,
-              px: { xs: 2, md: "25%" },
-              mb: { xs: 4, md: 0 },
-              animation:
-                "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+              textAlign: "center",
+              px: { xs: "16px", sm: "10%", md: "20%" },
+              mt: { xs: 2, md: 3 },
+              animation: FADE_ANIM,
             }}
           >
-            <Button
-              variant="outlined"
+            <Typography
               sx={{
-                color: "#FFF",
-                bgcolor: "#000",
-                borderColor: "#000",
-                borderRadius: "19.58px",
-                textTransform: "none",
-                fontSize: { xs: "12px", md: "14px" },
+                fontSize: { xs: "16px", sm: "20px", md: "24px" },
+                fontWeight: 600,
+                color: "#333",
               }}
             >
-              Know More
-            </Button>
+              {currentProduct.name}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "12px", sm: "13px", md: "16px" },
+                color: "#707070",
+                mt: "6px",
+              }}
+            >
+              {currentProduct.desc}
+            </Typography>
+          </Box>
+
+          <Box
+            key={`btn-${animKey}`}
+            sx={{
+              display: "flex",
+              gap: 2,
+              mt: 3,
+              justifyContent: "center",
+              mb: { xs: 4, md: 0 },
+              animation: FADE_ANIM,
+            }}
+          >
             <Button
               variant="outlined"
               sx={{
                 color: "#111",
                 bgcolor: "#fff",
-                borderColor: "#111",
-                borderRadius: "19.58px",
+                borderColor: "#e0e0e0",
+                borderRadius: "8px",
                 textTransform: "none",
-                fontSize: { xs: "12px", md: "14px" },
+                fontSize: { xs: "12px", md: "13px" },
+                px: 2.5,
+              }}
+            >
+              Know More
+            </Button>
+            <OGButton
+              sx={{
+                borderRadius: "8px",
+                fontSize: { xs: "12px", md: "13px" },
                 px: { xs: 2, md: 3 },
-                "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
               }}
             >
               Get a Quote
-            </Button>
+            </OGButton>
+          </Box>
+
+          {/* Dot indicators */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "4px",
+              mt: "20px",
+              mb: { xs: 4, md: 2 },
+            }}
+          >
+            {currentProducts.map((_, i) => (
+              <Box
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                sx={{
+                  width: i === activeImg ? "24px" : "8px",
+                  height: "8px",
+                  borderRadius: "16px",
+                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+                  cursor: "pointer",
+                  transition: "width 0.2s, background-color 0.2s",
+                }}
+              />
+            ))}
           </Box>
         </>
       )}

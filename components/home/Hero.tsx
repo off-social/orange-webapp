@@ -1,5 +1,6 @@
 "use client";
 
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   Box,
   Button,
@@ -58,27 +59,26 @@ const Home = () => {
             position: "absolute",
             bottom: { xs: 12, sm: 40, md: 50 },
             left: { xs: 12, sm: 20, md: 40 },
-            right: { xs: 12, sm: 20, md: 40 },
+            maxWidth: { xs: "calc(100% - 24px)", md: "580px" },
             background:
-              "linear-gradient(153deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%)",
-            backdropFilter: "blur(1px)",
+              "linear-gradient(153deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.10) 100%)",
+            backdropFilter: "blur(2px)",
             borderRadius: "16px",
             p: { xs: "16px 18px", sm: "22px 32px", md: "30px 52px" },
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: { xs: "flex-start", md: "center" },
-            justifyContent: "space-between",
+            flexDirection: "column",
+            alignItems: "flex-start",
             gap: { xs: 1.5, md: 2 },
-            border: "1px solid rgba(255, 255, 255, 0.30)",
+            border: "1px solid rgba(255, 255, 255, 0.20)",
           }}
         >
-          {/* Left - Text */}
+          {/* Text */}
           <Box>
             <Typography
               sx={{
                 fontWeight: 600,
                 fontSize: { xs: "18px", sm: "24px", md: "32px" },
-                color: "#000",
+                color: "#fff",
                 lineHeight: 1.3,
               }}
             >
@@ -88,10 +88,10 @@ const Home = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "12px", sm: "15px", md: "18px" },
-                color: "#000",
+                fontSize: { xs: "12px", sm: "15px", md: "16px" },
+                color: "rgba(255, 255, 255, 0.85)",
                 mt: 1,
-                width: { xs: "100%", md: "449px" },
+                maxWidth: "449px",
               }}
             >
               End-to-end digital textile printing solutions from high-speed
@@ -99,30 +99,14 @@ const Home = () => {
             </Typography>
           </Box>
 
-          {/* Right - Buttons */}
+          {/* Buttons */}
           <Box
             sx={{
               display: "flex",
               gap: { xs: 1, md: 2 },
-              flexShrink: 0,
-              mr: { xs: 0, md: 5 },
               flexWrap: "wrap",
             }}
           >
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#1a1a1a",
-                color: "#fff",
-                borderRadius: "19.58px",
-                textTransform: "none",
-                fontSize: { xs: "12px", md: "14px" },
-                px: { xs: 2, md: 3 },
-                "&:hover": { bgcolor: "#333" },
-              }}
-            >
-              Explore Machines
-            </Button>
             <Button
               variant="outlined"
               sx={{
@@ -133,10 +117,27 @@ const Home = () => {
                 textTransform: "none",
                 fontSize: { xs: "12px", md: "14px" },
                 px: { xs: 2, md: 3 },
-                "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
+                "&:hover": { bgcolor: "rgba(255,255,255,0.9)" },
               }}
             >
               Get a Quote
+            </Button>
+            <Button
+              variant="contained"
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: "16px !important" }} />
+              }
+              sx={{
+                bgcolor: "#F7931E",
+                color: "#fff",
+                borderRadius: "19.58px",
+                textTransform: "none",
+                fontSize: { xs: "12px", md: "14px" },
+                px: { xs: 2, md: 3 },
+                "&:hover": { bgcolor: "#e8820d" },
+              }}
+            >
+              Explore Machines
             </Button>
           </Box>
         </Box>

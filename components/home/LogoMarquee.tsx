@@ -3,7 +3,14 @@
 import Image from "next/image";
 import { useRef } from "react";
 
-const logos = [{ name: "Colorix", src: "/1scroll-logos.png" }];
+const logos = [
+  { name: "Colorix", src: "/logos/Colorix-4.svg" },
+  { name: "Kolorado", src: "/logos/Kolorado-2.svg" },
+  { name: "Kiian", src: "/logos/kiian.svg" },
+  { name: "Twine", src: "/logos/twine.svg" },
+  { name: "Homer", src: "/logos/Homer-2-1.svg" },
+  { name: "Huntsman", src: "/logos/huntsman.svg" },
+];
 
 const allLogos = [...logos, ...logos, ...logos];
 
@@ -16,7 +23,7 @@ export default function LogoMarquee() {
         width: "100%",
         overflow: "hidden",
         background: "#fff",
-        padding: "12px 0",
+        padding: "16px 0",
         position: "relative",
       }}
     >
@@ -71,8 +78,7 @@ export default function LogoMarquee() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "0 10px",
-              minWidth: 120,
+              padding: "0 16px",
               cursor: "pointer",
               opacity: 0.85,
               transition: "opacity 0.2s",
@@ -88,8 +94,8 @@ export default function LogoMarquee() {
             <Image
               src={logo.src}
               alt={logo.name}
-              width={1000}
-              height={600}
+              width={100}
+              height={50}
               style={{
                 objectFit: "contain",
                 display: "block",

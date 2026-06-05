@@ -38,18 +38,18 @@ const buttons: BrandItem[] = [
     previewImage: [
       {
         src: "/PositionPro1.png",
-        name: "K24 Digital Textile Printer",
-        desc: "K24 Digital Textile Printer",
+        name: "Position Pro Digital Textile Printer",
+        desc: "Precision Positioning for High-Speed Fabric Printing.",
       },
       {
         src: "/FabPro1i1.png",
-        name: "K24 Digital Textile Printer",
-        desc: "K24 Digital Textile Printer",
+        name: "FabPro 1i Digital Textile Printer (Made in India)",
+        desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality",
       },
       {
         src: "/FabPro2i1.png",
-        name: "K24 Digital Textile Printer",
-        desc: "K24 Digital Textile Printer",
+        name: "FabPro 2i Digital Textile Printer (Made in India)",
+        desc: "High-Speed Precision Textile Printing.",
       },
     ],
   },
@@ -60,17 +60,17 @@ const buttons: BrandItem[] = [
       {
         src: "/K241.png",
         name: "K24 Digital Textile Printer",
-        desc: "High-Speed Precision Textile Printing Machine",
+        desc: "Engineered for Exceptional Precision & Consistent Print Accuracy.",
       },
       {
         src: "/K641.png",
-        name: "K24 Pro Model",
-        desc: "Advanced Fabric Printing Solution",
+        name: "K64 Digital Textile Printer",
+        desc: "Advanced Precision for Superior Fabric Print Quality.",
       },
       {
         src: "/K321.png",
-        name: "K24 Ultra",
-        desc: "Industrial Grade Textile Printer",
+        name: "K32 Digital Textile Printer",
+        desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
       },
     ],
   },
@@ -78,9 +78,21 @@ const buttons: BrandItem[] = [
     name: "MS",
     image: "/ms.png",
     previewImage: [
-      { src: "/JP701.png", name: "K24 Ultra", desc: "K24 Ultra" },
-      { src: "/JPK-Evo01.png", name: "K24 Ultra", desc: "K24 Ultra" },
-      { src: "/Minilario01.png", name: "K24 Ultra", desc: "K24 Ultra" },
+      {
+        src: "/JP701.png",
+        name: "JP7 Industrial Digital Textile Printer",
+        desc: "Intelligent Printing for Demanding Production Environments.",
+      },
+      {
+        src: "/JPK-Evo01.png",
+        name: "JPK Evo Industrial Digital Textile Printer",
+        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
+      },
+      {
+        src: "/Minilario01.png",
+        name: "Minilario Industrial Digital Textile Printer",
+        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
+      },
     ],
   },
   {
@@ -93,13 +105,13 @@ const buttons: BrandItem[] = [
         previewImage: [
           {
             src: "/radoimg1.png",
-            name: "Rado Foil",
-            desc: "Foil Printing Machine",
+            name: "FoilJet 8 Head Digital Printer",
+            desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
           },
           {
             src: "/radoimg2.png",
-            name: "Rado Foil Pro",
-            desc: "Advanced Foil Printer",
+            name: "FoilJet 16 Head Digital Printer",
+            desc: "Designed for Large-Scale Printing with Consistent Results.",
           },
         ],
       },
@@ -108,23 +120,23 @@ const buttons: BrandItem[] = [
         previewImage: [
           {
             src: "/radoimgAlpha1.png",
-            name: "Rado Alpha",
-            desc: "Alpha Series Printer",
+            name: "Alpha II Industrial Sublimation Printer",
+            desc: "Built for Continuous Production and Exceptional Transfer Quality.",
           },
           {
             src: "/radoimgAlpha2.png",
-            name: "Rado Alpha Pro",
-            desc: "Alpha Pro Series Printer",
+            name: "Alpha III Industrial Sublimation Printer",
+            desc: "Built for Maximum Output and Uninterrupted Production.",
           },
           {
             src: "/radoimgAlpha3.png",
-            name: "Rado Alpha Pro",
-            desc: "Alpha Pro Series Printer",
+            name: "Alpha 15 Industrial Sublimation Printer",
+            desc: "Built for Ultra-High Production and Industrial-Grade Performance.",
           },
           {
             src: "/radoimgAlpha4.png",
-            name: "Rado Alpha Pro",
-            desc: "Alpha Pro Series Printer",
+            name: "Alpha 16 Industrial Sublimation Printer",
+            desc: "Combining Power, Precision, and Production Efficiency.",
           },
         ],
       },
@@ -133,13 +145,13 @@ const buttons: BrandItem[] = [
         previewImage: [
           {
             src: "/radoimgA1.png",
-            name: "Rado Sub Pro",
-            desc: "Sublimation Pro Printer",
+            name: "SubPro S-16 Industrial Sublimation Printer",
+            desc: "Designed to Handle Demanding Production with Ease.",
           },
           {
             src: "/radoimgA2.png",
-            name: "Rado Sub Pro Max",
-            desc: "Sublimation Pro Max Printer",
+            name: "SubPro II Industrial Dye-Sublimation Printer",
+            desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
           },
         ],
       },
@@ -149,7 +161,11 @@ const buttons: BrandItem[] = [
     name: "Pengda",
     image: "/pengda.png",
     previewImage: [
-      { src: "/Pengda1.png", name: "Pengda", desc: "Pengda Printer" },
+      {
+        src: "/Pengda1.png",
+        name: "Pengda Industrial Sublimation Machine",
+        desc: "Delivering Reliable Performance for High-Volume Textile Applications.",
+      },
     ],
   },
 ];
@@ -157,7 +173,7 @@ const buttons: BrandItem[] = [
 const RADO_INDEX = 3;
 
 export default function DigitalTextilePrinters() {
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const [radoTab, setRadoTab] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -418,7 +434,7 @@ export default function DigitalTextilePrinters() {
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: "20px", md: "32px" },
+                    fontSize: { xs: "20px", md: "28px" },
                     fontWeight: 700,
                     color: "#404040",
                   }}

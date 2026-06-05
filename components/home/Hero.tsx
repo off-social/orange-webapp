@@ -163,7 +163,7 @@ const Home = () => {
       </Grid>
 
       {/* Heading */}
-      <Grid size={12} sx={{ mt: 1 }}>
+      <Grid size={12}>
         <Typography
           sx={{
             textAlign: "center",

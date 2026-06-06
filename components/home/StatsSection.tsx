@@ -1,25 +1,12 @@
 "use client";
 
-import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import LocalPrintshopIcon from "@mui/icons-material/LocalPrintshop";
-import PublicIcon from "@mui/icons-material/Public";
-import { Box, SvgIconProps, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  {
-    value: 500,
-    suffix: "+",
-    label: "Installed Machines",
-    Icon: LocalPrintshopIcon,
-  },
-  { value: 25, suffix: "+", label: "Countries Served", Icon: PublicIcon },
-  {
-    value: 15,
-    suffix: "+",
-    label: "Years of Experience",
-    Icon: EmojiEventsIcon,
-  },
+  { value: 500, suffix: "+", label: "Machine Installed" },
+  { value: 15, suffix: "+", label: "Countries Served" },
+  { value: 15, suffix: "+", label: "Years of Experience" },
 ];
 
 function useCountUp(target: number, duration = 1800, start = false) {
@@ -45,68 +32,52 @@ function StatItem({
   value,
   suffix,
   label,
-  Icon,
   started,
-  showDivider,
 }: {
   value: number;
   suffix: string;
   label: string;
-  Icon: React.ComponentType<SvgIconProps>;
   started: boolean;
-  showDivider: boolean;
 }) {
   const count = useCountUp(value, 1800, started);
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", flex: 1 }}>
-      <Box
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        flex: 1,
+        gap: "4px",
+      }}
+    >
+      <Typography
         sx={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 0.3,
-          py: { xs: 1.5, md: 2 },
+          color: "#F6891F",
+          textAlign: "center",
+          fontFamily: "Inter, sans-serif",
+          fontSize: { xs: "48px", md: "72px" },
+          fontWeight: 500,
+          lineHeight: "normal",
+          letterSpacing: "-1px",
         }}
       >
-        <Icon sx={{ fontSize: { xs: "26px", md: "34px" }, color: "#222" }} />
+        {count}
+        {suffix}
+      </Typography>
 
-        <Typography
-          sx={{
-            fontSize: { xs: "28px", md: "42px" },
-            fontWeight: 700,
-            color: "#F7931E",
-            lineHeight: 1.1,
-          }}
-        >
-          {count}
-          {suffix}
-        </Typography>
-
-        <Typography
-          sx={{
-            fontSize: { xs: "11px", md: "13px" },
-            fontWeight: 400,
-            color: "#555",
-            textAlign: "center",
-            lineHeight: 1.3,
-          }}
-        >
-          {label}
-        </Typography>
-      </Box>
-
-      {showDivider && (
-        <Box
-          sx={{
-            width: "1px",
-            height: { xs: "60px", md: "75px" },
-            bgcolor: "#D9D9D9",
-            flexShrink: 0,
-          }}
-        />
-      )}
+      <Typography
+        sx={{
+          color: "#707070",
+          textAlign: "center",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "16px",
+          fontWeight: 500,
+          lineHeight: "25.6px",
+        }}
+      >
+        {label}
+      </Typography>
     </Box>
   );
 }
@@ -129,18 +100,15 @@ export default function StatsSection() {
   return (
     <Box
       ref={ref}
-      // width: "80%" → mobile pe 100% kar do
       sx={{
         display: "flex",
         alignItems: "center",
-        width: { xs: "100%", md: "80%" }, // ✅ yeh change karo
-        maxWidth: { xs: "100%", md: "650px" },
+        width: "100%",
+        maxWidth: "800px",
         mx: "auto",
-        py: { xs: 1, md: 2 },
-        px: { xs: 1, md: 2 },
-        border: "1px solid #E0E0E0",
-        borderRadius: "16px",
-        bgcolor: "#fff",
+        gap: { xs: "16px", md: "32px" },
+        py: { xs: 2, md: 4 },
+        px: { xs: 2, md: 4 },
       }}
     >
       {stats.map((stat, index) => (
@@ -149,9 +117,7 @@ export default function StatsSection() {
           value={stat.value}
           suffix={stat.suffix}
           label={stat.label}
-          Icon={stat.Icon}
           started={started}
-          showDivider={index < stats.length - 1}
         />
       ))}
     </Box>

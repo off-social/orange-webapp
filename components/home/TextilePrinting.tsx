@@ -184,9 +184,12 @@ const TextilePrinting = () => {
         sx={{
           display: "flex",
           flexWrap: { xs: "wrap", sm: "nowrap" },
-          gap: { xs: "8px", md: "16px" },
+          gap: { xs: "8px", md: "14px" },
           mt: 3,
           px: { xs: 1, md: 0 },
+          maxWidth: "900px", // ✅ yahan add karo
+          width: "100%",
+          mx: "auto", // ✅ center karne ke liye
         }}
       >
         {BRANDS.map((brand, index) => (
@@ -194,28 +197,27 @@ const TextilePrinting = () => {
             key={brand.name}
             onClick={() => handleBrandChange(index)}
             sx={{
-              flex: { xs: "0 0 calc(50% - 4px)", sm: "1 0 0" },
-              height: { xs: "84px", sm: "100px", md: "115px" },
+              flex: "1 0 0",
+              minWidth: 0,
+              display: "flex",
+              padding: "16px 20px",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "12px",
+              borderRadius: "16px",
               border:
                 selectedBrand === index
                   ? "2px solid #F6891F"
-                  : "1px solid #e0e0e0",
-              borderRadius: "16px",
+                  : "1px solid #E0E0E0",
               background: "#fff",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: { xs: "6px", md: "8px" },
               transition: "0.2s",
-              px: 1,
               "&:hover": { borderColor: "#F6891F" },
             }}
           >
             <Box
               sx={{
-                width: { xs: "70px", sm: "90px", md: "120px" },
-                height: { xs: "38px", sm: "46px", md: "54px" },
+                width: { xs: "64px", sm: "76px", md: "90px" },
+                height: { xs: "32px", sm: "38px", md: "44px" },
                 position: "relative",
               }}
             >
@@ -228,8 +230,8 @@ const TextilePrinting = () => {
             </Box>
             <Box
               sx={{
-                width: { xs: "48px", sm: "60px", md: "72px" },
-                height: "16px",
+                width: { xs: "44px", sm: "52px", md: "60px" },
+                height: "14px",
                 position: "relative",
               }}
             >
@@ -339,17 +341,25 @@ const TextilePrinting = () => {
           >
             <Typography
               sx={{
-                fontSize: { xs: "16px", sm: "20px", md: "24px" },
-                fontWeight: 600,
                 color: "#333",
+                textAlign: "center",
+                fontFamily: '"Stack Sans Headline", sans-serif',
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "31.2px",
+                letterSpacing: 0,
               }}
             >
               {currentProduct.name}
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "12px", sm: "13px", md: "16px" },
                 color: "#707070",
+                textAlign: "center",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "16px",
+                fontWeight: 500,
+                lineHeight: "25.6px",
                 mt: "6px",
               }}
             >

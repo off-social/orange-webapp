@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const stats = [
   { value: 500, suffix: "+", label: "Machine Installed" },
-  { value: 15, suffix: "+", label: "Countries Served" },
+  { value: 25, suffix: "+", label: "Countries Served" },
   { value: 15, suffix: "+", label: "Years of Experience" },
 ];
 
@@ -102,11 +102,12 @@ export default function StatsSection() {
       ref={ref}
       sx={{
         display: "flex",
+        flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         width: "100%",
         maxWidth: "800px",
         mx: "auto",
-        gap: { xs: "16px", md: "32px" },
+        gap: { xs: "24px", md: "32px" },
         py: { xs: 2, md: 4 },
         px: { xs: 2, md: 4 },
       }}

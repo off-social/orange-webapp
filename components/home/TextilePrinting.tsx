@@ -1,6 +1,6 @@
 "use client";
 
-import OGButton from "@/components/ui/OGButton";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -123,9 +123,9 @@ const BRANDS: Brand[] = [
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
 const NAV_BTN_SX = {
-  minWidth: "48px",
-  width: "48px",
-  height: "48px",
+  minWidth: { xs: "36px", md: "48px" },
+  width: { xs: "36px", md: "48px" },
+  height: { xs: "36px", md: "48px" },
   borderRadius: "100px",
   border: "1px solid #e0e0e0",
   color: "#111",
@@ -367,42 +367,6 @@ const TextilePrinting = () => {
             </Typography>
           </Box>
 
-          <Box
-            key={`btn-${animKey}`}
-            sx={{
-              display: "flex",
-              gap: 2,
-              mt: 3,
-              justifyContent: "center",
-              mb: { xs: 4, md: 0 },
-              animation: FADE_ANIM,
-            }}
-          >
-            <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#fff",
-                borderColor: "#e0e0e0",
-                borderRadius: "8px",
-                textTransform: "none",
-                fontSize: { xs: "12px", md: "13px" },
-                px: 2.5,
-              }}
-            >
-              Know More
-            </Button>
-            <OGButton
-              sx={{
-                borderRadius: "8px",
-                fontSize: { xs: "12px", md: "13px" },
-                px: { xs: 2, md: 3 },
-              }}
-            >
-              Get a Quote
-            </OGButton>
-          </Box>
-
           {/* Dot indicators */}
           <Box
             sx={{
@@ -410,7 +374,6 @@ const TextilePrinting = () => {
               justifyContent: "center",
               gap: "4px",
               mt: "20px",
-              mb: { xs: 4, md: 2 },
             }}
           >
             {currentProducts.map((_, i) => (
@@ -427,6 +390,63 @@ const TextilePrinting = () => {
                 }}
               />
             ))}
+          </Box>
+
+          <Box
+            key={`btn-${animKey}`}
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: { xs: "12px", md: 2 },
+              mt: 3,
+              justifyContent: "center",
+              mb: { xs: 4, md: 2 },
+              animation: FADE_ANIM,
+              px: { xs: "16px", md: 0 },
+            }}
+          >
+            <Button
+              variant="outlined"
+              sx={{
+                color: "#111",
+                bgcolor: "#fff",
+                borderColor: "#e0e0e0",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: { xs: 3, md: 3 },
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
+                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+              }}
+            >
+              Know More
+            </Button>
+            <Button
+              variant="contained"
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+              }
+              sx={{
+                bgcolor: "#F6891F",
+                color: "#fff",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: { xs: 3, md: 3 },
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
+                "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+              }}
+            >
+              Get a Quote
+            </Button>
           </Box>
         </>
       )}

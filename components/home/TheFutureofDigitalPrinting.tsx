@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 750, suffix: "+", text: "Installed machines" },
-  { value: 15, suffix: "+", text: "Countries served" },
-  { value: 15, suffix: "+", text: "Years of experience" },
+  { value: 500, suffix: "+", text: "Machine Installed" },
+  { value: 15, suffix: "+", text: "Countries Served" },
+  { value: 15, suffix: "+", text: "Years of Experience" },
 ];
 
 function useCountUp(target: number, duration = 1800, start = false) {
@@ -51,12 +51,13 @@ function StatItem({
   const count = useCountUp(value, 1800, started);
 
   return (
-    <div className="mb-8 text-center md:text-left">
-      <p className="text-[50px] md:text-[80px] font-normal text-[#F6891F] leading-none">
-        {count}
-        {suffix}
+    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+      <p style={{ color: "#F6891F", fontFamily: "Inter, sans-serif", fontSize: "clamp(48px, 10vw, 72px)", fontWeight: 500, lineHeight: "normal", letterSpacing: "-1px", margin: 0 }}>
+        {count}{suffix}
       </p>
-      <p className="text-sm md:text-base text-black">{text}</p>
+      <p style={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "16px", fontWeight: 500, lineHeight: "25.6px", margin: 0 }}>
+        {text}
+      </p>
     </div>
   );
 }
@@ -159,18 +160,21 @@ const TheFutureofDigitalPrinting = () => {
       </div>
 
       {/* Section 2 - Presence + Stats + Map */}
-      <div className="col-span-12 pl-2 md:pl-30 pt-10 md:pt-20 pr-2 md:pr-0">
-        <p className="text-sm md:text-xl font-medium text-[#9C9C9C] tracking-[8px] md:tracking-[20px] text-center md:text-left">
-          PRESENCE
-        </p>
+      <div className="flex flex-col md:flex-row w-full bg-white" style={{ boxSizing: "border-box" }}>
+        {/* Left: label + heading + stats */}
+        <div className="flex flex-col items-start gap-10 px-6 pt-12 pb-8 md:px-[168px] md:py-[80px]" style={{ flex: "0 0 auto" }}>
+          {/* Title group — 8px gap */}
+          <div className="flex flex-col items-start gap-2">
+            <p style={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "16px", fontWeight: 400, lineHeight: "25.6px", letterSpacing: "10px", textTransform: "uppercase", margin: 0 }}>
+              PRESENCE
+            </p>
+            <h2 style={{ color: "#333", fontFamily: "Inter, sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 500, lineHeight: "1.3", letterSpacing: "-1px", margin: 0 }}>
+              Pan-India Service &amp;<br />Installation Network
+            </h2>
+          </div>
 
-        <h2 className="text-[28px] md:text-[40px] font-medium text-black mt-1 w-full md:w-125 leading-[120%] text-center md:text-left">
-          Pan-India Service &amp; Installation Network
-        </h2>
-
-        <div className="flex flex-col md:flex-row md:items-center gap-8 ml-0 md:ml-2 mt-6 md:mt-0">
           {/* Stats */}
-          <div ref={ref} className="md:w-1/3 mt-2 md:mt-6">
+          <div ref={ref} className="flex flex-col gap-6">
             {stats.map((item) => (
               <StatItem
                 key={item.text}
@@ -181,17 +185,16 @@ const TheFutureofDigitalPrinting = () => {
               />
             ))}
           </div>
+        </div>
 
-          {/* Map Image */}
-          <div className="md:w-2/3">
-            <Image
-              src="/IndiaServiceInstallation.png"
-              alt="Pan-India Service and Installation Network"
-              width={1200}
-              height={800}
-              className="w-full h-auto block"
-            />
-          </div>
+        {/* Right: world map */}
+        <div className="relative w-full md:flex-1" style={{ minHeight: "280px" }}>
+          <Image
+            src="/world-map1.png"
+            alt="World Presence Map"
+            fill
+            style={{ objectFit: "contain", objectPosition: "center center" }}
+          />
         </div>
       </div>
     </>

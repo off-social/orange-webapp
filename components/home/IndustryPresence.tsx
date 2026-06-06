@@ -1,85 +1,67 @@
 "use client";
 
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Box,
   Button,
-  Grid,
   IconButton,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 type TabKey =
-  | "Upcoming exhibitions"
-  | "Past events gallery"
-  | "Booth highlights"
-  | "Media coverage";
+  | "Upcoming Exhibition"
+  | "Past Events Gallery"
+  | "Booth Highlights"
+  | "Media Coverage";
 
-const IndustryPresence = () => {
-  const [active, setActive] = useState<TabKey>("Upcoming exhibitions");
-  const [current, setCurrent] = useState(0);
-
-  // Touch swipe state
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-  const MIN_SWIPE = 50;
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
-
-  const CARDS_PER_VIEW = isMobile ? 1 : isTablet ? 2 : 3;
-  const CARD_WIDTH = 316;
-  const GAP = 24;
-
-  const data: Record<
-    TabKey,
-    { title: string; subtitle: string; img: string }[]
-  > = {
-    "Upcoming exhibitions": [
+const data: Record<TabKey, { title: string; subtitle: string; img: string }[]> =
+  {
+    "Upcoming Exhibition": [
       {
-        title: "India 2025",
-        subtitle: "5th IIMACH India, Harsco Exhibition Centre, Gandhinagar",
+        title: "Orange O Tec at Gartex India 2025",
+        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
         img: "/img1.png",
       },
       {
-        title: "Orange O Tec at Garfab-ITX 2025",
-        subtitle: "5th IIMACH India, Harsco Exhibition Centre, Gandhinagar",
+        title: "Orange O Tec at Gartex India 2025",
+        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
         img: "/img1.png",
       },
       {
-        title: "Orange O Tec at ITMACH India 2025",
-        subtitle: "5th IIMACH India, Harsco Exhibition Centre, Gandhinagar",
-        img: "/event3.png",
+        title: "Orange O Tec at Gartex India 2025",
+        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
+        img: "/img1.png",
       },
       {
-        title: "Orange O Tec at Extra Event 2025",
-        subtitle: "5th IIMACH India, Harsco Exhibition Centre, Gandhinagar",
-        img: "/event4.png",
+        title: "Orange O Tec at Gartex India 2025",
+        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
+        img: "/img1.png",
       },
     ],
-    "Past events gallery": [
-      { title: "Past Event 1", subtitle: "Location here", img: "/past1.png" },
-      { title: "Past Event 2", subtitle: "Location here", img: "/past2.png" },
-      { title: "Past Event 3", subtitle: "Location here", img: "/past3.png" },
+    "Past Events Gallery": [
+      { title: "Past Event 1", subtitle: "Location here", img: "/img1.png" },
+      { title: "Past Event 2", subtitle: "Location here", img: "/img1.png" },
+      { title: "Past Event 3", subtitle: "Location here", img: "/img1.png" },
     ],
-    "Booth highlights": [
+    "Booth Highlights": [
       {
         title: "Booth Highlight 1",
         subtitle: "Location here",
-        img: "/booth1.png",
+        img: "/img1.png",
       },
       {
         title: "Booth Highlight 2",
         subtitle: "Location here",
-        img: "/booth2.png",
+        img: "/img1.png",
       },
     ],
-    "Media coverage": [
+    "Media Coverage": [
       {
         title: "Media Coverage 1",
         subtitle: "Location here",
@@ -93,10 +75,22 @@ const IndustryPresence = () => {
     ],
   };
 
+const CARD_WIDTH = 380;
+const GAP = 24;
+
+const IndustryPresence = () => {
+  const [active, setActive] = useState<TabKey>("Upcoming Exhibition");
+  const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const CARDS_PER_VIEW = isMobile ? 1 : isTablet ? 2 : 3;
+
   const cards = data[active];
   const maxIndex = Math.max(cards.length - CARDS_PER_VIEW, 0);
-  const canPrev = current > 0;
-  const canNext = current < maxIndex;
 
   const handleTabChange = (tab: TabKey) => {
     setActive(tab);
@@ -106,7 +100,6 @@ const IndustryPresence = () => {
   const handlePrev = () => setCurrent((c) => Math.max(c - 1, 0));
   const handleNext = () => setCurrent((c) => Math.min(c + 1, maxIndex));
 
-  // Touch handlers
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX;
     touchEndX.current = null;
@@ -117,124 +110,72 @@ const IndustryPresence = () => {
   const onTouchEnd = () => {
     if (touchStartX.current === null || touchEndX.current === null) return;
     const diff = touchStartX.current - touchEndX.current;
-    if (diff > MIN_SWIPE) handleNext();
-    else if (diff < -MIN_SWIPE) handlePrev();
+    if (diff > 50) handleNext();
+    else if (diff < -50) handlePrev();
     touchStartX.current = null;
     touchEndX.current = null;
   };
 
-  const MOBILE_CARD_VW = 80;
-  const MOBILE_PEEK_VW = 6;
-  const MOBILE_GAP_PX = 12;
-
-  const CardContent = ({
-    card,
-    index,
-    isMob,
-  }: {
-    card: { title: string; subtitle: string; img: string };
-    index: number;
-    isMob: boolean;
-  }) => (
+  return (
     <Box
-      key={`${active}-${index}`}
       sx={{
-        width: isMob ? `${MOBILE_CARD_VW}vw` : `${CARD_WIDTH}px`,
-        minWidth: isMob ? `${MOBILE_CARD_VW}vw` : `${CARD_WIDTH}px`,
-        flexShrink: 0,
-        bgcolor: "#D9D9D9",
-        borderRadius: "12px",
-        p: 2,
         display: "flex",
+        padding: { xs: "48px 24px", md: "80px 168px" },
         flexDirection: "column",
-        ...(isMob && {
-          opacity: index === current ? 1 : 0.5,
-          transform: index === current ? "scale(1)" : "scale(0.96)",
-          transition: "opacity 0.3s ease, transform 0.3s ease",
-        }),
+        alignItems: "center",
+        gap: "64px",
+        alignSelf: "stretch",
+        bgcolor: "#F5F5F5",
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          aspectRatio: "4/3",
-          borderRadius: "8px",
-          overflow: "hidden",
-          bgcolor: "#ddd",
-        }}
-      >
-        <img
-          src={card.img}
-          alt={card.title}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </Box>
-
-      <Typography
-        sx={{
-          mt: 2,
-          fontWeight: 600,
-          fontSize: isMob ? "15px" : "16px",
-          lineHeight: 1.4,
-        }}
-      >
-        {card.title}
-      </Typography>
-
-      <Typography
-        sx={{
-          mt: 0.5,
-          fontSize: isMob ? "12px" : "13px",
-          color: "rgba(0,0,0,0.45)",
-          lineHeight: 1.5,
-        }}
-      >
-        {card.subtitle}
-      </Typography>
-
-      <Box sx={{ mt: "auto", pt: 2 }}>
-        <Button
-          size="small"
-          sx={{
-            border: "1px solid rgba(0,0,0,0.3)",
-            borderRadius: "20px",
-            color: "#000",
-            textTransform: "none",
-            fontSize: isMob ? "12px" : "13px",
-            px: isMob ? 2 : 2.5,
-            bgcolor: "#FFF",
-            "&:hover": { bgcolor: "rgba(0,0,0,0.04)", borderColor: "#000" },
-          }}
-        >
-          Know More
-        </Button>
-      </Box>
-    </Box>
-  );
-
-  return (
-    <Grid size={12} sx={{ pt: 8 }}>
-      {/* HEADING */}
-      <Typography
-        sx={{
-          textAlign: "center",
-          fontSize: { xs: "26px", sm: "32px", md: "40px" },
-          fontWeight: 500,
-          px: 2,
-        }}
-      >
-        Events & Industry Presence
-      </Typography>
-
-      {/* TABS */}
+      {/* Title + subtitle */}
       <Box
         sx={{
           display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#333",
+            fontFamily: "Inter, sans-serif",
+            fontSize: { xs: "28px", md: "40px" },
+            fontWeight: 500,
+            lineHeight: { xs: "36px", md: "52px" },
+            letterSpacing: "-1px",
+          }}
+        >
+          Events &amp; Industry Presence
+        </Typography>
+        <Typography
+          sx={{
+            color: "#707070",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "16px",
+            fontWeight: 400,
+            lineHeight: "25.6px",
+            maxWidth: "560px",
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
+          ullamcorper. Eleifend duis donec cras quam ipsum auctor ut semper in.
+        </Typography>
+      </Box>
+
+      {/* Tabs */}
+      <Box
+        sx={{
+          display: "flex",
+          gap: "12px",
+          flexWrap: { xs: "nowrap", md: "wrap" },
           justifyContent: "center",
-          gap: { xs: 1, sm: 2 },
-          mt: 4,
-          flexWrap: "wrap",
-          px: 2,
+          overflowX: { xs: "auto", md: "visible" },
+          width: "100%",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
         }}
       >
         {(Object.keys(data) as TabKey[]).map((tab) => (
@@ -242,16 +183,21 @@ const IndustryPresence = () => {
             key={tab}
             onClick={() => handleTabChange(tab)}
             sx={{
-              border:
-                active === tab
-                  ? "1px solid #F6891F"
-                  : "1px solid rgba(0,0,0,0.2)",
-              color: active === tab ? "#F6891F" : "#000",
-              borderRadius: "8px",
+              display: "flex",
+              padding: "10px 20px",
+              alignItems: "center",
+              borderRadius: "100px",
+              bgcolor: active === tab ? "#111" : "#FFF",
+              color: active === tab ? "#FFF" : "#333",
+              border: active === tab ? "1px solid #111" : "1px solid #E0E0E0",
               textTransform: "none",
-              fontWeight: active === tab ? 600 : 400,
-              fontSize: { xs: "12px", sm: "14px" },
-              px: { xs: 1.5, sm: 2 },
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "22.4px",
+              "&:hover": {
+                bgcolor: active === tab ? "#333" : "#f5f5f5",
+              },
             }}
           >
             {tab}
@@ -259,129 +205,168 @@ const IndustryPresence = () => {
         ))}
       </Box>
 
-      {/* CAROUSEL WRAPPER */}
+      {/* Carousel */}
       <Box
         sx={{
           position: "relative",
-          mt: 5,
-          mx: "auto",
-          maxWidth: isMobile
-            ? "100%"
-            : `${CARDS_PER_VIEW * CARD_WIDTH + (CARDS_PER_VIEW - 1) * GAP}px`,
+          width: "100%",
         }}
       >
-        {/* LEFT ARROW */}
-        {cards.length > CARDS_PER_VIEW && (
-          <IconButton
-            onClick={handlePrev}
-            disabled={!canPrev}
+        {/* Left arrow */}
+        <IconButton
+          onClick={handlePrev}
+          disabled={current === 0}
+          sx={{
+            position: "absolute",
+            left: { xs: 0, md: "-28px" },
+            top: "40%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            bgcolor: "#FFF",
+            border: "1px solid #E0E0E0",
+            width: "48px",
+            height: "48px",
+            opacity: current === 0 ? 0.3 : 1,
+            "&:hover": { bgcolor: "#f5f5f5" },
+          }}
+        >
+          <ChevronLeftIcon />
+        </IconButton>
+
+        <Box sx={{ overflow: "hidden" }}>
+          <Box
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
             sx={{
-              position: "absolute",
-              left: { xs: 4, sm: -24 },
-              top: "45%",
-              transform: "translateY(-50%)",
-              zIndex: 2,
-              bgcolor: "#fff",
-              border: "1px solid rgba(0,0,0,0.15)",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              opacity: canPrev ? 1 : 0.3,
-              transition: "opacity 0.2s",
-              width: { xs: 32, sm: 40 },
-              height: { xs: 32, sm: 40 },
-              "&:hover": { bgcolor: "#f5f5f5" },
+              display: "flex",
+              gap: `${GAP}px`,
+              transform: `translateX(calc(-${current} * (${CARD_WIDTH}px + ${GAP}px)))`,
+              transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
           >
-            <ChevronLeftIcon sx={{ fontSize: { xs: 18, sm: 24 } }} />
-          </IconButton>
-        )}
+            {cards.map((card, index) => (
+              <Box
+                key={index}
+                sx={{
+                  width: { xs: "76vw", md: `${CARD_WIDTH}px` },
+                  minWidth: { xs: "76vw", md: `${CARD_WIDTH}px` },
+                  flexShrink: 0,
+                  bgcolor: "#FFF",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+                }}
+              >
+                {/* Card image */}
+                <Box
+                  sx={{
+                    width: "100%",
+                    aspectRatio: "16/9",
+                    position: "relative",
+                    bgcolor: "#D9D9D9",
+                  }}
+                >
+                  <Image
+                    src={card.img}
+                    alt={card.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
 
-        {/* MOBILE PEEK CAROUSEL */}
-        {isMobile ? (
-          <Box sx={{ overflow: "hidden", px: `${MOBILE_PEEK_VW}vw` }}>
-            <Box
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-              sx={{
-                display: "flex",
-                gap: `${MOBILE_GAP_PX}px`,
-                transform: `translateX(calc(-${current} * (${MOBILE_CARD_VW}vw + ${MOBILE_GAP_PX}px)))`,
-                transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                willChange: "transform",
-              }}
-            >
-              {cards.map((card, index) => (
-                <CardContent
-                  key={index}
-                  card={card}
-                  index={index}
-                  isMob={true}
-                />
-              ))}
-            </Box>
+                {/* Card content */}
+                <Box
+                  sx={{
+                    p: "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "#111",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      lineHeight: "24px",
+                    }}
+                  >
+                    {card.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#707070",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "13px",
+                      fontWeight: 400,
+                      lineHeight: "20px",
+                    }}
+                  >
+                    {card.subtitle}
+                  </Typography>
+                  <Button
+                    endIcon={
+                      <ArrowForwardIcon sx={{ fontSize: "14px !important" }} />
+                    }
+                    sx={{
+                      alignSelf: "flex-start",
+                      textTransform: "none",
+                      color: "#111",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "13px",
+                      fontWeight: 500,
+                      p: 0,
+                      mt: "4px",
+                      minWidth: 0,
+                      "&:hover": { bgcolor: "transparent", color: "#F6891F" },
+                    }}
+                  >
+                    Know more
+                  </Button>
+                </Box>
+              </Box>
+            ))}
           </Box>
-        ) : (
-          /* DESKTOP CAROUSEL */
-          <Box sx={{ overflow: "hidden" }}>
-            <Box
-              sx={{
-                display: "flex",
-                gap: `${GAP}px`,
-                transform: `translateX(calc(-${current} * (${CARD_WIDTH}px + ${GAP}px)))`,
-                transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
-                willChange: "transform",
-              }}
-            >
-              {cards.map((card, index) => (
-                <CardContent
-                  key={index}
-                  card={card}
-                  index={index}
-                  isMob={false}
-                />
-              ))}
-            </Box>
-          </Box>
-        )}
+        </Box>
 
-        {/* RIGHT ARROW */}
-        {cards.length > CARDS_PER_VIEW && (
-          <IconButton
-            onClick={handleNext}
-            disabled={!canNext}
-            sx={{
-              position: "absolute",
-              right: { xs: 4, sm: -24 },
-              top: "45%",
-              transform: "translateY(-50%)",
-              zIndex: 2,
-              bgcolor: "#fff",
-              border: "1px solid rgba(0,0,0,0.15)",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-              opacity: canNext ? 1 : 0.3,
-              transition: "opacity 0.2s",
-              width: { xs: 32, sm: 40 },
-              height: { xs: 32, sm: 40 },
-              "&:hover": { bgcolor: "#f5f5f5" },
-            }}
-          >
-            <ChevronRightIcon sx={{ fontSize: { xs: 18, sm: 24 } }} />
-          </IconButton>
-        )}
+        {/* Right arrow */}
+        <IconButton
+          onClick={handleNext}
+          disabled={current >= maxIndex}
+          sx={{
+            position: "absolute",
+            right: { xs: 0, md: "-28px" },
+            top: "40%",
+            transform: "translateY(-50%)",
+            zIndex: 2,
+            bgcolor: "#FFF",
+            border: "1px solid #E0E0E0",
+            width: "48px",
+            height: "48px",
+            opacity: current >= maxIndex ? 0.3 : 1,
+            "&:hover": { bgcolor: "#f5f5f5" },
+          }}
+        >
+          <ChevronRightIcon />
+        </IconButton>
       </Box>
 
-      {/* Dot Indicators */}
+      {/* Dot indicators */}
       {cards.length > CARDS_PER_VIEW && (
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 1, mt: 3 }}>
+        <Box sx={{ display: "flex", gap: "6px", mt: "-40px" }}>
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <Box
               key={i}
               onClick={() => setCurrent(i)}
               sx={{
-                width: current === i ? 20 : 8,
-                height: 8,
-                borderRadius: "4px",
-                bgcolor: current === i ? "#F6891F" : "rgba(0,0,0,0.2)",
+                width: current === i ? "24px" : "8px",
+                height: "8px",
+                borderRadius: "8px",
+                bgcolor: current === i ? "#111" : "#D9D9D9",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -390,24 +375,28 @@ const IndustryPresence = () => {
         </Box>
       )}
 
-      {/* Book Demo Button */}
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 8 }}>
-        <Button
-          variant="outlined"
-          sx={{
-            color: "#FFF",
-            bgcolor: "#000",
-            borderColor: "#000",
-            borderRadius: "19.58px",
-            textTransform: "none",
-            mb: 8,
-            fontSize: { xs: "12px", md: "14px" },
-          }}
-        >
-          Book a demo at event
-        </Button>
-      </Box>
-    </Grid>
+      {/* Book a Demo button */}
+      <Button
+        variant="contained"
+        endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+        sx={{
+          bgcolor: "#111",
+          color: "#FFF",
+          borderRadius: "100px",
+          textTransform: "none",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "14px",
+          fontWeight: 500,
+          px: "28px",
+          py: "14px",
+          boxShadow: "none",
+          mt: "-40px",
+          "&:hover": { bgcolor: "#333", boxShadow: "none" },
+        }}
+      >
+        Book a Demo at Event
+      </Button>
+    </Box>
   );
 };
 

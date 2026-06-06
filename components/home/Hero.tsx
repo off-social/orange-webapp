@@ -18,6 +18,7 @@ import MeetRocketBuiltProduction from "./MeetRocketBuiltProduction";
 import MovingToDigital from "./MovingToDigital";
 import ScrollVideos from "./ScrollVideos";
 import StatsSection from "./StatsSection";
+import TextileHero from "./TextileHero";
 import TextilePrinting from "./TextilePrinting";
 import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
 import ThePowerOfOrange from "./ThePowerOfOrange";
@@ -102,13 +103,15 @@ const Home = () => {
             </Typography>
           </Box>
 
-          {/* Right: Buttons */}
+          {/* Buttons */}
           <Box
             sx={{
               display: "flex",
+              flexDirection: { xs: "column", md: "row" },
               gap: "12px",
               flexShrink: 0,
-              alignItems: "center",
+              alignItems: "stretch",
+              width: { xs: "100%", md: "auto" },
             }}
           >
             <Button
@@ -120,11 +123,12 @@ const Home = () => {
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "13px", md: "14px" },
+                fontSize: { xs: "14px", md: "14px" },
                 fontWeight: 500,
                 px: "24px",
-                py: "11px",
+                py: "13px",
                 boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
                 "&:hover": {
                   bgcolor: "rgba(255,255,255,0.8)",
                   boxShadow: "none",
@@ -144,11 +148,12 @@ const Home = () => {
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "13px", md: "14px" },
+                fontSize: { xs: "14px", md: "14px" },
                 fontWeight: 500,
                 px: "24px",
-                py: "11px",
+                py: "13px",
                 boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
             >
@@ -218,9 +223,15 @@ const Home = () => {
             sx={{
               display: "flex",
               gap: "12px",
-              flexWrap: "wrap",
-              justifyContent: "center",
+              flexWrap: { xs: "nowrap", md: "wrap" },
+              justifyContent: { xs: "flex-start", md: "center" },
               alignItems: "center",
+              overflowX: { xs: "auto", md: "visible" },
+              width: "100%",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              "&::-webkit-scrollbar": { display: "none" },
+              pb: { xs: "4px", md: 0 },
             }}
           >
             {[
@@ -515,6 +526,9 @@ const Home = () => {
       </Grid>
       <Grid size={12}>
         <DrivingSustainablePrinting />
+      </Grid>
+      <Grid size={12}>
+        <TextileHero />
       </Grid>
     </>
   );

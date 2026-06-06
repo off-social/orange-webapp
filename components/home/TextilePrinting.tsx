@@ -183,13 +183,17 @@ const TextilePrinting = () => {
       <Box
         sx={{
           display: "flex",
-          flexWrap: { xs: "wrap", sm: "nowrap" },
+          flexWrap: "nowrap",
           gap: { xs: "8px", md: "14px" },
           mt: 3,
           px: { xs: 1, md: 0 },
-          maxWidth: "900px", // ✅ yahan add karo
+          maxWidth: "900px",
           width: "100%",
-          mx: "auto", // ✅ center karne ke liye
+          mx: "auto",
+          overflowX: { xs: "auto", md: "visible" },
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          "&::-webkit-scrollbar": { display: "none" },
         }}
       >
         {BRANDS.map((brand, index) => (
@@ -197,13 +201,13 @@ const TextilePrinting = () => {
             key={brand.name}
             onClick={() => handleBrandChange(index)}
             sx={{
-              flex: "1 0 0",
-              minWidth: 0,
+              flex: { xs: "0 0 auto", md: "1 0 0" },
+              minWidth: { xs: "100px", md: 0 },
               display: "flex",
-              padding: "16px 20px",
+              padding: { xs: "10px 12px", md: "10px 12px" },
               flexDirection: "column",
               alignItems: "center",
-              gap: "12px",
+              gap: "8px",
               borderRadius: "16px",
               border:
                 selectedBrand === index
@@ -216,8 +220,8 @@ const TextilePrinting = () => {
           >
             <Box
               sx={{
-                width: { xs: "64px", sm: "76px", md: "90px" },
-                height: { xs: "32px", sm: "38px", md: "44px" },
+                width: "100%",
+                height: { xs: "48px", md: "56px" },
                 position: "relative",
               }}
             >
@@ -230,8 +234,8 @@ const TextilePrinting = () => {
             </Box>
             <Box
               sx={{
-                width: { xs: "44px", sm: "52px", md: "60px" },
-                height: "14px",
+                width: "100%",
+                height: { xs: "18px", md: "22px" },
                 position: "relative",
               }}
             >
@@ -253,8 +257,9 @@ const TextilePrinting = () => {
           onClick={() => scrollToIndex(Math.max(0, activeImg - 1))}
           sx={{
             ...NAV_BTN_SX,
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            left: { xs: "8px", md: "24px" },
+            left: "24px",
             top: "50%",
             transform: "translateY(-50%)",
             zIndex: 2,
@@ -284,8 +289,10 @@ const TextilePrinting = () => {
             <Box
               key={index}
               sx={{
-                width: { xs: "80vw", sm: "65vw", md: "55vw" },
-                height: { xs: "180px", sm: "240px", md: "22vw" },
+                width: { xs: "auto", sm: "65vw", md: "55vw" },
+                height: { xs: "181px", sm: "240px", md: "22vw" },
+                aspectRatio: { xs: "201 / 101", sm: "unset" },
+                alignSelf: "stretch",
                 flexShrink: 0,
                 scrollSnapAlign: "center",
                 display: "flex",
@@ -316,8 +323,9 @@ const TextilePrinting = () => {
           }
           sx={{
             ...NAV_BTN_SX,
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            right: { xs: "8px", md: "24px" },
+            right: "24px",
             top: "50%",
             transform: "translateY(-50%)",
             zIndex: 2,
@@ -343,10 +351,10 @@ const TextilePrinting = () => {
               sx={{
                 color: "#333",
                 textAlign: "center",
-                fontFamily: '"Stack Sans Headline", sans-serif',
-                fontSize: "24px",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "20px",
                 fontWeight: 500,
-                lineHeight: "31.2px",
+                lineHeight: "26px",
                 letterSpacing: 0,
               }}
             >
@@ -357,9 +365,9 @@ const TextilePrinting = () => {
                 color: "#707070",
                 textAlign: "center",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "16px",
+                fontSize: "12px",
                 fontWeight: 500,
-                lineHeight: "25.6px",
+                lineHeight: "19.2px",
                 mt: "6px",
               }}
             >
@@ -406,6 +414,28 @@ const TextilePrinting = () => {
             }}
           >
             <Button
+              variant="contained"
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+              }
+              sx={{
+                bgcolor: "#F6891F",
+                color: "#fff",
+                borderRadius: "8px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: { xs: 3, md: 3 },
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
+                "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+              }}
+            >
+              Get a Quote
+            </Button>
+            <Button
               variant="outlined"
               sx={{
                 color: "#111",
@@ -424,28 +454,6 @@ const TextilePrinting = () => {
               }}
             >
               Know More
-            </Button>
-            <Button
-              variant="contained"
-              endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
-              }
-              sx={{
-                bgcolor: "#F6891F",
-                color: "#fff",
-                borderRadius: "12px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                fontWeight: 500,
-                px: { xs: 3, md: 3 },
-                py: "13px",
-                boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
-                "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
-              }}
-            >
-              Get a Quote
             </Button>
           </Box>
         </>

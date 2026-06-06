@@ -173,11 +173,12 @@ const Home = () => {
         <Box
           sx={{
             display: "flex",
-            padding: { xs: "48px 24px", md: "68px 168px" },
+            padding: { xs: "48px 16px", md: "68px 168px" },
             flexDirection: "column",
             alignItems: "center",
-            gap: "32px",
+            gap: { xs: "24px", md: "32px" },
             alignSelf: "stretch",
+            bgcolor: "#FFF",
           }}
         >
           {/* Title group */}
@@ -205,11 +206,11 @@ const Home = () => {
             <Typography
               sx={{
                 textAlign: "center",
-                fontSize: { xs: "28px", sm: "32px", md: "40px" },
+                fontSize: { xs: "24px", md: "40px" },
                 fontWeight: 500,
-                color: "#000",
-                lineHeight: { xs: "36px", md: "52px" },
-                letterSpacing: "-1px",
+                color: "#333",
+                lineHeight: { xs: "31.2px", md: "52px" },
+                letterSpacing: 0,
                 fontFamily: "Inter, sans-serif",
               }}
             >
@@ -260,6 +261,8 @@ const Home = () => {
                   fontWeight: 500,
                   lineHeight: "22.4px",
                   minWidth: "unset",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
                   "&:hover": {
                     bgcolor: value === index ? "#111" : "#f5f5f5",
                   },
@@ -336,18 +339,20 @@ const Home = () => {
           </Box>
 
           {/* Full-width printer image */}
-          <Box
-            sx={{
-              position: "relative",
-              width: "100%",
-              height: { xs: "260px", sm: "380px", md: "520px" },
-            }}
-          >
+          <Box sx={{ width: "100%", lineHeight: 0 }}>
             <Image
               src="/ExceptionalQualityImg.png"
               alt="Exceptional Quality Printer"
-              fill
-              style={{ objectFit: "contain", objectPosition: "center bottom" }}
+              width={1920}
+              height={700}
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "520px",
+                objectFit: "contain",
+                objectPosition: "center bottom",
+                display: "block",
+              }}
             />
           </Box>
         </Box>
@@ -368,10 +373,10 @@ const Home = () => {
         <Box
           sx={{
             display: "flex",
-            padding: { xs: "48px 24px", md: "100px 168px" },
+            padding: { xs: "48px 16px", md: "100px 168px" },
             flexDirection: "column",
             alignItems: "center",
-            gap: "80px",
+            gap: { xs: "48px", md: "80px" },
             alignSelf: "stretch",
           }}
         >
@@ -450,9 +455,9 @@ const Home = () => {
               key={index}
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column", md: "row" },
+                flexDirection: { xs: "column", sm: "row" },
                 alignItems: "center",
-                gap: { xs: "32px", md: "64px" },
+                gap: { xs: "24px", sm: "40px", md: "64px" },
                 width: "100%",
               }}
             >
@@ -460,9 +465,9 @@ const Home = () => {
               <Box
                 sx={{
                   flex: "0 0 auto",
-                  width: { xs: "100%", md: "45%" },
+                  width: { xs: "100%", sm: "45%", md: "45%" },
                   position: "relative",
-                  height: { xs: "240px", sm: "300px", md: "340px" },
+                  height: { xs: "240px", sm: "260px", md: "340px" },
                 }}
               >
                 <Image
@@ -474,16 +479,16 @@ const Home = () => {
               </Box>
 
               {/* Right: Text */}
-              <Box sx={{ flex: 1 }}>
+              <Box sx={{ flex: 1, textAlign: { xs: "center", sm: "left" } }}>
                 <Typography
                   sx={{
                     color: "#FFF",
                     fontFamily: "'Architects Daughter', cursive",
-                    fontSize: { xs: "28px", md: "40px" },
+                    fontSize: { xs: "24px", sm: "28px", md: "40px" },
                     fontWeight: 400,
-                    lineHeight: { xs: "36px", md: "52px" },
+                    lineHeight: { xs: "31.2px", sm: "36px", md: "52px" },
                     letterSpacing: "-1px",
-                    mb: "16px",
+                    mb: { xs: "8px", md: "16px" },
                   }}
                 >
                   {item.title}
@@ -492,10 +497,10 @@ const Home = () => {
                   sx={{
                     color: "rgba(255,255,255,0.6)",
                     fontFamily: "Inter, sans-serif",
-                    fontSize: { xs: "13px", md: "15px" },
-                    fontWeight: 400,
-                    lineHeight: 1.75,
-                    maxWidth: "480px",
+                    fontSize: { xs: "12px", sm: "13px", md: "15px" },
+                    fontWeight: 500,
+                    lineHeight: { xs: "19.2px", md: 1.75 },
+                    maxWidth: { xs: "100%", md: "480px" },
                   }}
                 >
                   {item.desc}

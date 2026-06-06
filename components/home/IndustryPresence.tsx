@@ -1,6 +1,7 @@
 "use client";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
@@ -12,7 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type TabKey =
   | "Upcoming Exhibition"
@@ -75,19 +76,34 @@ const data: Record<TabKey, { title: string; subtitle: string; img: string }[]> =
     ],
   };
 
-const CARD_WIDTH = 380;
 const GAP = 24;
 
 const IndustryPresence = () => {
   const [active, setActive] = useState<TabKey>("Upcoming Exhibition");
   const [current, setCurrent] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   const CARDS_PER_VIEW = isMobile ? 1 : isTablet ? 2 : 3;
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) setContainerWidth(containerRef.current.offsetWidth);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  const peekWidth = isMobile ? 32 : 0;
+  const cardWidth = containerWidth > 0
+    ? (containerWidth - GAP * (CARDS_PER_VIEW - 1) - peekWidth) / CARDS_PER_VIEW
+    : 380;
 
   const cards = data[active];
   const maxIndex = Math.max(cards.length - CARDS_PER_VIEW, 0);
@@ -120,12 +136,12 @@ const IndustryPresence = () => {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 24px", md: "80px 168px" },
+        padding: { xs: "64px 16px", md: "80px 168px" },
         flexDirection: "column",
-        alignItems: "center",
-        gap: "64px",
+        alignItems: { xs: "flex-start", md: "center" },
+        gap: { xs: "40px", md: "64px" },
         alignSelf: "stretch",
-        bgcolor: "#F5F5F5",
+        bgcolor: "#F2F2F2",
       }}
     >
       {/* Title + subtitle */}
@@ -133,19 +149,20 @@ const IndustryPresence = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", md: "center" },
           gap: "8px",
-          textAlign: "center",
+          textAlign: { xs: "left", md: "center" },
+          width: "100%",
         }}
       >
         <Typography
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "28px", md: "40px" },
+            fontSize: { xs: "24px", md: "40px" },
             fontWeight: 500,
-            lineHeight: { xs: "36px", md: "52px" },
-            letterSpacing: "-1px",
+            lineHeight: { xs: "31.2px", md: "52px" },
+            letterSpacing: { xs: 0, md: "-1px" },
           }}
         >
           Events &amp; Industry Presence
@@ -154,10 +171,10 @@ const IndustryPresence = () => {
           sx={{
             color: "#707070",
             fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
+            fontSize: { xs: "12px", md: "16px" },
             fontWeight: 400,
-            lineHeight: "25.6px",
-            maxWidth: "560px",
+            lineHeight: { xs: "19.2px", md: "25.6px" },
+            maxWidth: { xs: "100%", md: "560px" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
@@ -184,9 +201,10 @@ const IndustryPresence = () => {
             onClick={() => handleTabChange(tab)}
             sx={{
               display: "flex",
-              padding: "10px 20px",
+              padding: "8px 20px",
               alignItems: "center",
-              borderRadius: "100px",
+              gap: "16px",
+              borderRadius: "32px",
               bgcolor: active === tab ? "#111" : "#FFF",
               color: active === tab ? "#FFF" : "#333",
               border: active === tab ? "1px solid #111" : "1px solid #E0E0E0",
@@ -195,6 +213,8 @@ const IndustryPresence = () => {
               fontSize: "14px",
               fontWeight: 500,
               lineHeight: "22.4px",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
               "&:hover": {
                 bgcolor: active === tab ? "#333" : "#f5f5f5",
               },
@@ -233,7 +253,7 @@ const IndustryPresence = () => {
           <ChevronLeftIcon />
         </IconButton>
 
-        <Box sx={{ overflow: "hidden" }}>
+        <Box ref={containerRef} sx={{ overflow: "hidden" }}>
           <Box
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
@@ -241,7 +261,7 @@ const IndustryPresence = () => {
             sx={{
               display: "flex",
               gap: `${GAP}px`,
-              transform: `translateX(calc(-${current} * (${CARD_WIDTH}px + ${GAP}px)))`,
+              transform: `translateX(calc(-${current} * (${cardWidth}px + ${GAP}px)))`,
               transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
           >
@@ -249,43 +269,38 @@ const IndustryPresence = () => {
               <Box
                 key={index}
                 sx={{
-                  width: { xs: "76vw", md: `${CARD_WIDTH}px` },
-                  minWidth: { xs: "76vw", md: `${CARD_WIDTH}px` },
+                  width: `${cardWidth}px`,
+                  minWidth: `${cardWidth}px`,
                   flexShrink: 0,
-                  bgcolor: "#FFF",
-                  borderRadius: "12px",
-                  overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
-                  boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+                  alignItems: "flex-start",
+                  gap: "16px",
+                  flex: "1 0 0",
                 }}
               >
-                {/* Card image */}
+                {/* Card — image only */}
                 <Box
                   sx={{
-                    width: "100%",
-                    aspectRatio: "16/9",
+                    height: "264px",
+                    alignSelf: "stretch",
+                    aspectRatio: "352 / 264.17",
                     position: "relative",
-                    bgcolor: "#D9D9D9",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    bgcolor: "lightgray",
                   }}
                 >
                   <Image
                     src={card.img}
                     alt={card.title}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                 </Box>
 
-                {/* Card content */}
-                <Box
-                  sx={{
-                    p: "20px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "8px",
-                  }}
-                >
+                {/* Content — outside card */}
+                <Box sx={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                   <Typography
                     sx={{
                       color: "#111",
@@ -309,6 +324,7 @@ const IndustryPresence = () => {
                     {card.subtitle}
                   </Typography>
                   <Button
+                    variant="outlined"
                     endIcon={
                       <ArrowForwardIcon sx={{ fontSize: "14px !important" }} />
                     }
@@ -316,13 +332,22 @@ const IndustryPresence = () => {
                       alignSelf: "flex-start",
                       textTransform: "none",
                       color: "#111",
+                      bgcolor: "#FFF",
                       fontFamily: "Inter, sans-serif",
                       fontSize: "13px",
                       fontWeight: 500,
-                      p: 0,
+                      px: "14px",
+                      py: "6px",
                       mt: "4px",
-                      minWidth: 0,
-                      "&:hover": { bgcolor: "transparent", color: "#F6891F" },
+                      borderRadius: "8px",
+                      borderColor: "#E0E0E0",
+                      boxShadow: "none",
+                      "&:hover": {
+                        bgcolor: "#FFF",
+                        color: "#F6891F",
+                        borderColor: "#F6891F",
+                        boxShadow: "none",
+                      },
                     }}
                   >
                     Know more
@@ -357,7 +382,7 @@ const IndustryPresence = () => {
 
       {/* Dot indicators */}
       {cards.length > CARDS_PER_VIEW && (
-        <Box sx={{ display: "flex", gap: "6px", mt: "-40px" }}>
+        <Box sx={{ display: "flex", gap: "6px", justifyContent: "center", width: "100%" }}>
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <Box
               key={i}
@@ -378,19 +403,24 @@ const IndustryPresence = () => {
       {/* Book a Demo button */}
       <Button
         variant="contained"
+        startIcon={<CalendarTodayOutlinedIcon sx={{ fontSize: "16px !important" }} />}
         endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
         sx={{
           bgcolor: "#111",
           color: "#FFF",
-          borderRadius: "100px",
+          borderRadius: "8px",
           textTransform: "none",
           fontFamily: "Inter, sans-serif",
-          fontSize: "14px",
+          fontSize: "13px",
           fontWeight: 500,
-          px: "28px",
-          py: "14px",
+          lineHeight: "20.8px",
+          padding: "16px",
+          gap: "8px",
+          alignSelf: "center",
+          width: { xs: "100%", md: "auto" },
+          justifyContent: "center",
+          alignItems: "center",
           boxShadow: "none",
-          mt: "-40px",
           "&:hover": { bgcolor: "#333", boxShadow: "none" },
         }}
       >

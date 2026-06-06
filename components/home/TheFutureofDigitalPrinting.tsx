@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -52,10 +52,30 @@ function StatItem({
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-      <p style={{ color: "#F6891F", fontFamily: "Inter, sans-serif", fontSize: "clamp(48px, 10vw, 72px)", fontWeight: 500, lineHeight: "normal", letterSpacing: "-1px", margin: 0 }}>
-        {count}{suffix}
+      <p
+        style={{
+          color: "#F6891F",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "clamp(48px, 10vw, 72px)",
+          fontWeight: 500,
+          lineHeight: "normal",
+          letterSpacing: "-1px",
+          margin: 0,
+        }}
+      >
+        {count}
+        {suffix}
       </p>
-      <p style={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "16px", fontWeight: 500, lineHeight: "25.6px", margin: 0 }}>
+      <p
+        style={{
+          color: "#707070",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "16px",
+          fontWeight: 500,
+          lineHeight: "25.6px",
+          margin: 0,
+        }}
+      >
         {text}
       </p>
     </div>
@@ -126,19 +146,58 @@ const TheFutureofDigitalPrinting = () => {
 
         {/* ── DESKTOP: updated layout ── */}
         <div className="hidden md:block" style={{ paddingTop: "80px" }}>
-
           {/* Heading group */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-            <h1 style={{ color: "#333", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "40px", fontWeight: 500, lineHeight: "52px", letterSpacing: "-1px", margin: 0 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 0,
+            }}
+          >
+            <h1
+              style={{
+                color: "#333",
+                textAlign: "center",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "40px",
+                fontWeight: 500,
+                lineHeight: "52px",
+                letterSpacing: "-1px",
+                margin: 0,
+              }}
+            >
               Building the Future of
             </h1>
-            <h1 style={{ color: "#F6891F", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "40px", fontWeight: 500, lineHeight: "52px", letterSpacing: "-1px", margin: 0 }}>
+            <h1
+              style={{
+                color: "#F6891F",
+                textAlign: "center",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "40px",
+                fontWeight: 500,
+                lineHeight: "52px",
+                letterSpacing: "-1px",
+                margin: 0,
+              }}
+            >
               Digital Printing
             </h1>
           </div>
 
           {/* Description — 8px gap from heading */}
-          <p style={{ color: "#707070", textAlign: "center", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 500, lineHeight: "22.4px", maxWidth: "680px", margin: "8px auto 0" }}>
+          <p
+            style={{
+              color: "#707070",
+              textAlign: "center",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "22.4px",
+              maxWidth: "680px",
+              margin: "8px auto 0",
+            }}
+          >
             Orange O Tec engineers high-performance digital printing solutions
             built for precision, consistency, and scale, with a vision to lead
             global innovation through intelligent, sustainable, and future-ready
@@ -160,21 +219,49 @@ const TheFutureofDigitalPrinting = () => {
       </div>
 
       {/* Section 2 - Presence + Stats + Map */}
-      <div className="flex flex-col md:flex-row w-full bg-white" style={{ boxSizing: "border-box" }}>
+      <div className="w-full bg-white flex flex-col md:flex-row items-stretch gap-10 md:gap-16 px-4 py-12 md:px-[168px] md:py-[80px]">
         {/* Left: label + heading + stats */}
-        <div className="flex flex-col items-start gap-10 px-6 pt-12 pb-8 md:px-[168px] md:py-[80px]" style={{ flex: "0 0 auto" }}>
+        <div className="flex flex-col items-center md:items-start gap-10 flex-shrink-0 w-full md:w-auto">
           {/* Title group — 8px gap */}
-          <div className="flex flex-col items-start gap-2">
-            <p style={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "16px", fontWeight: 400, lineHeight: "25.6px", letterSpacing: "10px", textTransform: "uppercase", margin: 0 }}>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p
+              className="text-center md:text-left"
+              style={{
+                color: "#707070",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                fontWeight: 400,
+                lineHeight: "19.2px",
+                letterSpacing: "10px",
+                textTransform: "uppercase",
+                margin: 0,
+              }}
+            >
               PRESENCE
             </p>
-            <h2 style={{ color: "#333", fontFamily: "Inter, sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 500, lineHeight: "1.3", letterSpacing: "-1px", margin: 0 }}>
-              Pan-India Service &amp;<br />Installation Network
+            <h2
+              className="text-center md:text-left"
+              style={{
+                color: "#333",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "clamp(24px, 5vw, 40px)",
+                fontWeight: 500,
+                lineHeight: "1.3",
+                letterSpacing: "-1px",
+                margin: 0,
+              }}
+            >
+              Pan-India Service &amp;
+              <br />
+              Installation Network
             </h2>
           </div>
 
           {/* Stats */}
-          <div ref={ref} className="flex flex-col gap-6">
+          <div
+            ref={ref}
+            className="flex flex-col gap-6 text-center md:text-left"
+          >
             {stats.map((item) => (
               <StatItem
                 key={item.text}
@@ -188,12 +275,12 @@ const TheFutureofDigitalPrinting = () => {
         </div>
 
         {/* Right: world map */}
-        <div className="relative w-full md:flex-1" style={{ minHeight: "280px" }}>
-          <Image
+        <div className="flex-1 w-full flex items-end justify-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/world-map1.png"
             alt="World Presence Map"
-            fill
-            style={{ objectFit: "contain", objectPosition: "center center" }}
+            style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
       </div>

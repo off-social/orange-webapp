@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
@@ -130,16 +129,21 @@ export default function Navbar() {
                 href="/contact"
                 variant="contained"
                 sx={{
-                  bgcolor: "#F7931E",
+                  bgcolor: "#F6891F",
                   color: "#fff",
-                  borderRadius: "20px",
-                  px: 3,
-                  py: 1,
+                  borderRadius: "8px",
+                  padding: "8px 16px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "8px",
                   textTransform: "none",
-                  minWidth: "110px",
-                  "&:hover": {
-                    bgcolor: "#e8820d",
-                  },
+                  boxShadow: "none",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  minWidth: 0,
+                  "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
                 }}
               >
                 Contact Us
@@ -153,8 +157,13 @@ export default function Navbar() {
                 ml: "auto",
               }}
             >
-              <IconButton onClick={toggleDrawer(true)} sx={{ color: "#fff" }}>
-                <MenuIcon />
+              <IconButton onClick={toggleDrawer(true)} sx={{ p: "8px" }}>
+                <Image
+                  src="/MenuIconButton.svg"
+                  alt="menu"
+                  width={32}
+                  height={32}
+                />
               </IconButton>
             </Box>
           </Toolbar>

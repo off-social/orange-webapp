@@ -1,6 +1,7 @@
 "use client";
 
-import { Grid, Typography } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 
 const DrivingSustainablePrinting = () => {
@@ -39,15 +40,50 @@ const DrivingSustainablePrinting = () => {
       <Typography
         sx={{
           mt: 0.5,
-          fontSize: { xs: "14px", sm: "16px", md: "18px" },
-          fontWeight: 400,
-          color: "#404040",
+          fontSize: "14px",
+          fontWeight: 500,
+          color: "#707070",
           textAlign: "center",
+          lineHeight: "22.4px",
+          fontFamily: "Inter, sans-serif",
           px: { xs: 2, sm: 4 },
         }}
       >
         Built for a cleaner, more responsible textile future
       </Typography>
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          mt: "24px",
+          px: { xs: 2, sm: 4, md: 0 },
+        }}
+      >
+        <Button
+          variant="contained"
+          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          sx={{
+            width: { xs: "100%", md: "200px" },
+            padding: "16px",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "8px",
+            borderRadius: "8px",
+            bgcolor: "#111",
+            color: "#FFF",
+            textTransform: "none",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22.4px",
+            boxShadow: "none",
+            "&:hover": { bgcolor: "#333", boxShadow: "none" },
+          }}
+        >
+          Contact Us
+        </Button>
+      </Box>
 
       <Image
         src="/DrivingSustainablePrinting.png"

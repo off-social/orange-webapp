@@ -6,21 +6,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-
-/* ── OLD FOOTER (hidden) ──────────────────────────────────────────────
-import { Button, Grid, Typography } from "@mui/material";
-const OldFooter = () => (
-  <Grid container spacing={2}>
-    <Grid size={12} sx={{ textAlign: "center", py: { xs: 10, md: 18 }, px: { xs: 3, sm: 8 }, minHeight: { xs: "300px", md: "500px" }, bgcolor: "#272727", backgroundImage: "url('/footer.png')", backgroundSize: "cover", backgroundPosition: "center bottom", backgroundRepeat: "no-repeat", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-      <Typography sx={{ fontSize: { xs: "20px", sm: "30px", md: "38px" }, fontWeight: 600, width: { xs: "100%", sm: "456px", md: "575px" }, mx: "auto", lineHeight: 1.3, textAlign: "center", color: "#fff" }}>
-        Transform Your Textile Printing with Digital Innovation
-      </Typography>
-    </Grid>
-  </Grid>
-);
-──────────────────────────────────────────────────────────────────── */
 
 const QUICK_LINKS = [
   { label: "Disclosure", href: "#" },
@@ -28,135 +16,282 @@ const QUICK_LINKS = [
   { label: "Terms & Condition", href: "#" },
 ];
 
-const HEADING_STYLE: React.CSSProperties = {
-  color: "#FFF",
-  fontFamily: "Inter, sans-serif",
-  fontSize: "14px",
-  fontWeight: 600,
-  letterSpacing: "2.94px",
-  textTransform: "uppercase",
-  lineHeight: "normal",
-  margin: 0,
-};
-
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#272727", display: "flex", flexDirection: "column", alignSelf: "stretch" }}>
-
+    <Box
+      component="footer"
+      sx={{ bgcolor: "#272727", display: "flex", flexDirection: "column" }}
+    >
       {/* ── Main content ── */}
-      <div
-        className="
-          flex flex-col items-start
-          px-4 py-10 gap-6
-          sm:px-10 sm:py-14 sm:gap-8
-          lg:px-[168px] lg:py-[60px] lg:gap-6
-        "
-        style={{ alignSelf: "stretch" }}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: { md: "space-between" },
+          alignItems: { xs: "center", md: "flex-start" },
+          px: { xs: "16px", md: "168px" },
+          py: { xs: "60px", md: "60px" },
+          gap: { xs: "24px", md: 8 },
+          width: "100%",
+        }}
       >
-        {/* Two-column row on tablet+, stacked on mobile */}
-        <div className="flex flex-col sm:flex-row sm:justify-between w-full gap-10 sm:gap-8">
+        {/* ── Left column ── */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+            gap: 3,
+            width: { xs: "100%", md: "auto" },
+          }}
+        >
+          {/* Logo */}
+          <Image
+            src="/ORANGE-LOGO.png"
+            alt="Orange"
+            width={140}
+            height={36}
+            style={{ objectFit: "contain" }}
+          />
 
-          {/* ── Left column ── */}
-          <div className="flex flex-col gap-6">
+          {/* Quick Links heading */}
+          <Typography
+            sx={{
+              color: "#FFF",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 600,
+              letterSpacing: "2.94px",
+              textTransform: "uppercase",
+              lineHeight: "normal",
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            QUICK LINKS
+          </Typography>
 
-            {/* Logo */}
-            <Image
-              src="/ORANGE-LOGO.png"
-              alt="Orange"
-              width={140}
-              height={36}
-              style={{ objectFit: "contain", objectPosition: "left" }}
+          {/* Links */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-start" },
+              gap: 3,
+            }}
+          >
+            {QUICK_LINKS.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                style={{
+                  color: "#EFEFEF",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  lineHeight: "20.8px",
+                  textDecoration: "none",
+                  textAlign: "center",
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+          </Box>
+
+          {/* Social icons */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
+            <InstagramIcon
+              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
             />
+            <LinkedInIcon
+              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
+            />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
+              style={{ cursor: "pointer", flexShrink: 0 }}
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <FacebookIcon
+              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
+            />
+          </Box>
+        </Box>
 
-            {/* Quick Links */}
-            <div className="flex flex-col gap-6">
-              <p style={HEADING_STYLE}>QUICK LINKS</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                {QUICK_LINKS.map(({ label, href }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="no-underline hover:underline"
-                    style={{
-                      color: "#EFEFEF",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      lineHeight: "20.8px",
-                    }}
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+        {/* Divider — mobile only */}
+        <Box
+          sx={{
+            display: { xs: "block", md: "none" },
+            width: "100%",
+            height: "1px",
+            bgcolor: "rgba(255,255,255,0.1)",
+            my: 1,
+          }}
+        />
 
-            {/* Social icons */}
-            <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-              <InstagramIcon sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }} />
-              <LinkedInIcon sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }} />
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style={{ cursor: "pointer", flexShrink: 0 }}>
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              <FacebookIcon sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }} />
-            </div>
-          </div>
+        {/* ── Right column — Contact Details ── */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+            gap: 3,
+            width: { xs: "100%", md: "auto" },
+          }}
+        >
+          <Typography
+            sx={{
+              color: "#FFF",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: 600,
+              letterSpacing: "2.94px",
+              textTransform: "uppercase",
+              lineHeight: "normal",
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            CONTACT DETAILS
+          </Typography>
 
-          {/* ── Right column — Contact Details ── */}
-          <div className="flex flex-col gap-6">
-            <p style={HEADING_STYLE}>CONTACT DETAILS</p>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            {/* Email */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", md: "flex-start" },
+                gap: "4px",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <EmailOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Typography
+                  sx={{
+                    color: "#999",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                >
+                  Email Id
+                </Typography>
+              </Box>
+              <Typography
+                sx={{
+                  color: "#fff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  lineHeight: "22.4px",
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
+                info@orange.com
+              </Typography>
+            </Box>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {/* Phone */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", md: "flex-start" },
+                gap: "4px",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <PhoneOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Typography
+                  sx={{
+                    color: "#999",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                >
+                  Phone No.
+                </Typography>
+              </Box>
+              <Typography
+                sx={{
+                  color: "#fff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  lineHeight: "22.4px",
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
+                +91 74860 32990
+              </Typography>
+            </Box>
 
-              {/* Email */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                  <EmailOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
-                  <span style={{ color: "#999", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 400, lineHeight: "normal" }}>Email Id</span>
-                </div>
-                <p style={{ color: "#fff", fontSize: "14px", fontFamily: "Inter, sans-serif", fontWeight: 400, lineHeight: "22.4px", margin: 0 }}>
-                  info@orange.com
-                </p>
-              </div>
-
-              {/* Phone */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                  <PhoneOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
-                  <span style={{ color: "#999", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 400, lineHeight: "normal" }}>Phone No.</span>
-                </div>
-                <p style={{ color: "#fff", fontSize: "14px", fontFamily: "Inter, sans-serif", fontWeight: 400, lineHeight: "22.4px", margin: 0 }}>
-                  +91 74860 32990
-                </p>
-              </div>
-
-              {/* Address */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                  <LocationOnOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
-                  <span style={{ color: "#999", fontFamily: "Inter, sans-serif", fontSize: "14px", fontWeight: 400, lineHeight: "normal" }}>Address</span>
-                </div>
-                <p style={{ color: "#fff", fontSize: "14px", fontFamily: "Inter, sans-serif", fontWeight: 400, lineHeight: "22.4px", margin: 0, maxWidth: "380px" }}>
-                  Titaanium The Business Hub, 9th floor, Office no 901, Bhimrad Road, Opp. Aakash Empire, Surat – 395017 (Gujarat) India.
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
+            {/* Address */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", md: "flex-start" },
+                gap: "4px",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <LocationOnOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Typography
+                  sx={{
+                    color: "#999",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                >
+                  Address
+                </Typography>
+              </Box>
+              <Typography
+                sx={{
+                  color: "#fff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  lineHeight: "22.4px",
+                  textAlign: { xs: "center", md: "left" },
+                  maxWidth: "380px",
+                }}
+              >
+                Titaanium The Business Hub, 9th floor, Office no 901, Bhimrad
+                Road, Opp. Aakash Empire, Surat – 395017 (Gujarat) India.
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
 
       {/* ── Copyright bar ── */}
-      <div
-        style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
-        className="px-4 py-4 sm:px-10 lg:px-[168px]"
+      <Box
+        sx={{
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          px: { xs: 2, sm: 5, md: "168px" },
+          py: 2,
+        }}
       >
-        <p style={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "12px", fontWeight: 400, lineHeight: "normal", textAlign: "left", margin: 0 }}>
+        <Typography
+          sx={{
+            color: "#707070",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "12px",
+            fontWeight: 400,
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
           Copyright © 202X Orange Private Limited. All rights reserved.
-        </p>
-      </div>
-
-    </footer>
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 

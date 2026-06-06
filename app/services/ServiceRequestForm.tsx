@@ -176,7 +176,7 @@ export default function ServiceRequestForm() {
             variant="outlined"
             size="small"
             sx={INPUT_SX}
-            inputProps={{ style: { padding: "12px 14px" } }}
+            slotProps={{ htmlInput: { style: { padding: "12px 14px" } } }}
           />
         </Box>
 
@@ -195,13 +195,15 @@ export default function ServiceRequestForm() {
             size="small"
             type="email"
             sx={INPUT_SX}
-            inputProps={{ style: { padding: "12px 14px" } }}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <EmailOutlinedIcon sx={{ fontSize: "18px", color: "#B0B0B0" }} />
-                </InputAdornment>
-              ),
+            slotProps={{
+              htmlInput: { style: { padding: "12px 14px" } },
+              input: {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <EmailOutlinedIcon sx={{ fontSize: "18px", color: "#B0B0B0" }} />
+                  </InputAdornment>
+                ),
+              },
             }}
           />
         </Box>
@@ -221,7 +223,7 @@ export default function ServiceRequestForm() {
             multiline
             rows={4}
             sx={INPUT_SX}
-            inputProps={{ style: { fontFamily: "Inter, sans-serif", fontSize: "14px" } }}
+            slotProps={{ htmlInput: { style: { fontFamily: "Inter, sans-serif", fontSize: "14px" } } }}
           />
         </Box>
 

@@ -124,7 +124,9 @@ export default function PioneeringSolutions() {
           }}
         >
           Pioneering Solutions{" "}
-          <Box component="span" sx={{ color: "#707070" }}>for</Box>
+          <Box component="span" sx={{ color: "#707070" }}>
+            for
+          </Box>
           <Box component="span" sx={{ display: "block" }}>
             Enhanced Your Experience
           </Box>
@@ -228,7 +230,10 @@ export default function PioneeringSolutions() {
               onMouseLeave={() => setHoveredCard(null)}
               sx={{
                 width: { xs: `${CARD_WIDTH_XS}px`, md: `${CARD_WIDTH_MD}px` },
-                minWidth: { xs: `${CARD_WIDTH_XS}px`, md: `${CARD_WIDTH_MD}px` },
+                minWidth: {
+                  xs: `${CARD_WIDTH_XS}px`,
+                  md: `${CARD_WIDTH_MD}px`,
+                },
                 flexShrink: 0,
                 display: "flex",
                 flexDirection: "column",
@@ -243,7 +248,14 @@ export default function PioneeringSolutions() {
               }}
             >
               {/* Text */}
-              <Box sx={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                  width: "100%",
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: "Inter, sans-serif",
@@ -263,7 +275,8 @@ export default function PioneeringSolutions() {
                     fontSize: { xs: "12px", md: "13px" },
                     fontWeight: 400,
                     lineHeight: { xs: "19.2px", md: "20.8px" },
-                    color: hoveredCard === i ? "rgba(255,255,255,0.85)" : "#707070",
+                    color:
+                      hoveredCard === i ? "rgba(255,255,255,0.85)" : "#707070",
                     textAlign: "center",
                     transition: "color 0.25s",
                   }}
@@ -288,7 +301,11 @@ export default function PioneeringSolutions() {
                   alt={card.title}
                   width={300}
                   height={300}
-                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
                 />
               </Box>
             </Box>

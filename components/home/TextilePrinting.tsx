@@ -136,6 +136,7 @@ const NAV_BTN_SX = {
 const TextilePrinting = () => {
   const [selectedBrand, setSelectedBrand] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
+  const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const currentProducts = BRANDS[selectedBrand].products;
@@ -184,6 +185,7 @@ const TextilePrinting = () => {
         sx={{
           display: "flex",
           flexWrap: "nowrap",
+          justifyContent: { xs: "flex-start", md: "center" },
           gap: { xs: "8px", md: "14px" },
           mt: 3,
           px: { xs: 1, md: 0 },
@@ -200,6 +202,8 @@ const TextilePrinting = () => {
           <Button
             key={brand.name}
             onClick={() => handleBrandChange(index)}
+            onMouseEnter={() => setHoveredBrand(index)}
+            onMouseLeave={() => setHoveredBrand(null)}
             sx={{
               flex: { xs: "0 0 auto", md: "1 0 0" },
               minWidth: { xs: "100px", md: 0 },
@@ -214,8 +218,9 @@ const TextilePrinting = () => {
                   ? "2px solid #F6891F"
                   : "1px solid #E0E0E0",
               background: "#fff",
-              transition: "0.2s",
-              "&:hover": { borderColor: "#F6891F" },
+              boxShadow: "none",
+              transition: "border 0.2s",
+              "&:hover": { boxShadow: "none" },
             }}
           >
             <Box
@@ -223,6 +228,11 @@ const TextilePrinting = () => {
                 width: "100%",
                 height: { xs: "48px", md: "56px" },
                 position: "relative",
+                transition: "filter 0.25s",
+                filter:
+                  selectedBrand === index || hoveredBrand === index
+                    ? "none"
+                    : "grayscale(1)",
               }}
             >
               <Image
@@ -237,6 +247,11 @@ const TextilePrinting = () => {
                 width: "100%",
                 height: { xs: "18px", md: "22px" },
                 position: "relative",
+                transition: "filter 0.25s",
+                filter:
+                  selectedBrand === index || hoveredBrand === index
+                    ? "none"
+                    : "grayscale(1)",
               }}
             >
               <Image

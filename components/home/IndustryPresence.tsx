@@ -188,7 +188,7 @@ const IndustryPresence = () => {
           display: "flex",
           gap: "12px",
           flexWrap: { xs: "nowrap", md: "wrap" },
-          justifyContent: "center",
+          justifyContent: { xs: "flex-start", md: "center" },
           overflowX: { xs: "auto", md: "visible" },
           width: "100%",
           scrollbarWidth: "none",

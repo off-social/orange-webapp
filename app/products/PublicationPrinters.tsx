@@ -237,7 +237,7 @@ export default function PublicationPrinters() {
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: "12px", md: 2 },
           mt: 3,
-          mb: { xs: 4, md: 2 },
+          mb: { xs: 6, md: 10 },
           justifyContent: "center",
           px: { xs: "16px", md: 0 },
           animation: FADE_ANIM,

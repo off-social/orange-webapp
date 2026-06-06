@@ -28,27 +28,63 @@ const brands: BrandItem[] = [
     name: "Colorix",
     image: "/colorix.png",
     previewImage: [
-      { src: "/PositionPro1.png", name: "Position Pro Digital Textile Printer", desc: "Precision Positioning for High-Speed Fabric Printing." },
-      { src: "/FabPro1i1.png", name: "FabPro 1i Digital Textile Printer (Made in India)", desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality" },
-      { src: "/FabPro2i1.png", name: "FabPro 2i Digital Textile Printer (Made in India)", desc: "High-Speed Precision Textile Printing." },
+      {
+        src: "/PositionPro1.png",
+        name: "Position Pro Digital Textile Printer",
+        desc: "Precision Positioning for High-Speed Fabric Printing.",
+      },
+      {
+        src: "/FabPro1i1.png",
+        name: "FabPro 1i Digital Textile Printer (Made in India)",
+        desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality",
+      },
+      {
+        src: "/FabPro2i1.png",
+        name: "FabPro 2i Digital Textile Printer (Made in India)",
+        desc: "High-Speed Precision Textile Printing.",
+      },
     ],
   },
   {
     name: "Homer",
     image: "/homer.png",
     previewImage: [
-      { src: "/K241.png", name: "K24 Digital Textile Printer", desc: "Engineered for Exceptional Precision & Consistent Print Accuracy." },
-      { src: "/K641.png", name: "K64 Digital Textile Printer", desc: "Advanced Precision for Superior Fabric Print Quality." },
-      { src: "/K321.png", name: "K32 Digital Textile Printer", desc: "Delivering Accurate, High-Quality Results Across Every Print Run." },
+      {
+        src: "/K241.png",
+        name: "K24 Digital Textile Printer",
+        desc: "Engineered for Exceptional Precision & Consistent Print Accuracy.",
+      },
+      {
+        src: "/K641.png",
+        name: "K64 Digital Textile Printer",
+        desc: "Advanced Precision for Superior Fabric Print Quality.",
+      },
+      {
+        src: "/K321.png",
+        name: "K32 Digital Textile Printer",
+        desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
+      },
     ],
   },
   {
     name: "MS",
     image: "/ms.png",
     previewImage: [
-      { src: "/JP701.png", name: "JP7 Industrial Digital Textile Printer", desc: "Intelligent Printing for Demanding Production Environments." },
-      { src: "/JPK-Evo01.png", name: "JPK Evo Industrial Digital Textile Printer", desc: "Engineered for Long-Run Performance and Uninterrupted Productivity." },
-      { src: "/Minilario01.png", name: "Minilario Industrial Digital Textile Printer", desc: "Optimized for Efficiency, Reliability, and Scalable Growth." },
+      {
+        src: "/JP701.png",
+        name: "JP7 Industrial Digital Textile Printer",
+        desc: "Intelligent Printing for Demanding Production Environments.",
+      },
+      {
+        src: "/JPK-Evo01.png",
+        name: "JPK Evo Industrial Digital Textile Printer",
+        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
+      },
+      {
+        src: "/Minilario01.png",
+        name: "Minilario Industrial Digital Textile Printer",
+        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
+      },
     ],
   },
   {
@@ -59,24 +95,56 @@ const brands: BrandItem[] = [
       {
         label: "Foil",
         previewImage: [
-          { src: "/radoimg1.png", name: "FoilJet 8 Head Digital Printer", desc: "Designed for High-Impact Effects and Superior Visual Appeal." },
-          { src: "/radoimg2.png", name: "FoilJet 16 Head Digital Printer", desc: "Designed for Large-Scale Printing with Consistent Results." },
+          {
+            src: "/radoimg1.png",
+            name: "FoilJet 8 Head Digital Printer",
+            desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
+          },
+          {
+            src: "/radoimg2.png",
+            name: "FoilJet 16 Head Digital Printer",
+            desc: "Designed for Large-Scale Printing with Consistent Results.",
+          },
         ],
       },
       {
         label: "Alpha",
         previewImage: [
-          { src: "/radoimgAlpha1.png", name: "Alpha II Industrial Sublimation Printer", desc: "Built for Continuous Production and Exceptional Transfer Quality." },
-          { src: "/radoimgAlpha2.png", name: "Alpha III Industrial Sublimation Printer", desc: "Built for Maximum Output and Uninterrupted Production." },
-          { src: "/radoimgAlpha3.png", name: "Alpha 15 Industrial Sublimation Printer", desc: "Built for Ultra-High Production and Industrial-Grade Performance." },
-          { src: "/radoimgAlpha4.png", name: "Alpha 16 Industrial Sublimation Printer", desc: "Combining Power, Precision, and Production Efficiency." },
+          {
+            src: "/radoimgAlpha1.png",
+            name: "Alpha II Industrial Sublimation Printer",
+            desc: "Built for Continuous Production and Exceptional Transfer Quality.",
+          },
+          {
+            src: "/radoimgAlpha2.png",
+            name: "Alpha III Industrial Sublimation Printer",
+            desc: "Built for Maximum Output and Uninterrupted Production.",
+          },
+          {
+            src: "/radoimgAlpha3.png",
+            name: "Alpha 15 Industrial Sublimation Printer",
+            desc: "Built for Ultra-High Production and Industrial-Grade Performance.",
+          },
+          {
+            src: "/radoimgAlpha4.png",
+            name: "Alpha 16 Industrial Sublimation Printer",
+            desc: "Combining Power, Precision, and Production Efficiency.",
+          },
         ],
       },
       {
         label: "Sub Pro",
         previewImage: [
-          { src: "/radoimgA1.png", name: "SubPro S-16 Industrial Sublimation Printer", desc: "Designed to Handle Demanding Production with Ease." },
-          { src: "/radoimgA2.png", name: "SubPro II Industrial Dye-Sublimation Printer", desc: "Engineered for High-Volume Printing with Exceptional Clarity." },
+          {
+            src: "/radoimgA1.png",
+            name: "SubPro S-16 Industrial Sublimation Printer",
+            desc: "Designed to Handle Demanding Production with Ease.",
+          },
+          {
+            src: "/radoimgA2.png",
+            name: "SubPro II Industrial Dye-Sublimation Printer",
+            desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
+          },
         ],
       },
     ],
@@ -85,7 +153,11 @@ const brands: BrandItem[] = [
     name: "Pengda",
     image: "/pengda.png",
     previewImage: [
-      { src: "/Pengda1.png", name: "Pengda Industrial Sublimation Machine", desc: "Delivering Reliable Performance for High-Volume Textile Applications." },
+      {
+        src: "/Pengda1.png",
+        name: "Pengda Industrial Sublimation Machine",
+        desc: "Delivering Reliable Performance for High-Volume Textile Applications.",
+      },
     ],
   },
 ];
@@ -108,19 +180,26 @@ export default function DigitalTextilePrinters() {
   const [selected, setSelected] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const [radoTab, setRadoTab] = useState(0);
+  const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleBrandChange = (index: number) => {
     setSelected(index);
     setActiveImg(0);
     setRadoTab(0);
-    setTimeout(() => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }), 50);
+    setTimeout(
+      () => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }),
+      50,
+    );
   };
 
   const handleRadoTabChange = (_: React.SyntheticEvent, newValue: number) => {
     setRadoTab(newValue);
     setActiveImg(0);
-    setTimeout(() => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }), 50);
+    setTimeout(
+      () => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }),
+      50,
+    );
   };
 
   const activeImages =
@@ -140,7 +219,10 @@ export default function DigitalTextilePrinters() {
   };
 
   const scrollTo = (index: number) => {
-    scrollRef.current?.scrollTo({ left: index * getSlideWidth(), behavior: "smooth" });
+    scrollRef.current?.scrollTo({
+      left: index * getSlideWidth(),
+      behavior: "smooth",
+    });
   };
 
   const currentImg = activeImages[activeImg];
@@ -188,7 +270,7 @@ export default function DigitalTextilePrinters() {
         sx={{
           display: "flex",
           flexWrap: "nowrap",
-          justifyContent: "center",
+          justifyContent: { xs: "flex-start", md: "center" },
           gap: { xs: "8px", md: "14px" },
           mt: 3,
           px: { xs: 1, md: 0 },
@@ -203,6 +285,8 @@ export default function DigitalTextilePrinters() {
           <Button
             key={brand.name}
             onClick={() => handleBrandChange(index)}
+            onMouseEnter={() => setHoveredBrand(index)}
+            onMouseLeave={() => setHoveredBrand(null)}
             sx={{
               flex: { xs: "0 0 auto", md: "1 0 0" },
               minWidth: { xs: "100px", md: 0 },
@@ -212,13 +296,26 @@ export default function DigitalTextilePrinters() {
               alignItems: "center",
               gap: "8px",
               borderRadius: "16px",
-              border: selected === index ? "2px solid #F6891F" : "1px solid #E0E0E0",
+              border:
+                selected === index ? "2px solid #F6891F" : "1px solid #E0E0E0",
               background: "#fff",
-              transition: "0.2s",
-              "&:hover": { borderColor: "#F6891F" },
+              boxShadow: "none",
+              transition: "border 0.2s",
+              "&:hover": { boxShadow: "none" },
             }}
           >
-            <Box sx={{ width: "100%", height: { xs: "48px", md: "56px" }, position: "relative" }}>
+            <Box
+              sx={{
+                width: "100%",
+                height: { xs: "48px", md: "56px" },
+                position: "relative",
+                transition: "filter 0.25s",
+                filter:
+                  selected === index || hoveredBrand === index
+                    ? "none"
+                    : "grayscale(1)",
+              }}
+            >
               <Image
                 src={
                   brand.tabs
@@ -230,8 +327,24 @@ export default function DigitalTextilePrinters() {
                 style={{ objectFit: "contain" }}
               />
             </Box>
-            <Box sx={{ width: "100%", height: { xs: "18px", md: "22px" }, position: "relative" }}>
-              <Image src={brand.image} alt={brand.name} fill style={{ objectFit: "contain" }} />
+            <Box
+              sx={{
+                width: "100%",
+                height: { xs: "18px", md: "22px" },
+                position: "relative",
+                transition: "filter 0.25s",
+                filter:
+                  selected === index || hoveredBrand === index
+                    ? "none"
+                    : "grayscale(1)",
+              }}
+            >
+              <Image
+                src={brand.image}
+                alt={brand.name}
+                fill
+                style={{ objectFit: "contain" }}
+              />
             </Box>
           </Button>
         ))}
@@ -270,7 +383,10 @@ export default function DigitalTextilePrinters() {
                 whiteSpace: "nowrap",
                 flexShrink: 0,
                 boxShadow: "none",
-                "&:hover": { bgcolor: radoTab === i ? "#333" : "#f5f5f5", boxShadow: "none" },
+                "&:hover": {
+                  bgcolor: radoTab === i ? "#333" : "#f5f5f5",
+                  boxShadow: "none",
+                },
               }}
             >
               {tab.label}
@@ -285,7 +401,15 @@ export default function DigitalTextilePrinters() {
           {/* Left arrow */}
           <Button
             onClick={() => scrollTo(Math.max(0, activeImg - 1))}
-            sx={{ ...NAV_BTN_SX, display: { xs: "none", md: "flex" }, position: "absolute", left: { md: "calc(20vw - 56px)" }, top: "50%", transform: "translateY(-50%)", zIndex: 2 }}
+            sx={{
+              ...NAV_BTN_SX,
+              display: { xs: "none", md: "flex" },
+              position: "absolute",
+              left: { md: "calc(20vw - 56px)" },
+              top: "50%",
+              transform: "translateY(-50%)",
+              zIndex: 2,
+            }}
           >
             ←
           </Button>
@@ -327,7 +451,11 @@ export default function DigitalTextilePrinters() {
                   alt={img.name}
                   width={900}
                   height={500}
-                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
                 />
               </Box>
             ))}
@@ -335,8 +463,18 @@ export default function DigitalTextilePrinters() {
 
           {/* Right arrow */}
           <Button
-            onClick={() => scrollTo(Math.min(activeImages.length - 1, activeImg + 1))}
-            sx={{ ...NAV_BTN_SX, display: { xs: "none", md: "flex" }, position: "absolute", right: { md: "calc(20vw - 56px)" }, top: "50%", transform: "translateY(-50%)", zIndex: 2 }}
+            onClick={() =>
+              scrollTo(Math.min(activeImages.length - 1, activeImg + 1))
+            }
+            sx={{
+              ...NAV_BTN_SX,
+              display: { xs: "none", md: "flex" },
+              position: "absolute",
+              right: { md: "calc(20vw - 56px)" },
+              top: "50%",
+              transform: "translateY(-50%)",
+              zIndex: 2,
+            }}
           >
             →
           </Button>
@@ -346,17 +484,49 @@ export default function DigitalTextilePrinters() {
       {/* Product info */}
       {currentImg && (
         <>
-          <Box key={animKey} sx={{ textAlign: "center", px: { xs: "16px", sm: "10%", md: "20%" }, mt: { xs: 2, md: 3 }, animation: FADE_ANIM }}>
-            <Typography sx={{ color: "#333", fontFamily: "Inter, sans-serif", fontSize: "20px", fontWeight: 500, lineHeight: "26px" }}>
+          <Box
+            key={animKey}
+            sx={{
+              textAlign: "center",
+              px: { xs: "16px", sm: "10%", md: "20%" },
+              mt: { xs: 2, md: 3 },
+              animation: FADE_ANIM,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#333",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "20px",
+                fontWeight: 500,
+                lineHeight: "26px",
+              }}
+            >
               {currentImg.name}
             </Typography>
-            <Typography sx={{ color: "#707070", fontFamily: "Inter, sans-serif", fontSize: "12px", fontWeight: 500, lineHeight: "19.2px", mt: "6px" }}>
+            <Typography
+              sx={{
+                color: "#707070",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                fontWeight: 500,
+                lineHeight: "19.2px",
+                mt: "6px",
+              }}
+            >
               {currentImg.desc}
             </Typography>
           </Box>
 
           {/* Dot indicators */}
-          <Box sx={{ display: "flex", justifyContent: "center", gap: "4px", mt: "20px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "4px",
+              mt: "20px",
+            }}
+          >
             {activeImages.map((_, i) => (
               <Box
                 key={i}
@@ -381,7 +551,7 @@ export default function DigitalTextilePrinters() {
               flexDirection: { xs: "column", md: "row" },
               gap: { xs: "12px", md: 2 },
               mt: 3,
-              mb: { xs: 4, md: 2 },
+              mb: { xs: 6, md: 10 },
               justifyContent: "center",
               px: { xs: "16px", md: 0 },
               animation: FADE_ANIM,
@@ -389,7 +559,9 @@ export default function DigitalTextilePrinters() {
           >
             <Button
               variant="contained"
-              endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+              }
               sx={{
                 bgcolor: "#F6891F",
                 color: "#fff",

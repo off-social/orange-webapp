@@ -2,14 +2,20 @@
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Box, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
 const SERVICE_CARDS = [
   {
     title: "Service Turnaround Promise",
-    desc: "We're committed to resolving service requests quickly and efficiently. 72-hour response for on-site repairs in most regions. Same-day support for remote assistance and diagnostics.",
+    desc: "We aim to resolve service requests fast: 72-hour on-site repairs in most areas and same-day remote support.",
     img: "/Illustration.png",
   },
   {
@@ -19,12 +25,12 @@ const SERVICE_CARDS = [
   },
   {
     title: "Breakdown & On-Site Repairs",
-    desc: "Unexpected issues? We've got you covered. Our trained engineers are deployed from key service hubs, to ensure swift on-site support anywhere in India.",
+    desc: "Unexpected issues? We’ve got you covered. Our trained engineers are deployed from key service hubs to ensure swift on-site support anywhere in India",
     img: "/Breakdown-On-Site-Repairs.png",
   },
   {
     title: "Preventive Maintenance",
-    desc: "Regular maintenance sessions lessen breakdowns and keeps machine life. Our team offers scheduled preventive visits to help you avoid costly downtime and maintain consistent output quality.",
+    desc: "Regular maintenance means fewer breakdowns and longer machine life. Our team offers scheduled preventive visits to help you avoid costly downtime and maintain consistent output quality.",
     img: "/Preventive-Maintenance.png",
   },
   {
@@ -39,17 +45,22 @@ const SERVICE_CARDS = [
   },
   {
     title: "Spare Parts & Consumables",
-    desc: "We maintain ready stock of critical spare parts and consumables across our warehouses, ensuring fast dispatch and reduced machine downtime. Print heads | Inks & Filters | Control modules | Belt systems and rollers",
+    desc: "We maintain ready stock of critical spares and consumables across our warehouses, ensuring fast dispatch and reduced machine downtime. Print heads | Inks & filters | Control modules | Belt systems and rollers",
     img: "/SpareParts.png",
   },
 ];
 
-const CARD_WIDTH_MD = 446;
+const CARD_WIDTH_MD = 352;
 const CARD_WIDTH_XS = 300;
 const CARD_GAP = 24;
-const MAX_INDEX = SERVICE_CARDS.length - 2;
 
 export default function PioneeringSolutions() {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up("md"));
+  const cardWidth = isMd ? CARD_WIDTH_MD : CARD_WIDTH_XS;
+  const cardsPerView = isMd ? 3 : 1;
+  const maxIndex = Math.max(SERVICE_CARDS.length - cardsPerView, 0);
+
   const [current, setCurrent] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
@@ -57,7 +68,7 @@ export default function PioneeringSolutions() {
   const lastWheelTime = useRef(0);
 
   const handlePrev = () => setCurrent((c) => Math.max(c - 1, 0));
-  const handleNext = () => setCurrent((c) => Math.min(c + 1, MAX_INDEX));
+  const handleNext = () => setCurrent((c) => Math.min(c + 1, maxIndex));
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX;
@@ -69,19 +80,23 @@ export default function PioneeringSolutions() {
   const onTouchEnd = () => {
     if (touchStartX.current === null || touchEndX.current === null) return;
     const diff = touchStartX.current - touchEndX.current;
-    if (diff > 50) handleNext();
-    else if (diff < -50) handlePrev();
+    if (diff > 30) handleNext();
+    else if (diff < -30) handlePrev();
     touchStartX.current = null;
     touchEndX.current = null;
   };
 
   const onWheel = (e: React.WheelEvent) => {
-    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
+    const isShift = e.shiftKey && Math.abs(e.deltaY) > 0;
+    const isHorizontal =
+      !e.shiftKey && Math.abs(e.deltaX) >= Math.abs(e.deltaY);
+    if (!isShift && !isHorizontal) return;
     const now = Date.now();
     if (now - lastWheelTime.current < 600) return;
     lastWheelTime.current = now;
-    if (e.deltaX > 0) handleNext();
-    else if (e.deltaX < 0) handlePrev();
+    const delta = isShift ? e.deltaY : e.deltaX;
+    if (delta > 0) handleNext();
+    else if (delta < 0) handlePrev();
   };
 
   return (
@@ -157,10 +172,10 @@ export default function PioneeringSolutions() {
             Advanced digital printing, designed for real-world production.
           </Typography>
 
-          {/* Arrows — desktop only */}
+          {/* Arrows — all breakpoints */}
           <Box
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               gap: "8px",
               alignItems: "center",
               flexShrink: 0,
@@ -183,14 +198,14 @@ export default function PioneeringSolutions() {
             </IconButton>
             <IconButton
               onClick={handleNext}
-              disabled={current >= MAX_INDEX}
+              disabled={current >= maxIndex}
               sx={{
                 width: "40px",
                 height: "40px",
                 border: "1px solid #E0E0E0",
                 bgcolor: "#FFF",
                 borderRadius: "50%",
-                opacity: current >= MAX_INDEX ? 0.4 : 1,
+                opacity: current >= maxIndex ? 0.4 : 1,
                 "&:hover": { bgcolor: "#f5f5f5" },
               }}
             >
@@ -213,13 +228,9 @@ export default function PioneeringSolutions() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
           onWheel={onWheel}
-          sx={{
-            display: "flex",
-            gap: `${CARD_GAP}px`,
-            transform: {
-              xs: `translateX(calc(-${current} * (${CARD_WIDTH_XS}px + ${CARD_GAP}px)))`,
-              md: `translateX(calc(-${current} * (${CARD_WIDTH_MD}px + ${CARD_GAP}px)))`,
-            },
+          sx={{ display: "flex", gap: `${CARD_GAP}px` }}
+          style={{
+            transform: `translateX(calc(-${current} * (${cardWidth}px + ${CARD_GAP}px)))`,
             transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
@@ -238,10 +249,12 @@ export default function PioneeringSolutions() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                padding: { xs: "24px 16px", md: "40px 24px" },
-                gap: { xs: "32px", md: "64px" },
+                justifyContent: "space-between",
+                padding: { xs: "24px 16px 16px", md: "32px 24px 16px" },
+                gap: "24px",
                 bgcolor: hoveredCard === i ? "#F6891F" : "#FFF",
                 borderRadius: { xs: "17px", md: "25px" },
+                overflow: "hidden",
                 boxSizing: "border-box",
                 transition: "background-color 0.25s",
                 cursor: "default",
@@ -252,16 +265,18 @@ export default function PioneeringSolutions() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "12px",
-                  width: "100%",
+                  alignItems: "center",
+                  gap: "16px",
+                  alignSelf: "stretch",
                 }}
               >
                 <Typography
                   sx={{
                     fontFamily: "Inter, sans-serif",
-                    fontSize: { xs: "13.5px", md: "20px" },
+                    fontSize: { xs: "16px", md: "24px" },
                     fontWeight: 500,
-                    lineHeight: { xs: "17.5px", md: "26px" },
+                    lineHeight: { xs: "25.6px", md: "31.2px" },
+                    letterSpacing: 0,
                     color: hoveredCard === i ? "#FFF" : "#333",
                     textAlign: "center",
                     transition: "color 0.25s",
@@ -272,9 +287,9 @@ export default function PioneeringSolutions() {
                 <Typography
                   sx={{
                     fontFamily: "Inter, sans-serif",
-                    fontSize: { xs: "12px", md: "13px" },
-                    fontWeight: 400,
-                    lineHeight: { xs: "19.2px", md: "20.8px" },
+                    fontSize: { xs: "9.41px", md: "13px" },
+                    fontWeight: 500,
+                    lineHeight: { xs: "15.06px", md: "20.8px" },
                     color:
                       hoveredCard === i ? "rgba(255,255,255,0.85)" : "#707070",
                     textAlign: "center",
@@ -288,8 +303,8 @@ export default function PioneeringSolutions() {
               {/* Image */}
               <Box
                 sx={{
-                  width: { xs: "202px", md: "300px" },
-                  height: { xs: "202px", md: "300px" },
+                  width: { xs: "202px", md: "200px" },
+                  height: { xs: "202px", md: "200px" },
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -299,8 +314,8 @@ export default function PioneeringSolutions() {
                 <Image
                   src={card.img}
                   alt={card.title}
-                  width={300}
-                  height={300}
+                  width={200}
+                  height={200}
                   style={{
                     width: "100%",
                     height: "100%",

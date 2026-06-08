@@ -56,7 +56,7 @@ function StatItem({
         style={{
           color: "#F6891F",
           fontFamily: "Inter, sans-serif",
-          fontSize: "clamp(48px, 10vw, 72px)",
+          fontSize: "clamp(36px, 7vw, 72px)",
           fontWeight: 500,
           lineHeight: "normal",
           letterSpacing: "-1px",
@@ -219,9 +219,9 @@ const TheFutureofDigitalPrinting = () => {
       </div>
 
       {/* Section 2 - Presence + Stats + Map */}
-      <div className="w-full bg-white flex flex-col md:flex-row items-stretch gap-10 md:gap-16 px-4 py-12 md:px-[168px] md:py-[80px]">
+      <div className="w-full bg-white flex flex-col md:flex-row items-stretch gap-8 md:gap-10 xl:gap-16 px-4 md:px-[40px] xl:px-[168px] py-12 md:py-[60px] xl:py-[80px]">
         {/* Left: label + heading + stats */}
-        <div className="flex flex-col items-center md:items-start gap-10 flex-shrink-0 w-full md:w-auto">
+        <div className="flex flex-col items-center md:items-start gap-8 md:gap-10 flex-shrink-0 w-full md:w-auto">
           {/* Title group — 8px gap */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <p
@@ -244,7 +244,7 @@ const TheFutureofDigitalPrinting = () => {
               style={{
                 color: "#333",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "clamp(24px, 5vw, 40px)",
+                fontSize: "clamp(22px, 4vw, 40px)",
                 fontWeight: 500,
                 lineHeight: "1.3",
                 letterSpacing: "-1px",

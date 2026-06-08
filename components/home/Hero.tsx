@@ -56,20 +56,20 @@ const Home = () => {
           sx={{
             position: "absolute",
             bottom: { xs: "12px", md: "24px" },
-            left: { xs: "12px", md: "50%" },
-            right: { xs: "12px", md: "auto" },
-            width: { xs: "auto", md: "1320px" },
-            transform: { xs: "none", md: "translateX(-50%)" },
+            left: { xs: "12px", md: "40px", lg: "168px" },
+            right: { xs: "12px", md: "40px", lg: "168px" },
+            width: "auto",
+            transform: "none",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            padding: { xs: "20px", sm: "28px", md: "40px" },
+            padding: { xs: "20px", sm: "28px", md: "32px", lg: "40px" },
             justifyContent: "space-between",
             alignItems: { xs: "flex-start", md: "flex-end" },
             borderRadius: "20px",
             border: "1px solid #FFF",
             background: "rgba(239, 239, 239, 0.10)",
             backdropFilter: "blur(20px)",
-            gap: { xs: "16px", sm: "20px", md: "32px" },
+            gap: { xs: "16px", sm: "20px", md: "24px", lg: "32px" },
           }}
         >
           {/* Left: Heading + subtitle */}
@@ -78,9 +78,9 @@ const Home = () => {
               sx={{
                 color: "#111",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "26px", sm: "32px", md: "40px" },
+                fontSize: { xs: "26px", sm: "28px", md: "28px", lg: "40px" },
                 fontWeight: 500,
-                lineHeight: { xs: "34px", md: "52px" },
+                lineHeight: { xs: "34px", md: "36px", lg: "52px" },
                 letterSpacing: "-1px",
               }}
             >
@@ -194,7 +194,7 @@ const Home = () => {
                 color: "#707070",
                 textAlign: "center",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "16px",
+                fontSize: { xs: "12px", md: "16px" },
                 fontWeight: 400,
                 lineHeight: "25.6px",
                 letterSpacing: "10px",
@@ -246,9 +246,9 @@ const Home = () => {
                 onClick={() => setValue(index)}
                 sx={{
                   display: "flex",
-                  padding: "12px 24px",
+                  padding: { xs: "8px 20px", md: "12px 24px" },
                   alignItems: "center",
-                  gap: "16px",
+                  gap: "8px",
                   borderRadius: "32px",
                   bgcolor: value === index ? "#111" : "#FFF",
                   color: value === index ? "#FFF" : "#333",
@@ -256,10 +256,10 @@ const Home = () => {
                     value === index ? "1px solid #111" : "1px solid #E0E0E0",
                   textTransform: "none",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "14px",
+                  fontSize: { xs: "12px", md: "14px" },
                   fontStyle: "normal",
                   fontWeight: 500,
-                  lineHeight: "22.4px",
+                  lineHeight: { xs: "19.2px", md: "22.4px" },
                   minWidth: "unset",
                   whiteSpace: "nowrap",
                   flexShrink: 0,

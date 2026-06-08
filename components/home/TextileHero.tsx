@@ -14,7 +14,7 @@ const TextileHero = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: { xs: "320px", md: "420px" },
+        minHeight: { xs: "320px", md: "380px", lg: "420px" },
       }}
     >
       {/* Mobile background image */}
@@ -73,9 +73,9 @@ const TextileHero = () => {
           alignItems: "center",
           textAlign: "center",
           gap: "16px",
-          px: { xs: "24px", md: "48px" },
-          py: { xs: "48px", md: "80px" },
-          maxWidth: "800px",
+          px: { xs: "24px", sm: "48px", md: "40px", lg: "48px" },
+          py: { xs: "48px", sm: "56px", md: "60px", lg: "80px" },
+          maxWidth: { xs: "100%", sm: "640px", md: "800px" },
           mx: "auto",
           width: "100%",
         }}
@@ -85,10 +85,10 @@ const TextileHero = () => {
             color: "#EFEFEF",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "40px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
-            letterSpacing: { xs: 0, md: "-1px" },
+            lineHeight: { xs: "31.2px", sm: "36px", md: "40px", lg: "52px" },
+            letterSpacing: { xs: 0, sm: "-0.3px", md: "-0.5px", lg: "-1px" },
           }}
         >
           Transform Your Textile Printing with
@@ -101,10 +101,10 @@ const TextileHero = () => {
             color: "#E0E0E0",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "13px", lg: "14px" },
             fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
-            maxWidth: "680px",
+            lineHeight: { xs: "19.2px", md: "21px", lg: "22.4px" },
+            maxWidth: { xs: "100%", sm: "440px", md: "520px", lg: "680px" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
@@ -117,7 +117,7 @@ const TextileHero = () => {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             gap: "12px",
-            mt: "8px",
+            mt: { xs: "8px", md: "12px" },
             width: { xs: "100%", sm: "auto" },
           }}
         >

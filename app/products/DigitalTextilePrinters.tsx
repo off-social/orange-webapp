@@ -306,8 +306,8 @@ export default function DigitalTextilePrinters() {
           >
             <Box
               sx={{
-                width: "100%",
-                height: { xs: "48px", md: "56px" },
+                width: { xs: "120px", md: "100%" },
+                height: { xs: "40px", md: "56px" },
                 position: "relative",
                 transition: "filter 0.25s",
                 filter:
@@ -329,8 +329,8 @@ export default function DigitalTextilePrinters() {
             </Box>
             <Box
               sx={{
-                width: "100%",
-                height: { xs: "18px", md: "22px" },
+                width: { xs: "55px", md: "100%" },
+                height: { xs: "30px", md: "22px" },
                 position: "relative",
                 transition: "filter 0.25s",
                 filter:

@@ -20,7 +20,7 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
         fontSize: sm ? "12px" : { xs: "10px", md: "16px" },
         fontWeight: 400,
         lineHeight: "25.6px",
-        letterSpacing: sm ? "6px" : { xs: "5px", md: "10px" },
+        letterSpacing: sm ? "6px" : { xs: "5px", md: "6px", lg: "10px" },
         textTransform: "uppercase",
         mb: "8px",
       }}
@@ -32,10 +32,10 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
       component="h2"
       sx={{
         color: "#333",
-        fontSize: sm ? "28px" : { xs: "24px", md: "40px" },
+        fontSize: sm ? "28px" : { xs: "24px", md: "32px", lg: "40px" },
         fontWeight: 500,
-        lineHeight: sm ? "38px" : { xs: "32px", md: "52px" },
-        letterSpacing: sm ? "-0.5px" : { xs: "-0.5px", md: "-1px" },
+        lineHeight: sm ? "38px" : { xs: "32px", md: "42px", lg: "52px" },
+        letterSpacing: sm ? "-0.5px" : { xs: "-0.5px", md: "-0.5px", lg: "-1px" },
       }}
     >
       The Power of{" "}
@@ -142,7 +142,7 @@ const ThePowerOfOrange = () => {
         {/* Machine image */}
         <Box sx={{ width: "100%", aspectRatio: "4/3", position: "relative", my: "24px" }}>
           <Image
-            src="/theorngeimg1.png"
+            src="/thePowerofOrange1.png"
             alt="The Power of Orange"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
@@ -190,14 +190,14 @@ const ThePowerOfOrange = () => {
           display: { xs: "none", sm: "block", md: "none" },
           position: "relative",
           width: "100%",
-          aspectRatio: "16/9",
+          aspectRatio: "16/10",
           overflow: "hidden",
           bgcolor: "#fff",
         }}
       >
         <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} />
-        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 38%, rgba(255,255,255,0.3) 58%, rgba(255,255,255,0) 72%)", pointerEvents: "none" }} />
-        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "58%", display: "flex", flexDirection: "column", justifyContent: "center", pl: "40px", pr: "20px" }}>
+        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0) 48%)", pointerEvents: "none" }} />
+        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "55%", display: "flex", flexDirection: "column", justifyContent: "center", pl: "48px", pr: "20px" }}>
           <TextContent sm />
         </Box>
       </Box>
@@ -215,7 +215,7 @@ const ThePowerOfOrange = () => {
       >
         <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 70%)", pointerEvents: "none" }} />
-        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "52%", display: "flex", flexDirection: "column", justifyContent: "center", pl: { md: "64px", lg: "120px" }, pr: "32px" }}>
+        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: { md: "58%", lg: "52%" }, display: "flex", flexDirection: "column", justifyContent: "center", pl: { md: "40px", lg: "168px" }, pr: { md: "24px", lg: "32px" } }}>
           <TextContent />
         </Box>
       </Box>

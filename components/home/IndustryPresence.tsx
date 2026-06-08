@@ -93,7 +93,8 @@ const IndustryPresence = () => {
 
   useEffect(() => {
     const updateWidth = () => {
-      if (containerRef.current) setContainerWidth(containerRef.current.offsetWidth);
+      if (containerRef.current)
+        setContainerWidth(containerRef.current.offsetWidth);
     };
     updateWidth();
     window.addEventListener("resize", updateWidth);
@@ -101,9 +102,11 @@ const IndustryPresence = () => {
   }, []);
 
   const peekWidth = isMobile ? 32 : 0;
-  const cardWidth = containerWidth > 0
-    ? (containerWidth - GAP * (CARDS_PER_VIEW - 1) - peekWidth) / CARDS_PER_VIEW
-    : 380;
+  const cardWidth =
+    containerWidth > 0
+      ? (containerWidth - GAP * (CARDS_PER_VIEW - 1) - peekWidth) /
+        CARDS_PER_VIEW
+      : 380;
 
   const cards = data[active];
   const maxIndex = Math.max(cards.length - CARDS_PER_VIEW, 0);
@@ -136,10 +139,10 @@ const IndustryPresence = () => {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "80px 168px" },
+        padding: { xs: "64px 16px", md: "64px 40px", lg: "80px 168px" },
         flexDirection: "column",
-        alignItems: { xs: "flex-start", md: "center" },
-        gap: { xs: "40px", md: "64px" },
+        alignItems: "center",
+        gap: { xs: "40px", md: "40px", lg: "64px" },
         alignSelf: "stretch",
         bgcolor: "#F2F2F2",
       }}
@@ -149,9 +152,9 @@ const IndustryPresence = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: { xs: "flex-start", md: "center" },
+          alignItems: "center",
           gap: "8px",
-          textAlign: { xs: "left", md: "center" },
+          textAlign: "center",
           width: "100%",
         }}
       >
@@ -188,8 +191,8 @@ const IndustryPresence = () => {
           display: "flex",
           gap: "12px",
           flexWrap: { xs: "nowrap", md: "wrap" },
-          justifyContent: { xs: "flex-start", md: "center" },
-          overflowX: { xs: "auto", md: "visible" },
+          justifyContent: { xs: "flex-start", sm: "center" },
+          overflowX: { xs: "auto", sm: "visible" },
           width: "100%",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
@@ -300,7 +303,9 @@ const IndustryPresence = () => {
                 </Box>
 
                 {/* Content — outside card */}
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                <Box
+                  sx={{ display: "flex", flexDirection: "column", gap: "6px" }}
+                >
                   <Typography
                     sx={{
                       color: "#111",
@@ -382,7 +387,14 @@ const IndustryPresence = () => {
 
       {/* Dot indicators */}
       {cards.length > CARDS_PER_VIEW && (
-        <Box sx={{ display: "flex", gap: "6px", justifyContent: "center", width: "100%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "6px",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <Box
               key={i}
@@ -403,7 +415,9 @@ const IndustryPresence = () => {
       {/* Book a Demo button */}
       <Button
         variant="contained"
-        startIcon={<CalendarTodayOutlinedIcon sx={{ fontSize: "16px !important" }} />}
+        startIcon={
+          <CalendarTodayOutlinedIcon sx={{ fontSize: "16px !important" }} />
+        }
         endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
         sx={{
           bgcolor: "#111",

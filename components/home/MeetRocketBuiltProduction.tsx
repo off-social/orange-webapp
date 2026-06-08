@@ -16,7 +16,7 @@ const MeetRocketBuiltProduction = () => {
       {/* ── MOBILE layout ── */}
       <Box
         sx={{
-          display: { xs: "flex", md: "none" },
+          display: { xs: "flex", sm: "none" },
           flexDirection: "column",
           alignItems: "center",
           px: "24px",
@@ -132,7 +132,7 @@ const MeetRocketBuiltProduction = () => {
       {/* ── DESKTOP layout ── */}
       <Box
         sx={{
-          display: { xs: "none", md: "block" },
+          display: { xs: "none", sm: "block" },
           position: "relative",
           width: "100%",
         }}
@@ -168,10 +168,10 @@ const MeetRocketBuiltProduction = () => {
           <Typography
             sx={{
               color: "#FFF",
-              fontSize: "40px",
+              fontSize: { sm: "28px", md: "40px" },
               fontWeight: 500,
-              lineHeight: "52px",
-              letterSpacing: "-1px",
+              lineHeight: { sm: "36px", md: "52px" },
+              letterSpacing: { sm: "-0.5px", md: "-1px" },
             }}
           >
             Meet, Rocket
@@ -179,10 +179,10 @@ const MeetRocketBuiltProduction = () => {
           <Typography
             sx={{
               color: "#E0E0E0",
-              fontSize: "14px",
+              fontSize: { sm: "13px", md: "14px" },
               fontWeight: 500,
-              lineHeight: "22.4px",
-              maxWidth: "620px",
+              lineHeight: { sm: "20px", md: "22.4px" },
+              maxWidth: { sm: "480px", md: "620px" },
             }}
           >
             Designed specifically to handle the demands of high-volume
@@ -266,9 +266,9 @@ const MeetRocketBuiltProduction = () => {
                 sx={{
                   color: "#FFF",
                   fontFamily: "var(--font-stack-sans-headline)",
-                  fontSize: "24px",
+                  fontSize: { sm: "16px", md: "24px" },
                   fontWeight: 500,
-                  lineHeight: "31.2px",
+                  lineHeight: { sm: "22px", md: "31.2px" },
                 }}
               >
                 {stat.top}
@@ -277,9 +277,9 @@ const MeetRocketBuiltProduction = () => {
                 sx={{
                   color: "#E0E0E0",
                   fontFamily: "var(--font-stack-sans-headline)",
-                  fontSize: "14px",
+                  fontSize: { sm: "11px", md: "14px" },
                   fontWeight: 400,
-                  lineHeight: "22.4px",
+                  lineHeight: { sm: "16px", md: "22.4px" },
                   mt: "4px",
                 }}
               >

@@ -185,14 +185,13 @@ const TextilePrinting = () => {
         sx={{
           display: "flex",
           flexWrap: "nowrap",
-          justifyContent: { xs: "flex-start", md: "center" },
+          justifyContent: { xs: "flex-start", sm: "center" },
           gap: { xs: "8px", md: "14px" },
-          mt: 3,
-          px: { xs: 1, md: 0 },
+          px: { xs: 1, sm: 0 },
           maxWidth: "900px",
           width: "100%",
           mx: "auto",
-          overflowX: { xs: "auto", md: "visible" },
+          overflowX: { xs: "auto", sm: "visible" },
           scrollbarWidth: "none",
           msOverflowStyle: "none",
           "&::-webkit-scrollbar": { display: "none" },
@@ -206,15 +205,15 @@ const TextilePrinting = () => {
             onMouseLeave={() => setHoveredBrand(null)}
             sx={{
               flex: { xs: "0 0 auto", md: "1 0 0" },
-              minWidth: { xs: "100px", md: 0 },
+              minWidth: { xs: "120px", md: 0 },
               display: "flex",
-              padding: { xs: "10px 12px", md: "10px 12px" },
+              padding: { xs: "12px", md: "10px 12px" },
               flexDirection: "column",
               alignItems: "center",
               gap: "8px",
               borderRadius: "16px",
               border:
-                selectedBrand === index
+                selectedBrand === index || hoveredBrand === index
                   ? "2px solid #F6891F"
                   : "1px solid #E0E0E0",
               background: "#fff",
@@ -225,8 +224,8 @@ const TextilePrinting = () => {
           >
             <Box
               sx={{
-                width: "100%",
-                height: { xs: "48px", md: "56px" },
+                width: { xs: "120px", md: "100%" },
+                height: { xs: "40px", md: "56px" },
                 position: "relative",
                 transition: "filter 0.25s",
                 filter:
@@ -244,8 +243,8 @@ const TextilePrinting = () => {
             </Box>
             <Box
               sx={{
-                width: "100%",
-                height: { xs: "18px", md: "22px" },
+                width: { xs: "55px", md: "100%" },
+                height: { xs: "30px", md: "22px" },
                 position: "relative",
                 transition: "filter 0.25s",
                 filter:
@@ -265,9 +264,8 @@ const TextilePrinting = () => {
         ))}
       </Box>
 
-      {/* Product Image Carousel — arrows float on left/right edges */}
+      {/* Product Image Carousel */}
       <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
-        {/* Left arrow */}
         <Button
           onClick={() => scrollToIndex(Math.max(0, activeImg - 1))}
           sx={{
@@ -331,7 +329,6 @@ const TextilePrinting = () => {
           ))}
         </Box>
 
-        {/* Right arrow */}
         <Button
           onClick={() =>
             scrollToIndex(Math.min(currentProducts.length - 1, activeImg + 1))
@@ -350,7 +347,6 @@ const TextilePrinting = () => {
         </Button>
       </Box>
 
-      {/* Product Info & Actions — centered */}
       {currentProduct && (
         <>
           <Box

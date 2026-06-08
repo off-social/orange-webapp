@@ -213,7 +213,7 @@ const TextilePrinting = () => {
               gap: "8px",
               borderRadius: "16px",
               border:
-                selectedBrand === index || hoveredBrand === index
+                selectedBrand === index
                   ? "2px solid #F6891F"
                   : "1px solid #E0E0E0",
               background: "#fff",

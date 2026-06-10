@@ -558,6 +558,26 @@ export default function DigitalTextilePrinters() {
             }}
           >
             <Button
+              variant="outlined"
+              sx={{
+                color: "#111",
+                bgcolor: "#fff",
+                borderColor: "#e0e0e0",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: 3,
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
+                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+              }}
+            >
+              Know More
+            </Button>
+            <Button
               variant="contained"
               endIcon={
                 <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
@@ -578,26 +598,6 @@ export default function DigitalTextilePrinters() {
               }}
             >
               Get a Quote
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#fff",
-                borderColor: "#e0e0e0",
-                borderRadius: "12px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                fontWeight: 500,
-                px: 3,
-                py: "13px",
-                boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
-                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
-              }}
-            >
-              Know More
             </Button>
           </Box>
         </>

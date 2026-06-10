@@ -3,6 +3,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 type Product = { src: string; name: string; desc: string };
@@ -425,6 +426,28 @@ const TextilePrinting = () => {
             }}
           >
             <Button
+              variant="outlined"
+              component={Link}
+              href="/product-details"
+              sx={{
+                color: "#111",
+                bgcolor: "#fff",
+                borderColor: "#e0e0e0",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: { xs: 3, md: 3 },
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", md: "auto" },
+                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+              }}
+            >
+              Know More
+            </Button>
+            <Button
               variant="contained"
               endIcon={
                 <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
@@ -445,26 +468,6 @@ const TextilePrinting = () => {
               }}
             >
               Get a Quote
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#fff",
-                borderColor: "#e0e0e0",
-                borderRadius: "12px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                fontWeight: 500,
-                px: { xs: 3, md: 3 },
-                py: "13px",
-                boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
-                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
-              }}
-            >
-              Know More
             </Button>
           </Box>
         </>

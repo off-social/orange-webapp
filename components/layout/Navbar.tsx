@@ -271,7 +271,7 @@ export default function Navbar() {
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 2 }}>
-          <Image src="/ORANGE-LOGO.png" alt="Logo" width={90} height={90} />
+          <img src="/OrangeLogo.svg" alt="Orange" width={120} height={27} style={{ display: "block" }} />
           <IconButton onClick={toggleDrawer(false)} sx={{ color: "#fff" }}>
             <CloseIcon />
           </IconButton>

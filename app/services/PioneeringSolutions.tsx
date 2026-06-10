@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SERVICE_CARDS = [
   {
@@ -57,15 +57,35 @@ const CARD_GAP = 24;
 export default function PioneeringSolutions() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
+  const isSm = useMediaQuery(theme.breakpoints.up("sm"));
   const cardWidth = isMd ? CARD_WIDTH_MD : CARD_WIDTH_XS;
   const cardsPerView = isMd ? 3 : 1;
-  const maxIndex = Math.max(SERVICE_CARDS.length - cardsPerView, 0);
 
   const [current, setCurrent] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const lastWheelTime = useRef(0);
+  const [winWidth, setWinWidth] = useState(0);
+
+  useEffect(() => {
+    const onResize = () => setWinWidth(window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const leftPadding = isMd ? 168 : isSm ? 40 : 16;
+  const availableWidth = winWidth > 0 ? winWidth - leftPadding : 0;
+  const visibleCards =
+    availableWidth > 0
+      ? Math.max(
+          1,
+          Math.floor((availableWidth + CARD_GAP) / (cardWidth + CARD_GAP)),
+        )
+      : cardsPerView;
+  const maxIndex = Math.max(SERVICE_CARDS.length - visibleCards, 0);
+  const safeCurrent = Math.min(current, maxIndex);
 
   const handlePrev = () => setCurrent((c) => Math.max(c - 1, 0));
   const handleNext = () => setCurrent((c) => Math.min(c + 1, maxIndex));
@@ -118,7 +138,7 @@ export default function PioneeringSolutions() {
       {/* Header */}
       <Box
         sx={{
-          px: { xs: "16px", md: "168px" },
+          px: { xs: "16px", sm: "40px", md: "168px" },
           display: "flex",
           flexDirection: "column",
           gap: "12px",
@@ -129,12 +149,20 @@ export default function PioneeringSolutions() {
       >
         {/* Heading */}
         <Typography
+          // sx={{
+          //   fontFamily: "Inter, sans-serif",
+          //   fontSize: { xs: "24px", md: "40px" },
+          //   fontWeight: 500,
+          //   lineHeight: { xs: "31.2px", md: "52px" },
+          //   letterSpacing: { xs: 0, md: "-1px" },
+          //   color: "#333",
+          // }}
           sx={{
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "28px", md: "40px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
-            letterSpacing: { xs: 0, md: "-1px" },
+            lineHeight: { xs: "36px", md: "52px" },
+            letterSpacing: "-1px",
             color: "#333",
           }}
         >
@@ -147,24 +175,25 @@ export default function PioneeringSolutions() {
           </Box>
         </Typography>
 
-        {/* Subtitle row — with arrows on desktop, centered text on mobile */}
+        {/* Subtitle row — with arrows on desktop, stacked on tablet/mobile */}
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: { xs: "center", md: "space-between" },
-            alignItems: "center",
+            alignItems: { xs: "center", md: "center" },
             width: "100%",
-            gap: "24px",
+            gap: { xs: "16px", md: "24px" },
           }}
         >
           <Typography
             sx={{
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "12px", md: "14px" },
+              fontSize: { xs: "13px", md: "14px" },
               fontWeight: 500,
-              lineHeight: { xs: "19.2px", md: "22.4px" },
+              lineHeight: { xs: "20.8px", md: "22.4px" },
               color: "#707070",
-              textAlign: { xs: "center", md: "left" },
+              textAlign: "center",
             }}
           >
             Engineered for faster, cleaner, and smarter textile printing.
@@ -183,14 +212,14 @@ export default function PioneeringSolutions() {
           >
             <IconButton
               onClick={handlePrev}
-              disabled={current === 0}
+              disabled={safeCurrent === 0}
               sx={{
                 width: "40px",
                 height: "40px",
                 border: "1px solid #E0E0E0",
                 bgcolor: "#FFF",
                 borderRadius: "50%",
-                opacity: current === 0 ? 0.4 : 1,
+                opacity: safeCurrent === 0 ? 0.4 : 1,
                 "&:hover": { bgcolor: "#f5f5f5" },
               }}
             >
@@ -198,14 +227,14 @@ export default function PioneeringSolutions() {
             </IconButton>
             <IconButton
               onClick={handleNext}
-              disabled={current >= maxIndex}
+              disabled={safeCurrent >= maxIndex}
               sx={{
                 width: "40px",
                 height: "40px",
                 border: "1px solid #E0E0E0",
                 bgcolor: "#FFF",
                 borderRadius: "50%",
-                opacity: current >= maxIndex ? 0.4 : 1,
+                opacity: safeCurrent >= maxIndex ? 0.4 : 1,
                 "&:hover": { bgcolor: "#f5f5f5" },
               }}
             >
@@ -218,7 +247,7 @@ export default function PioneeringSolutions() {
       {/* Carousel — left padding only for peek effect */}
       <Box
         sx={{
-          pl: { xs: "16px", md: "168px" },
+          pl: { xs: "16px", sm: "40px", md: "168px" },
           width: "100%",
           boxSizing: "border-box",
         }}
@@ -230,7 +259,7 @@ export default function PioneeringSolutions() {
           onWheel={onWheel}
           sx={{ display: "flex", gap: `${CARD_GAP}px` }}
           style={{
-            transform: `translateX(calc(-${current} * (${cardWidth}px + ${CARD_GAP}px)))`,
+            transform: `translateX(calc(-${safeCurrent} * (${cardWidth}px + ${CARD_GAP}px)))`,
             transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
@@ -277,7 +306,7 @@ export default function PioneeringSolutions() {
                     fontWeight: 500,
                     lineHeight: { xs: "25.6px", md: "31.2px" },
                     letterSpacing: 0,
-                    color: hoveredCard === i ? "#FFF" : "#333",
+                    color: hoveredCard === i ? "#FFF" : "#000",
                     textAlign: "center",
                     transition: "color 0.25s",
                   }}

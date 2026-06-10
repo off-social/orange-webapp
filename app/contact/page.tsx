@@ -265,10 +265,10 @@ export default function ContactPage() {
           height: { xs: "auto", lg: "305px" },
           minHeight: { xs: "220px", md: "260px", lg: "305px" },
           backgroundColor: "#111",
-          backgroundImage: "url('/contactUsImg1.png')",
+          backgroundImage: { xs: "url('/contactUsMobileImg1.png')", lg: "url('/contactUsImg1.png')" },
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "left center",
-          backgroundSize: "auto 100%",
+          backgroundPosition: { xs: "center", lg: "left center" },
+          backgroundSize: { xs: "cover", lg: "auto 100%" },
           display: "flex",
           alignItems: "center",
           px: { xs: "16px", sm: "40px", lg: "168px" },
@@ -277,7 +277,7 @@ export default function ContactPage() {
       >
         {/* Left: heading + subtitle */}
         <Box
-          sx={{ position: "relative", zIndex: 1, maxWidth: { lg: "500px" } }}
+          sx={{ position: "relative", zIndex: 1, maxWidth: { lg: "500px" }, width: "100%", textAlign: { xs: "center", lg: "left" } }}
         >
           <Typography
             sx={{
@@ -295,11 +295,12 @@ export default function ContactPage() {
             sx={{
               color: "#707070",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: { xs: "12px", lg: "14px" },
               fontWeight: 500,
-              lineHeight: "22.4px",
+              lineHeight: { xs: "19.2px", lg: "22.4px" },
               mt: "16px",
               maxWidth: "340px",
+              mx: { xs: "auto", lg: 0 },
             }}
           >
             Speak with our team to discover the right printing solution,
@@ -337,14 +338,14 @@ export default function ContactPage() {
         <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: { xs: "flex-start", sm: "center" },
             gap: "0",
             mb: "32px",
           }}
         >
           {/* Email */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mb: { xs: "16px", sm: 0 } }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <EmailOutlinedIcon
                 sx={{ width: "16px", height: "16px", color: "#707070" }}
@@ -382,6 +383,7 @@ export default function ContactPage() {
               bgcolor: "#E0E0E0",
               mx: "24px",
               flexShrink: 0,
+              display: { xs: "none", sm: "block" },
             }}
           />
 

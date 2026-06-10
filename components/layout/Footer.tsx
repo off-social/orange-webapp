@@ -7,7 +7,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
 
 const QUICK_LINKS = [
@@ -46,13 +45,7 @@ const Footer = () => {
           }}
         >
           {/* Logo */}
-          <Image
-            src="/ORANGE-LOGO.png"
-            alt="Orange"
-            width={140}
-            height={36}
-            style={{ objectFit: "contain" }}
-          />
+          <img src="/OrangeLogo.svg" alt="Orange" width={110} height={25} style={{ display: "block" }} />
 
           {/* Quick Links heading */}
           <Typography

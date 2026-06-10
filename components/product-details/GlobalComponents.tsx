@@ -3,29 +3,69 @@ import Image from "next/image";
 import ProductSidebar from "./ProductSidebar";
 
 const LARGE_CARD = {
-  icon: <Image src="/Kyocera.png" alt="Kyocera" width={80} height={80} style={{ objectFit: "contain" }} />,
+  icon: (
+    <Image
+      src="/Kyocera.png"
+      alt="Kyocera"
+      width={80}
+      height={80}
+      style={{ objectFit: "contain" }}
+    />
+  ),
   title: "Kyocera",
   desc: "16× Industrial printheads · Japan",
 };
 
 const SMALL_CARDS = [
   {
-    icon: <Image src="/Vision-System.png" alt="Vision System" width={72} height={72} style={{ objectFit: "contain" }} />,
+    icon: (
+      <Image
+        src="/Vision-System.png"
+        alt="Vision System"
+        width={72}
+        height={72}
+        style={{ objectFit: "contain" }}
+      />
+    ),
     title: "Vision System",
     desc: "Proprietary real-time scanner",
   },
   {
-    icon: <Image src="/Color-Management.png" alt="Color Management" width={72} height={72} style={{ objectFit: "contain" }} />,
+    icon: (
+      <Image
+        src="/Color-Management.png"
+        alt="Color Management"
+        width={72}
+        height={72}
+        style={{ objectFit: "contain" }}
+      />
+    ),
     title: "Color Management",
     desc: "Professional calibration software",
   },
   {
-    icon: <Image src="/Ink-System.png" alt="Ink System" width={72} height={72} style={{ objectFit: "contain" }} />,
+    icon: (
+      <Image
+        src="/Ink-System.png"
+        alt="Ink System"
+        width={72}
+        height={72}
+        style={{ objectFit: "contain" }}
+      />
+    ),
     title: "Ink System",
     desc: "High-precision dye ratio mixing",
   },
   {
-    icon: <Image src="/Drive-System.png" alt="Drive System" width={72} height={72} style={{ objectFit: "contain" }} />,
+    icon: (
+      <Image
+        src="/Drive-System.png"
+        alt="Drive System"
+        width={72}
+        height={72}
+        style={{ objectFit: "contain" }}
+      />
+    ),
     title: "Drive System",
     desc: "Advanced industrial conveying",
   },
@@ -46,10 +86,10 @@ function ComponentCard({
     <Box
       sx={{
         display: "flex",
-        padding: "24px",
+        padding: { xs: "16px", md: "24px" },
         flexDirection: "column",
         alignItems: "flex-start",
-        gap: "24px",
+        gap: { xs: "16px", md: "24px" },
         borderRadius: "16px",
         background: "#FFF",
         alignSelf: fullWidth ? "stretch" : "auto",
@@ -65,9 +105,9 @@ function ComponentCard({
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
+            fontSize: { xs: "14px", md: "16px" },
             fontWeight: 600,
-            lineHeight: "25.6px",
+            lineHeight: { xs: "22.4px", md: "25.6px" },
           }}
         >
           {title}
@@ -93,7 +133,7 @@ export default function GlobalComponents() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 168px" },
+        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
         alignItems: "flex-start",
         gap: "24px",
         alignSelf: "stretch",
@@ -110,16 +150,23 @@ export default function GlobalComponents() {
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 94px" },
+          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "flex-start",
-          gap: "64px",
+          gap: { xs: "48px", md: "64px" },
           flex: "1 0 0",
           width: { xs: "100%", md: "auto" },
         }}
       >
         {/* Heading + description */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            width: "100%",
+          }}
+        >
           <Typography
             sx={{
               color: "#333",
@@ -128,7 +175,7 @@ export default function GlobalComponents() {
               fontSize: { xs: "24px", md: "40px" },
               fontWeight: 500,
               lineHeight: { xs: "31.2px", md: "52px" },
-              letterSpacing: "-1px",
+              letterSpacing: { xs: "0", md: "-1px" },
             }}
           >
             Premium Global Components
@@ -143,9 +190,8 @@ export default function GlobalComponents() {
               lineHeight: { xs: "19.2px", md: "25.6px" },
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-            Amet morbi eget dignissim non venenatis pellentesque purus lectus
-            ullamcorper.
+            Built using premium international components that deliver superior
+            accuracy, durability, and consistent production efficiency.
           </Typography>
         </Box>
 
@@ -165,7 +211,7 @@ export default function GlobalComponents() {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+              gridTemplateColumns: "1fr 1fr",
               gap: "16px",
               alignSelf: "stretch",
             }}

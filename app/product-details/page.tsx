@@ -1,10 +1,12 @@
 "use client";
 
+import ContactCTA from "@/components/product-details/ContactCTA";
 import Features from "@/components/product-details/Features";
 import GlobalComponents from "@/components/product-details/GlobalComponents";
 import IdealFor from "@/components/product-details/IdealFor";
 import InkCompatibility from "@/components/product-details/InkCompatibility";
 import KeySpecification from "@/components/product-details/KeySpecification";
+import PositionProShowcase from "@/components/product-details/PositionProShowcase";
 import ProductionCapacity from "@/components/product-details/ProductionCapacity";
 import Resources from "@/components/product-details/Resources";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -87,27 +89,6 @@ export default function ProductDetailsPage() {
             }}
           >
             <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#fff",
-                borderColor: "#e0e0e0",
-                borderRadius: "12px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                fontWeight: 500,
-                px: "28px",
-                py: "13px",
-                boxShadow: "none",
-                width: { xs: "100%", sm: "200px" },
-                order: { xs: 2, sm: 1 },
-                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
-              }}
-            >
-              Get A Quote
-            </Button>
-            <Button
               variant="contained"
               endIcon={
                 <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
@@ -129,6 +110,27 @@ export default function ProductDetailsPage() {
               }}
             >
               Book a Demo
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                color: "#111",
+                bgcolor: "#fff",
+                borderColor: "#e0e0e0",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                px: "28px",
+                py: "13px",
+                boxShadow: "none",
+                width: { xs: "100%", sm: "200px" },
+                order: { xs: 2, sm: 1 },
+                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+              }}
+            >
+              Get A Quote
             </Button>
           </Box>
         </Box>
@@ -252,6 +254,8 @@ export default function ProductDetailsPage() {
       {activeTab === 4 && <ProductionCapacity />}
       {activeTab === 5 && <GlobalComponents />}
       {activeTab === 6 && <Resources />}
+      <PositionProShowcase />
+      <ContactCTA />
     </>
   );
 }

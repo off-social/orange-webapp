@@ -7,7 +7,7 @@ export default function Resources() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 168px" },
+        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
         justifyContent: "center",
         alignItems: "flex-start",
         gap: "24px",
@@ -25,7 +25,7 @@ export default function Resources() {
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 94px" },
+          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: "64px",
@@ -65,9 +65,8 @@ export default function Resources() {
               lineHeight: "22.4px",
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-            Amet morbi eget dignissim non venenatis pellentesque purus lectus
-            ullamcorper.
+            Access product videos, brochures, and technical information to
+            explore the full capabilities of printers
           </Typography>
         </Box>
 
@@ -85,7 +84,7 @@ export default function Resources() {
             sx={{
               alignSelf: "stretch",
               aspectRatio: "272/151",
-              height: { md: "351.972px" },
+              height: { md: "auto", lg: "351.972px" },
               borderRadius: "16px",
               border: "5px solid #F2F2F2",
               overflow: "hidden",

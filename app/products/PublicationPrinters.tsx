@@ -7,19 +7,9 @@ import { useRef, useState } from "react";
 
 const products = [
   {
-    src: "/img1.png",
+    src: "/PublicationPrinters1.png",
     name: "JP7 Industrial Publication Printer",
     desc: "Intelligent Printing for Demanding Publication Environments.",
-  },
-  {
-    src: "/img1.png",
-    name: "JPK Evo Publication Printer",
-    desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
-  },
-  {
-    src: "/img1.png",
-    name: "Minilario Publication Printer",
-    desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
   },
 ];
 
@@ -204,31 +194,6 @@ export default function PublicationPrinters() {
         </Typography>
       </Box>
 
-      {/* Dots */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "4px",
-          mt: "20px",
-        }}
-      >
-        {products.map((_, i) => (
-          <Box
-            key={i}
-            onClick={() => scrollTo(i)}
-            sx={{
-              width: i === activeImg ? "24px" : "8px",
-              height: "8px",
-              borderRadius: "16px",
-              bgcolor: i === activeImg ? "#111" : "#e0e0e0",
-              cursor: "pointer",
-              transition: "width 0.2s, background-color 0.2s",
-            }}
-          />
-        ))}
-      </Box>
-
       {/* Buttons */}
       <Box
         key={`btn-${animKey}`}
@@ -237,7 +202,6 @@ export default function PublicationPrinters() {
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: "12px", md: 2 },
           mt: 3,
-          mb: { xs: 6, md: 10 },
           justifyContent: "center",
           px: { xs: "16px", md: 0 },
           animation: FADE_ANIM,
@@ -283,6 +247,32 @@ export default function PublicationPrinters() {
         >
           Know More
         </Button>
+      </Box>
+
+      {/* Dots */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "4px",
+          mt: "20px",
+          mb: { xs: 6, md: 10 },
+        }}
+      >
+        {products.map((_, i) => (
+          <Box
+            key={i}
+            onClick={() => scrollTo(i)}
+            sx={{
+              width: i === activeImg ? "24px" : "8px",
+              height: "8px",
+              borderRadius: "16px",
+              bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+              cursor: "pointer",
+              transition: "width 0.2s, background-color 0.2s",
+            }}
+          />
+        ))}
       </Box>
     </Box>
   );

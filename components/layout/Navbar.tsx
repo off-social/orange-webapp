@@ -29,6 +29,7 @@ type DropdownItem = { label: string; to: string };
 type NavItem = { label: string; to: string; dropdown?: DropdownItem[] };
 
 const navLinks: NavItem[] = [
+  { label: "Home", to: "/" },
   { label: "Products", to: "/products" },
   { label: "Green Edge Series", to: "/green-edge-series" },
   {
@@ -111,9 +112,19 @@ export default function Navbar() {
           <Box
             component={Link}
             href="/"
-            sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              textDecoration: "none",
+            }}
           >
-            <Image src="/ORANGE-LOGO.png" alt="Orange" width={140} height={35} priority />
+            <Image
+              src="/ORANGE-LOGO.png"
+              alt="Orange"
+              width={140}
+              height={35}
+              priority
+            />
           </Box>
 
           {/* Desktop Nav */}
@@ -155,7 +166,10 @@ export default function Navbar() {
                         fontSize: "16px",
                         color: "inherit",
                         transition: "transform 0.2s",
-                        transform: activeDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)",
+                        transform:
+                          activeDropdown === item.label
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
                       }}
                     />
                   </Box>
@@ -218,7 +232,7 @@ export default function Navbar() {
                 >
                   {item.label}
                 </Typography>
-              )
+              ),
             )}
           </Box>
 
@@ -228,7 +242,9 @@ export default function Navbar() {
               component={Link}
               href="/contact"
               variant="contained"
-              endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+              }
               sx={{
                 bgcolor: "#F6891F",
                 color: "#fff",
@@ -251,7 +267,12 @@ export default function Navbar() {
           {/* Mobile menu icon */}
           <Box sx={{ display: { xs: "flex", md: "none" }, ml: "auto" }}>
             <IconButton onClick={toggleDrawer(true)} sx={{ p: "8px" }}>
-              <Image src="/MenuIconButton.svg" alt="menu" width={32} height={32} />
+              <Image
+                src="/MenuIconButton.svg"
+                alt="menu"
+                width={32}
+                height={32}
+              />
             </IconButton>
           </Box>
         </Box>
@@ -270,8 +291,21 @@ export default function Navbar() {
           },
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 2 }}>
-          <img src="/OrangeLogo.svg" alt="Orange" width={120} height={27} style={{ display: "block" }} />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            p: 2,
+          }}
+        >
+          <Image
+            src="/OrangeLogo.svg"
+            alt="Orange"
+            width={120}
+            height={27}
+            style={{ display: "block" }}
+          />
           <IconButton onClick={toggleDrawer(false)} sx={{ color: "#fff" }}>
             <CloseIcon />
           </IconButton>
@@ -292,15 +326,25 @@ export default function Navbar() {
                       primary={item.label}
                       slotProps={{
                         primary: {
-                          style: { fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#fff" },
+                          style: {
+                            fontFamily: "Inter, sans-serif",
+                            fontSize: "14px",
+                            color: "#fff",
+                          },
                         },
                       }}
                     />
-                    {mobileOpen[item.label]
-                      ? <ExpandLess sx={{ color: "#d2d2d2", fontSize: "20px" }} />
-                      : <ExpandMore sx={{ color: "#d2d2d2", fontSize: "20px" }} />}
+                    {mobileOpen[item.label] ? (
+                      <ExpandLess sx={{ color: "#d2d2d2", fontSize: "20px" }} />
+                    ) : (
+                      <ExpandMore sx={{ color: "#d2d2d2", fontSize: "20px" }} />
+                    )}
                   </ListItemButton>
-                  <Collapse in={!!mobileOpen[item.label]} timeout="auto" unmountOnExit>
+                  <Collapse
+                    in={!!mobileOpen[item.label]}
+                    timeout="auto"
+                    unmountOnExit
+                  >
                     <List disablePadding>
                       {item.dropdown.map((sub) => (
                         <ListItem key={sub.label} disablePadding>
@@ -314,7 +358,11 @@ export default function Navbar() {
                               primary={sub.label}
                               slotProps={{
                                 primary: {
-                                  style: { fontFamily: "Inter, sans-serif", fontSize: "13px", color: "#b0b0b0" },
+                                  style: {
+                                    fontFamily: "Inter, sans-serif",
+                                    fontSize: "13px",
+                                    color: "#b0b0b0",
+                                  },
                                 },
                               }}
                             />
@@ -333,15 +381,25 @@ export default function Navbar() {
                     sx={{
                       py: "12px",
                       px: 2,
-                      borderLeft: pathname === item.to ? "3px solid #fff" : "3px solid transparent",
-                      bgcolor: pathname === item.to ? "rgba(255,255,255,.08)" : "transparent",
+                      borderLeft:
+                        pathname === item.to
+                          ? "3px solid #fff"
+                          : "3px solid transparent",
+                      bgcolor:
+                        pathname === item.to
+                          ? "rgba(255,255,255,.08)"
+                          : "transparent",
                     }}
                   >
                     <ListItemText
                       primary={item.label}
                       slotProps={{
                         primary: {
-                          style: { fontFamily: "Inter, sans-serif", fontSize: "14px", color: "#fff" },
+                          style: {
+                            fontFamily: "Inter, sans-serif",
+                            fontSize: "14px",
+                            color: "#fff",
+                          },
                         },
                       }}
                     />

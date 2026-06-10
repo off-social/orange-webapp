@@ -3,6 +3,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 type PreviewImage = {
@@ -518,31 +519,6 @@ export default function DigitalTextilePrinters() {
             </Typography>
           </Box>
 
-          {/* Dot indicators */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "4px",
-              mt: "20px",
-            }}
-          >
-            {activeImages.map((_, i) => (
-              <Box
-                key={i}
-                onClick={() => scrollTo(i)}
-                sx={{
-                  width: i === activeImg ? "24px" : "8px",
-                  height: "8px",
-                  borderRadius: "16px",
-                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
-                  cursor: "pointer",
-                  transition: "width 0.2s, background-color 0.2s",
-                }}
-              />
-            ))}
-          </Box>
-
           {/* Buttons */}
           <Box
             key={`btn-${animKey}`}
@@ -551,7 +527,6 @@ export default function DigitalTextilePrinters() {
               flexDirection: { xs: "column", md: "row" },
               gap: { xs: "12px", md: 2 },
               mt: 3,
-              mb: { xs: 6, md: 10 },
               justifyContent: "center",
               px: { xs: "16px", md: 0 },
               animation: FADE_ANIM,
@@ -559,6 +534,8 @@ export default function DigitalTextilePrinters() {
           >
             <Button
               variant="outlined"
+              component={Link}
+              href="/product-details"
               sx={{
                 color: "#111",
                 bgcolor: "#fff",
@@ -599,6 +576,32 @@ export default function DigitalTextilePrinters() {
             >
               Get a Quote
             </Button>
+          </Box>
+
+          {/* Dot indicators */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "4px",
+              mt: "20px",
+              mb: { xs: 6, md: 10 },
+            }}
+          >
+            {activeImages.map((_, i) => (
+              <Box
+                key={i}
+                onClick={() => scrollTo(i)}
+                sx={{
+                  width: i === activeImg ? "24px" : "8px",
+                  height: "8px",
+                  borderRadius: "16px",
+                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+                  cursor: "pointer",
+                  transition: "width 0.2s, background-color 0.2s",
+                }}
+              />
+            ))}
           </Box>
         </>
       )}

@@ -387,31 +387,6 @@ const TextilePrinting = () => {
             </Typography>
           </Box>
 
-          {/* Dot indicators */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "4px",
-              mt: "20px",
-            }}
-          >
-            {currentProducts.map((_, i) => (
-              <Box
-                key={i}
-                onClick={() => scrollToIndex(i)}
-                sx={{
-                  width: i === activeImg ? "24px" : "8px",
-                  height: "8px",
-                  borderRadius: "16px",
-                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
-                  cursor: "pointer",
-                  transition: "width 0.2s, background-color 0.2s",
-                }}
-              />
-            ))}
-          </Box>
-
           <Box
             key={`btn-${animKey}`}
             sx={{
@@ -420,7 +395,6 @@ const TextilePrinting = () => {
               gap: { xs: "12px", md: 2 },
               mt: 3,
               justifyContent: "center",
-              mb: { xs: 4, md: 2 },
               animation: FADE_ANIM,
               px: { xs: "16px", md: 0 },
             }}
@@ -469,6 +443,32 @@ const TextilePrinting = () => {
             >
               Get a Quote
             </Button>
+          </Box>
+
+          {/* Dot indicators */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "4px",
+              mt: "20px",
+              mb: { xs: 4, md: 2 },
+            }}
+          >
+            {currentProducts.map((_, i) => (
+              <Box
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                sx={{
+                  width: i === activeImg ? "24px" : "8px",
+                  height: "8px",
+                  borderRadius: "16px",
+                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+                  cursor: "pointer",
+                  transition: "width 0.2s, background-color 0.2s",
+                }}
+              />
+            ))}
           </Box>
         </>
       )}

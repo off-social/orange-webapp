@@ -3,7 +3,7 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProductSidebar from "./ProductSidebar";
 
 const MAX_SPEED = 190;
@@ -62,7 +62,7 @@ function SpeedRow({
   rowIndex: number;
 }) {
   const pct = (speed / MAX_SPEED) * 100;
-  const delay = `${rowIndex * 120}ms`;
+  const delay = `${rowIndex * 200}ms`;
 
   const bar = (
     <Box
@@ -84,7 +84,7 @@ function SpeedRow({
           width: animated ? `${pct}%` : "0%",
           borderRadius: "8px",
           bgcolor: "#F6891F",
-          transition: `width 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${delay}`,
+          transition: `width 1.6s cubic-bezier(0.16, 1, 0.3, 1) ${delay}`,
         }}
       />
     </Box>
@@ -235,17 +235,29 @@ function SectionHeader({
 
 export default function ProductionCapacity() {
   const [animated, setAnimated] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setAnimated(true), 60);
-    return () => clearTimeout(t);
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 168px" },
+        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
         justifyContent: "center",
         alignItems: "flex-start",
         gap: "24px",
@@ -263,7 +275,7 @@ export default function ProductionCapacity() {
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 94px" },
+          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: "64px",
@@ -325,14 +337,14 @@ export default function ProductionCapacity() {
               lineHeight: "22.4px",
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-            Amet morbi eget dignissim non venenatis pellentesque purus lectus
-            ullamcorper.
+            Choose the ideal speed and resolution combination to optimize
+            production output and print performance.
           </Typography>
         </Box>
 
         {/* Regular Mode */}
         <Box
+          ref={sectionRef}
           sx={{
             display: "flex",
             flexDirection: "column",

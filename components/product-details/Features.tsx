@@ -95,7 +95,7 @@ export default function Features() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 168px" },
+        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
         justifyContent: "center",
         alignItems: { xs: "center", md: "flex-start" },
         gap: "24px",
@@ -113,7 +113,7 @@ export default function Features() {
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 94px" },
+          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: { xs: "40px", md: "40px" },
@@ -153,9 +153,8 @@ export default function Features() {
               lineHeight: { xs: "19.2px", md: "25.6px" },
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-            Amet morbi eget dignissim non venenatis pellentesque purus lectus
-            ullamcorper.
+            Engineered with smart automation and precision technology for
+            reliable, efficient, and high-performance textile printing
           </Typography>
         </Box>
 
@@ -200,7 +199,8 @@ export default function Features() {
                   scrollSnapAlign: "center",
                   flexShrink: 0,
                   cursor: "pointer",
-                  transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease",
+                  transition:
+                    "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease",
                   "&:hover": {
                     transform: "translateY(-6px)",
                     boxShadow: "0 16px 40px rgba(0,0,0,0.10)",
@@ -303,7 +303,8 @@ export default function Features() {
                 borderRadius: "16px",
                 background: "#FFF",
                 cursor: "pointer",
-                transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease",
+                transition:
+                  "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease",
                 "&:hover": {
                   transform: "translateY(-6px)",
                   boxShadow: "0 16px 40px rgba(0,0,0,0.10)",

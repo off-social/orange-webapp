@@ -32,7 +32,7 @@ export default function KeySpecification() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", md: "100px 168px" },
+        padding: { xs: "48px 16px", md: "100px 40px", lg: "100px 168px" },
         alignItems: "flex-start",
         gap: "24px",
         alignSelf: "stretch",
@@ -49,7 +49,7 @@ export default function KeySpecification() {
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 94px" },
+          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: { xs: "flex-start", md: "center" },
           gap: { xs: "64px", md: "48px" },
@@ -65,19 +65,6 @@ export default function KeySpecification() {
             width: "100%",
           }}
         >
-          <Typography
-            sx={{
-              color: "#707070",
-              fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "12px", md: "16px" },
-              fontWeight: 400,
-              lineHeight: "25.6px",
-              letterSpacing: "10px",
-              textTransform: "uppercase",
-            }}
-          >
-            Lorem ipsum dolor
-          </Typography>
           <Typography
             sx={{
               color: "#333",
@@ -100,9 +87,9 @@ export default function KeySpecification() {
               mt: "0px",
             }}
           >
-            Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-            Amet morbi eget dignissim non venenatis pellentesque purus lectus
-            ullamcorper.
+            Advanced industrial textile printing technology designed to maximize
+            productivity, ensure superior color accuracy, and support diverse
+            fabric applications.
           </Typography>
         </Box>
 

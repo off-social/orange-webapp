@@ -7,19 +7,9 @@ import { useRef, useState } from "react";
 
 const products = [
   {
-    src: "/img1.png",
+    src: "/LabelPrinters.png",
     name: "K24 Digital Label Printer",
     desc: "High-Speed Precision Label Printing Machine.",
-  },
-  {
-    src: "/img1.png",
-    name: "K24 Pro Label Printer",
-    desc: "Advanced Label Printing Solution for Demanding Applications.",
-  },
-  {
-    src: "/img1.png",
-    name: "K24 Ultra Label Printer",
-    desc: "Industrial Grade Label Printer for Maximum Output.",
   },
 ];
 
@@ -62,7 +52,7 @@ export default function LabelPrinters() {
   const animKey = `label-${activeImg}`;
 
   return (
-    <Box sx={{ width: "100%", overflow: "hidden", bgcolor: "#F2F2F2" }}>
+    <Box sx={{ width: "100%", overflow: "hidden", bgcolor: "#F5F5F5" }}>
       <style>{`@keyframes fadeSlideUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }`}</style>
 
       {/* Heading */}
@@ -204,31 +194,6 @@ export default function LabelPrinters() {
         </Typography>
       </Box>
 
-      {/* Dots */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "4px",
-          mt: "20px",
-        }}
-      >
-        {products.map((_, i) => (
-          <Box
-            key={i}
-            onClick={() => scrollTo(i)}
-            sx={{
-              width: i === activeImg ? "24px" : "8px",
-              height: "8px",
-              borderRadius: "16px",
-              bgcolor: i === activeImg ? "#111" : "#e0e0e0",
-              cursor: "pointer",
-              transition: "width 0.2s, background-color 0.2s",
-            }}
-          />
-        ))}
-      </Box>
-
       {/* Buttons */}
       <Box
         key={`btn-${animKey}`}
@@ -237,7 +202,6 @@ export default function LabelPrinters() {
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: "12px", md: 2 },
           mt: 3,
-          mb: { xs: 6, md: 10 },
           justifyContent: "center",
           px: { xs: "16px", md: 0 },
           animation: FADE_ANIM,
@@ -283,6 +247,32 @@ export default function LabelPrinters() {
         >
           Know More
         </Button>
+      </Box>
+
+      {/* Dots */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "4px",
+          mt: "20px",
+          mb: { xs: 6, md: 10 },
+        }}
+      >
+        {products.map((_, i) => (
+          <Box
+            key={i}
+            onClick={() => scrollTo(i)}
+            sx={{
+              width: i === activeImg ? "24px" : "8px",
+              height: "8px",
+              borderRadius: "16px",
+              bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+              cursor: "pointer",
+              transition: "width 0.2s, background-color 0.2s",
+            }}
+          />
+        ))}
       </Box>
     </Box>
   );

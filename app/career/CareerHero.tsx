@@ -16,7 +16,7 @@ export default function CareerHero() {
             sm: "80px 40px 0 40px",
             md: "100px 80px 0 80px",
             lg: "100px 168px 0 168px",
-            xl: "100px 560px 0 560px",
+            xl: "120px 263px 0 263px",
           },
           flexDirection: "column",
           alignItems: "center",
@@ -38,13 +38,13 @@ export default function CareerHero() {
               color: "#F6891F",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "24px", sm: "32px", md: "40px" },
+              fontSize: { xs: "24px", sm: "32px", md: "40px", xl: "56px" },
               fontWeight: 500,
-              lineHeight: { xs: "31.2px", sm: "41.6px", md: "52px" },
-              letterSpacing: { xs: 0, sm: "-0.5px", md: "-1px" },
+              lineHeight: { xs: "31.2px", sm: "41.6px", md: "52px", xl: "72.8px" },
+              letterSpacing: { xs: 0, sm: "-0.5px", md: "-1px", xl: "-1.5px" },
             }}
           >
-            Build the Future of<br />Textile Tech with Us
+            Build the Future of Textile Tech with Us
           </Typography>
 
           <Typography
@@ -52,10 +52,10 @@ export default function CareerHero() {
               color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "12px", sm: "14px" },
+              fontSize: { xs: "12px", sm: "14px", xl: "16px" },
               fontWeight: 500,
-              lineHeight: { xs: "19.2px", sm: "22.4px" },
-              maxWidth: "500px",
+              lineHeight: { xs: "19.2px", sm: "22.4px", xl: "25.6px" },
+              maxWidth: { xs: "100%", sm: "520px", md: "580px", lg: "620px", xl: "720px" },
             }}
           >
             At Orange O Tec, we believe the sale is just the beginning of our
@@ -150,18 +150,17 @@ export default function CareerHero() {
         sx={{
           display: { xs: "none", sm: "block" },
           width: "100%",
-          lineHeight: 0,
           mt: "40px",
-          maxWidth: "1440px",
-          mx: "auto",
+          position: "relative",
+          height: { sm: "280px", md: "380px", lg: "460px", xl: "520px" },
+          overflow: "hidden",
         }}
       >
         <Image
           src="/Career.png"
           alt="Career at Orange O Tec"
-          width={1440}
-          height={460}
-          style={{ width: "100%", height: "auto", display: "block" }}
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
           priority
         />
       </Box>

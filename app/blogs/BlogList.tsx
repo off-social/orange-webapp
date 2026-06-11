@@ -12,7 +12,7 @@ const ALL_BLOGS = [
     title:
       "How to Choose the Perfect Digital Fabric Printer: A 3-Step Checklist",
     desc: "Modern digital fabric printing has revolutionized the textile industry by eliminating the need for traditional plate making, plate printing, and repetitive color registration. Unlike conventional methods, digital printing requires only a single printer and a standard computer, allowing one operator to manage the entire printing process.",
-    img: "/BlogImg1.png",
+    img: "/blogImg1.png",
     slug: "how-to-choose-digital-fabric-printer",
   },
   {
@@ -20,7 +20,7 @@ const ALL_BLOGS = [
     title:
       "The Future of Sustainable Textile Printing: Eco-Friendly Inks & Processes",
     desc: "As environmental concerns take center stage, the textile printing industry is rapidly adopting sustainable practices. From water-based inks to closed-loop water recycling systems, manufacturers are finding innovative ways to reduce their carbon footprint without compromising on print quality or production speed.",
-    img: "/BlogImg2.png",
+    img: "/blogImg.png",
     slug: "sustainable-textile-printing",
   },
   {
@@ -28,14 +28,14 @@ const ALL_BLOGS = [
     title:
       "Understanding DTG vs. Screen Printing: Which Is Right for Your Business?",
     desc: "Direct-to-garment (DTG) printing and traditional screen printing each offer distinct advantages depending on order volume, design complexity, and fabric type. This guide breaks down the cost-per-unit economics, setup times, and quality benchmarks to help you make the right investment decision for your production workflow.",
-    img: "/BlogImg3.png",
+    img: "/blogImg.png",
     slug: "dtg-vs-screen-printing",
   },
   {
     date: "20 May 2026",
     title: "5 Signs It's Time to Upgrade Your Textile Printing Machine",
     desc: "Are your production timelines slipping? Is maintenance eating into your margins? Outdated textile printing equipment shows clear warning signs before it fails completely. From increasing downtime and rising ink consumption to inconsistent color output, learn the five key indicators that signal it's time to invest in a modern printing solution.",
-    img: "/BlogImg4.png",
+    img: "/blogImg.png",
     slug: "signs-to-upgrade-textile-printing-machine",
   },
   {
@@ -43,7 +43,7 @@ const ALL_BLOGS = [
     title:
       "How Reactive Dye Printing Is Transforming High-Volume Saree Production",
     desc: "Reactive dye printing delivers unmatched vibrancy and wash-fastness on natural fibers like cotton and silk — making it the preferred choice for premium saree manufacturers across India. Discover how leading mills are using modern reactive dye systems to scale from 500 to 5,000 meters per day while maintaining consistent color fidelity.",
-    img: "/BlogImg5.png",
+    img: "/blogImg.png",
     slug: "reactive-dye-printing-saree-production",
   },
   {
@@ -51,14 +51,14 @@ const ALL_BLOGS = [
     title:
       "Orange O Tec Machines Power India's Make in India Textile Initiative",
     desc: "With the government's push for domestic manufacturing, Indian textile machinery brands are stepping up. Orange O Tec's latest range of digital printing machines, designed and built entirely in India, is helping small and medium enterprises reduce import dependency while gaining access to world-class printing technology at competitive price points.",
-    img: "/BlogImg6.png",
+    img: "/blogImg.png",
     slug: "orange-otec-make-in-india",
   },
   {
     date: "01 May 2026",
     title: "A Complete Guide to Fabric Pretreatment for DTG Printing",
     desc: "Pretreatment is the most critical and often overlooked step in the DTG printing process. Without proper pretreatment, even the best inks will fade or wash out prematurely. This comprehensive guide covers the chemistry behind pretreatment solutions, application methods, curing temperatures, and common mistakes to avoid for consistent print durability.",
-    img: "/BlogImg7.png",
+    img: "/blogImg.png",
     slug: "fabric-pretreatment-dtg-printing",
   },
   {
@@ -66,7 +66,7 @@ const ALL_BLOGS = [
     title:
       "Digital vs. Rotary Screen Printing: A Cost Analysis for Large Textile Mills",
     desc: "Large textile mills face a critical capital allocation decision when modernizing their printing lines. Digital printing offers lower setup costs and design flexibility, while rotary screen printing excels in per-meter costs at very high volumes. We analyze the breakeven points, hidden operational costs, and ROI timelines for both technologies.",
-    img: "/BlogImg1.png",
+    img: "/blogImg.png",
     slug: "digital-vs-rotary-screen-cost-analysis",
   },
 ];
@@ -100,224 +100,250 @@ export default function BlogList() {
   return (
     <Box
       sx={{
-        display: "flex",
-        padding: {
-          xs: "32px 16px",
-          sm: "40px 40px",
-          md: "40px 80px",
-          lg: "40px 356px",
-          xl: "40px 560px",
-        },
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "64px",
-        alignSelf: "stretch",
+        width: "100%",
+        overflowX: "hidden", // ← fix for right-side overflow visible in screenshot
         bgcolor: "#FFF",
       }}
     >
-      {/* Blog items */}
       <Box
         sx={{
+          maxWidth: "2560px",
+          mx: "auto",
           display: "flex",
+          px: {
+            xs: "16px", // mobile
+            sm: "40px", // 600+
+            md: "80px", // 768 tablet
+            lg: "168px", // 1024–1279
+            xl: "263px", // 1440
+            // 2560px: same xl value, content naturally centers via maxWidth
+          },
+          py: "40px",
           flexDirection: "column",
-          alignItems: "flex-start",
-          gap: 0,
-          alignSelf: "stretch",
+          alignItems: "center",
+          gap: "64px",
         }}
       >
-        {blogs.map((blog, i) => (
-          <Box key={start + i} sx={{ alignSelf: "stretch" }}>
-            {i > 0 && (
-              <Box sx={{ height: "1px", bgcolor: "#E0E0E0", my: "32px" }} />
-            )}
-            <Link
-              href={`/blogs/${blog.slug}`}
-              style={{ textDecoration: "none", display: "block" }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  gap: "24px",
-                  cursor: "pointer",
-                  "&:hover .blog-title": { color: "#F6891F" },
-                }}
+        {/* Blog items */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: 0,
+            width: "100%",
+          }}
+        >
+          {blogs.map((blog, i) => (
+            <Box key={start + i} sx={{ width: "100%" }}>
+              {i > 0 && (
+                <Box sx={{ height: "1px", bgcolor: "#E0E0E0", my: "32px" }} />
+              )}
+              <Link
+                href={`/blogs/${blog.slug}`}
+                style={{ textDecoration: "none", display: "block" }}
               >
-                {/* Text */}
                 <Box
                   sx={{
                     display: "flex",
-                    flexDirection: "column",
-                    gap: "8px",
-                    flex: 1,
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: { xs: "16px", md: "24px", lg: "32px" },
+                    cursor: "pointer",
+                    width: "100%",
+                    minWidth: 0, // ← prevent flex child from overflowing
+                    "&:hover .blog-title": { color: "#F6891F" },
                   }}
                 >
-                  <Typography
+                  {/* Text — takes remaining space, never overflow */}
+                  <Box
                     sx={{
-                      color: "#707070",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "10px",
-                      fontWeight: 500,
-                      lineHeight: "16px",
-                      letterSpacing: "1.5px",
-                      textTransform: "uppercase",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                      flex: 1,
+                      minWidth: 0, // ← critical: allows text truncation inside flex
                     }}
                   >
-                    {blog.date}
-                  </Typography>
-                  <Typography
-                    className="blog-title"
-                    sx={{
-                      color: "#333",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: { xs: "18px", md: "24px" },
-                      fontWeight: 500,
-                      lineHeight: { xs: "23.4px", md: "31.2px" },
-                      letterSpacing: 0,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 2,
-                      transition: "color 0.2s ease",
-                    }}
-                  >
-                    {blog.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#707070",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: { xs: "12px", md: "14px" },
-                      fontWeight: 500,
-                      lineHeight: { xs: "19.2px", md: "22.4px" },
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 3,
-                    }}
-                  >
-                    {blog.desc}
-                  </Typography>
-                </Box>
+                    <Typography
+                      sx={{
+                        color: "#707070",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "10px",
+                        fontWeight: 500,
+                        lineHeight: "16px",
+                        letterSpacing: "1.5px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {blog.date}
+                    </Typography>
+                    <Typography
+                      className="blog-title"
+                      sx={{
+                        color: "#333",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: { xs: "18px", md: "20px", lg: "24px" },
+                        fontWeight: 500,
+                        lineHeight: { xs: "23.4px", md: "28px", lg: "31.2px" },
+                        letterSpacing: 0,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2,
+                        transition: "color 0.2s ease",
+                      }}
+                    >
+                      {blog.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: "#707070",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: { xs: "12px", md: "14px" },
+                        fontWeight: 500,
+                        lineHeight: { xs: "19.2px", md: "22.4px" },
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 3,
+                      }}
+                    >
+                      {blog.desc}
+                    </Typography>
+                  </Box>
 
-                {/* Image */}
-                <Box
-                  sx={{
-                    flexShrink: 0,
-                    width: { xs: "120px", md: "220px" },
-                    height: { xs: "82px", md: "150px" },
-                    aspectRatio: { xs: "60/41", md: "auto" },
-                    borderRadius: "4px",
-                    overflow: "hidden",
-                    position: "relative",
-                  }}
-                >
-                  <Image
-                    src={blog.img}
-                    alt={blog.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
+                  {/* Image — fixed size, never shrinks text */}
+                  <Box
+                    sx={{
+                      flexShrink: 0,
+                      width: {
+                        xs: "120px",
+                        sm: "160px",
+                        md: "200px", // 768 tablet
+                        lg: "220px", // 1024
+                        xl: "240px", // 1440 / 2560
+                      },
+                      height: {
+                        xs: "82px",
+                        sm: "110px",
+                        md: "136px",
+                        lg: "150px",
+                        xl: "163px",
+                      },
+                      borderRadius: "4px",
+                      overflow: "hidden",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      src={blog.img}
+                      alt={blog.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </Box>
                 </Box>
-              </Box>
-            </Link>
-          </Box>
-        ))}
-        <Box
-          sx={{
-            height: "1px",
-            bgcolor: "#E0E0E0",
-            alignSelf: "stretch",
-            mt: "32px",
-          }}
-        />
-      </Box>
+              </Link>
+            </Box>
+          ))}
 
-      {/* Pagination */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
-        <Box
-          onClick={() => page > 1 && changePage(page - 1)}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-            px: "12px",
-            py: "8px",
-            cursor: page === 1 ? "default" : "pointer",
-            opacity: page === 1 ? 0.4 : 1,
-          }}
-        >
-          <ArrowBackIcon sx={{ fontSize: "14px", color: "#333" }} />
-          <Typography
+          {/* Bottom divider */}
+          <Box
             sx={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              color: "#333",
+              height: "1px",
+              bgcolor: "#E0E0E0",
+              width: "100%",
+              mt: "32px",
             }}
-          >
-            Previous
-          </Typography>
+          />
         </Box>
 
-        {getPageNumbers().map((p, i) => (
+        {/* Pagination */}
+        <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
           <Box
-            key={i}
-            onClick={() => typeof p === "number" && changePage(p)}
+            onClick={() => page > 1 && changePage(page - 1)}
             sx={{
-              width: "36px",
-              height: "36px",
               display: "flex",
-              justifyContent: "center",
               alignItems: "center",
-              borderRadius: "50%",
-              bgcolor: page === p ? "#F6891F" : "transparent",
-              cursor: typeof p === "number" ? "pointer" : "default",
-              "&:hover":
-                typeof p === "number" && page !== p
-                  ? { bgcolor: "#F2F2F2" }
-                  : {},
+              gap: "4px",
+              px: "12px",
+              py: "8px",
+              cursor: page === 1 ? "default" : "pointer",
+              opacity: page === 1 ? 0.4 : 1,
+            }}
+          >
+            <ArrowBackIcon sx={{ fontSize: "14px", color: "#333" }} />
+            <Typography
+              sx={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "#333",
+              }}
+            >
+              Previous
+            </Typography>
+          </Box>
+
+          {getPageNumbers().map((p, i) => (
+            <Box
+              key={i}
+              onClick={() => typeof p === "number" && changePage(p)}
+              sx={{
+                width: "36px",
+                height: "36px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50%",
+                bgcolor: page === p ? "#F6891F" : "transparent",
+                cursor: typeof p === "number" ? "pointer" : "default",
+                "&:hover":
+                  typeof p === "number" && page !== p
+                    ? { bgcolor: "#F2F2F2" }
+                    : {},
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: page === p ? 600 : 400,
+                  color: page === p ? "#FFF" : "#333",
+                }}
+              >
+                {p}
+              </Typography>
+            </Box>
+          ))}
+
+          <Box
+            onClick={() => page < TOTAL_PAGES && changePage(page + 1)}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              px: "12px",
+              py: "8px",
+              cursor: page === TOTAL_PAGES ? "default" : "pointer",
+              opacity: page === TOTAL_PAGES ? 0.4 : 1,
             }}
           >
             <Typography
               sx={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "14px",
-                fontWeight: page === p ? 600 : 400,
-                color: page === p ? "#FFF" : "#333",
+                fontWeight: 500,
+                color: "#333",
               }}
             >
-              {p}
+              Next
             </Typography>
+            <ArrowForwardIcon sx={{ fontSize: "14px", color: "#333" }} />
           </Box>
-        ))}
-
-        <Box
-          onClick={() => page < TOTAL_PAGES && changePage(page + 1)}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-            px: "12px",
-            py: "8px",
-            cursor: page === TOTAL_PAGES ? "default" : "pointer",
-            opacity: page === TOTAL_PAGES ? 0.4 : 1,
-          }}
-        >
-          <Typography
-            sx={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              color: "#333",
-            }}
-          >
-            Next
-          </Typography>
-          <ArrowForwardIcon sx={{ fontSize: "14px", color: "#333" }} />
         </Box>
       </Box>
     </Box>

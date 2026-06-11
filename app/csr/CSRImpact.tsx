@@ -13,7 +13,7 @@ export default function CSRImpact() {
       sx={{
         position: "relative",
         width: "100%",
-        minHeight: { xs: "797px", sm: "650px", md: "797px" },
+        height: { xs: "797px", sm: "650px", md: "797px", xl: "900px" },
         overflow: "hidden",
         backgroundColor: "lightgray",
         display: "flex",
@@ -58,7 +58,7 @@ export default function CSRImpact() {
           left: 0,
           bottom: 0,
           zIndex: 1,
-          width: { xs: "100%", sm: "70%", md: "60%" },
+          width: { xs: "100%", sm: "70%", md: "60%", xl: "50%" },
           background: {
             xs: "linear-gradient(to bottom, rgba(230,230,230,0.95) 60%, transparent 100%)",
             sm: "linear-gradient(to right, rgba(220,220,220,0.97) 40%, transparent 100%)",
@@ -80,12 +80,13 @@ export default function CSRImpact() {
             sm: "64px 40px",
             md: "80px 80px",
             lg: "80px 168px",
+            xl: "100px 263px",
           },
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: { xs: "center", sm: "flex-start" },
-          minHeight: { xs: "797px", sm: "650px", md: "797px" },
+          minHeight: { xs: "797px", sm: "650px", md: "797px", xl: "900px" },
         }}
       >
         <Box
@@ -94,7 +95,7 @@ export default function CSRImpact() {
             flexDirection: "column",
             alignItems: { xs: "center", sm: "flex-start" },
             gap: { xs: "32px", md: "48px" },
-            maxWidth: { xs: "100%", md: "634px" },
+            maxWidth: { xs: "100%", md: "634px", xl: "700px" },
             textAlign: { xs: "center", sm: "left" },
           }}
         >

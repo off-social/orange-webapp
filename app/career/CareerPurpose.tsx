@@ -31,7 +31,13 @@ export default function CareerPurpose() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: {
+          xs: "64px 16px",
+          sm: "64px 40px",
+          md: "80px 80px",
+          lg: "80px 168px",
+          xl: "80px 263px",
+        },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "40px", md: "65px" },
@@ -40,7 +46,14 @@ export default function CareerPurpose() {
       }}
     >
       {/* Header */}
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+        }}
+      >
         <Typography
           sx={{
             color: "#333",
@@ -88,7 +101,7 @@ export default function CareerPurpose() {
               gap: { xs: "24px", md: "16px" },
               alignSelf: "stretch",
               borderRadius: { xs: "16px", md: "20px" },
-              border: { xs: "0.672px solid #E0E0E0", md: "1px solid #E0E0E0" },
+              border: "1px solid #E0E0E0",
               bgcolor: "#FFF",
               overflow: "hidden",
             }}
@@ -128,17 +141,17 @@ export default function CareerPurpose() {
               sx={{
                 alignSelf: "stretch",
                 height: { xs: "188px", md: "227px" },
-                aspectRatio: "152/87",
                 position: "relative",
                 borderRadius: "8px",
                 overflow: "hidden",
+                bgcolor: "#F5F5F5",
               }}
             >
               <Image
                 src={card.img}
                 alt={card.title}
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
               />
             </Box>
           </Box>

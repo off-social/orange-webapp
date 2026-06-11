@@ -47,7 +47,7 @@ export default function CareerContact() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 263px" },
         alignItems: { xs: "stretch", sm: "flex-start" },
         gap: { xs: "40px", sm: "40px", md: "64px", lg: "126px" },
         alignSelf: "stretch",

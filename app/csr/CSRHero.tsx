@@ -18,12 +18,12 @@ export default function CSRHero() {
         />
       </Box>
 
-      {/* Tablet + Desktop image (sm+) — min-height per breakpoint */}
+      {/* Tablet + Desktop image (sm+) */}
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
           position: "relative",
-          minHeight: { sm: "650px", md: "750px", lg: "700px" },
+          height: { sm: "650px", md: "750px", lg: "800px", xl: "1000px" },
           overflow: "hidden",
         }}
       >
@@ -32,7 +32,20 @@ export default function CSRHero() {
           alt="CSR – Technology with Responsibility"
           fill
           priority
-          style={{ objectFit: "cover", objectPosition: "center top" }}
+          style={{ objectFit: "cover", objectPosition: "center bottom" }}
+        />
+        {/* Top fade — blends image into page background */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "120px",
+            background: "linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
         />
       </Box>
 
@@ -48,7 +61,7 @@ export default function CSRHero() {
           alignItems: "center",
           gap: { xs: "24px", sm: "24px", md: "32px" },
           px: { xs: "16px", sm: "40px", md: "40px" },
-          pt: { xs: "32px", sm: "64px", md: "80px" },
+          pt: { xs: "32px", sm: "64px", md: "80px", xl: "120px" },
           textAlign: "center",
         }}
       >

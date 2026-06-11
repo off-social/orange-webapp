@@ -13,11 +13,11 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
       sx={{
         display: "flex",
         padding: {
-          xs: "48px 1px 0 1px",
+          xs: "48px 16px 0 16px",
           sm: "64px 40px 0 40px",
           md: "100px 80px 0 80px",
           lg: "100px 168px 0 168px",
-          xl: "100px 560px 0 560px",
+          xl: "100px 263px 0 263px",
         },
         flexDirection: "column",
         alignItems: "center",
@@ -27,7 +27,14 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
       }}
     >
       {/* Label + Heading + Subtitle */}
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+        }}
+      >
         <Typography
           sx={{
             color: "#707070",
@@ -71,34 +78,37 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         </Typography>
       </Box>
 
-      {/* Tabs — full-width border, inner constrained */}
-      <Box sx={{ alignSelf: "stretch", borderBottom: "1px solid #E0E0E0" }}>
+      {/* Tabs */}
+      <Box
+        sx={{
+          alignSelf: "stretch",
+          borderBottom: "1px solid #E0E0E0",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            maxWidth: "1440px",
-            mx: "auto",
-            px: { xs: "16px", sm: "40px", md: "80px", lg: "356px" },
           }}
         >
           {(["blogs", "success"] as const).map((tab) => {
-            const label = tab === "blogs" ? "Blogs" : "Success stories";
+            const label = tab === "blogs" ? "Blogs" : "Success Stories";
             const isActive = activeTab === tab;
             return (
               <Box
                 key={tab}
                 onClick={() => onTabChange(tab)}
                 sx={{
-                  flex: 1,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  px: { xs: "24px", sm: "40px", md: "60px" },
                   pb: "12px",
                   cursor: "pointer",
-                  borderBottom: isActive ? "2px solid #F6891F" : "2px solid transparent",
+                  borderBottom: isActive
+                    ? "2px solid #F6891F"
+                    : "2px solid transparent",
                   mb: "-1px",
+                  whiteSpace: "nowrap", // ← prevents "Success\nStories" wrap
+                  flexShrink: 0, // ← tab never squishes
                 }}
               >
                 <Typography
@@ -109,6 +119,7 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
                     lineHeight: "25.6px",
                     color: isActive ? "#333" : "#707070",
                     transition: "all 0.2s ease",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {label}

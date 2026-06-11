@@ -26,6 +26,13 @@ function JobCard({ job, mobile }: { job: typeof jobs[0]; mobile?: boolean }) {
         borderRadius: mobile ? "20px" : "12px",
         border: "1px solid #E0E0E0",
         bgcolor: "#FFF",
+        cursor: "pointer",
+        transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+        "&:hover": {
+          transform: "translateY(-6px)",
+          boxShadow: "0px 12px 32px rgba(0,0,0,0.10)",
+          borderColor: "#BDBDBD",
+        },
         ...(mobile
           ? { width: "100%" }
           : { alignSelf: "stretch" }),
@@ -139,7 +146,7 @@ export default function CareerOpenings() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 263px" },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "32px", md: "64px" },

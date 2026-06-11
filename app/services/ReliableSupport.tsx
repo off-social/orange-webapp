@@ -2,7 +2,6 @@
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
-import Image from "next/image";
 
 export default function ReliableSupport() {
   return (
@@ -104,7 +103,7 @@ export default function ReliableSupport() {
         </Button>
       </Box>
 
-      {/* Right: image */}
+      {/* Right: video */}
       <Box
         sx={{
           flex: 1,
@@ -112,14 +111,17 @@ export default function ReliableSupport() {
           justifyContent: "center",
           alignItems: "center",
           width: { xs: "100%", md: "auto" },
+          borderRadius: "16px",
+          overflow: "hidden",
         }}
       >
-        <Image
-          src="/ReliableSupport.png"
-          alt="Reliable Support"
-          width={600}
-          height={400}
-          style={{ width: "100%", height: "auto", objectFit: "contain" }}
+        <video
+          src="/ProductAndServiceVideo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: "100%", height: "auto", display: "block" }}
         />
       </Box>
     </Box>

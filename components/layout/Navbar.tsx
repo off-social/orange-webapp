@@ -29,7 +29,7 @@ type DropdownItem = { label: string; to: string };
 type NavItem = { label: string; to: string; dropdown?: DropdownItem[] };
 
 const navLinks: NavItem[] = [
-  { label: "Home", to: "/" },
+  // { label: "Home", to: "/" },
   { label: "Products", to: "/products" },
   { label: "Green Edge Series", to: "/green-edge-series" },
   {

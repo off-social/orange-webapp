@@ -7,152 +7,84 @@ import Image from "next/image";
 const DrivingSustainablePrinting = () => {
   return (
     <Grid size={12}>
-      {/* ── MOBILE: image full section, text overlaid at top ── */}
-      <Box
-        sx={{
-          display: { xs: "block", sm: "none" },
-          position: "relative",
-          width: "100%",
-        }}
-      >
+      <Box sx={{ position: "relative", width: "100%", lineHeight: 0 }}>
+        {/* Background image */}
         <Image
-          src="/Driving1.png"
+          src="/CRS.png"
           alt="Driving Sustainable Printing"
-          width={800}
-          height={900}
+          width={1440}
+          height={700}
           style={{ width: "100%", height: "auto", display: "block" }}
         />
-        {/* Overlay: text + button at top */}
+
+        {/* Text overlay — top center */}
         <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
             right: 0,
-            pt: "40px",
-            px: "20px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "12px",
+            gap: { xs: "12px", md: "24px" },
+            px: { xs: "16px", sm: "40px" },
+            pt: { xs: "32px", sm: "48px", md: "80px" },
+            textAlign: "center",
           }}
         >
-          <Typography
-            sx={{
-              color: "#333",
-              textAlign: "center",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "24px",
-              fontWeight: 500,
-              lineHeight: "31.2px",
-              letterSpacing: 0,
-            }}
-          >
-            Driving
-            <br />
-            <span
-              style={{
-                background: "linear-gradient(90deg, #BBC375 0%, #474D23 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+          <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+            <Typography
+              sx={{
+                color: "#333",
+                fontFamily: "Inter, sans-serif",
+                fontSize: { xs: "24px", md: "40px" },
+                fontWeight: 500,
+                lineHeight: { xs: "31.2px", md: "52px" },
+                letterSpacing: { xs: 0, md: "-1px" },
               }}
             >
-              Sustainable Printing
-            </span>
-          </Typography>
-          <Typography
-            sx={{
-              color: "#707070",
-              textAlign: "center",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "22.4px",
-            }}
-          >
-            Built for a cleaner, more responsible textile future
-          </Typography>
-          <Button
-            variant="contained"
-            endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
-            sx={{
-              width: "100%",
-              mt: "4px",
-              padding: "16px",
-              borderRadius: "8px",
-              bgcolor: "#111",
-              color: "#FFF",
-              textTransform: "none",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              boxShadow: "none",
-              "&:hover": { bgcolor: "#333", boxShadow: "none" },
-            }}
-          >
-            Contact Us
-          </Button>
-        </Box>
-      </Box>
+              Driving{" "}
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(90deg, #BBC375 0%, #474D23 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Sustainable Printing
+              </Box>
+            </Typography>
 
-      {/* ── DESKTOP: original layout ── */}
-      <Box
-        sx={{
-          display: { xs: "none", sm: "block" },
-          pt: { sm: "32px", md: "48px", lg: "80px" },
-          background: "linear-gradient(90deg, #dadbd6 0%, #efeeec 100%)",
-        }}
-      >
-        <Typography
-          sx={{
-            fontSize: { md: "40px" },
-            fontWeight: 700,
-            color: "#000",
-            lineHeight: "1.2",
-            textAlign: "center",
-            px: 4,
-          }}
-        >
-          Driving{" "}
-          <span
-            style={{
-              background: "linear-gradient(90deg, #BBC375 0%, #474D23 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              fontWeight: 700,
-            }}
-          >
-            Sustainable Printing
-          </span>
-        </Typography>
-        <Typography
-          sx={{
-            mt: 0.5,
-            fontSize: "14px",
-            fontWeight: 500,
-            color: "#707070",
-            textAlign: "center",
-            lineHeight: "22.4px",
-            fontFamily: "Inter, sans-serif",
-            px: 4,
-          }}
-        >
-          Built for a cleaner, more responsible textile future
-        </Typography>
-        <Box sx={{ display: "flex", justifyContent: "center", mt: "8px" }}>
+            <Typography
+              sx={{
+                color: "#707070",
+                fontFamily: "Inter, sans-serif",
+                fontSize: { xs: "12px", md: "14px" },
+                fontWeight: 500,
+                lineHeight: "22.4px",
+              }}
+            >
+              Built for a cleaner, more responsible textile future
+            </Typography>
+          </Box>
+
           <Button
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
             sx={{
-              width: "200px",
+              width: { xs: "100%", sm: "200px" },
+              maxWidth: { xs: "320px", sm: "200px" },
               padding: "16px",
               borderRadius: "8px",
               bgcolor: "#111",
               color: "#FFF",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 500,
+              lineHeight: "20.8px",
               boxShadow: "none",
               "&:hover": { bgcolor: "#333", boxShadow: "none" },
             }}
@@ -160,13 +92,6 @@ const DrivingSustainablePrinting = () => {
             Contact Us
           </Button>
         </Box>
-        <Image
-          src="/DrivingSustainablePrinting.png"
-          alt="Driving Sustainable Printing"
-          width={1920}
-          height={1080}
-          style={{ width: "100%", height: "auto", display: "block", marginTop: "16px" }}
-        />
       </Box>
     </Grid>
   );

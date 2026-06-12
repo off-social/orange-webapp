@@ -20,7 +20,7 @@ const ALL_BLOGS = [
     title:
       "The Future of Sustainable Textile Printing: Eco-Friendly Inks & Processes",
     desc: "As environmental concerns take center stage, the textile printing industry is rapidly adopting sustainable practices. From water-based inks to closed-loop water recycling systems, manufacturers are finding innovative ways to reduce their carbon footprint without compromising on print quality or production speed.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "sustainable-textile-printing",
   },
   {
@@ -28,14 +28,14 @@ const ALL_BLOGS = [
     title:
       "Understanding DTG vs. Screen Printing: Which Is Right for Your Business?",
     desc: "Direct-to-garment (DTG) printing and traditional screen printing each offer distinct advantages depending on order volume, design complexity, and fabric type. This guide breaks down the cost-per-unit economics, setup times, and quality benchmarks to help you make the right investment decision for your production workflow.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "dtg-vs-screen-printing",
   },
   {
     date: "20 May 2026",
     title: "5 Signs It's Time to Upgrade Your Textile Printing Machine",
     desc: "Are your production timelines slipping? Is maintenance eating into your margins? Outdated textile printing equipment shows clear warning signs before it fails completely. From increasing downtime and rising ink consumption to inconsistent color output, learn the five key indicators that signal it's time to invest in a modern printing solution.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "signs-to-upgrade-textile-printing-machine",
   },
   {
@@ -43,7 +43,7 @@ const ALL_BLOGS = [
     title:
       "How Reactive Dye Printing Is Transforming High-Volume Saree Production",
     desc: "Reactive dye printing delivers unmatched vibrancy and wash-fastness on natural fibers like cotton and silk — making it the preferred choice for premium saree manufacturers across India. Discover how leading mills are using modern reactive dye systems to scale from 500 to 5,000 meters per day while maintaining consistent color fidelity.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "reactive-dye-printing-saree-production",
   },
   {
@@ -51,14 +51,14 @@ const ALL_BLOGS = [
     title:
       "Orange O Tec Machines Power India's Make in India Textile Initiative",
     desc: "With the government's push for domestic manufacturing, Indian textile machinery brands are stepping up. Orange O Tec's latest range of digital printing machines, designed and built entirely in India, is helping small and medium enterprises reduce import dependency while gaining access to world-class printing technology at competitive price points.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "orange-otec-make-in-india",
   },
   {
     date: "01 May 2026",
     title: "A Complete Guide to Fabric Pretreatment for DTG Printing",
     desc: "Pretreatment is the most critical and often overlooked step in the DTG printing process. Without proper pretreatment, even the best inks will fade or wash out prematurely. This comprehensive guide covers the chemistry behind pretreatment solutions, application methods, curing temperatures, and common mistakes to avoid for consistent print durability.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "fabric-pretreatment-dtg-printing",
   },
   {
@@ -66,7 +66,7 @@ const ALL_BLOGS = [
     title:
       "Digital vs. Rotary Screen Printing: A Cost Analysis for Large Textile Mills",
     desc: "Large textile mills face a critical capital allocation decision when modernizing their printing lines. Digital printing offers lower setup costs and design flexibility, while rotary screen printing excels in per-meter costs at very high volumes. We analyze the breakeven points, hidden operational costs, and ROI timelines for both technologies.",
-    img: "/blogImg.png",
+    img: "/blogImg1.png",
     slug: "digital-vs-rotary-screen-cost-analysis",
   },
 ];
@@ -107,21 +107,17 @@ export default function BlogList() {
     >
       <Box
         sx={{
-          maxWidth: "2560px",
-          mx: "auto",
           display: "flex",
-          px: {
-            xs: "16px", // mobile
-            sm: "40px", // 600+
-            md: "80px", // 768 tablet
-            lg: "168px", // 1024–1279
-            xl: "263px", // 1440
-            // 2560px: same xl value, content naturally centers via maxWidth
+          padding: {
+            xs: "40px 16px",
+            sm: "40px 40px",
+            md: "40px 80px",
+            lg: "40px 356px",
           },
-          py: "40px",
           flexDirection: "column",
           alignItems: "center",
           gap: "64px",
+          alignSelf: "stretch",
         }}
       >
         {/* Blog items */}

@@ -7,7 +7,7 @@ export default function WhoWeAre() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 263px", xl: "80px 560px" },
+        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 263px", xl: "100px 400px" },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "32px", md: "48px" },
@@ -29,10 +29,10 @@ export default function WhoWeAre() {
             color: "#FFF",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "24px", md: "40px", xl: "52px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
-            letterSpacing: { xs: 0, md: "-1px" },
+            lineHeight: { xs: "31.2px", md: "52px", xl: "67.6px" },
+            letterSpacing: { xs: 0, md: "-1px", xl: "-1.5px" },
           }}
         >
           Who We Are
@@ -43,9 +43,9 @@ export default function WhoWeAre() {
             color: "#999",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "14px", xl: "16px" },
             fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
+            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
           }}
         >
           Pioneering the future of digital textile printing with innovation,
@@ -59,11 +59,11 @@ export default function WhoWeAre() {
         sx={{
           textAlign: "center",
           fontFamily: "Inter, sans-serif",
-          fontSize: { xs: "20px", md: "24px" },
+          fontSize: { xs: "20px", md: "24px", xl: "28px" },
           fontWeight: 500,
-          lineHeight: "41.6px",
+          lineHeight: { xs: "32px", md: "41.6px", xl: "48px" },
           letterSpacing: 0,
-          maxWidth: "860px",
+          maxWidth: { xs: "860px", xl: "1100px" },
           color: "#FFF",
         }}
       >

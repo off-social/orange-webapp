@@ -15,7 +15,7 @@ export default function Leadership() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "100px 263px" },
         flexDirection: "column",
         justifyContent: "center",
         alignItems: { xs: "center", md: "flex-start" },
@@ -31,7 +31,7 @@ export default function Leadership() {
           flexDirection: "column",
           alignItems: { xs: "center", md: "flex-start" },
           gap: "8px",
-          maxWidth: { xs: "100%", md: "540px" },
+          maxWidth: { xs: "100%", md: "540px", xl: "720px" },
           width: "100%",
         }}
       >
@@ -56,9 +56,9 @@ export default function Leadership() {
             sx={{
               color: "#333",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "24px", md: "40px" },
+              fontSize: { xs: "24px", md: "40px", xl: "52px" },
               fontWeight: 500,
-              lineHeight: { xs: "31.2px", md: "52px" },
+              lineHeight: { xs: "31.2px", md: "52px", xl: "67.6px" },
               letterSpacing: { xs: 0, md: "-1px" },
               display: "block",
             }}
@@ -70,9 +70,9 @@ export default function Leadership() {
             sx={{
               color: "#F6891F",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "24px", md: "40px" },
+              fontSize: { xs: "24px", md: "40px", xl: "52px" },
               fontWeight: 500,
-              lineHeight: { xs: "31.2px", md: "52px" },
+              lineHeight: { xs: "31.2px", md: "52px", xl: "67.6px" },
               letterSpacing: { xs: 0, md: "-1px" },
               display: "block",
             }}
@@ -85,10 +85,10 @@ export default function Leadership() {
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "14px", xl: "16px" },
             fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
-            maxWidth: "540px",
+            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
+            maxWidth: { xs: "540px", xl: "700px" },
             textAlign: { xs: "center", md: "left" },
           }}
         >
@@ -137,9 +137,9 @@ export default function Leadership() {
                 sx={{
                   color: "#111",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "20px",
+                  fontSize: { xs: "20px", xl: "22px" },
                   fontWeight: 500,
-                  lineHeight: "26px",
+                  lineHeight: { xs: "26px", xl: "28.6px" },
                   letterSpacing: 0,
                 }}
               >
@@ -149,9 +149,9 @@ export default function Leadership() {
                 sx={{
                   color: "#707070",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "16px",
+                  fontSize: { xs: "16px", xl: "18px" },
                   fontWeight: 500,
-                  lineHeight: "25.6px",
+                  lineHeight: { xs: "25.6px", xl: "28.8px" },
                 }}
               >
                 {leader.role}

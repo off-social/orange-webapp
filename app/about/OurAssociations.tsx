@@ -8,7 +8,7 @@ export default function OurAssociations() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "100px 263px" },
         flexDirection: "column",
         alignItems: "center",
         gap: "64px",
@@ -85,9 +85,9 @@ export default function OurAssociations() {
               color: "#333",
               textAlign: { xs: "center", md: "left" },
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "20px", md: "32px" },
+              fontSize: { xs: "20px", md: "32px", xl: "40px" },
               fontWeight: 500,
-              lineHeight: { xs: "26px", md: "41.6px" },
+              lineHeight: { xs: "26px", md: "41.6px", xl: "52px" },
               letterSpacing: { xs: 0, md: "-1px" },
               alignSelf: "stretch",
             }}
@@ -106,9 +106,9 @@ export default function OurAssociations() {
                 color: "#707070",
                 textAlign: { xs: "center", md: "left" },
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: { xs: "14px", xl: "16px" },
                 fontWeight: 500,
-                lineHeight: "22.4px",
+                lineHeight: { xs: "22.4px", xl: "25.6px" },
               }}
             >
               {text}

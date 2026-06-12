@@ -26,7 +26,7 @@ export default function WhyOrangeOTec() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "100px 263px" },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "48px", md: "64px" },
@@ -63,21 +63,17 @@ export default function WhyOrangeOTec() {
             color: "#333",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "20px", md: "26px", lg: "32px" },
+            fontSize: { xs: "20px", md: "26px", lg: "32px", xl: "40px" },
             fontWeight: 500,
-            lineHeight: { xs: "26px", md: "36px", lg: "41.6px" },
+            lineHeight: { xs: "26px", md: "36px", lg: "41.6px", xl: "52px" },
             letterSpacing: { xs: 0, md: "-1px" },
-            maxWidth: "920px",
+            maxWidth: { xs: "920px", xl: "1100px" },
           }}
         >
           <Box component="span" sx={{ color: "#F6891F" }}>
             At Orange O Tec,
           </Box>{" "}
-          we combine
-          <br />
-          technology, expertise, and customer-focused support
-          <br />
-          to create solutions that help textile businesses succeed.
+          we combine technology, expertise, and customer-focused support to create solutions that help textile businesses succeed.
         </Typography>
       </Box>
 
@@ -122,9 +118,9 @@ export default function WhyOrangeOTec() {
                 sx={{
                   color: "#333",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "16px",
+                  fontSize: { xs: "16px", xl: "18px" },
                   fontWeight: { xs: 600, md: 500 },
-                  lineHeight: "25.6px",
+                  lineHeight: { xs: "25.6px", xl: "28.8px" },
                 }}
               >
                 {card.title}
@@ -133,10 +129,10 @@ export default function WhyOrangeOTec() {
                 sx={{
                   color: "#707070",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: { xs: "12px", md: "13px" },
+                  fontSize: { xs: "12px", md: "13px", xl: "15px" },
                   fontWeight: 500,
-                  lineHeight: { xs: "19.2px", md: "20.8px" },
-                  maxWidth: "280px",
+                  lineHeight: { xs: "19.2px", md: "20.8px", xl: "24px" },
+                  maxWidth: { xs: "280px", xl: "380px" },
                 }}
               >
                 {card.desc}

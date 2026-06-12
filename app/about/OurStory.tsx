@@ -111,7 +111,7 @@ export default function OurStory() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "80px 16px", sm: "80px 40px", md: "80px 80px", lg: "80px 263px", xl: "80px 560px" },
+        padding: { xs: "80px 16px", sm: "80px 40px", md: "80px 80px", lg: "80px 263px", xl: "80px 263px" },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "48px", md: "64px" },
@@ -147,11 +147,11 @@ export default function OurStory() {
             color: "#333",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "26px", md: "40px" },
+            fontSize: { xs: "26px", md: "40px", xl: "52px" },
             fontWeight: 500,
-            lineHeight: { xs: "34px", md: "52px" },
+            lineHeight: { xs: "34px", md: "52px", xl: "67.6px" },
             letterSpacing: "-1px",
-            maxWidth: "620px",
+            maxWidth: { xs: "620px", xl: "860px" },
           }}
         >
           15+ Years of Shaping the Future of Textile Printing
@@ -161,10 +161,10 @@ export default function OurStory() {
             color: "#707070",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "14px", xl: "16px" },
             fontWeight: 500,
-            lineHeight: "22.4px",
-            maxWidth: "520px",
+            lineHeight: { xs: "22.4px", xl: "25.6px" },
+            maxWidth: { xs: "520px", xl: "680px" },
             mt: "8px",
           }}
         >
@@ -291,7 +291,7 @@ export default function OurStory() {
             gap: "12px",
             textAlign: "center",
             animation: `${direction === "next" ? slideFromRight : slideFromLeft} 0.28s ease forwards`,
-            height: { xs: "auto", md: "217px" },
+            height: { xs: "auto", md: "217px", xl: "250px" },
             overflow: { xs: "visible", md: "hidden" },
             pb: { xs: "8px", md: 0 },
           }}
@@ -311,9 +311,9 @@ export default function OurStory() {
             sx={{
               color: "#333",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "20px", md: "28px" },
+              fontSize: { xs: "20px", md: "28px", xl: "36px" },
               fontWeight: 500,
-              lineHeight: { xs: "26px", md: "36px" },
+              lineHeight: { xs: "26px", md: "36px", xl: "46.8px" },
               letterSpacing: { xs: 0, md: "-0.5px" },
             }}
           >
@@ -323,10 +323,10 @@ export default function OurStory() {
             sx={{
               color: "#707070",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "12px", md: "14px" },
+              fontSize: { xs: "12px", md: "14px", xl: "16px" },
               fontWeight: 500,
-              lineHeight: { xs: "19.2px", md: "22.4px" },
-              maxWidth: "460px",
+              lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
+              maxWidth: { xs: "460px", xl: "640px" },
             }}
           >
             {milestones[selectedIndex].desc}

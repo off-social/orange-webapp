@@ -33,7 +33,8 @@ export default function CSRInitiatives() {
           xs: "48px 16px",
           sm: "64px 40px",
           md: "80px 80px",
-          lg: "80px 263px",
+          lg: "80px 120px",
+          xl: "100px 400px",
         },
         flexDirection: "column",
         alignItems: "center",
@@ -56,9 +57,9 @@ export default function CSRInitiatives() {
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "24px", md: "40px", xl: "48px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
+            lineHeight: { xs: "31.2px", md: "52px", xl: "62.4px" },
             letterSpacing: "-1px",
           }}
         >
@@ -68,10 +69,10 @@ export default function CSRInitiatives() {
           sx={{
             color: "#707070",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "14px", xl: "16px" },
             fontWeight: 400,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
-            maxWidth: "600px",
+            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
+            maxWidth: { xs: "600px", xl: "700px" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Blandit etiam molestie non tellus
@@ -89,7 +90,7 @@ export default function CSRInitiatives() {
               sm: item.imgLeft ? "row" : "row-reverse",
             },
             alignItems: { xs: "flex-start", sm: "flex-start" },
-            gap: { xs: "24px", sm: "40px", md: "56px" },
+            gap: { xs: "24px", sm: "40px", md: "56px", xl: "72px" },
             width: "100%",
           }}
         >
@@ -97,8 +98,8 @@ export default function CSRInitiatives() {
           <Box
             sx={{
               flexShrink: 0,
-              width: { xs: "100%", sm: "351px" },
-              height: { xs: "auto", sm: "468px" },
+              width: { xs: "100%", sm: "351px", xl: "420px" },
+              height: { xs: "auto", sm: "468px", xl: "560px" },
               aspectRatio: "3/4",
               borderRadius: "10px",
               overflow: "hidden",
@@ -126,9 +127,9 @@ export default function CSRInitiatives() {
               sx={{
                 color: "#333",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "22px", md: "32px" },
+                fontSize: { xs: "22px", md: "32px", xl: "40px" },
                 fontWeight: 500,
-                lineHeight: { xs: "28.6px", md: "41.6px" },
+                lineHeight: { xs: "28.6px", md: "41.6px", xl: "52px" },
                 letterSpacing: "-1px",
               }}
             >
@@ -141,9 +142,9 @@ export default function CSRInitiatives() {
                 sx={{
                   color: "#707070",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "14px",
+                  fontSize: { xs: "14px", xl: "16px" },
                   fontWeight: 500,
-                  lineHeight: "22.4px",
+                  lineHeight: { xs: "22.4px", xl: "25.6px" },
                 }}
               >
                 {para}

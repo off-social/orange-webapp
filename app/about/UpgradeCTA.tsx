@@ -45,7 +45,7 @@ export default function UpgradeCTA() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 560px" },
+        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "100px 263px" },
         justifyContent: "space-between",
         alignItems: { xs: "flex-start", md: "center" },
         alignSelf: "stretch",
@@ -70,25 +70,23 @@ export default function UpgradeCTA() {
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "24px", md: "40px", xl: "52px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
+            lineHeight: { xs: "31.2px", md: "52px", xl: "67.6px" },
             letterSpacing: { xs: 0, md: "-1px" },
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          Upgrade to the
-          <br />
-          Future of Printing
+          Upgrade to the Future of Printing
         </Typography>
 
         <Typography
           sx={{
             color: "#707070",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "14px", xl: "16px" },
             fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
+            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
             textAlign: { xs: "center", md: "left" },
           }}
         >
@@ -102,9 +100,9 @@ export default function UpgradeCTA() {
           sx={{
             color: "#707070",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
+            fontSize: { xs: "12px", md: "14px", xl: "16px" },
             fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
+            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
             textAlign: { xs: "center", md: "left" },
           }}
         >

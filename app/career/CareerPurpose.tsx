@@ -84,10 +84,14 @@ export default function CareerPurpose() {
       {/* 2×2 Cards Grid */}
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)" },
-          gap: "24px",
-          width: "100%",
+          display: "inline-grid",
+          padding: { xs: "0 16px", sm: "0 40px", md: "0px", lg: "0 95px" },
+          rowGap: "24px",
+          columnGap: "24px",
+          alignSelf: "stretch",
+          gridTemplateRows: "repeat(2, fit-content(100%))",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))" },
+          gridAutoFlow: "row",
         }}
       >
         {cards.map((card) => (
@@ -140,8 +144,6 @@ export default function CareerPurpose() {
             <Box
               sx={{
                 alignSelf: "stretch",
-                height: { xs: "188px", md: "227px" },
-                position: "relative",
                 borderRadius: "8px",
                 overflow: "hidden",
                 bgcolor: "#F5F5F5",
@@ -150,8 +152,10 @@ export default function CareerPurpose() {
               <Image
                 src={card.img}
                 alt={card.title}
-                fill
-                style={{ objectFit: "contain" }}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "auto", display: "block" }}
               />
             </Box>
           </Box>

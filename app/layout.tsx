@@ -33,7 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
+        <div style={{ paddingTop: "59px" }}>{children}</div>
         <Footer />
       </body>
     </html>

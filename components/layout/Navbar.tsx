@@ -56,8 +56,24 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState<Record<string, boolean>>({});
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname();
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY < lastScrollY.current || currentY < 80) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDrawer = (open: boolean) => () => setDrawerOpen(open);
 
@@ -90,13 +106,16 @@ export default function Navbar() {
   return (
     <>
       <AppBar
-        position="sticky"
+        position="fixed"
         sx={{
           bgcolor: "#111",
           boxShadow: "none",
           width: "100%",
           left: 0,
           right: 0,
+          top: 0,
+          transform: visible ? "translateY(0)" : "translateY(-100%)",
+          transition: "transform 0.3s ease",
         }}
       >
         <Box

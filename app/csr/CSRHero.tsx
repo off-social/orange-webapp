@@ -5,7 +5,6 @@ import Image from "next/image";
 export default function CSRHero() {
   return (
     <Box sx={{ position: "relative", width: "100%", lineHeight: 0 }}>
-
       {/* Mobile image (xs only) */}
       <Box sx={{ display: { xs: "block", sm: "none" } }}>
         <Image
@@ -14,7 +13,12 @@ export default function CSRHero() {
           width={393}
           height={538}
           priority
-          style={{ width: "100%", aspectRatio: "84/115", display: "block", objectFit: "cover" }}
+          style={{
+            width: "100%",
+            aspectRatio: "84/115",
+            display: "block",
+            objectFit: "cover",
+          }}
         />
       </Box>
 
@@ -42,7 +46,8 @@ export default function CSRHero() {
             left: 0,
             right: 0,
             height: "120px",
-            background: "linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)",
+            background:
+              "linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)",
             zIndex: 1,
             pointerEvents: "none",
           }}
@@ -66,7 +71,14 @@ export default function CSRHero() {
         }}
       >
         {/* Label + Heading + Subtitle */}
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
           <Typography
             sx={{
               color: "#707070",
@@ -113,6 +125,8 @@ export default function CSRHero() {
 
         {/* Button */}
         <Button
+          component="a"
+          href="/contact"
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
           sx={{
@@ -131,6 +145,7 @@ export default function CSRHero() {
             justifyContent: "center",
             gap: "8px",
             boxShadow: "none",
+            textDecoration: "none",
             "&:hover": { bgcolor: "#333", boxShadow: "none" },
           }}
         >

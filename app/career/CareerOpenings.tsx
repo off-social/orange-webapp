@@ -6,15 +6,45 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const jobs = [
-  { title: "Production Engineer", dept: "Textile Machinery", location: "Surat", exp: "2+ Years" },
-  { title: "Sales Executive", dept: "Business Development", location: "Surat", exp: "1+ Years" },
-  { title: "Service Technician", dept: "After-Sales Support", location: "Surat", exp: "2+ Years" },
-  { title: "Software Developer", dept: "Technology", location: "Surat", exp: "1+ Years" },
-  { title: "Account Manager", dept: "Finance", location: "Surat", exp: "3+ Years" },
-  { title: "Marketing Executive", dept: "Marketing", location: "Surat", exp: "1+ Years" },
+  {
+    title: "Production Engineer",
+    dept: "Textile Machinery",
+    location: "Surat",
+    exp: "2+ Years",
+  },
+  {
+    title: "Sales Executive",
+    dept: "Business Development",
+    location: "Surat",
+    exp: "1+ Years",
+  },
+  {
+    title: "Service Technician",
+    dept: "After-Sales Support",
+    location: "Surat",
+    exp: "2+ Years",
+  },
+  {
+    title: "Software Developer",
+    dept: "Technology",
+    location: "Surat",
+    exp: "1+ Years",
+  },
+  {
+    title: "Account Manager",
+    dept: "Finance",
+    location: "Surat",
+    exp: "3+ Years",
+  },
+  {
+    title: "Marketing Executive",
+    dept: "Marketing",
+    location: "Surat",
+    exp: "1+ Years",
+  },
 ];
 
-function JobCard({ job, mobile }: { job: typeof jobs[0]; mobile?: boolean }) {
+function JobCard({ job, mobile }: { job: (typeof jobs)[0]; mobile?: boolean }) {
   return (
     <Box
       sx={{
@@ -27,19 +57,25 @@ function JobCard({ job, mobile }: { job: typeof jobs[0]; mobile?: boolean }) {
         border: "1px solid #E0E0E0",
         bgcolor: "#FFF",
         cursor: "pointer",
-        transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+        transition:
+          "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
         "&:hover": {
           transform: "translateY(-6px)",
           boxShadow: "0px 12px 32px rgba(0,0,0,0.10)",
           borderColor: "#BDBDBD",
         },
-        ...(mobile
-          ? { width: "100%" }
-          : { alignSelf: "stretch" }),
+        ...(mobile ? { width: "100%" } : { alignSelf: "stretch" }),
       }}
     >
       {/* Title + Dept */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", alignSelf: "stretch" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          alignSelf: "stretch",
+        }}
+      >
         <Typography
           sx={{
             color: "#333",
@@ -81,7 +117,15 @@ function JobCard({ job, mobile }: { job: typeof jobs[0]; mobile?: boolean }) {
         >
           {job.location}
         </Typography>
-        <Box sx={{ width: "4px", height: "4px", borderRadius: "50%", bgcolor: "#BDBDBD", mx: "2px" }} />
+        <Box
+          sx={{
+            width: "4px",
+            height: "4px",
+            borderRadius: "50%",
+            bgcolor: "#BDBDBD",
+            mx: "2px",
+          }}
+        />
         <Image src="/TimeIcon.svg" alt="experience" width={16} height={16} />
         <Typography
           sx={{
@@ -138,15 +182,25 @@ export default function CareerOpenings() {
     const el = scrollRef.current;
     if (!el) return;
     const slideWidth = 340 + 12;
-    const index = Math.min(Math.round(el.scrollLeft / slideWidth), slides.length - 1);
+    const index = Math.min(
+      Math.round(el.scrollLeft / slideWidth),
+      slides.length - 1,
+    );
     setActiveIndex(index);
   };
 
   return (
     <Box
+      id="current-openings"
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 263px" },
+        padding: {
+          xs: "64px 16px",
+          sm: "64px 40px",
+          md: "80px 80px",
+          lg: "80px 168px",
+          xl: "80px 263px",
+        },
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: "32px", md: "64px" },
@@ -155,7 +209,14 @@ export default function CareerOpenings() {
       }}
     >
       {/* Header */}
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+        }}
+      >
         <Typography
           sx={{
             color: "#707070",
@@ -200,7 +261,14 @@ export default function CareerOpenings() {
       </Box>
 
       {/* Mobile: horizontal scroll + dots */}
-      <Box sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column", gap: "24px", width: "100%" }}>
+      <Box
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          flexDirection: "column",
+          gap: "24px",
+          width: "100%",
+        }}
+      >
         <Box
           ref={scrollRef}
           onScroll={handleScroll}
@@ -233,7 +301,14 @@ export default function CareerOpenings() {
         </Box>
 
         {/* Dots */}
-        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "6px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "6px",
+          }}
+        >
           {slides.map((_, i) => (
             <Box
               key={i}

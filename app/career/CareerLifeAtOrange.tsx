@@ -7,12 +7,13 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const photos = [
-  "/LifePhoto1.png",
-  "/LifePhoto2.png",
-  "/LifePhoto3.png",
-  "/LifePhoto4.png",
-  "/LifePhoto5.png",
-  "/LifePhoto6.png",
+  "/life1.png",
+  "/life4.png",
+  "/life2.png",
+  "/life5.png",
+  "/life3.png",
+  "/life6.png",
+  "/life7.png",
 ];
 
 const CARD_W_DESKTOP = 446;
@@ -27,7 +28,10 @@ export default function CareerLifeAtOrange() {
     const el = scrollRef.current;
     if (!el) return;
     el.scrollBy({
-      left: dir === "next" ? CARD_W_DESKTOP + CARD_GAP : -(CARD_W_DESKTOP + CARD_GAP),
+      left:
+        dir === "next"
+          ? CARD_W_DESKTOP + CARD_GAP
+          : -(CARD_W_DESKTOP + CARD_GAP),
       behavior: "smooth",
     });
   };
@@ -36,7 +40,10 @@ export default function CareerLifeAtOrange() {
     const el = scrollRef.current;
     if (!el) return;
     const cardWidth = CARD_W_MOBILE + CARD_GAP;
-    const index = Math.min(Math.round(el.scrollLeft / cardWidth), photos.length - 1);
+    const index = Math.min(
+      Math.round(el.scrollLeft / cardWidth),
+      photos.length - 1,
+    );
     setActiveIndex(index);
   };
 
@@ -61,11 +68,19 @@ export default function CareerLifeAtOrange() {
           justifyContent: "space-between",
           alignItems: "flex-end",
           alignSelf: "stretch",
-          px: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "560px" },
+          px: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "263px" },
         }}
       >
         {/* Left: heading + desc */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, maxWidth: { md: "460px" } }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            flex: 1,
+            maxWidth: { md: "460px" },
+          }}
+        >
           <Typography
             sx={{
               fontFamily: "Inter, sans-serif",
@@ -75,8 +90,12 @@ export default function CareerLifeAtOrange() {
               letterSpacing: { xs: 0, md: "-1px" },
             }}
           >
-            <Box component="span" sx={{ color: "#333" }}>Life at </Box>
-            <Box component="span" sx={{ color: "#F6891F" }}>Orange O Tec</Box>
+            <Box component="span" sx={{ color: "#333" }}>
+              Life at{" "}
+            </Box>
+            <Box component="span" sx={{ color: "#F6891F" }}>
+              Orange O Tec
+            </Box>
           </Typography>
           <Typography
             sx={{
@@ -95,13 +114,21 @@ export default function CareerLifeAtOrange() {
         </Box>
 
         {/* Nav arrows — desktop only */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "8px", flexShrink: 0 }}>
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            gap: "8px",
+            flexShrink: 0,
+          }}
+        >
           <IconButton
             onClick={() => scroll("prev")}
             sx={{
-              width: "40px", height: "40px",
+              width: "40px",
+              height: "40px",
               border: "1px solid #E0E0E0",
-              bgcolor: "#FFF", borderRadius: "50%",
+              bgcolor: "#FFF",
+              borderRadius: "50%",
               "&:hover": { bgcolor: "#f5f5f5" },
             }}
           >
@@ -110,9 +137,11 @@ export default function CareerLifeAtOrange() {
           <IconButton
             onClick={() => scroll("next")}
             sx={{
-              width: "40px", height: "40px",
+              width: "40px",
+              height: "40px",
               border: "1px solid #E0E0E0",
-              bgcolor: "#FFF", borderRadius: "50%",
+              bgcolor: "#FFF",
+              borderRadius: "50%",
               "&:hover": { bgcolor: "#f5f5f5" },
             }}
           >
@@ -132,7 +161,7 @@ export default function CareerLifeAtOrange() {
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
           alignSelf: "stretch",
-          pl: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "560px" },
+          pl: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "263px" },
           scrollSnapType: { xs: "x mandatory", sm: "none" },
         }}
       >
@@ -157,7 +186,18 @@ export default function CareerLifeAtOrange() {
             />
           </Box>
         ))}
-        <Box sx={{ flexShrink: 0, width: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "560px" } }} />
+        <Box
+          sx={{
+            flexShrink: 0,
+            width: {
+              xs: "16px",
+              sm: "40px",
+              md: "80px",
+              lg: "168px",
+              xl: "263px",
+            },
+          }}
+        />
       </Box>
 
       {/* Dots — mobile only */}

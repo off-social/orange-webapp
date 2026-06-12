@@ -79,6 +79,8 @@ export default function AboutHero() {
         </Typography>
 
         <Button
+          component="a"
+          href="/contact"
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
           sx={{
@@ -98,6 +100,7 @@ export default function AboutHero() {
             fontWeight: 500,
             lineHeight: "20.8px",
             boxShadow: "none",
+            textDecoration: "none",
             "&:hover": { bgcolor: "#f0f0f0", boxShadow: "none" },
           }}
         >

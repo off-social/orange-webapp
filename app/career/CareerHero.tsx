@@ -1,12 +1,18 @@
 "use client";
 
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function CareerHero() {
   return (
-    <Box sx={{ bgcolor: "#FFF", display: "flex", flexDirection: "column", alignSelf: "stretch" }}>
+    <Box
+      sx={{
+        bgcolor: "#FFF",
+        display: "flex",
+        flexDirection: "column",
+        alignSelf: "stretch",
+      }}
+    >
       {/* Padded content area */}
       <Box
         sx={{
@@ -40,7 +46,12 @@ export default function CareerHero() {
               fontFamily: "Inter, sans-serif",
               fontSize: { xs: "24px", sm: "32px", md: "40px", xl: "56px" },
               fontWeight: 500,
-              lineHeight: { xs: "31.2px", sm: "41.6px", md: "52px", xl: "72.8px" },
+              lineHeight: {
+                xs: "31.2px",
+                sm: "41.6px",
+                md: "52px",
+                xl: "72.8px",
+              },
               letterSpacing: { xs: 0, sm: "-0.5px", md: "-1px", xl: "-1.5px" },
             }}
           >
@@ -55,7 +66,13 @@ export default function CareerHero() {
               fontSize: { xs: "12px", sm: "14px", xl: "16px" },
               fontWeight: 500,
               lineHeight: { xs: "19.2px", sm: "22.4px", xl: "25.6px" },
-              maxWidth: { xs: "100%", sm: "520px", md: "580px", lg: "620px", xl: "720px" },
+              maxWidth: {
+                xs: "100%",
+                sm: "520px",
+                md: "580px",
+                lg: "620px",
+                xl: "720px",
+              },
             }}
           >
             At Orange O Tec, we believe the sale is just the beginning of our
@@ -77,7 +94,19 @@ export default function CareerHero() {
         >
           <Button
             variant="contained"
-            endIcon={<KeyboardArrowDownIcon />}
+            endIcon={
+              <Image
+                src="/ArrowBubbleDownIcon.svg"
+                alt=""
+                width={18}
+                height={18}
+              />
+            }
+            onClick={() => {
+              document
+                .getElementById("current-openings")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             sx={{
               order: { xs: 1, sm: 2 },
               width: { xs: "100%", sm: "200px" },
@@ -100,6 +129,8 @@ export default function CareerHero() {
             View Open Roles
           </Button>
           <Button
+            component="a"
+            href="/about"
             variant="outlined"
             sx={{
               order: { xs: 2, sm: 1 },
@@ -117,6 +148,7 @@ export default function CareerHero() {
               fontWeight: 500,
               lineHeight: "22.4px",
               textTransform: "none",
+              textDecoration: "none",
               "&:hover": { borderColor: "#BDBDBD", bgcolor: "transparent" },
             }}
           >
@@ -140,7 +172,12 @@ export default function CareerHero() {
           alt="Career at Orange O Tec"
           width={393}
           height={141}
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
           priority
         />
       </Box>

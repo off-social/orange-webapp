@@ -201,10 +201,10 @@ export default function PioneeringSolutions() {
             Advanced digital printing, designed for real-world production.
           </Typography>
 
-          {/* Arrows — all breakpoints */}
+          {/* Arrows — desktop only */}
           <Box
             sx={{
-              display: "flex",
+              display: { xs: "none", md: "flex" },
               gap: "8px",
               alignItems: "center",
               flexShrink: 0,
@@ -355,6 +355,49 @@ export default function PioneeringSolutions() {
             </Box>
           ))}
         </Box>
+      </Box>
+
+      {/* Arrows — mobile only, below cards */}
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          gap: "8px",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          mt: "-24px",
+        }}
+      >
+        <IconButton
+          onClick={handlePrev}
+          disabled={safeCurrent === 0}
+          sx={{
+            width: "40px",
+            height: "40px",
+            border: "1px solid #E0E0E0",
+            bgcolor: "#FFF",
+            borderRadius: "50%",
+            opacity: safeCurrent === 0 ? 0.4 : 1,
+            "&:hover": { bgcolor: "#f5f5f5" },
+          }}
+        >
+          <ChevronLeftIcon sx={{ fontSize: "20px", color: "#333" }} />
+        </IconButton>
+        <IconButton
+          onClick={handleNext}
+          disabled={safeCurrent >= maxIndex}
+          sx={{
+            width: "40px",
+            height: "40px",
+            border: "1px solid #E0E0E0",
+            bgcolor: "#FFF",
+            borderRadius: "50%",
+            opacity: safeCurrent >= maxIndex ? 0.4 : 1,
+            "&:hover": { bgcolor: "#f5f5f5" },
+          }}
+        >
+          <ChevronRightIcon sx={{ fontSize: "20px", color: "#333" }} />
+        </IconButton>
       </Box>
     </Box>
   );

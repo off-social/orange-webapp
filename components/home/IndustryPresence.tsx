@@ -1,7 +1,6 @@
 "use client";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
@@ -180,8 +179,10 @@ const IndustryPresence = () => {
             maxWidth: { xs: "100%", md: "560px" },
           }}
         >
-          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
-          ullamcorper. Eleifend duis donec cras quam ipsum auctor ut semper in.
+          Our presence at premier industry events reflects our commitment to
+          innovation, collaboration, and technological excellence, providing a
+          platform to demonstrate advanced textile printing solutions and engage
+          with the global textile community.
         </Typography>
       </Box>
 
@@ -411,35 +412,6 @@ const IndustryPresence = () => {
           ))}
         </Box>
       )}
-
-      {/* Book a Demo button */}
-      <Button
-        variant="contained"
-        startIcon={
-          <CalendarTodayOutlinedIcon sx={{ fontSize: "16px !important" }} />
-        }
-        endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
-        sx={{
-          bgcolor: "#111",
-          color: "#FFF",
-          borderRadius: "8px",
-          textTransform: "none",
-          fontFamily: "Inter, sans-serif",
-          fontSize: "13px",
-          fontWeight: 500,
-          lineHeight: "20.8px",
-          padding: "16px",
-          gap: "8px",
-          alignSelf: "center",
-          width: { xs: "100%", md: "auto" },
-          justifyContent: "center",
-          alignItems: "center",
-          boxShadow: "none",
-          "&:hover": { bgcolor: "#333", boxShadow: "none" },
-        }}
-      >
-        Book a Demo at Event
-      </Button>
     </Box>
   );
 };

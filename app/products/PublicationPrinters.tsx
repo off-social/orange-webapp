@@ -15,16 +15,6 @@ const products = [
 
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
-const NAV_BTN_SX = {
-  minWidth: { xs: "36px", md: "48px" },
-  width: { xs: "36px", md: "48px" },
-  height: { xs: "36px", md: "48px" },
-  borderRadius: "100px",
-  border: "1px solid #e0e0e0",
-  color: "#111",
-  bgcolor: "#fff",
-  "&:hover": { border: "1px solid #111", bgcolor: "#f5f5f5" },
-};
 
 export default function PublicationPrinters() {
   const [activeImg, setActiveImg] = useState(0);
@@ -85,21 +75,6 @@ export default function PublicationPrinters() {
 
       {/* Carousel */}
       <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
-        <Button
-          onClick={() => scrollTo(Math.max(0, activeImg - 1))}
-          sx={{
-            ...NAV_BTN_SX,
-            display: { xs: "none", md: "flex" },
-            position: "absolute",
-            left: { md: "calc(20vw - 56px)" },
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 2,
-          }}
-        >
-          ←
-        </Button>
-
         <Box
           ref={scrollRef}
           onScroll={handleScroll}
@@ -143,20 +118,6 @@ export default function PublicationPrinters() {
           ))}
         </Box>
 
-        <Button
-          onClick={() => scrollTo(Math.min(products.length - 1, activeImg + 1))}
-          sx={{
-            ...NAV_BTN_SX,
-            display: { xs: "none", md: "flex" },
-            position: "absolute",
-            right: { md: "calc(20vw - 56px)" },
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 2,
-          }}
-        >
-          →
-        </Button>
       </Box>
 
       {/* Product info */}

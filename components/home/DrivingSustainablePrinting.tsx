@@ -33,7 +33,14 @@ const DrivingSustainablePrinting = () => {
             textAlign: "center",
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
             <Typography
               sx={{
                 color: "#333",
@@ -48,7 +55,8 @@ const DrivingSustainablePrinting = () => {
               <Box
                 component="span"
                 sx={{
-                  background: "linear-gradient(90deg, #BBC375 0%, #474D23 100%)",
+                  background:
+                    "linear-gradient(90deg, #BBC375 0%, #474D23 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

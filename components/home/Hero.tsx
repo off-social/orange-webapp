@@ -10,6 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import DrivingSustainablePrinting from "./DrivingSustainablePrinting";
 import IndustryPresence from "./IndustryPresence";
@@ -27,10 +28,6 @@ const Home = () => {
   const [value, setValue] = useState(0);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
 
   return (
     <>
@@ -138,6 +135,8 @@ const Home = () => {
               Get a Quote
             </Button>
             <Button
+              component={Link}
+              href="/products"
               variant="contained"
               endIcon={
                 <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />

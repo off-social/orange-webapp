@@ -1,18 +1,15 @@
 "use client";
 
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { label: "Disclosure", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Condition", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const Footer = () => {
@@ -45,7 +42,13 @@ const Footer = () => {
           }}
         >
           {/* Logo */}
-          <img src="/OrangeLogo.svg" alt="Orange" width={110} height={25} style={{ display: "block" }} />
+          <Image
+            src="/OrangeLogo.svg"
+            alt="Orange"
+            width={110}
+            height={25}
+            style={{ display: "block" }}
+          />
 
           {/* Quick Links heading */}
           <Typography
@@ -73,10 +76,11 @@ const Footer = () => {
             }}
           >
             {QUICK_LINKS.map(({ label, href }) => (
-              <Link
+              <Box
                 key={label}
+                component={Link}
                 href={href}
-                style={{
+                sx={{
                   color: "#EFEFEF",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "13px",
@@ -84,33 +88,52 @@ const Footer = () => {
                   lineHeight: "20.8px",
                   textDecoration: "none",
                   textAlign: "center",
+                  "&:hover": { textDecoration: "underline" },
                 }}
               >
                 {label}
-              </Link>
+              </Box>
             ))}
           </Box>
 
           {/* Social icons */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-            <InstagramIcon
-              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
-            />
-            <LinkedInIcon
-              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
-            />
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="white"
-              style={{ cursor: "pointer", flexShrink: 0 }}
+            <Box
+              component="a"
+              href="https://www.instagram.com/orangeotec/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "flex", alignItems: "center" }}
             >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            <FacebookIcon
-              sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
-            />
+              <InstagramIcon
+                sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
+              />
+            </Box>
+            <Box
+              component="a"
+              href="https://www.facebook.com/orangeotec"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FacebookIcon
+                sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
+              />
+            </Box>
+            <Box
+              component="a"
+              href="https://youtube.com/@orangegroup6798?si=Xvo-GhKLyOuMXAFk"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+            >
+              <Image
+                src="/youtubeIcon.svg"
+                alt="YouTube"
+                width={28}
+                height={28}
+              />
+            </Box>
           </Box>
         </Box>
 
@@ -161,7 +184,12 @@ const Footer = () => {
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <EmailOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Image
+                  src="/emailIcon.svg"
+                  alt="Email"
+                  width={16}
+                  height={16}
+                />
                 <Typography
                   sx={{
                     color: "#999",
@@ -197,7 +225,12 @@ const Footer = () => {
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <PhoneOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Image
+                  src="/PhoneIcon.svg"
+                  alt="Phone"
+                  width={16}
+                  height={16}
+                />
                 <Typography
                   sx={{
                     color: "#999",
@@ -233,7 +266,12 @@ const Footer = () => {
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <LocationOnOutlinedIcon sx={{ fontSize: 16, color: "#999" }} />
+                <Image
+                  src="/locationIcon1.svg"
+                  alt="Location"
+                  width={16}
+                  height={16}
+                />
                 <Typography
                   sx={{
                     color: "#999",
@@ -281,7 +319,7 @@ const Footer = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          Copyright © 202X Orange Private Limited. All rights reserved.
+          ©2026 Orange O Tec. All Rights Reserved. Developed By Off Social
         </Typography>
       </Box>
     </Box>

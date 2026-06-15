@@ -1,16 +1,16 @@
 import { Grid } from "@mui/material";
-import Image from "next/image";
 import TextileHero from "@/components/home/TextileHero";
 import DigitalTextilePrinters from "./DigitalTextilePrinters";
 import Inks from "./Inks";
 import LabelPrinters from "./LabelPrinters";
 import PublicationPrinters from "./PublicationPrinters";
+import ProductsHero from "./ProductsHero";
 
 export default function ProductsPage() {
   return (
     <>
       <Grid size={12}>
-        <Image src="/empty.png" alt="Products" width={1920} height={1080} />
+        <ProductsHero />
       </Grid>
       <Grid size={12}>
         <DigitalTextilePrinters />

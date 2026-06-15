@@ -1,8 +1,41 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
+
+const SEGMENTS = [
+  { text: "Orange O Tec", color: "#F6891F" },
+  {
+    text: "is a leading provider of digital textile printing solutions, helping businesses transition toward faster, smarter, and more sustainable production. With deep industry expertise and a commitment to innovation, we deliver advanced printing technologies designed to improve efficiency, reduce environmental impact, and drive long-term growth.",
+    color: "#FFF",
+  },
+];
+
+const WORDS = SEGMENTS.flatMap(({ text, color }) =>
+  text.split(" ").map((word) => ({ word, color }))
+);
 
 export default function WhoWeAre() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const scrolled = vh * 0.8 - rect.top;
+      const total = vh * 0.55;
+      setProgress(Math.min(1, Math.max(0, scrolled / total)));
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const total = WORDS.length;
+
   return (
     <Box
       sx={{
@@ -53,8 +86,9 @@ export default function WhoWeAre() {
         </Typography>
       </Box>
 
-      {/* Body paragraph */}
+      {/* Animated body paragraph */}
       <Typography
+        ref={sectionRef}
         component="p"
         sx={{
           textAlign: "center",
@@ -64,17 +98,28 @@ export default function WhoWeAre() {
           lineHeight: { xs: "32px", md: "41.6px", xl: "48px" },
           letterSpacing: 0,
           maxWidth: { xs: "860px", xl: "1100px" },
-          color: "#FFF",
+          m: 0,
         }}
       >
-        <Box component="span" sx={{ color: "#F6891F" }}>
-          Orange O Tec
-        </Box>{" "}
-        is a leading provider of digital textile printing solutions, helping
-        businesses transition toward faster, smarter, and more sustainable
-        production. With deep industry expertise and a commitment to innovation,
-        we deliver advanced printing technologies designed to improve
-        efficiency, reduce environmental impact, and drive long-term growth.
+        {WORDS.map(({ word, color }, i) => {
+          const lit = progress > i / total;
+          return (
+            <Box
+              key={i}
+              component="span"
+              sx={{
+                color: lit ? color : "#444",
+                transition: "color 0.25s ease",
+                fontFamily: "inherit",
+                fontSize: "inherit",
+                fontWeight: "inherit",
+                lineHeight: "inherit",
+              }}
+            >
+              {word}{" "}
+            </Box>
+          );
+        })}
       </Typography>
     </Box>
   );

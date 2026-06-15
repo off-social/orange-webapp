@@ -30,10 +30,22 @@ function LeafIcon({
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={color}
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 4-8 4s-2-3-7 0c0 0 0-4 5-5 0 0-2-1-5 0C4 3 2 7.5 2 10c0 3.5 2 6 5 7 0-4 2.5-7 10-9Z" />
+      <path
+        d="M7.64584 15.7108C7.23279 14.8966 7 13.9755 7 13C7 9.78484 9.5 7.5 13 7C17.0817 6.4169 18.8333 4.16667 20 3C23.5 16 17 19 13 19C11.9071 19 10.8825 18.7078 10 18.1973"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 21C3.5 18 5.45791 16.1355 10 15C13.2167 14.1958 15.4634 12.1791 17 10.0549"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

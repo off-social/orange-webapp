@@ -3,6 +3,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const TextileHero = () => {
   return (
@@ -122,6 +123,8 @@ const TextileHero = () => {
           }}
         >
           <Button
+            component={Link}
+            href="/products"
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
             sx={{
@@ -144,6 +147,8 @@ const TextileHero = () => {
           </Button>
 
           <Button
+            component={Link}
+            href="/products"
             variant="outlined"
             sx={{
               color: "#FFF",

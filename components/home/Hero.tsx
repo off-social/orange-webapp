@@ -20,6 +20,9 @@ import MovingToDigital from "./MovingToDigital";
 import ScrollVideos from "./ScrollVideos";
 import StatsSection from "./StatsSection";
 import TextileHero from "./TextileHero";
+import InkSolutions from "./InkSolutions";
+import LabelPrinting from "./LabelPrinting";
+import PublicationPrinting from "./PublicationPrinting";
 import TextilePrinting from "./TextilePrinting";
 import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
 import ThePowerOfOrange from "./ThePowerOfOrange";
@@ -275,9 +278,9 @@ const Home = () => {
           {/* Tab content */}
           <Box sx={{ width: "100%" }}>
             {value === 0 && <TextilePrinting />}
-            {/* {value === 1 && <LabelPrinting />}
+            {value === 1 && <LabelPrinting />}
             {value === 2 && <PublicationPrinting />}
-            {value === 3 && <InkSolutions />} */}
+            {value === 3 && <InkSolutions />}
           </Box>
         </Box>
       </Grid>

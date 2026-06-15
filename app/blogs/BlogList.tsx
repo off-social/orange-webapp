@@ -109,10 +109,10 @@ export default function BlogList() {
         sx={{
           display: "flex",
           padding: {
-            xs: "40px 16px",
-            sm: "40px 40px",
-            md: "40px 80px",
-            lg: "40px 356px",
+            xs: "64px 16px",
+            sm: "64px 40px",
+            md: "64px 80px",
+            lg: "64px 356px",
           },
           flexDirection: "column",
           alignItems: "center",

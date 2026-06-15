@@ -1,4 +1,4 @@
-import EventsPresence from "../insights/EventsPresence";
+import EventsPresence from "./EventsPresence";
 
 export default function NewsEventsPage() {
   return <EventsPresence />;

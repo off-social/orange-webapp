@@ -146,7 +146,7 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
             },
           }}
         >
-          Get A Quote
+          Book a Consultation
         </Button>
       </Box>
     </Box>

@@ -23,7 +23,7 @@ export default function LogoMarquee() {
         width: "100%",
         overflow: "hidden",
         background: "#fff",
-        padding: "16px 0",
+        padding: "34px 0",
         position: "relative",
       }}
     >

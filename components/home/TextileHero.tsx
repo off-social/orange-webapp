@@ -97,28 +97,13 @@ const TextileHero = () => {
           Digital Innovation
         </Typography>
 
-        <Typography
-          sx={{
-            color: "#E0E0E0",
-            textAlign: "center",
-            fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "13px", lg: "14px" },
-            fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "21px", lg: "22.4px" },
-            maxWidth: { xs: "100%", sm: "440px", md: "520px", lg: "680px" },
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
-          ullamcorper. Eleifend duis donec cras quam ipsum auctor ut semper in.
-        </Typography>
-
-        {/* Buttons — mobile: View Products first (orange), Get a Quote second */}
+        {/* Buttons — mobile: View Products first (orange), Book a Consultation second */}
         <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
-            gap: "12px",
-            mt: { xs: "8px", md: "12px" },
+            gap: "16px",
+            mt: { xs: "8px", md: "24px" },
             width: { xs: "100%", sm: "auto" },
           }}
         >
@@ -126,52 +111,51 @@ const TextileHero = () => {
             component={Link}
             href="/products"
             variant="contained"
-            endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+            endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
             sx={{
               bgcolor: "#F6891F",
               color: "#FFF",
               borderRadius: "8px",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 500,
-              px: "24px",
-              py: "13px",
+              lineHeight: "20.8px",
+              p: "16px",
+              gap: "8px",
               boxShadow: "none",
-              width: { xs: "100%", sm: "auto" },
+              width: { xs: "100%", sm: "200px" },
               order: { xs: 1, sm: 2 },
               "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
             }}
           >
-            View Products
+            Explore Printers
           </Button>
 
           <Button
             component={Link}
-            href="/products"
-            variant="outlined"
+            href="/contact"
+            variant="contained"
             sx={{
-              color: "#FFF",
-              borderColor: "rgba(255,255,255,0.5)",
+              color: "#111",
+              bgcolor: "#FFF",
               borderRadius: "8px",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 500,
-              px: "24px",
-              py: "13px",
-              bgcolor: "transparent",
+              lineHeight: "20.8px",
+              p: "16px",
               boxShadow: "none",
-              width: { xs: "100%", sm: "auto" },
+              width: { xs: "100%", sm: "200px" },
               order: { xs: 2, sm: 1 },
               "&:hover": {
-                borderColor: "#FFF",
-                bgcolor: "rgba(255,255,255,0.08)",
+                bgcolor: "#F2F2F2",
                 boxShadow: "none",
               },
             }}
           >
-            Get a Quote
+            Book a Consultation
           </Button>
         </Box>
       </Box>

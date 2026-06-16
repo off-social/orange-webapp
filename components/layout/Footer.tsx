@@ -267,7 +267,7 @@ const Footer = () => {
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <Image
-                  src="/locationIcon1.svg"
+                  src="/locationIcon.png"
                   alt="Location"
                   width={16}
                   height={16}

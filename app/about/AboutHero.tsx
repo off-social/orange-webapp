@@ -75,7 +75,7 @@ export default function AboutHero() {
             maxWidth: "480px",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur. Tristique condimentum
+          Innovative digital textile printing solutions engineered for precision, performance, and sustainable growth.
         </Typography>
 
         <Button

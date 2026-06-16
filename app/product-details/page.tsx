@@ -130,7 +130,7 @@ export default function ProductDetailsPage() {
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
               }}
             >
-              Get A Quote
+              Book a Consultation
             </Button>
           </Box>
         </Box>

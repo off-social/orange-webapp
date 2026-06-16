@@ -80,7 +80,7 @@ const DrivingSustainablePrinting = () => {
 
           <Button
             variant="contained"
-            endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+            endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
             sx={{
               width: { xs: "100%", sm: "200px" },
               maxWidth: { xs: "320px", sm: "200px" },

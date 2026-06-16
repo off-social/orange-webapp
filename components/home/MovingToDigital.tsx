@@ -1,10 +1,10 @@
 "use client";
 
-import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import PercentOutlinedIcon from "@mui/icons-material/PercentOutlined";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
-import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
-import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
+import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
@@ -38,12 +38,14 @@ const AnimatedDigitalGraph = () => {
 
     const draw = () => {
       const dpr = window.devicePixelRatio || 1;
-      const SIZE = Math.min(wrapper.getBoundingClientRect().width, 480);
+      const SIZE = Math.min(wrapper.getBoundingClientRect().width, 446);
+      // Match Figma chart proportions (446 x 381) instead of a square.
+      const CHART_H = SIZE * (381 / 446);
 
       canvas.width = SIZE * dpr;
-      canvas.height = SIZE * dpr;
+      canvas.height = CHART_H * dpr;
       canvas.style.width = SIZE + "px";
-      canvas.style.height = SIZE + "px";
+      canvas.style.height = CHART_H + "px";
 
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
@@ -51,11 +53,11 @@ const AnimatedDigitalGraph = () => {
       ctx.scale(dpr, dpr);
 
       const W = SIZE;
-      const H = SIZE;
+      const H = CHART_H;
       const PAD_L = SIZE * 0.13;
       const PAD_R = SIZE * 0.05;
-      const PAD_T = SIZE * 0.06;
-      const PAD_B = SIZE * 0.1;
+      const PAD_T = H * 0.06;
+      const PAD_B = H * 0.12;
       const CW = W - PAD_L - PAD_R;
       const CH = H - PAD_T - PAD_B;
 
@@ -104,8 +106,8 @@ const AnimatedDigitalGraph = () => {
       ) => {
         const mt = 1 - t;
         return {
-          x: mt*mt*mt*p0.x + 3*mt*mt*t*cp1x + 3*mt*t*t*cp2x + t*t*t*p1.x,
-          y: mt*mt*mt*p0.y + 3*mt*mt*t*cp1y + 3*mt*t*t*cp2y + t*t*t*p1.y,
+          x: mt * mt * mt * p0.x + 3 * mt * mt * t * cp1x + 3 * mt * t * t * cp2x + t * t * t * p1.x,
+          y: mt * mt * mt * p0.y + 3 * mt * mt * t * cp1y + 3 * mt * t * t * cp2y + t * t * t * p1.y,
         };
       };
 
@@ -164,7 +166,10 @@ const AnimatedDigitalGraph = () => {
           const { cp1x, cp1y, cp2x, cp2y } = getCP(i);
           linePath.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, pts[i + 1].x, pts[i + 1].y);
         }
-        ctx.strokeStyle = "#E8960A";
+        const lineGrad = ctx.createLinearGradient(0, PAD_T + CH, 0, PAD_T);
+        lineGrad.addColorStop(0, "#F4C430");
+        lineGrad.addColorStop(1, "#F6891F");
+        ctx.strokeStyle = lineGrad;
         ctx.lineWidth = SIZE < 280 ? 2.5 : 3.5;
         ctx.lineJoin = "round";
         ctx.lineCap = "round";
@@ -208,25 +213,25 @@ const AnimatedDigitalGraph = () => {
   }, [isVisible]);
 
   return (
-    <div ref={wrapperRef} style={{ width: "100%", maxWidth: "5000px" }}>
-      <canvas ref={canvasRef} style={{ display: "block" }} />
+    <div ref={wrapperRef} style={{ width: "100%", maxWidth: "446px" }}>
+      <canvas ref={canvasRef} style={{ display: "block", width: "100%" }} />
     </div>
   );
 };
 
 const POINTS = [
-  { icon: <LocalOfferOutlinedIcon fontSize="small" />, text: "Save up to 40% on short-run costs" },
-  { icon: <PrintOutlinedIcon fontSize="small" />, text: "Print-on-demand manufacturing" },
-  { icon: <RocketLaunchOutlinedIcon fontSize="small" />, text: "Faster product launches" },
-  { icon: <InventoryOutlinedIcon fontSize="small" />, text: "Reduced inventory costs" },
-  { icon: <ShowChartOutlinedIcon fontSize="small" />, text: "Improved working capital efficiency" },
+  { icon: <PercentOutlinedIcon sx={{ fontSize: 24 }} />, text: "Save up to 40% on short-run costs" },
+  { icon: <PrintOutlinedIcon sx={{ fontSize: 24 }} />, text: "Print-on-demand manufacturing" },
+  { icon: <Inventory2OutlinedIcon sx={{ fontSize: 24 }} />, text: "Faster product launches" },
+  { icon: <LocalOfferOutlinedIcon sx={{ fontSize: 24 }} />, text: "Reduced inventory costs" },
+  { icon: <TrendingUpOutlinedIcon sx={{ fontSize: 24 }} />, text: "Improved working capital efficiency" },
 ];
 
 const MovingToDigital = () => {
   return (
-    <Box sx={{ px: { xs: "16px", sm: "40px", md: "64px", lg: "168px" }, py: { xs: "48px", sm: "64px", md: "80px", lg: "100px" } }}>
+    <Box sx={{ px: { xs: "16px", sm: "40px", md: "64px", lg: "168px" }, py: { xs: "48px", sm: "64px", md: "80px" } }}>
       {/* Header — centered */}
-      <Box sx={{ mb: { xs: "32px", sm: "40px", md: "56px" }, textAlign: "center", display: "flex", flexDirection: "column", gap: "8px", alignItems: "center" }}>
+      <Box sx={{ mb: { xs: "32px", sm: "40px", md: "56px", lg: "80px" }, textAlign: "center", display: "flex", flexDirection: "column", gap: "8px", alignItems: "center" }}>
         <Typography
           sx={{
             color: "#707070",
@@ -259,59 +264,66 @@ const MovingToDigital = () => {
             maxWidth: "600px",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit
-          ullamcorper. Eleifend duis donec cras quam ipsum auctor ut semper in..
+          Digital printing is transforming modern manufacturing by enabling greater flexibility, lower operational costs, faster turnaround times, and more sustainable production processes.
         </Typography>
       </Box>
 
-      {/* Chart + Benefits — equal halves, 120px gap */}
+      {/* Chart + Benefits — stacks until there is room for a 916px (446 chart + 120 gap + 350 list) row */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: { xs: "32px", sm: "40px", md: "60px", lg: "120px" },
-          alignItems: { xs: "stretch", sm: "center" },
+          flexDirection: { xs: "column", lg: "row" },
+          gap: { xs: "40px", lg: "120px" },
+          alignItems: "center",
+          justifyContent: "center",
+          maxWidth: "916px",
+          mx: "auto",
+          width: "100%",
         }}
       >
         {/* Chart */}
-        <Box sx={{ flex: "1 1 0", minWidth: 0 }}>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "446px",
+            flexShrink: { xs: 1, lg: 0 },
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <AnimatedDigitalGraph />
         </Box>
 
         {/* Benefits list */}
-        <Box sx={{ flex: "1 1 0", minWidth: 0 }}>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box sx={{ width: "100%", maxWidth: { xs: "446px", lg: "350px" }, flexShrink: 1 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", width: "fit-content", mx: { xs: "auto", lg: 0 } }}>
             {POINTS.map((item, index) => (
               <Box key={index}>
                 <Box
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "14px",
-                    py: { xs: "14px", md: "18px" },
+                    gap: "16px",
+                    py: { xs: "12px", md: "13px" },
                   }}
                 >
                   <Box
                     sx={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "50%",
-                      border: "1px solid #e0e0e0",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
-                      color: "#555",
+                      color: "#333333",
                     }}
                   >
                     {item.icon}
                   </Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: "14px", sm: "15px", md: "16px" },
-                      color: "#404040",
+                      fontSize: { xs: "15px", md: "16px" },
+                      color: "#333333",
                       fontWeight: 500,
-                      lineHeight: 1.4,
+                      lineHeight: 1.6,
                     }}
                   >
                     {item.text}

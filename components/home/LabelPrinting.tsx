@@ -206,15 +206,15 @@ const LabelPrinting = () => {
             color: "#111",
             bgcolor: "#fff",
             borderColor: "#e0e0e0",
-            borderRadius: "12px",
+            borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: "13px",
             fontWeight: 500,
-            px: 3,
-            py: "13px",
+            lineHeight: "20.8px",
+            p: "16px",
             boxShadow: "none",
-            width: { xs: "100%", md: "auto" },
+            width: { xs: "100%", md: "200px" },
             "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
           }}
         >
@@ -222,23 +222,24 @@ const LabelPrinting = () => {
         </Button>
         <Button
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
           sx={{
             bgcolor: "#F6891F",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: "13px",
             fontWeight: 500,
-            px: 3,
-            py: "13px",
+            lineHeight: "20.8px",
+            gap: "8px",
+            p: "16px",
             boxShadow: "none",
-            width: { xs: "100%", md: "auto" },
+            width: { xs: "100%", md: "200px" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
         >
-          Get a Quote
+          Book a Consultation
         </Button>
       </Box>
 

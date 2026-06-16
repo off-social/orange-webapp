@@ -75,7 +75,7 @@ export default function CSRInitiatives() {
             maxWidth: { xs: "600px", xl: "700px" },
           }}
         >
-          Lorem ipsum dolor sit amet consectetur. Blandit etiam molestie non tellus
+          Driven by purpose, we invest in communities and initiatives that create lasting positive impact and meaningful change.
         </Typography>
       </Box>
 

@@ -4,8 +4,8 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Machine Installed" },
-  { value: 15, suffix: "+", label: "Countries Served" },
+  { value: 750, suffix: "+", label: "Machine Installed" },
+  { value: 15000, suffix: "+", label: "Printheads Deployed" },
   { value: 15, suffix: "+", label: "Years of Experience" },
 ];
 
@@ -105,7 +105,7 @@ export default function StatsSection() {
         flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         width: "100%",
-        maxWidth: "800px",
+        maxWidth: "916px",
         mx: "auto",
         gap: { xs: "24px", md: "32px" },
         py: { xs: 2, md: 4 },

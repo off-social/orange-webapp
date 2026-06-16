@@ -62,9 +62,7 @@ export default function PositionProShowcase() {
             lineHeight: "22.4px",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur. Tempor at a sed phasellus.
-          Amet morbi eget dignissim non venenatis pellentesque purus lectus
-          ullamcorper.
+          Designed for high-value textile applications, Position Pro delivers unmatched print alignment, superior registration accuracy, and reliable performance across textured and specialty fabrics.
         </Typography>
       </Box>
 

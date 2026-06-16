@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 500, suffix: "+", text: "Machine Installed" },
-  { value: 15, suffix: "+", text: "Countries Served" },
+  { value: 750, suffix: "+", text: "Machine Installed" },
+  { value: 15000, suffix: "+", text: "Printheads Deployed" },
   { value: 15, suffix: "+", text: "Years of Experience" },
 ];
 
@@ -70,9 +70,9 @@ function StatItem({
         style={{
           color: "#707070",
           fontFamily: "Inter, sans-serif",
-          fontSize: "16px",
+          fontSize: "14px",
           fontWeight: 500,
-          lineHeight: "25.6px",
+          lineHeight: "22.4px",
           margin: 0,
         }}
       >
@@ -123,10 +123,7 @@ const TheFutureofDigitalPrinting = () => {
             </h1>
 
             <p className="text-[11px] xs:text-xs sm:text-sm font-light text-[#404040] leading-[160%] w-full xs:w-[90%] text-center mt-2 xs:mt-3">
-              Orange O Tec engineers high-performance digital printing solutions
-              built for precision, consistency, and scale, with a vision to lead
-              global innovation through intelligent, sustainable, and
-              future-ready technologies.
+              Orange O Tec engineers high-performance digital printing solutions built for precision, consistency, and scale, with a vision to lead global innovation through intelligent, sustainable, and future-ready technologies.
             </p>
 
             <Link
@@ -146,44 +143,22 @@ const TheFutureofDigitalPrinting = () => {
 
         {/* ── DESKTOP: updated layout ── */}
         <div className="hidden md:block" style={{ paddingTop: "80px" }}>
-          {/* Heading group */}
-          <div
+          {/* Heading — single line, two colors */}
+          <h1
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 0,
+              color: "#333",
+              textAlign: "center",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "40px",
+              fontWeight: 500,
+              lineHeight: "52px",
+              letterSpacing: "-1px",
+              margin: 0,
             }}
           >
-            <h1
-              style={{
-                color: "#333",
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "40px",
-                fontWeight: 500,
-                lineHeight: "52px",
-                letterSpacing: "-1px",
-                margin: 0,
-              }}
-            >
-              Building the Future of
-            </h1>
-            <h1
-              style={{
-                color: "#F6891F",
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "40px",
-                fontWeight: 500,
-                lineHeight: "52px",
-                letterSpacing: "-1px",
-                margin: 0,
-              }}
-            >
-              Digital Printing
-            </h1>
-          </div>
+            Building the Future of{" "}
+            <span style={{ color: "#F6891F" }}>Digital Printing</span>
+          </h1>
 
           {/* Description — 8px gap from heading */}
           <p
@@ -194,23 +169,20 @@ const TheFutureofDigitalPrinting = () => {
               fontSize: "14px",
               fontWeight: 500,
               lineHeight: "22.4px",
-              maxWidth: "680px",
+              maxWidth: "728px",
               margin: "8px auto 0",
             }}
           >
-            Orange O Tec engineers high-performance digital printing solutions
-            built for precision, consistency, and scale, with a vision to lead
-            global innovation through intelligent, sustainable, and future-ready
-            technologies.
+            Orange O Tec engineers high-performance digital printing solutions built for precision, consistency, and scale, with a vision to lead global innovation through intelligent, sustainable, and future-ready technologies.
           </p>
 
-          {/* Image — 18px gap from description */}
-          <div style={{ marginTop: "18px" }}>
+          {/* Image — sits flush under the description (Figma gap = 0), Figma banner ratio 1440x463 */}
+          <div style={{ marginTop: "0px" }}>
             <Image
-              src="/DigitalOrnage1.png"
+              src="/buildingFutureBanner.png"
               alt="The Future of Digital Printing"
-              width={1920}
-              height={1080}
+              width={1440}
+              height={463}
               draggable={false}
               className="w-full h-auto block"
             />

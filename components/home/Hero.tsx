@@ -1,6 +1,5 @@
 "use client";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   Box,
   Button,
@@ -55,7 +54,7 @@ const Home = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "12px", md: "24px" },
+            bottom: { xs: "16px", md: "40px" },
             left: { xs: "12px", md: "40px", lg: "168px" },
             right: { xs: "12px", md: "40px", lg: "168px" },
             width: "auto",
@@ -73,7 +72,14 @@ const Home = () => {
           }}
         >
           {/* Left: Heading + subtitle */}
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              maxWidth: { md: "480px" },
+            }}
+          >
             <Typography
               sx={{
                 color: "#111",
@@ -90,11 +96,11 @@ const Home = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "12px", sm: "13px", md: "14px" },
-                color: "rgba(17,17,17,0.65)",
-                mt: "10px",
-                maxWidth: "440px",
-                lineHeight: 1.65,
+                fontSize: { xs: "13px", sm: "14px", md: "16px" },
+                color: "#e6e6e6",
+                fontWeight: 500,
+                maxWidth: "480px",
+                lineHeight: "25.6px",
                 fontFamily: "Inter, sans-serif",
               }}
             >
@@ -108,7 +114,7 @@ const Home = () => {
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
-              gap: "12px",
+              gap: "8px",
               flexShrink: 0,
               alignItems: "stretch",
               width: { xs: "100%", md: "auto" },
@@ -118,48 +124,57 @@ const Home = () => {
               variant="outlined"
               sx={{
                 color: "#111",
-                bgcolor: "rgba(255,255,255,0.6)",
-                borderColor: "rgba(17,17,17,0.25)",
-                borderRadius: "12px",
+                bgcolor: "#FFF",
+                borderColor: "#E0E0E0",
+                borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "14px", md: "14px" },
+                fontSize: "13px",
                 fontWeight: 500,
-                px: "24px",
-                py: "13px",
+                lineHeight: "20.8px",
+                p: "16px",
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                width: { xs: "100%", md: "170px" },
                 "&:hover": {
-                  bgcolor: "rgba(255,255,255,0.8)",
+                  bgcolor: "#F2F2F2",
+                  borderColor: "#E0E0E0",
                   boxShadow: "none",
                 },
               }}
             >
-              Get a Quote
+              Book a Consultation
             </Button>
             <Button
               component={Link}
               href="/products"
               variant="contained"
               endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+                <Image
+                  src="/Arrow - Right.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                  style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                />
               }
               sx={{
                 bgcolor: "#F6891F",
                 color: "#fff",
-                borderRadius: "12px",
+                borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "14px", md: "14px" },
+                fontSize: "13px",
                 fontWeight: 500,
-                px: "24px",
-                py: "13px",
+                lineHeight: "20.8px",
+                p: "16px",
+                gap: "8px",
                 boxShadow: "none",
                 width: { xs: "100%", md: "auto" },
+                "& .MuiButton-endIcon": { ml: 0 },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
             >
-              Explore Machines
+              Explore Printers
             </Button>
           </Box>
         </Box>
@@ -175,10 +190,10 @@ const Home = () => {
         <Box
           sx={{
             display: "flex",
-            padding: { xs: "48px 16px", md: "68px 168px" },
+            padding: { xs: "48px 16px", md: "100px 168px" },
             flexDirection: "column",
             alignItems: "center",
-            gap: { xs: "24px", md: "32px" },
+            gap: { xs: "24px", md: "40px" },
             alignSelf: "stretch",
             bgcolor: "#FFF",
           }}
@@ -329,7 +344,7 @@ const Home = () => {
                 lineHeight: "25.6px",
               }}
             >
-              Textile printers &nbsp; engineered for peak performance
+              Textile printers engineered for peak performance
             </Typography>
           </Box>
 
@@ -371,7 +386,6 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <style>{`@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');`}</style>
         <Box
           sx={{
             display: "flex",
@@ -418,7 +432,7 @@ const Home = () => {
             >
               Solutions for Every Printing Need
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 color: "rgba(255,255,255,0.6)",
                 textAlign: "center",
@@ -432,84 +446,96 @@ const Home = () => {
               Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium
               velit ullamcorper. Eleifend duis donec cras quam ipsum auctor ut
               semper in. In nunc ultrices eget in.
-            </Typography>
+            </Typography> */}
           </Box>
 
           {/* Industry rows */}
-          {[
-            {
-              img: "/Textile-Industries1.png",
-              title: "Textile Industries",
-              desc: "High-speed digital textile printing solutions engineered for vibrant, durable results across sublimation, direct-to-fabric, and pigment printing applications.",
-            },
-            {
-              img: "/Publication-Industries1.png",
-              title: "Publication Industries",
-              desc: "Professional-grade printing systems delivering sharp, consistent quality for books, magazines, catalogues, and high-volume publication workflows.",
-            },
-            {
-              img: "/Label-Industries1.png",
-              title: "Label Industries",
-              desc: "Precision digital label printers built for flexible packaging, product labels, and short-run specialty prints with exceptional colour accuracy.",
-            },
-          ].map((item, index) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
-                alignItems: "center",
-                gap: { xs: "24px", sm: "40px", md: "64px" },
-                width: "100%",
-              }}
-            >
-              {/* Left: Image */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: { xs: "48px", md: "32px" },
+              width: "100%",
+              maxWidth: "1104px",
+              mx: "auto",
+            }}
+          >
+            {[
+              {
+                img: "/Textile-Industries1.png",
+                title: "Textile Industries",
+                desc: "High-speed digital textile printing solutions engineered for vibrant, durable results across sublimation, direct-to-fabric, and pigment printing applications.",
+              },
+              {
+                img: "/Publication-Industries1.png",
+                title: "Publication Industries",
+                desc: "Professional-grade printing systems delivering sharp, consistent quality for books, magazines, catalogues, and high-volume publication workflows.",
+              },
+              {
+                img: "/Label-Industries1.png",
+                title: "Label Industries",
+                desc: "Precision digital label printers built for flexible packaging, product labels, and short-run specialty prints with exceptional colour accuracy.",
+              },
+            ].map((item, index) => (
               <Box
+                key={index}
                 sx={{
-                  flex: "0 0 auto",
-                  width: { xs: "100%", sm: "45%", md: "45%" },
-                  position: "relative",
-                  height: { xs: "240px", sm: "260px", md: "340px" },
+                  display: "flex",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: { xs: "24px", md: "64px", lg: "100px" },
+                  width: "100%",
                 }}
               >
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  fill
-                  style={{ objectFit: "contain" }}
-                />
-              </Box>
+                {/* Left: Image */}
+                <Box
+                  sx={{
+                    flex: "0 0 auto",
+                    width: { xs: "100%", sm: "80%", md: "49%" },
+                    position: "relative",
+                    height: { xs: "240px", sm: "320px", md: "360px" },
+                  }}
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </Box>
 
-              {/* Right: Text */}
-              <Box sx={{ flex: 1, textAlign: { xs: "center", sm: "left" } }}>
-                <Typography
-                  sx={{
-                    color: "#FFF",
-                    fontFamily: "'Architects Daughter', cursive",
-                    fontSize: { xs: "24px", sm: "28px", md: "40px" },
-                    fontWeight: 400,
-                    lineHeight: { xs: "31.2px", sm: "36px", md: "52px" },
-                    letterSpacing: "-1px",
-                    mb: { xs: "8px", md: "16px" },
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    color: "rgba(255,255,255,0.6)",
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: { xs: "12px", sm: "13px", md: "15px" },
-                    fontWeight: 500,
-                    lineHeight: { xs: "19.2px", md: 1.75 },
-                    maxWidth: { xs: "100%", md: "480px" },
-                  }}
-                >
-                  {item.desc}
-                </Typography>
+                {/* Right: Text */}
+                <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: { xs: "24px", sm: "28px", md: "32px" },
+                      fontWeight: 500,
+                      lineHeight: { xs: "31.2px", sm: "36px", md: "41.6px" },
+                      letterSpacing: "-1px",
+                      mb: "8px",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#707070",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: { xs: "12px", sm: "13px", md: "14px" },
+                      fontWeight: 500,
+                      lineHeight: { xs: "19.2px", md: "22.4px" },
+                      maxWidth: { xs: "100%", md: "444px" },
+                    }}
+                  >
+                    {item.desc}
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
       </Grid>
 

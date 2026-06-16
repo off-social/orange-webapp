@@ -299,7 +299,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             alignSelf: { xs: "stretch", md: "auto" },
           }}
         >
-          {/* Get a Quote — first on mobile (order 1), second on desktop (order 2) */}
+          {/* Book a Consultation — first on mobile (order 1), second on desktop (order 2) */}
           <Box
             component="a"
             href="#"
@@ -325,7 +325,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               "&:hover": { background: "#333" },
             }}
           >
-            Get a Quote
+            Book a Consultation
             <svg
               width="16"
               height="16"

@@ -186,7 +186,7 @@ export default function PublicationPrinters() {
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
         >
-          Get a Quote
+          Book a Consultation
         </Button>
         <Button
           variant="outlined"

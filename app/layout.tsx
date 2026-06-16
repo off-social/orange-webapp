@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 import { Architects_Daughter, Stack_Sans_Headline } from "next/font/google";
 import "./globals.css";
@@ -32,9 +33,11 @@ export default function RootLayout({
       className={`${stackSansHeadline.variable} ${architectsDaughter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <div style={{ paddingTop: "59px" }}>{children}</div>
-        <Footer />
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          <Navbar />
+          <div style={{ paddingTop: "59px" }}>{children}</div>
+          <Footer />
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

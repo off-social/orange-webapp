@@ -42,7 +42,7 @@ const MeetRocketBuiltProduction = () => {
               textAlign: "center",
             }}
           >
-            Meet, Rocket
+            Introducing, Rocket
           </Typography>
           <Typography
             sx={{
@@ -139,7 +139,7 @@ const MeetRocketBuiltProduction = () => {
       >
         {/* Desktop background image */}
         <Box
-          sx={{ width: "100%", aspectRatio: "206/127", position: "relative" }}
+          sx={{ width: "100%", aspectRatio: "1442 / 817", position: "relative" }}
         >
           <Image
             src="/meet-rocket1.png"
@@ -154,10 +154,10 @@ const MeetRocketBuiltProduction = () => {
         <Box
           sx={{
             position: "absolute",
-            top: "12%",
+            top: "9.8%",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "55%",
+            width: { sm: "70%", md: "51%" },
             textAlign: "center",
             display: "flex",
             flexDirection: "column",
@@ -174,7 +174,7 @@ const MeetRocketBuiltProduction = () => {
               letterSpacing: { sm: "-0.5px", md: "-1px" },
             }}
           >
-            Meet, Rocket
+            Introducing, Rocket
           </Typography>
           <Typography
             sx={{
@@ -182,18 +182,18 @@ const MeetRocketBuiltProduction = () => {
               fontSize: { sm: "13px", md: "14px" },
               fontWeight: 500,
               lineHeight: { sm: "20px", md: "22.4px" },
-              maxWidth: { sm: "480px", md: "620px" },
+              maxWidth: { sm: "480px", md: "728px" },
             }}
           >
             Designed specifically to handle the demands of high-volume
             production environments, this system ensures consistent performance
             and reliability even under the most intense workloads.
           </Typography>
-          <Box sx={{ mt: "24px" }}>
+          <Box sx={{ mt: "32px" }}>
             <Button
               sx={{
                 display: "flex",
-                width: "170px",
+                width: "200px",
                 padding: "16px",
                 justifyContent: "center",
                 alignItems: "center",
@@ -229,7 +229,7 @@ const MeetRocketBuiltProduction = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            height: "45%",
+            height: "28%",
             background:
               "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.75) 100%)",
             pointerEvents: "none",
@@ -240,10 +240,10 @@ const MeetRocketBuiltProduction = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: "6%",
+            bottom: "9.8%",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "78%",
+            width: "76.5%",
             display: "flex",
             justifyContent: "space-between",
             color: "#fff",
@@ -265,10 +265,11 @@ const MeetRocketBuiltProduction = () => {
               <Typography
                 sx={{
                   color: "#FFF",
-                  fontFamily: "var(--font-stack-sans-headline)",
+                  fontFamily: "Inter, sans-serif",
                   fontSize: { sm: "16px", md: "24px" },
                   fontWeight: 500,
                   lineHeight: { sm: "22px", md: "31.2px" },
+                  letterSpacing: "-0.5px",
                 }}
               >
                 {stat.top}
@@ -276,7 +277,7 @@ const MeetRocketBuiltProduction = () => {
               <Typography
                 sx={{
                   color: "#E0E0E0",
-                  fontFamily: "var(--font-stack-sans-headline)",
+                  fontFamily: "Inter, sans-serif",
                   fontSize: { sm: "11px", md: "14px" },
                   fontWeight: 400,
                   lineHeight: { sm: "16px", md: "22.4px" },

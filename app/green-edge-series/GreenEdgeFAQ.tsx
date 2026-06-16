@@ -6,19 +6,19 @@ import { useState } from "react";
 const FAQS = [
   {
     q: "Does pigment ink work on dark fabrics?",
-    a: "Lorem ipsum dolor sit amet consectetur. Aliquet cras eleifend egestas vestibulum nulla augue laoreet vitae. Viverra amet netus ac id sagittis phasellus nec sed. Aliquet velit nec mollis nisl eget velit convallis morbi elit. Vitae neque diam sit quisque at. Ac.",
+    a: "Yes, especially with binder enhancement, pigment ink delivers strong performance on light and medium-dark fabrics.",
   },
   {
     q: "Does it require pre-treatment?",
-    a: "Lorem ipsum dolor sit amet consectetur. Pre-treatment details vary depending on fabric type and ink formulation used.",
+    a: "Usually not, it’s a direct-to-fabric process with optional pre-treatment for specific use cases.",
   },
   {
     q: "Is pigment ink eco-friendly?",
-    a: "Lorem ipsum dolor sit amet consectetur. Pigment inks are water-based and produce minimal waste compared to traditional dyeing methods.",
+    a: "Absolutely. It reduces water, chemical discharge, and energy usage.",
   },
   {
     q: "Is it cost-effective?",
-    a: "Lorem ipsum dolor sit amet consectetur. Pigment ink printing reduces processing steps, lowering overall production costs significantly.",
+    a: "Yes, it saves on post-treatment steps and water while delivering durable, high-quality prints.",
   },
 ];
 
@@ -58,19 +58,7 @@ export default function GreenEdgeFAQ() {
           }}
         >
           Frequently Asked Questions
-        </Typography>
-        <Typography
-          sx={{
-            color: "#999",
-            textAlign: "center",
-            fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
-            fontWeight: 500,
-            lineHeight: "22.4px",
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur. Tristique condimentum
-        </Typography>
+        </Typography>        
       </Box>
 
       {/* Accordion */}

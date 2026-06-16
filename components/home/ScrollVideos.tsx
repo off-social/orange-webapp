@@ -74,7 +74,6 @@ const ScrollVideos = () => {
               fontSize: "13px",
               fontWeight: 500,
               lineHeight: "20.8px",
-              textDecoration: "underline",
             }}
           >
             <Image src="/youtube-filled.svg" alt="youtube" width={18} height={18} style={{ objectFit: "contain" }} />
@@ -106,7 +105,7 @@ const ScrollVideos = () => {
         <div
           ref={scrollRef}
           className="
-            flex gap-3
+            flex gap-6
             overflow-x-auto
             [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
             w-full
@@ -116,7 +115,7 @@ const ScrollVideos = () => {
             <div
               key={index}
               className="
-                min-w-[260px] sm:min-w-[300px] lg:min-w-[360px]
+                min-w-[260px] sm:min-w-[300px] lg:min-w-[352px]
                 flex-shrink-0 rounded-xl overflow-hidden aspect-video shadow-sm
               "
             >

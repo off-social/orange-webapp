@@ -1,5 +1,6 @@
 "use client";
 
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
@@ -279,7 +280,7 @@ const TextilePrinting = () => {
             zIndex: 2,
           }}
         >
-          ←
+          <ArrowBackIcon sx={{ fontSize: "20px" }} />
         </Button>
 
         <Box
@@ -344,7 +345,7 @@ const TextilePrinting = () => {
             zIndex: 2,
           }}
         >
-          →
+          <ArrowForwardIcon sx={{ fontSize: "20px" }} />
         </Button>
       </Box>
 
@@ -364,9 +365,9 @@ const TextilePrinting = () => {
                 color: "#333",
                 textAlign: "center",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "20px",
+                fontSize: "24px",
                 fontWeight: 500,
-                lineHeight: "26px",
+                lineHeight: "31.2px",
                 letterSpacing: 0,
               }}
             >
@@ -407,15 +408,15 @@ const TextilePrinting = () => {
                 color: "#111",
                 bgcolor: "#fff",
                 borderColor: "#e0e0e0",
-                borderRadius: "12px",
+                borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: "13px",
                 fontWeight: 500,
-                px: { xs: 3, md: 3 },
-                py: "13px",
+                lineHeight: "20.8px",
+                p: "16px",
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                width: { xs: "100%", md: "200px" },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
               }}
             >
@@ -424,7 +425,7 @@ const TextilePrinting = () => {
             <Button
               variant="contained"
               endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+                <ArrowForwardIcon sx={{ fontSize: "16px !important" }} />
               }
               sx={{
                 bgcolor: "#F6891F",
@@ -432,16 +433,17 @@ const TextilePrinting = () => {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: "13px",
                 fontWeight: 500,
-                px: { xs: 3, md: 3 },
-                py: "13px",
+                lineHeight: "20.8px",
+                gap: "8px",
+                p: "16px",
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                width: { xs: "100%", md: "200px" },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
             >
-              Get a Quote
+              Book a Consultation
             </Button>
           </Box>
 

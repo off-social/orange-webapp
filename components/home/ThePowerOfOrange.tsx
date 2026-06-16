@@ -49,43 +49,43 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
         fontWeight: 500,
         lineHeight: "22.4px",
         mt: "8px",
-        maxWidth: "380px",
+        maxWidth: "446px",
         display: sm ? "block" : { xs: "block", sm: "block" },
       }}
     >
-      Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit ullamcorper.
+      Built for efficiency and performance, Orange empowers textile manufacturers to achieve higher throughput, consistent quality, and greater operational flexibility.
     </Typography>
 
-    <Box sx={{ mt: sm ? "20px" : { xs: "16px", md: "24px" }, display: "flex", flexDirection: "column", gap: sm ? "10px" : { xs: "10px", md: "12px" } }}>
+    <Box sx={{ mt: sm ? "20px" : { xs: "16px", md: "48px" }, display: "flex", flexDirection: "column", gap: sm ? "10px" : { xs: "10px", md: "24px" } }}>
       {POINTS.map(({ label, icon }, index) => (
-        <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Box key={index} sx={{ display: "flex", alignItems: "center", gap: sm ? "10px" : "16px" }}>
           <Image
             src={icon}
             alt={label}
-            width={sm ? 18 : 20}
-            height={sm ? 18 : 20}
+            width={sm ? 18 : 24}
+            height={sm ? 18 : 24}
             style={{ flexShrink: 0, objectFit: "contain" }}
           />
-          <Typography sx={{ fontSize: sm ? "13px" : { xs: "12px", md: "14px" }, fontWeight: 500, color: "#404040", lineHeight: "22.4px" }}>
+          <Typography sx={{ fontSize: sm ? "13px" : { xs: "12px", md: "16px" }, fontWeight: 500, color: "#404040", lineHeight: "25.6px" }}>
             {label}
           </Typography>
         </Box>
       ))}
     </Box>
 
-    <Box sx={{ mt: sm ? "20px" : { xs: "20px", md: "28px" } }}>
+    <Box sx={{ mt: sm ? "20px" : { xs: "20px", md: "48px" } }}>
       <Button
         sx={{
           bgcolor: "#111", color: "#fff", borderRadius: "8px",
-          textTransform: "none", fontSize: sm ? "13px" : { xs: "12px", md: "14px" },
-          fontWeight: 500, px: sm ? "20px" : { xs: "18px", md: "28px" },
-          py: sm ? "9px" : { xs: "8px", md: "10px" },
-          display: "flex", alignItems: "center", gap: "8px",
+          textTransform: "none", fontSize: sm ? "13px" : "13px",
+          fontWeight: 500, lineHeight: "20.8px",
+          width: sm ? "auto" : "200px", p: sm ? "12px 20px" : "16px",
+          display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
           "&:hover": { bgcolor: "#333" },
         }}
       >
         Know More
-        <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain" }} />
+        <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }} />
       </Button>
     </Box>
   </>
@@ -94,55 +94,66 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
 const ThePowerOfOrange = () => {
   return (
     <>
-      {/* ── MOBILE (xs only) ── */}
-      <Box sx={{ display: { xs: "flex", sm: "none" }, flexDirection: "column", bgcolor: "#fff", px: "24px", pt: "40px", pb: "32px" }}>
-        {/* Label */}
-        <Typography
-          sx={{
-            color: "#707070",
-            fontSize: "12px",
-            fontWeight: 400,
-            lineHeight: "25.6px",
-            letterSpacing: "6px",
-            textTransform: "uppercase",
-            mb: "4px",
-          }}
-        >
-          Built for Efficiency
-        </Typography>
+      {/* ── MOBILE + TABLET (below md) — stacked, no overlap ── */}
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          flexDirection: "column",
+          bgcolor: "#fff",
+          px: { xs: "16px", sm: "40px" },
+          pt: { xs: "40px", sm: "56px" },
+          pb: { xs: "40px", sm: "56px" },
+          width: "100%",
+          maxWidth: "560px",
+          mx: "auto",
+        }}
+      >
+        {/* Title group — centered */}
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+          <Typography
+            sx={{
+              color: "#707070",
+              fontSize: "12px",
+              fontWeight: 400,
+              lineHeight: "25.6px",
+              letterSpacing: "6px",
+              textTransform: "uppercase",
+            }}
+          >
+            Built for Efficiency
+          </Typography>
 
-        {/* Heading */}
-        <Typography
-          component="h2"
-          sx={{
-            color: "#333",
-            fontSize: "28px",
-            fontWeight: 500,
-            lineHeight: "36px",
-            letterSpacing: "-0.5px",
-          }}
-        >
-          The Power of{" "}
-          <Box component="span" sx={{ color: "#F6891F" }}>Orange</Box>
-        </Typography>
+          <Typography
+            component="h2"
+            sx={{
+              color: "#333",
+              fontSize: "28px",
+              fontWeight: 500,
+              lineHeight: "36px",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            The Power of{" "}
+            <Box component="span" sx={{ color: "#F6891F" }}>Orange</Box>
+          </Typography>
 
-        {/* Subtitle */}
-        <Typography
-          sx={{
-            color: "#707070",
-            fontSize: "14px",
-            fontWeight: 500,
-            lineHeight: "22.4px",
-            mt: "8px",
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium velit ullamcorper.
-        </Typography>
+          <Typography
+            sx={{
+              color: "#707070",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "22.4px",
+              mt: "8px",
+            }}
+          >
+            Built for efficiency and performance, Orange empowers textile manufacturers to achieve higher throughput, consistent quality, and greater operational flexibility.
+          </Typography>
+        </Box>
 
         {/* Machine image */}
-        <Box sx={{ width: "100%", aspectRatio: "4/3", position: "relative", my: "24px" }}>
+        <Box sx={{ width: "100%", aspectRatio: "361 / 187", position: "relative", mt: "40px" }}>
           <Image
-            src="/thePowerofOrange1.png"
+            src="/theorngeimg1.png"
             alt="The Power of Orange"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
@@ -150,11 +161,11 @@ const ThePowerOfOrange = () => {
         </Box>
 
         {/* Feature list */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px", mt: "32px" }}>
           {POINTS.map(({ label, icon }, index) => (
-            <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Image src={icon} alt={label} width={20} height={20} style={{ flexShrink: 0, objectFit: "contain" }} />
-              <Typography sx={{ fontSize: "13px", fontWeight: 500, color: "#404040", lineHeight: "22.4px" }}>
+            <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <Image src={icon} alt={label} width={24} height={24} style={{ flexShrink: 0, objectFit: "contain" }} />
+              <Typography sx={{ fontSize: "16px", fontWeight: 500, color: "#404040", lineHeight: "25.6px" }}>
                 {label}
               </Typography>
             </Box>
@@ -164,7 +175,7 @@ const ThePowerOfOrange = () => {
         {/* Full-width black button */}
         <Button
           sx={{
-            mt: "24px",
+            mt: "40px",
             width: "100%",
             bgcolor: "#111",
             color: "#fff",
@@ -175,47 +186,31 @@ const ThePowerOfOrange = () => {
             py: "13px",
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             gap: "8px",
             "&:hover": { bgcolor: "#333" },
           }}
         >
           Know More
-          <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain" }} />
+          <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }} />
         </Button>
-      </Box>
-
-      {/* ── TABLET (sm) — overlay, text left ── */}
-      <Box
-        sx={{
-          display: { xs: "none", sm: "block", md: "none" },
-          position: "relative",
-          width: "100%",
-          aspectRatio: "16/10",
-          overflow: "hidden",
-          bgcolor: "#fff",
-        }}
-      >
-        <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} />
-        <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 28%, rgba(255,255,255,0) 48%)", pointerEvents: "none" }} />
-        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "55%", display: "flex", flexDirection: "column", justifyContent: "center", pl: "48px", pr: "20px" }}>
-          <TextContent sm />
-        </Box>
       </Box>
 
       {/* ── DESKTOP (md+) — overlay, text left ── */}
       <Box
         sx={{
-          display: { xs: "none", sm: "none", md: "block" },
+          display: { xs: "none", sm: "none", md: "flex" },
+          alignItems: "center",
           position: "relative",
           width: "100%",
-          aspectRatio: { md: "16/8", lg: "16/7" },
+          minHeight: { md: "600px", lg: "724px" },
           overflow: "hidden",
           bgcolor: "#fff",
         }}
       >
         <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 70%)", pointerEvents: "none" }} />
-        <Box sx={{ position: "absolute", top: 0, bottom: 0, left: 0, width: { md: "58%", lg: "52%" }, display: "flex", flexDirection: "column", justifyContent: "center", pl: { md: "40px", lg: "168px" }, pr: { md: "24px", lg: "32px" } }}>
+        <Box sx={{ position: "relative", width: { md: "58%", lg: "52%" }, display: "flex", flexDirection: "column", py: { md: "48px", lg: "80px" }, pl: { md: "40px", lg: "168px" }, pr: { md: "24px", lg: "32px" } }}>
           <TextContent />
         </Box>
       </Box>

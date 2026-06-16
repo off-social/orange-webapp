@@ -99,7 +99,7 @@ const ReactiveTab = () => {
               "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
             }}
           >
-            Get a Quote
+            Book a Consultation
           </Button>
         </Box>
       </Box>

@@ -533,9 +533,9 @@ export default function DigitalTextilePrinters() {
             }}
           >
             <Button
-              variant="outlined"
               component={Link}
               href="/product-details"
+              variant="outlined"
               sx={{
                 color: "#111",
                 bgcolor: "#fff",

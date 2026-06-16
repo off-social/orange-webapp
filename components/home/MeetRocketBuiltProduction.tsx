@@ -43,7 +43,7 @@ const MeetRocketBuiltProduction = () => {
               textAlign: "center",
             }}
           >
-            Introducing, Rocket
+            Introducing Rocket
           </Typography>
           <Typography
             sx={{
@@ -177,7 +177,7 @@ const MeetRocketBuiltProduction = () => {
               letterSpacing: { sm: "-0.5px", md: "-1px" },
             }}
           >
-            Introducing, Rocket
+            Introducing Rocket
           </Typography>
           <Typography
             sx={{

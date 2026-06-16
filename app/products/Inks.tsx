@@ -216,7 +216,7 @@ export default function Inks() {
         >
           Book a Consultation
         </Button>
-        <Button
+        {/* <Button
           variant="outlined"
           sx={{
             color: "#111",
@@ -235,7 +235,7 @@ export default function Inks() {
           }}
         >
           Know More
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );

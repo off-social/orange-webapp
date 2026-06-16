@@ -1,7 +1,7 @@
 "use client";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
@@ -189,6 +189,8 @@ export default function LabelPrinters() {
           Book a Consultation
         </Button>
         <Button
+          component={Link}
+          href="/product-details"
           variant="outlined"
           sx={{
             color: "#111",

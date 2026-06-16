@@ -5,6 +5,7 @@ import Inks from "./Inks";
 import LabelPrinters from "./LabelPrinters";
 import PublicationPrinters from "./PublicationPrinters";
 import ProductsHero from "./ProductsHero";
+import MovingToDigital from "@/components/home/MovingToDigital";
 
 export default function ProductsPage() {
   return (
@@ -20,6 +21,9 @@ export default function ProductsPage() {
       </Grid>
       <Grid size={12}>
         <PublicationPrinters />
+      </Grid>
+      <Grid size={12}>
+        <MovingToDigital />
       </Grid>
       <Grid size={12}>
         <Inks />

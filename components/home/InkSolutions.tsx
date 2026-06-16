@@ -95,7 +95,7 @@ const InkSolutions = () => {
           px: { xs: "16px", md: 0 },
         }}
       >
-        <Button
+        {/* <Button
           variant="outlined"
           sx={{
             color: "#111",
@@ -114,7 +114,7 @@ const InkSolutions = () => {
           }}
         >
           Know More
-        </Button>
+        </Button> */}
         <Button
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}

@@ -539,9 +539,9 @@ const Home = () => {
         </Box>
       </Grid>
 
-      <Grid size={12}>
+      {/* <Grid size={12}>
         <MovingToDigital />
-      </Grid>
+      </Grid> */}
       <Grid size={12}>
         <MeetRocketBuiltProduction />
       </Grid>

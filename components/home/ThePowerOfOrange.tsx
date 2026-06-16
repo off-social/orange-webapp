@@ -2,6 +2,7 @@
 
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const POINTS = [
   { label: "High-speed textile production", icon: "/rocket-01.png" },
@@ -75,6 +76,8 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
 
     <Box sx={{ mt: sm ? "20px" : { xs: "20px", md: "48px" } }}>
       <Button
+        component={Link}
+        href="/products"
         sx={{
           bgcolor: "#111", color: "#fff", borderRadius: "8px",
           textTransform: "none", fontSize: sm ? "13px" : "13px",
@@ -174,6 +177,8 @@ const ThePowerOfOrange = () => {
 
         {/* Full-width black button */}
         <Button
+          component={Link}
+          href="/products"
           sx={{
             mt: "40px",
             width: "100%",

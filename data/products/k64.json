@@ -1,0 +1,225 @@
+{
+  "slug": "k64",
+  "name": "K64",
+  "tagline": "Ultra High-Speed Industrial Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/K641.png",
+    "mobile": "/K641.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "32 / 48 / 56 / 64× piezoelectric printheads",
+      "Up to 1,100 lm/hr",
+      "1800 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "32 / 48 / 56 / 64× Industrial Piezoelectric" },
+        { "label": "Max Output", "value": "Up to 1,100 lm/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1800 dpi" },
+        { "label": "Ink Colors", "value": "4 / 6 / 7 / 8 (CMYK + up to 4 extended colors)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 800 lm/hr" },
+        { "label": "Max Print Width", "value": "1800 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse · Latex" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" },
+      { "name": "Latex", "fabrics": "Coated and specialty fabrics" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Scalable Printhead Configuration",
+        "desc": "Supports 32, 48, 56, or 64 industrial-grade piezoelectric printheads, allowing manufacturers to precisely match machine capacity to current production volume and scale up as demand grows."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Exceptional Head Chilling System",
+        "desc": "Dedicated printhead temperature control maintains stable operating conditions during sustained high-speed runs, preventing heat-related inconsistencies and protecting head performance."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Ink Misting Control Technology",
+        "desc": "Advanced misting suppression reduces overspray and airborne ink particles, improving print clarity and edge definition even at peak production speeds."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "High-Capacity Ink Supply System",
+        "desc": "30-litre per colour ink tanks support extended continuous production runs with minimal operator intervention and fewer refill interruptions during high-volume shifts."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Flexible Color Configuration",
+        "desc": "Supports 4, 6, 7, and 8 color printing modes, giving manufacturers the flexibility to configure the machine for their specific design requirements and ink cost targets."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Versatile Drying System Options",
+        "desc": "Choose from steam, electric, hot oil, or hybrid drying configurations to match your facility setup, fabric type, and production throughput requirements."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Adjustable Media Handling System",
+        "desc": "Supports tension unwind, cloth trolley, and multiple outfeed configurations for smooth, wrinkle-free fabric transport across different fabric weights and roll formats."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Multiple Ink Type Compatibility",
+        "desc": "Compatible with reactive, acid, pigment, disperse, and latex inks, making the K64 one of the most versatile ink platforms available in the high-speed industrial segment."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Real-Time Ink and Air Pressure Monitoring",
+        "desc": "Continuous system monitoring across all ink and air circuits prevents mid-run failures and maintains stable print output under sustained high-speed operating conditions."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Ultra High-Volume Fashion Textile Production",
+        "desc": "Non-stop disperse printing on polyester fabrics for large wholesale and export operations where maximum daily output and fast turnaround are the primary business requirements."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton at industrial volume, meeting international wash fastness and quality standards across continuous multi-shift production schedules."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Industrial Home Textile Manufacturing",
+        "desc": "High-capacity production of bedding, curtains, upholstery, and decorative textiles across cotton and polyester substrates for domestic and export markets at scale."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Jacquard and Textured Fabric Printing",
+        "desc": "High-resolution output on complex woven and jacquard structures requiring precise registration and sharp pattern definition across very large production volumes."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Silk and Luxury Textile Production",
+        "desc": "Acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying luxury fashion brands and premium garment producers with tight quality requirements."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Speciality and Technical Fabric Printing",
+        "desc": "Latex ink compatibility opens printing on coated, technical, and specialty substrates beyond standard textile applications, expanding business into new product categories."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Job Work and Multi-Buyer Operations",
+        "desc": "Wide fabric compatibility from 30 to 450 gsm and multi-ink support make the K64 the preferred choice for high-capacity job work units serving large, diverse client portfolios."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 1100,
+    "regularMode": [
+      { "res": "64-head config", "pass": "1 pass", "speed": 1100, "label": "Up to 1,100 lm/hr" },
+      { "res": "64-head config", "pass": "2 pass", "speed": 750, "label": "Up to 750 lm/hr" },
+      { "res": "64-head config", "pass": "3 pass", "speed": 500, "label": "Up to 500 lm/hr" },
+      { "res": "64-head config", "pass": "4 pass", "speed": 350, "label": "Up to 350 lm/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Industrial Piezoelectric Printheads",
+      "desc": "Up to 64 high-performance printheads delivering up to 1,100 lm/hr with flexible 4 to 8 color configuration"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision motion guidance for stable, low-vibration carriage movement across all speed modes"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical life in continuous high-cycle production"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the full machine system"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Proven industrial motion control delivering consistent, reliable performance across multi-shift production environments"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and monitoring systems"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls ensuring stable, repeatable process automation across all operating configurations"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, head configuration options, drying system choices, installation requirements, and engineering details for the K64.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "K64 Showcase",
+    "description": "The most powerful machine in the Homer series. Up to 64 piezoelectric printheads, 1,100 lm/hr maximum output, and five-ink compatibility built for manufacturers who operate at the highest production volumes.",
+    "leftItems": [
+      "Output limits at the highest volumes",
+      "Heat-related print inconsistencies",
+      "Overspray reducing print clarity",
+      "Locked into a single ink chemistry"
+    ],
+    "rightItems": [
+      "Up to 64 heads for 1,100 lm/hr output",
+      "Exceptional head chilling system",
+      "Ink misting control for sharp edges",
+      "Reactive, acid, pigment, disperse & latex inks"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "The highest-volume textile output?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

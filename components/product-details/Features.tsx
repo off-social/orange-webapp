@@ -1,86 +1,13 @@
 "use client";
 
+import { useProduct } from "@/data/ProductContext";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import ProductSidebar from "./ProductSidebar";
-
-const FEATURES = [
-  {
-    icon: (
-      <Image
-        src="/Proprietaryvisionsystem.svg"
-        alt="Proprietary vision system"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "Proprietary vision system",
-    desc: "Scans fabric, locks onto reference points, and compensates for distortion in real time for flawless pattern alignment.",
-  },
-  {
-    icon: (
-      <Image
-        src="/AdvancedIcon.svg"
-        alt="Advanced head protection"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "Advanced head protection",
-    desc: "Sensor systems detect fabric obstacles and protect printheads from scratches and damage during production.",
-  },
-  {
-    icon: (
-      <Image
-        src="/One-touch-maintenance.svg"
-        alt="One-touch maintenance"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "One-touch maintenance",
-    desc: "Automated belt cleaning and one-touch printhead maintenance minimise downtime and reduce operator workload.",
-  },
-  {
-    icon: (
-      <Image
-        src="/Professional-color-management.svg"
-        alt="Professional color management"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "Professional color management",
-    desc: "Analyses design file colors, auto-generates color profiles, and performs real-time calibration for consistent output.",
-  },
-  {
-    icon: (
-      <Image
-        src="/Precision-ink-mixing.svg"
-        alt="Precision ink mixing"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "Precision ink mixing",
-    desc: "High-precision dye ratio control for superior color reproduction and consistency across long production runs.",
-  },
-  {
-    icon: (
-      <Image
-        src="/Energy-efficient-design.svg"
-        alt="Energy-efficient design"
-        width={64}
-        height={64}
-      />
-    ),
-    title: "Energy-efficient design",
-    desc: "Intelligent energy management across all systems keeps operating costs low in high-volume production environments.",
-  },
-];
 
 export default function Features() {
+  const { features } = useProduct();
+  const FEATURES = features.items;
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -95,30 +22,22 @@ export default function Features() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
-        justifyContent: "center",
-        alignItems: { xs: "center", md: "flex-start" },
-        gap: "24px",
+        padding: { xs: "64px 16px", md: "80px 40px", lg: "80px 168px 40px" },
+        flexDirection: "column",
+        alignItems: "center",
         alignSelf: "stretch",
-        background: "#F2F2F2",
-        flexDirection: { xs: "column", md: "row" },
+        background: "#FFF",
       }}
     >
-      {/* Sidebar — hidden on mobile */}
-      <Box sx={{ display: { xs: "none", md: "block" }, flexShrink: 0 }}>
-        <ProductSidebar />
-      </Box>
-
-      {/* Right content */}
+      {/* Centered content column */}
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: { xs: "40px", md: "40px" },
-          flex: "1 0 0",
-          width: { xs: "100%", md: "auto" },
+          width: "100%",
+          maxWidth: "730px",
         }}
       >
         {/* Heading + description */}
@@ -153,8 +72,7 @@ export default function Features() {
               lineHeight: { xs: "19.2px", md: "25.6px" },
             }}
           >
-            Engineered with smart automation and precision technology for
-            reliable, efficient, and high-performance textile printing
+            {features.description}
           </Typography>
         </Box>
 
@@ -195,6 +113,7 @@ export default function Features() {
                   alignItems: "center",
                   gap: "24px",
                   borderRadius: "16px",
+                  border: "1px solid #E0E0E0",
                   background: "#FFF",
                   scrollSnapAlign: "center",
                   flexShrink: 0,
@@ -207,18 +126,25 @@ export default function Features() {
                   },
                 }}
               >
-                <Box
-                  sx={{
-                    width: "64px",
-                    height: "64px",
-                    flexShrink: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  {feature.icon}
-                </Box>
+                {feature.icon && (
+                  <Box
+                    sx={{
+                      width: "64px",
+                      height: "64px",
+                      flexShrink: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={64}
+                      height={64}
+                    />
+                  </Box>
+                )}
                 <Box
                   sx={{
                     display: "flex",
@@ -295,12 +221,13 @@ export default function Features() {
               key={feature.title}
               sx={{
                 display: "flex",
-                height: "228px",
+                minHeight: "228px",
                 padding: "24px",
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "24px",
                 borderRadius: "16px",
+                border: "1px solid #E0E0E0",
                 background: "#FFF",
                 cursor: "pointer",
                 transition:
@@ -311,19 +238,26 @@ export default function Features() {
                 },
               }}
             >
-              <Box
-                sx={{
-                  width: "64px",
-                  height: "64px",
-                  flexShrink: 0,
-                  aspectRatio: "1/1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {feature.icon}
-              </Box>
+              {feature.icon && (
+                <Box
+                  sx={{
+                    width: "64px",
+                    height: "64px",
+                    flexShrink: 0,
+                    aspectRatio: "1/1",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
+                  />
+                </Box>
+              )}
               <Box
                 sx={{
                   display: "flex",

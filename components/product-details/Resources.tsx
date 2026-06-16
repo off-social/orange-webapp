@@ -1,90 +1,78 @@
+"use client";
+
+import { useProduct } from "@/data/ProductContext";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import ProductSidebar from "./ProductSidebar";
 
 export default function Resources() {
+  const { resources, name } = useProduct();
+
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
-        justifyContent: "center",
-        alignItems: "flex-start",
-        gap: "24px",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: { xs: "40px", md: "64px" },
+        padding: { xs: "64px 16px", md: "64px 40px", lg: "64px 168px" },
         alignSelf: "stretch",
-        background: "#FFF",
-        flexDirection: { xs: "column", md: "row" },
+        background: "#EFEFEF",
       }}
     >
-      {/* Sidebar — hidden on mobile */}
-      <Box sx={{ display: { xs: "none", md: "block" }, flexShrink: 0 }}>
-        <ProductSidebar />
-      </Box>
-
-      {/* Right content */}
+      {/* Heading + description */}
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
-          gap: "64px",
-          flex: "1 0 0",
-          width: { xs: "100%", md: "auto" },
+          gap: "8px",
+          width: "100%",
+          maxWidth: "916px",
         }}
       >
-        {/* Heading + description */}
-        <Box
+        <Typography
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            width: "100%",
+            color: "#333",
+            textAlign: "center",
+            fontFamily: "Inter, sans-serif",
+            fontSize: { xs: "24px", md: "40px" },
+            fontWeight: 500,
+            lineHeight: { xs: "31.2px", md: "52px" },
+            letterSpacing: { xs: "0", md: "-1px" },
           }}
         >
-          <Typography
-            sx={{
-              color: "#333",
-              textAlign: "center",
-              fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "24px", md: "40px" },
-              fontWeight: 500,
-              lineHeight: { xs: "31.2px", md: "52px" },
-              letterSpacing: "-1px",
-            }}
-          >
-            Position Pro Showcase
-          </Typography>
-          <Typography
-            sx={{
-              color: "#707070",
-              textAlign: "center",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "22.4px",
-            }}
-          >
-            Access product videos, brochures, and technical information to
-            explore the full capabilities of printers
-          </Typography>
-        </Box>
+          Resources
+        </Typography>
+        <Typography
+          sx={{
+            color: "#707070",
+            textAlign: "center",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22.4px",
+          }}
+        >
+          {resources.description}
+        </Typography>
+      </Box>
 
-        {/* Video + Brochure */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "24px",
-            alignSelf: "stretch",
-          }}
-        >
-          {/* YouTube embed */}
+      {/* Video + Brochure */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px",
+          width: "100%",
+          maxWidth: "916px",
+        }}
+      >
+        {/* YouTube embed */}
+        {resources.videoUrl && (
           <Box
             sx={{
               alignSelf: "stretch",
-              aspectRatio: "272/151",
-              height: { md: "auto", lg: "351.972px" },
+              aspectRatio: "562/312",
               borderRadius: "16px",
               border: "5px solid #F2F2F2",
               overflow: "hidden",
@@ -94,32 +82,34 @@ export default function Resources() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/q38sTq6z_P4"
-              title="Position Pro Digital Textile Printer"
+              src={resources.videoUrl}
+              title={name}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{ display: "block", border: "none" }}
             />
           </Box>
+        )}
 
-          {/* Product Brochure row */}
-          <Box
-            sx={{
-              display: "flex",
-              padding: "8px",
-              alignItems: "center",
-              gap: "31px",
-              alignSelf: "stretch",
-              border: "1px dashed #E0E0E0",
-              borderRadius: "16px",
-            }}
-          >
-            {/* Brochure cover image */}
+        {/* Product Brochure row */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            padding: "8px",
+            alignItems: { xs: "stretch", sm: "center" },
+            gap: { xs: "16px", sm: "31px" },
+            alignSelf: "stretch",
+            borderRadius: "16px",
+            background: "#FAFAFA",
+          }}
+        >
+          {/* Brochure cover image */}
+          {resources.brochure.coverImage && (
             <Box
               sx={{
-                width: "185px",
-                height: "258px",
-                aspectRatio: "38/53",
+                width: { xs: "100%", sm: "185px" },
+                height: { xs: "240px", sm: "258px" },
                 borderRadius: "12px",
                 border: "1px solid #EFEFEF",
                 overflow: "hidden",
@@ -128,20 +118,30 @@ export default function Resources() {
               }}
             >
               <Image
-                src="/PositionPro-Product.png"
-                alt="Position Pro Brochure"
+                src={resources.brochure.coverImage}
+                alt={resources.brochure.title}
                 fill
                 style={{ objectFit: "cover", objectPosition: "center" }}
               />
             </Box>
+          )}
 
-            {/* Brochure info */}
+          {/* Brochure info */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "32px",
+              flex: 1,
+              px: { xs: "8px", sm: "0" },
+              pb: { xs: "8px", sm: "0" },
+            }}
+          >
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "8px",
-                flex: 1,
               }}
             >
               <Typography
@@ -154,7 +154,7 @@ export default function Resources() {
                   letterSpacing: 0,
                 }}
               >
-                Product Brochure
+                {resources.brochure.title}
               </Typography>
               <Typography
                 sx={{
@@ -165,38 +165,36 @@ export default function Resources() {
                   lineHeight: "22.4px",
                 }}
               >
-                Full specs, configurations, and print quality details for the
-                Position Pro.
+                {resources.brochure.desc}
               </Typography>
-              <Button
-                variant="contained"
-                startIcon={
-                  <Image
-                    src="/DownIcon.svg"
-                    alt="download"
-                    width={16}
-                    height={16}
-                  />
-                }
-                sx={{
-                  mt: "32px",
-                  bgcolor: "#111",
-                  color: "#FFF",
-                  borderRadius: "8px",
-                  textTransform: "none",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  px: "16px",
-                  py: "10px",
-                  boxShadow: "none",
-                  alignSelf: "flex-start",
-                  "&:hover": { bgcolor: "#333", boxShadow: "none" },
-                }}
-              >
-                Download Brochure
-              </Button>
             </Box>
+            <Button
+              variant="contained"
+              startIcon={
+                <Image
+                  src="/DownIcon.svg"
+                  alt="download"
+                  width={16}
+                  height={16}
+                />
+              }
+              sx={{
+                bgcolor: "#111",
+                color: "#FFF",
+                borderRadius: "8px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "13px",
+                fontWeight: 500,
+                px: "16px",
+                py: "10px",
+                boxShadow: "none",
+                alignSelf: "flex-start",
+                "&:hover": { bgcolor: "#333", boxShadow: "none" },
+              }}
+            >
+              Download Brochure
+            </Button>
           </Box>
         </Box>
       </Box>

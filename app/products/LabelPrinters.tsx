@@ -1,5 +1,6 @@
 "use client";
 
+import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Link, Typography } from "@mui/material";
 import Image from "next/image";
@@ -190,7 +191,7 @@ export default function LabelPrinters() {
         </Button>
         <Button
           component={Link}
-          href="/product-details"
+          href={productHref(currentImg.name)}
           variant="outlined"
           sx={{
             color: "#111",

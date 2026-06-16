@@ -1,0 +1,217 @@
+{
+  "slug": "rocket",
+  "name": "Rocket",
+  "tagline": "Single-Pass Industrial Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/PositionProDetails.png",
+    "mobile": "/PositionProMobile.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Industrial piezoelectric (5 / 7 / 12 pl)",
+      "Up to 75,000 lm/day",
+      "1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "Industrial-grade Piezoelectric (Variable Droplet: 5 / 7 / 12 pl)" },
+        { "label": "Max Output", "value": "Up to 75,000 lm/day" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Single Pass" },
+        { "label": "Max Print Width", "value": "1850 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Single-Pass Printing Architecture",
+        "desc": "The Rocket prints in a single continuous pass at industrial speed, eliminating multi-pass carriage movement and enabling output volumes that no scanning printer in its class can match."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Variable Ink Droplet Technology",
+        "desc": "Piezoelectric printheads with 5, 7, and 12 picolitre variable droplet sizes deliver smooth gradients, sharp fine detail, and rich solid fills within the same print job."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Automated Printhead Cleaning Station",
+        "desc": "Onboard self-cleaning system handles printhead maintenance automatically, extending head operational life and reducing manual intervention during long production shifts."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Adjustable Suction Platform",
+        "desc": "Active suction across the print zone holds fabric flat and uniform throughout the pass, ensuring consistent ink placement accuracy regardless of fabric weight or surface texture."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Tension-Controlled Feeding and Winding",
+        "desc": "Servo motors combined with laser-guided coil diameter sensors maintain precise, uniform fabric tension from unwind through winding, eliminating stretch and registration errors."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Auto Humidity and Surface Wiping System",
+        "desc": "Automated humidity control and surface wiping maintain stable printhead performance throughout the run while reducing fabric defects and material waste."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Stable Ink Supply System with Degassing",
+        "desc": "Peristaltic pump delivery with automatic negative pressure control and inline degassing ensures smooth, uninterrupted ink flow to all heads across extended high-speed production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Industrial Inline Design",
+        "desc": "Fabric entry, printing, drying, and collection are fully integrated into one automated inline system, removing manual handling between stages and maximising throughput efficiency."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Mass-Volume Fashion Textile Production",
+        "desc": "The highest-output solution for large polyester fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets where daily output volume is the primary business driver."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Export Garment Manufacturing",
+        "desc": "Continuous reactive printing on cotton at volumes suited to major export facilities supplying international brands requiring consistent quality across very large order quantities."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Industrial Home Textile Manufacturing",
+        "desc": "High-capacity production of bedding, curtain fabric, upholstery, and decorative textiles at volumes that make traditional printing economics unviable for the required design variety."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Commodity and Seasonal Textile Production",
+        "desc": "Single-pass speed makes the Rocket the most cost-effective choice for high-volume, low-design-change production runs where per-metre output cost is the critical business metric."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Integrated Mills and Large Print Houses",
+        "desc": "Manufacturers operating dedicated printing divisions within vertically integrated facilities who need a machine that matches weaving and finishing line output capacities."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Multi-Buyer Volume Job Work Operations",
+        "desc": "Large job work printing units with continuous order flow from multiple clients who need a machine that can print at scale without the speed limitations of scanning-head systems."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 75000,
+    "regularMode": [
+      { "res": "600 dpi", "pass": "single pass", "speed": 75000, "label": "Up to 75,000 lm/day" },
+      { "res": "800 dpi", "pass": "single pass", "speed": 55000, "label": "Up to 55,000 lm/day" },
+      { "res": "1200 dpi", "pass": "single pass", "speed": 35000, "label": "Up to 35,000 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Industrial Piezoelectric Printheads",
+      "desc": "Variable droplet technology (5 / 7 / 12 pl) for single-pass output up to 75,000 lm/day at up to 1200 dpi resolution"
+    },
+    "smallCards": [
+      {
+        "title": "Servo Motor System",
+        "desc": "Precision tension-controlled feeding and winding with laser-guided coil diameter sensing for uniform fabric transport"
+      },
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision motion guidance ensuring stable, vibration-free printhead alignment across the full 1850mm print width"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for continuous high-cycle industrial operation"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the complete machine system"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Proven industrial motion control delivering consistent performance across round-the-clock production schedules"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine systems and monitoring functions"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls for stable, repeatable process automation across all operating modes"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, single-pass engineering details, drying system integration, installation requirements, and component overview for the Rocket.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Rocket Showcase",
+    "description": "The world's fastest digital textile printer in its class. Single-pass architecture, up to 75,000 lm/day, 1850mm print width, and full inline automation built for manufacturers who operate at mass-production scale.",
+    "leftItems": [
+      "Scanning printers can't match mill output",
+      "High per-metre cost on volume runs",
+      "Manual handling between print stages",
+      "Air bubbles causing nozzle inconsistency"
+    ],
+    "rightItems": [
+      "Single-pass output up to 75,000 lm/day",
+      "Variable droplet tech for detail & solids",
+      "Fully integrated inline print-dry-collect",
+      "Stable ink supply with inline degassing"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Mass-production single-pass printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

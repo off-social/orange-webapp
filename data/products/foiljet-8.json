@@ -1,0 +1,222 @@
+{
+  "slug": "foiljet-8",
+  "name": "FoilJet 8 Head",
+  "tagline": "High-Precision Digital Foil and Sublimation Mesh Belt Printer",
+  "heroImage": {
+    "desktop": "/radoimg1.png",
+    "mobile": "/radoimg1.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "8× Epson i3200-A1 printheads",
+      "Up to 60 m/hr",
+      "1200 × 2400 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "8× Epson i3200-A1" },
+        { "label": "Max Output", "value": "Up to 60 m/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + W + Special Effects)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Mesh Belt Inkjet (Water-based Eco-friendly Ink)" },
+        { "label": "Max Print Width", "value": "1800 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Water-based · White · Foil Adhesive · Sublimation" },
+        { "label": "Media", "value": "Fabric and Paper (foil and sublimation compatible)" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Water-based Eco-friendly Ink", "fabrics": "All fabric types suitable for foil adhesive and effect printing" },
+      { "name": "White Ink", "fabrics": "Dark fabrics and specialty substrates requiring white base layer" },
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper" },
+      { "name": "Foil Adhesive Ink", "fabrics": "Textile and paper substrates for metallic and holographic foil transfer effects" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "White", "short": "W", "hex": "#ECECEC" },
+      { "name": "Foil", "short": "F", "hex": "#BFC1C2" },
+      { "name": "Glitter", "short": "Gl", "hex": "#D4AF37" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "8 Epson i3200-A1 Printheads",
+        "desc": "Eight industrial Epson i3200-A1 heads deliver crisp, high-resolution output at up to 1200 x 2400 dpi for sharp foil adhesive placement and vibrant sublimation printing on fabric and paper."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Maglev Linear Motor System",
+        "desc": "Magnetic levitation linear motor drives the carriage with ultra-smooth, vibration-free movement, ensuring consistent ink placement accuracy for precise foil and sublimation registration across every print."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Dual Dryer System",
+        "desc": "Two integrated drying zones ensure rapid ink setting and vibrant colour retention on foil media, reducing transfer errors and delivering consistent adhesive activation across different fabric weights."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "6-Zone Cooling System",
+        "desc": "Built-in zoned temperature control across the print area maintains stable printhead operating conditions and ensures precise foil transfer without thermal distortion or adhesive inconsistencies."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "White Ink Circulation and Ink Shortage Alarm",
+        "desc": "Continuous white ink circulation prevents pigment settling in channels during idle periods, while real-time ink shortage alerts notify operators before production is interrupted."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Anti-Collision Carriage Protection",
+        "desc": "Sensor-based carriage protection detects obstacles in the print path and immediately stops movement to prevent printhead contact damage during fabric or media loading."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Fully Automated Ink Supply System",
+        "desc": "Automated bulk ink delivery to all 8 heads maintains consistent ink pressure and reduces manual refill frequency, supporting longer uninterrupted production runs with minimal operator intervention."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Mesh Belt Conveying System",
+        "desc": "Open-mesh belt transport allows airflow through the media during drying while maintaining stable fabric positioning throughout the foil adhesive printing and collection process."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Fashion Fabric Foil Printing",
+        "desc": "Precise digital foil adhesive printing on sarees, dress materials, kurtis, and fashion fabrics for wholesale and export manufacturers adding metallic, holographic, or glitter foil effects to textile designs."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Ethnic and Bridal Wear Embellishment",
+        "desc": "High-resolution foil placement on lehenga, dupatta, sherwani, and bridal fabric for designers and manufacturers producing premium ethnic and occasion wear with intricate foil pattern detailing."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Sublimation",
+        "desc": "Water-based sublimation printing on polyester performance fabrics for sportswear brands and gym wear manufacturers requiring vibrant, wash-fast colour output on stretch and technical textiles."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Custom and Designer Textile Production",
+        "desc": "Short-run custom foil and sublimation printing for boutique fashion brands, textile designers, and sampling operations requiring fast turnaround on high-impact specialty effects."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Home Textile and Soft Furnishing Effects",
+        "desc": "Foil and specialty effect printing on cushion covers, curtains, table linen, and decorative home textiles for premium retail and gifting markets."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Paper and Transfer Media Printing",
+        "desc": "Dual media compatibility enables sublimation transfer paper printing and foil effect output on specialty paper alongside direct fabric production from a single machine."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Accessories and Narrow-Format Applications",
+        "desc": "Precise foil placement and vibrant sublimation output on scarves, stoles, bags, and textile accessories for fashion accessory brands and gift product manufacturers."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 60,
+    "regularMode": [
+      { "res": "720 dpi", "pass": "Standard foil adhesive", "speed": 60, "label": "Up to 60 m/hr" },
+      { "res": "1200 dpi", "pass": "High-detail mode", "speed": 35, "label": "Up to 35 m/hr" },
+      { "res": "White ink base", "pass": "base layer mode", "speed": 45, "label": "Up to 45 m/hr" },
+      { "res": "720 dpi", "pass": "Sublimation mode", "speed": 55, "label": "Up to 55 m/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "8× industrial inkjet printheads delivering up to 1200 x 2400 dpi for high-precision foil adhesive and sublimation output"
+    },
+    "smallCards": [
+      {
+        "title": "Maglev Linear Motor System",
+        "desc": "Magnetic levitation carriage drive for vibration-free, ultra-smooth movement and consistent print registration at all operating speeds"
+      },
+      {
+        "title": "6-Zone Cooling System",
+        "desc": "Zoned temperature management across the print area for stable thermal conditions during foil adhesive and sublimation printing"
+      },
+      {
+        "title": "Dual Dryer System",
+        "desc": "Two integrated drying zones for rapid ink setting and consistent foil adhesive activation across all media types"
+      },
+      {
+        "title": "Mesh Belt Conveying System",
+        "desc": "Open-mesh transport belt allowing through-belt airflow for efficient drying while maintaining stable media positioning"
+      },
+      {
+        "title": "White Ink Circulation System",
+        "desc": "Continuous white ink channel circulation with real-time shortage alarm for uninterrupted specialty ink output"
+      },
+      {
+        "title": "Automated Ink Supply System",
+        "desc": "Bulk ink delivery to all 8 heads maintaining consistent pressure and reducing manual refill frequency during production"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and monitoring systems"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, foil workflow tools, job queuing, and complete production management"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, foil workflow details, media compatibility overview, ink system description, and installation requirements for the FoilJet 8 Head.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "FoilJet 8 Head Showcase",
+    "description": "High-precision digital foil and sublimation printing on fabric and paper. 8 Epson i3200-A1 printheads, Maglev linear motor, dual dryers, 6-zone cooling, and water-based eco-friendly inks built for fashion foil, ethnic wear embellishment, and sublimation production.",
+    "leftItems": [
+      "Separate machines for foil & sublimation",
+      "Thermal distortion on foil transfer",
+      "White ink settling during idle periods",
+      "Printhead damage during media loading"
+    ],
+    "rightItems": [
+      "Foil & sublimation from one machine",
+      "6-zone cooling for stable foil transfer",
+      "Continuous white ink circulation",
+      "Anti-collision carriage protection"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-precision foil & sublimation printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

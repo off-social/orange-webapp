@@ -1,31 +1,9 @@
 "use client";
 
+import { useProduct } from "@/data/ProductContext";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import ProductSidebar from "./ProductSidebar";
-
-const INK_TYPES = [
-  { name: "Reactive", fabrics: "Cotton · Linen · Viscose · Natural fibers" },
-  { name: "Acid", fabrics: "Silk · Nylon · Protein fibers" },
-  { name: "Pigment", fabrics: "All fabrics, low water usage" },
-  { name: "Disperse", fabrics: "Polyester · Synthetic blends" },
-];
-
-const COLORS = [
-  { name: "Cyan", short: "C", hex: "#28BEFE" },
-  { name: "Magenta", short: "M", hex: "#FB2680" },
-  { name: "Yellow", short: "Y", hex: "#FEE622" },
-  { name: "Black", short: "K", hex: "#111111" },
-  { name: "Red", short: "R", hex: "#D9423B" },
-  { name: "Green", short: "G", hex: "#3B933D" },
-  { name: "Blue", short: "B", hex: "#2065BF" },
-  { name: "Orange", short: "O", hex: "#FC7017" },
-  { name: "F. Mag.", short: "FM", hex: "#F292B1" },
-  { name: "L. Mag.", short: "LM", hex: "#FC2E93" },
-  { name: "F. Yellow", short: "FY", hex: "#FFF44F" },
-  { name: "Grey", short: "G", hex: "#9E9E9E" },
-];
 
 const LIGHT_HEX = new Set(["#FEE622", "#FFF44F"]);
 
@@ -39,6 +17,9 @@ function getFlexGrow(i: number, active: number | null): number {
 }
 
 export default function InkCompatibility() {
+  const { inkCompatibility } = useProduct();
+  const INK_TYPES = inkCompatibility.inkTypes;
+  const COLORS = inkCompatibility.colors;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [tappedIndex, setTappedIndex] = useState<number | null>(null);
 
@@ -53,29 +34,22 @@ export default function InkCompatibility() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", md: "100px 40px", lg: "100px 168px" },
-        justifyContent: "space-between",
-        alignItems: { xs: "stretch", md: "flex-start" },
+        padding: { xs: "48px 16px", md: "80px 40px", lg: "80px 168px 40px" },
+        flexDirection: "column",
+        alignItems: "center",
         alignSelf: "stretch",
         background: "#FFF",
-        flexDirection: { xs: "column", md: "row" },
       }}
     >
-      {/* Sidebar — hidden on mobile */}
-      <Box sx={{ display: { xs: "none", md: "block" }, flexShrink: 0 }}>
-        <ProductSidebar />
-      </Box>
-
-      {/* Right content */}
+      {/* Centered content column */}
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: { xs: "28px", md: "48px" },
-          flex: "1 0 0",
-          width: { xs: "100%", md: "auto" },
+          width: "100%",
+          maxWidth: "730px",
         }}
       >
         {/* Heading + description */}
@@ -110,9 +84,7 @@ export default function InkCompatibility() {
               lineHeight: { xs: "19.2px", md: "25.6px" },
             }}
           >
-            Designed to support multiple ink technologies, offering flexibility
-            for various fabric types while maintaining exceptional print quality
-            and durability.
+            {inkCompatibility.description}
           </Typography>
         </Box>
 

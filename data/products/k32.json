@@ -1,0 +1,224 @@
+{
+  "slug": "k32",
+  "name": "K32",
+  "tagline": "High-Speed Industrial Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/K321.png",
+    "mobile": "/K321.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "32× Kyocera industrial printheads",
+      "Up to 570 lm/hr",
+      "1800 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "32× Kyocera Industrial (Water-based)" },
+        { "label": "Max Output", "value": "Up to 570 lm/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1800 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 420 lm/hr" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "32 Kyocera Industrial Printheads",
+        "desc": "32 water-based Kyocera printheads deliver up to 570 lm/hr output, making the K32 the highest-capacity configuration in the Homer series for non-stop large-scale production."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Intelligent Head Protection System",
+        "desc": "All-around printhead anti-scratch protection detects obstacles during carriage movement and prevents contact damage, extending printhead life across continuous high-speed runs."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Industrial-Grade Belt Conveying System",
+        "desc": "Stable, deviation-free belt transport maintains precise fabric positioning and consistent registration throughout every production run without manual adjustment."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Visual Operation Interface",
+        "desc": "Smart touchscreen UI enables single-operator management of multiple machines, with easy job recovery and real-time production monitoring from one control point."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "High-Speed Data Processing Server",
+        "desc": "Large-memory industrial server ensures fast, uninterrupted data flow to all 32 printheads, eliminating processing delays even during complex, high-coverage design printing."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Automatic Moisturizing and Cleaning System",
+        "desc": "Automated printhead moisturising and cleaning cycle reduces head wear, prevents nozzle blockages, and extends overall machine life during sustained high-volume production."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Diaphragm Pump Ink Supply System",
+        "desc": "Durable diaphragm pump delivers stable, consistent ink pressure to all heads simultaneously, ensuring reliable colour output under continuous round-the-clock production conditions."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Excellent Noise Reduction",
+        "desc": "High-speed linear motor paired with THK mute rail minimises operational noise, enabling comfortable working conditions during long production shifts at full machine speed."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Real-Time Ink and Air Pressure Monitoring",
+        "desc": "Continuous system monitoring tracks ink and air pressure across all circuits, preventing mid-run interruptions and keeping production stable under all operating conditions."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "High-Volume Fashion Textile Production",
+        "desc": "Non-stop disperse printing on polyester sarees, dress materials, and fashion fabrics for large wholesale and export operations requiring maximum daily output."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton at high volume, consistently meeting ISO wash fastness standards required by international buyers across round-the-clock production shifts."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Industrial Home Textile Manufacturing",
+        "desc": "Large-batch production of bedding, curtains, cushion covers, and upholstery across both cotton and polyester substrates for domestic retail and export markets."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Jacquard and Textured Fabrics",
+        "desc": "High-resolution output on complex woven and jacquard structures where sharp pattern definition and consistent repeat registration are critical across large production volumes."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Silk and Luxury Fabrics",
+        "desc": "Precise acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying boutique fashion brands and luxury garment producers at scale."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Multi-Buyer Job Work Operations",
+        "desc": "Wide fabric compatibility from 30 to 450 gsm and multi-ink support make the K32 ideal for large job work printing units serving diverse clients across different fabric categories."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Custom and Hi-End Export Production",
+        "desc": "International fashion and home textile buyers requiring tight colour repeatability, consistent large-batch quality, and fast turnaround on repeat orders."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 570,
+    "regularMode": [
+      { "res": "1800 dpi", "pass": "1 pass", "speed": 570, "label": "Up to 570 lm/hr" },
+      { "res": "1800 dpi", "pass": "2 pass", "speed": 420, "label": "Up to 420 lm/hr" },
+      { "res": "1800 dpi", "pass": "3 pass", "speed": 280, "label": "Up to 280 lm/hr" },
+      { "res": "1800 dpi", "pass": "4 pass", "speed": 200, "label": "Up to 200 lm/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Kyocera (Japan)",
+      "desc": "32× water-based industrial printheads delivering up to 570 lm/hr at 1800 dpi resolution"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision mute rail and motion guidance for stable, low-vibration carriage movement at full production speed"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical reliability across high-cycle production"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the entire machine"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Proven industrial motion control for consistent, reliable operation across multi-shift production environments"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls ensuring stable, repeatable process automation across all operating modes"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, engineering details, pass mode configurations, and installation requirements for the K32.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "K32 Showcase",
+    "description": "The highest-output machine in the Homer series. 32 Kyocera printheads, up to 570 lm/hr, and 1900mm print width built for manufacturers who need maximum production capacity without compromise.",
+    "leftItems": [
+      "Capacity ceilings on mass-volume orders",
+      "Operator overload running multiple machines",
+      "Nozzle blockages from continuous output",
+      "High noise during long production shifts"
+    ],
+    "rightItems": [
+      "32 Kyocera heads for up to 570 lm/hr",
+      "Single-operator visual control interface",
+      "Automatic moisturising & cleaning system",
+      "THK mute rail for excellent noise reduction"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Maximum-capacity textile production?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

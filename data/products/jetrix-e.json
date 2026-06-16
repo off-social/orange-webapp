@@ -1,0 +1,237 @@
+{
+  "slug": "jetrix-e",
+  "name": "JetRix-E",
+  "tagline": "Hybrid Digital Label Press — All-in-One Digital + Flexo + Foil",
+  "heroImage": {
+    "desktop": "/PositionProDetails.png",
+    "mobile": "/PositionProMobile.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Epson S3200 inkjet printhead",
+      "Up to 50 m/min",
+      "1200 × 600 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced hybrid label press technology designed to maximize productivity, ensure brand-accurate colour, and support diverse label substrates and premium finishes.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "Epson S3200 Industrial Inkjet" },
+        { "label": "Max Printing Speed", "value": "50 m/min" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 × 600 dpi" },
+        { "label": "Color Configuration", "value": "4 to 7 Colors (White + CMYK + up to 2 Spot)" }
+      ],
+      [
+        { "label": "Max Printing Width", "value": "350 mm" },
+        { "label": "Max Paper Width", "value": "360 mm" }
+      ],
+      [
+        { "label": "Printing Length", "value": "203.2 to 635 mm (64 to 200 T)" },
+        { "label": "Max Roll Diameter", "value": "650 mm" }
+      ],
+      [
+        { "label": "Max Roll Weight", "value": "200 kg" },
+        { "label": "Ink Type", "value": "UV Ink G7 Certified" }
+      ],
+      [
+        { "label": "Feeding", "value": "Roll to Roll" },
+        { "label": "Machine Size", "value": "Approx. 4,600 × 1,700 × 2,100 mm" }
+      ],
+      [
+        { "label": "Machine Weight", "value": "Approx. 2,500 kg" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support UV inkjet, spot colour, and extended gamut configurations, delivering consistent, brand-accurate label output across a wide range of substrates.",
+    "inkTypes": [
+      { "name": "UV Ink G7 Certified", "fabrics": "Standard configuration with White + CMYK for consistent, colour-accurate output across all supported label substrates" },
+      { "name": "Spot Color (Optional)", "fabrics": "Up to 2 sets of optional spot color channels for Pantone-matched brand colour reproduction on premium label applications" },
+      { "name": "Extended 7-Color Configuration", "fabrics": "Up to 7-color setup achieves 90 percent or higher colour gamut coverage for demanding brand colour accuracy requirements" },
+      { "name": "Substrate Compatibility", "fabrics": "PET · PVC · PP · PE · BOPP · Mono Film · Synthetic Paper · Coated Paper · Aluminium Foil · Special Materials" }
+    ],
+    "colors": [
+      { "name": "White", "short": "W", "hex": "#ECECEC" },
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Spot 1", "short": "S1", "hex": "#FC7017" },
+      { "name": "Spot 2", "short": "S2", "hex": "#7B3FF2" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance label production",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "All-in-One Hybrid Printing Architecture",
+        "desc": "Combines digital inkjet, flexo, and cold foil printing in a single integrated machine, eliminating the need for separate printing and finishing equipment and reducing production floor space and handling steps."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Plug-in Modular Design",
+        "desc": "Future-ready modular system allows operators to add or reconfigure printing and finishing modules as production requirements evolve, protecting the initial investment with scalable upgrade capability."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Epson S3200 Industrial Printhead",
+        "desc": "High-performance Epson S3200 printhead delivers sharp, precise label printing at up to 1200 x 600 dpi with consistent nozzle performance across long production runs on all supported substrates."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "7-Color System for 90 Percent Colour Gamut",
+        "desc": "Up to 7-color ink configuration extends the printable colour gamut beyond standard CMYK, achieving 90 percent or higher colour accuracy for brands requiring precise colour matching on shelf-facing labels."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Pre-Flexo with Cold Foil Unit",
+        "desc": "Integrated pre-flexo station with cold foil application adds metallic and holographic foil effects inline without stopping production, enabling premium label finishes in a single continuous pass."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Automated Camera Inspection System",
+        "desc": "Inline automated inspection camera continuously monitors print quality during production, detecting defects, misregistration, and colour inconsistencies in real time before they reach the finished roll."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "G7 Certified UV Ink System",
+        "desc": "G7 certified UV inks ensure consistent, standardised colour output across production runs and across machines, giving label printers the colour accuracy confidence required for brand-sensitive packaging clients."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Self-Developed MES System with Remote Service",
+        "desc": "Integrated manufacturing execution system combined with remote service and maintenance capability gives operators full production visibility while enabling fast, efficient technical support without on-site engineer visits."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of label and packaging applications, delivering exceptional print quality, colour accuracy, and production efficiency.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Pharma and Agro Labels",
+        "desc": "High-resolution variable data printing and G7 colour accuracy make the JetRix-E well suited to pharmaceutical, agrochemical, and crop protection label production requiring regulatory compliance and precise colour consistency."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Food and Beverage Labels",
+        "desc": "Vibrant 7-color output, cold foil capability, and multi-substrate support suit premium food and beverage label production for brands competing on shelf visibility and packaging quality."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Wine and Water Labels",
+        "desc": "Cold foil, spot colour, and Pantone matching deliver the premium finish quality demanded by wine, spirits, and mineral water brands for high-end retail label applications."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Cosmetics and Daily Chemicals",
+        "desc": "High-quality digital printing with optional foil effects and spot colour channels suits cosmetics, personal care, and household chemical label producers requiring premium brand presentation."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Shrink Labels and Laminated Tubes",
+        "desc": "Multi-substrate compatibility including PET, PVC, and PP films makes the JetRix-E a capable solution for shrink sleeve, laminated tube, and flexible packaging label applications."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Variable Data and Serialisation Printing",
+        "desc": "Pure digital inkjet architecture enables seamless variable data printing for serialisation, batch coding, unique identifiers, and personalised label production without plate changes or downtime."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Lubricant and Industrial Labels",
+        "desc": "Durable UV ink on film substrates and aluminium foil produces robust, chemical-resistant labels for lubricants, automotive products, and industrial goods requiring long-lasting print quality."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Short-Run and Brand-Extension Label Production",
+        "desc": "No plate cylinder cost, fast job switching, and modular configuration make the JetRix-E the most cost-efficient choice for converters managing short runs, brand extensions, and frequent design changeovers."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 50,
+    "regularMode": [
+      { "res": "600 × 600 dpi", "pass": "Roll-to-roll", "speed": 50, "label": "Up to 50 m/min" },
+      { "res": "900 × 600 dpi", "pass": "Roll-to-roll", "speed": 35, "label": "Up to 35 m/min" },
+      { "res": "1200 × 600 dpi", "pass": "Roll-to-roll", "speed": 25, "label": "Up to 25 m/min" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson S3200 Printhead (Japan)",
+      "desc": "Industrial inkjet printhead delivering up to 1200 x 600 dpi print resolution at 50 m/min for consistent, high-quality label output across all supported substrates"
+    },
+    "smallCards": [
+      {
+        "title": "LED + UV Curing System",
+        "desc": "Modular LED and UV curing design ensuring complete ink cure on all substrate types at full production speed"
+      },
+      {
+        "title": "Pre-Flexo with Cold Foil Unit",
+        "desc": "Integrated flexo and cold foil module for inline metallic and holographic foil application without separate finishing equipment"
+      },
+      {
+        "title": "Automated Camera Inspection System",
+        "desc": "Inline real-time print quality monitoring detecting defects and colour inconsistencies before finished roll collection"
+      },
+      {
+        "title": "Self-Developed MES System",
+        "desc": "Integrated manufacturing execution system for full production visibility, job management, and workflow automation"
+      },
+      {
+        "title": "Remote Service and Maintenance Platform",
+        "desc": "Remote diagnostic and technical support capability reducing engineer visit requirements and minimising production downtime"
+      },
+      {
+        "title": "G7 Certified UV Ink System",
+        "desc": "Standardised colour-accurate UV inks meeting G7 colour management certification for consistent, repeatable brand output"
+      },
+      {
+        "title": "ONYX RIP Software",
+        "desc": "Advanced RIP software with Pantone matching, ICC colour management, variable data support, and complete label production workflow tools"
+      },
+      {
+        "title": "High-Speed PCIE Data Transmission",
+        "desc": "Industrial-grade high-speed data transmission ensuring uninterrupted data flow to the printhead at all production speeds"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, substrate compatibility details, ink configuration options, modular design overview, and installation requirements for the JetRix-E.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "JetRix-E Showcase",
+    "description": "All-in-one hybrid digital label press combining digital inkjet, flexo, and cold foil in a single modular system. Epson S3200 printhead, up to 50 m/min, 7-color G7 certified UV inks, automated camera inspection, and self-developed MES built for pharmaceutical, food, beverage, cosmetics, and premium label production.",
+    "leftItems": [
+      "Separate machines for print, flexo & foil",
+      "Plate costs on short-run jobs",
+      "Colour inconsistency across brand runs",
+      "Defects discovered after the roll is done"
+    ],
+    "rightItems": [
+      "Digital + flexo + cold foil in one pass",
+      "No plates — fast short-run job switching",
+      "G7 certified UV inks for brand accuracy",
+      "Automated inline camera inspection"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "All-in-one hybrid label printing?",
+    "description": "Our specialists help you pick the right colour configuration, finishing modules, and substrate setup for your labels.",
+    "phone": "+91 74900 43336"
+  }
+}

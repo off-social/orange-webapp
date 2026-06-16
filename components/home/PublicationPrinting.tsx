@@ -1,8 +1,10 @@
 "use client";
 
+import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 type Product = { src: string; name: string; desc: string };
@@ -202,6 +204,8 @@ const PublicationPrinting = () => {
       >
         <Button
           variant="outlined"
+          component={Link}
+          href={productHref(currentProduct.name)}
           sx={{
             color: "#111",
             bgcolor: "#fff",

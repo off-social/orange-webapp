@@ -1,0 +1,222 @@
+{
+  "slug": "foiljet-16",
+  "name": "FoilJet 16 Head",
+  "tagline": "Wide-Format High-Precision Digital Foil and Sublimation Mesh Belt Printer",
+  "heroImage": {
+    "desktop": "/radoimg2.png",
+    "mobile": "/radoimg2.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "16× Epson i3200-A1 printheads",
+      "Up to 2,200 lm/day",
+      "3200 mm print width"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "16× Epson i3200-A1" },
+        { "label": "Max Output", "value": "Up to 2,200 lm/day" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + W + Special Effects)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Mesh Belt Inkjet (Water-based Eco-friendly Ink)" },
+        { "label": "Max Print Width", "value": "3200 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Water-based · White · Foil Adhesive · Sublimation" },
+        { "label": "Media", "value": "Fabric and Paper (foil and sublimation compatible)" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Water-based Eco-friendly Ink", "fabrics": "All fabric types suitable for foil adhesive and specialty effect printing" },
+      { "name": "White Ink", "fabrics": "Dark fabrics and specialty substrates requiring white base layer before foil or colour" },
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper" },
+      { "name": "Foil Adhesive Ink", "fabrics": "Textile and paper substrates for metallic, holographic, and glitter foil transfer effects" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "White", "short": "W", "hex": "#ECECEC" },
+      { "name": "Foil", "short": "F", "hex": "#BFC1C2" },
+      { "name": "Glitter", "short": "Gl", "hex": "#D4AF37" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "16 Epson i3200-A1 Printheads",
+        "desc": "Double the printhead count of the FoilJet 8 Head, 16 Epson i3200-A1 heads deliver high-resolution output at up to 1200 x 2400 dpi across a full 3200 mm print width for wide-format foil and sublimation production."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Maglev Linear Motor System",
+        "desc": "Magnetic levitation linear motor drives the carriage with ultra-smooth, vibration-free movement, ensuring consistent ink placement accuracy and precise foil adhesive registration across the full wide-format print zone."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Dual Dryer System",
+        "desc": "Two integrated drying zones provide rapid ink setting and vibrant colour retention across wide-format foil media, ensuring consistent adhesive activation at all operating speeds."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "6-Zone Cooling System",
+        "desc": "Zoned temperature control across the full print width maintains stable printhead operating conditions and prevents thermal distortion during extended wide-format foil and sublimation production runs."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "White Ink Circulation and Ink Shortage Alarm",
+        "desc": "Continuous white ink channel circulation prevents pigment settling during idle periods, while real-time ink shortage alerts notify operators before any production interruption occurs."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Anti-Collision Carriage Protection",
+        "desc": "Sensor-based carriage protection detects obstacles in the full 3200 mm print path and immediately halts movement to protect all 16 printheads from contact damage during fabric or media handling."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Fully Automated Ink Supply System",
+        "desc": "Automated bulk ink delivery to all 16 heads simultaneously maintains consistent pressure across the wide print zone, reducing manual refill frequency and supporting long uninterrupted production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Mesh Belt Conveying System",
+        "desc": "Open-mesh belt transport allows airflow through the media during drying while maintaining stable, accurate fabric positioning throughout wide-format foil and sublimation printing and collection."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Wide-Format Fashion Fabric Foil Printing",
+        "desc": "Precise digital foil adhesive printing across full 3200 mm width for sarees, dress materials, and fashion fabrics where wide repeats, border designs, or full-width foil effects are required."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Ethnic and Bridal Wear Production at Scale",
+        "desc": "High-resolution foil placement across wide fabric runs for lehenga, dupatta, sherwani, and bridal fabric manufacturers producing large collections with intricate wide-repeat foil pattern detailing."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Large-Format Home Textile Foil Effects",
+        "desc": "Foil and specialty effect printing on wide-format cushion covers, curtains, table linen, and decorative home textiles for premium retail, export, and gifting markets."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Wide-Format Sublimation Production",
+        "desc": "High-speed sublimation printing across 3200 mm on polyester performance fabrics, sportswear, and wide-format soft furnishing textiles requiring vibrant, wash-fast colour output at scale."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Flag, Banner, and Wide-Format Soft Signage",
+        "desc": "3200 mm print width and foil plus sublimation compatibility make the FoilJet 16 Head well suited to wide-format flags, banners, exhibition textiles, and retail soft signage applications."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Custom and Designer Wide-Format Textiles",
+        "desc": "Wide-format foil and sublimation output for boutique fashion brands, textile designers, and sampling studios working with wide repeat patterns or large-format design elements."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Transfer Paper and Specialty Media Printing",
+        "desc": "Dual media compatibility enables wide-format sublimation transfer paper printing alongside direct fabric output, serving manufacturers who operate both workflows from a single machine."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 2200,
+    "regularMode": [
+      { "res": "720 dpi", "pass": "Standard foil adhesive", "speed": 2200, "label": "Up to 2,200 lm/day" },
+      { "res": "1200 dpi", "pass": "High-detail mode", "speed": 1300, "label": "Up to 1,300 lm/day" },
+      { "res": "White ink base", "pass": "base layer mode", "speed": 1700, "label": "Up to 1,700 lm/day" },
+      { "res": "720 dpi", "pass": "Sublimation mode", "speed": 2000, "label": "Up to 2,000 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "16× industrial inkjet printheads delivering up to 1200 x 2400 dpi for high-precision wide-format foil adhesive and sublimation output across 3200 mm"
+    },
+    "smallCards": [
+      {
+        "title": "Maglev Linear Motor System",
+        "desc": "Magnetic levitation carriage drive for vibration-free, ultra-smooth movement and consistent registration across the full 3200 mm print width"
+      },
+      {
+        "title": "6-Zone Cooling System",
+        "desc": "Zoned temperature management across the complete wide-format print area for stable thermal conditions during foil adhesive and sublimation printing"
+      },
+      {
+        "title": "Dual Dryer System",
+        "desc": "Two integrated drying zones for rapid ink setting and consistent foil adhesive activation across all wide-format media types"
+      },
+      {
+        "title": "Mesh Belt Conveying System",
+        "desc": "Open-mesh transport belt allowing through-belt airflow for efficient drying while maintaining stable wide-format media positioning"
+      },
+      {
+        "title": "White Ink Circulation System",
+        "desc": "Continuous white ink channel circulation with real-time shortage alarm for uninterrupted specialty ink output across all production modes"
+      },
+      {
+        "title": "Automated Ink Supply System",
+        "desc": "Bulk ink delivery to all 16 heads maintaining consistent pressure across the wide print zone with reduced manual refill frequency"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and monitoring systems"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, foil workflow tools, job queuing, and complete production management"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, wide-format foil workflow details, media compatibility overview, ink system description, and installation requirements for the FoilJet 16 Head.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "FoilJet 16 Head Showcase",
+    "description": "Wide-format digital foil and sublimation printing across 3200 mm. 16 Epson i3200-A1 printheads, Maglev linear motor, dual dryers, 6-zone cooling, and water-based eco-friendly inks built for wide-format fashion foil, ethnic wear, soft signage, and sublimation production.",
+    "leftItems": [
+      "Width limits on large foil designs",
+      "Thermal distortion across wide print zone",
+      "White ink settling during idle periods",
+      "Head damage across the full carriage path"
+    ],
+    "rightItems": [
+      "Full 3200 mm wide-format foil & sublimation",
+      "6-zone cooling across the print width",
+      "Continuous white ink circulation",
+      "Anti-collision protection for all 16 heads"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Wide-format foil & sublimation printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

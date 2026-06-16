@@ -1,5 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 
 export default function GreenEdgeHero() {
   return (
@@ -104,6 +104,9 @@ export default function GreenEdgeHero() {
 
           {/* Button */}
           <Button
+            component={Link}
+            href="/brochures/GreenEdgeSeriesBrochure.pdf"
+            download="GreenEdgeSeriesBrochure.pdf"
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
             sx={{
@@ -124,7 +127,7 @@ export default function GreenEdgeHero() {
               "&:hover": { bgcolor: "#333", boxShadow: "none" },
             }}
           >
-            Explore Now
+            Download Brochure
           </Button>
         </Box>
       </Box>

@@ -1,0 +1,225 @@
+{
+  "slug": "alpha-16",
+  "name": "Alpha 16",
+  "tagline": "High-Speed Industrial Sublimation Transfer Printer",
+  "heroImage": {
+    "desktop": "/radoimgAlpha4.png",
+    "mobile": "/radoimgAlpha4.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "16× Epson i3200-A1 (3.5 pl)",
+      "Up to 9,200 lm/day",
+      "360 × 1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "16× Epson i3200-A1 (3.5 pl droplet size)" },
+        { "label": "Max Output", "value": "Up to 9,200 lm/day" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "360 × 1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Sublimation (High-Concentration Heat Transfer Ink)" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Max Media Load", "value": "3,000 m" },
+        { "label": "Ink Types", "value": "Sublimation" }
+      ],
+      [
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "16-Head High-Speed Maglev System",
+        "desc": "Sixteen Epson i3200-A1 heads mounted on a magnetic levitation carriage deliver maximum productivity with stable, precise high-speed movement across the full 1900 mm print width."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "THK Silent Dual Guide Rail",
+        "desc": "Premium THK dual rail system minimises carriage vibration and operational noise, ensuring consistent print sharpness and a comfortable working environment during sustained high-speed production."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "External Multi-Stage Drying System",
+        "desc": "Combined wind and heat drying in a dedicated external multi-stage unit ensures rapid, thorough ink fixation at maximum print speeds, improving turnaround time and reducing output defects."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Air-Guided Suction Platform",
+        "desc": "Active air suction across the print zone holds transfer paper flat against the platform, preventing media bulging, improving alignment accuracy, and ensuring defect-free output throughout every run."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "25-Litre Ink Supply with Syphon System",
+        "desc": "High-capacity 25-litre per colour ink tanks with syphon delivery maintain consistent ink pressure and flow to all 16 heads, supporting very long uninterrupted production runs with minimal refill stops."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "3,000-Metre Unwinding Capability",
+        "desc": "Jumbo roll support for up to 3,000 metres of transfer paper enables extended non-stop production batches, significantly reducing roll change frequency and operator intervention on large orders."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "AC Servo Motor with High-Precision Reducer",
+        "desc": "Industrial AC servo motor paired with a high-precision reducer delivers smooth, stable media feeding with precise speed control and consistent transport performance across long production hours."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Auto Moisture and Cleaning System",
+        "desc": "Automated printhead moisture control and cleaning cycle maintains consistent nozzle performance throughout the production shift without requiring manual intervention between jobs."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Maximum-Volume Sublimation Transfer Paper Production",
+        "desc": "The highest-output Alpha series sublimation printer for manufacturers supplying very large volumes of printed transfer paper to heat press operations across polyester garment and fashion fabric markets."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Polyester Fashion Fabric Printing",
+        "desc": "Direct sublimation output on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations where daily output volume and colour consistency are the primary business requirements."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Production at Industrial Scale",
+        "desc": "High-speed sublimation on polyester performance fabrics for major sportswear brands, gym wear producers, and activewear exporters running continuous large-volume order pipelines."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Industrial Home Textile Sublimation Production",
+        "desc": "Very high-capacity sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for large domestic and export home textile markets."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Round-the-Clock Multi-Shift Operations",
+        "desc": "Maglev carriage, THK silent dual rail, 3,000-metre roll support, and 25-litre bulk ink supply are designed specifically for facilities running 24-hour multi-shift continuous production schedules."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Large Job Work and Multi-Buyer Sublimation Units",
+        "desc": "Highest daily output in the Alpha range combined with stable multi-hour operation makes the Alpha 16 the top choice for large job work printers managing high-volume diverse client order portfolios."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Apparel, Home Decor, and Promotional Fabric Production",
+        "desc": "Versatile sublimation capability across transfer paper and direct polyester fabric substrates suits manufacturers serving multiple end markets from a single production platform."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 9200,
+    "regularMode": [
+      { "res": "360 × 1200 dpi", "pass": "Standard mode", "speed": 9200, "label": "Up to 9,200 lm/day" },
+      { "res": "360 × 1200 dpi", "pass": "High-quality mode", "speed": 6000, "label": "5,500–6,000 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "16× industrial inkjet printheads with 3.5 pl droplet size delivering up to 9,200 lm/day sublimation output at 360 x 1200 dpi"
+    },
+    "smallCards": [
+      {
+        "title": "Maglev Linear Motor Carriage System",
+        "desc": "Magnetic levitation carriage drive for smooth, stable high-speed movement and consistent registration across the full 1900 mm print width"
+      },
+      {
+        "title": "THK Silent Dual Guide Rail (Japan)",
+        "desc": "Premium dual rail system delivering low-vibration, low-noise carriage movement for consistent output quality at all production speeds"
+      },
+      {
+        "title": "AC Servo Motor with High-Precision Reducer",
+        "desc": "Industrial servo motor and precision reducer for smooth, stable media transport with accurate speed control across long production runs"
+      },
+      {
+        "title": "Air-Guided Suction Platform",
+        "desc": "Active suction media hold-down preventing paper bulging and ensuring accurate alignment throughout all production modes"
+      },
+      {
+        "title": "External Multi-Stage Wind and Heat Drying Unit",
+        "desc": "Dedicated combined drying system for rapid ink fixation at maximum print speeds across all media types"
+      },
+      {
+        "title": "25-Litre Bulk Ink Supply with Syphon System",
+        "desc": "High-capacity ink delivery with syphon-controlled consistent pressure for uninterrupted long-run production"
+      },
+      {
+        "title": "3,000-Metre Jumbo Roll Unwinding System",
+        "desc": "Large-format roll support minimising change frequency and operator intervention on high-volume production runs"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, head configuration details, drying system overview, media handling description, and installation requirements for the Alpha 16.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Alpha 16 Showcase",
+    "description": "The highest-output Kolorado Alpha sublimation printer. 16 Epson i3200-A1 heads, up to 9,200 lm/day, Maglev carriage, THK silent dual rail, 25-litre bulk ink, 3,000-metre roll support, and external multi-stage drying built for maximum-volume polyester and transfer paper sublimation production.",
+    "leftItems": [
+      "Throughput limits on maximum-volume runs",
+      "Carriage vibration affecting print quality",
+      "Paper bulging causing misalignment",
+      "Frequent roll changes and ink refills"
+    ],
+    "rightItems": [
+      "Up to 9,200 lm/day output",
+      "THK silent dual guide rail",
+      "Air-guided suction platform",
+      "25-litre bulk ink + 3,000 m roll support"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Maximum-volume sublimation transfer?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

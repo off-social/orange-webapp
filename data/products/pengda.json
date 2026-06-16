@@ -1,0 +1,215 @@
+{
+  "slug": "pengda",
+  "name": "Pengda 1000DIA",
+  "tagline": "High-Speed Industrial Oil-Heated Rotary Sublimation Transfer Machine",
+  "heroImage": {
+    "desktop": "/Pengda1.png",
+    "mobile": "/Pengda1.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "1000 mm oil-heated drum",
+      "Up to 600 m/hr transfer",
+      "1600 mm transfer width"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial sublimation transfer technology designed to maximize productivity, ensure uniform heat fixation, and support diverse polyester fabric applications.",
+    "rows": [
+      [
+        { "label": "Heating System", "value": "Oil Heating (Even Heat Across Full Drum Width)" },
+        { "label": "Max Output", "value": "Up to 15,000 lm/day" }
+      ],
+      [
+        { "label": "Transfer Speed", "value": "Up to 600 m/hr" },
+        { "label": "Drum Diameter", "value": "1000 mm" }
+      ],
+      [
+        { "label": "Max Transfer Width", "value": "1600 mm" },
+        { "label": "Machine Weight", "value": "4,500 kg (printer) / 2,300 kg (winder)" }
+      ],
+      [
+        { "label": "Transfer Modes", "value": "Roll-to-Roll · Pre-Cut Piece Transfer" },
+        { "label": "Compatible Ink", "value": "Sublimation (Heat Transfer)" }
+      ],
+      [
+        { "label": "Compatible Fabric", "value": "Polyester · Synthetic Blends · All sublimation-compatible fabrics" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to work with all sublimation-printed transfer papers, delivering vibrant, wash-fast results across polyester and synthetic blend fabrics.",
+    "inkTypes": [
+      { "name": "Sublimation Heat Transfer", "fabrics": "Works with all sublimation-printed transfer papers produced by Epson-based, Kyocera-based, and industrial sublimation printers for transfer onto polyester and synthetic blend fabrics" },
+      { "name": "Polyester Fabrics", "fabrics": "All polyester weaves, knits, and blended fabrics suitable for sublimation heat transfer" },
+      { "name": "Synthetic Blends", "fabrics": "Polyester-cotton blends and synthetic mix fabrics where polyester content is sufficient for sublimation transfer quality" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance sublimation transfer",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Oil Heating System",
+        "desc": "Thermal oil circulation delivers consistent, uniform heat across the full 1600 mm drum width, eliminating hot and cold spots that cause uneven colour transfer or incomplete fixation."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Multifunction Transfer Capability",
+        "desc": "Supports both roll-to-roll and pre-cut piece transfer modes from a single machine, giving operators the flexibility to switch between bulk fabric runs and individual garment piece transfers as required."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "High-Speed Transfer at Up to 600 m/hr",
+        "desc": "Industrial-grade rotary drum design enables transfer speeds of up to 600 metres per hour, making the Pengda the fastest calender option available for high-volume sublimation transfer operations."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Touch Panel Control System",
+        "desc": "Intuitive touchscreen interface provides real-time operator control over transfer speed, drum temperature, and timing, enabling precise adjustments for different fabric types and paper combinations."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Conveyor Belt Fabric Pickup System",
+        "desc": "Integrated conveyor belt automatically collects transferred fabric after the drum, simplifying post-transfer handling, reducing operator workload, and maintaining production flow without manual collection."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Pre-Cut Piece Table",
+        "desc": "Dedicated flat table with alignment guides allows operators to accurately position and feed pre-cut garment pieces into the drum for consistent, registered transfer on cut components."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Adjustable Speed and Pressure Control",
+        "desc": "Variable speed and pressure settings allow operators to fine-tune transfer parameters for different fabric weights, polyester compositions, and design coverage levels across all production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Built-In Cooling Timer",
+        "desc": "Integrated automatic cooldown timer manages safe drum temperature reduction after production stops, protecting machine components and ensuring operator safety at the end of every shift."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of sublimation finishing applications, delivering consistent transfer quality, vibrant colour, and production efficiency across polyester fabrics.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Sublimation Transfer Finishing for SubPro and Alpha Series Users",
+        "desc": "The natural downstream partner for any SubPro or Alpha series sublimation printer, completing the transfer workflow from printed paper to finished fabric at matched industrial output speeds."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "High-Volume Polyester Fashion Fabric Finishing",
+        "desc": "Roll-to-roll transfer at up to 600 m/hr suits manufacturers producing large volumes of polyester sarees, dress materials, and fashion fabrics who need calender capacity to match sublimation printer output."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Piece Transfer",
+        "desc": "Pre-cut piece table and adjustable pressure settings make the Pengda well suited to garment manufacturers transferring sublimation designs onto individual cut polyester components before assembly."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Home Textile and Soft Furnishing Production",
+        "desc": "High-speed roll-to-roll transfer on polyester curtains, cushion cover fabric, upholstery, and decorative furnishing textiles for manufacturers integrating calender finishing into their production line."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Job Work Calender Services",
+        "desc": "Manufacturers offering calender finishing as a service to sublimation printers and garment producers who outsource transfer fusing to dedicated calender operations."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Integrated Production Lines",
+        "desc": "Roll-to-roll and piece transfer modes in one machine make the Pengda the most versatile calender option for integrated facilities printing, transferring, and finishing polyester textiles under one roof."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal transfer mode and speed to optimize finishing output and transfer quality.",
+    "maxSpeed": 600,
+    "regularMode": [
+      { "res": "Roll-to-roll", "pass": "Standard transfer", "speed": 600, "label": "Up to 600 m/hr" },
+      { "res": "Roll-to-roll", "pass": "Heavy / high-coverage", "speed": 500, "label": "400–500 m/hr" },
+      { "res": "Piece transfer", "pass": "Pre-cut components", "speed": 350, "label": "~200–350 pieces/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent transfer efficiency.",
+    "largeCard": {
+      "title": "Oil Heating Drum System",
+      "desc": "1000 mm diameter thermal oil-circulated drum delivering uniform heat across the full 1600 mm transfer width for consistent, flawless sublimation transfer results"
+    },
+    "smallCards": [
+      {
+        "title": "Touch Panel Control Interface",
+        "desc": "Intuitive operator interface for real-time control of speed, temperature, and timing parameters across all transfer modes"
+      },
+      {
+        "title": "Conveyor Belt Fabric Pickup Unit",
+        "desc": "Integrated conveyor belt for automated post-transfer fabric collection, reducing manual handling and maintaining production flow"
+      },
+      {
+        "title": "Pre-Cut Piece Transfer Table",
+        "desc": "Dedicated alignment and feed table for consistent, registered transfer on pre-cut garment panels and fabric pieces"
+      },
+      {
+        "title": "Adjustable Pressure and Speed Control System",
+        "desc": "Variable drum pressure and belt speed settings for fine-tuned transfer parameters across different fabric weights and compositions"
+      },
+      {
+        "title": "Built-In Cooling Timer System",
+        "desc": "Automated cooldown management for safe drum temperature reduction after production and at shift end"
+      },
+      {
+        "title": "Winder Unit",
+        "desc": "Dedicated winding system (2,300 kg) for smooth, consistent roll collection of finished transferred fabric"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and safety systems"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, drum configuration details, heating system overview, transfer mode descriptions, and installation requirements for the Pengda 1000DIA.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Pengda 1000DIA Showcase",
+    "description": "High-speed industrial oil-heated rotary sublimation transfer machine. 1000 mm drum, up to 600 m/hr, 1600 mm transfer width, roll-to-roll and piece transfer modes, touch panel control, and conveyor belt pickup built for high-volume sublimation calender finishing alongside SubPro and Alpha series printers.",
+    "leftItems": [
+      "Uneven heat causing patchy transfers",
+      "Limited to roll-to-roll only",
+      "Slow calender finishing speeds",
+      "Manual fabric collection after transfer"
+    ],
+    "rightItems": [
+      "Oil heating for uniform drum-wide heat",
+      "Roll-to-roll & pre-cut piece transfer",
+      "High-speed transfer up to 600 m/hr",
+      "Conveyor belt automated fabric pickup"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-speed sublimation transfer finishing?",
+    "description": "Our specialists help you pick the right transfer mode, speed, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

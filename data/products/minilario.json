@@ -1,0 +1,227 @@
+{
+  "slug": "minilario",
+  "name": "MiniLaRIO",
+  "tagline": "Ultra High-Speed Scanning Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/Minilario01.png",
+    "mobile": "/Minilario01.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "64× variable drop heads (4–72 pl)",
+      "Up to 1,090 m/hr",
+      "3200 mm print width"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "64× Industrial Variable Drop (4 to 72 pl)" },
+        { "label": "Max Output", "value": "Up to 1,090 m/hr (2x CMYK mode)" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 800 m/hr" },
+        { "label": "Max Print Width", "value": "3200 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "64-Head Variable Drop Printhead System",
+        "desc": "64 industrial-grade printheads with 4 to 72 picolitre variable drop size deliver sharp fine detail, smooth gradients, and vibrant solid fills across the full 3200 mm print width at maximum production speed."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Qwizard Smart Operation System",
+        "desc": "Intuitive production management interface with Wi-Fi remote control enables single-operator monitoring of jobs, machine status, and workflow scheduling from any connected device."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Heated Driven Pressure Roll with Fabric Spreader",
+        "desc": "Advanced inlet system positions all fabric types accurately on the belt before printing, including elastic and stretch materials, significantly reducing fabric distortion and registration errors."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Anti-Crash Head Protection System",
+        "desc": "Laser-beam sensors detect media unevenness ahead of the carriage and immediately prevent printhead contact with raised fabric surfaces, protecting heads at all operating speeds."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Automatic Belt Washing System",
+        "desc": "Built-in inline double-brush belt cleaning system keeps the transportation belt free from ink buildup throughout production, minimising manual maintenance and downtime between shifts."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Inline Ink Degassing System",
+        "desc": "Real-time air bubble removal from the ink circuit maintains consistent nozzle performance and print quality throughout extended high-speed production runs without operator intervention."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Uninterrupted Ink Supply System",
+        "desc": "Ink tanks support live refilling during active printing, eliminating production stops for ink replenishment on high-coverage or long continuous-run jobs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "ACIMIT Green Label Certified",
+        "desc": "Independently certified for reduced energy, water, and chemical consumption, supporting manufacturers with documented sustainability commitments for international buyer compliance."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Ultra High-Volume Fashion Textile Production",
+        "desc": "The highest-speed scanning printer in the MS range, purpose-built for large polyester fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets at maximum daily output."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Wide-Format Home Textile and Furnishing Production",
+        "desc": "3200 mm print width handles extra-wide bedding, curtain fabric, upholstery, and large-format furnishing textiles without seam constraints that limit standard 1800 mm machines."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Large-Scale Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton at very high volume for major export facilities supplying international brands with consistent quality across large recurring orders."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Flag, Banner, and Soft Signage Production",
+        "desc": "Extra-wide 3200 mm format makes the MiniLaRIO the ideal choice for manufacturers producing flags, exhibition banners, retail soft signage, and event textile applications at scale."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Sportswear and Performance Fabric Printing",
+        "desc": "High-speed disperse and pigment output on stretch and technical fabrics for sportswear brands, gym wear producers, and performance apparel exporters serving high-volume order pipelines."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Sustainable Export-Focused Manufacturing",
+        "desc": "ACIMIT Green Label certification provides documented resource efficiency proof for manufacturers supplying European and international buyers with environmental compliance requirements."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Integrated Mills and Large Print Houses",
+        "desc": "Vertically integrated manufacturers and large dedicated print houses who need scanning-head versatility at volumes that match or exceed single-pass output requirements."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 1090,
+    "regularMode": [
+      { "res": "600 dpi", "pass": "2× CMYK config", "speed": 1090, "label": "Up to 1,090 m/hr" },
+      { "res": "600 dpi", "pass": "Standard CMYK", "speed": 800, "label": "Up to 800 m/hr" },
+      { "res": "1200 dpi", "pass": "High-quality mode", "speed": 400, "label": "Up to 400 m/hr" },
+      { "res": "Multi-pass", "pass": "Precision mode", "speed": 220, "label": "Up to 220 m/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Industrial Variable Drop Printheads",
+      "desc": "64× heads with 4 to 72 pl drop range delivering up to 1,090 m/hr in 2x CMYK configuration across print widths up to 3200 mm"
+    },
+    "smallCards": [
+      {
+        "title": "Qwizard Production Management System",
+        "desc": "Integrated smart operation interface with Wi-Fi remote control for real-time job management and machine monitoring"
+      },
+      {
+        "title": "Heated Driven Pressure Roll and Fabric Spreader",
+        "desc": "Precision inlet system for accurate fabric positioning across all fabric types including elastic and stretch materials"
+      },
+      {
+        "title": "Inline Ink Degassing System",
+        "desc": "Real-time air removal from the ink supply circuit ensuring consistent nozzle performance at all production speeds"
+      },
+      {
+        "title": "Automatic Double-Brush Belt Washing Unit",
+        "desc": "Inline automated belt cleaning system reducing maintenance downtime and extending conveyor service life"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical reliability in sustained high-cycle production"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the complete machine system"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and monitoring systems"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "ACIMIT Green Label Certification",
+        "desc": "Independently certified for sustainable energy, water, and chemical resource management in industrial textile printing"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, print width configurations, speed mode details, ink system overview, and installation requirements for the MiniLaRIO.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "MiniLaRIO Showcase",
+    "description": "The fastest scanning textile printer from MS Printing. 64 variable drop printheads, up to 1,090 m/hr in 2x CMYK mode, 3200 mm print width, Qwizard smart operation, and ACIMIT Green Label certified.",
+    "leftItems": [
+      "Scanning printers limited on output",
+      "Seam constraints on wide fabric",
+      "Operator-heavy machine management",
+      "Belt ink buildup and nozzle dropouts"
+    ],
+    "rightItems": [
+      "64 heads for up to 1,090 m/hr",
+      "Full 3200 mm wide-format printing",
+      "Qwizard smart single-operator control",
+      "Auto belt washing + inline degassing"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Maximum scanning-head output?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

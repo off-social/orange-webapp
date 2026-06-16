@@ -1,48 +1,10 @@
 "use client";
 
+import { useProduct } from "@/data/ProductContext";
 import BoltIcon from "@mui/icons-material/Bolt";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import ProductSidebar from "./ProductSidebar";
-
-const MAX_SPEED = 190;
-
-const REGULAR_MODE = [
-  {
-    res: "508 × 1200 dpi",
-    pass: "2 pass",
-    speed: 190,
-    label: "Up to 190 Lm/hr",
-  },
-  {
-    res: "600 × 1200 dpi",
-    pass: "2 pass",
-    speed: 170,
-    label: "Up to 170 Lm/hr",
-  },
-  {
-    res: "508 × 1800 dpi",
-    pass: "3 pass",
-    speed: 140,
-    label: "Up to 140 Lm/hr",
-  },
-  {
-    res: "600 × 1800 dpi",
-    pass: "3 pass",
-    speed: 120,
-    label: "Up to 120 Lm/hr",
-  },
-];
-
-const POSITION_PRO_MODE = [
-  {
-    res: "600 × 1200 dpi",
-    pass: "2 pass",
-    speed: 105,
-    label: "Up to 105 Lm/hr",
-  },
-];
 
 function SpeedRow({
   res,
@@ -52,6 +14,7 @@ function SpeedRow({
   isLast,
   animated,
   rowIndex,
+  maxSpeed,
 }: {
   res: string;
   pass: string;
@@ -60,8 +23,9 @@ function SpeedRow({
   isLast: boolean;
   animated: boolean;
   rowIndex: number;
+  maxSpeed: number;
 }) {
-  const pct = (speed / MAX_SPEED) * 100;
+  const pct = (speed / maxSpeed) * 100;
   const delay = `${rowIndex * 200}ms`;
 
   const bar = (
@@ -70,7 +34,7 @@ function SpeedRow({
         width: "100%",
         height: "8px",
         borderRadius: "8px",
-        bgcolor: "#2D2D2D",
+        bgcolor: "#E0E0E0",
         position: "relative",
         overflow: "hidden",
       }}
@@ -110,7 +74,7 @@ function SpeedRow({
         >
           <Typography
             sx={{
-              color: "#FFF",
+              color: "#404040",
               fontFamily: "Inter, sans-serif",
               fontSize: "14px",
               fontWeight: 500,
@@ -121,7 +85,7 @@ function SpeedRow({
           </Typography>
           <Typography
             sx={{
-              color: "#FFF",
+              color: "#404040",
               fontFamily: "Inter, sans-serif",
               fontSize: "14px",
               fontWeight: 500,
@@ -133,7 +97,7 @@ function SpeedRow({
         </Box>
         <Typography
           sx={{
-            color: "#666",
+            color: "#707070",
             fontFamily: "Inter, sans-serif",
             fontSize: "12px",
             fontWeight: 400,
@@ -164,7 +128,7 @@ function SpeedRow({
         >
           <Typography
             sx={{
-              color: "#FFF",
+              color: "#404040",
               fontFamily: "Inter, sans-serif",
               fontSize: "14px",
               fontWeight: 500,
@@ -175,7 +139,7 @@ function SpeedRow({
           </Typography>
           <Typography
             sx={{
-              color: "#666",
+              color: "#707070",
               fontFamily: "Inter, sans-serif",
               fontSize: "12px",
               fontWeight: 400,
@@ -190,7 +154,7 @@ function SpeedRow({
           sx={{
             minWidth: "120px",
             textAlign: "right",
-            color: "#FFF",
+            color: "#404040",
             fontFamily: "Inter, sans-serif",
             fontSize: "14px",
             fontWeight: 500,
@@ -201,7 +165,7 @@ function SpeedRow({
         </Typography>
       </Box>
 
-      {!isLast && <Box sx={{ height: "1px", bgcolor: "#222" }} />}
+      {!isLast && <Box sx={{ height: "1px", bgcolor: "#E0E0E0" }} />}
     </Box>
   );
 }
@@ -218,7 +182,7 @@ function SectionHeader({
       {icon}
       <Typography
         sx={{
-          color: "#B8B8B8",
+          color: "#707070",
           fontFamily: "Inter, sans-serif",
           fontSize: "10px",
           fontWeight: 500,
@@ -234,6 +198,9 @@ function SectionHeader({
 }
 
 export default function ProductionCapacity() {
+  const { productionCapacity } = useProduct();
+  const { maxSpeed, regularMode, specialMode, description } =
+    productionCapacity;
   const [animated, setAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -257,30 +224,22 @@ export default function ProductionCapacity() {
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
-        justifyContent: "center",
-        alignItems: "flex-start",
-        gap: "24px",
+        padding: { xs: "64px 16px", md: "80px 40px", lg: "80px 168px 40px" },
+        flexDirection: "column",
+        alignItems: "center",
         alignSelf: "stretch",
-        background: "#111",
-        flexDirection: { xs: "column", md: "row" },
+        background: "#FFF",
       }}
     >
-      {/* Sidebar — hidden on mobile */}
-      <Box sx={{ display: { xs: "none", md: "block" }, flexShrink: 0 }}>
-        <ProductSidebar dark />
-      </Box>
-
-      {/* Right content */}
+      {/* Centered content column */}
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "center",
           gap: "64px",
-          flex: "1 0 0",
-          width: { xs: "100%", md: "auto" },
+          width: "100%",
+          maxWidth: "730px",
         }}
       >
         {/* Heading */}
@@ -302,7 +261,7 @@ export default function ProductionCapacity() {
           >
             <Typography
               sx={{
-                color: "#B8B8B8",
+                color: "#707070",
                 textAlign: "center",
                 fontFamily: "Inter, sans-serif",
                 fontSize: { xs: "20px", md: "32px" },
@@ -315,13 +274,13 @@ export default function ProductionCapacity() {
             </Typography>
             <Typography
               sx={{
-                color: "#FFF",
+                color: "#333",
                 textAlign: "center",
                 fontFamily: "Inter, sans-serif",
                 fontSize: { xs: "28px", md: "40px" },
                 fontWeight: 500,
                 lineHeight: { xs: "36px", md: "52px" },
-                letterSpacing: "-1px",
+                letterSpacing: { xs: "0", md: "-1px" },
               }}
             >
               Mode & Resolution
@@ -329,7 +288,7 @@ export default function ProductionCapacity() {
           </Box>
           <Typography
             sx={{
-              color: "#999",
+              color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
               fontSize: "14px",
@@ -337,8 +296,7 @@ export default function ProductionCapacity() {
               lineHeight: "22.4px",
             }}
           >
-            Choose the ideal speed and resolution combination to optimize
-            production output and print performance.
+            {description}
           </Typography>
         </Box>
 
@@ -353,82 +311,85 @@ export default function ProductionCapacity() {
           }}
         >
           <SectionHeader
-            icon={<BoltIcon sx={{ fontSize: "14px", color: "#B8B8B8" }} />}
+            icon={<BoltIcon sx={{ fontSize: "14px", color: "#707070" }} />}
             label="Regular Mode"
           />
           <Box sx={{ mt: "8px" }}>
-            {REGULAR_MODE.map((row, i) => (
+            {regularMode.map((row, i) => (
               <SpeedRow
                 key={row.res}
                 {...row}
-                isLast={i === REGULAR_MODE.length - 1}
+                isLast={i === regularMode.length - 1}
                 animated={animated}
                 rowIndex={i}
+                maxSpeed={maxSpeed}
               />
             ))}
           </Box>
         </Box>
 
-        {/* Position Pro Mode */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0",
-            width: "100%",
-          }}
-        >
-          <SectionHeader
-            icon={
-              <Image
-                src="/align-selectionIcon.svg"
-                alt="Position Pro Mode"
-                width={14}
-                height={14}
-              />
-            }
-            label="Position Pro Mode"
-          />
-          <Box sx={{ mt: "8px" }}>
-            {POSITION_PRO_MODE.map((row, i) => (
-              <SpeedRow
-                key={row.res}
-                {...row}
-                isLast={i === POSITION_PRO_MODE.length - 1}
-                animated={animated}
-                rowIndex={REGULAR_MODE.length + i}
-              />
-            ))}
-          </Box>
+        {/* Special / vision mode (optional) */}
+        {specialMode && (
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              mt: "12px",
+              flexDirection: "column",
+              gap: "0",
+              width: "100%",
             }}
           >
-            <Image
-              src="/eyeIcon.svg"
-              alt="eye"
-              width={16}
-              height={16}
-              style={{ flexShrink: 0 }}
+            <SectionHeader
+              icon={
+                <Image
+                  src={specialMode.iconSrc}
+                  alt={specialMode.label}
+                  width={14}
+                  height={14}
+                />
+              }
+              label={specialMode.label}
             />
-            <Typography
+            <Box sx={{ mt: "8px" }}>
+              {specialMode.rows.map((row, i) => (
+                <SpeedRow
+                  key={row.res}
+                  {...row}
+                  isLast={i === specialMode.rows.length - 1}
+                  animated={animated}
+                  rowIndex={regularMode.length + i}
+                  maxSpeed={maxSpeed}
+                />
+              ))}
+            </Box>
+            <Box
               sx={{
-                color: "#666",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "12px",
-                fontWeight: 400,
-                lineHeight: "19.2px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                mt: "12px",
               }}
             >
-              Vision guided alignment active optimal for textured fabrics
-              requiring precise registration.
-            </Typography>
+              <Image
+                src="/eyeIcon.svg"
+                alt="eye"
+                width={16}
+                height={16}
+                style={{ flexShrink: 0 }}
+              />
+              <Typography
+                sx={{
+                  color: "#707070",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12px",
+                  fontWeight: 400,
+                  lineHeight: "19.2px",
+                }}
+              >
+                {specialMode.note}
+              </Typography>
+            </Box>
           </Box>
-        </Box>
+        )}
       </Box>
     </Box>
   );

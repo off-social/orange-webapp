@@ -1,0 +1,217 @@
+{
+  "slug": "jp7",
+  "name": "JP7",
+  "tagline": "High-Speed Digital Textile and Paper Printer",
+  "heroImage": {
+    "desktop": "/JP701.png",
+    "mobile": "/JP701.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "16× variable drop heads (4–72 pl)",
+      "Up to 340 m/hr",
+      "600 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "16× Industrial Variable Drop (4 to 72 pl)" },
+        { "label": "Max Output", "value": "Up to 340 m/hr (2x CMYK mode)" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "600 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "200 m/hr" },
+        { "label": "Max Print Width", "value": "1800 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Media", "value": "Fabric and Paper (dual media compatible)" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Dual Media Compatibility",
+        "desc": "Prints on both textile and paper using the same system, giving businesses the flexibility to serve fabric and transfer paper production from a single machine."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Variable Drop Size Technology",
+        "desc": "Printheads with 4 to 72 picolitre variable drop range deliver smooth gradients, fine detail, and rich solid areas with consistent quality across all design complexities."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Adhesive-Coated Belt Stability",
+        "desc": "Adhesive belt securely holds all media types in place, including elastic and stretch fabrics, ensuring accurate registration and defect-free output throughout the print run."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Auto Cleaning System",
+        "desc": "Automated wiper and capping assembly handles printhead maintenance between jobs, enabling immediate restart after inactivity without manual intervention or warm-up delays."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Uninterrupted Ink Supply System",
+        "desc": "Refillable ink tanks with inline filtration allow live refilling during production without stopping the machine, eliminating downtime on high-coverage or long-run jobs."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Head Crash Protective System",
+        "desc": "Dual laser-beam sensors continuously scan for media unevenness ahead of the carriage, automatically preventing printhead contact with raised fabric surfaces or obstructions."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Wi-Fi Remote Control and Embedded Web Server",
+        "desc": "Wireless monitoring and job cost reporting are accessible directly from the machine interface, allowing operators to track production status and costs without being at the console."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "ACIMIT Green Label Certified",
+        "desc": "Certified for sustainable innovation in energy, water, and chemical resource management, making the JP7 a compliant choice for manufacturers with sustainability targets."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Fashion Textile Production",
+        "desc": "Reactive and disperse printing on a wide range of woven and knit fabrics for fashion garment manufacturers producing sarees, dress materials, kurtis, and casualwear."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Sportswear and Activewear Printing",
+        "desc": "High-quality disperse printing on polyester stretch and performance fabrics for sportswear brands, gym wear manufacturers, and activewear exporters."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Transfer Paper Printing",
+        "desc": "Dual media compatibility makes the JP7 equally suited to sublimation transfer paper printing for manufacturers who service both direct fabric and transfer paper workflows."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Home Textile and Soft Furnishing Production",
+        "desc": "Reactive and pigment printing on cotton and blended fabrics for bedding, cushion covers, curtains, and decorative home textile products."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Accessories and Small-Format Textile Goods",
+        "desc": "Precise output and stable media handling make the JP7 well suited to scarves, stoles, bags, and other narrow-format or shorter-run accessory textile applications."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Sustainable and Export-Focused Operations",
+        "desc": "ACIMIT Green Label certification supports manufacturers serving European and international buyers with documented sustainability and resource efficiency requirements."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 340,
+    "regularMode": [
+      { "res": "600 dpi", "pass": "Standard CMYK", "speed": 200, "label": "Up to 200 m/hr" },
+      { "res": "600 dpi", "pass": "2× CMYK config", "speed": 340, "label": "Up to 340 m/hr" },
+      { "res": "600 dpi", "pass": "High-quality multi-pass", "speed": 120, "label": "Up to 120 m/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Industrial Variable Drop Printheads",
+      "desc": "16× robust heads with 4 to 72 pl variable drop size for high-speed scanning output at up to 340 m/hr in 2x CMYK configuration"
+    },
+    "smallCards": [
+      {
+        "title": "Adhesive Belt Conveying System",
+        "desc": "Adhesive-coated belt transport for stable, accurate media handling across fabric and paper substrates including elastic materials"
+      },
+      {
+        "title": "Wi-Fi and Embedded Web Server Module",
+        "desc": "Wireless remote control and integrated web server for real-time production monitoring and cost reporting from any connected device"
+      },
+      {
+        "title": "Inline Ink Filtration System",
+        "desc": "Continuous ink filtration with live-refill capability ensuring clean, uninterrupted ink delivery without production stops"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical life across sustained production cycles"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the complete machine system"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "ACIMIT Green Label Certification",
+        "desc": "Independently certified for sustainable energy, water, and chemical resource management in industrial textile printing"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, media compatibility details, ink system overview, and installation requirements for the JP7.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "JP7 Showcase",
+    "description": "High-speed industrial printing on both fabric and paper from a single machine. 16-head variable drop technology, up to 340 m/hr in 2x CMYK mode, ACIMIT Green Label certified, and built for fashion, sportswear, and transfer paper production.",
+    "leftItems": [
+      "Separate machines for fabric and paper",
+      "Inconsistent quality across design types",
+      "Downtime to refill ink mid-run",
+      "No sustainability certification for exports"
+    ],
+    "rightItems": [
+      "Dual fabric & paper from one machine",
+      "Variable drop tech for detail & solids",
+      "Live ink refill with no production stops",
+      "ACIMIT Green Label certified"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Dual fabric & paper printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

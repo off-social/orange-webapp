@@ -1,5 +1,6 @@
 "use client";
 
+import { productHref } from "@/data/products";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
@@ -403,7 +404,7 @@ const TextilePrinting = () => {
             <Button
               variant="outlined"
               component={Link}
-              href="/product-details"
+              href={productHref(currentProduct.name)}
               sx={{
                 color: "#111",
                 bgcolor: "#fff",

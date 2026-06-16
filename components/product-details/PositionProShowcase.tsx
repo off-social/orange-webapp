@@ -1,27 +1,21 @@
+"use client";
+
+import { useProduct } from "@/data/ProductContext";
+import BoltIcon from "@mui/icons-material/Bolt";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Typography } from "@mui/material";
 
-const LEFT_ITEMS = [
-  "Fabric distortion on complex textures",
-  "Costly registration errors on lace and jacquard",
-  "Misaligned prints on embroidery and sequins",
-  "No double-sided silk capability",
-];
-
-const RIGHT_ITEMS = [
-  "Real-time vision scanning & compensation",
-  "Perfect alignment every print, every time",
-  "Precision mapping on woven & knit textures",
-  "Double-sided silk printing supported",
-];
-
 export default function PositionProShowcase() {
+  const { name, showcase } = useProduct();
+  const PROBLEM_ITEMS = showcase.leftItems;
+  const SOLUTION_ITEMS = showcase.rightItems;
+
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 356px" },
+        padding: { xs: "64px 16px", md: "64px 40px", lg: "64px 168px" },
         flexDirection: "column",
         alignItems: "center",
         gap: "64px",
@@ -37,6 +31,7 @@ export default function PositionProShowcase() {
           alignItems: "center",
           gap: "8px",
           width: "100%",
+          maxWidth: "730px",
         }}
       >
         <Typography
@@ -50,7 +45,7 @@ export default function PositionProShowcase() {
             letterSpacing: "-1px",
           }}
         >
-          Position Pro Showcase
+          {showcase.heading}
         </Typography>
         <Typography
           sx={{
@@ -62,125 +57,57 @@ export default function PositionProShowcase() {
             lineHeight: "22.4px",
           }}
         >
-          Designed for high-value textile applications, Position Pro delivers unmatched print alignment, superior registration accuracy, and reliable performance across textured and specialty fabrics.
+          {showcase.description}
         </Typography>
       </Box>
 
-      {/* Cards row */}
+      {/* Comparison card — single joined card with two panels */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: "24px",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "stretch",
           width: "100%",
+          borderRadius: "32px",
+          overflow: "hidden",
+          boxShadow: "0px 20px 20px rgba(0,0,0,0.06)",
         }}
       >
-        {/* ── Left card ── */}
+        {/* ── Solution panel (orange) ── */}
         <Box
           sx={{
             display: "flex",
-            width: { xs: "100%", sm: "0" },
-            flex: { xs: "unset", sm: 1 },
-            padding: "32px 24px",
+            flex: { xs: "unset", md: 1 },
+            minWidth: 0,
+            padding: { xs: "32px 24px", md: "64px" },
             flexDirection: "column",
-            alignItems: "center",
-            gap: "32px",
-            borderRadius: "20px",
-            background: "#F2F2F2",
-            boxSizing: "border-box",
-          }}
-        >
-          {/* Title */}
-          <Typography
-            sx={{
-              color: "#111",
-              textAlign: "center",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "24px",
-              fontWeight: 500,
-              lineHeight: "31.2px",
-              letterSpacing: "0",
-            }}
-          >
-            Traditional printers struggles with
-          </Typography>
-
-          {/* List — divider after every item except last */}
-          <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
-            {LEFT_ITEMS.map((item, idx) => (
-              <Box key={item} sx={{ display: "flex", flexDirection: "column" }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "10px",
-                    py: "16px",
-                  }}
-                >
-                  <CloseIcon
-                    sx={{ color: "#E05252", fontSize: "18px", flexShrink: 0, mt: "2px" }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "#333",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                      lineHeight: "22.4px",
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                </Box>
-                {idx < LEFT_ITEMS.length - 1 && (
-                  <Box sx={{ width: "100%", height: "1px", bgcolor: "#E0E0E0", flexShrink: 0 }} />
-                )}
-              </Box>
-            ))}
-          </Box>
-        </Box>
-
-        {/* ── Right card ── */}
-        <Box
-          sx={{
-            display: "flex",
-            width: { xs: "100%", sm: "0" },
-            flex: { xs: "unset", sm: 1 },
-            padding: "32px 24px",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "32px",
-            borderRadius: "20px",
+            alignItems: "flex-start",
+            gap: "24px",
             background: "#F6891F",
             boxSizing: "border-box",
           }}
         >
-          {/* Badge + heading */}
+          {/* Header */}
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: "flex-start",
               gap: "8px",
+              width: "100%",
             }}
           >
-            {/* Position Pro pill */}
             <Box
               sx={{
                 display: "flex",
-                padding: "8px 16px",
-                justifyContent: "center",
                 alignItems: "center",
-                gap: "8px",
-                borderRadius: "100px",
-                background: "#FFF",
+                gap: "4px",
+                width: "100%",
               }}
             >
               <Typography
                 sx={{
-                  color: "#F6891F",
-                  textAlign: "center",
+                  color: "#FFF",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "24px",
                   fontWeight: 500,
@@ -188,15 +115,95 @@ export default function PositionProShowcase() {
                   letterSpacing: "0",
                 }}
               >
-                Position Pro
+                {name}
               </Typography>
+              <BoltIcon sx={{ color: "#FFF", fontSize: "24px" }} />
             </Box>
+            <Typography
+              sx={{
+                color: "#FEF3E8",
+                opacity: 0.8,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 400,
+                lineHeight: "22.4px",
+              }}
+            >
+              {showcase.solutionTagline ||
+                `${SOLUTION_ITEMS.length} key advantages`}
+            </Typography>
+          </Box>
 
-            {/* "solves it with" */}
+          {/* Divider */}
+          <Box
+            sx={{
+              width: "100%",
+              height: "1px",
+              bgcolor: "rgba(255,255,255,0.25)",
+              flexShrink: 0,
+            }}
+          />
+
+          {/* List */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+              width: "100%",
+            }}
+          >
+            {SOLUTION_ITEMS.map((item) => (
+              <Box
+                key={item}
+                sx={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                <CheckIcon
+                  sx={{ color: "#FFF", fontSize: "20px", flexShrink: 0 }}
+                />
+                <Typography
+                  sx={{
+                    color: "#FFF",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    lineHeight: "22.4px",
+                  }}
+                >
+                  {item}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        {/* ── Problem panel (dark) ── */}
+        <Box
+          sx={{
+            display: "flex",
+            flex: { xs: "unset", md: 1 },
+            minWidth: 0,
+            padding: { xs: "32px 24px", md: "64px" },
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "24px",
+            background: "#111",
+            boxSizing: "border-box",
+          }}
+        >
+          {/* Header */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "8px",
+              width: "100%",
+            }}
+          >
             <Typography
               sx={{
                 color: "#FFF",
-                textAlign: "center",
                 fontFamily: "Inter, sans-serif",
                 fontSize: "24px",
                 fontWeight: 500,
@@ -204,47 +211,59 @@ export default function PositionProShowcase() {
                 letterSpacing: "0",
               }}
             >
-              solves it with
+              Traditional Printers
+            </Typography>
+            <Typography
+              sx={{
+                color: "#999",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                fontWeight: 400,
+                lineHeight: "22.4px",
+              }}
+            >
+              {PROBLEM_ITEMS.length} known limitations
             </Typography>
           </Box>
 
-          {/* List — divider after every item except last */}
-          <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
-            {RIGHT_ITEMS.map((item, idx) => (
-              <Box key={item} sx={{ display: "flex", flexDirection: "column" }}>
-                <Box
+          {/* Divider */}
+          <Box
+            sx={{
+              width: "100%",
+              height: "1px",
+              bgcolor: "rgba(255,255,255,0.1)",
+              flexShrink: 0,
+            }}
+          />
+
+          {/* List */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+              width: "100%",
+            }}
+          >
+            {PROBLEM_ITEMS.map((item) => (
+              <Box
+                key={item}
+                sx={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                <CloseIcon
+                  sx={{ color: "#EA4E33", fontSize: "20px", flexShrink: 0 }}
+                />
+                <Typography
                   sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "10px",
-                    py: "16px",
+                    color: "#EFEFEF",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    lineHeight: "25.6px",
                   }}
                 >
-                  <CheckIcon
-                    sx={{ color: "#FFF", fontSize: "18px", flexShrink: 0, mt: "2px" }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "#FFF",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                      lineHeight: "22.4px",
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                </Box>
-                {idx < RIGHT_ITEMS.length - 1 && (
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "1px",
-                      bgcolor: "rgba(255,255,255,0.35)",
-                      flexShrink: 0,
-                    }}
-                  />
-                )}
+                  {item}
+                </Typography>
               </Box>
             ))}
           </Box>

@@ -1,0 +1,225 @@
+{
+  "slug": "vividpress-e",
+  "name": "VividPress-E",
+  "tagline": "High-Speed Single-Pass Digital Inkjet Solution for Books and Magazines",
+  "heroImage": {
+    "desktop": "/PositionProDetails.png",
+    "mobile": "/PositionProMobile.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Single-pass piezoelectric inkjet",
+      "Up to 100 m/min duplex",
+      "1200 × 600 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced single-pass digital inkjet technology designed to maximize productivity, ensure sharp duplex output, and support diverse book, magazine, and publication applications.",
+    "rows": [
+      [
+        { "label": "Models", "value": "VividPress 440C / VividPress 6600" },
+        { "label": "Technology", "value": "Single Pass, Piezoelectric Inkjet" }
+      ],
+      [
+        { "label": "Max Printing Speed", "value": "Up to 100 m/min" },
+        { "label": "Max Resolution", "value": "1200 × 600 dpi" }
+      ],
+      [
+        { "label": "Color Channels", "value": "CMYK (Duplex Printing)" },
+        { "label": "Ink Type", "value": "Water-based Pigment" }
+      ],
+      [
+        { "label": "Max Media Width", "value": "440C — 440 mm / 6600 — 660 mm" },
+        { "label": "Max Printing Width", "value": "440C — 429 mm / 6600 — 645 mm" }
+      ],
+      [
+        { "label": "Max Media Diameter", "value": "1270 mm" },
+        { "label": "Media Thickness", "value": "45 to 160 gsm" }
+      ],
+      [
+        { "label": "Registration Accuracy", "value": "+/- 0.5 mm" },
+        { "label": "Drying Method", "value": "Infrared Drying (Auto Energy Saving)" }
+      ],
+      [
+        { "label": "Transportation", "value": "Roll to Roll / Roll to Sheet (Optional)" },
+        { "label": "Machine Dimensions", "value": "13,440 × 4,800 × 2,500 mm" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed around water-based pigment ink and single-pass duplex CMYK, delivering sharp text and vibrant images across coated and uncoated offset media.",
+    "inkTypes": [
+      { "name": "Water-Based Pigment Ink", "fabrics": "Inkjet-treated paper · Standard coated offset media · Uncoated offset media · Other papers subject to testing" },
+      { "name": "Duplex CMYK", "fabrics": "Full-colour double-sided printing in a single pass for books, magazines, transactional documents, and high-volume publication applications" },
+      { "name": "Media Compatibility", "fabrics": "Inkjet treated and standard coated and uncoated offset papers from 45 to 160 gsm across both VividPress 440C and 6600 configurations" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance publication printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Single-Pass Piezoelectric Inkjet Architecture",
+        "desc": "Single-pass printing eliminates carriage scanning delays, enabling continuous duplex output at up to 100 m/min for books, magazines, and high-volume publication work at industrial production speeds."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Advanced Duplex Printing System",
+        "desc": "Precision double-sided printing in a single pass delivers consistent front-to-back registration accuracy of +/- 0.5 mm, ensuring aligned, professional-quality output on every sheet without separate duplex passes."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Ultra HD Print Quality at 1200 x 600 dpi",
+        "desc": "Maximum resolution of 1200 x 600 dpi with grayscale printing technology delivers sharp, crisp text and high-definition image reproduction suited to demanding book and magazine production standards."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Infrared Drying with Auto Energy Saving",
+        "desc": "Smart infrared drying system automatically adjusts energy consumption based on media type and print coverage, reducing operating costs while maintaining consistent, smear-free drying at all production speeds."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Intelligent Integrated Control System",
+        "desc": "Self-developed integrated control system manages all machine functions and production workflow from a single interface, enabling rapid job switching, real-time monitoring, and automated digital workflow management."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Flexible Media Handling System",
+        "desc": "Supports multiple paper types and weights from 45 to 160 gsm with roll-to-roll and optional roll-to-sheet output configurations, giving publishers and print houses the flexibility to serve diverse job requirements."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Water-Based Pigment Ink Technology",
+        "desc": "Water-based pigment inks produce high-quality, durable output with sharp text and vibrant image reproduction while supporting a cleaner, lower-emission production environment compared to solvent-based alternatives."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "End-to-End Digital Workflow Integration",
+        "desc": "Automated digital workflow management from pre-press through to finishing eliminates manual handover points, reduces setup time, and supports high-productivity short-run and variable data production."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of book, magazine, and publication applications, delivering exceptional print quality, speed, and production flexibility.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Educational Book Publishers and Printers",
+        "desc": "High-speed duplex output at 100 m/min makes the VividPress-E the most productive digital solution for educational textbook publishers and book printers managing large seasonal print runs with tight delivery schedules."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Commercial Book Publishers",
+        "desc": "No plate-making requirement, single-copy starting capability, and fast job switching enable commercial publishers to reduce inventory pressure and respond faster to demand with cost-efficient print-on-demand production."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Newspaper and Tabloid Printers",
+        "desc": "Single-pass speed and wide media support make the VividPress-E a capable solution for newspaper and tabloid publishers moving from offset to digital production or supplementing offset capacity with digital flexibility."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Transactional and Data-Driven Print Operations",
+        "desc": "Variable data printing capability and automated workflow management suit high-volume transactional document printers producing statements, reports, forms, and personalised communications at industrial output rates."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Government and Institutional Printers",
+        "desc": "Reliable, high-speed duplex output with consistent quality supports government print departments, institutional publishers, and large in-plant print operations requiring high-volume document and publication printing."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Magazines and Periodical Publishers",
+        "desc": "High-resolution duplex colour output on standard coated offset media makes the VividPress-E a practical choice for magazine and periodical publishers requiring quality, speed, and production flexibility."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Print-on-Demand and Short-Run Production",
+        "desc": "No minimum run requirement, zero plate cost, and rapid job changeover make the VividPress-E the ideal platform for print-on-demand services managing high volumes of short-run and variable jobs simultaneously."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 100,
+    "regularMode": [
+      { "res": "600 × 600 dpi", "pass": "Single-pass duplex", "speed": 100, "label": "Up to 100 m/min" },
+      { "res": "900 × 600 dpi", "pass": "Single-pass duplex", "speed": 75, "label": "Up to 75 m/min" },
+      { "res": "1200 × 600 dpi", "pass": "Single-pass duplex", "speed": 50, "label": "Up to 50 m/min" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Single-Pass Piezoelectric Inkjet Printhead System",
+      "desc": "Industrial single-pass heads delivering up to 100 m/min duplex output at 1200 x 600 dpi with consistent quality across all supported media types"
+    },
+    "smallCards": [
+      {
+        "title": "Self-Developed Intelligent Control System",
+        "desc": "Integrated machine control and digital workflow management for automated job processing, rapid switching, and real-time production monitoring"
+      },
+      {
+        "title": "Infrared Drying System with Auto Energy Saving",
+        "desc": "Smart infrared drying with automatic energy adjustment for consistent, smear-free output while minimising power consumption across all print modes"
+      },
+      {
+        "title": "Water-Based Pigment Ink System",
+        "desc": "Clean, durable pigment inks delivering sharp text and high-quality image reproduction across coated and uncoated offset media from 45 to 160 gsm"
+      },
+      {
+        "title": "Roll-to-Roll and Roll-to-Sheet Output System",
+        "desc": "Flexible output configuration supporting both roll and cut-sheet delivery for diverse publishing and transactional print applications"
+      },
+      {
+        "title": "Automated Digital Workflow Management System",
+        "desc": "End-to-end workflow automation from pre-press through to finishing, reducing manual handover steps and setup time across all job types"
+      },
+      {
+        "title": "Power Supply — Printer: 42 kW / Drying: 50 kW",
+        "desc": "Dedicated power systems for print engine and drying unit managed independently for efficient energy use"
+      },
+      {
+        "title": "Working Environment Specification",
+        "desc": "Temperature: 24 to 27°C / Humidity: 40 to 60% (non-condensing) in an independent, clean, low-dust, well-ventilated installation"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, model comparison details, media compatibility overview, workflow system description, and installation requirements for the VividPress-E.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "VividPress-E Showcase",
+    "description": "High-speed single-pass digital inkjet for books and magazines. Two models (440C and 6600), up to 100 m/min duplex output, 1200 x 600 dpi, water-based pigment inks, infrared drying, and end-to-end digital workflow management built for educational publishers, commercial book printers, transactional operations, and newspaper production.",
+    "leftItems": [
+      "Plate-making slows short-run jobs",
+      "Separate passes for double-sided printing",
+      "High inventory pressure on book runs",
+      "Energy-heavy drying raising costs"
+    ],
+    "rightItems": [
+      "Single-pass duplex up to 100 m/min",
+      "±0.5 mm front-to-back registration",
+      "No plates — print-on-demand ready",
+      "Infrared drying with auto energy saving"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-speed book & magazine printing?",
+    "description": "Our specialists help you pick the right model, resolution, and media configuration for your publication runs.",
+    "phone": "+91 74900 43336"
+  }
+}

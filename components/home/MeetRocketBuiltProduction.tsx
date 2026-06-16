@@ -1,5 +1,6 @@
 "use client";
 
+import { productHref } from "@/data/products";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -63,7 +64,7 @@ const MeetRocketBuiltProduction = () => {
           <Box sx={{ mt: "32px", width: "100%" }}>
             <Button
               component={Link}
-              href="/product-details"
+              href={productHref("Rocket")}
               sx={{
                 width: "100%",
                 padding: "13px 24px",
@@ -195,7 +196,7 @@ const MeetRocketBuiltProduction = () => {
           <Box sx={{ mt: "32px" }}>
             <Button
               component={Link}
-              href="/product-details"
+              href={productHref("Rocket")}
               sx={{
                 display: "flex",
                 width: "200px",

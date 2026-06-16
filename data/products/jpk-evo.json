@@ -1,0 +1,226 @@
+{
+  "slug": "jpk-evo",
+  "name": "JPK EVO",
+  "tagline": "High-Speed Scanning Digital Textile and Paper Printer",
+  "heroImage": {
+    "desktop": "/JPK-Evo01.png",
+    "mobile": "/JPK-Evo01.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Variable drop, 16 gray levels",
+      "Up to 500 m/hr",
+      "1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "Industrial Variable Drop (16 Gray Levels)" },
+        { "label": "Max Output", "value": "Up to 500 m/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 350 m/hr" },
+        { "label": "Max Print Width", "value": "1800 mm to 3200 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Media", "value": "Fabric and Paper (dual media compatible)" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Variable Drop Technology with 16 Gray Levels",
+        "desc": "Industrial printheads with 4 to 72 picolitre variable drop range and 16 gray levels produce smooth tonal transitions, crisp fine detail, and accurate solid fills in a single print pass."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Head Crash Protective System",
+        "desc": "Dual laser-beam sensors continuously scan for fabric unevenness ahead of the carriage and automatically halt movement before contact, protecting printheads from damage at all operating speeds."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Inline Ink Degasser",
+        "desc": "Real-time air bubble removal from the ink circuit prevents nozzle inconsistencies and maintains top print quality throughout long high-speed production runs."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Uninterrupted Ink Supply System",
+        "desc": "Ink tanks can be refilled during active printing without stopping the machine, eliminating production interruptions on high-coverage or extended-run jobs."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Integrated Belt Washing System",
+        "desc": "Automated belt cleaning reduces manual maintenance time, extends belt service life, and keeps the conveying surface free from ink buildup across continuous production shifts."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Auto Cleaning System",
+        "desc": "Automated wiper and capping assembly maintains printhead nozzle condition between jobs and enables immediate, clean restart after any period of inactivity."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Wi-Fi Remote Control and Embedded Web Server",
+        "desc": "Wireless monitoring and real-time production cost reporting are accessible from any connected device, giving operators and managers full visibility without being stationed at the machine."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "ACIMIT Green Label Certified",
+        "desc": "Independently certified for reduced energy, water, and chemical consumption, supporting manufacturers with sustainability commitments and international buyer compliance requirements."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Wide-Format Fashion Textile Production",
+        "desc": "Scanning output across print widths from 1800 mm to 3200 mm makes the JPK EVO ideal for wide-format polyester and blended fabric printing for fashion wholesale and export markets."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large Home Textile and Furnishing Production",
+        "desc": "Wide print width capability suits large-format bedding, curtain fabric, upholstery, and furnishing textile production where standard 1800 mm machines create unnecessary seam constraints."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Transfer Paper Printing",
+        "desc": "Dual media compatibility enables efficient sublimation transfer paper printing alongside direct fabric output, giving businesses the flexibility to serve both production workflows."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Sportswear and Performance Fabric Printing",
+        "desc": "High-speed disperse and pigment printing on stretch and technical fabrics for sportswear brands, gym wear manufacturers, and performance apparel exporters."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Sustainable and Export-Focused Manufacturing",
+        "desc": "ACIMIT Green Label certification demonstrates documented resource efficiency for manufacturers serving European and international buyers with environmental compliance requirements."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Flag, Banner, and Soft Signage Production",
+        "desc": "Extra-wide format capability up to 3200 mm makes the JPK EVO well suited to soft signage, flags, banners, and exhibition textile applications alongside standard fabric production."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Long-Run Industrial Textile Production",
+        "desc": "Inline degassing, live ink refill, and integrated belt washing combine to make the JPK EVO a reliable workhorse for manufacturers running continuous multi-shift production schedules."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 500,
+    "regularMode": [
+      { "res": "600 dpi", "pass": "Standard mode", "speed": 500, "label": "Up to 500 m/hr" },
+      { "res": "1200 dpi", "pass": "High-quality mode", "speed": 250, "label": "Up to 250 m/hr" },
+      { "res": "Multi-pass", "pass": "Precision mode", "speed": 150, "label": "Up to 150 m/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Industrial Variable Drop Printheads",
+      "desc": "16 gray-level variable drop heads with 4 to 72 pl range for high-speed scanning output across print widths from 1800 mm to 3200 mm"
+    },
+    "smallCards": [
+      {
+        "title": "Inline Ink Degassing System",
+        "desc": "Real-time air removal from the ink supply circuit for consistent nozzle performance at all production speeds"
+      },
+      {
+        "title": "Adhesive Belt Conveying System",
+        "desc": "Adhesive-coated belt transport for stable, accurate media handling across fabric and paper substrates including stretch and elastic materials"
+      },
+      {
+        "title": "Integrated Belt Washing Unit",
+        "desc": "Automated belt cleaning system reducing maintenance downtime and extending conveyor belt service life"
+      },
+      {
+        "title": "Wi-Fi and Embedded Web Server Module",
+        "desc": "Wireless remote control and integrated web server for real-time production monitoring and cost reporting"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical reliability across sustained high-cycle production"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the complete machine system"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and monitoring systems"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "ACIMIT Green Label Certification",
+        "desc": "Independently certified for sustainable energy, water, and chemical resource management in industrial textile printing"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, print width configurations, media compatibility details, ink system overview, and installation requirements for the JPK EVO.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "JPK EVO Showcase",
+    "description": "High-speed scanning output on fabric and paper across print widths from 1800 mm to 3200 mm. Variable drop technology, 16 gray levels, inline degassing, ACIMIT Green Label certified, and built for long-run industrial textile and transfer paper production.",
+    "leftItems": [
+      "Seam constraints on wide-format fabric",
+      "Air bubbles causing nozzle dropouts",
+      "Belt ink buildup needing manual cleaning",
+      "No certification for export compliance"
+    ],
+    "rightItems": [
+      "Print widths from 1800 mm to 3200 mm",
+      "Inline degassing for consistent nozzles",
+      "Integrated automatic belt washing",
+      "ACIMIT Green Label certified"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Wide-format textile & paper printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

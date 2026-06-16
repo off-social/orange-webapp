@@ -1,0 +1,209 @@
+{
+  "slug": "alpha-15",
+  "name": "Alpha 15",
+  "tagline": "High-Speed Industrial Sublimation Transfer Printer",
+  "heroImage": {
+    "desktop": "/radoimgAlpha3.png",
+    "mobile": "/radoimgAlpha3.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "15× Epson i3200-A1 (staggered)",
+      "Up to 5,100 lm/day",
+      "360 × 1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "15× Epson i3200-A1 (3,200 nozzles per head)" },
+        { "label": "Max Output", "value": "Up to 5,100 lm/day" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "360 × 1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Sublimation Transfer Printing" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Sublimation" },
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Staggered 15-Head Layout",
+        "desc": "Three-group staggered arrangement of 15 Epson i3200-A1 heads maximises nozzle coverage per pass, delivering faster output at higher quality than a straight linear configuration."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Linear Motor with Maglev Rail",
+        "desc": "Magnetic levitation linear motor paired with a precision mute rail enables smooth, high-speed carriage movement with minimal vibration and reduced operational noise across long production shifts."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Static-Free Fluororubber Rollers",
+        "desc": "Imported fluororubber rollers eliminate static build-up that causes ink misting and paper shift, ensuring stable, accurate media feeding even on lightweight sublimation transfer papers."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Auto Moisture and Cleaning System",
+        "desc": "Sealed automatic printhead moisture control and cleaning cycle maintains consistent nozzle performance throughout the production day without manual intervention."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Intelligent Drying System with 3-Colour Light Alarm",
+        "desc": "Smart heat management accelerates drying at all print speeds while the three-colour status alarm gives operators instant visual feedback on machine status and production workflow."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Industrial Servo-Drive Reducer",
+        "desc": "High-precision servo-driven feed and take-up system delivers stable, consistent media transport across long production runs without tension fluctuations or registration drift."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Broad Software Compatibility",
+        "desc": "Supports Maintop, FlexiPRINT, ONYX, and neoStampa RIP software, giving operators the flexibility to work with their preferred production workflow tools without system changes."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Fully Enclosed Machine Body",
+        "desc": "Sealed enclosure reduces airborne ink misting and environmental contamination, maintaining cleaner operating conditions and protecting internal components during sustained high-speed production."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "High-Volume Sublimation Transfer Paper Production",
+        "desc": "Fast, consistent sublimation on transfer paper for manufacturers supplying large volumes of printed paper to heat press operations serving polyester garment and fashion fabric markets."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Polyester Fashion Fabric Printing",
+        "desc": "Direct sublimation output on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations requiring high daily output with vibrant, consistent colour reproduction."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Sublimation at Scale",
+        "desc": "High-speed sublimation on polyester performance fabrics for sportswear brands, gym wear producers, and activewear exporters managing continuous large-volume order pipelines."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Industrial Home Textile Production",
+        "desc": "High-capacity sublimation on polyester curtains, cushion covers, upholstery, and decorative soft furnishings for domestic and export home textile markets requiring reliable, repeatable quality."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Multi-Shift Sublimation Operations",
+        "desc": "Maglev linear motor, servo-drive media handling, sealed enclosure, and automated cleaning make the Alpha 15 well suited to facilities operating continuous multi-shift production schedules."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Large Job Work and Multi-Buyer Operations",
+        "desc": "High daily output and broad RIP software compatibility make the Alpha 15 a flexible choice for large job work printers managing diverse clients with varying design requirements and media types."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 5100,
+    "regularMode": [
+      { "res": "360 × 1200 dpi", "pass": "Standard mode", "speed": 5100, "label": "Up to 5,100 lm/day" },
+      { "res": "360 × 1200 dpi", "pass": "High-quality mode", "speed": 3500, "label": "3,000–3,500 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "15× industrial inkjet printheads in staggered three-group layout with 3,200 nozzles per head for high-speed, high-coverage sublimation output at up to 5,100 lm/day"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Motor with Maglev Rail",
+        "desc": "Magnetic levitation linear drive and precision mute rail for smooth, low-vibration, low-noise carriage movement at all production speeds"
+      },
+      {
+        "title": "Static-Free Fluororubber Rollers (Imported)",
+        "desc": "Anti-static media rollers preventing ink misting and paper shift on lightweight transfer paper substrates"
+      },
+      {
+        "title": "Industrial Servo-Drive Reducer",
+        "desc": "High-precision servo-controlled feed and take-up system for stable, consistent media transport across long production runs"
+      },
+      {
+        "title": "Intelligent Drying System",
+        "desc": "Smart heat management with real-time temperature adjustment and integrated three-colour status alarm"
+      },
+      {
+        "title": "Auto Moisture and Cleaning System",
+        "desc": "Sealed automated printhead moisture control and cleaning for consistent nozzle performance without manual intervention"
+      },
+      {
+        "title": "Broad RIP Software Support",
+        "desc": "Compatible with Maintop, FlexiPRINT, ONYX, and neoStampa for flexible production workflow integration"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, head layout details, drying system overview, media handling description, and installation requirements for the Alpha 15.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Alpha 15 Showcase",
+    "description": "Industrial sublimation transfer printing with 15 staggered Epson i3200-A1 heads, up to 5,100 lm/day, Maglev linear motor, static-free rollers, intelligent drying, and broad RIP software support built for high-volume polyester and transfer paper sublimation production.",
+    "leftItems": [
+      "Straight head layouts limit coverage",
+      "Static causing ink misting & paper shift",
+      "Locked into one RIP software",
+      "Airborne ink contaminating the workspace"
+    ],
+    "rightItems": [
+      "Staggered 15-head layout for max coverage",
+      "Static-free fluororubber rollers",
+      "Maintop, FlexiPRINT, ONYX & neoStampa support",
+      "Fully enclosed body reduces ink misting"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-coverage sublimation transfer?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

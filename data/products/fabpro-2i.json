@@ -1,0 +1,216 @@
+{
+  "slug": "fabpro-2i",
+  "name": "FabPro 2i",
+  "tagline": "High-Speed Direct-to-Fabric Industrial Printer",
+  "heroImage": {
+    "desktop": "/FabPro2i1.png",
+    "mobile": "/FabPro2i1.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "16× Ricoh Gen 6 industrial printheads",
+      "Up to 200 lm/hr",
+      "600 × 900 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "16× Ricoh Gen 6 Industrial" },
+        { "label": "Max Output", "value": "Up to 200 lm/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "600 × 900 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 150 lm/hr" },
+        { "label": "Max Print Width", "value": "1850 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Disperse" },
+        { "label": "Fabrics", "value": "Cotton · Linen · Silk · Nylon · Polyester · Blends" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "16 Ricoh Gen 6 Dual-Channel Printheads",
+        "desc": "Double the printhead configuration of the FabPro 1i. 16 industrial Ricoh Gen 6 heads in dual-channel arrangement deliver higher throughput without compromising colour consistency or sharpness across the full 1850mm print width."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Advanced Wrinkle Controller System",
+        "desc": "Built-in precision sensors continuously monitor fabric surface tension and correct irregularities in real time, ensuring smooth, wrinkle-free media conveying throughout every production run."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Head Crash Protective System",
+        "desc": "Real-time obstruction sensing detects fabric obstacles during carriage movement and instantly protects printheads from contact damage, safeguarding your most valuable components during high-speed operation."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "5-Stage Belt Squeeze System",
+        "desc": "Water-resistant, 5-stage squeeze mechanism prevents lint and dust from accumulating in the belt system. Engineered specifically for high-lint textile production environments to reduce cleaning frequency and maximise uptime."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Linear Motor Precision System",
+        "desc": "High-accuracy linear motor drives carriage movement with smooth acceleration and sub-millimetre positioning control, maintaining consistent registration across the full print width even during double-speed production runs."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Automatic Capping and Wiping System",
+        "desc": "Automated printhead capping and wiping between runs prevents ink from drying on nozzles, maintains consistent ink flow, and extends printhead operational life across long production shifts."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Customizable Drying System",
+        "desc": "Integrated belt and fins heater with adjustable temperature zones accommodates the full range of fabric types, from lightweight silk and chiffon to heavy upholstery and curtain fabrics, ensuring optimal drying at every weight."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Efficient Ink Supply System",
+        "desc": "High-capacity ink delivery system maintains a consistent, uninterrupted ink flow to all 16 printheads simultaneously, preventing pressure drops or ink starvation during sustained high-speed production."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Large-Scale Fashion Textile Production",
+        "desc": "High-volume disperse printing on polyester sarees, dress materials, and fashion fabrics for wholesale and export markets demanding fast turnaround on large orders."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton at scale, delivering ISO 4-5 wash fastness required by European and US buyers across continuous high-volume production runs."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Home Textile Manufacturing",
+        "desc": "Bedding, curtains, cushion covers, and upholstery across cotton and polyester substrates, all handled on a single machine with the capacity to serve multiple buyers simultaneously."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Jacquard and Textured Fabrics",
+        "desc": "High-resolution pattern printing on complex woven and jacquard structures for fashion and home furnishing applications."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Silk and Luxury Fabrics (Double-Sided)",
+        "desc": "Precision acid ink printing on silk and premium fabrics for boutique fashion brands, saree manufacturers, and luxury apparel producers."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Custom and Hi-End Production",
+        "desc": "Export fashion, European and international home textile buyers requiring consistent large-batch quality with tight colour repeatability across orders."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Job Work and Multi-Buyer Operations",
+        "desc": "Serve multiple brands, exporters, and buyers simultaneously with the speed and capacity to handle diverse fabric types and design volumes without production bottlenecks."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 200,
+    "regularMode": [
+      { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 200, "label": "Up to 200 lm/hr" },
+      { "res": "600 × 900 dpi", "pass": "3 pass", "speed": 150, "label": "Up to 150 lm/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Ricoh (Japan)",
+      "desc": "16× Gen 6 industrial printheads in dual-channel configuration for high-speed, high-consistency output"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision motion guidance delivering vibration-free, high-accuracy carriage movement at full production speeds"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "Low-friction, high-precision bearings for extended mechanical reliability across long production hours"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the entire system"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Proven industrial motion control for consistent, high-cycle-rate operation"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components across all machine systems"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls for stable, repeatable process automation"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP software with ICC colour management, Pantone library integration, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, engineering details, installation requirements, and component overview for the FabPro 2i.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "FabPro 2i Showcase",
+    "description": "Industrial-scale digital textile printing for high-volume fashion, garment, and home textile manufacturers. Made in India. Built on 16 Ricoh Gen 6 printheads for double the capacity of the FabPro 1i.",
+    "leftItems": [
+      "Slow throughput on high-volume orders",
+      "Colour drift across long production runs",
+      "Printhead damage from fabric obstructions",
+      "Frequent downtime for cleaning and ink refills"
+    ],
+    "rightItems": [
+      "16 dual-channel Ricoh heads for double the output",
+      "Consistent colour across the full 1850mm width",
+      "Sensor-based head crash protection",
+      "Automatic capping, wiping & uninterrupted ink supply"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-speed fabric printing at scale?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

@@ -1,13 +1,12 @@
+"use client";
+
+import { useProduct } from "@/data/ProductContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 
-const BULLETS = [
-  "16 Kyocera industrial printheads",
-  "Up to 2,000 lm/day",
-  "Up to 1800 dpi",
-];
-
 export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
+  const { name, tagline, sidebar } = useProduct();
+
   return (
     <Box
       sx={{
@@ -36,7 +35,7 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
             letterSpacing: 0,
           }}
         >
-          Position Pro
+          {name}
         </Typography>
         <Typography
           sx={{
@@ -47,13 +46,13 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
             lineHeight: "19.2px",
           }}
         >
-          High-speed Direct-to-Fabric Positioning Printer
+          {tagline}
         </Typography>
       </Box>
 
       {/* Bullet points */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-        {BULLETS.map((point) => (
+        {sidebar.bullets.map((point) => (
           <Box
             key={point}
             sx={{ display: "flex", alignItems: "flex-start", gap: "8px" }}

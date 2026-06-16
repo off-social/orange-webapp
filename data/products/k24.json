@@ -1,0 +1,218 @@
+{
+  "slug": "k24",
+  "name": "K24",
+  "tagline": "High-Speed Industrial Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/K241.png",
+    "mobile": "/K241.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "8 / 16 / 24× Kyocera industrial printheads",
+      "Up to 300 lm/hr",
+      "1800 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "8 / 16 / 24× Kyocera Industrial (Single Channel)" },
+        { "label": "Max Output", "value": "Up to 300 lm/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1800 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "Up to 220 lm/hr" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Scalable Printhead Configuration",
+        "desc": "Supports 8, 16, or 24 single-channel Kyocera printheads, letting you configure the machine to your exact production volume and scale capacity as your business grows."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "De-Wrinkle System",
+        "desc": "Best-in-class wrinkle control sensors ensure smooth, flat fabric feeding for accurate, defect-free printing across all fabric types and weights."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Auto Ripping and Click-to-Print",
+        "desc": "Integrated onboard storage allows instant design access and eliminates pre-print delays so operators can start production in seconds."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Symmetrical Ink Supply System",
+        "desc": "Balanced ink pressure across all channels minimises colour deviation and delivers vivid, consistent colour reproduction throughout long production runs."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Moving Roll Conveyor System",
+        "desc": "Reduces fabric tension during feeding for smoother, more stable media transport and higher print registration accuracy."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Real-Time Ink and Air Pressure Monitoring",
+        "desc": "Continuously tracks system pressure across ink and air circuits, preventing interruptions and maintaining stable output under all operating conditions."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Head Crash Protective System",
+        "desc": "Sensor-driven protection detects fabric obstructions during carriage movement and immediately safeguards printheads from damage."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Automatic Capping and Wiping System",
+        "desc": "Automated printhead maintenance prevents ink drying between runs, keeps nozzles clean, and extends printhead operational life across multi-shift production."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "High-Volume Fashion Textile Production",
+        "desc": "Large-scale disperse printing on polyester fabrics for wholesale saree, dress material, and fashion fabric markets requiring continuous high-output runs."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton at volume, meeting ISO wash fastness standards demanded by European and international export buyers."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Home Textile Manufacturing",
+        "desc": "Bedding, curtains, cushion covers, and upholstery across cotton and polyester substrates, with the capacity to handle multiple buyer orders simultaneously."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Jacquard and Textured Fabrics",
+        "desc": "High-resolution output on complex woven and jacquard structures for fashion and home furnishing applications requiring sharp pattern definition."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Silk and Luxury Fabrics",
+        "desc": "Precise acid ink printing on silk, viscose, and premium fabrics for boutique fashion producers and luxury garment manufacturers."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Multi-Fabric Job Work Operations",
+        "desc": "Versatile media support from 30 to 450 gsm makes the K24 ideal for job work printers serving clients across diverse fabric types and applications."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Custom and Hi-End Textile Production",
+        "desc": "Export fashion and international home textile buyers requiring consistent large-batch quality with tight colour repeatability across repeat orders."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 300,
+    "regularMode": [
+      { "res": "8-head config", "pass": "Kyocera single channel", "speed": 120, "label": "Up to 120 lm/hr" },
+      { "res": "16-head config", "pass": "Kyocera single channel", "speed": 220, "label": "Up to 220 lm/hr" },
+      { "res": "24-head config", "pass": "Kyocera single channel", "speed": 300, "label": "Up to 300 lm/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Kyocera (Japan)",
+      "desc": "Up to 24× single-channel industrial printheads delivering high-speed, high-resolution output at scale"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision motion guidance for stable, vibration-free carriage movement at all production speeds"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for extended mechanical life in high-cycle production"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the entire machine"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Proven industrial motion control for consistent, reliable operation across long production shifts"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components across all machine functions"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls for stable, repeatable process automation"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and full production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, engineering details, configuration options, and installation requirements for the K24.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "K24 Showcase",
+    "description": "Industrial-scale digital textile printing with configurable printhead capacity, up to 300 lm/hr output, and 1900mm print width. Built for high-volume fashion, garment, and home textile manufacturers.",
+    "leftItems": [
+      "Fixed capacity that can't scale with demand",
+      "Colour deviation across ink channels",
+      "Fabric wrinkles and feeding errors",
+      "Unplanned stops from pressure fluctuations"
+    ],
+    "rightItems": [
+      "Scalable 8 / 16 / 24-head configuration",
+      "Symmetrical ink supply for consistent colour",
+      "Best-in-class de-wrinkle media handling",
+      "Real-time ink & air pressure monitoring"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Scalable industrial textile printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "slug": "alpha-iii",
+  "name": "Alpha III",
+  "tagline": "Ultra High-Speed Industrial Sublimation Transfer Printer",
+  "heroImage": {
+    "desktop": "/radoimgAlpha2.png",
+    "mobile": "/radoimgAlpha2.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "12× Epson i3200-A1 printheads",
+      "Up to 6,400 lm/day (1-pass)",
+      "360 × 1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "12× Epson i3200-A1" },
+        { "label": "Max Output", "value": "Up to 6,400 lm/day (1-pass)" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "360 × 1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "3,000 lm/day (2-pass)" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Max Media Load", "value": "2,500 mm roll width" },
+        { "label": "Ink Types", "value": "Sublimation" }
+      ],
+      [
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "12 Epson i3200-A1 Printheads",
+        "desc": "Twelve industrial Epson i3200-A1 heads deliver up to 6,400 lm/day in 1-pass mode, making the Alpha III the highest-output model in the Kolorado Alpha sublimation series for non-stop industrial production."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Direct Drive Linear Motor System",
+        "desc": "Belt-free, encoder-strip-free direct drive linear motor eliminates mechanical slip and wear, delivering ultra-precise carriage positioning and consistent registration accuracy throughout long production runs."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Mute Linear Motor Technology",
+        "desc": "High-speed linear motor combined with precision mute rail technology enables fast carriage movement with minimal operational noise, improving working conditions during sustained multi-shift production."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Negative Pressure Ink Supply System",
+        "desc": "Controlled negative pressure maintains stable, consistent ink flow to all 12 heads throughout the run, preventing pressure fluctuations that cause colour deviation or print quality inconsistencies."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Vacuum Ink Filtration System",
+        "desc": "Inline vacuum filtration removes air bubbles and ink impurities before they reach the printheads, maintaining top nozzle performance and consistent print quality across extended high-speed production."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Jumbo Media Roll Support",
+        "desc": "Supports media rolls up to 1,000 metres for extended uninterrupted production runs, significantly reducing roll change frequency and associated downtime on large order batches."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "200W DC Servo Motor",
+        "desc": "High-torque 200W DC servo motor delivers exceptional movement stability and long-term mechanical reliability, ensuring accurate media transport and consistent output across high-cycle production schedules."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Up-Down Tension Control System",
+        "desc": "Dual-direction tension control continuously optimises fabric and paper tension from unwind through winding, ensuring smooth, accurate media handling and defect-free output across all media weights."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Ultra High-Volume Sublimation Transfer Paper Production",
+        "desc": "The highest-output Alpha series machine for manufacturers supplying very large volumes of sublimation transfer paper to heat press operations across polyester garment and fabric production at scale."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Polyester Fashion Fabric Printing",
+        "desc": "High-speed direct sublimation on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations requiring maximum daily output with consistent colour repeatability."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Production at Scale",
+        "desc": "Large-volume sublimation on polyester performance fabrics for major sportswear brands, gym wear manufacturers, and activewear exporters with continuous high-volume order pipelines."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Industrial Home Textile Sublimation Production",
+        "desc": "High-capacity sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for large domestic and export home textile markets."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "24/7 Multi-Shift Sublimation Operations",
+        "desc": "Direct drive linear motor, servo-controlled media handling, and jumbo roll support make the Alpha III purpose-built for facilities running continuous round-the-clock production schedules."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Large Job Work and Multi-Buyer Sublimation Units",
+        "desc": "Very high daily output across 1-pass and 2-pass modes makes the Alpha III the preferred choice for large job work sublimation printers managing high-volume, diverse client order portfolios."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 6400,
+    "regularMode": [
+      { "res": "360 × 1200 dpi", "pass": "1 pass", "speed": 6400, "label": "Up to 6,400 lm/day" },
+      { "res": "360 × 1200 dpi", "pass": "2 pass", "speed": 3000, "label": "Up to 3,000 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "12× industrial inkjet printheads delivering up to 360 x 1200 dpi sublimation output at up to 6,400 lm/day in 1-pass mode"
+    },
+    "smallCards": [
+      {
+        "title": "Direct Drive Linear Motor System",
+        "desc": "Belt-free direct drive carriage system for ultra-precise positioning and consistent registration without mechanical wear components"
+      },
+      {
+        "title": "200W DC Servo Motor",
+        "desc": "High-torque servo motor delivering exceptional movement stability and long-term mechanical reliability across high-cycle production schedules"
+      },
+      {
+        "title": "Mute Linear Motor and Rail System",
+        "desc": "High-speed, low-noise linear motor and precision mute rail combination for fast, vibration-free carriage movement"
+      },
+      {
+        "title": "Negative Pressure Ink Supply System",
+        "desc": "Controlled negative pressure ink delivery maintaining stable, consistent flow to all 12 heads throughout long production runs"
+      },
+      {
+        "title": "Vacuum Ink Filtration Unit",
+        "desc": "Inline vacuum filtration removing air bubbles and impurities from the ink circuit before printhead delivery"
+      },
+      {
+        "title": "Jumbo Media Roll System",
+        "desc": "Supports media rolls up to 1,000 metres for extended uninterrupted production without roll change downtime"
+      },
+      {
+        "title": "Up-Down Tension Control System",
+        "desc": "Dual-direction tension management for accurate, wrinkle-free media feeding across all substrate weights"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, pass mode details, motor system overview, ink supply description, and installation requirements for the Alpha III.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Alpha III Showcase",
+    "description": "The highest-output Kolorado Alpha sublimation printer. 12 Epson i3200-A1 heads, up to 6,400 lm/day in 1-pass mode, direct drive linear motor, 1900 mm print width, and jumbo roll support built for industrial-scale polyester and transfer paper sublimation production.",
+    "leftItems": [
+      "Output ceilings on large volumes",
+      "Mechanical slip and belt wear over time",
+      "Colour deviation from pressure swings",
+      "Air bubbles reducing nozzle performance"
+    ],
+    "rightItems": [
+      "Up to 6,400 lm/day in 1-pass mode",
+      "Belt-free direct drive linear motor",
+      "Negative pressure ink supply",
+      "Vacuum ink filtration for clean nozzles"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Ultra high-speed sublimation transfer?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

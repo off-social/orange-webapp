@@ -1,9 +1,14 @@
+"use client";
+
+import { useProduct } from "@/data/ProductContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { Box, Button, Typography } from "@mui/material";
 
 export default function ContactCTA() {
+  const { contactCTA } = useProduct();
+
   return (
     <Box
       sx={{
@@ -72,7 +77,7 @@ export default function ContactCTA() {
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Ready to unlock
+            {contactCTA.headingTop}
           </Typography>
           <Typography
             sx={{
@@ -85,7 +90,7 @@ export default function ContactCTA() {
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Precision positioning printing?
+            {contactCTA.headingBottom}
           </Typography>
         </Box>
 
@@ -100,8 +105,7 @@ export default function ContactCTA() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          Our specialists help you pick the right resolution, ink type, and
-          mode for your fabric range.
+          {contactCTA.description}
         </Typography>
       </Box>
 
@@ -160,7 +164,7 @@ export default function ContactCTA() {
                 lineHeight: "27px",
               }}
             >
-              +91 74900 43336
+              {contactCTA.phone}
             </Typography>
           </Box>
         </Box>

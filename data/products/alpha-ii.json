@@ -1,0 +1,216 @@
+{
+  "slug": "alpha-ii",
+  "name": "Alpha II",
+  "tagline": "High-Speed Industrial Sublimation Transfer Printer",
+  "heroImage": {
+    "desktop": "/radoimgAlpha1.png",
+    "mobile": "/radoimgAlpha1.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "8× Epson i3200-A1 printheads",
+      "Up to 4,000 lm/day (1-pass)",
+      "360 × 1200 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "8× Epson i3200-A1" },
+        { "label": "Max Output", "value": "Up to 4,000 lm/day (1-pass)" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "360 × 1200 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Standard Speed", "value": "2,000 to 2,200 lm/day (2-pass)" },
+        { "label": "Max Print Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Max Media Load", "value": "3,000 m" },
+        { "label": "Ink Types", "value": "Sublimation" }
+      ],
+      [
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "8 Epson i3200-A1 Printheads",
+        "desc": "Eight industrial Epson i3200-A1 heads deliver precision sublimation output at up to 360 x 1200 dpi, combining high-speed 1-pass production with sharp detail and vibrant colour reproduction across the full 1900 mm print width."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Auto Fabric Tension Control",
+        "desc": "Automatic tension management continuously adjusts media tightness throughout the run, preventing wrinkles and registration errors on both paper and direct fabric substrates."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Jumbo Roll Compatibility",
+        "desc": "Supports media rolls up to 1,000 metres, allowing extended uninterrupted production runs without frequent roll changes and the associated downtime on high-volume order batches."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Dual Infrared Drying Units",
+        "desc": "Two infrared drying units work in sequence to maximise drying efficiency at high print speeds, ensuring fully set ink before collection and reducing smudging on continuous production runs."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Stable 5-Litre Bulk Ink System",
+        "desc": "Bulk ink supply provides consistent, stable ink pressure to all 8 heads simultaneously, reducing manual refill frequency and maintaining uninterrupted ink flow during long production shifts."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Double High-Precision Mute Rail",
+        "desc": "Dual precision mute rail system minimises carriage vibration and operational noise, improving both print sharpness and working conditions during sustained high-speed production."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Rear Media Balance Bar",
+        "desc": "Integrated balance bar at the rear of the machine maintains even tension across the full media width during feeding, ensuring accurate, distortion-free output throughout long production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Extra Intelligent Dryer Device",
+        "desc": "Smart heat control system monitors and adjusts dryer temperature in real time, optimising ink fixation at every print speed and reducing smudging or under-drying defects across all production modes."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "High-Volume Sublimation Transfer Paper Production",
+        "desc": "Fast, consistent sublimation printing on transfer paper for manufacturers supplying large volumes of printed paper to heat press operations across polyester garment and fabric production."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Polyester Fashion Fabric Printing",
+        "desc": "Direct sublimation output on polyester sarees, dress materials, sportswear fabrics, and fashion textiles for wholesale and export markets requiring vibrant, wash-fast colour at production volume."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Sportswear and Activewear Production",
+        "desc": "High-resolution sublimation on polyester performance fabrics for sportswear brands, gym wear manufacturers, and activewear exporters needing sharp detail and consistent colour across large orders."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Home Textile Sublimation Production",
+        "desc": "Sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for domestic retail and export home textile markets."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Job Work and Multi-Buyer Sublimation Operations",
+        "desc": "High daily output across 1-pass and 2-pass modes makes the Alpha II well suited to job work printers managing multiple buyers with varying order sizes and design complexities."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Custom and Short-Run Polyester Printing",
+        "desc": "Fast setup and consistent output make the Alpha II a practical choice for custom polyester printing, sampling, and shorter-run specialty orders for fashion designers and brand merchandising."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 4000,
+    "regularMode": [
+      { "res": "360 × 1200 dpi", "pass": "1 pass", "speed": 4000, "label": "Up to 4,000 lm/day" },
+      { "res": "360 × 1200 dpi", "pass": "2 pass", "speed": 2200, "label": "2,000–2,200 lm/day" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Epson i3200-A1 (Japan)",
+      "desc": "8× industrial inkjet printheads delivering up to 360 x 1200 dpi sublimation output at up to 4,000 lm/day in 1-pass mode"
+    },
+    "smallCards": [
+      {
+        "title": "Dual Infrared Drying Units",
+        "desc": "Two-stage infrared drying system for rapid, consistent ink fixation at all operating speeds"
+      },
+      {
+        "title": "Jumbo Roll Media System",
+        "desc": "Supports media rolls up to 1,000 metres for uninterrupted long-run production without roll change downtime"
+      },
+      {
+        "title": "5-Litre Bulk Ink Supply System",
+        "desc": "Stable bulk ink delivery to all 8 heads with consistent pressure and reduced manual refill frequency"
+      },
+      {
+        "title": "Double High-Precision Mute Rail",
+        "desc": "Dual vibration-dampening rail system for smooth, noise-reduced carriage movement and improved print clarity"
+      },
+      {
+        "title": "Rear Media Balance Bar",
+        "desc": "Rear-mounted tension equaliser for accurate, wrinkle-free media feeding throughout production runs"
+      },
+      {
+        "title": "Extra Intelligent Dryer Device",
+        "desc": "Smart real-time temperature management for optimised ink fixation across all speed modes"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, pass mode details, media system overview, ink supply description, and installation requirements for the Alpha II.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "Alpha II Showcase",
+    "description": "High-speed industrial sublimation transfer printing. 8 Epson i3200-A1 heads, up to 4,000 lm/day in 1-pass mode, 1900 mm print width, jumbo roll compatibility, and dual infrared drying built for high-volume polyester and transfer paper sublimation production.",
+    "leftItems": [
+      "Slow sublimation throughput per shift",
+      "Wrinkles and registration errors on paper",
+      "Frequent roll changes interrupting runs",
+      "Inconsistent drying causing smudging"
+    ],
+    "rightItems": [
+      "Up to 4,000 lm/day in 1-pass mode",
+      "Auto fabric tension control",
+      "Jumbo roll support up to 1,000 m",
+      "Dual infrared drying + intelligent dryer"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-speed sublimation transfer printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

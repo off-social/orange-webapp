@@ -1,0 +1,210 @@
+{
+  "slug": "position-pro",
+  "name": "Position Pro",
+  "tagline": "High-speed Direct-to-Fabric Positioning Printer",
+  "heroImage": {
+    "desktop": "/PositionProDetails.png",
+    "mobile": "/PositionProMobile.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "16 Kyocera industrial printheads",
+      "Up to 2,000 lm/day",
+      "Up to 1800 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "16× Kyocera industrial" },
+        { "label": "Max Output", "value": "2,000 lm/day" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "1800 DPI" },
+        { "label": "Standard Speed", "value": "540 m²/hr" }
+      ],
+      [
+        { "label": "Max Print Width", "value": "1850 mm" },
+        { "label": "Fabrics", "value": "All types including Elastic & New Fiber" }
+      ],
+      [
+        { "label": "Weight for feeder frame", "value": "100 kg" },
+        { "label": "Dimensions for feeder frame", "value": "Φ500" }
+      ],
+      [
+        { "label": "Ink Colors", "value": "12 (C, M, Y, K, O, B, R, G, FM, FY, LM, Gy)" },
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural fibers" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein fibers" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "F. Mag.", "short": "FM", "hex": "#F292B1" },
+      { "name": "L. Mag.", "short": "LM", "hex": "#FC2E93" },
+      { "name": "F. Yellow", "short": "FY", "hex": "#FFF44F" },
+      { "name": "Grey", "short": "G", "hex": "#9E9E9E" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Proprietary vision system",
+        "desc": "Scans fabric, locks onto reference points, and compensates for distortion in real time for flawless pattern alignment."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Advanced head protection",
+        "desc": "Sensor systems detect fabric obstacles and protect printheads from scratches and damage during production."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "One-touch maintenance",
+        "desc": "Automated belt cleaning and one-touch printhead maintenance minimise downtime and reduce operator workload."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Professional color management",
+        "desc": "Analyses design file colors, auto-generates color profiles, and performs real-time calibration for consistent output."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Precision ink mixing",
+        "desc": "High-precision dye ratio control for superior color reproduction and consistency across long production runs."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Energy-efficient design",
+        "desc": "Intelligent energy management across all systems keeps operating costs low in high-volume production environments."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Lace & sequin",
+        "desc": "Precise positioning on delicate, open-weave structures"
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Jacquard",
+        "desc": "High-end custom fabrics for home textiles & fashion"
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Embroidery",
+        "desc": "Perfect registration on textured raised surfaces"
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Silk (double-sided)",
+        "desc": "Luxury duplex printing for premium fashion"
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Custom & hi-end",
+        "desc": "Export fashion, European & US home textiles"
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 190,
+    "regularMode": [
+      { "res": "508 × 1200 dpi", "pass": "2 pass", "speed": 190, "label": "Up to 190 Lm/hr" },
+      { "res": "600 × 1200 dpi", "pass": "2 pass", "speed": 170, "label": "Up to 170 Lm/hr" },
+      { "res": "508 × 1800 dpi", "pass": "3 pass", "speed": 140, "label": "Up to 140 Lm/hr" },
+      { "res": "600 × 1800 dpi", "pass": "3 pass", "speed": 120, "label": "Up to 120 Lm/hr" }
+    ],
+    "specialMode": {
+      "label": "Position Pro Mode",
+      "iconSrc": "/align-selectionIcon.svg",
+      "rows": [
+        { "res": "600 × 1200 dpi", "pass": "2 pass", "speed": 105, "label": "Up to 105 Lm/hr" }
+      ],
+      "note": "Vision guided alignment active optimal for textured fabrics requiring precise registration."
+    }
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "icon": "/Kyocera.png",
+      "title": "Kyocera",
+      "desc": "16× Industrial printheads · Japan"
+    },
+    "smallCards": [
+      {
+        "icon": "/Vision-System.png",
+        "title": "Vision System",
+        "desc": "Proprietary real-time scanner"
+      },
+      {
+        "icon": "/Color-Management.png",
+        "title": "Color Management",
+        "desc": "Professional calibration software"
+      },
+      {
+        "icon": "/Ink-System.png",
+        "title": "Ink System",
+        "desc": "High-precision dye ratio mixing"
+      },
+      {
+        "icon": "/Drive-System.png",
+        "title": "Drive System",
+        "desc": "Advanced industrial conveying"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "videoUrl": "https://www.youtube.com/embed/q38sTq6z_P4",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full specs, configurations, and print quality details for the Position Pro.",
+      "coverImage": "/PositionPro-Product.png"
+    }
+  },
+  "showcase": {
+    "heading": "Position Pro Showcase",
+    "description": "Designed for high-value textile applications, Position Pro delivers unmatched print alignment, superior registration accuracy, and reliable performance across textured and specialty fabrics.",
+    "solutionTagline": "Precision vision technology",
+    "leftItems": [
+      "Fabric distortion on complex textures",
+      "Costly registration errors on lace and jacquard",
+      "Misaligned prints on embroidery and sequins",
+      "No double-sided silk capability"
+    ],
+    "rightItems": [
+      "Real-time vision scanning & compensation",
+      "Perfect alignment every print, every time",
+      "Precision mapping on woven & knit textures",
+      "Double-sided silk printing supported"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Precision positioning printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and mode for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "slug": "lario",
+  "name": "LaRIO",
+  "tagline": "World's Fastest Single-Pass Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/PositionProDetails.png",
+    "mobile": "/PositionProMobile.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Kyocera KJ4B single-pass heads",
+      "Up to 120 m/min",
+      "1800 / 3200 mm widths"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "Kyocera KJ4B Series Industrial Inkjet" },
+        { "label": "Max Output", "value": "Up to 120 m/min (7,200 m/hr)" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "600 dpi" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Single Pass" },
+        { "label": "Max Print Width", "value": "1800 mm / 3200 mm (two configurations)" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Kyocera KJ4B Single-Pass Printhead System",
+        "desc": "Industrial Kyocera KJ4B series inkjet heads arranged in a fixed single-pass configuration deliver continuous, non-stop printing at up to 120 metres per minute across the full print width."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "In-Line Pre-Treatment System",
+        "desc": "Built-in chemical pre-treatment is applied directly on the machine before printing, eliminating the need for offline processing and saving time, water, and production floor space."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "SPR Same Print Result Technology",
+        "desc": "Guarantees identical colour output across multiple machines and repeat production runs, making the LaRIO the benchmark choice for scalable manufacturing with consistent buyer-facing quality."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Wi-Fi Remote Operation via iPad",
+        "desc": "Real-time machine control, job monitoring, and production alerts are managed wirelessly from an iPad, reducing operator setup time and enabling on-the-go production oversight."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Anti-Crash Head Safety System",
+        "desc": "Automatic substrate thickness detection and independent colour-bar safety stops protect all printheads from contact with uneven fabric surfaces or obstructions during high-speed operation."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "High-Precision Belt Control System",
+        "desc": "Steel foil combined with an electronic tension control system maintains substrate stability and print sharpness at ultra-high speeds, preventing fabric shift or stretch during single-pass printing."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Non-Stop Jumbo Roll Winder",
+        "desc": "Automatic roll collection enables uninterrupted production across 24/7 operating schedules without manual intervention at the winding stage between production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Automatic Capping and Wiping System",
+        "desc": "Automated printhead capping and wiping maintains nozzle condition and enables clean, immediate restart after scheduled maintenance stops or planned production breaks."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Mass-Volume Fashion Textile Production",
+        "desc": "The world's fastest single-pass digital textile printer for large polyester and blended fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets at maximum possible daily output."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Large-Scale Export Garment Manufacturing",
+        "desc": "Continuous reactive printing on cotton for major export facilities supplying international fashion brands, where per-metre cost efficiency and consistent colour across large repeat orders are critical."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Wide-Format Home Textile and Furnishing Production",
+        "desc": "3200 mm configuration handles extra-wide bedding, curtain fabric, upholstery, and large-format furnishing textiles, removing width constraints that limit narrower single-pass machines."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Integrated Mills and Vertically Integrated Manufacturers",
+        "desc": "Manufacturers operating dedicated digital printing divisions within vertically integrated facilities who need single-pass output volumes that match weaving and finishing line capacities."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Multi-Machine Scalable Operations",
+        "desc": "SPR Same Print Result technology makes the LaRIO the only choice for production operations running multiple machines simultaneously, where colour consistency across machines is a non-negotiable requirement."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Flag, Banner, and Wide-Format Soft Signage",
+        "desc": "3200 mm print width and single-pass speed make the LaRIO equally suited to large-format flags, exhibition banners, retail soft signage, and event textile production at industrial volumes."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "24/7 Round-the-Clock Production Facilities",
+        "desc": "Non-stop jumbo roll winding, Wi-Fi remote monitoring, and automated maintenance systems are designed specifically for facilities running continuous multi-shift production schedules."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 120,
+    "regularMode": [
+      { "res": "600 dpi", "pass": "Standard production", "speed": 120, "label": "Up to 120 m/min (7,200 m/hr)" },
+      { "res": "600 dpi", "pass": "High-quality mode", "speed": 80, "label": "Up to 80 m/min (4,800 m/hr)" },
+      { "res": "Maximum quality", "pass": "controlled speed", "speed": 50, "label": "Up to 50 m/min (3,000 m/hr)" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Kyocera KJ4B Series (Japan)",
+      "desc": "Industrial single-pass inkjet printheads delivering up to 120 m/min continuous output at 600 dpi resolution across 1800 mm and 3200 mm print widths"
+    },
+    "smallCards": [
+      {
+        "title": "SPR Same Print Result System",
+        "desc": "Proprietary colour consistency technology ensuring identical output across multiple machines and repeat production runs"
+      },
+      {
+        "title": "High-Precision Steel Foil Belt Control System",
+        "desc": "Electronic tension-controlled belt with steel foil substrate stabilisation for vibration-free single-pass printing at maximum speeds"
+      },
+      {
+        "title": "In-Line Pre-Treatment Unit",
+        "desc": "Integrated chemical pre-treatment applied directly on the machine before the print zone, eliminating offline processing steps"
+      },
+      {
+        "title": "Non-Stop Jumbo Roll Winder",
+        "desc": "Automatic roll collection system for uninterrupted 24/7 production without manual winding intervention"
+      },
+      {
+        "title": "Wi-Fi and iPad Remote Control Module",
+        "desc": "Wireless machine control and real-time production monitoring accessible from any iPad on the production floor or remotely"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "High-precision, low-friction bearings engineered for continuous high-cycle industrial operation"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout the complete machine system"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial-grade automation and control components managing all machine functions and safety systems"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, configuration options, in-line pre-treatment details, SPR technology overview, and installation requirements for the LaRIO.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "LaRIO Showcase",
+    "description": "The world's fastest single-pass digital textile printer. Kyocera KJ4B printheads, up to 120 m/min, available in 1800 mm and 3200 mm configurations, in-line pre-treatment, SPR colour consistency, and non-stop jumbo roll winding built for the highest production volumes in the industry.",
+    "leftItems": [
+      "Offline pre-treatment slows production",
+      "Colour drift across machines & runs",
+      "Manual winding interrupts 24/7 output",
+      "Fabric shift at ultra-high speeds"
+    ],
+    "rightItems": [
+      "Single-pass output up to 120 m/min",
+      "SPR same print result across machines",
+      "In-line on-machine pre-treatment",
+      "Non-stop jumbo roll winding"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "The world's fastest single-pass printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

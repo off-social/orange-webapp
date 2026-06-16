@@ -1,0 +1,221 @@
+{
+  "slug": "fabpro-1i",
+  "name": "FabPro 1i",
+  "tagline": "High-Performance Direct-to-Fabric Industrial Printer",
+  "heroImage": {
+    "desktop": "/FabPro1i1.png",
+    "mobile": "/FabPro1i1.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "8× Ricoh Gen 6 industrial printheads",
+      "Up to 110 lm/hr",
+      "600 × 900 dpi"
+    ]
+  },
+  "keySpecification": {
+    "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
+    "rows": [
+      [
+        { "label": "Print Heads", "value": "8× Ricoh Gen 6 Industrial" },
+        { "label": "Max Output", "value": "Up to 110 lm/hr" }
+      ],
+      [
+        { "label": "Max Resolution", "value": "600 × 900 dpi" },
+        { "label": "Standard Speed", "value": "Up to 80 lm/hr" }
+      ],
+      [
+        { "label": "Max Print Width", "value": "1800 mm" },
+        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+      ],
+      [
+        { "label": "Ink Types", "value": "Reactive · Acid · Disperse" },
+        { "label": "Fabrics", "value": "Cotton · Linen · Silk · Nylon · Polyester · Blends" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
+    "inkTypes": [
+      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "O", "hex": "#FC7017" },
+      { "name": "Red", "short": "R", "hex": "#D9423B" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
+      { "name": "Green", "short": "G", "hex": "#3B933D" }
+    ]
+  },
+  "features": {
+    "description": "Engineered with smart automation and precision technology for reliable, efficient, and high-performance textile printing",
+    "items": [
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Efficient Ink Supply System",
+        "desc": "Ensures consistent ink flow to printheads at all times, preventing ink starvation and maintaining uninterrupted production across long print runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Head Crash Protective System",
+        "desc": "Sensor-based protection system safeguards printheads from fabric obstructions during carriage movement, reducing damage risk and extending printhead lifespan."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Wrinkle Controller System",
+        "desc": "High-precision sensor controls detect and correct fabric surface irregularities in real time, ensuring smooth, uniform media conveying for flawless output."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "5-Stage Belt Squeeze System",
+        "desc": "Advanced water-resistant squeeze system prevents lint and dust blockage — engineered specifically for high-lint textile production environments, reducing cleaning downtime significantly."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Linear Motor Precision System",
+        "desc": "Linear motor drives carriage movement with smooth acceleration and positioning accuracy, maintaining ±0.1mm registration across the full 1800mm print width even at production speeds."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Automatic Capping & Wiping System",
+        "desc": "Keeps printheads clean between runs, preventing ink from drying on nozzles and reducing ink wastage — extending printhead life and ensuring consistent first-drop quality."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Customizable Drying System",
+        "desc": "Integrated belt + fins heater with adjustable temperature control, optimised for different fabric types — from lightweight silk to heavy cotton and upholstery fabrics."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "One-Touch Maintenance",
+        "desc": "Automated daily maintenance routines minimise operator intervention and keep the machine production-ready with minimal downtime."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
+    "fabrics": [
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Lace & Sequin",
+        "desc": "Delicate positioning on open-weave and embellished structures"
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Jacquard",
+        "desc": "High-resolution pattern printing on textured jacquard fabrics for fashion and home textiles"
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Embroidery",
+        "desc": "Precise print registration on raised, textured embroidered surfaces"
+      },
+      {
+        "image": "/Silk.png",
+        "title": "Export Garment Manufacturing",
+        "desc": "Reactive printing on cotton with ISO 4–5 wash fastness required by European and US export buyers"
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Fashion Textiles",
+        "desc": "Fast, vibrant disperse printing on polyester sarees, dress materials, and kurti fabrics for trend-responsive production"
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Home Textiles",
+        "desc": "Cotton bedding, polyester curtains, cushions, throws, and decorative fabrics — all on one machine"
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Silk & Luxury Fabrics",
+        "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Custom & Personalised Printing",
+        "desc": "Photo textiles, corporate branding, wedding and event fabrics, and small-batch specialty orders"
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
+    "maxSpeed": 110,
+    "regularMode": [
+      { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 110, "label": "Up to 110 lm/hr" },
+      { "res": "600 × 900 dpi", "pass": "3 pass", "speed": 80, "label": "Up to 80 lm/hr" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
+    "largeCard": {
+      "title": "Ricoh (Japan)",
+      "desc": "8× Gen 6 industrial printheads — dual-channel configuration for speed and consistency"
+    },
+    "smallCards": [
+      {
+        "title": "Linear Guide System — THK (Japan)",
+        "desc": "Precision motion guidance for vibration-free, high-accuracy carriage movement"
+      },
+      {
+        "title": "Bearings — SKF (Sweden)",
+        "desc": "Low-friction, high-precision bearings for extended mechanical life"
+      },
+      {
+        "title": "Wiring — Lapp (Germany)",
+        "desc": "Industrial-grade control panel wiring throughout"
+      },
+      {
+        "title": "Drive Motors — Nidec (Japan)",
+        "desc": "Reliable motion control proven in industrial manufacturing environments"
+      },
+      {
+        "title": "Control Systems — Omron (Japan)",
+        "desc": "Industrial automation and control components"
+      },
+      {
+        "title": "Automation — Delta / Autonics",
+        "desc": "Robust industrial controls for consistent process automation"
+      },
+      {
+        "title": "RIP Software — neoStampa Professional Edition",
+        "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and production workflow tools"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Complete technical specifications, engineering details, installation requirements, and component overview for the FabPro 1i.",
+      "coverImage": "/ProductBrochure.png"
+    }
+  },
+  "showcase": {
+    "heading": "FabPro 1i Showcase",
+    "description": "Engineered for high-performance textile production, FabPro 1i delivers vibrant color, reliable output, and consistent quality across a wide range of fabrics.",
+    "leftItems": [
+      "Inconsistent ink flow on long production runs",
+      "Printhead damage from fabric obstructions",
+      "Wrinkles and misfeeds on delicate fabrics",
+      "Frequent downtime for cleaning and maintenance"
+    ],
+    "rightItems": [
+      "Efficient ink supply for uninterrupted production",
+      "Sensor-based head crash protection",
+      "Real-time wrinkle control for smooth conveying",
+      "Automated capping, wiping & one-touch maintenance"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-performance fabric printing?",
+    "description": "Our specialists help you pick the right resolution, ink type, and configuration for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

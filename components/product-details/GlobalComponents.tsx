@@ -1,86 +1,21 @@
+"use client";
+
+import { useProduct } from "@/data/ProductContext";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import ProductSidebar from "./ProductSidebar";
-
-const LARGE_CARD = {
-  icon: (
-    <Image
-      src="/Kyocera.png"
-      alt="Kyocera"
-      width={80}
-      height={80}
-      style={{ objectFit: "contain" }}
-    />
-  ),
-  title: "Kyocera",
-  desc: "16× Industrial printheads · Japan",
-};
-
-const SMALL_CARDS = [
-  {
-    icon: (
-      <Image
-        src="/Vision-System.png"
-        alt="Vision System"
-        width={72}
-        height={72}
-        style={{ objectFit: "contain" }}
-      />
-    ),
-    title: "Vision System",
-    desc: "Proprietary real-time scanner",
-  },
-  {
-    icon: (
-      <Image
-        src="/Color-Management.png"
-        alt="Color Management"
-        width={72}
-        height={72}
-        style={{ objectFit: "contain" }}
-      />
-    ),
-    title: "Color Management",
-    desc: "Professional calibration software",
-  },
-  {
-    icon: (
-      <Image
-        src="/Ink-System.png"
-        alt="Ink System"
-        width={72}
-        height={72}
-        style={{ objectFit: "contain" }}
-      />
-    ),
-    title: "Ink System",
-    desc: "High-precision dye ratio mixing",
-  },
-  {
-    icon: (
-      <Image
-        src="/Drive-System.png"
-        alt="Drive System"
-        width={72}
-        height={72}
-        style={{ objectFit: "contain" }}
-      />
-    ),
-    title: "Drive System",
-    desc: "Advanced industrial conveying",
-  },
-];
 
 function ComponentCard({
   icon,
   title,
   desc,
   fullWidth = false,
+  iconSize = 72,
 }: {
-  icon: React.ReactNode;
+  icon?: string;
   title: string;
   desc: string;
   fullWidth?: boolean;
+  iconSize?: number;
 }) {
   return (
     <Box
@@ -91,13 +26,24 @@ function ComponentCard({
         alignItems: "flex-start",
         gap: { xs: "16px", md: "24px" },
         borderRadius: "16px",
+        border: "1px solid #E0E0E0",
         background: "#FFF",
         alignSelf: fullWidth ? "stretch" : "auto",
         flex: fullWidth ? "unset" : "1 0 0",
       }}
     >
       {/* Icon */}
-      <Box>{icon}</Box>
+      {icon && (
+        <Box>
+          <Image
+            src={icon}
+            alt={title}
+            width={iconSize}
+            height={iconSize}
+            style={{ objectFit: "contain" }}
+          />
+        </Box>
+      )}
 
       {/* Text */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -129,33 +75,28 @@ function ComponentCard({
 }
 
 export default function GlobalComponents() {
+  const { globalComponents } = useProduct();
+
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", md: "100px 40px", lg: "100px 168px" },
-        alignItems: "flex-start",
-        gap: "24px",
+        padding: { xs: "64px 16px", md: "80px 40px", lg: "80px 168px 40px" },
+        flexDirection: "column",
+        alignItems: "center",
         alignSelf: "stretch",
-        background: "#F2F2F2",
-        flexDirection: { xs: "column", md: "row" },
+        background: "#FFF",
       }}
     >
-      {/* Sidebar */}
-      <Box sx={{ display: { xs: "none", md: "block" }, flexShrink: 0 }}>
-        <ProductSidebar />
-      </Box>
-
-      {/* Right content */}
+      {/* Centered content column */}
       <Box
         sx={{
           display: "flex",
-          padding: { xs: "0", md: "0 24px", lg: "0 94px" },
           flexDirection: "column",
           alignItems: "flex-start",
           gap: { xs: "48px", md: "64px" },
-          flex: "1 0 0",
-          width: { xs: "100%", md: "auto" },
+          width: "100%",
+          maxWidth: "730px",
         }}
       >
         {/* Heading + description */}
@@ -190,8 +131,7 @@ export default function GlobalComponents() {
               lineHeight: { xs: "19.2px", md: "25.6px" },
             }}
           >
-            Built using premium international components that deliver superior
-            accuracy, durability, and consistent production efficiency.
+            {globalComponents.description}
           </Typography>
         </Box>
 
@@ -204,8 +144,12 @@ export default function GlobalComponents() {
             alignSelf: "stretch",
           }}
         >
-          {/* Large card — Kyocera */}
-          <ComponentCard {...LARGE_CARD} fullWidth />
+          {/* Large card */}
+          <ComponentCard
+            {...globalComponents.largeCard}
+            fullWidth
+            iconSize={80}
+          />
 
           {/* 2×2 grid */}
           <Box
@@ -216,7 +160,7 @@ export default function GlobalComponents() {
               alignSelf: "stretch",
             }}
           >
-            {SMALL_CARDS.map((card) => (
+            {globalComponents.smallCards.map((card) => (
               <ComponentCard key={card.title} {...card} />
             ))}
           </Box>

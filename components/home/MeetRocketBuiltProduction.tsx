@@ -2,6 +2,7 @@
 
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const STATS = [
   { top: "Up to 75,000", bottom: "LM/day Production" },
@@ -61,6 +62,8 @@ const MeetRocketBuiltProduction = () => {
           </Typography>
           <Box sx={{ mt: "32px", width: "100%" }}>
             <Button
+              component={Link}
+              href="/product-details"
               sx={{
                 width: "100%",
                 padding: "13px 24px",
@@ -191,6 +194,8 @@ const MeetRocketBuiltProduction = () => {
           </Typography>
           <Box sx={{ mt: "32px" }}>
             <Button
+              component={Link}
+              href="/product-details"
               sx={{
                 display: "flex",
                 width: "200px",

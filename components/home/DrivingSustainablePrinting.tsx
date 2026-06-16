@@ -3,6 +3,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 const DrivingSustainablePrinting = () => {
   return (
@@ -79,6 +80,8 @@ const DrivingSustainablePrinting = () => {
           </Box>
 
           <Button
+            component={Link}
+            href="/contact"
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
             sx={{

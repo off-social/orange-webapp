@@ -42,13 +42,17 @@ const Footer = () => {
           }}
         >
           {/* Logo */}
-          <Image
-            src="/OrangeLogo.svg"
-            alt="Orange"
-            width={110}
-            height={25}
-            style={{ display: "block" }}
-          />
+          <Link href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
+            <Box sx={{ width: "100%", height: "100%" }}>
+              <Image
+                src="/OrangeLogo.svg"
+                alt="Orange"
+                width={110}
+                height={25}
+                style={{ display: "block" }}
+              />
+            </Box>
+          </Link>
 
           {/* Quick Links heading */}
           <Typography

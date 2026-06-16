@@ -2,6 +2,7 @@
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 
 export default function ReliableSupport() {
   return (
@@ -81,6 +82,8 @@ export default function ReliableSupport() {
 
         {/* Button */}
         <Button
+          component={Link}
+          href="/contact"
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
           sx={{

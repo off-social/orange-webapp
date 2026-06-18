@@ -1,5 +1,6 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import {
   Box,
   Button,
@@ -13,19 +14,18 @@ import Link from "next/link";
 import { useState } from "react";
 import DrivingSustainablePrinting from "./DrivingSustainablePrinting";
 import IndustryPresence from "./IndustryPresence";
+import InkSolutions from "./InkSolutions";
+import LabelPrinting from "./LabelPrinting";
 import LogoMarquee from "./LogoMarquee";
 import MeetRocketBuiltProduction from "./MeetRocketBuiltProduction";
-import MovingToDigital from "./MovingToDigital";
+import PublicationPrinting from "./PublicationPrinting";
 import ScrollVideos from "./ScrollVideos";
 import StatsSection from "./StatsSection";
 import TextileHero from "./TextileHero";
-import InkSolutions from "./InkSolutions";
-import LabelPrinting from "./LabelPrinting";
-import PublicationPrinting from "./PublicationPrinting";
 import TextilePrinting from "./TextilePrinting";
+import TextileProcessing from "./TextileProcessing";
 import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
 import ThePowerOfOrange from "./ThePowerOfOrange";
-import { useConsultation } from "@/data/ConsultationContext";
 
 const Home = () => {
   const [value, setValue] = useState(0);
@@ -157,7 +157,10 @@ const Home = () => {
                   alt=""
                   width={16}
                   height={16}
-                  style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                  style={{
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)",
+                  }}
                 />
               }
               sx={{
@@ -257,6 +260,7 @@ const Home = () => {
           >
             {[
               "Textile Printing",
+              "Textile Processing",
               "Label Printing",
               "Publication Printing",
               "Ink Solutions",
@@ -296,9 +300,10 @@ const Home = () => {
           {/* Tab content */}
           <Box sx={{ width: "100%" }}>
             {value === 0 && <TextilePrinting />}
-            {value === 1 && <LabelPrinting />}
-            {value === 2 && <PublicationPrinting />}
-            {value === 3 && <InkSolutions />}
+            {value === 1 && <TextileProcessing />}
+            {value === 2 && <LabelPrinting />}
+            {value === 3 && <PublicationPrinting />}
+            {value === 4 && <InkSolutions />}
           </Box>
         </Box>
       </Grid>

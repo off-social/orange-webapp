@@ -24,14 +24,22 @@ const MeetRocketBuiltProduction = () => {
           px: "24px",
           pt: "64px",
           pb: "64px",
-          backgroundImage: "url('/rocket-section-mobilelast1.png')",
+          backgroundImage: "url('/newRocketMobile.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           width: "100%",
         }}
       >
         {/* Title + desc + button */}
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px", width: "100%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "8px",
+            width: "100%",
+          }}
+        >
           <Typography
             sx={{
               color: "#FFF",
@@ -58,8 +66,8 @@ const MeetRocketBuiltProduction = () => {
             }}
           >
             Designed specifically to handle the demands of high-volume
-            production environments, this system ensures consistent
-            performance and reliability even under the most intense workloads.
+            production environments, this system ensures consistent performance
+            and reliability even under the most intense workloads.
           </Typography>
           <Box sx={{ mt: "32px", width: "100%" }}>
             <Button
@@ -84,7 +92,13 @@ const MeetRocketBuiltProduction = () => {
               }}
             >
               Know More
-              <Image src="/Arrow - Right.svg" alt="arrow right" width={16} height={16} style={{ objectFit: "contain", filter: "brightness(0)" }} />
+              <Image
+                src="/Arrow - Right.svg"
+                alt="arrow right"
+                width={16}
+                height={16}
+                style={{ objectFit: "contain", filter: "brightness(0)" }}
+              />
             </Button>
           </Box>
         </Box>
@@ -104,7 +118,10 @@ const MeetRocketBuiltProduction = () => {
           }}
         >
           {STATS.map((stat, i) => (
-            <Box key={i} sx={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            <Box
+              key={i}
+              sx={{ display: "flex", flexDirection: "column", gap: "6px" }}
+            >
               <Typography
                 sx={{
                   color: "#FFF",
@@ -143,10 +160,14 @@ const MeetRocketBuiltProduction = () => {
       >
         {/* Desktop background image */}
         <Box
-          sx={{ width: "100%", aspectRatio: "1442 / 817", position: "relative" }}
+          sx={{
+            width: "100%",
+            aspectRatio: "1442 / 817",
+            position: "relative",
+          }}
         >
           <Image
-            src="/meet-rocket1.png"
+            src="/newRocket.png"
             alt="Meet Rocket"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}

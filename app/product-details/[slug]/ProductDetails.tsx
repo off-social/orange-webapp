@@ -2,8 +2,10 @@
 
 import ContactCTA from "@/components/product-details/ContactCTA";
 import Features from "@/components/product-details/Features";
+import FeaturesV1 from "@/components/product-details/FeaturesV1";
 import GlobalComponents from "@/components/product-details/GlobalComponents";
 import IdealFor from "@/components/product-details/IdealFor";
+import IdealForV1 from "@/components/product-details/IdealForV1";
 import InkCompatibility from "@/components/product-details/InkCompatibility";
 import KeySpecification from "@/components/product-details/KeySpecification";
 import PositionProShowcase from "@/components/product-details/PositionProShowcase";
@@ -15,17 +17,21 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const TABS = [
   "Key Specification",
   "Ink Compatibility",
   "Features",
+  "FeaturesV1",
   "Ideal for",
+  "Ideal forV1",
   "Production Capacity",
   "Global Components",
 ];
 
 export default function ProductDetails({ product }: { product: Product }) {
+  const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -130,6 +136,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 order: { xs: 2, sm: 1 },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
               }}
+              onClick={() => openModal(product.name)}
             >
               Book a Consultation
             </Button>
@@ -221,6 +228,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 fontWeight: activeTab === index ? 500 : 400,
                 color: "#707070",
                 transition: "color 0.2s",
+                display: (tab === "FeaturesV1" || tab === "Ideal forV1") ? { xs: "block", sm: "none" } : "block",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -244,9 +252,11 @@ export default function ProductDetails({ product }: { product: Product }) {
       {activeTab === 0 && <KeySpecification />}
       {activeTab === 1 && <InkCompatibility />}
       {activeTab === 2 && <Features />}
-      {activeTab === 3 && <IdealFor />}
-      {activeTab === 4 && <ProductionCapacity />}
-      {activeTab === 5 && <GlobalComponents />}
+      {activeTab === 3 && <FeaturesV1 />}
+      {activeTab === 4 && <IdealFor />}
+      {activeTab === 5 && <IdealForV1 />}
+      {activeTab === 6 && <ProductionCapacity />}
+      {activeTab === 7 && <GlobalComponents />}
 
       {/* Permanent sections */}
       <PositionProShowcase />

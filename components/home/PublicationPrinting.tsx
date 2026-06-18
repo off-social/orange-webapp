@@ -6,6 +6,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 type Product = { src: string; name: string; desc: string };
 
@@ -31,6 +32,7 @@ const NAV_BTN_SX = {
 };
 
 const PublicationPrinting = () => {
+  const { openModal } = useConsultation();
   const [activeImg, setActiveImg] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -242,6 +244,7 @@ const PublicationPrinting = () => {
             width: { xs: "100%", md: "200px" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
+          onClick={() => openModal(currentProduct.name)}
         >
           Book a Consultation
         </Button>

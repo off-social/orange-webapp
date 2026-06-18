@@ -3,6 +3,7 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const REACTIVE = {
   src: "/Reactive.png",
@@ -11,6 +12,7 @@ const REACTIVE = {
 };
 
 const InkSolutions = () => {
+  const { openModal } = useConsultation();
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
       {/* Product image */}
@@ -133,6 +135,7 @@ const InkSolutions = () => {
             width: { xs: "100%", md: "200px" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
+          onClick={() => openModal()}
         >
           Book a Consultation
         </Button>

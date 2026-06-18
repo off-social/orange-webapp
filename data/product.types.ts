@@ -109,6 +109,8 @@ export interface Product {
       desc: string;
       /** Path to a cover image under /public. Omit to hide the cover. */
       coverImage?: string;
+      /** Path to the downloadable PDF under /public. Omit to disable download. */
+      brochureUrl?: string;
     };
   };
 

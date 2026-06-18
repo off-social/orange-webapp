@@ -181,7 +181,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, head layout details, drying system overview, media handling description, and installation requirements for the Alpha 15.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/Alpha-15.pdf"
     }
   },
   "showcase": {

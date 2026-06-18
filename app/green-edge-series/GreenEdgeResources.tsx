@@ -6,7 +6,7 @@ const RESOURCES = [
     title: "Product Brochure",
     desc: "Full specs, configurations, and print quality details for the Position Pro.",
     btnLabel: "Download Brochure",
-    href: "#",
+    href: "/brochures/Greenedge-Series.pdf",
   },
 ];
 

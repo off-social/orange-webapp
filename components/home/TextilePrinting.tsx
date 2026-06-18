@@ -7,6 +7,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 type Product = { src: string; name: string; desc: string };
 type Brand = { name: string; image: string; products: Product[] };
@@ -121,6 +122,22 @@ const BRANDS: Brand[] = [
       },
     ],
   },
+  {
+    name: "MAS",
+    image: "/MAS.png",
+    products: [
+      {
+        src: "/MAS1.png",
+        name: "MAS Digital Textile Printer",
+        desc: "Industrial precision textile printing.",
+      },
+      {
+        src: "/MAS2.png",
+        name: "MAS Digital Textile Printer",
+        desc: "Industrial precision textile printing.",
+      },
+    ],
+  },
 ];
 
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
@@ -137,6 +154,7 @@ const NAV_BTN_SX = {
 };
 
 const TextilePrinting = () => {
+  const { openModal } = useConsultation();
   const [selectedBrand, setSelectedBrand] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
@@ -173,6 +191,7 @@ const TextilePrinting = () => {
 
   const currentProduct = currentProducts[activeImg];
   const animKey = `${selectedBrand}-${activeImg}`;
+  const knowMoreDisabled = BRANDS[selectedBrand].name === "MAS";
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
@@ -403,8 +422,10 @@ const TextilePrinting = () => {
           >
             <Button
               variant="outlined"
-              component={Link}
-              href={productHref(currentProduct.name)}
+              disabled={knowMoreDisabled}
+              {...(knowMoreDisabled
+                ? {}
+                : { component: Link, href: productHref(currentProduct.name) })}
               sx={{
                 color: "#111",
                 bgcolor: "#fff",
@@ -419,6 +440,11 @@ const TextilePrinting = () => {
                 boxShadow: "none",
                 width: { xs: "100%", md: "200px" },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+                "&.Mui-disabled": {
+                  color: "#bdbdbd",
+                  borderColor: "#e0e0e0",
+                  bgcolor: "#fff",
+                },
               }}
             >
               Know More
@@ -443,6 +469,7 @@ const TextilePrinting = () => {
                 width: { xs: "100%", md: "200px" },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
+              onClick={() => openModal(currentProduct.name)}
             >
               Book a Consultation
             </Button>

@@ -5,6 +5,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const products = [
   {
@@ -18,6 +19,7 @@ const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
 
 export default function PublicationPrinters() {
+  const { openModal } = useConsultation();
   const [activeImg, setActiveImg] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -186,6 +188,7 @@ export default function PublicationPrinters() {
             width: { xs: "100%", md: "auto" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
+          onClick={() => openModal(currentImg.name)}
         >
           Book a Consultation
         </Button>

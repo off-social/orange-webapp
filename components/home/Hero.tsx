@@ -25,11 +25,13 @@ import PublicationPrinting from "./PublicationPrinting";
 import TextilePrinting from "./TextilePrinting";
 import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
 import ThePowerOfOrange from "./ThePowerOfOrange";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const Home = () => {
   const [value, setValue] = useState(0);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { openModal } = useConsultation();
 
   return (
     <>
@@ -141,6 +143,7 @@ const Home = () => {
                   boxShadow: "none",
                 },
               }}
+              onClick={() => openModal()}
             >
               Book a Consultation
             </Button>

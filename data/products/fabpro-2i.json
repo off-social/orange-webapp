@@ -188,7 +188,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, engineering details, installation requirements, and component overview for the FabPro 2i.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/FabPro-2i.pdf"
     }
   },
   "showcase": {

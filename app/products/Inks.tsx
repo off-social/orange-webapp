@@ -4,6 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const INK_TABS = [
   {
@@ -29,6 +30,7 @@ const INK_TABS = [
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
 export default function Inks() {
+  const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
 
   const current = INK_TABS[activeTab];
@@ -213,6 +215,7 @@ export default function Inks() {
             width: { xs: "100%", md: "auto" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
+          onClick={() => openModal()}
         >
           Book a Consultation
         </Button>

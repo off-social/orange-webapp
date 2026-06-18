@@ -181,7 +181,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full specs, configurations, and print quality details for the Position Pro.",
-      "coverImage": "/PositionPro-Product.png"
+      "coverImage": "/PositionPro-Product.png",
+      "brochureUrl": "/brochures/Position-Pro.pdf"
     }
   },
   "showcase": {

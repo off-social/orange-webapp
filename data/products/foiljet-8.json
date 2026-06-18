@@ -194,7 +194,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, foil workflow details, media compatibility overview, ink system description, and installation requirements for the FoilJet 8 Head.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/FoilJet-8.pdf"
     }
   },
   "showcase": {

@@ -105,8 +105,8 @@ export default function GreenEdgeHero() {
           {/* Button */}
           <Button
             component={Link}
-            href="/brochures/GreenEdgeSeriesBrochure.pdf"
-            download="GreenEdgeSeriesBrochure.pdf"
+            href="/brochures/Greenedge-Series.pdf"
+            download="Greenedge-Series.pdf"
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
             sx={{

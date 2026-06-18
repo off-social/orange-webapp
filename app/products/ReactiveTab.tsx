@@ -2,8 +2,10 @@
 
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const ReactiveTab = () => {
+  const { openModal } = useConsultation();
   return (
     <Grid
       size={12}
@@ -98,6 +100,7 @@ const ReactiveTab = () => {
               px: { xs: 2, md: 3 },
               "&:hover": { bgcolor: "rgba(0,0,0,0.05)" },
             }}
+            onClick={() => openModal()}
           >
             Book a Consultation
           </Button>

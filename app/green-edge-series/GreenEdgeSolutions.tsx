@@ -3,6 +3,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 interface Spec {
   label: string;
@@ -131,6 +132,7 @@ const PRODUCTS: Product[] = [
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
   const imageOnLeft = index % 2 === 0;
+  const { openModal } = useConsultation();
 
   return (
     <Box
@@ -301,8 +303,8 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         >
           {/* Book a Consultation — first on mobile (order 1), second on desktop (order 2) */}
           <Box
-            component="a"
-            href="#"
+            component="button"
+            onClick={() => openModal()}
             sx={{
               display: "flex",
               width: { xs: "100%", md: "150px" },
@@ -317,7 +319,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               fontSize: "13px",
               fontWeight: 500,
               lineHeight: "20.8px",
-              textDecoration: "none",
+              border: "none",
               cursor: "pointer",
               boxSizing: "border-box",
               order: { xs: 1, md: 2 },
@@ -409,6 +411,7 @@ function AnimatedCard({ children }: { children: React.ReactNode }) {
 }
 
 export default function GreenEdgeSolutions() {
+  const { openModal } = useConsultation();
   return (
     <Box
       sx={{

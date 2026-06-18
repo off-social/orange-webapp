@@ -188,7 +188,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, pass mode details, media system overview, ink supply description, and installation requirements for the Alpha II.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/Alpha-II.pdf"
     }
   },
   "showcase": {

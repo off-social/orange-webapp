@@ -1,11 +1,13 @@
 "use client";
 
 import { useProduct } from "@/data/ProductContext";
+import { useConsultation } from "@/data/ConsultationContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 
 export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
   const { name, tagline, sidebar } = useProduct();
+  const { openModal } = useConsultation();
 
   return (
     <Box
@@ -144,6 +146,7 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
               boxShadow: "none",
             },
           }}
+          onClick={() => openModal(name)}
         >
           Book a Consultation
         </Button>

@@ -197,7 +197,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, head configuration options, drying system choices, installation requirements, and engineering details for the K64.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/K64.pdf"
     }
   },
   "showcase": {

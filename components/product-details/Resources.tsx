@@ -168,33 +168,67 @@ export default function Resources() {
                 {resources.brochure.desc}
               </Typography>
             </Box>
-            <Button
-              variant="contained"
-              startIcon={
-                <Image
-                  src="/DownIcon.svg"
-                  alt="download"
-                  width={16}
-                  height={16}
-                />
-              }
-              sx={{
-                bgcolor: "#111",
-                color: "#FFF",
-                borderRadius: "8px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
-                fontWeight: 500,
-                px: "16px",
-                py: "10px",
-                boxShadow: "none",
-                alignSelf: "flex-start",
-                "&:hover": { bgcolor: "#333", boxShadow: "none" },
-              }}
-            >
-              Download Brochure
-            </Button>
+            {resources.brochure.brochureUrl ? (
+              <Button
+                variant="contained"
+                component="a"
+                href={resources.brochure.brochureUrl}
+                download
+                startIcon={
+                  <Image
+                    src="/DownIcon.svg"
+                    alt="download"
+                    width={16}
+                    height={16}
+                  />
+                }
+                sx={{
+                  bgcolor: "#111",
+                  color: "#FFF",
+                  borderRadius: "8px",
+                  textTransform: "none",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  px: "16px",
+                  py: "10px",
+                  boxShadow: "none",
+                  alignSelf: "flex-start",
+                  "&:hover": { bgcolor: "#333", boxShadow: "none" },
+                }}
+              >
+                Download Brochure
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                disabled
+                startIcon={
+                  <Image
+                    src="/DownIcon.svg"
+                    alt="download"
+                    width={16}
+                    height={16}
+                  />
+                }
+                sx={{
+                  bgcolor: "#111",
+                  color: "#FFF",
+                  borderRadius: "8px",
+                  textTransform: "none",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  px: "16px",
+                  py: "10px",
+                  boxShadow: "none",
+                  alignSelf: "flex-start",
+                  "&:hover": { bgcolor: "#333", boxShadow: "none" },
+                }}
+              >
+                Download Brochure
+              </Button>
+            )}
           </Box>
         </Box>
       </Box>

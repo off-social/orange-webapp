@@ -1,5 +1,7 @@
+import ConsultationModal from "@/components/ConsultationModal";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import { ConsultationProvider } from "@/data/ConsultationContext";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 import { Architects_Daughter, Stack_Sans_Headline } from "next/font/google";
@@ -34,9 +36,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <Navbar />
-          <div style={{ paddingTop: "59px" }}>{children}</div>
-          <Footer />
+          <ConsultationProvider>
+            <Navbar />
+            <div style={{ paddingTop: "59px" }}>{children}</div>
+            <Footer />
+            <ConsultationModal />
+          </ConsultationProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

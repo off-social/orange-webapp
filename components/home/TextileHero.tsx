@@ -4,8 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useConsultation } from "@/data/ConsultationContext";
 
 const TextileHero = () => {
+  const { openModal } = useConsultation();
   return (
     <Box
       sx={{
@@ -133,8 +135,6 @@ const TextileHero = () => {
           </Button>
 
           <Button
-            component={Link}
-            href="/contact"
             variant="contained"
             sx={{
               color: "#111",
@@ -154,6 +154,7 @@ const TextileHero = () => {
                 boxShadow: "none",
               },
             }}
+            onClick={() => openModal()}
           >
             Book a Consultation
           </Button>

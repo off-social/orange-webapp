@@ -2,6 +2,7 @@
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -121,6 +122,17 @@ const Footer = () => {
               sx={{ display: "flex", alignItems: "center" }}
             >
               <FacebookIcon
+                sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
+              />
+            </Box>
+            <Box
+              component="a"
+              href="https://www.linkedin.com/company/orange-o-tec"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <LinkedInIcon
                 sx={{ color: "#fff", fontSize: 28, cursor: "pointer" }}
               />
             </Box>

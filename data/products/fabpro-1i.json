@@ -193,7 +193,8 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Complete technical specifications, engineering details, installation requirements, and component overview for the FabPro 1i.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.png",
+      "brochureUrl": "/brochures/FabPro-1i.pdf"
     }
   },
   "showcase": {

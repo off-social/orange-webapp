@@ -6,6 +6,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useConsultation } from "@/data/ConsultationContext";
 
 type PreviewImage = {
   src: string;
@@ -162,6 +163,22 @@ const brands: BrandItem[] = [
       },
     ],
   },
+  {
+    name: "MAS",
+    image: "/MAS.png",
+    previewImage: [
+      {
+        src: "/MAS1.png",
+        name: "MAS Digital Textile Printer",
+        desc: "Industrial precision textile printing.",
+      },
+      {
+        src: "/MAS2.png",
+        name: "MAS Digital Textile Printer",
+        desc: "Industrial precision textile printing.",
+      },
+    ],
+  },
 ];
 
 const RADO_INDEX = 3;
@@ -179,6 +196,7 @@ const NAV_BTN_SX = {
 };
 
 export default function DigitalTextilePrinters() {
+  const { openModal } = useConsultation();
   const [selected, setSelected] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const [radoTab, setRadoTab] = useState(0);
@@ -229,6 +247,7 @@ export default function DigitalTextilePrinters() {
 
   const currentImg = activeImages[activeImg];
   const animKey = `${selected}-${radoTab}-${activeImg}`;
+  const knowMoreDisabled = brands[selected]?.name === "MAS";
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
@@ -534,9 +553,11 @@ export default function DigitalTextilePrinters() {
             }}
           >
             <Button
-              component={Link}
-              href={productHref(currentImg.name)}
               variant="outlined"
+              disabled={knowMoreDisabled}
+              {...(knowMoreDisabled
+                ? {}
+                : { component: Link, href: productHref(currentImg.name) })}
               sx={{
                 color: "#111",
                 bgcolor: "#fff",
@@ -551,6 +572,11 @@ export default function DigitalTextilePrinters() {
                 boxShadow: "none",
                 width: { xs: "100%", md: "auto" },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+                "&.Mui-disabled": {
+                  color: "#bdbdbd",
+                  borderColor: "#e0e0e0",
+                  bgcolor: "#fff",
+                },
               }}
             >
               Know More
@@ -574,6 +600,7 @@ export default function DigitalTextilePrinters() {
                 width: { xs: "100%", md: "auto" },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
+              onClick={() => openModal(currentImg.name)}
             >
               Book a Consultation
             </Button>

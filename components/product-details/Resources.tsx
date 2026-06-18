@@ -2,7 +2,12 @@
 
 import { useProduct } from "@/data/ProductContext";
 import { Box, Button, Typography } from "@mui/material";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+// pdf.js (used inside BrochureCover) references browser-only globals like
+// DOMMatrix, so it must never evaluate during SSR/prerender.
+const BrochureCover = dynamic(() => import("./BrochureCover"), { ssr: false });
 
 export default function Resources() {
   const { resources, name } = useProduct();
@@ -107,27 +112,24 @@ export default function Resources() {
             background: "#FAFAFA",
           }}
         >
-          {/* Brochure cover image */}
-          {resources.brochure.coverImage && (
-            <Box
-              sx={{
-                width: { xs: "100%", sm: "185px" },
-                height: { xs: "240px", sm: "258px" },
-                borderRadius: "12px",
-                border: "1px solid #EFEFEF",
-                overflow: "hidden",
-                flexShrink: 0,
-                position: "relative",
-              }}
-            >
-              <Image
-                src={resources.brochure.coverImage}
-                alt={resources.brochure.title}
-                fill
-                style={{ objectFit: "cover", objectPosition: "center" }}
-              />
-            </Box>
-          )}
+          {/* Brochure cover — rendered from the first page of the PDF */}
+          <Box
+            sx={{
+              width: { xs: "100%", sm: "185px" },
+              height: { xs: "240px", sm: "258px" },
+              borderRadius: "12px",
+              border: "1px solid #EFEFEF",
+              overflow: "hidden",
+              flexShrink: 0,
+              position: "relative",
+            }}
+          >
+            <BrochureCover
+              pdfUrl={resources.brochure.brochureUrl!}
+              fallbackImage={resources.brochure.coverImage}
+              alt={resources.brochure.title}
+            />
+          </Box>
 
           {/* Brochure info */}
           <Box

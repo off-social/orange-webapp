@@ -77,7 +77,7 @@ const TextContent = ({ sm }: { sm?: boolean }) => (
     <Box sx={{ mt: sm ? "20px" : { xs: "20px", md: "48px" } }}>
       <Button
         component={Link}
-        href="/products"
+        href="/product-details/fabpro-2i"
         sx={{
           bgcolor: "#111", color: "#fff", borderRadius: "8px",
           textTransform: "none", fontSize: sm ? "13px" : "13px",
@@ -178,7 +178,7 @@ const ThePowerOfOrange = () => {
         {/* Full-width black button */}
         <Button
           component={Link}
-          href="/products"
+          href="/product-details/fabpro-2i"
           sx={{
             mt: "40px",
             width: "100%",

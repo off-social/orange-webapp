@@ -13,7 +13,6 @@ import ProductionCapacity from "@/components/product-details/ProductionCapacity"
 import Resources from "@/components/product-details/Resources";
 import { ProductProvider } from "@/data/ProductContext";
 import type { Product } from "@/data/product.types";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -123,39 +122,14 @@ export default function ProductDetails({ product }: { product: Product }) {
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               gap: "12px",
-              mt: { xs: "0", md: "22px" },
               width: { xs: "100%", sm: "auto" },
             }}
           >
             <Button
               variant="contained"
-              endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
-              }
               sx={{
-                bgcolor: "#111",
                 color: "#fff",
-                borderRadius: "12px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                fontWeight: 500,
-                px: "28px",
-                py: "13px",
-                boxShadow: "none",
-                width: { xs: "100%", sm: "200px" },
-                order: { xs: 1, sm: 2 },
-                "&:hover": { bgcolor: "#333", boxShadow: "none" },
-              }}
-            >
-              Book a Demo
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#fff",
-                borderColor: "#e0e0e0",
+                bgcolor: "#111",
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
@@ -166,7 +140,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 boxShadow: "none",
                 width: { xs: "100%", sm: "200px" },
                 order: { xs: 2, sm: 1 },
-                "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
+                "&:hover": { bgcolor: "#333", boxShadow: "none" },
               }}
               onClick={() => openModal(product.name)}
             >

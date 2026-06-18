@@ -1,5 +1,6 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import { useProduct } from "@/data/ProductContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
@@ -7,7 +8,8 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { Box, Button, Typography } from "@mui/material";
 
 export default function ContactCTA() {
-  const { contactCTA } = useProduct();
+  const { contactCTA, name } = useProduct();
+  const { openModal } = useConsultation();
 
   return (
     <Box
@@ -177,6 +179,7 @@ export default function ContactCTA() {
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "14px !important" }} />}
           fullWidth
+          onClick={() => openModal(name)}
           sx={{
             bgcolor: "#FFF",
             color: "#111",
@@ -192,7 +195,7 @@ export default function ContactCTA() {
             "&:hover": { bgcolor: "#F0F0F0", boxShadow: "none" },
           }}
         >
-          Book a Demo
+          Book a Consultation
         </Button>
       </Box>
     </Box>

@@ -16,7 +16,7 @@ import type { Product } from "@/data/product.types";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useConsultation } from "@/data/ConsultationContext";
 
 const TABS = [
@@ -33,6 +33,38 @@ const TABS = [
 export default function ProductDetails({ product }: { product: Product }) {
   const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
+
+  // Keep the sticky tab bar in sync with the auto-hiding navbar so it never
+  // gets covered: when the navbar is visible the tabs sit just below it, and
+  // when the navbar slides away the tabs snap to the top.
+  const [navVisible, setNavVisible] = useState(true);
+  const [navHeight, setNavHeight] = useState(0);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const measure = () => {
+      const header = document.querySelector("header");
+      if (header) setNavHeight(header.offsetHeight);
+    };
+    measure();
+
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY < lastScrollY.current || currentY < 80) {
+        setNavVisible(true);
+      } else {
+        setNavVisible(false);
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   return (
     <ProductProvider value={product}>
@@ -192,12 +224,11 @@ export default function ProductDetails({ product }: { product: Product }) {
       <Box
         sx={{
           position: "sticky",
-          top: 0,
+          top: navVisible ? `${navHeight}px` : 0,
           zIndex: 10,
-          borderBottom:
-            "1px solid #E0E0E0",
+          borderBottom: "1px solid #E0E0E0",
           background: "#F2F2F2",
-          transition: "background 0.3s, border-color 0.3s",
+          transition: "top 0.3s ease, background 0.3s, border-color 0.3s",
         }}
       >
         <Box

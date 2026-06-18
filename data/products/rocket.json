@@ -3,8 +3,8 @@
   "name": "Rocket",
   "tagline": "Single-Pass Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/PositionProDetails.png",
-    "mobile": "/PositionProMobile.png"
+    "desktop": "/RoketImg1.png",
+    "mobile": "/RoketImg1.png"
   },
   "sidebar": {
     "bullets": [
@@ -17,7 +17,10 @@
     "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
     "rows": [
       [
-        { "label": "Print Heads", "value": "Industrial-grade Piezoelectric (Variable Droplet: 5 / 7 / 12 pl)" },
+        {
+          "label": "Print Heads",
+          "value": "Industrial-grade Piezoelectric (Variable Droplet: 5 / 7 / 12 pl)"
+        },
         { "label": "Max Output", "value": "Up to 75,000 lm/day" }
       ],
       [
@@ -29,7 +32,10 @@
         { "label": "Max Print Width", "value": "1850 mm" }
       ],
       [
-        { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
+        {
+          "label": "Ink Types",
+          "value": "Reactive · Acid · Pigment · Disperse"
+        },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
       ]
     ]
@@ -37,7 +43,10 @@
   "inkCompatibility": {
     "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
     "inkTypes": [
-      { "name": "Reactive", "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres" },
+      {
+        "name": "Reactive",
+        "fabrics": "Cotton · Linen · Viscose · Natural Cellulose Fibres"
+      },
       { "name": "Acid", "fabrics": "Silk · Nylon · Protein Fibres" },
       { "name": "Pigment", "fabrics": "All fabrics, low water usage" },
       { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends" }
@@ -137,9 +146,24 @@
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
     "maxSpeed": 75000,
     "regularMode": [
-      { "res": "600 dpi", "pass": "single pass", "speed": 75000, "label": "Up to 75,000 lm/day" },
-      { "res": "800 dpi", "pass": "single pass", "speed": 55000, "label": "Up to 55,000 lm/day" },
-      { "res": "1200 dpi", "pass": "single pass", "speed": 35000, "label": "Up to 35,000 lm/day" }
+      {
+        "res": "600 dpi",
+        "pass": "single pass",
+        "speed": 75000,
+        "label": "Up to 75,000 lm/day"
+      },
+      {
+        "res": "800 dpi",
+        "pass": "single pass",
+        "speed": 55000,
+        "label": "Up to 55,000 lm/day"
+      },
+      {
+        "res": "1200 dpi",
+        "pass": "single pass",
+        "speed": 35000,
+        "label": "Up to 35,000 lm/day"
+      }
     ]
   },
   "globalComponents": {

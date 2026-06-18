@@ -2,8 +2,10 @@
 
 import { Box, Divider, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useConsultation } from "@/data/ConsultationContext";
+import { productHref } from "@/data/products";
 
 interface Spec {
   label: string;
@@ -297,6 +299,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
+            alignItems: "stretch",
             gap: "12px",
             alignSelf: { xs: "stretch", md: "auto" },
           }}
@@ -304,14 +307,16 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           {/* Book a Consultation — first on mobile (order 1), second on desktop (order 2) */}
           <Box
             component="button"
-            onClick={() => openModal()}
+            onClick={() => openModal(product.name)}
             sx={{
               display: "flex",
-              width: { xs: "100%", md: "150px" },
-              padding: "12px",
+              width: { xs: "100%", md: "180px" },
+              height: "48px",
+              padding: "12px 16px",
               justifyContent: "center",
               alignItems: "center",
               gap: "8px",
+              whiteSpace: "nowrap",
               borderRadius: "8px",
               background: "#111",
               color: "#FFF",
@@ -346,15 +351,17 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           </Box>
           {/* Know More — second on mobile (order 2), first on desktop (order 1) */}
           <Box
-            component="a"
-            href="#"
+            component={Link}
+            href={productHref(product.name)}
             sx={{
               display: "flex",
               width: { xs: "100%", md: "150px" },
-              padding: "12px",
+              height: "48px",
+              padding: "12px 16px",
               justifyContent: "center",
               alignItems: "center",
               gap: "8px",
+              whiteSpace: "nowrap",
               borderRadius: "8px",
               border: "1px solid #E0E0E0",
               background: "#FFF",

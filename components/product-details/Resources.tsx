@@ -7,6 +7,9 @@ import Image from "next/image";
 export default function Resources() {
   const { resources, name } = useProduct();
 
+  // Hide the entire section when there's no downloadable PDF brochure.
+  if (!resources.brochure.brochureUrl) return null;
+
   return (
     <Box
       sx={{
@@ -168,67 +171,36 @@ export default function Resources() {
                 {resources.brochure.desc}
               </Typography>
             </Box>
-            {resources.brochure.brochureUrl ? (
-              <Button
-                variant="contained"
-                component="a"
-                href={resources.brochure.brochureUrl}
-                download
-                startIcon={
-                  <Image
-                    src="/DownIcon.svg"
-                    alt="download"
-                    width={16}
-                    height={16}
-                  />
-                }
-                sx={{
-                  bgcolor: "#111",
-                  color: "#FFF",
-                  borderRadius: "8px",
-                  textTransform: "none",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  px: "16px",
-                  py: "10px",
-                  boxShadow: "none",
-                  alignSelf: "flex-start",
-                  "&:hover": { bgcolor: "#333", boxShadow: "none" },
-                }}
-              >
-                Download Brochure
-              </Button>
-            ) : (
-              <Button
-                variant="contained"
-                disabled
-                startIcon={
-                  <Image
-                    src="/DownIcon.svg"
-                    alt="download"
-                    width={16}
-                    height={16}
-                  />
-                }
-                sx={{
-                  bgcolor: "#111",
-                  color: "#FFF",
-                  borderRadius: "8px",
-                  textTransform: "none",
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  px: "16px",
-                  py: "10px",
-                  boxShadow: "none",
-                  alignSelf: "flex-start",
-                  "&:hover": { bgcolor: "#333", boxShadow: "none" },
-                }}
-              >
-                Download Brochure
-              </Button>
-            )}
+            <Button
+              variant="contained"
+              component="a"
+              href={resources.brochure.brochureUrl}
+              download
+              startIcon={
+                <Image
+                  src="/DownIcon.svg"
+                  alt="download"
+                  width={16}
+                  height={16}
+                />
+              }
+              sx={{
+                bgcolor: "#111",
+                color: "#FFF",
+                borderRadius: "8px",
+                textTransform: "none",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "13px",
+                fontWeight: 500,
+                px: "16px",
+                py: "10px",
+                boxShadow: "none",
+                alignSelf: "flex-start",
+                "&:hover": { bgcolor: "#333", boxShadow: "none" },
+              }}
+            >
+              Download Brochure
+            </Button>
           </Box>
         </Box>
       </Box>

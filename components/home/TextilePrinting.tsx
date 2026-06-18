@@ -1,5 +1,6 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import { productHref } from "@/data/products";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -7,7 +8,6 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { useConsultation } from "@/data/ConsultationContext";
 
 type Product = { src: string; name: string; desc: string };
 type Brand = { name: string; image: string; products: Product[] };
@@ -32,6 +32,16 @@ const BRANDS: Brand[] = [
         name: "FabPro 2i Digital Textile Printer (Made in India)",
         desc: "High-Speed Precision Textile Printing.",
       },
+      {
+        src: "/radoimgA1.png",
+        name: "SubPro S-16 Industrial Sublimation Printer",
+        desc: "Designed to Handle Demanding Production with Ease.",
+      },
+      {
+        src: "/radoimgA2.png",
+        name: "SubPro II Industrial Dye-Sublimation Printer",
+        desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
+      },
     ],
   },
   {
@@ -44,14 +54,19 @@ const BRANDS: Brand[] = [
         desc: "Engineered for Exceptional Precision & Consistent Print Accuracy.",
       },
       {
+        src: "/K321.png",
+        name: "K32 Digital Textile Printer",
+        desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
+      },
+      {
         src: "/K641.png",
         name: "K64 Digital Textile Printer",
         desc: "Advanced Precision for Superior Fabric Print Quality.",
       },
       {
-        src: "/K321.png",
-        name: "K32 Digital Textile Printer",
-        desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
+        src: "/RoketImg1.png",
+        name: "Rocket Digital Textile Printer",
+        desc: "World's Fastest Digital Textile Printer.",
       },
     ],
   },
@@ -110,16 +125,6 @@ const BRANDS: Brand[] = [
         name: "Alpha 16 Industrial Sublimation Printer",
         desc: "Combining Power, Precision, and Production Efficiency.",
       },
-      {
-        src: "/radoimgA1.png",
-        name: "SubPro S-16 Industrial Sublimation Printer",
-        desc: "Designed to Handle Demanding Production with Ease.",
-      },
-      {
-        src: "/radoimgA2.png",
-        name: "SubPro II Industrial Dye-Sublimation Printer",
-        desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
-      },
     ],
   },
   {
@@ -127,14 +132,14 @@ const BRANDS: Brand[] = [
     image: "/MAS.png",
     products: [
       {
-        src: "/MAS1.png",
-        name: "MAS Digital Textile Printer",
-        desc: "Industrial precision textile printing.",
+        src: "/MAS2.png",
+        name: "MAS Vertical",
+        desc: "Smarter Way to Print Double-Sided Fabrics.",
       },
       {
-        src: "/MAS2.png",
-        name: "MAS Digital Textile Printer",
-        desc: "Industrial precision textile printing.",
+        src: "/MAS1.png",
+        name: "MAS Twelve",
+        desc: "Designed for Continuous Industrial Production.",
       },
     ],
   },

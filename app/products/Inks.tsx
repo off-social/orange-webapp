@@ -15,13 +15,13 @@ const INK_TABS = [
   },
   {
     label: "Sublimation",
-    src: "/Sublimation.webp",
+    src: "/Reactive1.webp",
     name: "Sublimation Ink Series",
     desc: "High-performance sublimation inks for vibrant polyester fabric printing.",
   },
   {
     label: "Pigment",
-    src: "/Pigment.webp",
+    src: "/Reactive1.webp",
     name: "Pigment Ink Series",
     desc: "Eco-friendly pigment inks compatible with direct-to-fabric printing.",
   },

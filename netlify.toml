@@ -1,0 +1,7 @@
+# Force brochure PDFs to download (not open) on the deployed site. iOS Safari
+# ignores the client-side `download` attribute, so the only reliable fix is
+# this server-sent header. Mirrors public/_headers for redundancy.
+[[headers]]
+  for = "/brochures/*"
+  [headers.values]
+    Content-Disposition = "attachment"

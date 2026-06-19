@@ -1,0 +1,7 @@
+# Netlify custom headers.
+# Force brochure PDFs to download instead of opening in the browser. This is
+# the reliable way to force a download on all devices including iOS Safari
+# (the client-side `download` attribute / blob trick is ignored by iOS, which
+# is why brochures opened/failed on iPhone before).
+/brochures/*
+  Content-Disposition: attachment

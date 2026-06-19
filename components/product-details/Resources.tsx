@@ -17,29 +17,14 @@ export default function Resources() {
   // Hide the entire section when there's no downloadable PDF brochure.
   if (!resources.brochure.brochureUrl) return null;
 
-  // Fetch the PDF as a blob and trigger the download programmatically so it
-  // downloads instead of opening in the browser. Shows a loading state on the
-  // button while the file downloads. Falls back to opening the URL on error.
-  const handleDownloadBrochure = async (brochureUrl: string) => {
-    const fileName = brochureUrl.split("/").pop() || "brochure.pdf";
+  // The brochure downloads via a plain anchor link. On the deployed site
+  // (Netlify) the `public/_headers` + `netlify.toml` config sends these PDFs
+  // with `Content-Disposition: attachment`, which forces a download (iOS Safari
+  // shows a "Download" prompt) instead of opening/previewing the PDF. We just
+  // show a brief loading state on tap.
+  const handleDownloadClick = () => {
     setDownloading(true);
-    try {
-      const response = await fetch(brochureUrl);
-      if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
-      const blob = await response.blob();
-      const objectUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = objectUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(objectUrl);
-    } catch {
-      window.open(brochureUrl, "_blank", "noopener");
-    } finally {
-      setDownloading(false);
-    }
+    window.setTimeout(() => setDownloading(false), 2500);
   };
 
   return (
@@ -202,7 +187,10 @@ export default function Resources() {
             </Box>
             <Button
               variant="contained"
-              onClick={() => handleDownloadBrochure(resources.brochure.brochureUrl!)}
+              component="a"
+              href={resources.brochure.brochureUrl}
+              download
+              onClick={handleDownloadClick}
               disabled={downloading}
               startIcon={
                 downloading ? (

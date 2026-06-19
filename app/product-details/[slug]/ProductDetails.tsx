@@ -13,7 +13,7 @@ import ProductionCapacity from "@/components/product-details/ProductionCapacity"
 import Resources from "@/components/product-details/Resources";
 import { ProductProvider } from "@/data/ProductContext";
 import type { Product } from "@/data/product.types";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
@@ -129,7 +129,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           >
             <Button
               variant="contained"
-              startIcon={<CalendarMonthOutlinedIcon sx={{ fontSize: "18px" }} />}
+              endIcon={<ArrowForwardIcon sx={{ fontSize: "18px" }} />}
               sx={{
                 color: "#fff",
                 bgcolor: "#111",
@@ -143,7 +143,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 py: "13px",
                 boxShadow: "none",
                 width: { xs: "100%", sm: "200px" },
-                order: { xs: 1, sm: 1 },
+                order: { xs: 1, sm: 2 },
                 "&:hover": { bgcolor: "#333", boxShadow: "none" },
               }}
               onClick={() => openModal(product.name)}
@@ -174,7 +174,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                   py: "13px",
                   boxShadow: "none",
                   width: { xs: "100%", sm: "200px" },
-                  order: { xs: 2, sm: 2 },
+                  order: { xs: 2, sm: 1 },
                   "&:hover": {
                     bgcolor: "#f5f5f5",
                     borderColor: "#111",

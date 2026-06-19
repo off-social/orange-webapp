@@ -46,21 +46,21 @@ const TextileProcessing = () => {
 
       {/* Brand Selector */}
       <Box
-        sx={{
-          display: "flex",
-          flexWrap: "nowrap",
-          justifyContent: { xs: "flex-start", sm: "center" },
-          gap: { xs: "8px", md: "14px" },
-          px: { xs: 1, sm: 0 },
-          maxWidth: "900px",
-          width: "100%",
-          mx: "auto",
-          overflowX: { xs: "auto", sm: "visible" },
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          "&::-webkit-scrollbar": { display: "none" },
-        }}
-      >
+  sx={{
+    display: "flex",
+    flexWrap: "nowrap",
+    justifyContent: "center",
+    gap: { xs: "8px", md: "14px" },
+    px: { xs: 1, sm: 0 },
+    maxWidth: "900px",
+    width: "100%",
+    mx: "auto",
+    overflowX: { xs: "auto", sm: "visible" },
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+    "&::-webkit-scrollbar": { display: "none" },
+  }}
+>
         {BRANDS.map((brand, index) => (
           <Box
             key={brand.name}

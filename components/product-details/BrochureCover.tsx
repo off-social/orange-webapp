@@ -13,7 +13,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 /**
  * Renders the first page of a PDF as a cover thumbnail, sized to fill its
  * parent box (parent should set the dimensions + `overflow: hidden`).
- * Falls back to a static image if the PDF can't be rendered.
+ * Falls back to a static image if the PDF can't be rendered or is too large
+ * (Safari has blob size limitations that cause WebKitBlobResource errors).
  */
 export default function BrochureCover({
   pdfUrl,
@@ -28,6 +29,17 @@ export default function BrochureCover({
   const [width, setWidth] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [pdfSize, setPdfSize] = useState<number | null>(null);
+
+  // Fetch PDF size to check if it's too large for Safari blob handling
+  useEffect(() => {
+    fetch(pdfUrl, { method: 'HEAD' })
+      .then(res => {
+        const size = parseInt(res.headers.get('content-length') || '0', 10);
+        setPdfSize(size);
+      })
+      .catch(() => setPdfSize(0));
+  }, [pdfUrl]);
 
   useEffect(() => {
     setMounted(true);
@@ -40,7 +52,10 @@ export default function BrochureCover({
     return () => ro.disconnect();
   }, []);
 
-  const showFallback = failed && fallbackImage;
+  // Safari has blob size limitations (~20MB). Use fallback for large PDFs.
+  const PDF_SIZE_LIMIT = 20 * 1024 * 1024; // 20MB
+  const useFallback = failed || (pdfSize !== null && pdfSize > PDF_SIZE_LIMIT);
+  const showFallback = useFallback && fallbackImage;
 
   return (
     <div

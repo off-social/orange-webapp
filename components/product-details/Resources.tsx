@@ -1,9 +1,10 @@
 "use client";
 
 import { useProduct } from "@/data/ProductContext";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useState } from "react";
 
 // pdf.js (used inside BrochureCover) references browser-only globals like
 // DOMMatrix, so it must never evaluate during SSR/prerender.
@@ -11,16 +12,17 @@ const BrochureCover = dynamic(() => import("./BrochureCover"), { ssr: false });
 
 export default function Resources() {
   const { resources, name } = useProduct();
+  const [downloading, setDownloading] = useState(false);
 
   // Hide the entire section when there's no downloadable PDF brochure.
   if (!resources.brochure.brochureUrl) return null;
 
-  // Force-download the brochure instead of opening it in a new tab. Mobile
-  // browsers (especially iOS Safari) ignore the anchor `download` attribute and
-  // just open the PDF, so we fetch it as a blob and trigger the download
-  // programmatically. Falls back to opening the URL if the fetch fails.
+  // Fetch the PDF as a blob and trigger the download programmatically so it
+  // downloads instead of opening in the browser. Shows a loading state on the
+  // button while the file downloads. Falls back to opening the URL on error.
   const handleDownloadBrochure = async (brochureUrl: string) => {
     const fileName = brochureUrl.split("/").pop() || "brochure.pdf";
+    setDownloading(true);
     try {
       const response = await fetch(brochureUrl);
       if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
@@ -35,6 +37,8 @@ export default function Resources() {
       URL.revokeObjectURL(objectUrl);
     } catch {
       window.open(brochureUrl, "_blank", "noopener");
+    } finally {
+      setDownloading(false);
     }
   };
 
@@ -199,13 +203,18 @@ export default function Resources() {
             <Button
               variant="contained"
               onClick={() => handleDownloadBrochure(resources.brochure.brochureUrl!)}
+              disabled={downloading}
               startIcon={
-                <Image
-                  src="/DownIcon.svg"
-                  alt="download"
-                  width={16}
-                  height={16}
-                />
+                downloading ? (
+                  <CircularProgress size={16} sx={{ color: "#FFF" }} />
+                ) : (
+                  <Image
+                    src="/DownIcon.svg"
+                    alt="download"
+                    width={16}
+                    height={16}
+                  />
+                )
               }
               sx={{
                 bgcolor: "#111",
@@ -220,9 +229,10 @@ export default function Resources() {
                 boxShadow: "none",
                 alignSelf: "flex-start",
                 "&:hover": { bgcolor: "#333", boxShadow: "none" },
+                "&.Mui-disabled": { bgcolor: "#111", color: "#FFF", opacity: 0.7 },
               }}
             >
-              Download Brochure
+              {downloading ? "Downloading..." : "Download Brochure"}
             </Button>
           </Box>
         </Box>

@@ -15,7 +15,7 @@ import { ProductProvider } from "@/data/ProductContext";
 import type { Product } from "@/data/product.types";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useConsultation } from "@/data/ConsultationContext";
@@ -34,6 +34,7 @@ const TABS = [
 export default function ProductDetails({ product }: { product: Product }) {
   const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
+  const [downloading, setDownloading] = useState(false);
 
   // Keep the sticky tab bar in sync with the auto-hiding navbar so it never
   // gets covered: when the navbar is visible the tabs sit just below it, and
@@ -67,12 +68,12 @@ export default function ProductDetails({ product }: { product: Product }) {
     };
   }, []);
 
-  // Force-download the brochure instead of opening it in a new tab. Mobile
-  // browsers (especially iOS Safari) ignore the anchor `download` attribute and
-  // just open the PDF, so we fetch it as a blob and trigger the download
-  // programmatically. Falls back to opening the URL if the fetch fails.
+  // Fetch the PDF as a blob and trigger the download programmatically so it
+  // downloads instead of opening in the browser. Shows a loading state on the
+  // button while the file downloads. Falls back to opening the URL on error.
   const handleDownloadBrochure = async (brochureUrl: string) => {
     const fileName = brochureUrl.split("/").pop() || "brochure.pdf";
+    setDownloading(true);
     try {
       const response = await fetch(brochureUrl);
       if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
@@ -87,6 +88,8 @@ export default function ProductDetails({ product }: { product: Product }) {
       URL.revokeObjectURL(objectUrl);
     } catch {
       window.open(brochureUrl, "_blank", "noopener");
+    } finally {
+      setDownloading(false);
     }
   };
 
@@ -180,7 +183,14 @@ export default function ProductDetails({ product }: { product: Product }) {
                 onClick={() =>
                   handleDownloadBrochure(product.resources.brochure.brochureUrl!)
                 }
-                startIcon={<FileDownloadOutlinedIcon sx={{ fontSize: "18px" }} />}
+                disabled={downloading}
+                startIcon={
+                  downloading ? (
+                    <CircularProgress size={16} sx={{ color: "#111" }} />
+                  ) : (
+                    <FileDownloadOutlinedIcon sx={{ fontSize: "18px" }} />
+                  )
+                }
                 sx={{
                   color: "#111",
                   bgcolor: "#fff",
@@ -201,9 +211,10 @@ export default function ProductDetails({ product }: { product: Product }) {
                     borderColor: "#111",
                     boxShadow: "none",
                   },
+                  "&.Mui-disabled": { color: "#111", opacity: 0.7 },
                 }}
               >
-                Download Brochure
+                {downloading ? "Downloading..." : "Download Brochure"}
               </Button>
             )}
           </Box>

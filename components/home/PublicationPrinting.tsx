@@ -13,8 +13,8 @@ type Product = { src: string; name: string; desc: string };
 const PRODUCTS: Product[] = [
   {
     src: "/PublicationPrinters1.png",
-    name: "JP7 Industrial Publication Printer",
-    desc: "Intelligent Printing for Demanding Publication Environments.",
+    name: "VividPress-E Digital Inkjet Press",
+    desc: "Built for High-Quality Publishing and On-Demand Production.",
   },
 ];
 

@@ -13,6 +13,8 @@ import ProductionCapacity from "@/components/product-details/ProductionCapacity"
 import Resources from "@/components/product-details/Resources";
 import { ProductProvider } from "@/data/ProductContext";
 import type { Product } from "@/data/product.types";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -127,6 +129,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           >
             <Button
               variant="contained"
+              startIcon={<CalendarMonthOutlinedIcon sx={{ fontSize: "18px" }} />}
               sx={{
                 color: "#fff",
                 bgcolor: "#111",
@@ -135,17 +138,53 @@ export default function ProductDetails({ product }: { product: Product }) {
                 fontFamily: "Inter, sans-serif",
                 fontSize: "14px",
                 fontWeight: 500,
-                px: "28px",
+                whiteSpace: "nowrap",
+                px: "20px",
                 py: "13px",
                 boxShadow: "none",
                 width: { xs: "100%", sm: "200px" },
-                order: { xs: 2, sm: 1 },
+                order: { xs: 1, sm: 1 },
                 "&:hover": { bgcolor: "#333", boxShadow: "none" },
               }}
               onClick={() => openModal(product.name)}
             >
               Book a Consultation
             </Button>
+
+            {product.resources.brochure.brochureUrl && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={product.resources.brochure.brochureUrl}
+                download
+                target="_blank"
+                rel="noopener"
+                startIcon={<FileDownloadOutlinedIcon sx={{ fontSize: "18px" }} />}
+                sx={{
+                  color: "#111",
+                  bgcolor: "#fff",
+                  borderColor: "#e0e0e0",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  whiteSpace: "nowrap",
+                  px: "20px",
+                  py: "13px",
+                  boxShadow: "none",
+                  width: { xs: "100%", sm: "200px" },
+                  order: { xs: 2, sm: 2 },
+                  "&:hover": {
+                    bgcolor: "#f5f5f5",
+                    borderColor: "#111",
+                    boxShadow: "none",
+                  },
+                }}
+              >
+                Download Brochure
+              </Button>
+            )}
           </Box>
         </Box>
 

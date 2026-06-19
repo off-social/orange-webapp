@@ -148,14 +148,29 @@ const BRANDS: Brand[] = [
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
 const NAV_BTN_SX = {
-  minWidth: { xs: "36px", md: "48px" },
-  width: { xs: "36px", md: "48px" },
-  height: { xs: "36px", md: "48px" },
+  minWidth: { xs: "44px", md: "52px" },
+  width: { xs: "44px", md: "52px" },
+  height: { xs: "44px", md: "52px" },
   borderRadius: "100px",
-  border: "1px solid #e0e0e0",
+  border: "1px solid #e8e8e8",
   color: "#111",
   bgcolor: "#fff",
-  "&:hover": { border: "1px solid #111", bgcolor: "#f5f5f5" },
+  boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+  transition: "all 0.2s ease",
+  "&:hover": {
+    border: "1px solid #F6891F",
+    bgcolor: "#F6891F",
+    color: "#fff",
+    boxShadow: "0 6px 20px rgba(246,137,31,0.35)",
+    transform: "translateY(-50%) scale(1.08)",
+  },
+  "&.Mui-disabled": {
+    border: "1px solid #ededed",
+    color: "#cfcfcf",
+    bgcolor: "#fff",
+    boxShadow: "none",
+    opacity: 0.6,
+  },
 };
 
 const TextilePrinting = () => {
@@ -295,6 +310,7 @@ const TextilePrinting = () => {
       <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
         <Button
           onClick={() => scrollToIndex(Math.max(0, activeImg - 1))}
+          disabled={activeImg === 0}
           sx={{
             ...NAV_BTN_SX,
             display: { xs: "none", md: "flex" },
@@ -360,6 +376,7 @@ const TextilePrinting = () => {
           onClick={() =>
             scrollToIndex(Math.min(currentProducts.length - 1, activeImg + 1))
           }
+          disabled={activeImg === currentProducts.length - 1}
           sx={{
             ...NAV_BTN_SX,
             display: { xs: "none", md: "flex" },

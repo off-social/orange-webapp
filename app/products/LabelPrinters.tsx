@@ -10,8 +10,8 @@ import { useConsultation } from "@/data/ConsultationContext";
 const products = [
   {
     src: "/LabelPrinters.png",
-    name: "K24 Digital Label Printer",
-    desc: "High-Speed Precision Label Printing Machine.",
+    name: "Jetrix-E Industrial Digital Label Printer",
+    desc: "Delivering Precision, Flexibility, and Consistent Output.",
   },
 ];
 

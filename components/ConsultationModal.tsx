@@ -43,6 +43,8 @@ const PRINTERS = [
   "JetRix-E",
   "VividPress-E",
   "MAS Digital Textile Printer",
+  "MAS Vertical",
+  "MAS Twelve"
 ];
 
 /**

@@ -205,6 +205,7 @@ const TextileProcessing = () => {
           component={Link}
           href={productHref(currentProduct.name)}
           variant="outlined"
+          disabled
           sx={{
             color: "#111",
             bgcolor: "#fff",

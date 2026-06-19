@@ -67,6 +67,29 @@ export default function ProductDetails({ product }: { product: Product }) {
     };
   }, []);
 
+  // Force-download the brochure instead of opening it in a new tab. Mobile
+  // browsers (especially iOS Safari) ignore the anchor `download` attribute and
+  // just open the PDF, so we fetch it as a blob and trigger the download
+  // programmatically. Falls back to opening the URL if the fetch fails.
+  const handleDownloadBrochure = async (brochureUrl: string) => {
+    const fileName = brochureUrl.split("/").pop() || "brochure.pdf";
+    try {
+      const response = await fetch(brochureUrl);
+      if (!response.ok) throw new Error(`Failed to fetch brochure: ${response.status}`);
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch {
+      window.open(brochureUrl, "_blank", "noopener");
+    }
+  };
+
   return (
     <ProductProvider value={product}>
       {/* Hero section */}
@@ -154,11 +177,9 @@ export default function ProductDetails({ product }: { product: Product }) {
             {product.resources.brochure.brochureUrl && (
               <Button
                 variant="outlined"
-                component="a"
-                href={product.resources.brochure.brochureUrl}
-                download
-                target="_blank"
-                rel="noopener"
+                onClick={() =>
+                  handleDownloadBrochure(product.resources.brochure.brochureUrl!)
+                }
                 startIcon={<FileDownloadOutlinedIcon sx={{ fontSize: "18px" }} />}
                 sx={{
                   color: "#111",

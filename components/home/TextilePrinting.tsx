@@ -211,7 +211,10 @@ const TextilePrinting = () => {
 
   const currentProduct = currentProducts[activeImg];
   const animKey = `${selectedBrand}-${activeImg}`;
-  const knowMoreDisabled = BRANDS[selectedBrand].name === "MAS";
+  // Enable "Know More" only for products that have a registered details page.
+  // productHref() returns the "/product-details" fallback for unregistered ones.
+  const knowMoreDisabled =
+    !currentProduct || productHref(currentProduct.name) === "/product-details";
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>

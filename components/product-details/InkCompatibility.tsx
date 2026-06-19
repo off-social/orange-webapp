@@ -146,7 +146,7 @@ export default function InkCompatibility() {
                   fontSize: { xs: "11px", md: "13px" },
                   fontWeight: 500,
                   lineHeight: { xs: "17px", md: "20px" },
-                  height: { xs: "auto", md: "40px" },
+                  minHeight: { xs: "auto", md: "40px" },
                 }}
               >
                 {ink.fabrics}

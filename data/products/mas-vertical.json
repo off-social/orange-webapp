@@ -1,0 +1,219 @@
+{
+  "slug": "mas-vertical",
+  "name": "MAS Vertical",
+  "tagline": "Synchronized Double-Sided Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/MAS2.png",
+    "mobile": "/MAS2.png"
+  },
+  "sidebar": {
+    "bullets": [
+      "Kyocera KJ4B 600 dpi (Dual Carriage)",
+      "Synchronized double-sided printing",
+      "900 – 1850 mm print width"
+    ]
+  },
+  "keySpecification": {
+    "description": "Synchronized double-sided digital textile printing engineered for perfect front-to-back registration, yarn-dye replication, and high value-added production across both fabric faces in a single pass.",
+    "rows": [
+      [
+        { "label": "Printheads", "value": "Kyocera KJ4B 600 dpi (2 Carriages, Dual-Side)" },
+        { "label": "Max Resolution", "value": "600 dpi" }
+      ],
+      [
+        { "label": "Ink Colors", "value": "Up to 8 Installed Colors" },
+        { "label": "Printing Mode", "value": "Synchronized Double-Sided Printing" }
+      ],
+      [
+        { "label": "Min Print Width", "value": "900 mm" },
+        { "label": "Max Print Width", "value": "1850 mm" }
+      ],
+      [
+        { "label": "Drying System", "value": "Rear IR Panel (9 kW) + Dual-Side Forced Air Heater (18 kW)" },
+        { "label": "Power Requirement", "value": "400V Triphase, 44 kW Total Installed Power" }
+      ],
+      [
+        { "label": "Pneumatics", "value": "6 Bar, Max 20 L/min Compressed Air Consumption" },
+        { "label": "Image Processing", "value": "Built-In Onboard Image Processor" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "An up-to-8-color ink system supporting full-gamut reproduction across both fabric sides simultaneously, with digital yarn-dye replication that eliminates the time and cost of physical yarn dyeing.",
+    "inkTypes": [
+      { "name": "Multi-Color Ink System", "fabrics": "Up to 8 installed colors supporting full-gamut reproduction across both fabric sides simultaneously" },
+      { "name": "Yarn-Dye Replication", "fabrics": "Digital ink layering engineered to replicate complex, traditional yarn-dye effects without the time and cost of physical yarn dyeing" },
+      { "name": "Color Spectrum", "fabrics": "Up to 8-color configuration enabling synchronized colour matching, two-colorway production, or two entirely independent designs on a single fabric pass" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Light Cyan", "short": "Lc", "hex": "#9BD7F0" },
+      { "name": "Light Magenta", "short": "Lm", "hex": "#F4A6C8" },
+      { "name": "Orange", "short": "Or", "hex": "#F47B20" },
+      { "name": "Blue", "short": "Bl", "hex": "#2E5BBA" }
+    ]
+  },
+  "features": {
+    "description": "Engineered for synchronized dual-side output with perfect registration, integrated real-time image processing, and complete dual-zone drying for value-added textile production.",
+    "items": [
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Synchronized Double-Sided Printing System",
+        "desc": "Dual-carriage Kyocera KJ4B printheads achieve perfect front-to-back registration, printing the same design, two different colorways, or two completely different designs on a single fabric in one pass."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Built-In Image Processor",
+        "desc": "Integrated onboard image processing handles dual-side design data in real time, ensuring perfectly synchronized output between the front and back print engines without external processing delays."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Dual-Zone Drying System",
+        "desc": "Rear-side IR panel (9 kW) combined with a dual-side forced air heater (18 kW) ensures both fabric faces are fully and evenly dried before collection, preventing smudging or colour transfer."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Yarn-Dye Effect Replication Technology",
+        "desc": "Advanced colour engine digitally reproduces complex traditional yarn-dye patterns and effects, eliminating the lengthy weaving and dyeing process required for authentic yarn-dye fabric production."
+      },
+      {
+        "icon": "/printer-3d.svg",
+        "title": "Flexible Print Width Configuration",
+        "desc": "Supports fabric widths from 900 mm to 1850 mm, giving manufacturers the flexibility to run narrow shirting fabrics and wider denim or technical textile substrates on the same platform."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Optional Sewing Machine Integration",
+        "desc": "Inline sewing machine integration is available as an add-on, enabling continuous fabric processing from printing directly through to seaming within a single production line."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Optional Centering Device",
+        "desc": "Automatic fabric centering add-on ensures consistent alignment entering the dual-side print zone, maintaining registration accuracy across varying fabric widths and roll conditions."
+      },
+      {
+        "icon": "/ColorIcon.svg",
+        "title": "Industrial Power and Pneumatic Architecture",
+        "desc": "400V triphase power supply with 44 kW total installed capacity and 6 bar pneumatics ensures stable, consistent operation of both print carriages and the drying system under continuous production loads."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Built for value-added, design-driven textile production where synchronized double-sided printing, perfect registration, and digital yarn-dye replication unlock new possibilities.",
+    "fabrics": [
+      {
+        "image": "/Jacquard.png",
+        "title": "Yarn-Dyed Shirting Production",
+        "desc": "Digital yarn-dye replication eliminates the long lead times of traditional yarn dyeing, allowing shirting fabric manufacturers to produce authentic-looking yarn-dye patterns in days instead of months."
+      },
+      {
+        "image": "/Custom.png",
+        "title": "Denim Manufacturing",
+        "desc": "Synchronized double-sided printing enables true reversible denim and complex face-and-back colour effects that conventional single-side printers cannot replicate, opening new design possibilities for denim mills."
+      },
+      {
+        "image": "/Silk.png",
+        "title": "High Fashion and Accessories",
+        "desc": "Two-colorway and dual-design capability on a single fabric pass gives fashion brands and accessory manufacturers the flexibility to create reversible garments and dual-pattern accessories from one production run."
+      },
+      {
+        "image": "/Embroidery.png",
+        "title": "Technical Textiles",
+        "desc": "Print width flexibility from 900 mm to 1850 mm combined with industrial drying capacity suits technical textile producers requiring precise, dual-sided functional or pattern printing."
+      },
+      {
+        "image": "/Lace-sequin.png",
+        "title": "Sustainable Supply Chain Production",
+        "desc": "Collapsing production lead times from months to days while reducing waste makes the Vertical the preferred choice for brands and mills prioritising environmental impact reduction and faster market response."
+      },
+      {
+        "image": "/Jacquard.png",
+        "title": "Reversible and Dual-Design Garment Manufacturing",
+        "desc": "Manufacturers producing reversible jackets, scarves, and dual-faced garments benefit directly from perfect front-to-back registration without the cost and complexity of running fabric through a printer twice."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Synchronized double-sided mode at 600 dpi across 900–1850 mm. Production speed is determined by registration precision and dual-side drying requirements rather than single-pass throughput alone, making the Vertical best suited to value-added, design-driven production rather than high-volume commodity printing.",
+    "maxSpeed": 100,
+    "regularMode": [
+      { "res": "Light–Medium Coverage", "pass": "Most designs", "speed": 90, "label": "Near standard throughput" },
+      { "res": "Heavy / Dual Full-Design", "pass": "High ink & drying load", "speed": 90, "label": "Reduced throughput" },
+      { "res": "Yarn-Dye Replication", "pass": "Colour layering", "speed": 90, "label": "Varies with complexity" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium global components engineered for synchronized dual-side operation, complete drying, and stable continuous production.",
+    "largeCard": {
+      "icon": "/Kyocera.png",
+      "title": "Kyocera KJ4B (Japan)",
+      "desc": "Dual-carriage 600 dpi printheads enabling synchronized double-sided printing with perfect front-to-back registration"
+    },
+    "smallCards": [
+      {
+        "icon": "/Vision-System.png",
+        "title": "Built-In Image Processor",
+        "desc": "Integrated onboard processing engine managing real-time dual-side design synchronization"
+      },
+      {
+        "icon": "/Color-Management.png",
+        "title": "Dual-Zone Drying System",
+        "desc": "Rear IR panel (9 kW) and dual-side forced air heater (18 kW) for complete, even drying across both fabric faces"
+      },
+      {
+        "icon": "/Drive-System.png",
+        "title": "Industrial Power System",
+        "desc": "400V triphase supply with 44 kW total installed power for stable dual-engine operation under continuous production"
+      },
+      {
+        "icon": "/Ink-System.png",
+        "title": "Pneumatic Control System",
+        "desc": "6 bar pressure system with up to 20 L/min compressed air consumption supporting precise mechanical operation"
+      },
+      {
+        "icon": "/Drive-System.png",
+        "title": "Optional Sewing Machine Module",
+        "desc": "Inline integration enabling continuous printing-to-seaming production workflow"
+      },
+      {
+        "icon": "/Vision-System.png",
+        "title": "Optional Centering Device",
+        "desc": "Automated fabric alignment system maintaining registration accuracy across varying fabric widths"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, synchronized double-sided printing details, yarn-dye replication overview, ink system description, and installation requirements for the MAS Vertical."
+    }
+  },
+  "showcase": {
+    "heading": "MAS Vertical Showcase",
+    "description": "Synchronized double-sided digital textile printing with dual-carriage Kyocera KJ4B printheads, real-time onboard image processing, dual-zone drying, and digital yarn-dye replication — built for reversible denim, yarn-dyed shirting, and value-added dual-design production.",
+    "solutionTagline": "Synchronized dual-side printing",
+    "leftItems": [
+      "Months of lead time for yarn-dye fabric",
+      "Single-side printing only",
+      "Front-to-back misregistration",
+      "Two passes needed for double-sided designs"
+    ],
+    "rightItems": [
+      "Digital yarn-dye replication in days, not months",
+      "Synchronized double-sided printing in one pass",
+      "Perfect front-to-back registration",
+      "Two independent designs on a single fabric pass"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "Synchronized double-sided textile printing?",
+    "description": "Our specialists help you pick the right configuration, ink colours, and add-ons for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

@@ -279,7 +279,10 @@ export default function DigitalTextilePrinters() {
 
   const currentImg = activeImages[activeImg];
   const animKey = `${selected}-${radoTab}-${activeImg}`;
-  const knowMoreDisabled = brands[selected]?.name === "MAS";
+  // Enable "Know More" only for products that have a registered details page.
+  // productHref() returns the "/product-details" fallback for unregistered ones.
+  const knowMoreDisabled =
+    !currentImg || productHref(currentImg.name) === "/product-details";
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>

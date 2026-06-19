@@ -14,6 +14,7 @@ import k24 from "./k24.json";
 import k32 from "./k32.json";
 import k64 from "./k64.json";
 import lario from "./lario.json";
+import masVertical from "./mas-vertical.json";
 import minilario from "./minilario.json";
 import pengda from "./pengda.json";
 import positionPro from "./position-pro.json";
@@ -52,6 +53,7 @@ export const products: Record<string, Product> = {
   pengda: pengda as Product,
   "jetrix-e": jetrixE as Product,
   "vividpress-e": vividPressE as Product,
+  "mas-vertical": masVertical as Product,
 };
 
 export const productSlugs = Object.keys(products);

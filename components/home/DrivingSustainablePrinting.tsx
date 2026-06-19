@@ -9,14 +9,25 @@ const DrivingSustainablePrinting = () => {
   return (
     <Grid size={12}>
       <Box sx={{ position: "relative", width: "100%", lineHeight: 0 }}>
-        {/* Background image */}
-        <Image
-          src="/CRS.png"
-          alt="Driving Sustainable Printing"
-          width={1440}
-          height={700}
-          style={{ width: "100%", height: "auto", display: "block" }}
-        />
+        {/* Background image — mobile uses a taller portrait crop */}
+        <Box sx={{ display: { xs: "block", sm: "none" } }}>
+          <Image
+            src="/Driving1.png"
+            alt="Driving Sustainable Printing"
+            width={393}
+            height={538}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </Box>
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Image
+            src="/CRS.png"
+            alt="Driving Sustainable Printing"
+            width={1440}
+            height={700}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </Box>
 
         {/* Text overlay — top center */}
         <Box

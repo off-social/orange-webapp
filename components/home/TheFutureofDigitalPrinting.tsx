@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
@@ -125,19 +124,6 @@ const TheFutureofDigitalPrinting = () => {
             <p className="text-[11px] xs:text-xs sm:text-sm font-light text-[#404040] leading-[160%] w-full xs:w-[90%] text-center mt-2 xs:mt-3">
               Orange O Tec engineers high-performance digital printing solutions built for precision, consistency, and scale, with a vision to lead global innovation through intelligent, sustainable, and future-ready technologies.
             </p>
-
-            <Link
-              href="#"
-              className="
-                mt-3 xs:mt-5 inline-block px-4 xs:px-5 py-1.5 xs:py-2
-                text-white bg-black border border-black
-                rounded-[19.58px] text-[11px] xs:text-xs
-                hover:bg-[#333] hover:border-[#333]
-                transition-colors
-              "
-            >
-              Know More
-            </Link>
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
@@ -414,27 +413,6 @@ const IndustryPresence = () => {
         </Box>
       )}
 
-      {/* Bottom CTA */}
-      <Button
-        startIcon={<CalendarTodayIcon sx={{ fontSize: "16px !important" }} />}
-        endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
-        sx={{
-          bgcolor: "#111",
-          color: "#FFF",
-          borderRadius: "8px",
-          textTransform: "none",
-          fontFamily: "Inter, sans-serif",
-          fontSize: "13px",
-          fontWeight: 500,
-          lineHeight: "20.8px",
-          p: "16px",
-          gap: "8px",
-          boxShadow: "none",
-          "&:hover": { bgcolor: "#333", boxShadow: "none" },
-        }}
-      >
-        Book a Demo at Event
-      </Button>
     </Box>
   );
 };

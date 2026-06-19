@@ -3,8 +3,8 @@
   "name": "K24",
   "tagline": "High-Speed Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/K241.png",
-    "mobile": "/K241.png"
+    "desktop": "/K241.webp",
+    "mobile": "/K241.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,37 +102,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "High-Volume Fashion Textile Production",
         "desc": "Large-scale disperse printing on polyester fabrics for wholesale saree, dress material, and fashion fabric markets requiring continuous high-output runs."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Export Garment Manufacturing",
         "desc": "Reactive printing on cotton at volume, meeting ISO wash fastness standards demanded by European and international export buyers."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Home Textile Manufacturing",
         "desc": "Bedding, curtains, cushion covers, and upholstery across cotton and polyester substrates, with the capacity to handle multiple buyer orders simultaneously."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Jacquard and Textured Fabrics",
         "desc": "High-resolution output on complex woven and jacquard structures for fashion and home furnishing applications requiring sharp pattern definition."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Silk and Luxury Fabrics",
         "desc": "Precise acid ink printing on silk, viscose, and premium fabrics for boutique fashion producers and luxury garment manufacturers."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Multi-Fabric Job Work Operations",
         "desc": "Versatile media support from 30 to 450 gsm makes the K24 ideal for job work printers serving clients across diverse fabric types and applications."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Custom and Hi-End Textile Production",
         "desc": "Export fashion and international home textile buyers requiring consistent large-batch quality with tight colour repeatability across repeat orders."
       }
@@ -190,7 +190,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, engineering details, configuration options, and installation requirements for the K24.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

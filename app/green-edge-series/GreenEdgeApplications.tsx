@@ -4,10 +4,10 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 const APPS = [
-  { img: "/FashionApparel.png", label: "Fashion & Apparel" },
-  { img: "/HomeFurnishings.png", label: "Home Furnishings" },
-  { img: "/Accessories.png", label: "Accessories" },
-  { img: "/CorporateUniforms1.png", label: "Corporate & Uniforms" },
+  { img: "/FashionApparel.webp", label: "Fashion & Apparel" },
+  { img: "/HomeFurnishings.webp", label: "Home Furnishings" },
+  { img: "/Accessories.webp", label: "Accessories" },
+  { img: "/CorporateUniforms1.webp", label: "Corporate & Uniforms" },
 ];
 
 function AppCard({

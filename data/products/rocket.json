@@ -3,8 +3,8 @@
   "name": "Rocket",
   "tagline": "Single-Pass Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/RoketImg1.png",
-    "mobile": "/RoketImg1.png"
+    "desktop": "/RoketImg1.webp",
+    "mobile": "/RoketImg1.webp"
   },
   "sidebar": {
     "bullets": [
@@ -111,32 +111,32 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Mass-Volume Fashion Textile Production",
         "desc": "The highest-output solution for large polyester fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets where daily output volume is the primary business driver."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Export Garment Manufacturing",
         "desc": "Continuous reactive printing on cotton at volumes suited to major export facilities supplying international brands requiring consistent quality across very large order quantities."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Industrial Home Textile Manufacturing",
         "desc": "High-capacity production of bedding, curtain fabric, upholstery, and decorative textiles at volumes that make traditional printing economics unviable for the required design variety."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Commodity and Seasonal Textile Production",
         "desc": "Single-pass speed makes the Rocket the most cost-effective choice for high-volume, low-design-change production runs where per-metre output cost is the critical business metric."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Integrated Mills and Large Print Houses",
         "desc": "Manufacturers operating dedicated printing divisions within vertically integrated facilities who need a machine that matches weaving and finishing line output capacities."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Multi-Buyer Volume Job Work Operations",
         "desc": "Large job work printing units with continuous order flow from multiple clients who need a machine that can print at scale without the speed limitations of scanning-head systems."
       }
@@ -213,7 +213,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, single-pass engineering details, drying system integration, installation requirements, and component overview for the Rocket.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

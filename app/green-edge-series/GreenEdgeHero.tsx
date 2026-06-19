@@ -14,10 +14,12 @@ export default function GreenEdgeHero() {
       {/* Background video */}
       <video
         src="/GreenVideo.mp4"
+        poster="/GreenVideo-poster.webp"
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         style={{
           position: "absolute",
           top: 0,

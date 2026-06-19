@@ -3,8 +3,8 @@
   "name": "FoilJet 8 Head",
   "tagline": "High-Precision Digital Foil and Sublimation Mesh Belt Printer",
   "heroImage": {
-    "desktop": "/radoimg1.png",
-    "mobile": "/radoimg1.png"
+    "desktop": "/radoimg1.webp",
+    "mobile": "/radoimg1.webp"
   },
   "sidebar": {
     "bullets": [
@@ -101,37 +101,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Fashion Fabric Foil Printing",
         "desc": "Precise digital foil adhesive printing on sarees, dress materials, kurtis, and fashion fabrics for wholesale and export manufacturers adding metallic, holographic, or glitter foil effects to textile designs."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Ethnic and Bridal Wear Embellishment",
         "desc": "High-resolution foil placement on lehenga, dupatta, sherwani, and bridal fabric for designers and manufacturers producing premium ethnic and occasion wear with intricate foil pattern detailing."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Sublimation",
         "desc": "Water-based sublimation printing on polyester performance fabrics for sportswear brands and gym wear manufacturers requiring vibrant, wash-fast colour output on stretch and technical textiles."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Custom and Designer Textile Production",
         "desc": "Short-run custom foil and sublimation printing for boutique fashion brands, textile designers, and sampling operations requiring fast turnaround on high-impact specialty effects."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Home Textile and Soft Furnishing Effects",
         "desc": "Foil and specialty effect printing on cushion covers, curtains, table linen, and decorative home textiles for premium retail and gifting markets."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Paper and Transfer Media Printing",
         "desc": "Dual media compatibility enables sublimation transfer paper printing and foil effect output on specialty paper alongside direct fabric production from a single machine."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Accessories and Narrow-Format Applications",
         "desc": "Precise foil placement and vibrant sublimation output on scarves, stoles, bags, and textile accessories for fashion accessory brands and gift product manufacturers."
       }
@@ -194,7 +194,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, foil workflow details, media compatibility overview, ink system description, and installation requirements for the FoilJet 8 Head.",
-      "coverImage": "/ProductBrochure.png",
+      "coverImage": "/ProductBrochure.webp",
       "brochureUrl": "/brochures/FoilJet-8.pdf"
     }
   },

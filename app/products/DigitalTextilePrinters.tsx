@@ -30,30 +30,30 @@ type BrandItem = {
 const brands: BrandItem[] = [
   {
     name: "Colorix",
-    image: "/colorix.png",
+    image: "/colorix.webp",
     previewImage: [
       {
-        src: "/PositionPro1.png",
+        src: "/PositionPro1.webp",
         name: "Position Pro Digital Textile Printer",
         desc: "Precision Positioning for High-Speed Fabric Printing.",
       },
       {
-        src: "/FabPro1i1.png",
+        src: "/FabPro1i1.webp",
         name: "FabPro 1i Digital Textile Printer (Made in India)",
         desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality",
       },
       {
-        src: "/FabPro2i1.png",
+        src: "/FabPro2i1.webp",
         name: "FabPro 2i Digital Textile Printer (Made in India)",
         desc: "High-Speed Precision Textile Printing.",
       },
       {
-        src: "/radoimgA1.png",
+        src: "/radoimgA1.webp",
         name: "SubPro S-16 Industrial Sublimation Printer",
         desc: "Designed to Handle Demanding Production with Ease.",
       },
       {
-        src: "/radoimgA2.png",
+        src: "/radoimgA2.webp",
         name: "SubPro II Industrial Dye-Sublimation Printer",
         desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       },
@@ -61,25 +61,25 @@ const brands: BrandItem[] = [
   },
   {
     name: "Homer",
-    image: "/homer.png",
+    image: "/homer.webp",
     previewImage: [
       {
-        src: "/K241.png",
+        src: "/K241.webp",
         name: "K24 Digital Textile Printer",
         desc: "Engineered for Exceptional Precision & Consistent Print Accuracy.",
       },
       {
-        src: "/K321.png",
+        src: "/K321.webp",
         name: "K32 Digital Textile Printer",
         desc: "Delivering Accurate, High-Quality Results Across Every Print Run.",
       },
       {
-        src: "/K641.png",
+        src: "/K641.webp",
         name: "K64 Digital Textile Printer",
         desc: "Advanced Precision for Superior Fabric Print Quality.",
       },
       {
-        src: "/RoketImg1.png",
+        src: "/RoketImg1.webp",
         name: "Rocket Digital Textile Printer",
         desc: "World's Fastest Digital Textile Printer.",
       },
@@ -87,20 +87,20 @@ const brands: BrandItem[] = [
   },
   {
     name: "MS",
-    image: "/ms.png",
+    image: "/ms.webp",
     previewImage: [
       {
-        src: "/JP701.png",
+        src: "/JP701.webp",
         name: "JP7 Industrial Digital Textile Printer",
         desc: "Intelligent Printing for Demanding Production Environments.",
       },
       {
-        src: "/JPK-Evo01.png",
+        src: "/JPK-Evo01.webp",
         name: "JPK Evo Industrial Digital Textile Printer",
         desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
       },
       {
-        src: "/Minilario01.png",
+        src: "/Minilario01.webp",
         name: "Minilario Industrial Digital Textile Printer",
         desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
       },
@@ -108,19 +108,19 @@ const brands: BrandItem[] = [
   },
   {
     name: "Rado",
-    image: "/rado.png",
+    image: "/rado.webp",
     previewImage: [],
     tabs: [
       {
         label: "Foil",
         previewImage: [
           {
-            src: "/radoimg1.png",
+            src: "/radoimg1.webp",
             name: "FoilJet 8 Head Digital Printer",
             desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
           },
           {
-            src: "/radoimg2.png",
+            src: "/radoimg2.webp",
             name: "FoilJet 16 Head Digital Printer",
             desc: "Designed for Large-Scale Printing with Consistent Results.",
           },
@@ -130,22 +130,22 @@ const brands: BrandItem[] = [
         label: "Alpha",
         previewImage: [
           {
-            src: "/radoimgAlpha1.png",
+            src: "/radoimgAlpha1.webp",
             name: "Alpha II Industrial Sublimation Printer",
             desc: "Built for Continuous Production and Exceptional Transfer Quality.",
           },
           {
-            src: "/radoimgAlpha2.png",
+            src: "/radoimgAlpha2.webp",
             name: "Alpha III Industrial Sublimation Printer",
             desc: "Built for Maximum Output and Uninterrupted Production.",
           },
           {
-            src: "/radoimgAlpha3.png",
+            src: "/radoimgAlpha3.webp",
             name: "Alpha 15 Industrial Sublimation Printer",
             desc: "Built for Ultra-High Production and Industrial-Grade Performance.",
           },
           {
-            src: "/radoimgAlpha4.png",
+            src: "/radoimgAlpha4.webp",
             name: "Alpha 16 Industrial Sublimation Printer",
             desc: "Combining Power, Precision, and Production Efficiency.",
           },
@@ -155,12 +155,12 @@ const brands: BrandItem[] = [
       //   label: "Sub Pro",
       //   previewImage: [
       //     {
-      //       src: "/radoimgA1.png",
+      //       src: "/radoimgA1.webp",
       //       name: "SubPro S-16 Industrial Sublimation Printer",
       //       desc: "Designed to Handle Demanding Production with Ease.",
       //     },
       //     {
-      //       src: "/radoimgA2.png",
+      //       src: "/radoimgA2.webp",
       //       name: "SubPro II Industrial Dye-Sublimation Printer",
       //       desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       //     },
@@ -170,10 +170,10 @@ const brands: BrandItem[] = [
   },
   {
     name: "Pengda",
-    image: "/pengda.png",
+    image: "/pengda.webp",
     previewImage: [
       {
-        src: "/Pengda1.png",
+        src: "/Pengda1.webp",
         name: "Pengda Industrial Sublimation Machine",
         desc: "Delivering Reliable Performance for High-Volume Textile Applications.",
       },
@@ -181,15 +181,15 @@ const brands: BrandItem[] = [
   },
   {
     name: "MAS",
-    image: "/MAS.png",
+    image: "/MAS.webp",
     previewImage: [
       {
-        src: "/MAS2.png",
+        src: "/MAS2.webp",
         name: "MAS Vertical",
         desc: "Smarter Way to Print Double-Sided Fabrics.",
       },
       {
-        src: "/MAS1.png",
+        src: "/MAS1.webp",
         name: "MAS Twelve",
         desc: "Designed for Continuous Industrial Production.",
       },

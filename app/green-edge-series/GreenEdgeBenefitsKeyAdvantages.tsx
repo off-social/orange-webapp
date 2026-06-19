@@ -4,32 +4,32 @@ const innerPad = { xs: "0", lg: "0 188px" };
 
 const ADVANTAGES = [
   {
-    img: "/WaterlessPrinting.png",
+    img: "/WaterlessPrinting.webp",
     title: "Waterless Printing",
     desc: "No washing, no steaming, saves up to 98% water.",
   },
   {
-    img: "/High-SpeedProduction.png",
+    img: "/High-SpeedProduction.webp",
     title: "High-Speed Production",
     desc: "Compatible with machines that print 60,000+ LM/day.",
   },
   {
-    img: "/Eco-Friendly.png",
+    img: "/Eco-Friendly.webp",
     title: "Eco-Friendly",
     desc: "Minimal chemical discharge, lower carbon footprint.",
   },
   {
-    img: "/Sharp-VibrantPrints.png",
+    img: "/Sharp-VibrantPrints.webp",
     title: "Sharp, Vibrant Prints",
     desc: "Ink sits on top of fabric for superior color payoff.",
   },
   {
-    img: "/One-StepProcess.png",
+    img: "/One-StepProcess.webp",
     title: "One-Step Process",
     desc: "Reduces steps, time, labor, and energy usage.",
   },
   {
-    img: "/LowMaintenance.png",
+    img: "/LowMaintenance.webp",
     title: "Low Maintenance",
     desc: "Fewer machine cleaning cycles and stable ink system.",
   },

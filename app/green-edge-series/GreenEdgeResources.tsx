@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 const RESOURCES = [
   {
-    img: "/ProductBrochure.png",
+    img: "/ProductBrochure.webp",
     title: "Product Brochure",
     desc: "Full specs, configurations, and print quality details for the Position Pro.",
     btnLabel: "Download Brochure",

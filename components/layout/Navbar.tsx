@@ -138,7 +138,7 @@ export default function Navbar() {
             }}
           >
             <Image
-              src="/ORANGE-LOGO.png"
+              src="/ORANGE-LOGO.webp"
               alt="Orange"
               width={140}
               height={35}

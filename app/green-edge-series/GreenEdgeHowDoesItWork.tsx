@@ -5,22 +5,22 @@ import { useEffect, useRef, useState } from "react";
 
 const STEPS = [
   {
-    num: "/Number1.png",
+    num: "/Number1.webp",
     title: "Print",
     desc: "Pigment ink is digitally applied onto the fabric with precision and accuracy.",
   },
   {
-    num: "/Number2.png",
+    num: "/Number2.webp",
     title: "Bond",
     desc: "Advanced binder technology anchors the pigment particles to the fabric surface.",
   },
   {
-    num: "/Number3.png",
+    num: "/Number3.webp",
     title: "Cure",
     desc: "Heat fixation ensures durability, color fastness, and long-lasting performance.",
   },
   {
-    num: "/Number4.png",
+    num: "/Number4.webp",
     title: "Deliver",
     desc: "The finished fabric is ready with fewer processing stages and faster turnaround times.",
   },
@@ -182,7 +182,7 @@ export default function GreenEdgeHowDoesItWork() {
             alignSelf: "center",
             flexShrink: 0,
             background:
-              "url('/HowDoesItWork.png') lightgray 50% / cover no-repeat",
+              "url('/HowDoesItWork.webp') lightgray 50% / cover no-repeat",
           }}
         />
       </Box>

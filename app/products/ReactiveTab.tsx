@@ -18,7 +18,7 @@ const ReactiveTab = () => {
     >
       {/* Image */}
       <Image
-        src="/reactive.png"
+        src="/reactive.webp"
         alt="reactive"
         width={1000}
         height={1000}

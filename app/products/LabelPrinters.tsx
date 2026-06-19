@@ -9,7 +9,7 @@ import { useConsultation } from "@/data/ConsultationContext";
 
 const products = [
   {
-    src: "/LabelPrinters.png",
+    src: "/LabelPrinters.webp",
     name: "Jetrix-E Industrial Digital Label Printer",
     desc: "Delivering Precision, Flexibility, and Consistent Output.",
   },

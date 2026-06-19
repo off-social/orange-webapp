@@ -16,37 +16,37 @@ const SERVICE_CARDS = [
   {
     title: "Service Turnaround Promise",
     desc: "We aim to resolve service requests fast: 72-hour on-site repairs in most areas and same-day remote support.",
-    img: "/Illustration.png",
+    img: "/Illustration.webp",
   },
   {
     title: "Installation & Setup",
     desc: "Every machine includes full professional installation and calibration by our engineers. We ensure your team is up and running with zero hassle and maximum precision.",
-    img: "/Installation-Setup.png",
+    img: "/Installation-Setup.webp",
   },
   {
     title: "Breakdown & On-Site Repairs",
     desc: "Unexpected issues? We’ve got you covered. Our trained engineers are deployed from key service hubs to ensure swift on-site support anywhere in India",
-    img: "/Breakdown-On-Site-Repairs.png",
+    img: "/Breakdown-On-Site-Repairs.webp",
   },
   {
     title: "Preventive Maintenance",
     desc: "Regular maintenance means fewer breakdowns and longer machine life. Our team offers scheduled preventive visits to help you avoid costly downtime and maintain consistent output quality.",
-    img: "/Preventive-Maintenance.png",
+    img: "/Preventive-Maintenance.webp",
   },
   {
     title: "Remote Troubleshooting",
     desc: "Minor issue or quick fix? Get connected to our technical team via phone, WhatsApp, or video call. Most software and operational queries are resolved remotely within hours.",
-    img: "/RemoteTroubleshooting.png",
+    img: "/RemoteTroubleshooting.webp",
   },
   {
     title: "Operator Training",
     desc: "New operator? Scaling your team? We offer on-site and virtual training to help your team operate machines efficiently, reduce errors, and follow safety best practices.",
-    img: "/OperatorTraining.png",
+    img: "/OperatorTraining.webp",
   },
   {
     title: "Spare Parts & Consumables",
     desc: "We maintain ready stock of critical spares and consumables across our warehouses, ensuring fast dispatch and reduced machine downtime. Print heads | Inks & filters | Control modules | Belt systems and rollers",
-    img: "/SpareParts.png",
+    img: "/SpareParts.webp",
   },
 ];
 

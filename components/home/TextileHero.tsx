@@ -22,12 +22,12 @@ const TextileHero = () => {
     >
       {/* Mobile background image */}
       <Box sx={{ display: { xs: "block", md: "none" }, position: "absolute", inset: 0 }}>
-        <Image src="/mobileimg01.png" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
+        <Image src="/mobileimg01.webp" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
       </Box>
 
       {/* Desktop background image */}
       <Box sx={{ display: { xs: "none", md: "block" }, position: "absolute", inset: 0 }}>
-        <Image src="/bgimg.png" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
+        <Image src="/bgimg.webp" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
       </Box>
 
       {/* Mobile: dark blurred circle — right side */}

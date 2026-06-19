@@ -103,7 +103,7 @@ export default function GreenEdgeWhatIsIt() {
       {/* Image */}
       <Box
         component="img"
-        src="/DigitalPigmentInk.png"
+        src="/DigitalPigmentInk.webp"
         alt="Digital Pigment Ink printing machine"
         sx={{
           display: "block",

@@ -3,8 +3,8 @@
   "name": "FoilJet 16 Head",
   "tagline": "Wide-Format High-Precision Digital Foil and Sublimation Mesh Belt Printer",
   "heroImage": {
-    "desktop": "/radoimg2.png",
-    "mobile": "/radoimg2.png"
+    "desktop": "/radoimg2.webp",
+    "mobile": "/radoimg2.webp"
   },
   "sidebar": {
     "bullets": [
@@ -101,37 +101,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Wide-Format Fashion Fabric Foil Printing",
         "desc": "Precise digital foil adhesive printing across full 3200 mm width for sarees, dress materials, and fashion fabrics where wide repeats, border designs, or full-width foil effects are required."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Ethnic and Bridal Wear Production at Scale",
         "desc": "High-resolution foil placement across wide fabric runs for lehenga, dupatta, sherwani, and bridal fabric manufacturers producing large collections with intricate wide-repeat foil pattern detailing."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Large-Format Home Textile Foil Effects",
         "desc": "Foil and specialty effect printing on wide-format cushion covers, curtains, table linen, and decorative home textiles for premium retail, export, and gifting markets."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Wide-Format Sublimation Production",
         "desc": "High-speed sublimation printing across 3200 mm on polyester performance fabrics, sportswear, and wide-format soft furnishing textiles requiring vibrant, wash-fast colour output at scale."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Flag, Banner, and Wide-Format Soft Signage",
         "desc": "3200 mm print width and foil plus sublimation compatibility make the FoilJet 16 Head well suited to wide-format flags, banners, exhibition textiles, and retail soft signage applications."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Custom and Designer Wide-Format Textiles",
         "desc": "Wide-format foil and sublimation output for boutique fashion brands, textile designers, and sampling studios working with wide repeat patterns or large-format design elements."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Transfer Paper and Specialty Media Printing",
         "desc": "Dual media compatibility enables wide-format sublimation transfer paper printing alongside direct fabric output, serving manufacturers who operate both workflows from a single machine."
       }
@@ -194,7 +194,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, wide-format foil workflow details, media compatibility overview, ink system description, and installation requirements for the FoilJet 16 Head.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

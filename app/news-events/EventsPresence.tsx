@@ -15,7 +15,7 @@ const TABS = [
 
 const ALL_EVENTS = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
-  img: "/blogImg1.png",
+  img: "/blogImg1.webp",
   title: "Orange O Tec at Gartex India 2025",
   location: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
   isBlog: i === 3,

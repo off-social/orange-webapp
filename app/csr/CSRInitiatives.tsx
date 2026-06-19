@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const initiatives = [
   {
-    img: "/SpreadingSmilesThroughGiving.png",
+    img: "/SpreadingSmilesThroughGiving.webp",
     imgLeft: true,
     title: "Spreading Smiles Through Giving",
     paragraphs: [
@@ -13,7 +13,7 @@ const initiatives = [
     ],
   },
   {
-    img: "/PromotingGoodHealthWell-Being.png",
+    img: "/PromotingGoodHealthWell-Being.webp",
     imgLeft: false,
     title: "Promoting Good Health and Well-Being",
     paragraphs: [

@@ -3,8 +3,8 @@
   "name": "Alpha 16",
   "tagline": "High-Speed Industrial Sublimation Transfer Printer",
   "heroImage": {
-    "desktop": "/radoimgAlpha4.png",
-    "mobile": "/radoimgAlpha4.png"
+    "desktop": "/radoimgAlpha4.webp",
+    "mobile": "/radoimgAlpha4.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,37 +102,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Maximum-Volume Sublimation Transfer Paper Production",
         "desc": "The highest-output Alpha series sublimation printer for manufacturers supplying very large volumes of printed transfer paper to heat press operations across polyester garment and fashion fabric markets."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Polyester Fashion Fabric Printing",
         "desc": "Direct sublimation output on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations where daily output volume and colour consistency are the primary business requirements."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Production at Industrial Scale",
         "desc": "High-speed sublimation on polyester performance fabrics for major sportswear brands, gym wear producers, and activewear exporters running continuous large-volume order pipelines."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Industrial Home Textile Sublimation Production",
         "desc": "Very high-capacity sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for large domestic and export home textile markets."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Round-the-Clock Multi-Shift Operations",
         "desc": "Maglev carriage, THK silent dual rail, 3,000-metre roll support, and 25-litre bulk ink supply are designed specifically for facilities running 24-hour multi-shift continuous production schedules."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Large Job Work and Multi-Buyer Sublimation Units",
         "desc": "Highest daily output in the Alpha range combined with stable multi-hour operation makes the Alpha 16 the top choice for large job work printers managing high-volume diverse client order portfolios."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Apparel, Home Decor, and Promotional Fabric Production",
         "desc": "Versatile sublimation capability across transfer paper and direct polyester fabric substrates suits manufacturers serving multiple end markets from a single production platform."
       }
@@ -197,7 +197,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, head configuration details, drying system overview, media handling description, and installation requirements for the Alpha 16.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

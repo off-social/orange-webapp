@@ -12,7 +12,7 @@ type Product = { src: string; name: string; desc: string };
 
 const PRODUCTS: Product[] = [
   {
-    src: "/Label1.png",
+    src: "/Label1.webp",
     name: "Jetrix-E Industrial Digital Label Printer",
     desc: "Delivering Precision, Flexibility, and Consistent Output.",
   },

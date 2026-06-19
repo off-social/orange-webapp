@@ -168,7 +168,7 @@ export default function CareerHero() {
         }}
       >
         <Image
-          src="/CareerMobile.png"
+          src="/CareerMobile.webp"
           alt="Career at Orange O Tec"
           width={393}
           height={141}
@@ -194,7 +194,7 @@ export default function CareerHero() {
         }}
       >
         <Image
-          src="/Career.png"
+          src="/Career.webp"
           alt="Career at Orange O Tec"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

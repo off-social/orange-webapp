@@ -3,8 +3,8 @@
   "name": "JP7",
   "tagline": "High-Speed Digital Textile and Paper Printer",
   "heroImage": {
-    "desktop": "/JP701.png",
-    "mobile": "/JP701.png"
+    "desktop": "/JP701.webp",
+    "mobile": "/JP701.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,32 +102,32 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Fashion Textile Production",
         "desc": "Reactive and disperse printing on a wide range of woven and knit fabrics for fashion garment manufacturers producing sarees, dress materials, kurtis, and casualwear."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Sportswear and Activewear Printing",
         "desc": "High-quality disperse printing on polyester stretch and performance fabrics for sportswear brands, gym wear manufacturers, and activewear exporters."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Transfer Paper Printing",
         "desc": "Dual media compatibility makes the JP7 equally suited to sublimation transfer paper printing for manufacturers who service both direct fabric and transfer paper workflows."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Home Textile and Soft Furnishing Production",
         "desc": "Reactive and pigment printing on cotton and blended fabrics for bedding, cushion covers, curtains, and decorative home textile products."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Accessories and Small-Format Textile Goods",
         "desc": "Precise output and stable media handling make the JP7 well suited to scarves, stoles, bags, and other narrow-format or shorter-run accessory textile applications."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Sustainable and Export-Focused Operations",
         "desc": "ACIMIT Green Label certification supports manufacturers serving European and international buyers with documented sustainability and resource efficiency requirements."
       }
@@ -189,7 +189,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, media compatibility details, ink system overview, and installation requirements for the JP7.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

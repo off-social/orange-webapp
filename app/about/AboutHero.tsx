@@ -8,7 +8,7 @@ export default function AboutHero() {
   return (
     <Box sx={{ position: "relative", width: "100%", lineHeight: 0 }}>
       <Image
-        src="/About-us.png"
+        src="/About-us.webp"
         alt="Leading the Future of Textile Printing"
         width={1440}
         height={600}

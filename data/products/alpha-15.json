@@ -3,8 +3,8 @@
   "name": "Alpha 15",
   "tagline": "High-Speed Industrial Sublimation Transfer Printer",
   "heroImage": {
-    "desktop": "/radoimgAlpha3.png",
-    "mobile": "/radoimgAlpha3.png"
+    "desktop": "/radoimgAlpha3.webp",
+    "mobile": "/radoimgAlpha3.webp"
   },
   "sidebar": {
     "bullets": [
@@ -99,32 +99,32 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "High-Volume Sublimation Transfer Paper Production",
         "desc": "Fast, consistent sublimation on transfer paper for manufacturers supplying large volumes of printed paper to heat press operations serving polyester garment and fashion fabric markets."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Polyester Fashion Fabric Printing",
         "desc": "Direct sublimation output on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations requiring high daily output with vibrant, consistent colour reproduction."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Sublimation at Scale",
         "desc": "High-speed sublimation on polyester performance fabrics for sportswear brands, gym wear producers, and activewear exporters managing continuous large-volume order pipelines."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Industrial Home Textile Production",
         "desc": "High-capacity sublimation on polyester curtains, cushion covers, upholstery, and decorative soft furnishings for domestic and export home textile markets requiring reliable, repeatable quality."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Multi-Shift Sublimation Operations",
         "desc": "Maglev linear motor, servo-drive media handling, sealed enclosure, and automated cleaning make the Alpha 15 well suited to facilities operating continuous multi-shift production schedules."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Large Job Work and Multi-Buyer Operations",
         "desc": "High daily output and broad RIP software compatibility make the Alpha 15 a flexible choice for large job work printers managing diverse clients with varying design requirements and media types."
       }
@@ -181,7 +181,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, head layout details, drying system overview, media handling description, and installation requirements for the Alpha 15.",
-      "coverImage": "/ProductBrochure.png",
+      "coverImage": "/ProductBrochure.webp",
       "brochureUrl": "/brochures/Alpha-15.pdf"
     }
   },

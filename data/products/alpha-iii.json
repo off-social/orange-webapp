@@ -3,8 +3,8 @@
   "name": "Alpha III",
   "tagline": "Ultra High-Speed Industrial Sublimation Transfer Printer",
   "heroImage": {
-    "desktop": "/radoimgAlpha2.png",
-    "mobile": "/radoimgAlpha2.png"
+    "desktop": "/radoimgAlpha2.webp",
+    "mobile": "/radoimgAlpha2.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,32 +102,32 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Ultra High-Volume Sublimation Transfer Paper Production",
         "desc": "The highest-output Alpha series machine for manufacturers supplying very large volumes of sublimation transfer paper to heat press operations across polyester garment and fabric production at scale."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Polyester Fashion Fabric Printing",
         "desc": "High-speed direct sublimation on polyester sarees, dress materials, and fashion fabrics for wholesale and export operations requiring maximum daily output with consistent colour repeatability."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Production at Scale",
         "desc": "Large-volume sublimation on polyester performance fabrics for major sportswear brands, gym wear manufacturers, and activewear exporters with continuous high-volume order pipelines."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Industrial Home Textile Sublimation Production",
         "desc": "High-capacity sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for large domestic and export home textile markets."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "24/7 Multi-Shift Sublimation Operations",
         "desc": "Direct drive linear motor, servo-controlled media handling, and jumbo roll support make the Alpha III purpose-built for facilities running continuous round-the-clock production schedules."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Large Job Work and Multi-Buyer Sublimation Units",
         "desc": "Very high daily output across 1-pass and 2-pass modes makes the Alpha III the preferred choice for large job work sublimation printers managing high-volume, diverse client order portfolios."
       }
@@ -192,7 +192,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, pass mode details, motor system overview, ink supply description, and installation requirements for the Alpha III.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const POINTS = [
-  { label: "High-speed textile production", icon: "/rocket-01.png" },
-  { label: "Improved production efficiency", icon: "/chart-increase.png" },
+  { label: "High-speed textile production", icon: "/rocket-01.webp" },
+  { label: "Improved production efficiency", icon: "/chart-increase.webp" },
   { label: "On-demand design printing", icon: "/printer-3d.svg" },
-  { label: "Consistent print quality", icon: "/tick-double-01.png" },
-  { label: "Lower operational waste", icon: "/waste-restore.png" },
-  { label: "Reduced setup time", icon: "/time-quarter-pass.png" },
+  { label: "Consistent print quality", icon: "/tick-double-01.webp" },
+  { label: "Lower operational waste", icon: "/waste-restore.webp" },
+  { label: "Reduced setup time", icon: "/time-quarter-pass.webp" },
 ];
 
 const TextContent = ({ sm }: { sm?: boolean }) => (
@@ -156,7 +156,7 @@ const ThePowerOfOrange = () => {
         {/* Machine image */}
         <Box sx={{ width: "100%", aspectRatio: "361 / 187", position: "relative", mt: "40px" }}>
           <Image
-            src="/theorngeimg1.png"
+            src="/theorngeimg1.webp"
             alt="The Power of Orange"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
@@ -213,7 +213,7 @@ const ThePowerOfOrange = () => {
           bgcolor: "#fff",
         }}
       >
-        <Image src="/thePowerofOrange1.png" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
+        <Image src="/thePowerofOrange1.webp" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 70%)", pointerEvents: "none" }} />
         <Box sx={{ position: "relative", width: { md: "58%", lg: "52%" }, display: "flex", flexDirection: "column", py: { md: "48px", lg: "80px" }, pl: { md: "40px", lg: "168px" }, pr: { md: "24px", lg: "32px" } }}>
           <TextContent />

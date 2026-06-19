@@ -58,7 +58,7 @@ export default function GreenEdgePigmentInk() {
 
         <Box
           component="img"
-          src="/PigmentInk.png"
+          src="/PigmentInk.webp"
           alt="Pigment Ink with Binder Technology diagram"
           sx={{
             alignSelf: "stretch",

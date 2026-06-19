@@ -4,10 +4,10 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 const leaders = [
-  { img: "/AyushRathi.png", name: "Ayush Rathi", role: "Director" },
-  { img: "/KaranToshniwal.png", name: "Karan Toshniwal", role: "Director" },
-  { img: "/NakuleshwarSharma.png", name: "Nakuleshwar Sharma", role: "Director – Sales" },
-  { img: "/ManmohanTotla.png", name: "Manmohan Totla", role: "Director – Sales" },
+  { img: "/AyushRathi.webp", name: "Ayush Rathi", role: "Director" },
+  { img: "/KaranToshniwal.webp", name: "Karan Toshniwal", role: "Director" },
+  { img: "/NakuleshwarSharma.webp", name: "Nakuleshwar Sharma", role: "Director – Sales" },
+  { img: "/ManmohanTotla.webp", name: "Manmohan Totla", role: "Director – Sales" },
 ];
 
 export default function Leadership() {

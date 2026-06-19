@@ -104,7 +104,7 @@ const TheFutureofDigitalPrinting = () => {
         {/* ── MOBILE: everything overlaid on image ── */}
         <div className="relative block md:hidden">
           <Image
-            src="/digitalPrintingMobile.png"
+            src="/digitalPrintingMobile.webp"
             alt="The Future of Digital Printing"
             width={800}
             height={1000}
@@ -165,7 +165,7 @@ const TheFutureofDigitalPrinting = () => {
           {/* Image — sits flush under the description (Figma gap = 0), Figma banner ratio 1440x463 */}
           <div style={{ marginTop: "0px" }}>
             <Image
-              src="/buildingFutureBanner.png"
+              src="/buildingFutureBanner.webp"
               alt="The Future of Digital Printing"
               width={1440}
               height={463}
@@ -236,7 +236,7 @@ const TheFutureofDigitalPrinting = () => {
         <div className="flex-1 w-full flex items-end justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/world-map1.png"
+            src="/world-map1.webp"
             alt="World Presence Map"
             style={{ width: "100%", height: "auto", display: "block" }}
           />

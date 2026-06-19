@@ -3,8 +3,8 @@
   "name": "MAS Vertical",
   "tagline": "Synchronized Double-Sided Digital Textile Printer",
   "heroImage": {
-    "desktop": "/MAS2.png",
-    "mobile": "/MAS2.png"
+    "desktop": "/MAS2.webp",
+    "mobile": "/MAS2.webp"
   },
   "sidebar": {
     "bullets": [
@@ -105,32 +105,32 @@
     "description": "Built for value-added, design-driven textile production where synchronized double-sided printing, perfect registration, and digital yarn-dye replication unlock new possibilities.",
     "fabrics": [
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Yarn-Dyed Shirting Production",
         "desc": "Digital yarn-dye replication eliminates the long lead times of traditional yarn dyeing, allowing shirting fabric manufacturers to produce authentic-looking yarn-dye patterns in days instead of months."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Denim Manufacturing",
         "desc": "Synchronized double-sided printing enables true reversible denim and complex face-and-back colour effects that conventional single-side printers cannot replicate, opening new design possibilities for denim mills."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "High Fashion and Accessories",
         "desc": "Two-colorway and dual-design capability on a single fabric pass gives fashion brands and accessory manufacturers the flexibility to create reversible garments and dual-pattern accessories from one production run."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Technical Textiles",
         "desc": "Print width flexibility from 900 mm to 1850 mm combined with industrial drying capacity suits technical textile producers requiring precise, dual-sided functional or pattern printing."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Sustainable Supply Chain Production",
         "desc": "Collapsing production lead times from months to days while reducing waste makes the Vertical the preferred choice for brands and mills prioritising environmental impact reduction and faster market response."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Reversible and Dual-Design Garment Manufacturing",
         "desc": "Manufacturers producing reversible jackets, scarves, and dual-faced garments benefit directly from perfect front-to-back registration without the cost and complexity of running fabric through a printer twice."
       }
@@ -148,38 +148,38 @@
   "globalComponents": {
     "description": "Built using premium global components engineered for synchronized dual-side operation, complete drying, and stable continuous production.",
     "largeCard": {
-      "icon": "/Kyocera.png",
+      "icon": "/Kyocera.webp",
       "title": "Kyocera KJ4B (Japan)",
       "desc": "Dual-carriage 600 dpi printheads enabling synchronized double-sided printing with perfect front-to-back registration"
     },
     "smallCards": [
       {
-        "icon": "/Vision-System.png",
+        "icon": "/Vision-System.webp",
         "title": "Built-In Image Processor",
         "desc": "Integrated onboard processing engine managing real-time dual-side design synchronization"
       },
       {
-        "icon": "/Color-Management.png",
+        "icon": "/Color-Management.webp",
         "title": "Dual-Zone Drying System",
         "desc": "Rear IR panel (9 kW) and dual-side forced air heater (18 kW) for complete, even drying across both fabric faces"
       },
       {
-        "icon": "/Drive-System.png",
+        "icon": "/Drive-System.webp",
         "title": "Industrial Power System",
         "desc": "400V triphase supply with 44 kW total installed power for stable dual-engine operation under continuous production"
       },
       {
-        "icon": "/Ink-System.png",
+        "icon": "/Ink-System.webp",
         "title": "Pneumatic Control System",
         "desc": "6 bar pressure system with up to 20 L/min compressed air consumption supporting precise mechanical operation"
       },
       {
-        "icon": "/Drive-System.png",
+        "icon": "/Drive-System.webp",
         "title": "Optional Sewing Machine Module",
         "desc": "Inline integration enabling continuous printing-to-seaming production workflow"
       },
       {
-        "icon": "/Vision-System.png",
+        "icon": "/Vision-System.webp",
         "title": "Optional Centering Device",
         "desc": "Automated fabric alignment system maintaining registration accuracy across varying fabric widths"
       }

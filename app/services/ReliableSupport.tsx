@@ -120,10 +120,12 @@ export default function ReliableSupport() {
       >
         <video
           src="/ProductAndServiceVideo.mp4"
+          poster="/ProductAndServiceVideo-poster.webp"
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
       </Box>

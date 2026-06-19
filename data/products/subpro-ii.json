@@ -3,8 +3,8 @@
   "name": "SubPro II",
   "tagline": "High-Speed Industrial Roll-to-Roll Dye Sublimation Printer",
   "heroImage": {
-    "desktop": "/radoimgA2.png",
-    "mobile": "/radoimgA2.png"
+    "desktop": "/radoimgA2.webp",
+    "mobile": "/radoimgA2.webp"
   },
   "sidebar": {
     "bullets": [
@@ -104,37 +104,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "High-Volume Sublimation Transfer Paper Production",
         "desc": "Fast 1-pass output at up to 7,100 lm/day makes the SubPro II one of the most cost-efficient choices for manufacturers supplying large volumes of printed paper to heat press operations at scale."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Cost-Optimised Polyester Fashion Fabric Printing",
         "desc": "Ultra-thin paper compatibility reduces media cost per metre, making the SubPro II the preferred choice for price-sensitive wholesale polyester fabric producers competing on output cost efficiency."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear with Extended Colour Gamut",
         "desc": "Fluorescent and extended colour channel support makes the SubPro II especially well suited to sportswear brands, swim wear manufacturers, and activewear producers requiring vivid fluorescent output."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Large-Scale Polyester Home Textile Production",
         "desc": "High-capacity sublimation on polyester curtains, cushion covers, upholstery, and decorative soft furnishings for domestic and export home textile markets requiring reliable daily output."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Job Work and Multi-Buyer Sublimation Operations",
         "desc": "High throughput, flexible colour configuration, and low media cost make the SubPro II a strong choice for large job work printers managing diverse clients with varying colour and volume requirements."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Space-Constrained Industrial Production Facilities",
         "desc": "Compact 4,500 mm x 4,500 mm site footprint makes the SubPro II suitable for manufacturers who need industrial output capacity without dedicating large floor space to a single machine."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Promotional and Custom Polyester Printing",
         "desc": "Fast setup, versatile colour options, and jumbo roll support suit custom polyester printing for corporate branding, event merchandise, and promotional textile production at volume."
       }
@@ -192,7 +192,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, channel configuration options, colour system details, media compatibility overview, and installation requirements for the SubPro II.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

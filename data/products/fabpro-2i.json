@@ -3,8 +3,8 @@
   "name": "FabPro 2i",
   "tagline": "High-Speed Direct-to-Fabric Industrial Printer",
   "heroImage": {
-    "desktop": "/FabPro2i1.png",
-    "mobile": "/FabPro2i1.png"
+    "desktop": "/FabPro2i1.webp",
+    "mobile": "/FabPro2i1.webp"
   },
   "sidebar": {
     "bullets": [
@@ -101,37 +101,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Large-Scale Fashion Textile Production",
         "desc": "High-volume disperse printing on polyester sarees, dress materials, and fashion fabrics for wholesale and export markets demanding fast turnaround on large orders."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Export Garment Manufacturing",
         "desc": "Reactive printing on cotton at scale, delivering ISO 4-5 wash fastness required by European and US buyers across continuous high-volume production runs."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Home Textile Manufacturing",
         "desc": "Bedding, curtains, cushion covers, and upholstery across cotton and polyester substrates, all handled on a single machine with the capacity to serve multiple buyers simultaneously."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Jacquard and Textured Fabrics",
         "desc": "High-resolution pattern printing on complex woven and jacquard structures for fashion and home furnishing applications."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Silk and Luxury Fabrics (Double-Sided)",
         "desc": "Precision acid ink printing on silk and premium fabrics for boutique fashion brands, saree manufacturers, and luxury apparel producers."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Custom and Hi-End Production",
         "desc": "Export fashion, European and international home textile buyers requiring consistent large-batch quality with tight colour repeatability across orders."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Job Work and Multi-Buyer Operations",
         "desc": "Serve multiple brands, exporters, and buyers simultaneously with the speed and capacity to handle diverse fabric types and design volumes without production bottlenecks."
       }
@@ -188,7 +188,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, engineering details, installation requirements, and component overview for the FabPro 2i.",
-      "coverImage": "/ProductBrochure.png",
+      "coverImage": "/ProductBrochure.webp",
       "brochureUrl": "/brochures/FabPro-2i.pdf"
     }
   },

@@ -32,7 +32,7 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     brand: "Colorix",
-    image: "/FabPro1i.png",
+    image: "/FabPro1i.webp",
     alt: "FabPro 1i",
     name: "FabPro 1i",
     description:
@@ -46,7 +46,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Colorix",
-    image: "/fabPro2i.png",
+    image: "/fabPro2i.webp",
     alt: "FabPro 2i",
     name: "FabPro 2i",
     description:
@@ -60,7 +60,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Homer",
-    image: "/k42.png",
+    image: "/k42.webp",
     alt: "K24",
     name: "K24",
     description:
@@ -74,7 +74,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Homer",
-    image: "/k62.png",
+    image: "/k62.webp",
     alt: "K64",
     name: "K64",
     description:
@@ -94,7 +94,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Homer",
-    image: "/k32.png",
+    image: "/k32.webp",
     alt: "K32",
     name: "K32",
     description:
@@ -111,7 +111,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Homer",
-    image: "/RoketImg.png",
+    image: "/RoketImg.webp",
     alt: "Rocket",
     name: "Rocket",
     description:

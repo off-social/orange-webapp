@@ -13,10 +13,10 @@ type Brand = { name: string; logo: string; products: Product[] };
 const BRANDS: Brand[] = [
   {
     name: "FOUND",
-    logo: "/Found1.png",
+    logo: "/Found1.webp",
     products: [
       {
-        src: "/FOUNDM1.png",
+        src: "/FOUNDM1.webp",
         name: "FOUND Textile Processing Range",
         desc: "Pretreatment, Washing, and Finishing Machinery for Knit and Woven Fabrics.",
       },

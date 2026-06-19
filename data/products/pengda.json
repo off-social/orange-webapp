@@ -3,8 +3,8 @@
   "name": "Pengda 1000DIA",
   "tagline": "High-Speed Industrial Oil-Heated Rotary Sublimation Transfer Machine",
   "heroImage": {
-    "desktop": "/Pengda1.png",
-    "mobile": "/Pengda1.png"
+    "desktop": "/Pengda1.webp",
+    "mobile": "/Pengda1.webp"
   },
   "sidebar": {
     "bullets": [
@@ -104,32 +104,32 @@
     "description": "Perfectly suited for a wide range of sublimation finishing applications, delivering consistent transfer quality, vibrant colour, and production efficiency across polyester fabrics.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Sublimation Transfer Finishing for SubPro and Alpha Series Users",
         "desc": "The natural downstream partner for any SubPro or Alpha series sublimation printer, completing the transfer workflow from printed paper to finished fabric at matched industrial output speeds."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "High-Volume Polyester Fashion Fabric Finishing",
         "desc": "Roll-to-roll transfer at up to 600 m/hr suits manufacturers producing large volumes of polyester sarees, dress materials, and fashion fabrics who need calender capacity to match sublimation printer output."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Piece Transfer",
         "desc": "Pre-cut piece table and adjustable pressure settings make the Pengda well suited to garment manufacturers transferring sublimation designs onto individual cut polyester components before assembly."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Home Textile and Soft Furnishing Production",
         "desc": "High-speed roll-to-roll transfer on polyester curtains, cushion cover fabric, upholstery, and decorative furnishing textiles for manufacturers integrating calender finishing into their production line."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Job Work Calender Services",
         "desc": "Manufacturers offering calender finishing as a service to sublimation printers and garment producers who outsource transfer fusing to dedicated calender operations."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Integrated Production Lines",
         "desc": "Roll-to-roll and piece transfer modes in one machine make the Pengda the most versatile calender option for integrated facilities printing, transferring, and finishing polyester textiles under one roof."
       }
@@ -187,7 +187,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, drum configuration details, heating system overview, transfer mode descriptions, and installation requirements for the Pengda 1000DIA.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

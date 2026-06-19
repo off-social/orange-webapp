@@ -24,7 +24,7 @@ const MeetRocketBuiltProduction = () => {
           px: "24px",
           pt: "64px",
           pb: "64px",
-          backgroundImage: "url('/newRocketMobile.png')",
+          backgroundImage: "url('/newRocketMobile.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           width: "100%",
@@ -167,7 +167,7 @@ const MeetRocketBuiltProduction = () => {
           }}
         >
           <Image
-            src="/newRocket.png"
+            src="/newRocket.webp"
             alt="Meet Rocket"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}

@@ -1,18 +1,22 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { ChevronLeft, ChevronRight, PlayArrow } from "@mui/icons-material";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const videos = [
-  "https://www.youtube.com/embed/lNr9r16VmJ8",
-  "https://www.youtube.com/embed/lNr9r16VmJ8",
-  "https://www.youtube.com/embed/lNr9r16VmJ8",
-  "https://www.youtube.com/embed/lNr9r16VmJ8",
+// YouTube video IDs. The player iframe is only loaded after the user clicks
+// (click-to-play facade) so the homepage stays light on mobile/iOS — otherwise
+// every embed eagerly downloads ~1MB+ of YouTube player JS on first paint.
+const videoIds = [
+  "lNr9r16VmJ8",
+  "lNr9r16VmJ8",
+  "lNr9r16VmJ8",
+  "lNr9r16VmJ8",
 ];
 
 const ScrollVideos = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [playing, setPlaying] = useState<number | null>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -111,23 +115,52 @@ const ScrollVideos = () => {
             w-full
           "
         >
-          {videos.map((src, index) => (
+          {videoIds.map((id, index) => (
             <div
               key={index}
               className="
                 min-w-[260px] sm:min-w-[300px] lg:min-w-[352px]
                 flex-shrink-0 rounded-xl overflow-hidden aspect-video shadow-sm
+                relative bg-black
               "
             >
-              <iframe
-                src={src}
-                width="100%"
-                height="100%"
-                title={`video-${index}`}
-                frameBorder="0"
-                allowFullScreen
-                style={{ border: 0, display: "block" }}
-              />
+              {playing === index ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
+                  width="100%"
+                  height="100%"
+                  title={`video-${index}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ border: 0, display: "block" }}
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setPlaying(index)}
+                  aria-label="Play video"
+                  className="absolute inset-0 w-full h-full cursor-pointer group"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element -- external YouTube thumbnail; intentional lightweight facade, not optimized by next/image */}
+                  <img
+                    src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+                    alt={`video-${index}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <span
+                    className="
+                      absolute inset-0 flex items-center justify-center
+                      bg-black/20 group-hover:bg-black/30 transition-colors
+                    "
+                  >
+                    <span className="flex items-center justify-center w-14 h-14 rounded-full bg-[#F6891F] shadow-lg">
+                      <PlayArrow sx={{ fontSize: 32, color: "#fff" }} />
+                    </span>
+                  </span>
+                </button>
+              )}
             </div>
           ))}
         </div>

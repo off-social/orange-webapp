@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useConsultation } from "@/data/ConsultationContext";
 
 const REACTIVE = {
-  src: "/Reactive.png",
+  src: "/Reactive.webp",
   name: "Reactive Ink Series",
   desc: "Vivid, long-lasting reactive inks for cotton and natural fibre printing.",
 };

@@ -265,7 +265,7 @@ export default function ContactPage() {
           height: { xs: "auto", lg: "305px" },
           minHeight: { xs: "220px", md: "260px", lg: "305px" },
           backgroundColor: "#111",
-          backgroundImage: { xs: "url('/contactUsMobileImg1.png')", lg: "url('/contactUsImg1.png')" },
+          backgroundImage: { xs: "url('/contactUsMobileImg1.webp')", lg: "url('/contactUsImg1.webp')" },
           backgroundRepeat: "no-repeat",
           backgroundPosition: { xs: "center", lg: "left center" },
           backgroundSize: { xs: "cover", lg: "auto 100%" },
@@ -444,7 +444,7 @@ export default function ContactPage() {
                 }}
               >
                 <NextImage
-                  src="/locationIcon.png"
+                  src="/locationIcon.webp"
                   alt=""
                   width={16}
                   height={16}

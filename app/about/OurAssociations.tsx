@@ -39,7 +39,7 @@ export default function OurAssociations() {
           }}
         >
           <Image
-            src="/Associations.png"
+            src="/Associations.webp"
             alt="Our Associations"
             width={600}
             height={468}

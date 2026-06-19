@@ -7,27 +7,27 @@ const innerPad = { xs: "0", lg: "0 188px" };
 
 const CARDS = [
   {
-    img: "/DeepColorIntensity.png",
+    img: "/DeepColorIntensity.webp",
     title: "Deep Color Intensity",
     desc: "Rich, vibrant prints that stand out in any application.",
   },
   {
-    img: "/BinderTechnology.png",
+    img: "/BinderTechnology.webp",
     title: "Binder Technology",
     desc: "Strong color bonding & better fabric integration.",
   },
   {
-    img: "/PrintVisibility.png",
+    img: "/PrintVisibility.webp",
     title: "Print Visibility",
     desc: "Results are visible right away for faster production.",
   },
   {
-    img: "/PrintSharpness.png",
+    img: "/PrintSharpness.webp",
     title: "Print Sharpness",
     desc: "Delivers clear, crisp print details.",
   },
   {
-    img: "/HighFastness.png",
+    img: "/HighFastness.webp",
     title: "High Fastness",
     desc: "Ensures durability and long-lasting color.",
   },

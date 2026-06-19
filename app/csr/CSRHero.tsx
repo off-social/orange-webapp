@@ -8,7 +8,7 @@ export default function CSRHero() {
       {/* Mobile image (xs only) */}
       <Box sx={{ display: { xs: "block", sm: "none" } }}>
         <Image
-          src="/TechnologyWithResponsibilityMobile.png"
+          src="/TechnologyWithResponsibilityMobile.webp"
           alt="CSR – Technology with Responsibility"
           width={393}
           height={538}
@@ -32,7 +32,7 @@ export default function CSRHero() {
         }}
       >
         <Image
-          src="/CRS.png"
+          src="/CRS.webp"
           alt="CSR – Technology with Responsibility"
           fill
           priority

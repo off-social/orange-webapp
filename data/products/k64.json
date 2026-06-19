@@ -3,8 +3,8 @@
   "name": "K64",
   "tagline": "Ultra High-Speed Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/K641.png",
-    "mobile": "/K641.png"
+    "desktop": "/K641.webp",
+    "mobile": "/K641.webp"
   },
   "sidebar": {
     "bullets": [
@@ -108,37 +108,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Ultra High-Volume Fashion Textile Production",
         "desc": "Non-stop disperse printing on polyester fabrics for large wholesale and export operations where maximum daily output and fast turnaround are the primary business requirements."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Export Garment Manufacturing",
         "desc": "Reactive printing on cotton at industrial volume, meeting international wash fastness and quality standards across continuous multi-shift production schedules."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Industrial Home Textile Manufacturing",
         "desc": "High-capacity production of bedding, curtains, upholstery, and decorative textiles across cotton and polyester substrates for domestic and export markets at scale."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Jacquard and Textured Fabric Printing",
         "desc": "High-resolution output on complex woven and jacquard structures requiring precise registration and sharp pattern definition across very large production volumes."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Silk and Luxury Textile Production",
         "desc": "Acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying luxury fashion brands and premium garment producers with tight quality requirements."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Speciality and Technical Fabric Printing",
         "desc": "Latex ink compatibility opens printing on coated, technical, and specialty substrates beyond standard textile applications, expanding business into new product categories."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Job Work and Multi-Buyer Operations",
         "desc": "Wide fabric compatibility from 30 to 450 gsm and multi-ink support make the K64 the preferred choice for high-capacity job work units serving large, diverse client portfolios."
       }
@@ -197,7 +197,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, head configuration options, drying system choices, installation requirements, and engineering details for the K64.",
-      "coverImage": "/ProductBrochure.png",
+      "coverImage": "/ProductBrochure.webp",
       "brochureUrl": "/brochures/K64.pdf"
     }
   },

@@ -1,14 +1,7 @@
 "use client";
 
 import { useConsultation } from "@/data/ConsultationContext";
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -29,26 +22,35 @@ import ThePowerOfOrange from "./ThePowerOfOrange";
 
 const Home = () => {
   const [value, setValue] = useState(0);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { openModal } = useConsultation();
 
   return (
     <>
       {/* Hero Section */}
-      <Box sx={{ position: "relative" }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          // Taller on mobile so the overlay card sits lower and more of the
+          // video is visible; original home-page height (600px) on web.
+          height: { xs: "700px", sm: "600px" },
+          overflow: "hidden",
+        }}
+      >
         {/* Full-width video */}
         <video
           src="/homePageVideo.mp4"
+          poster="/homePageVideo-poster.webp"
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
           style={{
             width: "100%",
-            display: "block",
-            height: isMobile ? "560px" : "600px",
+            height: "100%",
             objectFit: "cover",
+            display: "block",
           }}
         />
 
@@ -366,7 +368,7 @@ const Home = () => {
           {/* Full-width printer image */}
           <Box sx={{ width: "100%", lineHeight: 0 }}>
             <Image
-              src="/ExceptionalQualityImg.png"
+              src="/ExceptionalQualityImg.webp"
               alt="Exceptional Quality Printer"
               width={1920}
               height={700}
@@ -388,7 +390,7 @@ const Home = () => {
         size={12}
         sx={{
           bgcolor: "#202020",
-          backgroundImage: "url('/bgblackLine.png')",
+          backgroundImage: "url('/bgblackLine.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -470,17 +472,17 @@ const Home = () => {
           >
             {[
               {
-                img: "/Textile-Industries1.png",
+                img: "/Textile-Industries1.webp",
                 title: "Textile Industries",
                 desc: "High-speed digital textile printing solutions engineered for vibrant, durable results across sublimation, direct-to-fabric, and pigment printing applications.",
               },
               {
-                img: "/Publication-Industries1.png",
+                img: "/Publication-Industries1.webp",
                 title: "Publication Industries",
                 desc: "Professional-grade printing systems delivering sharp, consistent quality for books, magazines, catalogues, and high-volume publication workflows.",
               },
               {
-                img: "/Label-Industries1.png",
+                img: "/Label-Industries1.webp",
                 title: "Label Industries",
                 desc: "Precision digital label printers built for flexible packaging, product labels, and short-run specialty prints with exceptional colour accuracy.",
               },

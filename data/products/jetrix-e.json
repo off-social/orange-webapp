@@ -3,8 +3,8 @@
   "name": "JetRix-E",
   "tagline": "Hybrid Digital Label Press — All-in-One Digital + Flexo + Foil",
   "heroImage": {
-    "desktop": "/PositionProDetails.png",
-    "mobile": "/PositionProMobile.png"
+    "desktop": "/PositionProDetails.webp",
+    "mobile": "/PositionProMobile.webp"
   },
   "sidebar": {
     "bullets": [
@@ -112,42 +112,42 @@
     "description": "Perfectly suited for a wide range of label and packaging applications, delivering exceptional print quality, colour accuracy, and production efficiency.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Pharma and Agro Labels",
         "desc": "High-resolution variable data printing and G7 colour accuracy make the JetRix-E well suited to pharmaceutical, agrochemical, and crop protection label production requiring regulatory compliance and precise colour consistency."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Food and Beverage Labels",
         "desc": "Vibrant 7-color output, cold foil capability, and multi-substrate support suit premium food and beverage label production for brands competing on shelf visibility and packaging quality."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Wine and Water Labels",
         "desc": "Cold foil, spot colour, and Pantone matching deliver the premium finish quality demanded by wine, spirits, and mineral water brands for high-end retail label applications."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Cosmetics and Daily Chemicals",
         "desc": "High-quality digital printing with optional foil effects and spot colour channels suits cosmetics, personal care, and household chemical label producers requiring premium brand presentation."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Shrink Labels and Laminated Tubes",
         "desc": "Multi-substrate compatibility including PET, PVC, and PP films makes the JetRix-E a capable solution for shrink sleeve, laminated tube, and flexible packaging label applications."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Variable Data and Serialisation Printing",
         "desc": "Pure digital inkjet architecture enables seamless variable data printing for serialisation, batch coding, unique identifiers, and personalised label production without plate changes or downtime."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Lubricant and Industrial Labels",
         "desc": "Durable UV ink on film substrates and aluminium foil produces robust, chemical-resistant labels for lubricants, automotive products, and industrial goods requiring long-lasting print quality."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Short-Run and Brand-Extension Label Production",
         "desc": "No plate cylinder cost, fast job switching, and modular configuration make the JetRix-E the most cost-efficient choice for converters managing short runs, brand extensions, and frequent design changeovers."
       }
@@ -209,7 +209,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, substrate compatibility details, ink configuration options, modular design overview, and installation requirements for the JetRix-E.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

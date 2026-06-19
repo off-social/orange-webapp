@@ -9,19 +9,19 @@ import { useConsultation } from "@/data/ConsultationContext";
 const INK_TABS = [
   {
     label: "Reactive",
-    src: "/Reactive1.png",
+    src: "/Reactive1.webp",
     name: "Reactive Ink Series",
     desc: "Vivid, long-lasting reactive inks for cotton and natural fibre printing.",
   },
   {
     label: "Sublimation",
-    src: "/Sublimation.png",
+    src: "/Sublimation.webp",
     name: "Sublimation Ink Series",
     desc: "High-performance sublimation inks for vibrant polyester fabric printing.",
   },
   {
     label: "Pigment",
-    src: "/Pigment.png",
+    src: "/Pigment.webp",
     name: "Pigment Ink Series",
     desc: "Eco-friendly pigment inks compatible with direct-to-fabric printing.",
   },

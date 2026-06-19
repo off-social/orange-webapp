@@ -26,51 +26,51 @@ const data: Record<TabKey, { title: string; subtitle: string; img: string }[]> =
       {
         title: "Orange O Tec at Gartex India 2025",
         subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
       {
         title: "Orange O Tec at Gartex India 2025",
         subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
       {
         title: "Orange O Tec at Gartex India 2025",
         subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
       {
         title: "Orange O Tec at Gartex India 2025",
         subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
     ],
     "Past Events Gallery": [
-      { title: "Past Event 1", subtitle: "Location here", img: "/img1.png" },
-      { title: "Past Event 2", subtitle: "Location here", img: "/img1.png" },
-      { title: "Past Event 3", subtitle: "Location here", img: "/img1.png" },
+      { title: "Past Event 1", subtitle: "Location here", img: "/img1.webp" },
+      { title: "Past Event 2", subtitle: "Location here", img: "/img1.webp" },
+      { title: "Past Event 3", subtitle: "Location here", img: "/img1.webp" },
     ],
     "Booth Highlights": [
       {
         title: "Booth Highlight 1",
         subtitle: "Location here",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
       {
         title: "Booth Highlight 2",
         subtitle: "Location here",
-        img: "/img1.png",
+        img: "/img1.webp",
       },
     ],
     "Media Coverage": [
       {
         title: "Media Coverage 1",
         subtitle: "Location here",
-        img: "/media1.png",
+        img: "/media1.webp",
       },
       {
         title: "Media Coverage 2",
         subtitle: "Location here",
-        img: "/media2.png",
+        img: "/media2.webp",
       },
     ],
   };

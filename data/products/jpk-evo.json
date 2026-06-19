@@ -3,8 +3,8 @@
   "name": "JPK EVO",
   "tagline": "High-Speed Scanning Digital Textile and Paper Printer",
   "heroImage": {
-    "desktop": "/JPK-Evo01.png",
-    "mobile": "/JPK-Evo01.png"
+    "desktop": "/JPK-Evo01.webp",
+    "mobile": "/JPK-Evo01.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,37 +102,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Wide-Format Fashion Textile Production",
         "desc": "Scanning output across print widths from 1800 mm to 3200 mm makes the JPK EVO ideal for wide-format polyester and blended fabric printing for fashion wholesale and export markets."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large Home Textile and Furnishing Production",
         "desc": "Wide print width capability suits large-format bedding, curtain fabric, upholstery, and furnishing textile production where standard 1800 mm machines create unnecessary seam constraints."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Transfer Paper Printing",
         "desc": "Dual media compatibility enables efficient sublimation transfer paper printing alongside direct fabric output, giving businesses the flexibility to serve both production workflows."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Sportswear and Performance Fabric Printing",
         "desc": "High-speed disperse and pigment printing on stretch and technical fabrics for sportswear brands, gym wear manufacturers, and performance apparel exporters."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Sustainable and Export-Focused Manufacturing",
         "desc": "ACIMIT Green Label certification demonstrates documented resource efficiency for manufacturers serving European and international buyers with environmental compliance requirements."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Flag, Banner, and Soft Signage Production",
         "desc": "Extra-wide format capability up to 3200 mm makes the JPK EVO well suited to soft signage, flags, banners, and exhibition textile applications alongside standard fabric production."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Long-Run Industrial Textile Production",
         "desc": "Inline degassing, live ink refill, and integrated belt washing combine to make the JPK EVO a reliable workhorse for manufacturers running continuous multi-shift production schedules."
       }
@@ -198,7 +198,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, print width configurations, media compatibility details, ink system overview, and installation requirements for the JPK EVO.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

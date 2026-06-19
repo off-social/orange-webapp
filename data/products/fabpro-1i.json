@@ -3,8 +3,8 @@
   "name": "FabPro 1i",
   "tagline": "High-Performance Direct-to-Fabric Industrial Printer",
   "heroImage": {
-    "desktop": "/FabPro1i1.png",
-    "mobile": "/FabPro1i1.png"
+    "desktop": "/FabPro1i1.webp",
+    "mobile": "/FabPro1i1.webp"
   },
   "sidebar": {
     "bullets": [
@@ -101,42 +101,42 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Lace & Sequin",
         "desc": "Delicate positioning on open-weave and embellished structures"
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Jacquard",
         "desc": "High-resolution pattern printing on textured jacquard fabrics for fashion and home textiles"
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Embroidery",
         "desc": "Precise print registration on raised, textured embroidered surfaces"
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Export Garment Manufacturing",
         "desc": "Reactive printing on cotton with ISO 4–5 wash fastness required by European and US export buyers"
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Fashion Textiles",
         "desc": "Fast, vibrant disperse printing on polyester sarees, dress materials, and kurti fabrics for trend-responsive production"
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Home Textiles",
         "desc": "Cotton bedding, polyester curtains, cushions, throws, and decorative fabrics — all on one machine"
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Silk & Luxury Fabrics",
         "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Custom & Personalised Printing",
         "desc": "Photo textiles, corporate branding, wedding and event fabrics, and small-batch specialty orders"
       }
@@ -193,7 +193,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Complete technical specifications, engineering details, installation requirements, and component overview for the FabPro 1i.",
-      "coverImage": "/ProductBrochure.png",
+      "coverImage": "/ProductBrochure.webp",
       "brochureUrl": "/brochures/FabPro-1i.pdf"
     }
   },

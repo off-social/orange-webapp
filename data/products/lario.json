@@ -3,8 +3,8 @@
   "name": "LaRIO",
   "tagline": "World's Fastest Single-Pass Digital Textile Printer",
   "heroImage": {
-    "desktop": "/PositionProDetails.png",
-    "mobile": "/PositionProMobile.png"
+    "desktop": "/PositionProDetails.webp",
+    "mobile": "/PositionProMobile.webp"
   },
   "sidebar": {
     "bullets": [
@@ -102,37 +102,37 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Mass-Volume Fashion Textile Production",
         "desc": "The world's fastest single-pass digital textile printer for large polyester and blended fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets at maximum possible daily output."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Large-Scale Export Garment Manufacturing",
         "desc": "Continuous reactive printing on cotton for major export facilities supplying international fashion brands, where per-metre cost efficiency and consistent colour across large repeat orders are critical."
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Wide-Format Home Textile and Furnishing Production",
         "desc": "3200 mm configuration handles extra-wide bedding, curtain fabric, upholstery, and large-format furnishing textiles, removing width constraints that limit narrower single-pass machines."
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Integrated Mills and Vertically Integrated Manufacturers",
         "desc": "Manufacturers operating dedicated digital printing divisions within vertically integrated facilities who need single-pass output volumes that match weaving and finishing line capacities."
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Multi-Machine Scalable Operations",
         "desc": "SPR Same Print Result technology makes the LaRIO the only choice for production operations running multiple machines simultaneously, where colour consistency across machines is a non-negotiable requirement."
       },
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Flag, Banner, and Wide-Format Soft Signage",
         "desc": "3200 mm print width and single-pass speed make the LaRIO equally suited to large-format flags, exhibition banners, retail soft signage, and event textile production at industrial volumes."
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "24/7 Round-the-Clock Production Facilities",
         "desc": "Non-stop jumbo roll winding, Wi-Fi remote monitoring, and automated maintenance systems are designed specifically for facilities running continuous multi-shift production schedules."
       }
@@ -198,7 +198,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full technical specifications, configuration options, in-line pre-treatment details, SPR technology overview, and installation requirements for the LaRIO.",
-      "coverImage": "/ProductBrochure.png"
+      "coverImage": "/ProductBrochure.webp"
     }
   },
   "showcase": {

@@ -12,7 +12,7 @@ const DrivingSustainablePrinting = () => {
         {/* Background image — mobile uses a taller portrait crop */}
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <Image
-            src="/Driving1.png"
+            src="/Driving1.webp"
             alt="Driving Sustainable Printing"
             width={393}
             height={538}
@@ -21,7 +21,7 @@ const DrivingSustainablePrinting = () => {
         </Box>
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           <Image
-            src="/CRS.png"
+            src="/CRS.webp"
             alt="Driving Sustainable Printing"
             width={1440}
             height={700}

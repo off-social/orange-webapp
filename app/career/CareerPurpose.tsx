@@ -7,22 +7,22 @@ const cards = [
   {
     title: "Make in India.\nCompete globally",
     desc: "World-class textile tech built from Gujarat.",
-    img: "/MakeInIndia.png",
+    img: "/MakeInIndia.webp",
   },
   {
     title: "Autonomy from\nday one",
     desc: "Your ideas matter. Your work shapes real outcomes.",
-    img: "/AutoFrom.png",
+    img: "/AutoFrom.webp",
   },
   {
     title: "Growth-minded\nculture",
     desc: "Cross-functional learning and fast career progression.",
-    img: "/Growth-minded.png",
+    img: "/Growth-minded.webp",
   },
   {
     title: "Meaningful\nwork",
     desc: "Supporting sustainability and the future of manufacturing.",
-    img: "/MeaningFul.png",
+    img: "/MeaningFul.webp",
   },
 ];
 

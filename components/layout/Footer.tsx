@@ -283,7 +283,7 @@ const Footer = () => {
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <Image
-                  src="/locationIcon.png"
+                  src="/locationIcon.webp"
                   alt="Location"
                   width={16}
                   height={16}

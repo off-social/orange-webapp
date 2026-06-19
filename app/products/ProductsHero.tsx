@@ -40,7 +40,7 @@ export default function ProductsHero() {
         }}
       >
         <Image
-          src="/productPageImg.png"
+          src="/productPageImg.webp"
           alt="Advanced Textile Fabric Printer"
           fill
           style={{ objectFit: "cover", objectPosition: "center center" }}
@@ -97,7 +97,7 @@ export default function ProductsHero() {
         }}
       >
         <Image
-          src="/productPageImg.png"
+          src="/productPageImg.webp"
           alt="Advanced Textile Fabric Printer"
           fill
           style={{ objectFit: "cover", objectPosition: "center center" }}
@@ -162,7 +162,7 @@ export default function ProductsHero() {
         }}
       >
         <Image
-          src="/prductimgMobile.png"
+          src="/prductimgMobile.webp"
           alt="Advanced Textile Fabric Printer"
           fill
           style={{ objectFit: "cover", objectPosition: "center top" }}

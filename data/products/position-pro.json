@@ -3,8 +3,8 @@
   "name": "Position Pro",
   "tagline": "High-speed Direct-to-Fabric Positioning Printer",
   "heroImage": {
-    "desktop": "/PositionProDetails.png",
-    "mobile": "/PositionProMobile.png"
+    "desktop": "/PositionProDetails.webp",
+    "mobile": "/PositionProMobile.webp"
   },
   "sidebar": {
     "bullets": [
@@ -100,27 +100,27 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.png",
+        "image": "/Lace-sequin.webp",
         "title": "Lace & sequin",
         "desc": "Precise positioning on delicate, open-weave structures"
       },
       {
-        "image": "/Jacquard.png",
+        "image": "/Jacquard.webp",
         "title": "Jacquard",
         "desc": "High-end custom fabrics for home textiles & fashion"
       },
       {
-        "image": "/Embroidery.png",
+        "image": "/Embroidery.webp",
         "title": "Embroidery",
         "desc": "Perfect registration on textured raised surfaces"
       },
       {
-        "image": "/Silk.png",
+        "image": "/Silk.webp",
         "title": "Silk (double-sided)",
         "desc": "Luxury duplex printing for premium fashion"
       },
       {
-        "image": "/Custom.png",
+        "image": "/Custom.webp",
         "title": "Custom & hi-end",
         "desc": "Export fashion, European & US home textiles"
       }
@@ -147,28 +147,28 @@
   "globalComponents": {
     "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
     "largeCard": {
-      "icon": "/Kyocera.png",
+      "icon": "/Kyocera.webp",
       "title": "Kyocera",
       "desc": "16× Industrial printheads · Japan"
     },
     "smallCards": [
       {
-        "icon": "/Vision-System.png",
+        "icon": "/Vision-System.webp",
         "title": "Vision System",
         "desc": "Proprietary real-time scanner"
       },
       {
-        "icon": "/Color-Management.png",
+        "icon": "/Color-Management.webp",
         "title": "Color Management",
         "desc": "Professional calibration software"
       },
       {
-        "icon": "/Ink-System.png",
+        "icon": "/Ink-System.webp",
         "title": "Ink System",
         "desc": "High-precision dye ratio mixing"
       },
       {
-        "icon": "/Drive-System.png",
+        "icon": "/Drive-System.webp",
         "title": "Drive System",
         "desc": "Advanced industrial conveying"
       }
@@ -181,7 +181,7 @@
     "brochure": {
       "title": "Product Brochure",
       "desc": "Full specs, configurations, and print quality details for the Position Pro.",
-      "coverImage": "/PositionPro-Product.png",
+      "coverImage": "/PositionPro-Product.webp",
       "brochureUrl": "/brochures/Position-Pro.pdf"
     }
   },

@@ -7,13 +7,13 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const photos = [
-  "/life1.png",
-  "/life4.png",
-  "/life2.png",
-  "/life5.png",
-  "/life3.png",
-  "/life6.png",
-  "/life7.png",
+  "/life1.webp",
+  "/life4.webp",
+  "/life2.webp",
+  "/life5.webp",
+  "/life3.webp",
+  "/life6.webp",
+  "/life7.webp",
 ];
 
 const CARD_W_DESKTOP = 446;

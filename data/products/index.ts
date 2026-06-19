@@ -80,6 +80,8 @@ const SLUG_STOPWORDS = new Set([
   "printing",
   "label",
   "publication",
+  "inkjet",
+  "press",
 ]);
 
 /** Derive a clean URL slug from a catalog product name. */

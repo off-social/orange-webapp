@@ -3,12 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-// Resolve the pdf.js worker from the installed package so its version always
-// matches pdfjs-dist (no manual copy to keep in sync on upgrades).
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
+// Use CDN for pdf.js worker to avoid WebKitBlobResource errors in Safari
+// and ensure compatibility across all deployment environments
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 /**
  * Renders the first page of a PDF as a cover thumbnail, sized to fill its

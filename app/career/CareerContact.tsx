@@ -234,20 +234,25 @@ export default function CareerContact() {
         {/* Submit */}
         <Button
           variant="contained"
-          startIcon={<CheckIcon sx={{ fontSize: "16px !important" }} />}
+          startIcon={
+            <CheckIcon
+              sx={{ fontSize: { xs: "14px !important", sm: "16px !important" } }}
+            />
+          }
           sx={{
             bgcolor: "#F6891F",
             color: "#FFF",
             borderRadius: "8px",
-            px: "24px",
-            py: "12px",
+            px: { xs: "18px", sm: "24px" },
+            py: { xs: "10px", sm: "12px" },
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "12px", sm: "14px" },
             fontWeight: 500,
             lineHeight: "22.4px",
             textTransform: "none",
+            whiteSpace: "nowrap",
             boxShadow: "none",
-            alignSelf: { xs: "stretch", sm: "flex-start" },
+            alignSelf: "flex-start",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
         >

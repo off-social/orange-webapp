@@ -69,13 +69,20 @@ const MeetRocketBuiltProduction = () => {
             production environments, this system ensures consistent performance
             and reliability even under the most intense workloads.
           </Typography>
-          <Box sx={{ mt: "32px", width: "100%" }}>
+          <Box
+            sx={{
+              mt: "32px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Button
               component={Link}
               href={productHref("Rocket")}
               sx={{
-                width: "100%",
-                padding: "13px 24px",
+                width: "auto",
+                padding: "10px 18px",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: "8px",

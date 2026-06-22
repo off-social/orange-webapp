@@ -85,20 +85,25 @@ export default function ReliableSupport() {
           component={Link}
           href="/contact"
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          endIcon={
+            <ArrowForwardIcon
+              sx={{ fontSize: { xs: "13px !important", md: "15px !important" } }}
+            />
+          }
           sx={{
             bgcolor: "#F6891F",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "13px",
+            fontSize: { xs: "12px", md: "13px" },
             fontWeight: 500,
             lineHeight: "20.8px",
-            px: 3,
-            py: "13px",
+            px: { xs: "16px", md: 3 },
+            py: { xs: "10px", md: "13px" },
             boxShadow: "none",
-            alignSelf: { xs: "stretch", md: "flex-start" },
+            whiteSpace: "nowrap",
+            alignSelf: "flex-start",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
         >

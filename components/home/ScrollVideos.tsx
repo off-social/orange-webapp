@@ -68,7 +68,7 @@ const ScrollVideos = () => {
           </p>
 
           <a
-            href="https://www.youtube.com/@OrangeOWorldwide"
+            href="https://youtube.com/@orangegroup6798?si=Xvo-GhKLyOuMXAFk"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 whitespace-nowrap hover:opacity-70 transition-opacity flex-shrink-0"

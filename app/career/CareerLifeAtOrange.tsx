@@ -161,7 +161,7 @@ export default function CareerLifeAtOrange() {
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
           alignSelf: "stretch",
-          pl: { xs: "16px", sm: "40px", md: "80px", lg: "168px", xl: "263px" },
+          pl: { xs: "24px", sm: "40px", md: "80px", lg: "168px", xl: "263px" },
           scrollSnapType: { xs: "x mandatory", sm: "none" },
         }}
       >

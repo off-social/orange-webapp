@@ -86,9 +86,10 @@ export default function CareerHero() {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            gap: "16px",
+            flexDirection: "row",
+            gap: { xs: "10px", sm: "16px" },
             justifyContent: "center",
+            alignItems: "center",
             alignSelf: { xs: "stretch", sm: "auto" },
           }}
         >
@@ -109,19 +110,20 @@ export default function CareerHero() {
             }}
             sx={{
               order: { xs: 1, sm: 2 },
-              width: { xs: "100%", sm: "200px" },
-              padding: "16px",
+              width: { xs: "auto", sm: "200px" },
+              padding: { xs: "10px 14px", sm: "16px" },
               justifyContent: "center",
               alignItems: "center",
-              gap: "8px",
+              gap: { xs: "6px", sm: "8px" },
               borderRadius: "8px",
               bgcolor: "#F6891F",
               color: "#FFF",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: { xs: "12px", sm: "14px" },
               fontWeight: 500,
               lineHeight: "22.4px",
               textTransform: "none",
+              whiteSpace: "nowrap",
               boxShadow: "none",
               "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
             }}
@@ -134,21 +136,22 @@ export default function CareerHero() {
             variant="outlined"
             sx={{
               order: { xs: 2, sm: 1 },
-              width: { xs: "100%", sm: "200px" },
-              padding: "16px",
+              width: { xs: "auto", sm: "200px" },
+              padding: { xs: "10px 14px", sm: "16px" },
               justifyContent: "center",
               alignItems: "center",
-              gap: "8px",
+              gap: { xs: "6px", sm: "8px" },
               borderRadius: "8px",
               border: "1px solid #E0E0E0",
               bgcolor: "#FFF",
               color: "#333",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: { xs: "12px", sm: "14px" },
               fontWeight: 500,
               lineHeight: "22.4px",
               textTransform: "none",
               textDecoration: "none",
+              whiteSpace: "nowrap",
               "&:hover": { borderColor: "#BDBDBD", bgcolor: "transparent" },
             }}
           >

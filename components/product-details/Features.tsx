@@ -3,20 +3,10 @@
 import { useProduct } from "@/data/ProductContext";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import { useRef, useState } from "react";
 
 export default function Features() {
   const { features } = useProduct();
   const FEATURES = features.items;
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const index = Math.round(el.scrollLeft / 330);
-    setActiveIndex(index);
-  };
 
   return (
     <Box
@@ -76,141 +66,90 @@ export default function Features() {
           </Typography>
         </Box>
 
-        {/* Cards — Mobile: horizontal carousel */}
+        {/* Cards — Phone: vertical stack */}
         <Box
           sx={{
-            display: { xs: "flex", md: "none" },
+            display: { xs: "flex", sm: "none" },
             flexDirection: "column",
-            alignItems: "center",
-            gap: "16px",
+            gap: "12px",
             width: "100%",
           }}
         >
-          <Box
-            ref={scrollRef}
-            onScroll={handleScroll}
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "12px",
-              overflowX: "auto",
-              scrollSnapType: "x mandatory",
-              scrollbarWidth: "none",
-              "&::-webkit-scrollbar": { display: "none" },
-              width: "100%",
-              px: "2px",
-            }}
-          >
-            {FEATURES.map((feature) => (
-              <Box
-                key={feature.title}
-                sx={{
-                  display: "flex",
-                  width: "330px",
-                  minWidth: "330px",
-                  padding: "24px",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "24px",
-                  borderRadius: "16px",
-                  border: "1px solid #E0E0E0",
-                  background: "#FFF",
-                  scrollSnapAlign: "center",
-                  flexShrink: 0,
-                  cursor: "pointer",
-                  transition:
-                    "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease",
-                  "&:hover": {
-                    transform: "translateY(-6px)",
-                    boxShadow: "0 16px 40px rgba(0,0,0,0.10)",
-                  },
-                }}
-              >
-                {feature.icon && (
-                  <Box
-                    sx={{
-                      width: "64px",
-                      height: "64px",
-                      flexShrink: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={64}
-                      height={64}
-                    />
-                  </Box>
-                )}
+          {FEATURES.map((feature) => (
+            <Box
+              key={feature.title}
+              sx={{
+                display: "flex",
+                width: "100%",
+                padding: "24px",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "16px",
+                borderRadius: "16px",
+                border: "1px solid #E0E0E0",
+                background: "#FFF",
+              }}
+            >
+              {feature.icon && (
                 <Box
                   sx={{
+                    width: "64px",
+                    height: "64px",
+                    flexShrink: 0,
                     display: "flex",
-                    flexDirection: "column",
                     alignItems: "center",
-                    gap: "8px",
+                    justifyContent: "center",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      color: "#333",
-                      textAlign: "center",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      lineHeight: "25.6px",
-                    }}
-                  >
-                    {feature.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#707070",
-                      textAlign: "center",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "12px",
-                      fontWeight: 500,
-                      lineHeight: "19.2px",
-                    }}
-                  >
-                    {feature.desc}
-                  </Typography>
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
+                  />
                 </Box>
-              </Box>
-            ))}
-          </Box>
-
-          {/* Pagination dots */}
-          <Box sx={{ display: "flex", gap: "6px", alignItems: "center" }}>
-            {FEATURES.map((_, i) => (
+              )}
               <Box
-                key={i}
                 sx={{
-                  width: i === activeIndex ? "20px" : "8px",
-                  height: "8px",
-                  borderRadius: "4px",
-                  bgcolor: i === activeIndex ? "#111" : "#D9D9D9",
-                  transition: "all 0.3s ease",
-                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "8px",
                 }}
-                onClick={() => {
-                  scrollRef.current?.scrollTo({
-                    left: i * 330,
-                    behavior: "smooth",
-                  });
-                  setActiveIndex(i);
-                }}
-              />
-            ))}
-          </Box>
+              >
+                <Typography
+                  sx={{
+                    color: "#333",
+                    textAlign: "center",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    lineHeight: "25.6px",
+                  }}
+                >
+                  {feature.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    color: "#707070",
+                    textAlign: "center",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    lineHeight: "19.2px",
+                  }}
+                >
+                  {feature.desc}
+                </Typography>
+              </Box>
+            </Box>
+          ))}
         </Box>
 
-        {/* Cards — Desktop: 2-column grid */}
+        {/* Cards — Tablet & Desktop: 2-column grid */}
         <Box
           sx={{
-            display: { xs: "none", md: "grid" },
+            display: { xs: "none", sm: "grid" },
             gridTemplateColumns: "1fr 1fr",
             gap: "16px",
             width: "100%",

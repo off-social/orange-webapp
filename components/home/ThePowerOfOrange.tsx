@@ -175,20 +175,22 @@ const ThePowerOfOrange = () => {
           ))}
         </Box>
 
-        {/* Full-width black button */}
+        {/* Black button */}
         <Button
           component={Link}
           href="/product-details/fabpro-2i"
           sx={{
             mt: "40px",
-            width: "100%",
+            alignSelf: "center",
+            width: "auto",
             bgcolor: "#111",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontSize: "13px",
             fontWeight: 500,
-            py: "13px",
+            py: "10px",
+            px: "18px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

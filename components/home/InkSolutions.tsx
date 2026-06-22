@@ -94,6 +94,7 @@ const InkSolutions = () => {
           gap: { xs: "12px", md: 2 },
           mt: 3,
           justifyContent: "center",
+          alignItems: "center",
           px: { xs: "16px", md: 0 },
         }}
       >
@@ -119,20 +120,25 @@ const InkSolutions = () => {
         </Button> */}
         <Button
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
+          endIcon={
+            <ArrowForwardIcon
+              sx={{ fontSize: { xs: "14px !important", md: "16px !important" } }}
+            />
+          }
           sx={{
             bgcolor: "#F6891F",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "13px",
+            fontSize: { xs: "12px", md: "13px" },
             fontWeight: 500,
             lineHeight: "20.8px",
-            gap: "8px",
-            p: "16px",
+            gap: { xs: "6px", md: "8px" },
+            p: { xs: "10px 18px", md: "16px" },
             boxShadow: "none",
-            width: { xs: "100%", md: "200px" },
+            whiteSpace: "nowrap",
+            width: { xs: "auto", md: "200px" },
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
           onClick={() => openModal()}

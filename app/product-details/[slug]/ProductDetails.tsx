@@ -2,10 +2,8 @@
 
 import ContactCTA from "@/components/product-details/ContactCTA";
 import Features from "@/components/product-details/Features";
-import FeaturesV1 from "@/components/product-details/FeaturesV1";
 import GlobalComponents from "@/components/product-details/GlobalComponents";
 import IdealFor from "@/components/product-details/IdealFor";
-import IdealForV1 from "@/components/product-details/IdealForV1";
 import InkCompatibility from "@/components/product-details/InkCompatibility";
 import KeySpecification from "@/components/product-details/KeySpecification";
 import PositionProShowcase from "@/components/product-details/PositionProShowcase";
@@ -24,9 +22,7 @@ const TABS = [
   "Key Specification",
   "Ink Compatibility",
   "Features",
-  "FeaturesV1",
   "Ideal for",
-  "Ideal forV1",
   "Production Capacity",
   "Global Components",
 ];
@@ -133,27 +129,31 @@ export default function ProductDetails({ product }: { product: Product }) {
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", sm: "row" },
-              gap: "12px",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: { xs: "10px", sm: "12px" },
               width: { xs: "100%", sm: "auto" },
             }}
           >
             <Button
               variant="contained"
-              endIcon={<ArrowForwardIcon sx={{ fontSize: "18px" }} />}
+              endIcon={
+                <ArrowForwardIcon sx={{ fontSize: { xs: "15px", sm: "18px" } }} />
+              }
               sx={{
                 color: "#fff",
                 bgcolor: "#111",
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: { xs: "12px", sm: "14px" },
                 fontWeight: 500,
                 whiteSpace: "nowrap",
-                px: "20px",
-                py: "13px",
+                px: { xs: "16px", sm: "20px" },
+                py: { xs: "11px", sm: "13px" },
                 boxShadow: "none",
-                width: { xs: "100%", sm: "200px" },
+                width: { xs: "auto", sm: "200px" },
                 order: { xs: 1, sm: 2 },
                 "&:hover": { bgcolor: "#333", boxShadow: "none" },
               }}
@@ -184,13 +184,13 @@ export default function ProductDetails({ product }: { product: Product }) {
                   borderRadius: "12px",
                   textTransform: "none",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "14px",
+                  fontSize: { xs: "12px", sm: "14px" },
                   fontWeight: 500,
                   whiteSpace: "nowrap",
-                  px: "20px",
-                  py: "13px",
+                  px: { xs: "16px", sm: "20px" },
+                  py: { xs: "11px", sm: "13px" },
                   boxShadow: "none",
-                  width: { xs: "100%", sm: "200px" },
+                  width: { xs: "auto", sm: "200px" },
                   order: { xs: 2, sm: 1 },
                   "&:hover": {
                     bgcolor: "#f5f5f5",
@@ -265,10 +265,10 @@ export default function ProductDetails({ product }: { product: Product }) {
         <Box
           sx={{
             display: "flex",
-            justifyContent: { xs: "flex-start", md: "center" },
+            justifyContent: { xs: "flex-start", sm: "center" },
             alignItems: "center",
             gap: "24px",
-            px: { xs: "16px", md: "168px" },
+            px: { xs: "16px", sm: "24px", md: "168px" },
             overflowX: "auto",
             scrollbarWidth: "none",
             "&::-webkit-scrollbar": { display: "none" },
@@ -290,7 +290,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 fontWeight: activeTab === index ? 500 : 400,
                 color: "#707070",
                 transition: "color 0.2s",
-                display: (tab === "FeaturesV1" || tab === "Ideal forV1") ? { xs: "block", sm: "none" } : "block",
+                display: "block",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -314,15 +314,13 @@ export default function ProductDetails({ product }: { product: Product }) {
       {activeTab === 0 && <KeySpecification />}
       {activeTab === 1 && <InkCompatibility />}
       {activeTab === 2 && <Features />}
-      {activeTab === 3 && <FeaturesV1 />}
-      {activeTab === 4 && <IdealFor />}
-      {activeTab === 5 && <IdealForV1 />}
-      {activeTab === 6 && <ProductionCapacity />}
-      {activeTab === 7 && <GlobalComponents />}
+      {activeTab === 3 && <IdealFor />}
+      {activeTab === 4 && <ProductionCapacity />}
+      {activeTab === 5 && <GlobalComponents />}
 
       {/* Permanent sections */}
-      <PositionProShowcase />
       <Resources />
+      <PositionProShowcase />
       <ContactCTA />
     </ProductProvider>
   );

@@ -84,11 +84,14 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
         ))}
       </Box>
 
-      {/* Buttons */}
+      {/* Buttons — side by side on mobile (centered, so a lone button centers
+          too); stacked full-width in the desktop sidebar. */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: { xs: "row", md: "column" },
+          flexWrap: { xs: "wrap", md: "nowrap" },
+          justifyContent: { xs: "center", md: "flex-start" },
           gap: "8px",
           width: "100%",
         }}
@@ -102,7 +105,9 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
             justifyContent: "center",
             alignItems: "center",
             gap: "4px",
-            alignSelf: "stretch",
+            alignSelf: { xs: "auto", md: "stretch" },
+            width: { xs: "auto", md: "100%" },
+            whiteSpace: "nowrap",
             borderRadius: "8px",
             bgcolor: dark ? "#FFF" : "#111",
             color: dark ? "#111" : "#FFF",
@@ -129,7 +134,9 @@ export default function ProductSidebar({ dark = false }: { dark?: boolean }) {
             justifyContent: "center",
             alignItems: "center",
             gap: "4px",
-            alignSelf: "stretch",
+            alignSelf: { xs: "auto", md: "stretch" },
+            width: { xs: "auto", md: "100%" },
+            whiteSpace: "nowrap",
             borderRadius: "8px",
             border: `1px solid ${dark ? "#444" : "#E0E0E0"}`,
             bgcolor: dark ? "transparent" : "#FFF",

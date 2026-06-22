@@ -130,18 +130,18 @@ export default function CSRHero() {
           variant="contained"
           endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
           sx={{
-            width: { xs: "100%", sm: "200px" },
-            padding: { xs: "12px", sm: "16px" },
+            width: { xs: "auto", sm: "200px" },
+            padding: { xs: "10px 18px", sm: "16px" },
             borderRadius: "8px",
             bgcolor: "#111",
             color: "#FFF",
             fontFamily: "Inter, sans-serif",
-            fontSize: "13px",
+            fontSize: { xs: "12px", sm: "13px" },
             fontWeight: 500,
             lineHeight: "20.8px",
             textTransform: "none",
             whiteSpace: "nowrap",
-            alignSelf: { xs: "stretch", sm: "center" },
+            alignSelf: "center",
             justifyContent: "center",
             gap: "8px",
             boxShadow: "none",

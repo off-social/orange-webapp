@@ -163,8 +163,8 @@ export default function LabelPrinters() {
         key={`btn-${animKey}`}
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: "12px", md: 2 },
+          flexDirection: "row",
+          gap: { xs: "10px", md: 2 },
           mt: 3,
           justifyContent: "center",
           px: { xs: "16px", md: 0 },
@@ -173,19 +173,25 @@ export default function LabelPrinters() {
       >
         <Button
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          endIcon={
+            <ArrowForwardIcon
+              sx={{ fontSize: { xs: "13px !important", md: "15px !important" } }}
+            />
+          }
           sx={{
             bgcolor: "#F6891F",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "12px", md: "14px" },
             fontWeight: 500,
-            px: 3,
+            px: { xs: "16px", md: 3 },
             py: "13px",
             boxShadow: "none",
-            width: { xs: "100%", md: "auto" },
+            whiteSpace: "nowrap",
+            width: "auto",
+            order: 2,
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
           onClick={() => openModal(currentImg.name)}
@@ -203,12 +209,14 @@ export default function LabelPrinters() {
             borderRadius: "12px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "12px", md: "14px" },
             fontWeight: 500,
-            px: 3,
+            px: { xs: "16px", md: 3 },
             py: "13px",
             boxShadow: "none",
-            width: { xs: "100%", md: "auto" },
+            whiteSpace: "nowrap",
+            width: "auto",
+            order: 1,
             "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
           }}
         >

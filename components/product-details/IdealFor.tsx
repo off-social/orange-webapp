@@ -67,21 +67,13 @@ export default function IdealFor() {
           </Typography>
         </Box>
 
-        {/* ── Mobile: horizontal scroll carousel ── */}
+        {/* ── Phone: vertical stack ── */}
         <Box
           sx={{
-            display: { xs: "flex", md: "none" },
+            display: { xs: "flex", sm: "none" },
+            flexDirection: "column",
             gap: "16px",
-            overflowX: "auto",
-            // break out of the parent's 16px horizontal padding
-            width: "calc(100% + 32px)",
-            ml: "-16px",
-            px: "16px",
-            pb: "4px",
-            scrollSnapType: "x mandatory",
-            "&::-webkit-scrollbar": { display: "none" },
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
+            width: "100%",
           }}
         >
           {FABRICS.map((fabric) => (
@@ -92,18 +84,15 @@ export default function IdealFor() {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "12px",
-                flexShrink: 0,
-                width: "330px",
-                scrollSnapAlign: "start",
+                width: "100%",
               }}
             >
-              {/* Image — 330 × 436, aspect-ratio 165/218 */}
               {fabric.image && (
                 <Box
                   sx={{
                     position: "relative",
-                    width: "330px",
-                    height: "436px",
+                    width: "100%",
+                    aspectRatio: "330/436",
                     borderRadius: "12px",
                     overflow: "hidden",
                     flexShrink: 0,
@@ -158,15 +147,17 @@ export default function IdealFor() {
           ))}
         </Box>
 
-        {/* ── Desktop: 3-column grid ── */}
+        {/* ── Tablet & Desktop: grid (2 cols tablet, 3 cols desktop) ── */}
         <Box
           sx={{
-            display: { xs: "none", md: "grid" },
+            display: { xs: "none", sm: "grid" },
             rowGap: "24px",
             columnGap: "24px",
             alignSelf: "stretch",
-            gridTemplateRows: "repeat(2, fit-content(100%))",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gridTemplateColumns: {
+              sm: "repeat(2, minmax(0, 1fr))",
+              md: "repeat(3, minmax(0, 1fr))",
+            },
             gridAutoFlow: "row",
           }}
         >

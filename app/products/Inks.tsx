@@ -87,9 +87,9 @@ export default function Inks() {
         sx={{
           display: "flex",
           gap: "12px",
-          flexWrap: { xs: "nowrap", md: "wrap" },
-          justifyContent: { xs: "flex-start", md: "center" },
-          overflowX: { xs: "auto", md: "visible" },
+          flexWrap: { xs: "wrap", md: "wrap" },
+          justifyContent: "center",
+          overflowX: { xs: "visible", md: "visible" },
           width: "100%",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
@@ -101,15 +101,15 @@ export default function Inks() {
             onClick={() => setActiveTab(i)}
             sx={{
               width: { xs: "auto", md: "200px" },
-              minWidth: { xs: "140px", md: "200px" },
-              padding: "12px 24px",
+              minWidth: { xs: "auto", md: "200px" },
+              padding: { xs: "8px 16px", md: "12px 24px" },
               borderRadius: "32px",
               bgcolor: activeTab === i ? "#FFF" : "transparent",
               color: activeTab === i ? "#111" : "#FFF",
               border: "1px solid #E0E0E0",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
+              fontSize: { xs: "12px", md: "14px" },
               fontWeight: 500,
               lineHeight: "22.4px",
               whiteSpace: "nowrap",
@@ -194,25 +194,31 @@ export default function Inks() {
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: "12px", md: 2 },
           justifyContent: "center",
+          alignItems: "center",
           width: "100%",
           animation: FADE_ANIM,
         }}
       >
         <Button
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          endIcon={
+            <ArrowForwardIcon
+              sx={{ fontSize: { xs: "13px !important", md: "15px !important" } }}
+            />
+          }
           sx={{
             bgcolor: "#F6891F",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "12px", md: "14px" },
             fontWeight: 500,
-            px: 3,
-            py: "13px",
+            px: { xs: "16px", md: 3 },
+            py: { xs: "10px", md: "13px" },
             boxShadow: "none",
-            width: { xs: "100%", md: "auto" },
+            whiteSpace: "nowrap",
+            width: "auto",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
           }}
           onClick={() => openModal()}

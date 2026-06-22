@@ -96,9 +96,8 @@ const DrivingSustainablePrinting = () => {
             variant="contained"
             endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
             sx={{
-              width: { xs: "100%", sm: "200px" },
-              maxWidth: { xs: "320px", sm: "200px" },
-              padding: "16px",
+              width: { xs: "auto", sm: "200px" },
+              padding: { xs: "10px 18px", sm: "16px" },
               borderRadius: "8px",
               bgcolor: "#111",
               color: "#FFF",

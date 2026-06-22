@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Product = { src: string; name: string; desc: string };
 type Brand = { name: string; image: string; products: Product[] };
@@ -182,9 +182,34 @@ const TextilePrinting = () => {
 
   const currentProducts = BRANDS[selectedBrand].products;
 
+  // ── Mobile auto-scroll ──
+  // On mobile there are no nav arrows, so the carousel advances on its own:
+  // one machine every ~3.5s. The slides are rendered twice (see renderProducts
+  // below), so at the last machine it keeps scrolling RIGHT onto a clone of the
+  // first, then silently snaps back to the real first — a seamless loop with no
+  // jump-back. Pauses while the user is actively touching/dragging.
+  const [isMobile, setIsMobile] = useState(false);
+  const activeImgRef = useRef(0);
+  const autoplayPausedRef = useRef(false);
+
+  useEffect(() => {
+    activeImgRef.current = activeImg;
+  }, [activeImg]);
+
+  useEffect(() => {
+    // matches MUI's md breakpoint — arrows are hidden below 900px
+    const mq = window.matchMedia("(max-width: 899.98px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   const getSlideWidth = () => {
     const el = scrollRef.current;
-    return el ? el.scrollWidth / currentProducts.length : 0;
+    if (!el || el.children.length === 0) return 0;
+    // divide by the actual rendered slide count (includes clones on mobile)
+    return el.scrollWidth / el.children.length;
   };
 
   const scrollToIndex = (index: number) => {
@@ -193,6 +218,31 @@ const TextilePrinting = () => {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const len = currentProducts.length;
+    if (!isMobile || len <= 1) return;
+    const id = setInterval(() => {
+      if (autoplayPausedRef.current) return;
+      const next = activeImgRef.current + 1;
+      // Scroll right onto the next (or cloned-first) slide. We deliberately do
+      // NOT setActiveImg(next) here: handleScroll drives the active index from
+      // the real scroll position, so setting it optimistically made the active
+      // dot flicker back a step on every tick.
+      scrollToIndex(next);
+      if (next >= len) {
+        // …then, once the smooth scroll settles, snap back to the real first
+        // slide with no animation so the rightward loop looks continuous.
+        setTimeout(() => {
+          scrollRef.current?.scrollTo({ left: 0, behavior: "auto" });
+          setActiveImg(0);
+        }, 700);
+      }
+    }, 3500);
+    return () => clearInterval(id);
+    // re-arm whenever the active brand (and thus product set) changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile, selectedBrand, currentProducts.length]);
 
   const handleBrandChange = (index: number) => {
     setSelectedBrand(index);
@@ -209,15 +259,25 @@ const TextilePrinting = () => {
     setActiveImg(Math.round(el.scrollLeft / getSlideWidth()));
   };
 
-  const currentProduct = currentProducts[activeImg];
-  const animKey = `${selectedBrand}-${activeImg}`;
+  // On mobile, render the slide list twice so the carousel can scroll right
+  // past the last machine onto a clone of the first (see the autoplay effect).
+  const loopEnabled = isMobile && currentProducts.length > 1;
+  const renderProducts = loopEnabled
+    ? [...currentProducts, ...currentProducts]
+    : currentProducts;
+
+  // activeImg can point into the cloned second half, so map it back to a real
+  // product index for the caption, dots and "Know More" link.
+  const displayIndex = activeImg % currentProducts.length;
+  const currentProduct = currentProducts[displayIndex];
+  const animKey = `${selectedBrand}-${displayIndex}`;
   // Enable "Know More" only for products that have a registered details page.
   // productHref() returns the "/product-details" fallback for unregistered ones.
   const knowMoreDisabled =
     !currentProduct || productHref(currentProduct.name) === "/product-details";
 
   return (
-    <Box sx={{ width: "100%", overflow: "hidden" }}>
+    <Box sx={{ width: "100%" }}>
       <style>{`
         @keyframes fadeSlideUp {
           from { opacity: 0; transform: translateY(8px); }
@@ -309,8 +369,17 @@ const TextilePrinting = () => {
         ))}
       </Box>
 
-      {/* Product Image Carousel */}
-      <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
+      {/* Product Image Carousel — full-bleed so neighbour machines peek past
+          the section's horizontal padding (like the Mack Trucks carousel). */}
+      <Box
+        sx={{
+          position: "relative",
+          mt: 5,
+          width: { xs: "100%", sm: "100vw" },
+          left: { sm: "50%" },
+          ml: { sm: "-50vw" },
+        }}
+      >
         <Button
           onClick={() => scrollToIndex(Math.max(0, activeImg - 1))}
           disabled={activeImg === 0}
@@ -318,7 +387,7 @@ const TextilePrinting = () => {
             ...NAV_BTN_SX,
             display: { xs: "none", md: "flex" },
             position: "absolute",
-            left: "24px",
+            left: { md: "192px" },
             top: "50%",
             transform: "translateY(-50%)",
             zIndex: 2,
@@ -330,11 +399,20 @@ const TextilePrinting = () => {
         <Box
           ref={scrollRef}
           onScroll={handleScroll}
+          onPointerDown={() => {
+            autoplayPausedRef.current = true;
+          }}
+          onPointerUp={() => {
+            autoplayPausedRef.current = false;
+          }}
+          onPointerCancel={() => {
+            autoplayPausedRef.current = false;
+          }}
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: { xs: "5%", sm: "8%", md: "20%" },
-            px: { xs: "8vw", sm: "10vw", md: "20vw" },
+            gap: { xs: "5%", sm: "4vw", md: "4vw" },
+            px: { xs: "8vw", sm: "22.5vw", md: "22.5vw" },
             width: "100%",
             overflowX: "scroll",
             overflowY: "hidden",
@@ -344,11 +422,11 @@ const TextilePrinting = () => {
             "&::-webkit-scrollbar": { display: "none" },
           }}
         >
-          {currentProducts.map((product, index) => (
+          {renderProducts.map((product, index) => (
             <Box
               key={index}
               sx={{
-                width: { xs: "auto", sm: "65vw", md: "55vw" },
+                width: { xs: "auto", sm: "55vw", md: "55vw" },
                 height: { xs: "181px", sm: "240px", md: "22vw" },
                 aspectRatio: { xs: "201 / 101", sm: "unset" },
                 alignSelf: "stretch",
@@ -384,7 +462,7 @@ const TextilePrinting = () => {
             ...NAV_BTN_SX,
             display: { xs: "none", md: "flex" },
             position: "absolute",
-            right: "24px",
+            right: { md: "192px" },
             top: "50%",
             transform: "translateY(-50%)",
             zIndex: 2,
@@ -437,7 +515,7 @@ const TextilePrinting = () => {
             key={`btn-${animKey}`}
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
+              flexDirection: "row",
               gap: { xs: "12px", md: 2 },
               mt: 3,
               justifyContent: "center",
@@ -458,12 +536,14 @@ const TextilePrinting = () => {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
+                fontSize: { xs: "12px", md: "13px" },
                 fontWeight: 500,
                 lineHeight: "20.8px",
-                p: "16px",
+                p: { xs: "12px 16px", md: "16px" },
                 boxShadow: "none",
-                width: { xs: "100%", md: "200px" },
+                flexShrink: 0,
+                whiteSpace: "nowrap",
+                width: { xs: "auto", md: "200px" },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
                 "&.Mui-disabled": {
                   color: "#bdbdbd",
@@ -477,7 +557,9 @@ const TextilePrinting = () => {
             <Button
               variant="contained"
               endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "16px !important" }} />
+                <ArrowForwardIcon
+                  sx={{ fontSize: { xs: "14px !important", md: "16px !important" } }}
+                />
               }
               sx={{
                 bgcolor: "#F6891F",
@@ -485,13 +567,15 @@ const TextilePrinting = () => {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
+                fontSize: { xs: "12px", md: "13px" },
                 fontWeight: 500,
                 lineHeight: "20.8px",
-                gap: "8px",
-                p: "16px",
+                gap: { xs: "6px", md: "8px" },
+                p: { xs: "12px 16px", md: "16px" },
                 boxShadow: "none",
-                width: { xs: "100%", md: "200px" },
+                flexShrink: 0,
+                width: { xs: "auto", md: "200px" },
+                whiteSpace: "nowrap",
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
               onClick={() => openModal(currentProduct.name)}
@@ -515,10 +599,10 @@ const TextilePrinting = () => {
                 key={i}
                 onClick={() => scrollToIndex(i)}
                 sx={{
-                  width: i === activeImg ? "24px" : "8px",
+                  width: i === displayIndex ? "24px" : "8px",
                   height: "8px",
                   borderRadius: "16px",
-                  bgcolor: i === activeImg ? "#111" : "#e0e0e0",
+                  bgcolor: i === displayIndex ? "#111" : "#e0e0e0",
                   cursor: "pointer",
                   transition: "width 0.2s, background-color 0.2s",
                 }}

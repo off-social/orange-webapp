@@ -1,0 +1,217 @@
+{
+  "slug": "mas-twelve",
+  "name": "MAS Twelve",
+  "tagline": "High-Definition Multi-Color Digital Textile Printer",
+  "heroImage": {
+    "desktop": "/MAS1.webp",
+    "mobile": "/MAS1.webp"
+  },
+  "sidebar": {
+    "bullets": [
+      "Kyocera KJ4B / E x600, 600 dpi (1 Carriage)",
+      "Up to 12 installed colors",
+      "900 – 1850 mm print width"
+    ]
+  },
+  "keySpecification": {
+    "description": "A high-definition multi-color digital textile printer with up to 12 installed colours and a modular ecosystem that reconfigures between speed and quality, delivering an expanded gamut, smooth gradients, and open-system flexibility across fashion, accessories, swimwear, and premium production.",
+    "rows": [
+      [
+        { "label": "Printheads", "value": "Kyocera KJ4B / E x600, 600 dpi (1 Carriage)" },
+        { "label": "Max Resolution", "value": "600 dpi" }
+      ],
+      [
+        { "label": "Ink Colors", "value": "Up to 12 Installed Colors" },
+        { "label": "Printhead Configuration", "value": "Up to 24 Printheads (Speed Configuration)" }
+      ],
+      [
+        { "label": "Min Print Width", "value": "900 mm" },
+        { "label": "Max Print Width", "value": "1850 mm" }
+      ],
+      [
+        { "label": "Power Requirement", "value": "400V Triphase, 25 KVA Installed Power" },
+        { "label": "Pneumatics", "value": "6 Bar, Max 300 L/min, Average 20 L/min" }
+      ],
+      [
+        { "label": "Water Consumption", "value": "Standard: Max 300 L/hr (3 bar) / Demineralized: Max 0.1 L/hr" }
+      ]
+    ]
+  },
+  "inkCompatibility": {
+    "description": "An open-system ink platform with up to 12 dedicated colour channels, delivering expanded gamut coverage and smooth gradients while giving manufacturers complete freedom to select inks by fabric type, cost target, or supplier preference.",
+    "inkTypes": [
+      { "name": "Open-System Ink Support", "fabrics": "Compatible with all ink types, giving manufacturers complete flexibility to select inks based on fabric type, cost target, or supplier preference without machine-imposed restrictions" },
+      { "name": "12-Color Extended Gamut", "fabrics": "Dedicated colour channels deliver expanded gamut coverage and smooth gradients for complex, photorealistic, and fine-detail designs" },
+      { "name": "Color Spectrum", "fabrics": "Up to 12 installed colors configurable in Double CMYK, Double 8 Colors, or full 12-colour-per-row setups depending on production priority" }
+    ],
+    "colors": [
+      { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
+      { "name": "Magenta", "short": "M", "hex": "#FB2680" },
+      { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
+      { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Light Cyan", "short": "Lc", "hex": "#9BD7F0" },
+      { "name": "Light Magenta", "short": "Lm", "hex": "#F4A6C8" },
+      { "name": "Orange", "short": "Or", "hex": "#F47B20" },
+      { "name": "Blue", "short": "Bl", "hex": "#2E5BBA" },
+      { "name": "Red", "short": "Rd", "hex": "#E02B2B" },
+      { "name": "Green", "short": "Gr", "hex": "#2EA84F" },
+      { "name": "Grey", "short": "Gy", "hex": "#8A8A8A" },
+      { "name": "Violet", "short": "Vt", "hex": "#7A3FBF" }
+    ]
+  },
+  "features": {
+    "description": "Engineered around 12 dedicated colour channels, fully digital printhead alignment, and an open-system modular ecosystem that reconfigures between industrial speed and maximum colour quality.",
+    "items": [
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "12 Dedicated Color Channels",
+        "desc": "Twelve dedicated colour channels deliver an expanded gamut and smooth, unbeatable gradients, bringing complex, high-detail designs to life with chromatic accuracy that standard 8-colour systems cannot match."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Open-System RIP Compatibility",
+        "desc": "Built-in advanced queue manager integrates seamlessly with any RIP software on the market, giving production teams complete freedom to use their preferred existing workflow tools without forced software lock-in."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Fully Digital Printhead Alignment System",
+        "desc": "Digital alignment eliminates manual mechanical adjustment, achieving maximum registration precision across all installed printheads and significantly reducing setup time between job changes."
+      },
+      {
+        "icon": "/printer-3d.svg",
+        "title": "Modular Speed Configuration",
+        "desc": "Double CMYK or Double 8 Colors setup supporting up to 24 printheads delivers industrial-speed output optimised for fashion, fast fashion, and accessories production where throughput is the priority."
+      },
+      {
+        "icon": "/ColorIcon.svg",
+        "title": "Modular Quality Configuration",
+        "desc": "12 colors per row configuration maximises colour gamut and gradient smoothness, tailored for swimwear, sportswear, premium accessories, and high-quality fashion brands where colour accuracy outweighs raw speed."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Open-System Ink Philosophy",
+        "desc": "Support for all ink types across the modular ecosystem allows manufacturers to switch between reactive, acid, disperse, and pigment formulations as production needs change without hardware limitations."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Precision Pneumatic Control System",
+        "desc": "6 bar utility system with tightly controlled consumption range (20 to 300 L/min) ensures stable, consistent mechanical operation across all printhead and carriage functions."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Dual Water System Architecture",
+        "desc": "Separate standard and demineralized water circuits, the latter consuming as little as 0.1 L/hr, support precise washing unit operation while minimising overall water resource demand."
+      }
+    ]
+  },
+  "idealFor": {
+    "description": "Built for manufacturers who need to flex between industrial throughput and colour-critical quality, the Twelve serves fashion, accessories, swimwear, sportswear, premium brands, and multi-brand job work from a single modular platform.",
+    "fabrics": [
+      {
+        "image": "/Custom.webp",
+        "title": "Fashion and Fast Fashion Production",
+        "desc": "Speed Configuration with up to 24 printheads in Double CMYK or Double 8 Colors setup delivers the industrial throughput required for fashion brands and fast fashion manufacturers operating on tight turnaround cycles."
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Accessories Manufacturing",
+        "desc": "High-speed modular configuration suits accessory producers needing fast colour changeovers and high-volume output across scarves, bags, and fashion accessory fabric printing."
+      },
+      {
+        "image": "/Lace-sequin.webp",
+        "title": "Swimwear and Sportswear Production",
+        "desc": "Quality Configuration with 12 colors per row delivers the extended gamut and gradient smoothness required for vibrant, photorealistic swimwear and sportswear designs that demand maximum colour fidelity."
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Premium Accessories and High-Quality Fashion Brands",
+        "desc": "12-colour gamut and digital alignment precision suit premium fashion houses and accessory brands where colour accuracy and fine design detail are non-negotiable production requirements."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Multi-Brand Job Work Operations",
+        "desc": "Open-system RIP compatibility and flexible ink support make the Twelve a practical choice for job work printers serving diverse brands with varying software workflows and ink preferences."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Mixed Speed and Quality Production Environments",
+        "desc": "Modular ecosystem design allows manufacturers to reconfigure between Speed and Quality setups as order mix shifts between high-volume fashion and premium colour-critical work."
+      }
+    ]
+  },
+  "productionCapacity": {
+    "description": "Configuration choice should align with production priority. Choose Speed Configuration (Double CMYK or Double 8 Colors, up to 24 printheads) for high-volume fashion and accessories runs, and Quality Configuration (full 12-colour-per-row setup) for colour-critical swimwear, sportswear, and premium brand work where gamut and gradient quality outweigh raw throughput.",
+    "maxSpeed": 100,
+    "regularMode": [
+      { "res": "Double CMYK", "pass": "Up to 24 printheads · Speed", "speed": 95, "label": "Maximum throughput" },
+      { "res": "Double 8 Colors", "pass": "Up to 24 printheads · Speed", "speed": 85, "label": "Industrial speed, extended range" },
+      { "res": "12 Colors per Row", "pass": "Quality configuration", "speed": 60, "label": "Maximum colour gamut" }
+    ]
+  },
+  "globalComponents": {
+    "description": "Built using premium global components engineered for high-definition multi-colour output, precise registration, open-system integration, and stable continuous production.",
+    "largeCard": {
+      "icon": "/Kyocera.webp",
+      "title": "Kyocera KJ4B / E x600 (Japan)",
+      "desc": "Single-carriage 600 dpi printheads supporting up to 24-head configurations across Speed and Quality production setups"
+    },
+    "smallCards": [
+      {
+        "icon": "/Vision-System.webp",
+        "title": "Digital Printhead Alignment System",
+        "desc": "Fully digital alignment mechanism for maximum registration precision and reduced job changeover time"
+      },
+      {
+        "icon": "/Color-Management.webp",
+        "title": "Built-In Advanced Queue Manager",
+        "desc": "Open-system RIP integration layer compatible with any third-party RIP software on the market"
+      },
+      {
+        "icon": "/Ink-System.webp",
+        "title": "Pneumatic Control System",
+        "desc": "6 bar utility system with precise consumption regulation between 20 and 300 L/min for stable mechanical operation"
+      },
+      {
+        "icon": "/Color-Management.webp",
+        "title": "Dual Water Circuit System",
+        "desc": "Separate standard (3 bar, max 300 L/hr) and demineralized (max 0.1 L/hr) water systems for washing unit operation and resource efficiency"
+      },
+      {
+        "icon": "/Drive-System.webp",
+        "title": "Industrial Power System",
+        "desc": "400V triphase supply with 25 KVA installed power for stable, consistent multi-printhead operation"
+      }
+    ]
+  },
+  "resources": {
+    "heading": "Resources",
+    "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
+    "brochure": {
+      "title": "Product Brochure",
+      "desc": "Full technical specifications, 12-colour extended gamut details, Speed and Quality configuration options, open-system ink and RIP compatibility, and installation requirements for the MAS Twelve."
+    }
+  },
+  "showcase": {
+    "heading": "MAS Twelve Showcase",
+    "description": "High-definition multi-colour digital textile printing with up to 12 dedicated colour channels, fully digital printhead alignment, open-system ink and RIP compatibility, and a modular ecosystem that reconfigures between industrial speed and maximum colour quality — built for fashion, accessories, swimwear, sportswear, and premium production.",
+    "solutionTagline": "12-colour extended gamut",
+    "leftItems": [
+      "Limited 8-colour gamut and visible gradient banding",
+      "Machine-locked ink and RIP software",
+      "Manual printhead alignment and long changeovers",
+      "Fixed setup forcing a choice between speed and quality"
+    ],
+    "rightItems": [
+      "12 dedicated colour channels with smooth, expanded-gamut gradients",
+      "Open-system ink support and any-RIP compatibility",
+      "Fully digital alignment with fast job changeovers",
+      "Modular reconfiguration between Speed and Quality setups"
+    ]
+  },
+  "contactCTA": {
+    "headingTop": "Ready to unlock",
+    "headingBottom": "High-definition 12-colour textile printing?",
+    "description": "Our specialists help you pick the right configuration, ink colours, and add-ons for your fabric range.",
+    "phone": "+91 74900 43336"
+  }
+}

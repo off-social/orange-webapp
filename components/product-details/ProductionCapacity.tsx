@@ -120,7 +120,8 @@ function SpeedRow({
       >
         <Box
           sx={{
-            minWidth: "130px",
+            width: { md: "130px", lg: "150px" },
+            flexShrink: 0,
             display: "flex",
             flexDirection: "column",
             gap: "2px",
@@ -149,10 +150,11 @@ function SpeedRow({
             {pass}
           </Typography>
         </Box>
-        <Box sx={{ flex: "1 0 0" }}>{bar}</Box>
+        <Box sx={{ flex: "1 1 0", minWidth: 0 }}>{bar}</Box>
         <Typography
           sx={{
-            minWidth: "120px",
+            width: { md: "130px", lg: "150px" },
+            flexShrink: 0,
             textAlign: "right",
             color: "#404040",
             fontFamily: "Inter, sans-serif",

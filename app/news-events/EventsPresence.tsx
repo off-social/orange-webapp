@@ -1,8 +1,7 @@
 "use client";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -101,30 +100,6 @@ export default function EventsPresence() {
           >
             Explore the latest trends in textile printing technology.
           </Typography>
-
-          <Button
-            variant="contained"
-            startIcon={
-              <Image src="/DateIcon.svg" alt="Date" width={16} height={16} />
-            }
-            endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
-            sx={{
-              bgcolor: "#F6891F",
-              color: "#FFF",
-              borderRadius: "8px",
-              textTransform: "none",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "13px",
-              fontWeight: 500,
-              lineHeight: "20.8px",
-              px: "24px",
-              py: "12px",
-              boxShadow: "none",
-              "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
-            }}
-          >
-            Book a Demo at Event
-          </Button>
         </Box>
       </Box>
 

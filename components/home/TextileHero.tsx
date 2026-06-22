@@ -103,30 +103,37 @@ const TextileHero = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            gap: "16px",
+            flexDirection: "row",
+            gap: { xs: "10px", sm: "16px" },
             mt: { xs: "8px", md: "24px" },
             width: { xs: "100%", sm: "auto" },
+            justifyContent: "center",
           }}
         >
           <Button
             component={Link}
             href="/products"
             variant="contained"
-            endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
+            endIcon={
+              <ArrowForwardIcon
+                sx={{ fontSize: { xs: "14px !important", md: "16px !important" } }}
+              />
+            }
             sx={{
               bgcolor: "#F6891F",
               color: "#FFF",
               borderRadius: "8px",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "13px",
+              fontSize: { xs: "12px", md: "13px" },
               fontWeight: 500,
               lineHeight: "20.8px",
-              p: "16px",
-              gap: "8px",
+              p: { xs: "12px 10px", md: "16px" },
+              gap: { xs: "6px", md: "8px" },
               boxShadow: "none",
-              width: { xs: "100%", sm: "200px" },
+              whiteSpace: "nowrap",
+              width: { xs: "auto", sm: "200px" },
+              flex: { xs: "1 1 0", sm: "0 0 auto" },
               order: { xs: 1, sm: 2 },
               "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
             }}
@@ -142,12 +149,14 @@ const TextileHero = () => {
               borderRadius: "8px",
               textTransform: "none",
               fontFamily: "Inter, sans-serif",
-              fontSize: "13px",
+              fontSize: { xs: "12px", md: "13px" },
               fontWeight: 500,
               lineHeight: "20.8px",
-              p: "16px",
+              p: { xs: "12px 10px", md: "16px" },
               boxShadow: "none",
-              width: { xs: "100%", sm: "200px" },
+              whiteSpace: "nowrap",
+              width: { xs: "auto", sm: "200px" },
+              flex: { xs: "1 1 0", sm: "0 0 auto" },
               order: { xs: 2, sm: 1 },
               "&:hover": {
                 bgcolor: "#F2F2F2",

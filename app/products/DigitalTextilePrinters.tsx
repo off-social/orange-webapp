@@ -2,7 +2,9 @@
 
 import { useConsultation } from "@/data/ConsultationContext";
 import { productHref } from "@/data/products";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import MachineImageCarousel, {
+  type MachineImageCarouselHandle,
+} from "@/components/products/MachineImageCarousel";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
@@ -200,82 +202,29 @@ const brands: BrandItem[] = [
 const RADO_INDEX = 3;
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";
 
-const NAV_BTN_SX = {
-  minWidth: { xs: "44px", md: "52px" },
-  width: { xs: "44px", md: "52px" },
-  height: { xs: "44px", md: "52px" },
-  borderRadius: "100px",
-  border: "1px solid #e8e8e8",
-  color: "#111",
-  bgcolor: "#fff",
-  fontSize: "20px",
-  boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
-  transition: "all 0.2s ease",
-  "&:hover": {
-    border: "1px solid #F6891F",
-    bgcolor: "#F6891F",
-    color: "#fff",
-    boxShadow: "0 6px 20px rgba(246,137,31,0.35)",
-    transform: "translateY(-50%) scale(1.08)",
-  },
-  "&.Mui-disabled": {
-    border: "1px solid #ededed",
-    color: "#cfcfcf",
-    bgcolor: "#fff",
-    boxShadow: "none",
-    opacity: 0.6,
-  },
-};
-
 export default function DigitalTextilePrinters() {
   const { openModal } = useConsultation();
   const [selected, setSelected] = useState(0);
   const [activeImg, setActiveImg] = useState(0);
   const [radoTab, setRadoTab] = useState(0);
   const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<MachineImageCarouselHandle>(null);
 
   const handleBrandChange = (index: number) => {
     setSelected(index);
     setActiveImg(0);
     setRadoTab(0);
-    setTimeout(
-      () => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }),
-      50,
-    );
   };
 
   const handleRadoTabChange = (_: React.SyntheticEvent, newValue: number) => {
     setRadoTab(newValue);
     setActiveImg(0);
-    setTimeout(
-      () => scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }),
-      50,
-    );
   };
 
   const activeImages =
     selected === RADO_INDEX
       ? (brands[RADO_INDEX].tabs?.[radoTab]?.previewImage ?? [])
       : (brands[selected]?.previewImage ?? []);
-
-  const getSlideWidth = () => {
-    const el = scrollRef.current;
-    return el ? el.scrollWidth / activeImages.length : 0;
-  };
-
-  const handleScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setActiveImg(Math.round(el.scrollLeft / getSlideWidth()));
-  };
-
-  const scrollTo = (index: number) => {
-    scrollRef.current?.scrollTo({
-      left: index * getSlideWidth(),
-      behavior: "smooth",
-    });
-  };
 
   const currentImg = activeImages[activeImg];
   const animKey = `${selected}-${radoTab}-${activeImg}`;
@@ -453,89 +402,13 @@ export default function DigitalTextilePrinters() {
 
       {/* Carousel */}
       {activeImages.length > 0 && (
-        <Box sx={{ width: "100%", mt: 5, position: "relative" }}>
-          {/* Left arrow */}
-          <Button
-            onClick={() => scrollTo(Math.max(0, activeImg - 1))}
-            disabled={activeImg === 0}
-            sx={{
-              ...NAV_BTN_SX,
-              display: { xs: "none", md: "flex" },
-              position: "absolute",
-              left: { md: "calc(20vw - 56px)" },
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 2,
-            }}
-          >
-            <ArrowBackIcon sx={{ fontSize: "20px" }} />
-          </Button>
-
-          <Box
-            ref={scrollRef}
-            onScroll={handleScroll}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: { xs: "5%", sm: "8%", md: "20%" },
-              px: { xs: "8vw", sm: "10vw", md: "20vw" },
-              width: "100%",
-              overflowX: "scroll",
-              overflowY: "hidden",
-              scrollSnapType: "x mandatory",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              "&::-webkit-scrollbar": { display: "none" },
-            }}
-          >
-            {activeImages.map((img, index) => (
-              <Box
-                key={index}
-                sx={{
-                  width: { xs: "auto", sm: "65vw", md: "55vw" },
-                  height: { xs: "181px", sm: "240px", md: "22vw" },
-                  aspectRatio: { xs: "201 / 101", sm: "unset" },
-                  alignSelf: "stretch",
-                  flexShrink: 0,
-                  scrollSnapAlign: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.name}
-                  width={900}
-                  height={500}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                />
-              </Box>
-            ))}
-          </Box>
-
-          {/* Right arrow */}
-          <Button
-            onClick={() =>
-              scrollTo(Math.min(activeImages.length - 1, activeImg + 1))
-            }
-            disabled={activeImg === activeImages.length - 1}
-            sx={{
-              ...NAV_BTN_SX,
-              display: { xs: "none", md: "flex" },
-              position: "absolute",
-              right: { md: "calc(20vw - 56px)" },
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 2,
-            }}
-          >
-            <ArrowForwardIcon sx={{ fontSize: "20px" }} />
-          </Button>
+        <Box sx={{ width: "100%", mt: 5 }}>
+          <MachineImageCarousel
+            ref={carouselRef}
+            images={activeImages}
+            resetKey={`${selected}-${radoTab}`}
+            onActiveIndexChange={setActiveImg}
+          />
         </Box>
       )}
 
@@ -581,8 +454,8 @@ export default function DigitalTextilePrinters() {
             key={`btn-${animKey}`}
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              gap: { xs: "12px", md: 2 },
+              flexDirection: "row",
+              gap: { xs: "10px", md: 2 },
               mt: 3,
               justifyContent: "center",
               px: { xs: "16px", md: 0 },
@@ -602,12 +475,13 @@ export default function DigitalTextilePrinters() {
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: { xs: "12px", md: "14px" },
                 fontWeight: 500,
-                px: 3,
+                px: { xs: "16px", md: 3 },
                 py: "13px",
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                whiteSpace: "nowrap",
+                width: { xs: "auto", md: "auto" },
                 "&:hover": { bgcolor: "#f5f5f5", boxShadow: "none" },
                 "&.Mui-disabled": {
                   color: "#bdbdbd",
@@ -621,7 +495,9 @@ export default function DigitalTextilePrinters() {
             <Button
               variant="contained"
               endIcon={
-                <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
+                <ArrowForwardIcon
+                  sx={{ fontSize: { xs: "13px !important", md: "15px !important" } }}
+                />
               }
               sx={{
                 bgcolor: "#F6891F",
@@ -629,12 +505,13 @@ export default function DigitalTextilePrinters() {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
+                fontSize: { xs: "12px", md: "14px" },
                 fontWeight: 500,
-                px: 3,
+                px: { xs: "16px", md: 3 },
                 py: "13px",
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                whiteSpace: "nowrap",
+                width: { xs: "auto", md: "auto" },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}
               onClick={() => openModal(currentImg.name)}
@@ -656,7 +533,7 @@ export default function DigitalTextilePrinters() {
             {activeImages.map((_, i) => (
               <Box
                 key={i}
-                onClick={() => scrollTo(i)}
+                onClick={() => carouselRef.current?.scrollToIndex(i)}
                 sx={{
                   width: i === activeImg ? "24px" : "8px",
                   height: "8px",

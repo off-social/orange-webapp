@@ -31,9 +31,8 @@ const Home = () => {
         sx={{
           position: "relative",
           width: "100%",
-          // Taller on mobile so the overlay card sits lower and more of the
-          // video is visible; original home-page height (600px) on web.
-          height: { xs: "700px", sm: "600px" },
+          // Mobile frame is 393×603 (Figma); 600px on web.
+          height: { xs: "603px", sm: "600px" },
           overflow: "hidden",
         }}
       >
@@ -58,21 +57,27 @@ const Home = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "16px", md: "40px" },
-            left: { xs: "12px", md: "40px", lg: "168px" },
-            right: { xs: "12px", md: "40px", lg: "168px" },
+            bottom: { xs: "16px", sm: "24px", md: "40px" },
+            left: { xs: "16px", sm: "40px", md: "40px", lg: "168px" },
+            right: { xs: "16px", sm: "40px", md: "40px", lg: "168px" },
             width: "auto",
             transform: "none",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            padding: { xs: "20px", sm: "28px", md: "32px", lg: "40px" },
+            padding: {
+              xs: "24px 16px 16px 16px",
+              sm: "28px",
+              md: "32px",
+              lg: "40px",
+            },
             justifyContent: "space-between",
-            alignItems: { xs: "flex-start", md: "flex-end" },
+            alignItems: { xs: "stretch", sm: "center", md: "flex-end" },
             borderRadius: "20px",
             border: "1px solid #FFF",
             background: "rgba(239, 239, 239, 0.10)",
             backdropFilter: "blur(20px)",
-            gap: { xs: "16px", sm: "20px", md: "24px", lg: "32px" },
+            WebkitBackdropFilter: "blur(20px)",
+            gap: { xs: "24px", sm: "20px", md: "24px", lg: "32px" },
           }}
         >
           {/* Left: Heading + subtitle */}
@@ -80,18 +85,20 @@ const Home = () => {
             sx={{
               display: "flex",
               flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-start" },
               gap: "16px",
-              maxWidth: { md: "480px" },
+              maxWidth: { sm: "560px", md: "480px" },
             }}
           >
             <Typography
               sx={{
                 color: "#111",
+                textAlign: { xs: "center", md: "left" },
                 fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "26px", sm: "28px", md: "28px", lg: "40px" },
+                fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "40px" },
                 fontWeight: 500,
-                lineHeight: { xs: "34px", md: "36px", lg: "52px" },
-                letterSpacing: "-1px",
+                lineHeight: { xs: "31.2px", md: "36px", lg: "52px" },
+                letterSpacing: { xs: 0, md: "-1px" },
               }}
             >
               Built with Precision.
@@ -100,11 +107,12 @@ const Home = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: "13px", sm: "14px", md: "16px" },
-                color: "#e6e6e6",
+                fontSize: { xs: "12px", sm: "14px", md: "16px" },
+                color: { xs: "#333", md: "#e6e6e6" },
+                textAlign: { xs: "center", md: "left" },
                 fontWeight: 500,
                 maxWidth: "480px",
-                lineHeight: "25.6px",
+                lineHeight: { xs: "19.2px", md: "25.6px" },
                 fontFamily: "Inter, sans-serif",
               }}
             >
@@ -117,11 +125,12 @@ const Home = () => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
+              flexDirection: "row",
               gap: "8px",
               flexShrink: 0,
               alignItems: "stretch",
-              width: { xs: "100%", md: "auto" },
+              justifyContent: "center",
+              width: { xs: "100%", sm: "auto", md: "auto" },
             }}
           >
             <Button
@@ -133,21 +142,23 @@ const Home = () => {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
+                fontSize: { xs: "12px", sm: "13px" },
                 fontWeight: 500,
                 lineHeight: "20.8px",
-                p: "16px",
+                p: { xs: "12px 10px", md: "16px" },
                 boxShadow: "none",
-                width: { xs: "100%", md: "170px" },
+                whiteSpace: { xs: "nowrap", sm: "nowrap" },
+                flex: { xs: "1 0 0", sm: "0 0 auto", md: "none" },
+                width: { xs: "auto", sm: "auto", md: "170px" },
                 "&:hover": {
                   bgcolor: "#F2F2F2",
                   borderColor: "#E0E0E0",
                   boxShadow: "none",
                 },
               }}
-              onClick={() => openModal()}
+              // onClick={() => openModal()}
             >
-              Book a Consultation
+              Get a Quote
             </Button>
             <Button
               component={Link}
@@ -171,13 +182,15 @@ const Home = () => {
                 borderRadius: "8px",
                 textTransform: "none",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
+                fontSize: { xs: "12px", sm: "13px" },
                 fontWeight: 500,
                 lineHeight: "20.8px",
-                p: "16px",
-                gap: "8px",
+                p: { xs: "12px 10px", md: "16px" },
+                gap: { xs: "6px", md: "8px" },
                 boxShadow: "none",
-                width: { xs: "100%", md: "auto" },
+                flex: { xs: "1 0 0", sm: "0 0 auto", md: "none" },
+                width: { xs: "auto", sm: "auto", md: "auto" },
+                whiteSpace: "nowrap",
                 "& .MuiButton-endIcon": { ml: 0 },
                 "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
               }}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Sharpe-less-ness: Why Fund Rankings Invert in a Down Market</title>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* colors */
+        --primary-orange: #f6891f;
+        --black-600: #111;
+        --grey-600: #333;
+        --grey-500: #707070;
+        --grey-400: #999;
+        --grey-outline: #e0e0e0;
+        --white-surface: #fff;
+
+        /* type */
+        --font-family-body: "Inter", sans-serif;
+        --font-family-heading: "Inter", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-family-body);
+        background: var(--white-surface);
+        color: var(--grey-600);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ===== Page container =====
+         spec: padding 80px 356px; column; align-items center; gap 40px */
+      .article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 80px 356px;
+        background: var(--white-surface);
+      }
+
+      .article > * {
+        width: 100%;
+        max-width: 728px;
+      }
+
+      /* ===== Header ===== */
+      .article-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .topic {
+        color: var(--primary-orange);
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .title {
+        color: var(--black-600);
+        font-family: var(--font-family-heading);
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 41.6px; /* 130% */
+        letter-spacing: -1px;
+      }
+
+      .lead {
+        color: var(--grey-500);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25.6px; /* 160% */
+      }
+
+      .byline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .byline .author {
+        font-size: 14px;
+        line-height: 22.4px;
+      }
+      .byline .author strong {
+        color: var(--black-600);
+        font-weight: 600;
+      }
+      .byline .author span {
+        color: var(--grey-500);
+        font-weight: 400;
+      }
+
+      .byline .date {
+        color: var(--grey-500);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22.4px;
+        white-space: nowrap;
+      }
+
+      /* ===== Hero image =====
+         spec: height 417px; border-radius 8px; cover */
+      .hero {
+        position: relative;
+        height: 417px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: lightgray 50% / cover no-repeat;
+      }
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hero .badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        background: var(--white-surface);
+        color: var(--grey-500);
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      /* ===== Article body (backend HTML goes here) ===== */
+      .article-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .article-content > * {
+        width: 100%;
+      }
+      .article-content p {
+        color: var(--grey-600);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25.6px;
+      }
+      .article-content h2 {
+        color: var(--black-600);
+        font-family: var(--font-family-heading);
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 31.2px;
+        letter-spacing: 0;
+        margin-top: 16px;
+      }
+      .article-content h3 {
+        color: var(--black-600);
+        font-family: var(--font-family-heading);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        margin-top: 8px;
+      }
+      .article-content strong {
+        font-weight: 600;
+        color: var(--black-600);
+      }
+      .article-content .formula {
+        font-weight: 600;
+        color: var(--black-600);
+      }
+      .article-content ul,
+      .article-content ol {
+        padding-left: 22px;
+        color: var(--grey-600);
+        font-size: 16px;
+        line-height: 25.6px;
+      }
+      .article-content img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      /* ===== Responsive: mobile / tablet / laptop ===== */
+      @media (max-width: 1439px) {
+        .article {
+          padding: 80px 240px;
+        }
+      }
+      @media (max-width: 1199px) {
+        .article {
+          padding: 64px 120px;
+        }
+      }
+      @media (max-width: 899px) {
+        .article {
+          padding: 48px 40px;
+        }
+        .hero {
+          height: 320px;
+        }
+      }
+      @media (max-width: 599px) {
+        .article {
+          padding: 40px 16px;
+          gap: 32px;
+        }
+        .title {
+          font-size: 26px;
+          line-height: 33.8px;
+          letter-spacing: -0.5px;
+        }
+        .hero {
+          height: 240px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <article class="article">
+      <!-- ===== HEADER ===== -->
+      <header class="article-header">
+        <!-- {{TOPIC}} -->
+        <div class="topic">Topic Name</div>
+
+        <!-- {{TITLE}} -->
+        <h1 class="title">
+          The Sharpe-less-ness: Why Fund Rankings Invert in a Down Market
+        </h1>
+
+        <!-- {{DESCRIPTION}} -->
+        <p class="lead">
+          A negative Sharpe ratio can rank the careful fund worst in a down
+          market. Why it happens, a one-line fix, and which other measures share
+          the flaw.
+        </p>
+
+        <div class="byline">
+          <!-- {{AUTHOR}} / {{ROLE}} -->
+          <div class="author">
+            <strong>Founder Name</strong><span> · Founder</span>
+          </div>
+          <!-- {{DATE}} · {{READ_TIME}} -->
+          <div class="date">Jun 2, 2025 · 1 min read</div>
+        </div>
+      </header>
+
+      <!-- ===== HERO IMAGE ===== -->
+      <div class="hero">
+        <!-- {{HERO_IMAGE}} -->
+        <img src="blogImg1.webp" alt="Article cover" />
+        <span class="badge">Featured</span>
+      </div>
+
+      <!-- ===== ARTICLE BODY =====
+           Replace the inner HTML of .article-content with the blog content
+           coming from the backend. Supported tags are styled above:
+           <p>, <h2>, <h3>, <strong>, <ul>/<ol>, <img>, .formula -->
+      <div class="article-content">
+        <p>
+          In a falling market, ranking funds by Sharpe ratio can quietly invert
+          the answer and mark down the more careful fund. Here is why it happens,
+          and the one-line adjustment that fixes it.
+        </p>
+        <p>
+          The Sharpe ratio is the closest thing fund analysis has to a universal
+          yardstick. It takes return, divides by risk, and gives one number that
+          lets a cautious fund and an aggressive one be compared on the same
+          footing. That convenience is why it sits on almost every factsheet and
+          screening tool.
+        </p>
+        <p>
+          But it hides a flaw that surfaces at the worst possible moment. When
+          markets fall, the ratio can rank the more sensible fund as the worse
+          one, and do it so quietly that the error rarely gets noticed.
+        </p>
+
+        <h2>What the Sharpe ratio is meant to do</h2>
+        <p>The Sharpe ratio is excess return per unit of risk:</p>
+        <p class="formula">Sharpe ratio = (Rp − Rf) / σp</p>
+        <p>
+          Where Rp is the portfolio return, Rf is the risk-free rate, and σp is
+          the volatility of the portfolio. The intuition is clean. For two funds
+          with the same return, the one that took less risk to get there is
+          better, and a smaller σp in the denominator gives it a higher ratio.
+          For the same risk, the fund with the higher return is better. Read this
+          way, a higher Sharpe is a better fund, and the measure does exactly
+          what a risk-aware reader wants.
+        </p>
+        <p>
+          That reasoning holds as long as the numerator is positive. The moment
+          excess return turns negative, it breaks.
+        </p>
+
+        <h2>Where the Sharpe ratio inverts: negative returns</h2>
+        <p>
+          When a fund loses money relative to the risk-free rate, the numerator
+          (Rp − Rf) is negative. Dividing a negative number by a smaller
+          denominator makes it more negative, not less. So for two funds with the
+          same negative excess return, the one with lower volatility gets the more
+          negative Sharpe ratio. A negative Sharpe ratio no longer behaves like
+          its positive counterpart: more risk now improves the score instead of
+          hurting it. The careful fund is marked down for being careful.
+        </p>
+        <p>
+          Both lost the same amount. Fund B did it with less volatility, so by
+          any reasonable standard Fund B is the better of the two. The Sharpe
+          ratio says the opposite: Fund A, at −2.25, outranks Fund B at −3.00.
+          Here the right answer is not a matter of taste. Same return, lower risk,
+          is simply better, and the ratio gets it backwards. This is the case
+          worth keeping in mind, because it is provably wrong rather than
+          debatable.
+        </p>
+        <p>The distortion is not always this visible. Take a second pair:</p>
+      </div>
+    </article>
+  </body>
+</html>

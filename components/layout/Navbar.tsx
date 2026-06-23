@@ -103,6 +103,16 @@ export default function Navbar() {
     };
   }, [drawerOpen]);
 
+  // Auto-expand the dropdown that contains the current page.
+  useEffect(() => {
+    const active = navLinks.find((item) =>
+      item.dropdown?.some((s) => s.to === pathname),
+    );
+    if (active) {
+      setMobileOpen((prev) => ({ ...prev, [active.label]: true }));
+    }
+  }, [pathname]);
+
   return (
     <>
       <AppBar
@@ -339,7 +349,13 @@ export default function Navbar() {
                 <>
                   <ListItemButton
                     onClick={() => toggleMobile(item.label)}
-                    sx={{ py: "12px", px: 2 }}
+                    sx={{
+                      py: "12px",
+                      px: 2,
+                      borderLeft: item.dropdown?.some((s) => s.to === pathname)
+                        ? "3px solid #F6891F"
+                        : "3px solid transparent",
+                    }}
                   >
                     <ListItemText
                       primary={item.label}
@@ -371,7 +387,19 @@ export default function Navbar() {
                             component={Link}
                             href={sub.to}
                             onClick={toggleDrawer(false)}
-                            sx={{ py: "10px", pl: 4, pr: 2 }}
+                            sx={{
+                              py: "10px",
+                              pl: 4,
+                              pr: 2,
+                              borderLeft:
+                                pathname === sub.to
+                                  ? "3px solid #F6891F"
+                                  : "3px solid transparent",
+                              bgcolor:
+                                pathname === sub.to
+                                  ? "rgba(246,137,31,0.12)"
+                                  : "transparent",
+                            }}
                           >
                             <ListItemText
                               primary={sub.label}
@@ -380,7 +408,10 @@ export default function Navbar() {
                                   style: {
                                     fontFamily: "Inter, sans-serif",
                                     fontSize: "13px",
-                                    color: "#b0b0b0",
+                                    color:
+                                      pathname === sub.to
+                                        ? "#F6891F"
+                                        : "#b0b0b0",
                                   },
                                 },
                               }}

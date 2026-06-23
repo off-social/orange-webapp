@@ -42,18 +42,24 @@ const Footer = () => {
             width: { xs: "100%", md: "auto" },
           }}
         >
-          {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
-            <Box sx={{ width: "100%", height: "100%" }}>
-              <Image
-                src="/OrangeLogo.svg"
-                alt="Orange"
-                width={110}
-                height={25}
-                style={{ display: "block" }}
-              />
-            </Box>
-          </Link>
+          {/* Logo — centred on mobile, left-aligned on desktop */}
+          <Box
+            component={Link}
+            href="/"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              alignSelf: { xs: "center", md: "flex-start" },
+            }}
+          >
+            <Image
+              src="/OrangeLogo.svg"
+              alt="Orange"
+              width={110}
+              height={25}
+              style={{ display: "block" }}
+            />
+          </Box>
 
           {/* Quick Links heading */}
           <Typography

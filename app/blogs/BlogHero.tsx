@@ -13,14 +13,14 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
       sx={{
         display: "flex",
         padding: {
-          xs: "48px 16px 0 16px",
+          xs: "48px 16px 32px 16px",
           sm: "64px 40px 0 40px",
-          md: "100px 80px 0 80px",
-          lg: "100px 168px 0 168px",
-          xl: "100px 263px 0 263px",
+          md: "80px 80px 0 80px",
+          lg: "80px 168px 0 168px",
+          xl: "80px 263px 0 263px",
         },
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         gap: { xs: "24px", md: "40px" },
         alignSelf: "stretch",
         bgcolor: "#FFF",
@@ -31,14 +31,14 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
+          alignItems: "flex-start",
+          gap: { xs: "12px", md: "8px" },
         }}
       >
         <Typography
           sx={{
             color: "#707070",
-            textAlign: "center",
+            textAlign: "left",
             fontFamily: "Inter, sans-serif",
             fontSize: { xs: "14px", md: "16px" },
             fontWeight: 400,
@@ -53,12 +53,12 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         <Typography
           sx={{
             color: "#333",
-            textAlign: "center",
+            textAlign: "left",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px" },
+            fontSize: { xs: "32px", md: "40px" },
             fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px" },
-            letterSpacing: { xs: 0, md: "-1px" },
+            lineHeight: { xs: "41.6px", md: "52px" },
+            letterSpacing: "-1px",
           }}
         >
           Insights on Textile Innovation
@@ -67,14 +67,15 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         <Typography
           sx={{
             color: "#707070",
-            textAlign: "center",
+            textAlign: "left",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px" },
-            fontWeight: 500,
-            lineHeight: { xs: "19.2px", md: "22.4px" },
+            fontSize: "14px",
+            fontWeight: 400,
+            lineHeight: "22.4px",
           }}
         >
-          Explore the latest trends in textile printing technology.
+          Explore the latest trends in textile printing technology and industry
+          insights.
         </Typography>
       </Box>
 
@@ -88,7 +89,7 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
           }}
         >
@@ -100,15 +101,19 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
                 key={tab}
                 onClick={() => onTabChange(tab)}
                 sx={{
-                  px: { xs: "24px", sm: "40px", md: "60px" },
-                  pb: "12px",
+                  display: "flex",
+                  width: { xs: "auto", md: "150px" },
+                  flex: { xs: "1 0 0", md: "0 0 auto" },
+                  padding: { xs: "16px 0 8px 0", md: "24px 0 16px 0" },
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "4px",
                   cursor: "pointer",
                   borderBottom: isActive
                     ? "2px solid #F6891F"
                     : "2px solid transparent",
                   mb: "-1px",
                   whiteSpace: "nowrap", // ← prevents "Success\nStories" wrap
-                  flexShrink: 0, // ← tab never squishes
                 }}
               >
                 <Typography

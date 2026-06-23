@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import BlogFeatured from "./BlogFeatured";
 import BlogHero from "./BlogHero";
 import BlogList from "./BlogList";
 
@@ -10,7 +11,12 @@ export default function BlogPage() {
   return (
     <>
       <BlogHero activeTab={activeTab} onTabChange={setActiveTab} />
-      {activeTab === "blogs" && <BlogList />}
+      {activeTab === "blogs" && (
+        <>
+          <BlogFeatured />
+          <BlogList />
+        </>
+      )}
     </>
   );
 }

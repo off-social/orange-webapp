@@ -74,8 +74,12 @@ const ALL_BLOGS = [
 const ITEMS_PER_PAGE = 7;
 const TOTAL_PAGES = Math.ceil(ALL_BLOGS.length / ITEMS_PER_PAGE);
 
+const FILTERS = ["All", "Products", "Industry"] as const;
+type Filter = (typeof FILTERS)[number];
+
 export default function BlogList() {
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState<Filter>("All");
 
   const start = (page - 1) * ITEMS_PER_PAGE;
   const blogs = ALL_BLOGS.slice(start, start + ITEMS_PER_PAGE);
@@ -109,10 +113,11 @@ export default function BlogList() {
         sx={{
           display: "flex",
           padding: {
-            xs: "64px 16px",
-            sm: "64px 40px",
-            md: "64px 80px",
-            lg: "64px 356px",
+            xs: "40px 16px",
+            sm: "40px 40px",
+            md: "40px 80px",
+            lg: "40px 168px",
+            xl: "40px 263px",
           },
           flexDirection: "column",
           alignItems: "center",
@@ -120,141 +125,208 @@ export default function BlogList() {
           alignSelf: "stretch",
         }}
       >
-        {/* Blog items */}
+        {/* Latest header + filters */}
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center",
+            alignSelf: "stretch",
+            flexWrap: "wrap",
+            gap: "16px",
+            width: "100%",
+          }}
+        >
+          <Typography
+            sx={{
+              color: "var(--black-600, #111)",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "24px",
+              fontWeight: 500,
+              lineHeight: "31.2px",
+              letterSpacing: 0,
+            }}
+          >
+            Latest
+          </Typography>
+
+          <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            {FILTERS.map((f) => {
+              const isActive = filter === f;
+              return (
+                <Box
+                  key={f}
+                  onClick={() => setFilter(f)}
+                  sx={{
+                    display: "flex",
+                    width: isActive ? "98px" : "auto",
+                    padding: "8px 16px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "4px",
+                    borderRadius: "32px",
+                    cursor: "pointer",
+                    flexShrink: 0,
+                    bgcolor: isActive
+                      ? "var(--black-600, #111)"
+                      : "var(--white-surface, #FFF)",
+                    border: isActive
+                      ? "1px solid var(--black-600, #111)"
+                      : "1px solid var(--grey-outline, #E0E0E0)",
+                    transition: "all 0.2s ease",
+                    "&:hover": isActive ? {} : { bgcolor: "#F2F2F2" },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      fontWeight: isActive ? 600 : 500,
+                      lineHeight: "22.4px",
+                      color: isActive ? "#FFF" : "#111",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {f}
+                  </Typography>
+                </Box>
+              );
+            })}
+          </Box>
+        </Box>
+
+        {/* Blog grid */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            },
+            columnGap: "24px",
+            rowGap: "48px",
             alignItems: "flex-start",
-            gap: 0,
             width: "100%",
           }}
         >
           {blogs.map((blog, i) => (
-            <Box key={start + i} sx={{ width: "100%" }}>
-              {i > 0 && (
-                <Box sx={{ height: "1px", bgcolor: "#E0E0E0", my: "32px" }} />
-              )}
-              <Link
-                href={`/blogs/${blog.slug}`}
-                style={{ textDecoration: "none", display: "block" }}
+            <Link
+              key={start + i}
+              href={`/blogs/${blog.slug}`}
+              style={{ textDecoration: "none", display: "block" }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  gap: "16px",
+                  width: "100%",
+                  borderRadius: "12px",
+                  bgcolor: "var(--white-surface, #FFF)",
+                  cursor: "pointer",
+                  "&:hover .blog-title": { color: "#F6891F" },
+                }}
               >
+                {/* Image */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "16 / 10",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    flexShrink: 0,
+                  }}
+                >
+                  <Image
+                    src={blog.img}
+                    alt={blog.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 352px"
+                  />
+                </Box>
+
+                {/* Text content */}
                 <Box
                   sx={{
                     display: "flex",
-                    justifyContent: "space-between",
+                    flexDirection: "column",
                     alignItems: "flex-start",
-                    gap: { xs: "16px", md: "24px", lg: "32px" },
-                    cursor: "pointer",
-                    width: "100%",
-                    minWidth: 0, // ← prevent flex child from overflowing
-                    "&:hover .blog-title": { color: "#F6891F" },
+                    gap: "8px",
+                    alignSelf: "stretch",
                   }}
                 >
-                  {/* Text — takes remaining space, never overflow */}
-                  <Box
+                  <Typography
                     sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "8px",
-                      flex: 1,
-                      minWidth: 0, // ← critical: allows text truncation inside flex
+                      color: "var(--primary-orange-primary-orange, #F6891F)",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "10px",
+                      fontWeight: 500,
+                      lineHeight: "16px",
+                      letterSpacing: "1.5px",
+                      textTransform: "uppercase",
                     }}
                   >
-                    <Typography
-                      sx={{
-                        color: "#707070",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: "10px",
-                        fontWeight: 500,
-                        lineHeight: "16px",
-                        letterSpacing: "1.5px",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {blog.date}
-                    </Typography>
-                    <Typography
-                      className="blog-title"
-                      sx={{
-                        color: "#333",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: { xs: "18px", md: "20px", lg: "24px" },
-                        fontWeight: 500,
-                        lineHeight: { xs: "23.4px", md: "28px", lg: "31.2px" },
-                        letterSpacing: 0,
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 2,
-                        transition: "color 0.2s ease",
-                      }}
-                    >
-                      {blog.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "#707070",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: { xs: "12px", md: "14px" },
-                        fontWeight: 500,
-                        lineHeight: { xs: "19.2px", md: "22.4px" },
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 3,
-                      }}
-                    >
-                      {blog.desc}
-                    </Typography>
-                  </Box>
+                    Topic Name
+                  </Typography>
 
-                  {/* Image — fixed size, never shrinks text */}
-                  <Box
+                  <Typography
+                    className="blog-title"
                     sx={{
-                      flexShrink: 0,
-                      width: {
-                        xs: "120px",
-                        sm: "160px",
-                        md: "200px", // 768 tablet
-                        lg: "220px", // 1024
-                        xl: "240px", // 1440 / 2560
-                      },
-                      height: {
-                        xs: "82px",
-                        sm: "110px",
-                        md: "136px",
-                        lg: "150px",
-                        xl: "163px",
-                      },
-                      borderRadius: "4px",
+                      alignSelf: "stretch",
+                      color: "var(--grey-600, #333)",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      lineHeight: "25.6px",
                       overflow: "hidden",
-                      position: "relative",
+                      textOverflow: "ellipsis",
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                      transition: "color 0.2s ease",
                     }}
                   >
-                    <Image
-                      src={blog.img}
-                      alt={blog.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  </Box>
-                </Box>
-              </Link>
-            </Box>
-          ))}
+                    {blog.title}
+                  </Typography>
 
-          {/* Bottom divider */}
-          <Box
-            sx={{
-              height: "1px",
-              bgcolor: "#E0E0E0",
-              width: "100%",
-              mt: "32px",
-            }}
-          />
+                  <Typography
+                    sx={{
+                      alignSelf: "stretch",
+                      height: "59px",
+                      color: "var(--grey-500, #707070)",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: 500,
+                      lineHeight: "19.2px",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                    }}
+                  >
+                    {blog.desc}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "var(--grey-400, #999)",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: 400,
+                      lineHeight: "19.2px",
+                    }}
+                  >
+                    {blog.date}&nbsp;&nbsp;•&nbsp;&nbsp;5 min read
+                  </Typography>
+                </Box>
+              </Box>
+            </Link>
+          ))}
         </Box>
 
         {/* Pagination */}

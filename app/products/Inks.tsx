@@ -25,6 +25,18 @@ const INK_TABS = [
     name: "Pigment Ink Series",
     desc: "Eco-friendly pigment inks compatible with direct-to-fabric printing.",
   },
+  {
+    label: "UV",
+    src: "/Reactive1.webp",
+    name: "UV Ink Series",
+    desc: "UV-curable inks for instant curing on rigid and flexible substrates.",
+  },
+  {
+    label: "Disperse",
+    src: "/Reactive1.webp",
+    name: "Disperse Ink Series",
+    desc: "High-energy disperse inks for direct polyester and sportswear printing.",
+  },
 ];
 
 const FADE_ANIM = "fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards";

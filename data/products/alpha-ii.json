@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "C + M + Y + K (standard, optional 4 colors)" }
       ],
       [
         { "label": "Standard Speed", "value": "2,000 to 2,200 lm/day (2-pass)" },

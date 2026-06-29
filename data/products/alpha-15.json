@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "C + M + Y + K (standard, optional 6 colors)" }
       ],
       [
         { "label": "Printing Mode", "value": "Sublimation Transfer Printing" },

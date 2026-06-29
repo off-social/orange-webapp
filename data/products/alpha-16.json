@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Printing Mode", "value": "Sublimation (High-Concentration Heat Transfer Ink)" },
@@ -33,7 +33,15 @@
         { "label": "Ink Types", "value": "Sublimation" }
       ],
       [
-        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" },
+        { "label": "Machine Width", "value": "1950 mm" }
+      ],
+      [
+        { "label": "X-Axis Transmission", "value": "Maglev" },
+        { "label": "Print Speed (1 Pass)", "value": "590 sqm/h / 460 LM/Hr" }
+      ],
+      [
+        { "label": "Print Speed (2 Pass)", "value": "295 sqm/h / 230 LM/Hr" }
       ]
     ]
   },
@@ -95,6 +103,21 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Auto Moisture and Cleaning System",
         "desc": "Automated printhead moisture control and cleaning cycle maintains consistent nozzle performance throughout the production shift without requiring manual intervention between jobs."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Unattended Automated Production",
+        "desc": "Advanced board control technology enables fully unattended automated production schemes, achieving production speeds of up to 590 sqm/h with minimal operator intervention."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Multi-Position Guide Roller & Plue Roller Feeding",
+        "desc": "Multi-position guide rollers keep the material paper uniform for high-precision output free of press-wheel marks and wrinkles, while the Plue roller feeding system keeps the material stable and neat."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Thickened Wall Panel Structure",
+        "desc": "A thickened wall panel structure ensures structural stability for long-term high-speed operation, supporting consistent registration and print quality."
       }
     ]
   },
@@ -135,6 +158,31 @@
         "image": "/Jacquard.webp",
         "title": "Apparel, Home Decor, and Promotional Fabric Production",
         "desc": "Versatile sublimation capability across transfer paper and direct polyester fabric substrates suits manufacturers serving multiple end markets from a single production platform."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "T-Shirt Printing",
+        "desc": "Vibrant sublimation transfer printing for polyester T-shirts and apparel at high volume."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Canvas Bags",
+        "desc": "Durable, full-colour sublimation prints on polyester canvas bags and promotional carry products."
+      },
+      {
+        "image": "/Lace-sequin.webp",
+        "title": "Cushions",
+        "desc": "High-coverage sublimation on polyester cushion covers and soft furnishings for home decor production."
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Scooters and Vehicle Wraps",
+        "desc": "Sublimation transfer for polyester-based scooter seat covers, wraps, and personalised vehicle textiles."
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Flags and Textile Fabrics",
+        "desc": "Bright, fade-resistant sublimation printing on polyester flags, banners, and general textile fabrics."
       }
     ]
   },

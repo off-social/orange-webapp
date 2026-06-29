@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + W + Special Effects)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + W + Special Effects)" }
       ],
       [
         { "label": "Printing Mode", "value": "Mesh Belt Inkjet (Water-based Eco-friendly Ink)" },
@@ -31,6 +31,14 @@
       [
         { "label": "Ink Types", "value": "Water-based · White · Foil Adhesive · Sublimation" },
         { "label": "Media", "value": "Fabric and Paper (foil and sublimation compatible)" }
+      ],
+      [
+        { "label": "Application", "value": "Transfer Paper for Textile Sublimation" },
+        { "label": "Production Capacity", "value": "Up to 2,200 Linear Meters/Day" }
+      ],
+      [
+        { "label": "Suitable Industries", "value": "Sportswear · Fashion · Home Furnishing · Soft Signage" },
+        { "label": "Printing Method", "value": "Roll-to-Roll" }
       ]
     ]
   },
@@ -94,6 +102,26 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Mesh Belt Conveying System",
         "desc": "Open-mesh belt transport allows airflow through the media during drying while maintaining stable fabric positioning throughout the foil adhesive printing and collection process."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "High Production Output",
+        "desc": "Designed for industrial production environments with a capacity of up to 2,200 linear metres per day, making it suitable for large-volume operations."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Epson I3200 Printhead Technology",
+        "desc": "Features 8 industrial Epson I3200-A1 printheads known for high precision printing, consistent colour reproduction, long production runs, and stable performance at high speeds."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Industrial Roll-to-Roll Design",
+        "desc": "Continuous production workflow, stable media transport, suitable for long production runs, optimized for transfer paper printing."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Sublimation Printing Applications",
+        "desc": "Ideal for sportswear, activewear, fashion fabrics, home textiles, curtains, cushion covers, promotional textiles, and soft signage graphics."
       }
     ]
   },
@@ -134,6 +162,36 @@
         "image": "/Jacquard.webp",
         "title": "Accessories and Narrow-Format Applications",
         "desc": "Precise foil placement and vibrant sublimation output on scarves, stoles, bags, and textile accessories for fashion accessory brands and gift product manufacturers."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Textile Printing Houses",
+        "desc": "Industrial production capacity for textile printing houses handling large-volume sublimation transfer paper work for multiple buyers."
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Sportswear Manufacturers",
+        "desc": "Vibrant, wash-fast sublimation output on polyester performance fabrics for sportswear, activewear, and team uniform production."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Garment Exporters",
+        "desc": "Consistent, high-volume output for garment exporters serving fashion, sportswear, and home textile markets."
+      },
+      {
+        "image": "/Lace-sequin.webp",
+        "title": "Home Furnishing Manufacturers",
+        "desc": "Sublimation printing for curtains, cushion covers, and decorative home furnishing textiles at industrial volume."
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Polyester Fabric Processors",
+        "desc": "Reliable sublimation output for polyester fabric processors producing performance, fashion, and home furnishing textiles."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Digital Sublimation Printing Businesses",
+        "desc": "Built for digital sublimation printing businesses needing dependable industrial throughput and fast turnaround."
       }
     ]
   },
@@ -185,6 +243,10 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, foil workflow tools, job queuing, and complete production management"
+      },
+      {
+        "title": "Industrial Roll-to-Roll System",
+        "desc": "Continuous production workflow with stable media transport"
       }
     ]
   },

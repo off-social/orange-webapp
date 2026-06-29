@@ -91,6 +91,8 @@ export interface Product {
       rows: SpeedRow[];
       note: string;
     };
+    /** Extra capacity notes (conveying, drying, exhaust, etc.) shown as centered bullet points below the speed modes. Omit to hide. */
+    notes?: string[];
   };
 
   globalComponents: {

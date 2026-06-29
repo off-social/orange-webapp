@@ -63,6 +63,11 @@
     "description": "Engineered around 12 dedicated colour channels, fully digital printhead alignment, and an open-system modular ecosystem that reconfigures between industrial speed and maximum colour quality.",
     "items": [
       {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Chromatic Perfection & Speed",
+        "desc": "Offers high-definition results and industrial-speed production without compromising precision."
+      },
+      {
         "icon": "/Professional-color-management.svg",
         "title": "12 Dedicated Color Channels",
         "desc": "Twelve dedicated colour channels deliver an expanded gamut and smooth, unbeatable gradients, bringing complex, high-detail designs to life with chromatic accuracy that standard 8-colour systems cannot match."

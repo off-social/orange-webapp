@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Printing Mode", "value": "Sublimation Transfer Printing" },
@@ -31,6 +31,13 @@
       [
         { "label": "Ink Types", "value": "Sublimation" },
         { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+      ],
+      [
+        { "label": "Print Speed (1 Pass)", "value": "505 Lm/h" },
+        { "label": "Print Speed (2 Pass)", "value": "255 Lm/h" }
+      ],
+      [
+        { "label": "Media Transmit Mode", "value": "Pinch Roller Mode" }
       ]
     ]
   },
@@ -92,6 +99,26 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Fully Enclosed Machine Body",
         "desc": "Sealed enclosure reduces airborne ink misting and environmental contamination, maintaining cleaner operating conditions and protecting internal components during sustained high-speed production."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Variable Drop Ink Technology (VSDT)",
+        "desc": "The Epson i3200-A1 printheads use variable drop ink technology with 3,200 nozzles and up to four levels of grayscale, enhancing print resolution and colour restoration."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Imported THK Mute Guide Rail",
+        "desc": "A Japanese THK mute guide rail ensures steady movement, extended working life, and reduced noise and mechanical resistance during high-speed printing."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "High-Precision Machined Printer Beam",
+        "desc": "An enlarged and widened machine beam design provides superior structural strength, ensuring smoother and more stable printing operations."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Specialized Thin-Paper Rubber Roller",
+        "desc": "Custom-engineered paper transmission roller optimised for thin paper, enabling flawless, wrinkle-free printing on ultra-light 20–30g transfer paper."
       }
     ]
   },
@@ -172,6 +199,10 @@
       {
         "title": "Control Systems — Omron (Japan)",
         "desc": "Industrial-grade automation and control components managing all machine functions"
+      },
+      {
+        "title": "THK Mute Guide Rail (Japan)",
+        "desc": "Steady, low-noise, low-resistance carriage movement with extended working life during high-speed printing"
       }
     ]
   },

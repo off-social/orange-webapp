@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "1200 × 600 dpi" },
-        { "label": "Color Configuration", "value": "4 to 7 Colors (White + CMYK + up to 2 Spot)" }
+        { "label": "Color Configuration", "value": "4 to 7 Colors (White + C + M + Y + K + up to 2 Spot)" }
       ],
       [
         { "label": "Max Printing Width", "value": "350 mm" },

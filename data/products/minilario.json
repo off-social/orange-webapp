@@ -9,8 +9,8 @@
   "sidebar": {
     "bullets": [
       "64× variable drop heads (4–72 pl)",
-      "Up to 1,090 m/hr",
-      "3200 mm print width"
+      "Up to 1,090 m²/hr",
+      "1,800 – 3,200 mm print width"
     ]
   },
   "keySpecification": {
@@ -18,19 +18,27 @@
     "rows": [
       [
         { "label": "Print Heads", "value": "64× Industrial Variable Drop (4 to 72 pl)" },
-        { "label": "Max Output", "value": "Up to 1,090 m/hr (2x CMYK mode)" }
+        { "label": "Max Speed (2× CMYK)", "value": "Up to 1,090 m²/hr" }
       ],
       [
-        { "label": "Max Resolution", "value": "1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Max Resolution", "value": "600 × 600 dpi" },
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
-        { "label": "Standard Speed", "value": "Up to 800 m/hr" },
-        { "label": "Max Print Width", "value": "3200 mm" }
+        { "label": "Max Speed (8 Colors)", "value": "Up to 935 m²/hr" },
+        { "label": "Max Print Width", "value": "1,800 mm – 3,200 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ],
+      [
+        { "label": "Printing Technology", "value": "Scanning Digital Inkjet" },
+        { "label": "Grey Levels", "value": "16" }
+      ],
+      [
+        { "label": "Ink System", "value": "Open Ink System" },
+        { "label": "Software System", "value": "Open Architecture" }
       ]
     ]
   },
@@ -95,6 +103,26 @@
         "icon": "/AdvancedIcon.svg",
         "title": "ACIMIT Green Label Certified",
         "desc": "Independently certified for reduced energy, water, and chemical consumption, supporting manufacturers with documented sustainability commitments for international buyer compliance."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Fastest Scanning Textile Printer",
+        "desc": "With 64 printheads and production speeds exceeding 1,000 m²/hr in specific configurations, MiniLario set a new benchmark for scanning textile printers."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Innovative Suspended Carriage Design",
+        "desc": "The print carriage is suspended from the printing bridge, improving high-speed stability, printing precision, mechanical reliability, and maintenance accessibility from three sides."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Integrated Dryer System",
+        "desc": "The dryer is specifically engineered for MiniLario's operating conditions and includes touchscreen controls to optimize production performance."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Industrial Productivity Tools",
+        "desc": "Head Crash Protection System, Embedded Web Server for Cost Reporting, Local Print Queue Management System, Qwizard Hardware Platform, Print Head Management Program, and Same Print Result (SPR) Colour Consistency Technology."
       }
     ]
   },
@@ -135,6 +163,11 @@
         "image": "/Jacquard.webp",
         "title": "Integrated Mills and Large Print Houses",
         "desc": "Vertically integrated manufacturers and large dedicated print houses who need scanning-head versatility at volumes that match or exceed single-pass output requirements."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Accessories",
+        "desc": "Scarves, decorative fabrics, and specialty textile products."
       }
     ]
   },
@@ -142,10 +175,8 @@
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
     "maxSpeed": 1090,
     "regularMode": [
-      { "res": "600 dpi", "pass": "2× CMYK config", "speed": 1090, "label": "Up to 1,090 m/hr" },
-      { "res": "600 dpi", "pass": "Standard CMYK", "speed": 800, "label": "Up to 800 m/hr" },
-      { "res": "1200 dpi", "pass": "High-quality mode", "speed": 400, "label": "Up to 400 m/hr" },
-      { "res": "Multi-pass", "pass": "Precision mode", "speed": 220, "label": "Up to 220 m/hr" }
+      { "res": "600 × 600 dpi", "pass": "8 Colors", "speed": 935, "label": "Up to 935 m²/hr" },
+      { "res": "600 × 600 dpi", "pass": "2× CMYK", "speed": 1090, "label": "Up to 1,090 m²/hr" }
     ]
   },
   "globalComponents": {
@@ -190,6 +221,22 @@
       {
         "title": "ACIMIT Green Label Certification",
         "desc": "Independently certified for sustainable energy, water, and chemical resource management in industrial textile printing"
+      },
+      {
+        "title": "Suspended Carriage System",
+        "desc": "Carriage suspended from the printing bridge for high-speed stability, precision, and three-sided maintenance access"
+      },
+      {
+        "title": "Integrated Dryer System",
+        "desc": "Touchscreen-controlled dryer engineered for MiniLario's operating conditions"
+      },
+      {
+        "title": "Embedded Web Server",
+        "desc": "Cost reporting and production monitoring"
+      },
+      {
+        "title": "Same Print Result (SPR) Technology",
+        "desc": "Colour consistency technology across production runs"
       }
     ]
   },

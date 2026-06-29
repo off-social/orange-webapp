@@ -33,7 +33,7 @@
         { "label": "Dimensions for feeder frame", "value": "Φ500" }
       ],
       [
-        { "label": "Ink Colors", "value": "12 (C, M, Y, K, O, B, R, G, FM, FY, LM, Gy)" },
+        { "label": "Ink Colors", "value": "12 (C + M + Y + K + O + B + R + G + FM + FY + LM + Gy)" },
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" }
       ]
     ]

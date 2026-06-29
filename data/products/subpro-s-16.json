@@ -8,7 +8,7 @@
   },
   "sidebar": {
     "bullets": [
-      "24× Epson i3200-A1 printheads",
+      "24× Epson S3200-A1 printheads",
       "Up to 19,500 lm/day",
       "360 × 1200 dpi"
     ]
@@ -17,27 +17,36 @@
     "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
     "rows": [
       [
-        { "label": "Print Heads", "value": "24× Epson i3200-A1" },
+        { "label": "Print Heads", "value": "24× Epson S3200-A1" },
         { "label": "Max Output", "value": "Up to 19,500 lm/day" }
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "6 colors" }
       ],
       [
         { "label": "Printing Mode", "value": "Roll-to-Roll Dye Sublimation (1-pass)" },
-        { "label": "Max Print Width", "value": "1900 mm" }
+        { "label": "Max Print Width", "value": "2000 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Sublimation" },
         { "label": "Media", "value": "Transfer Paper (incl. ultra-thin) · Polyester Fabric" }
+      ],
+      [
+        { "label": "Printhead Maintenance", "value": "Automatic cleaning and moisturizing" },
+        { "label": "Cartridge Capacity", "value": "10L per colour" }
+      ],
+      [
+        { "label": "Ink Supply Mode", "value": "Automatic degassing, automatic negative pressure, and ink circulation" },
+        { "label": "Maximum Media Format", "value": "2050 mm" }
       ]
     ]
   },
   "inkCompatibility": {
     "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
     "inkTypes": [
-      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" }
+      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" },
+      { "name": "Pigment", "fabrics": "Heat transfer paper, wood grain paper, corrugated paper, film and similar media (minimum weight 31 g)" }
     ],
     "colors": [
       { "name": "Cyan", "short": "C", "hex": "#28BEFE" },
@@ -55,8 +64,8 @@
     "items": [
       {
         "icon": "/Proprietaryvisionsystem.svg",
-        "title": "24 Epson i3200-A1 Printheads",
-        "desc": "Twenty-four industrial Epson i3200-A1 heads deliver up to 19,500 lm/day, making the SubPro S-16 the highest-output sublimation printer in the SubPro series for non-stop industrial-scale production."
+        "title": "24 Epson S3200-A1 Printheads",
+        "desc": "Twenty-four industrial Epson S3200-A1 heads deliver up to 19,500 lm/day, making the SubPro S-16 the highest-output sublimation printer in the SubPro series for non-stop industrial-scale production."
       },
       {
         "icon": "/AdvancedIcon.svg",
@@ -92,6 +101,16 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Precision Servo-Controlled Media Transport",
         "desc": "Industrial servo-driven feed and take-up system with tension management delivers stable, wrinkle-free media transport and accurate winding at all production speeds across different paper weights."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Low Operating Cost",
+        "desc": "Supports a wide range of materials with low ink consumption and a low maintenance rate, keeping overall running cost down across high-volume production."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Integrated Systems",
+        "desc": "Built-in media transmission, material drier, auto-clean functionality, rewind and unwind system, ink circulation, and intelligent control in a single platform."
       }
     ]
   },
@@ -132,6 +151,41 @@
         "image": "/Jacquard.webp",
         "title": "Large Job Work and Multi-Buyer Sublimation Units",
         "desc": "The highest daily output in the SubPro range makes the S-16 the definitive choice for large job work printers managing very high-volume, diverse client order portfolios across polyester and transfer paper substrates."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Garments",
+        "desc": "Sublimation printing for polyester garment production"
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Bedclothes",
+        "desc": "Printed polyester bedding and bed linen"
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Fashion Accessories",
+        "desc": "Vibrant sublimation output for fashion accessories"
+      },
+      {
+        "image": "/Lace-sequin.webp",
+        "title": "Furniture",
+        "desc": "Decorative printing for upholstery and furniture fabrics"
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Curtains",
+        "desc": "Polyester curtain and drapery printing"
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Wallpaper",
+        "desc": "Sublimation printing for decorative wallpaper"
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Tablecloths",
+        "desc": "Printed polyester tablecloths and table linen"
       }
     ]
   },
@@ -146,7 +200,7 @@
   "globalComponents": {
     "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
     "largeCard": {
-      "title": "Epson i3200-A1 (Japan)",
+      "title": "Epson S3200-A1 (Japan)",
       "desc": "24× industrial inkjet printheads delivering up to 19,500 lm/day sublimation output at 360 x 1200 dpi in 1-pass configuration"
     },
     "smallCards": [
@@ -181,6 +235,14 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Automatic Ink Supply System",
+        "desc": "Automatic degassing, automatic negative pressure, and ink circulation for stable continuous ink delivery"
+      },
+      {
+        "title": "Roll-to-Roll Media Handling System",
+        "desc": "Continuous media transmission with integrated rewind and unwind system for uninterrupted roll-to-roll production"
       }
     ]
   },
@@ -195,7 +257,7 @@
   },
   "showcase": {
     "heading": "SubPro S-16 Showcase",
-    "description": "The highest-output SubPro sublimation printer. 24 Epson i3200-A1 heads, up to 19,500 lm/day in 1-pass mode, Maglev carriage, multi-stage intelligent drying, ultra-thin paper compatibility, and jumbo roll support built for maximum-volume polyester and transfer paper sublimation production.",
+    "description": "The highest-output SubPro sublimation printer. 24 Epson S3200-A1 heads, up to 19,500 lm/day in 1-pass mode, Maglev carriage, multi-stage intelligent drying, ultra-thin paper compatibility, and jumbo roll support built for maximum-volume polyester and transfer paper sublimation production.",
     "leftItems": [
       "Throughput limits at maximum volumes",
       "Carriage vibration at high speeds",

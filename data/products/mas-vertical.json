@@ -98,6 +98,11 @@
         "icon": "/ColorIcon.svg",
         "title": "Industrial Power and Pneumatic Architecture",
         "desc": "400V triphase power supply with 44 kW total installed capacity and 6 bar pneumatics ensures stable, consistent operation of both print carriages and the drying system under continuous production loads."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Supply Chain Efficiency",
+        "desc": "Collapses traditional production lead times from months to days while significantly reducing waste and environmental pollution across the textile supply chain."
       }
     ]
   },

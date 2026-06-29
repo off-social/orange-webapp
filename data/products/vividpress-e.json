@@ -25,7 +25,7 @@
         { "label": "Max Resolution", "value": "1200 × 600 dpi" }
       ],
       [
-        { "label": "Color Channels", "value": "CMYK (Duplex Printing)" },
+        { "label": "Color Channels", "value": "C + M + Y + K (Duplex Printing)" },
         { "label": "Ink Type", "value": "Water-based Pigment" }
       ],
       [

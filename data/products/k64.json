@@ -9,7 +9,7 @@
   "sidebar": {
     "bullets": [
       "32 / 48 / 56 / 64× piezoelectric printheads",
-      "Up to 1,100 lm/hr",
+      "Up to 1,020 lm/hr",
       "1800 dpi"
     ]
   },
@@ -18,19 +18,26 @@
     "rows": [
       [
         { "label": "Print Heads", "value": "32 / 48 / 56 / 64× Industrial Piezoelectric" },
-        { "label": "Max Output", "value": "Up to 1,100 lm/hr" }
+        { "label": "Max Output", "value": "Up to 1,020 lm/hr" }
       ],
       [
         { "label": "Max Resolution", "value": "1800 dpi" },
-        { "label": "Ink Colors", "value": "4 / 6 / 7 / 8 (CMYK + up to 4 extended colors)" }
+        { "label": "Ink Colors", "value": "4 / 6 / 7 / 8 (C + M + Y + K + up to 4 extended colors)" }
       ],
       [
-        { "label": "Standard Speed", "value": "Up to 800 lm/hr" },
+        { "label": "Standard Speed", "value": "Up to 700 lm/hr" },
         { "label": "Max Print Width", "value": "1800 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse · Latex" },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ],
+      [
+        { "label": "Positioning", "value": "Engineered for large-scale textile manufacturing with industrial-grade performance and advanced automation" },
+        { "label": "Performance", "value": "1020 Lm/h at 600×600 dpi (1 pass); 700 Lm/h at 508×1200 dpi (2 pass); 600 Lm/h at 600×1200 dpi (2 pass)" }
+      ],
+      [
+        { "label": "Evolution of Printing Capacity", "value": "Up to 15,000 LM/day" }
       ]
     ]
   },
@@ -101,6 +108,11 @@
         "icon": "/One-touch-maintenance.svg",
         "title": "Real-Time Ink and Air Pressure Monitoring",
         "desc": "Continuous system monitoring across all ink and air circuits prevents mid-run failures and maintains stable print output under sustained high-speed operating conditions."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Air Blade Technology",
+        "desc": "Provides enhanced surface cleaning and uniform conditions."
       }
     ]
   },
@@ -141,17 +153,21 @@
         "image": "/Jacquard.webp",
         "title": "Large-Scale Job Work and Multi-Buyer Operations",
         "desc": "Wide fabric compatibility from 30 to 450 gsm and multi-ink support make the K64 the preferred choice for high-capacity job work units serving large, diverse client portfolios."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Large-Scale Textile Manufacturing",
+        "desc": "Industrial-grade performance and advanced automation for high-volume production."
       }
     ]
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
-    "maxSpeed": 1100,
+    "maxSpeed": 1020,
     "regularMode": [
-      { "res": "64-head config", "pass": "1 pass", "speed": 1100, "label": "Up to 1,100 lm/hr" },
-      { "res": "64-head config", "pass": "2 pass", "speed": 750, "label": "Up to 750 lm/hr" },
-      { "res": "64-head config", "pass": "3 pass", "speed": 500, "label": "Up to 500 lm/hr" },
-      { "res": "64-head config", "pass": "4 pass", "speed": 350, "label": "Up to 350 lm/hr" }
+      { "res": "600×600 dpi", "pass": "1 pass", "speed": 1020, "label": "Up to 1,020 lm/hr" },
+      { "res": "508×1200 dpi", "pass": "2 pass", "speed": 700, "label": "Up to 700 lm/hr" },
+      { "res": "600×1200 dpi", "pass": "2 pass", "speed": 600, "label": "Up to 600 lm/hr" }
     ]
   },
   "globalComponents": {
@@ -188,6 +204,18 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Head Chilling System",
+        "desc": "Maintains optimal printhead temperature"
+      },
+      {
+        "title": "Ink Misting Control",
+        "desc": "Cleaner printing performance"
+      },
+      {
+        "title": "Air Blade Technology",
+        "desc": "Enhanced surface cleaning and uniform conditions"
       }
     ]
   },

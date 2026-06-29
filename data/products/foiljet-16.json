@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + W + Special Effects)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + W + Special Effects)" }
       ],
       [
         { "label": "Printing Mode", "value": "Mesh Belt Inkjet (Water-based Eco-friendly Ink)" },
@@ -31,6 +31,18 @@
       [
         { "label": "Ink Types", "value": "Water-based · White · Foil Adhesive · Sublimation" },
         { "label": "Media", "value": "Fabric and Paper (foil and sublimation compatible)" }
+      ],
+      [
+        { "label": "Printing Technology", "value": "Industrial Digital Sublimation Printing" },
+        { "label": "Printing Method", "value": "Roll-to-Roll" }
+      ],
+      [
+        { "label": "Production Mode", "value": "High-Speed Industrial Production" },
+        { "label": "Ink Supply System", "value": "Bulk Continuous Ink Supply System" }
+      ],
+      [
+        { "label": "Application", "value": "Sportswear · Fashion · Home Textiles · Soft Signage" },
+        { "label": "Operation", "value": "24×7 Industrial Production" }
       ]
     ]
   },
@@ -94,6 +106,26 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Mesh Belt Conveying System",
         "desc": "Open-mesh belt transport allows airflow through the media during drying while maintaining stable, accurate fabric positioning throughout wide-format foil and sublimation printing and collection."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "High Production Capacity",
+        "desc": "Suitable for 24×7 industrial operation, optimized for bulk sublimation transfer paper printing, designed for export-oriented textile manufacturers."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Industrial Roll-to-Roll System",
+        "desc": "Continuous media feeding, stable paper transport, reduced operator intervention, improved production efficiency."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Precision Printing",
+        "desc": "Sharp text and graphics reproduction, smooth colour gradients, consistent ink deposition across the print width."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Industrial Ink Delivery System",
+        "desc": "Bulk ink supply system, reduced downtime for refilling, continuous production capability."
       }
     ]
   },
@@ -134,6 +166,26 @@
         "image": "/Jacquard.webp",
         "title": "Transfer Paper and Specialty Media Printing",
         "desc": "Dual media compatibility enables wide-format sublimation transfer paper printing alongside direct fabric output, serving manufacturers who operate both workflows from a single machine."
+      },
+      {
+        "image": "/Lace-sequin.webp",
+        "title": "Sportswear",
+        "desc": "Jerseys, activewear, and team uniforms."
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Fashion Textiles",
+        "desc": "Polyester garments, dresses, and casual wear fabrics."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Home Furnishing",
+        "desc": "Curtains, cushion covers, upholstery fabrics, and bed linen."
+      },
+      {
+        "image": "/Silk.webp",
+        "title": "Soft Signage",
+        "desc": "Display graphics, exhibition graphics, and promotional textile banners."
       }
     ]
   },
@@ -185,6 +237,10 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, foil workflow tools, job queuing, and complete production management"
+      },
+      {
+        "title": "Bulk Continuous Ink Supply System",
+        "desc": "Industrial ink delivery system reducing downtime for refilling"
       }
     ]
   },

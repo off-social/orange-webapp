@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Standard Speed", "value": "3,000 lm/day (2-pass)" },
@@ -33,7 +33,11 @@
         { "label": "Ink Types", "value": "Sublimation" }
       ],
       [
-        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" },
+        { "label": "Nozzles per Head", "value": "3,200" }
+      ],
+      [
+        { "label": "Ink Supply System", "value": "Siphon Automatic Ink Replenishment" }
       ]
     ]
   },
@@ -95,6 +99,31 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Up-Down Tension Control System",
         "desc": "Dual-direction tension control continuously optimises fabric and paper tension from unwind through winding, ensuring smooth, accurate media handling and defect-free output across all media weights."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Double High-Precision Mute Rail",
+        "desc": "Twin high-precision mute rails enhance carriage stability and structural rigidity, drastically reducing operational vibration to improve overall print quality."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Lack-of-Media Sensor",
+        "desc": "A simple and clear indicator system that flags the absence of media, preventing dry runs and protecting print quality during continuous production."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Inflatable Take-up and Feed Media Shaft",
+        "desc": "Inflatable shafts offer a highly efficient way to mount and manage heavy fabric and paper rolls for fast loading and secure, slip-free media handling."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Rear Media Balance Bar",
+        "desc": "Maintains consistent tension and tracking stability across long production runs for smooth, accurate media feeding."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Intelligent Dryer Device",
+        "desc": "CMYK drying enhanced with two external infrared units for rapid, thorough ink fixation at production speeds."
       }
     ]
   },
@@ -183,6 +212,18 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Double High-Precision Mute Rail",
+        "desc": "Twin high-precision mute rails providing stability and rigidity that reduce operational vibration during high-speed carriage movement"
+      },
+      {
+        "title": "Computer Configuration",
+        "desc": "Windows 7/10 64-bit, Intel Core i7 (4th gen or higher), 16 GB RAM, ATI display with 4 GB dedicated memory, 500 GB+ storage (SSD recommended), ASUS/Gigabyte motherboards"
+      },
+      {
+        "title": "Included Accessories",
+        "desc": "USB cable, media clamp, operating manual, drain bottle, ink cartridges, and pre-loaded RIP software"
       }
     ]
   },

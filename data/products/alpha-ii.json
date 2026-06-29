@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "360 × 1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Standard Speed", "value": "2,000 to 2,200 lm/day (2-pass)" },
@@ -33,7 +33,11 @@
         { "label": "Ink Types", "value": "Sublimation" }
       ],
       [
-        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" }
+        { "label": "Media", "value": "Transfer Paper · Polyester Fabric" },
+        { "label": "Printhead Nozzles", "value": "3200 nozzles each" }
+      ],
+      [
+        { "label": "Ink Supply System", "value": "Siphon Automatic Ink Replenishment (Stable 5L bulk system)" }
       ]
     ]
   },
@@ -95,6 +99,31 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Extra Intelligent Dryer Device",
         "desc": "Smart heat control system monitors and adjusts dryer temperature in real time, optimising ink fixation at every print speed and reducing smudging or under-drying defects across all production modes."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Direct Drive Linear Motor System",
+        "desc": "A mute linear motor system that eliminates the need for belts and PVC encoder strips, improving carriage moving precision and increasing the machine's lifespan."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Vacuum Ink with On-Line Filter",
+        "desc": "Filters out air and ink impurities to ensure impurity-free printing and high production efficiency."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Negative Pressure Ink Supply System",
+        "desc": "Optimizes ink flow to minimize the risk of running out of ink during critical, long-run print jobs."
+      },
+      {
+        "icon": "/Proprietaryvisionsystem.svg",
+        "title": "Lack-of-Media Sensor",
+        "desc": "A simple and clear indicator system that flags the absence of media."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Inflatable Take-up and Feed Media Shaft",
+        "desc": "Offers a highly efficient way to manage heavy fabric rolls."
       }
     ]
   },
@@ -179,6 +208,22 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Direct Drive Linear Motor System",
+        "desc": "Belt-free, encoder-strip-free carriage drive for improved precision and lifespan"
+      },
+      {
+        "title": "Negative Pressure Ink Supply System",
+        "desc": "Stable ink flow for long-run print jobs"
+      },
+      {
+        "title": "Computer Configuration",
+        "desc": "Windows 7/10 64-bit, Intel Core i7 (4th gen or higher), 16 GB RAM, ATI display with 4 GB dedicated memory, 500 GB+ storage (SSD recommended), ASUS/Gigabyte motherboards"
+      },
+      {
+        "title": "Included Accessories",
+        "desc": "USB cable, media clamp, operating manual, drain bottle, ink cartridges, pre-loaded RIP software"
       }
     ]
   },

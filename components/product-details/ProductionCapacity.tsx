@@ -201,7 +201,7 @@ function SectionHeader({
 
 export default function ProductionCapacity() {
   const { productionCapacity } = useProduct();
-  const { maxSpeed, regularMode, specialMode, description } =
+  const { maxSpeed, regularMode, specialMode, description, notes } =
     productionCapacity;
   const [animated, setAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -319,7 +319,7 @@ export default function ProductionCapacity() {
           <Box sx={{ mt: "8px" }}>
             {regularMode.map((row, i) => (
               <SpeedRow
-                key={row.res}
+                key={`${row.res}-${i}`}
                 {...row}
                 isLast={i === regularMode.length - 1}
                 animated={animated}
@@ -354,7 +354,7 @@ export default function ProductionCapacity() {
             <Box sx={{ mt: "8px" }}>
               {specialMode.rows.map((row, i) => (
                 <SpeedRow
-                  key={row.res}
+                  key={`${row.res}-${i}`}
                   {...row}
                   isLast={i === specialMode.rows.length - 1}
                   animated={animated}
@@ -390,6 +390,53 @@ export default function ProductionCapacity() {
                 {specialMode.note}
               </Typography>
             </Box>
+          </Box>
+        )}
+
+        {/* Extra capacity notes — centered bullet points, one per line */}
+        {notes && notes.length > 0 && (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "12px",
+              width: "100%",
+            }}
+          >
+            {notes.map((note, i) => (
+              <Box
+                key={i}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    bgcolor: "#F6891F",
+                    flexShrink: 0,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    color: "#707070",
+                    textAlign: "center",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    lineHeight: "22.4px",
+                  }}
+                >
+                  {note}
+                </Typography>
+              </Box>
+            ))}
           </Box>
         )}
       </Box>

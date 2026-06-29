@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "600 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Printing Mode", "value": "Single Pass" },

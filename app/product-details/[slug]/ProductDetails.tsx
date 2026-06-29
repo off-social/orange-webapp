@@ -130,7 +130,7 @@ export default function ProductDetails({ product }: { product: Product }) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              flexWrap: "wrap",
+              flexWrap: { xs: "nowrap", sm: "wrap" },
               justifyContent: "center",
               gap: { xs: "10px", sm: "12px" },
               width: { xs: "100%", sm: "auto" },
@@ -153,8 +153,10 @@ export default function ProductDetails({ product }: { product: Product }) {
                 px: { xs: "16px", sm: "20px" },
                 py: { xs: "11px", sm: "13px" },
                 boxShadow: "none",
+                flex: { xs: "1 1 0", sm: "0 0 auto" },
+                minWidth: 0,
                 width: { xs: "auto", sm: "200px" },
-                order: { xs: 1, sm: 2 },
+                order: 2,
                 "&:hover": { bgcolor: "#333", boxShadow: "none" },
               }}
               onClick={() => openModal(product.name)}
@@ -190,8 +192,10 @@ export default function ProductDetails({ product }: { product: Product }) {
                   px: { xs: "16px", sm: "20px" },
                   py: { xs: "11px", sm: "13px" },
                   boxShadow: "none",
+                  flex: { xs: "1 1 0", sm: "0 0 auto" },
+                  minWidth: 0,
                   width: { xs: "auto", sm: "200px" },
-                  order: { xs: 2, sm: 1 },
+                  order: 1,
                   "&:hover": {
                     bgcolor: "#f5f5f5",
                     borderColor: "#111",

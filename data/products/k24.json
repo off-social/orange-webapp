@@ -9,7 +9,7 @@
   "sidebar": {
     "bullets": [
       "8 / 16 / 24× Kyocera industrial printheads",
-      "Up to 300 lm/hr",
+      "Up to 280 lm/hr",
       "1800 dpi"
     ]
   },
@@ -18,19 +18,27 @@
     "rows": [
       [
         { "label": "Print Heads", "value": "8 / 16 / 24× Kyocera Industrial (Single Channel)" },
-        { "label": "Max Output", "value": "Up to 300 lm/hr" }
+        { "label": "Max Output", "value": "Up to 280 lm/hr" }
       ],
       [
         { "label": "Max Resolution", "value": "1800 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
-        { "label": "Standard Speed", "value": "Up to 220 lm/hr" },
+        { "label": "Standard Speed", "value": "Up to 185 lm/hr (16 heads)" },
         { "label": "Max Print Width", "value": "1900 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ],
+      [
+        { "label": "Positioning", "value": "Built for businesses entering industrial textile printing, offering a balance of precision and cost-efficiency" },
+        { "label": "Performance (24 Heads)", "value": "Up to 280 Lm/hr at 508×1200 dpi (2 pass); 250 Lm/hr at 600×1200 dpi (3 pass)" }
+      ],
+      [
+        { "label": "Performance (16 Heads)", "value": "Up to 185 Lm/hr at 508×1200 dpi (2 pass)" },
+        { "label": "Evolution of Printing Capacity", "value": "Capable of printing up to 5,000 LM/day" }
       ]
     ]
   },
@@ -135,16 +143,21 @@
         "image": "/Jacquard.webp",
         "title": "Custom and Hi-End Textile Production",
         "desc": "Export fashion and international home textile buyers requiring consistent large-batch quality with tight colour repeatability across repeat orders."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Businesses Entering Industrial Textile Printing",
+        "desc": "Offers a balance of precision and cost-efficiency for entry-level industrial operations."
       }
     ]
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
-    "maxSpeed": 300,
+    "maxSpeed": 280,
     "regularMode": [
-      { "res": "8-head config", "pass": "Kyocera single channel", "speed": 120, "label": "Up to 120 lm/hr" },
-      { "res": "16-head config", "pass": "Kyocera single channel", "speed": 220, "label": "Up to 220 lm/hr" },
-      { "res": "24-head config", "pass": "Kyocera single channel", "speed": 300, "label": "Up to 300 lm/hr" }
+      { "res": "508×1200 dpi", "pass": "24 Heads · 2 pass", "speed": 280, "label": "Up to 280 lm/hr" },
+      { "res": "600×1200 dpi", "pass": "24 Heads · 3 pass", "speed": 250, "label": "Up to 250 lm/hr" },
+      { "res": "508×1200 dpi", "pass": "16 Heads · 2 pass", "speed": 185, "label": "Up to 185 lm/hr" }
     ]
   },
   "globalComponents": {

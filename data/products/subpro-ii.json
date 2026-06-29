@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "400 × 600 dpi" },
-        { "label": "Ink Colors", "value": "Up to 12 (CMYK + Lc + Lm + Fl. Yellow + Fl. Pink + Turquoise + options)" }
+        { "label": "Ink Colors", "value": "Up to 12 (C + M + Y + K + Or + B + Lc + Lm + Fl. Yellow + Fl. Pink + Turquoise)" }
       ],
       [
         { "label": "Printing Mode", "value": "Roll-to-Roll Dye Sublimation (1-pass)" },
@@ -30,17 +30,22 @@
       ],
       [
         { "label": "Ink Tank Capacity", "value": "15 litres per colour" },
-        { "label": "Ink Types", "value": "Sublimation" }
+        { "label": "Ink Types", "value": "Disperse" }
       ],
       [
-        { "label": "Media", "value": "Transfer Paper (incl. ultra-thin) · Polyester Fabric" }
+        { "label": "Media", "value": "Transfer Paper (incl. ultra-thin) · Polyester Fabric" },
+        { "label": "Colour Mode Support", "value": "4, 6, or 8 colours optional" }
+      ],
+      [
+        { "label": "Max Media Width", "value": "1900 mm" },
+        { "label": "Max Productivity", "value": "Maximum 445 m/hour" }
       ]
     ]
   },
   "inkCompatibility": {
     "description": "Designed to support multiple ink technologies, offering flexibility for various fabric types while maintaining exceptional print quality and durability.",
     "inkTypes": [
-      { "name": "Sublimation", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" },
+      { "name": "Disperse", "fabrics": "Polyester · Synthetic Blends · Transfer Paper for heat press transfer to polyester fabrics" },
       { "name": "Extended Color Options", "fabrics": "Light Cyan · Light Magenta · Fluorescent Yellow · Fluorescent Pink · Turquoise for wide-gamut specialty and sportswear output" }
     ],
     "colors": [
@@ -48,6 +53,8 @@
       { "name": "Magenta", "short": "M", "hex": "#FB2680" },
       { "name": "Yellow", "short": "Y", "hex": "#FEE622" },
       { "name": "Black", "short": "K", "hex": "#111111" },
+      { "name": "Orange", "short": "Or", "hex": "#FC7017" },
+      { "name": "Blue", "short": "B", "hex": "#2065BF" },
       { "name": "Light Cyan", "short": "Lc", "hex": "#9BD9F2" },
       { "name": "Light Magenta", "short": "Lm", "hex": "#F4A6C8" },
       { "name": "Fluorescent Yellow", "short": "FY", "hex": "#E6FB2A" },
@@ -137,6 +144,11 @@
         "image": "/Jacquard.webp",
         "title": "Promotional and Custom Polyester Printing",
         "desc": "Fast setup, versatile colour options, and jumbo roll support suit custom polyester printing for corporate branding, event merchandise, and promotional textile production at volume."
+      },
+      {
+        "image": "/Embroidery.webp",
+        "title": "Lightweight Thin-Paper Production",
+        "desc": "Engineered to print on thin sublimation paper with a minimum weight of 31 g/m², significantly reducing paper cost on high-volume runs."
       }
     ]
   },

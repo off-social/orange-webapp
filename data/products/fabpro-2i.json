@@ -22,7 +22,7 @@
       ],
       [
         { "label": "Max Resolution", "value": "600 × 900 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Standard Speed", "value": "Up to 150 lm/hr" },
@@ -31,6 +31,22 @@
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Disperse" },
         { "label": "Fabrics", "value": "Cotton · Linen · Silk · Nylon · Polyester · Blends" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Single / Bi-directional" },
+        { "label": "Ink Tank Capacity", "value": "15 Litres" }
+      ],
+      [
+        { "label": "Software", "value": "neoStampa" },
+        { "label": "Max Blanket Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Max Media Width", "value": "1800 mm" },
+        { "label": "Material Weight", "value": "30–450 gsm" }
+      ],
+      [
+        { "label": "Max Roll Diameter", "value": "400 mm" },
+        { "label": "Max Roll Weight", "value": "200 kg" }
       ]
     ]
   },
@@ -94,6 +110,21 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Efficient Ink Supply System",
         "desc": "High-capacity ink delivery system maintains a consistent, uninterrupted ink flow to all 16 printheads simultaneously, preventing pressure drops or ink starvation during sustained high-speed production."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Higher Mechanical Precision",
+        "desc": "Tighter mechanical tolerances improve overall print accuracy and registration for sharper, repeatable output."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Integrated Feeding System",
+        "desc": "Built-in feeding system supports roll diameters of up to 400 mm for smooth, continuous media handling."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Precise X-Motion Guideway System",
+        "desc": "Maintains accurate carriage positioning across the full print width for consistent registration."
       }
     ]
   },
@@ -143,6 +174,11 @@
     "regularMode": [
       { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 200, "label": "Up to 200 lm/hr" },
       { "res": "600 × 900 dpi", "pass": "3 pass", "speed": 150, "label": "Up to 150 lm/hr" }
+    ],
+    "notes": [
+      "Media conveying: Continuous Belt Conveying with Dedicated Unwinder",
+      "Drying mode: 1 Belt + Dryer heated by Fins Heater",
+      "Exhaust treatment: Compulsory Ventilation"
     ]
   },
   "globalComponents": {
@@ -179,6 +215,54 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP software with ICC colour management, Pantone library integration, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Printer Voltage",
+        "desc": "AC 220–240V ±10%, Single Phase (11 kW)"
+      },
+      {
+        "title": "Dryer Voltage",
+        "desc": "AC 380V ±10%, Three Phase (16 kW) / 440V Three Phase (5 kW)"
+      },
+      {
+        "title": "Compressed Air",
+        "desc": "0.6 MPa, 3.5 m³/hr"
+      },
+      {
+        "title": "Operating Temperature",
+        "desc": "20–26°C"
+      },
+      {
+        "title": "Operating Humidity",
+        "desc": "55–65%"
+      },
+      {
+        "title": "Printer Dimensions",
+        "desc": "14.66 × 7.05 × 6.15 ft"
+      },
+      {
+        "title": "Dryer Dimensions",
+        "desc": "9.7 × 7.9 × 4.9 ft"
+      },
+      {
+        "title": "Installation Space",
+        "desc": "18.66 × 12.05 ft"
+      },
+      {
+        "title": "Printer Weight",
+        "desc": "2.7 Ton"
+      },
+      {
+        "title": "Package Weight",
+        "desc": "3.1 Ton"
+      },
+      {
+        "title": "Dryer Weight",
+        "desc": "1.2 Ton"
+      },
+      {
+        "title": "Dryer Package Weight",
+        "desc": "1.5 Ton"
       }
     ]
   },

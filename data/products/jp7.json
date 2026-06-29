@@ -9,7 +9,7 @@
   "sidebar": {
     "bullets": [
       "16× variable drop heads (4–72 pl)",
-      "Up to 340 m/hr",
+      "Up to 340 m²/hr",
       "600 dpi"
     ]
   },
@@ -18,19 +18,27 @@
     "rows": [
       [
         { "label": "Print Heads", "value": "16× Industrial Variable Drop (4 to 72 pl)" },
-        { "label": "Max Output", "value": "Up to 340 m/hr (2x CMYK mode)" }
+        { "label": "Max Speed (2× CMYK)", "value": "Up to 340 m²/hr" }
       ],
       [
-        { "label": "Max Resolution", "value": "600 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Max Resolution", "value": "600 × 600 dpi" },
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
-        { "label": "Standard Speed", "value": "200 m/hr" },
+        { "label": "Max Speed (8 Colors)", "value": "Up to 295 m²/hr" },
         { "label": "Max Print Width", "value": "1800 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
         { "label": "Media", "value": "Fabric and Paper (dual media compatible)" }
+      ],
+      [
+        { "label": "Printing Technology", "value": "Scanning Digital Inkjet" },
+        { "label": "Grey Levels", "value": "16" }
+      ],
+      [
+        { "label": "Drop Size", "value": "4–72 pl" },
+        { "label": "Ink System", "value": "Open Ink System" }
       ]
     ]
   },
@@ -95,6 +103,16 @@
         "icon": "/AdvancedIcon.svg",
         "title": "ACIMIT Green Label Certified",
         "desc": "Certified for sustainable innovation in energy, water, and chemical resource management, making the JP7 a compliant choice for manufacturers with sustainability targets."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "High-Capacity Ink Tanks",
+        "desc": "Integrated bulk ink tanks with an efficient refilling process, supporting long, uninterrupted production runs."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Open Architecture",
+        "desc": "Open ink system and open software environment for greater flexibility in production workflows."
       }
     ]
   },
@@ -137,9 +155,8 @@
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
     "maxSpeed": 340,
     "regularMode": [
-      { "res": "600 dpi", "pass": "Standard CMYK", "speed": 200, "label": "Up to 200 m/hr" },
-      { "res": "600 dpi", "pass": "2× CMYK config", "speed": 340, "label": "Up to 340 m/hr" },
-      { "res": "600 dpi", "pass": "High-quality multi-pass", "speed": 120, "label": "Up to 120 m/hr" }
+      { "res": "600 × 600 dpi", "pass": "8 Colors", "speed": 295, "label": "Up to 295 m²/hr" },
+      { "res": "600 × 600 dpi", "pass": "2× CMYK", "speed": 340, "label": "Up to 340 m²/hr" }
     ]
   },
   "globalComponents": {
@@ -180,6 +197,14 @@
       {
         "title": "ACIMIT Green Label Certification",
         "desc": "Independently certified for sustainable energy, water, and chemical resource management in industrial textile printing"
+      },
+      {
+        "title": "Open Ink System",
+        "desc": "Open architecture supporting flexible ink choice across production workflows"
+      },
+      {
+        "title": "Open Software Environment",
+        "desc": "Flexible workflow integration with third-party RIP and production tools"
       }
     ]
   },

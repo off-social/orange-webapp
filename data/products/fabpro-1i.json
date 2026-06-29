@@ -26,11 +26,27 @@
       ],
       [
         { "label": "Max Print Width", "value": "1800 mm" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Disperse" },
         { "label": "Fabrics", "value": "Cotton · Linen · Silk · Nylon · Polyester · Blends" }
+      ],
+      [
+        { "label": "Printing Mode", "value": "Single / Bi-directional" },
+        { "label": "Ink Tank Capacity", "value": "15 Litres" }
+      ],
+      [
+        { "label": "Software", "value": "neoStampa" },
+        { "label": "Max Blanket Width", "value": "1900 mm" }
+      ],
+      [
+        { "label": "Max Media Width", "value": "1850 mm" },
+        { "label": "Material Weight", "value": "30–450 gsm" }
+      ],
+      [
+        { "label": "Max Roll Diameter", "value": "400 mm" },
+        { "label": "Max Roll Weight", "value": "200 kg" }
       ]
     ]
   },
@@ -91,6 +107,21 @@
         "desc": "Integrated belt + fins heater with adjustable temperature control, optimised for different fabric types — from lightweight silk to heavy cotton and upholstery fabrics."
       },
       {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Higher Mechanical Precision",
+        "desc": "Tighter mechanical tolerances improve overall print accuracy and registration for sharper, repeatable output."
+      },
+      {
+        "icon": "/Energy-efficient-design.svg",
+        "title": "Integrated Feeding System",
+        "desc": "Built-in feeding system supports roll diameters of up to 400 mm for smooth, continuous media handling."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Precise X-Motion Guideway System",
+        "desc": "Maintains accurate carriage positioning across the full print width for consistent registration."
+      },
+      {
         "icon": "/One-touch-maintenance.svg",
         "title": "One-Touch Maintenance",
         "desc": "Automated daily maintenance routines minimise operator intervention and keep the machine production-ready with minimal downtime."
@@ -148,6 +179,11 @@
     "regularMode": [
       { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 110, "label": "Up to 110 lm/hr" },
       { "res": "600 × 900 dpi", "pass": "3 pass", "speed": 80, "label": "Up to 80 lm/hr" }
+    ],
+    "notes": [
+      "Media conveying: Continuous Belt Conveying with Dedicated Unwinder",
+      "Drying mode: 1 Belt + Fins Heater",
+      "Exhaust treatment: Compulsory Ventilation"
     ]
   },
   "globalComponents": {
@@ -184,6 +220,46 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and production workflow tools"
+      },
+      {
+        "title": "Printer Voltage",
+        "desc": "AC 220–240V ±10%, Single Phase (10 kW)"
+      },
+      {
+        "title": "Dryer Voltage",
+        "desc": "AC 380V ±10%, Three Phase, 25A (15.9 kW)"
+      },
+      {
+        "title": "Compressed Air",
+        "desc": "0.6 MPa, 3.5 m³/hr"
+      },
+      {
+        "title": "Operating Temperature",
+        "desc": "20–26°C"
+      },
+      {
+        "title": "Operating Humidity",
+        "desc": "55–65%"
+      },
+      {
+        "title": "Printer Dimensions",
+        "desc": "13.3 × 6.6 × 5.6 ft"
+      },
+      {
+        "title": "Dryer Dimensions",
+        "desc": "9.7 × 7.7 × 4.7 ft"
+      },
+      {
+        "title": "Installation Space",
+        "desc": "17.3 × 12.6 ft"
+      },
+      {
+        "title": "Printer Weight",
+        "desc": "2300 kg"
+      },
+      {
+        "title": "Dryer Weight",
+        "desc": "800 kg"
       }
     ]
   },

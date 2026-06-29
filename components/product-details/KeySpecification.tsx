@@ -84,7 +84,21 @@ export default function KeySpecification() {
               }}
             >
               {rowIndex > 0 && (
-                <Box sx={{ height: "1px", bgcolor: "#E0E0E0", width: "100%" }} />
+                <Box
+                  sx={{
+                    width: "100%",
+                    bgcolor: "#E0E0E0",
+                    height: "1px",
+                    // Fractional display scaling (e.g. Windows 125%/150%) makes a
+                    // 1px line fall on a different sub-pixel each row, so some
+                    // dividers render darker than others. Rendering ~2 physical
+                    // pixels tall on those displays keeps every divider uniform.
+                    "@media (min-resolution: 1.25dppx) and (max-resolution: 1.99dppx)":
+                      {
+                        height: "1.6px",
+                      },
+                  }}
+                />
               )}
               <Box sx={{ display: "flex", gap: "24px" }}>
                 {row.map((spec) => (

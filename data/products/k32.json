@@ -22,15 +22,22 @@
       ],
       [
         { "label": "Max Resolution", "value": "1800 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
-        { "label": "Standard Speed", "value": "Up to 420 lm/hr" },
+        { "label": "Standard Speed", "value": "Up to 375 lm/hr" },
         { "label": "Max Print Width", "value": "1900 mm" }
       ],
       [
         { "label": "Ink Types", "value": "Reactive · Acid · Pigment · Disperse" },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ],
+      [
+        { "label": "Positioning", "value": "Designed for scalable operations, delivering a combination of speed, stability, and automation" },
+        { "label": "Performance", "value": "570 Lm/hr at 600×600 dpi (1 pass); 375 Lm/hr at 508×1200 dpi (2 pass); 265 Lm/hr at 600×1200 dpi (2 pass)" }
+      ],
+      [
+        { "label": "Evolution of Printing Capacity", "value": "Capable of printing up to 7,500 LM/day" }
       ]
     ]
   },
@@ -140,6 +147,11 @@
         "image": "/Jacquard.webp",
         "title": "Custom and Hi-End Export Production",
         "desc": "International fashion and home textile buyers requiring tight colour repeatability, consistent large-batch quality, and fast turnaround on repeat orders."
+      },
+      {
+        "image": "/Custom.webp",
+        "title": "Scalable Operations",
+        "desc": "Combination of speed, stability, and automation for growing production needs."
       }
     ]
   },
@@ -147,10 +159,9 @@
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
     "maxSpeed": 570,
     "regularMode": [
-      { "res": "1800 dpi", "pass": "1 pass", "speed": 570, "label": "Up to 570 lm/hr" },
-      { "res": "1800 dpi", "pass": "2 pass", "speed": 420, "label": "Up to 420 lm/hr" },
-      { "res": "1800 dpi", "pass": "3 pass", "speed": 280, "label": "Up to 280 lm/hr" },
-      { "res": "1800 dpi", "pass": "4 pass", "speed": 200, "label": "Up to 200 lm/hr" }
+      { "res": "600×600 dpi", "pass": "1 pass", "speed": 570, "label": "Up to 570 lm/hr" },
+      { "res": "508×1200 dpi", "pass": "2 pass", "speed": 375, "label": "Up to 375 lm/hr" },
+      { "res": "600×1200 dpi", "pass": "2 pass", "speed": 265, "label": "Up to 265 lm/hr" }
     ]
   },
   "globalComponents": {

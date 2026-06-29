@@ -10,7 +10,7 @@
     "bullets": [
       "Industrial piezoelectric (5 / 7 / 12 pl)",
       "Up to 75,000 lm/day",
-      "1200 dpi"
+      "1200 × 2400 dpi"
     ]
   },
   "keySpecification": {
@@ -24,8 +24,8 @@
         { "label": "Max Output", "value": "Up to 75,000 lm/day" }
       ],
       [
-        { "label": "Max Resolution", "value": "1200 dpi" },
-        { "label": "Ink Colors", "value": "8 (CMYK + O + R + B + G)" }
+        { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
+        { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Printing Mode", "value": "Single Pass" },
@@ -37,6 +37,36 @@
           "value": "Reactive · Acid · Pigment · Disperse"
         },
         { "label": "Fabrics", "value": "All types incl. elastic and new fibre" }
+      ],
+      [
+        {
+          "label": "Positioning",
+          "value": "A highly automated, next-generation single-pass digital printer designed for industrial-scale manufacturing and transformation"
+        },
+        {
+          "label": "Performance",
+          "value": "Up to 5400 Lm/h, 4800 Lm/h, and 3000 Lm/h at 1200×2400 DPI in Single Pass mode"
+        }
+      ],
+      [
+        {
+          "label": "Printheads",
+          "value": "Scalable up to 212 printheads, supporting 4–8 colors"
+        },
+        {
+          "label": "Workflow",
+          "value": "Hybrid: digital + rotary screen printing in a single pass"
+        }
+      ],
+      [
+        { "label": "Single-Pass Speeds", "value": "60 / 75 / 90 m/min" },
+        { "label": "Production Turnaround", "value": "Reduced from 30 days to 5 days" }
+      ],
+      [
+        {
+          "label": "Ink Cost / Metre",
+          "value": "~₹2.5 (max) · ₹4.2 (avg) · ₹5.8 (deep designs)"
+        }
       ]
     ]
   },
@@ -104,6 +134,36 @@
         "icon": "/AdvancedIcon.svg",
         "title": "Industrial Inline Design",
         "desc": "Fabric entry, printing, drying, and collection are fully integrated into one automated inline system, removing manual handling between stages and maximising throughput efficiency."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Digital + Rotary Integration",
+        "desc": "Integrates digital and rotary printing in one workflow, allowing for precise registration and special effects like gold, pearl, and puff."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Ink and Colour Efficiency",
+        "desc": "Provides a 10–15% savings in ink consumption and a 15% improvement in colour performance."
+      },
+      {
+        "icon": "/One-touch-maintenance.svg",
+        "title": "Online Sizing",
+        "desc": "Features Online Sizing for seamless front-to-back production, real-time quality control, and reduced waste and labour costs."
+      },
+      {
+        "icon": "/Precision-ink-mixing.svg",
+        "title": "Fully Integrated In-Line Coating",
+        "desc": "Allows for registered, design-based selective coating that saves paste costs and reduces wastewater impact."
+      },
+      {
+        "icon": "/Professional-color-management.svg",
+        "title": "Special Effect Overlays",
+        "desc": "Supports complex special effect overlays such as gold, pearl, and puff, utilizing patented technology and precise camera registration."
+      },
+      {
+        "icon": "/AdvancedIcon.svg",
+        "title": "Modular Hardware Design",
+        "desc": "Includes distinct units for fabric infeed, dust removal/flattening, two rotary screens for online coating, digital printing, two rotary screens for foil/bloch printing, drying, and fabric outfeed."
       }
     ]
   },
@@ -139,6 +199,11 @@
         "image": "/Lace-sequin.webp",
         "title": "Multi-Buyer Volume Job Work Operations",
         "desc": "Large job work printing units with continuous order flow from multiple clients who need a machine that can print at scale without the speed limitations of scanning-head systems."
+      },
+      {
+        "image": "/Jacquard.webp",
+        "title": "Industrial-Scale Manufacturing and Transformation",
+        "desc": "High-speed single-pass production for large-scale digital and rotary hybrid textile printing."
       }
     ]
   },
@@ -204,6 +269,30 @@
       {
         "title": "RIP Software — neoStampa Professional Edition",
         "desc": "Industry-standard RIP with ICC colour management, Pantone library, job queuing, and complete production workflow tools"
+      },
+      {
+        "title": "Scalable Printhead Array",
+        "desc": "Up to 212 printheads supporting 4–8 colours"
+      },
+      {
+        "title": "Online Sizing System",
+        "desc": "Seamless front-to-back production with real-time quality control"
+      },
+      {
+        "title": "Hanglory",
+        "desc": "Digital printing ecosystem partner: 100+ R&D experts, 326+ domestic patents, 9+ international patents, 87+ software copyrights"
+      },
+      {
+        "title": "Homer",
+        "desc": "12+ years of digital textile printing expertise; 1,500+ global installations; 300+ installations in India"
+      },
+      {
+        "title": "Jilong Machine",
+        "desc": "Industry standard-setter for rotary and digital printing solutions; award-winning rotary technology; 200+ patents"
+      },
+      {
+        "title": "Modular Hardware Units",
+        "desc": "Fabric infeed, dust removal/flattening, dual rotary screens for online coating, digital printing module, dual rotary screens for foil/bloch printing, drying, fabric outfeed"
       }
     ]
   },

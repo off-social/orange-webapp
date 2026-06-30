@@ -1,7 +1,7 @@
 {
   "slug": "mas-vertical",
   "name": "MAS Vertical",
-  "tagline": "Synchronized Double-Sided Digital Textile Printer",
+  "tagline": "One Fabric. Two Sides. Infinite Possibilities",
   "heroImage": {
     "desktop": "/MAS2.webp",
     "mobile": "/MAS2.webp"
@@ -17,24 +17,32 @@
     "description": "Synchronized double-sided digital textile printing engineered for perfect front-to-back registration, yarn-dye replication, and high value-added production across both fabric faces in a single pass.",
     "rows": [
       [
-        { "label": "Printheads", "value": "Kyocera KJ4B 600 dpi (2 Carriages, Dual-Side)" },
-        { "label": "Max Resolution", "value": "600 dpi" }
+        { "label": "Printing Width", "value": "Min 900 mm – Max 1850 mm" },
+        { "label": "Head Type", "value": "Kyocera KJ4B 600 DPI" }
       ],
       [
-        { "label": "Ink Colors", "value": "Up to 8 Installed Colors" },
-        { "label": "Printing Mode", "value": "Synchronized Double-Sided Printing" }
+        { "label": "Number of Carriages", "value": "2" },
+        { "label": "Installed Colors", "value": "Up to 8" }
       ],
       [
-        { "label": "Min Print Width", "value": "900 mm" },
-        { "label": "Max Print Width", "value": "1850 mm" }
+        { "label": "Rear Side Drying Unit", "value": "IR Panel (9 kW)" },
+        { "label": "Dual Side Drying Unit", "value": "Forced Air Heater (18 kW)" }
       ],
       [
-        { "label": "Drying System", "value": "Rear IR Panel (9 kW) + Dual-Side Forced Air Heater (18 kW)" },
-        { "label": "Power Requirement", "value": "400V Triphase, 44 kW Total Installed Power" }
+        { "label": "Maximum Operating Temperature", "value": "IR Panel (9 kW)" },
+        { "label": "Sewing Machine", "value": "Optional" }
       ],
       [
-        { "label": "Pneumatics", "value": "6 Bar, Max 20 L/min Compressed Air Consumption" },
-        { "label": "Image Processing", "value": "Built-In Onboard Image Processor" }
+        { "label": "Centering Device", "value": "Optional" },
+        { "label": "Image Processor", "value": "Built-in" }
+      ],
+      [
+        { "label": "Power Supply", "value": "400 V Triphase" },
+        { "label": "Installed Power", "value": "44 kW" }
+      ],
+      [
+        { "label": "Pneumatic Pressure", "value": "6 bar" },
+        { "label": "Maximum Compressed Air Consumption", "value": "20 l/min" }
       ]
     ]
   },

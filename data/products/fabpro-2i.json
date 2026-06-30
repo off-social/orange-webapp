@@ -17,8 +17,8 @@
     "description": "Advanced industrial textile printing technology designed to maximize productivity, ensure superior color accuracy, and support diverse fabric applications.",
     "rows": [
       [
-        { "label": "Print Heads", "value": "16× Ricoh Gen 6 Industrial" },
-        { "label": "Max Output", "value": "Up to 200 lm/hr" }
+        { "label": "Print Heads", "value": "24× Ricoh Gen 6 Industrial" },
+        { "label": "Max Output", "value": "Up to 250 lm/hr" }
       ],
       [
         { "label": "Max Resolution", "value": "600 × 900 dpi" },
@@ -170,9 +170,9 @@
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
-    "maxSpeed": 200,
+    "maxSpeed": 250,
     "regularMode": [
-      { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 200, "label": "Up to 200 lm/hr" },
+      { "res": "600 × 600 dpi", "pass": "2 pass", "speed": 250, "label": "Up to 250 lm/hr" },
       { "res": "600 × 900 dpi", "pass": "3 pass", "speed": 150, "label": "Up to 150 lm/hr" }
     ],
     "notes": [

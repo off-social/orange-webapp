@@ -21,7 +21,7 @@
         { "label": "Max Output", "value": "Up to 570 lm/hr" }
       ],
       [
-        { "label": "Max Resolution", "value": "1800 dpi" },
+        { "label": "Max Resolution", "value": "1200 dpi" },
         { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
@@ -37,7 +37,8 @@
         { "label": "Performance", "value": "570 Lm/hr at 600×600 dpi (1 pass); 375 Lm/hr at 508×1200 dpi (2 pass); 265 Lm/hr at 600×1200 dpi (2 pass)" }
       ],
       [
-        { "label": "Evolution of Printing Capacity", "value": "Capable of printing up to 7,500 LM/day" }
+        { "label": "Evolution of Printing Capacity", "value": "Capable of printing up to 7,500 LM/day" },
+        { "label": "RIP Software", "value": "Caldera · Neostampa · Texprint" }
       ]
     ]
   },

@@ -8,9 +8,9 @@
   },
   "sidebar": {
     "bullets": [
-      "Industrial piezoelectric (5 / 7 / 12 pl)",
-      "Up to 75,000 lm/day",
-      "1200 × 2400 dpi"
+      "Industrial piezoelectric (5 / 7 / 12 / 18 pl)",
+      "Up to 70,000 lm/day",
+      "2400 dpi"
     ]
   },
   "keySpecification": {
@@ -19,17 +19,17 @@
       [
         {
           "label": "Print Heads",
-          "value": "Industrial-grade Piezoelectric (Variable Droplet: 5 / 7 / 12 pl)"
+          "value": "Industrial-grade Piezoelectric (Variable Droplet: 5 / 7 / 12 / 18 pl)"
         },
-        { "label": "Max Output", "value": "Up to 75,000 lm/day" }
+        { "label": "Max Output", "value": "Up to 70,000 lm/day" }
       ],
       [
-        { "label": "Max Resolution", "value": "1200 × 2400 dpi" },
+        { "label": "Max Resolution", "value": "2400 dpi" },
         { "label": "Ink Colors", "value": "8 (C + M + Y + K + O + R + B + G)" }
       ],
       [
         { "label": "Printing Mode", "value": "Single Pass" },
-        { "label": "Max Print Width", "value": "1850 mm" }
+        { "label": "Max Print Width", "value": "2588 mm" }
       ],
       [
         {
@@ -209,25 +209,25 @@
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",
-    "maxSpeed": 75000,
+    "maxSpeed": 5400,
     "regularMode": [
       {
-        "res": "600 dpi",
+        "res": "1200 × 2400 dpi",
         "pass": "single pass",
-        "speed": 75000,
-        "label": "Up to 75,000 lm/day"
+        "speed": 5400,
+        "label": "Up to 5400 lm/hr"
       },
       {
-        "res": "800 dpi",
+        "res": "1200 × 2400 dpi",
         "pass": "single pass",
-        "speed": 55000,
-        "label": "Up to 55,000 lm/day"
+        "speed": 4800,
+        "label": "Up to 4800 lm/hr"
       },
       {
-        "res": "1200 dpi",
+        "res": "1200 × 2400 dpi",
         "pass": "single pass",
-        "speed": 35000,
-        "label": "Up to 35,000 lm/day"
+        "speed": 3000,
+        "label": "Up to 3000 lm/hr"
       }
     ]
   },
@@ -235,7 +235,7 @@
     "description": "Built using premium international components that deliver superior accuracy, durability, and consistent production efficiency.",
     "largeCard": {
       "title": "Industrial Piezoelectric Printheads",
-      "desc": "Variable droplet technology (5 / 7 / 12 pl) for single-pass output up to 75,000 lm/day at up to 1200 dpi resolution"
+      "desc": "Variable droplet technology (5 / 7 / 12 / 18 pl) for single-pass output up to 70,000 lm/day at up to 2400 dpi resolution"
     },
     "smallCards": [
       {
@@ -244,7 +244,7 @@
       },
       {
         "title": "Linear Guide System — THK (Japan)",
-        "desc": "Precision motion guidance ensuring stable, vibration-free printhead alignment across the full 1850mm print width"
+        "desc": "Precision motion guidance ensuring stable, vibration-free printhead alignment across the full 2588mm print width"
       },
       {
         "title": "Bearings — SKF (Sweden)",
@@ -307,7 +307,7 @@
   },
   "showcase": {
     "heading": "Rocket Showcase",
-    "description": "The world's fastest digital textile printer in its class. Single-pass architecture, up to 75,000 lm/day, 1850mm print width, and full inline automation built for manufacturers who operate at mass-production scale.",
+    "description": "The world's fastest digital textile printer in its class. Single-pass architecture, up to 70,000 lm/day, 2588mm print width, and full inline automation built for manufacturers who operate at mass-production scale.",
     "leftItems": [
       "Scanning printers can't match mill output",
       "High per-metre cost on volume runs",
@@ -315,7 +315,7 @@
       "Air bubbles causing nozzle inconsistency"
     ],
     "rightItems": [
-      "Single-pass output up to 75,000 lm/day",
+      "Single-pass output up to 70,000 lm/day",
       "Variable droplet tech for detail & solids",
       "Fully integrated inline print-dry-collect",
       "Stable ink supply with inline degassing"

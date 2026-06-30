@@ -8,18 +8,18 @@ import GreenEdgeResources from "./GreenEdgeResources";
 import GreenEdgeSolutions from "./GreenEdgeSolutions";
 import GreenEdgeTechnology from "./GreenEdgeTechnology";
 
-const TABS = ["Knowledge", "Technology", "Benefits", "Solutions", "Resources"];
+const TABS = ["Products", "Knowledge", "Technology", "Benefits", "Resources"];
 
 const TAB_CONTENT: Record<string, React.ReactNode> = {
+  Products: <GreenEdgeSolutions />,
   Knowledge: <GreenEdgeKnowledge />,
   Technology: <GreenEdgeTechnology />,
   Benefits: <GreenEdgeBenefits />,
-  Solutions: <GreenEdgeSolutions />,
   Resources: <GreenEdgeResources />,
 };
 
 export default function GreenEdgeTabs() {
-  const [active, setActive] = useState("Knowledge");
+  const [active, setActive] = useState("Products");
 
   return (
     <>

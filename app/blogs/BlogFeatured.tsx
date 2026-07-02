@@ -3,28 +3,24 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
+import {
+  BLOG_CATEGORY_LABELS,
+  DEFAULT_COVER_IMAGE,
+  type BlogPostListItem,
+} from "@/data/blog.types";
+import { formatBlogMeta } from "@/lib/sanity/format";
+import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
+
 interface BlogFeaturedProps {
-  topic?: string;
-  title?: string;
-  desc?: string;
-  founder?: string;
-  role?: string;
-  meta?: string;
-  img?: string;
-  /** Where the card links to. Article route (inside app layout) by default. */
-  href?: string;
+  post: BlogPostListItem;
 }
 
-export default function BlogFeatured({
-  topic = "Topic Name",
-  title = "The Sharpe-less-ness: Why Fund Rankings Invert in a Down Market",
-  desc = "A negative Sharpe ratio can rank the careful fund worst in a down market. Why it happens, a one-line fix, and which other measures share the flaw.",
-  founder = "Founder Name",
-  role = "Founder",
-  meta = "Jun 2, 2025 · 1 min read",
-  img = "/blogImg1.webp",
-  href = "/blogs/article",
-}: BlogFeaturedProps) {
+export default function BlogFeatured({ post }: BlogFeaturedProps) {
+  const coverUrl =
+    getCoverImageUrl(post.coverImage, 1200) ?? DEFAULT_COVER_IMAGE;
+  const coverAlt = getCoverImageAlt(post.coverImage, post.title);
+  const authorName = post.author?.name ?? "Orange O Tec";
+
   return (
     <Box
       sx={{
@@ -43,10 +39,9 @@ export default function BlogFeatured({
         bgcolor: "var(--white-surface, #FFF)",
       }}
     >
-      {/* Featured card */}
       <Box
         component="a"
-        href={href}
+        href={`/blogs/${post.slug}`}
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
@@ -60,7 +55,6 @@ export default function BlogFeatured({
           "&:hover .featured-title": { color: "#F6891F" },
         }}
       >
-        {/* Main image */}
         <Box
           sx={{
             display: "flex",
@@ -73,13 +67,12 @@ export default function BlogFeatured({
           }}
         >
           <Image
-            src={img}
-            alt={title}
+            src={coverUrl}
+            alt={coverAlt}
             fill
             style={{ objectFit: "cover" }}
             sizes="(max-width: 900px) 100vw, 50vw"
           />
-          {/* FEATURED badge */}
           <Box
             sx={{
               position: "absolute",
@@ -106,7 +99,6 @@ export default function BlogFeatured({
           </Box>
         </Box>
 
-        {/* Content panel */}
         <Box
           sx={{
             display: "flex",
@@ -117,7 +109,6 @@ export default function BlogFeatured({
             flex: "1 0 0",
           }}
         >
-          {/* Topic + Title + Description */}
           <Box
             sx={{
               display: "flex",
@@ -138,7 +129,7 @@ export default function BlogFeatured({
                 textTransform: "uppercase",
               }}
             >
-              {topic}
+              {BLOG_CATEGORY_LABELS[post.category]}
             </Typography>
 
             <Typography
@@ -153,29 +144,30 @@ export default function BlogFeatured({
                 transition: "color 0.2s ease",
               }}
             >
-              {title}
+              {post.title}
             </Typography>
 
-            <Typography
-              sx={{
-                color: "var(--grey-500, #707070)",
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "14px", md: "16px" },
-                fontWeight: 400,
-                lineHeight: { xs: "22.4px", md: "25.6px" },
-                alignSelf: "stretch",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 3,
-              }}
-            >
-              {desc}
-            </Typography>
+            {post.excerpt?.trim() ? (
+              <Typography
+                sx={{
+                  color: "var(--grey-500, #707070)",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: { xs: "14px", md: "16px" },
+                  fontWeight: 400,
+                  lineHeight: { xs: "22.4px", md: "25.6px" },
+                  alignSelf: "stretch",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  WebkitLineClamp: 3,
+                }}
+              >
+                {post.excerpt}
+              </Typography>
+            ) : null}
           </Box>
 
-          {/* Footer: founder + meta */}
           <Box
             sx={{
               display: "flex",
@@ -188,28 +180,16 @@ export default function BlogFeatured({
               borderTop: "1px solid var(--grey-outline, #E0E0E0)",
             }}
           >
-            {/* Founder Name · Founder */}
             <Typography
-              component="div"
               sx={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "14px",
                 lineHeight: "22.4px",
+                color: "var(--black-600, #111)",
+                fontWeight: 600,
               }}
             >
-              <Box
-                component="span"
-                sx={{ color: "var(--black-600, #111)", fontWeight: 600 }}
-              >
-                {founder}
-              </Box>
-              <Box
-                component="span"
-                sx={{ color: "var(--grey-500, #707070)", fontWeight: 400 }}
-              >
-                {" "}
-                · {role}
-              </Box>
+              {authorName}
             </Typography>
 
             <Typography
@@ -222,7 +202,7 @@ export default function BlogFeatured({
                 whiteSpace: "nowrap",
               }}
             >
-              {meta}
+              {formatBlogMeta(post.publishedAt, post.readTime)}
             </Typography>
           </Box>
         </Box>

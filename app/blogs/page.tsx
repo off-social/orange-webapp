@@ -1,22 +1,9 @@
-"use client";
+import { getFeaturedPost, getPosts } from "@/lib/sanity/queries";
 
-import { useState } from "react";
-import BlogFeatured from "./BlogFeatured";
-import BlogHero from "./BlogHero";
-import BlogList from "./BlogList";
+import BlogPageClient from "./BlogPageClient";
 
-export default function BlogPage() {
-  const [activeTab, setActiveTab] = useState<"blogs" | "success">("blogs");
+export default async function BlogPage() {
+  const [posts, featured] = await Promise.all([getPosts(), getFeaturedPost()]);
 
-  return (
-    <>
-      <BlogHero activeTab={activeTab} onTabChange={setActiveTab} />
-      {activeTab === "blogs" && (
-        <>
-          <BlogFeatured />
-          <BlogList />
-        </>
-      )}
-    </>
-  );
+  return <BlogPageClient posts={posts} featured={featured} />;
 }

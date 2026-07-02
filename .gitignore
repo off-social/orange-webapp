@@ -41,5 +41,3 @@ yarn-error.log*
 next-env.d.ts
 
 public/GreenVideo.mp4
-package-lock.json
-yarn.lock

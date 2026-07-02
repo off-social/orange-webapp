@@ -51,7 +51,7 @@ export function buildBlogPostMetadata(post: BlogPost): Metadata {
   const siteUrl = getSiteUrl();
   const title = `${post.title} | ${SITE_NAME}`;
   const description = getDescription(post);
-  const url = `${siteUrl}/blogs/${post.slug}`;
+  const url = `${siteUrl}/blogs/${post.slug}/`;
   const imageUrl = getCoverImageUrl(post.coverImage, 1200);
 
   return {

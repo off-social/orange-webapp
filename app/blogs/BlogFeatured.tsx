@@ -41,7 +41,7 @@ export default function BlogFeatured({ post }: BlogFeaturedProps) {
     >
       <Box
         component="a"
-        href={`/blogs/${post.slug}`}
+        href={`/blogs/${post.slug}/`}
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },

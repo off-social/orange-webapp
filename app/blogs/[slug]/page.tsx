@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 
+import {
+  buildBlogPostMetadata,
+} from "@/lib/sanity/metadata";
 import { getPostBySlug, getPostSlugs } from "@/lib/sanity/queries";
 
 import BlogArticle from "../BlogArticle";
@@ -22,6 +25,26 @@ export async function generateStaticParams() {
     console.warn("Failed to fetch blog slugs from Sanity:", error);
     return [{ slug: BUILD_PLACEHOLDER_SLUG }];
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  if (slug === BUILD_PLACEHOLDER_SLUG) {
+    return {};
+  }
+
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return buildBlogPostMetadata(post);
 }
 
 export default async function BlogPostPage({

@@ -2,12 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 
-interface BlogHeroProps {
-  activeTab: "blogs" | "success";
-  onTabChange: (tab: "blogs" | "success") => void;
-}
-
-export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
+export default function BlogHero() {
   return (
     <Box
       sx={{
@@ -24,9 +19,10 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
         gap: { xs: "24px", md: "40px" },
         alignSelf: "stretch",
         bgcolor: "#FFF",
+        borderBottom: "1px solid #E0E0E0",
+        pb: { xs: "16px", md: "24px" },
       }}
     >
-      {/* Label + Heading + Subtitle */}
       <Box
         sx={{
           display: "flex",
@@ -77,62 +73,6 @@ export default function BlogHero({ activeTab, onTabChange }: BlogHeroProps) {
           Explore the latest trends in textile printing technology and industry
           insights.
         </Typography>
-      </Box>
-
-      {/* Tabs */}
-      <Box
-        sx={{
-          alignSelf: "stretch",
-          borderBottom: "1px solid #E0E0E0",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
-          {(["blogs", "success"] as const).map((tab) => {
-            const label = tab === "blogs" ? "Blogs" : "Success Stories";
-            const isActive = activeTab === tab;
-            return (
-              <Box
-                key={tab}
-                onClick={() => onTabChange(tab)}
-                sx={{
-                  display: "flex",
-                  width: { xs: "auto", md: "150px" },
-                  flex: { xs: "1 0 0", md: "0 0 auto" },
-                  padding: { xs: "16px 0 8px 0", md: "24px 0 16px 0" },
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "4px",
-                  cursor: "pointer",
-                  borderBottom: isActive
-                    ? "2px solid #F6891F"
-                    : "2px solid transparent",
-                  mb: "-1px",
-                  whiteSpace: "nowrap", // ← prevents "Success\nStories" wrap
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: { xs: "14px", md: "16px" },
-                    fontWeight: isActive ? 600 : 400,
-                    lineHeight: "25.6px",
-                    color: isActive ? "#333" : "#707070",
-                    transition: "all 0.2s ease",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {label}
-                </Typography>
-              </Box>
-            );
-          })}
-        </Box>
       </Box>
     </Box>
   );

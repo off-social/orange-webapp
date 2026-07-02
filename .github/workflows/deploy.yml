@@ -4,13 +4,22 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sanity-publish]
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
 
 jobs:
   build-and-push-main:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: iv7djc6i
+      NEXT_PUBLIC_SANITY_DATASET: production
 
     steps:
       - name: Checkout code
@@ -32,19 +41,13 @@ jobs:
         run: |
           export NODE_OPTIONS="--max_old_space_size=4196"
           npm install --legacy-peer-deps
+
       - name: Build production React app
         run: |
           export NODE_OPTIONS="--max_old_space_size=4196"
           npm run build
 
-          
-          
       - name: Upload production build to S3 bucket
         run: |
           aws s3 sync out ${{ vars.S3_BUCKET_URI }} --delete
           aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
-
-          
-
-
-          

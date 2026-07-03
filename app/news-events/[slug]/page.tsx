@@ -7,8 +7,6 @@ import { getPostBySlug, getPostSlugsBySection } from "@/lib/sanity/queries";
 
 const BUILD_PLACEHOLDER_SLUG = "__build_placeholder__";
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   try {
     const slugs = await getPostSlugsBySection("news");

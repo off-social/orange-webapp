@@ -15,7 +15,7 @@ import {
 import { formatBlogMeta } from "@/lib/sanity/format";
 import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
 
-const ITEMS_PER_PAGE = 7;
+const ITEMS_PER_PAGE = 6;
 
 const FILTERS = ["All", "Products", "Industry"] as const;
 type Filter = (typeof FILTERS)[number];

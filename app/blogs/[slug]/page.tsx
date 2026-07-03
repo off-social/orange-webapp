@@ -10,8 +10,6 @@ import BlogArticle from "../BlogArticle";
 /** Used only so static export builds before any posts are published. */
 const BUILD_PLACEHOLDER_SLUG = "__build_placeholder__";
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   try {
     const slugs = await getPostSlugs();

@@ -13,15 +13,12 @@ import {
 import { formatBlogMeta } from "@/lib/sanity/format";
 import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
 
-const SHOW_SUCCESS_STORIES_TAB = false;
-
 type TabId =
   | "news"
   | "upcoming-exhibition"
   | "past-events-gallery"
   | "booth-highlights"
-  | "media-coverage"
-  | "success-stories";
+  | "media-coverage";
 
 const TAB_DEFINITIONS: { id: TabId; label: string }[] = [
   { id: "news", label: "News" },
@@ -34,7 +31,6 @@ const TAB_DEFINITIONS: { id: TabId; label: string }[] = [
 interface EventsPresenceProps {
   newsPosts: BlogPostListItem[];
   featuredNews: BlogPostListItem | null;
-  successStories: BlogPostListItem[];
   upcomingExhibitions?: BlogPostListItem[];
   pastEventsGallery?: BlogPostListItem[];
   boothHighlights?: BlogPostListItem[];
@@ -186,6 +182,24 @@ function PostGrid({
               >
                 {post.title}
               </Typography>
+              {post.excerpt?.trim() ? (
+                <Typography
+                  sx={{
+                    color: "#707070",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                    lineHeight: "22.4px",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 3,
+                  }}
+                >
+                  {post.excerpt}
+                </Typography>
+              ) : null}
               <Typography
                 sx={{
                   color: "#8D8D8D",
@@ -234,7 +248,6 @@ function PostGrid({
 export default function EventsPresence({
   newsPosts,
   featuredNews,
-  successStories,
   upcomingExhibitions = [],
   pastEventsGallery = [],
   boothHighlights = [],
@@ -261,18 +274,12 @@ export default function EventsPresence({
           return boothHighlights.length > 0;
         case "media-coverage":
           return mediaCoverage.length > 0;
-        case "success-stories":
-          return successStories.length > 0;
         default:
           return false;
       }
     };
 
     const tabs = TAB_DEFINITIONS.filter((tab) => hasContent(tab.id));
-
-    if (SHOW_SUCCESS_STORIES_TAB && hasContent("success-stories")) {
-      tabs.push({ id: "success-stories", label: "Success Stories" });
-    }
 
     return tabs;
   }, [
@@ -281,7 +288,6 @@ export default function EventsPresence({
     mediaCoverage.length,
     newsPosts.length,
     pastEventsGallery.length,
-    successStories.length,
     upcomingExhibitions.length,
   ]);
 
@@ -306,6 +312,8 @@ export default function EventsPresence({
     }
   }, [activeTabId, visibleTabs]);
 
+  const showTabs = visibleTabs.length > 1;
+
   const showFeaturedNews =
     featuredNews !== null && effectiveActiveTabId === "news";
 
@@ -329,8 +337,6 @@ export default function EventsPresence({
         return <PostGrid posts={boothHighlights} basePath="/news-events" />;
       case "media-coverage":
         return <PostGrid posts={mediaCoverage} basePath="/news-events" />;
-      case "success-stories":
-        return <PostGrid posts={successStories} basePath="/news-events" />;
       default:
         return null;
     }
@@ -514,59 +520,61 @@ export default function EventsPresence({
       >
         {visibleTabs.length > 0 ? (
           <>
-            <Box
-              sx={{
-                alignSelf: "stretch",
-                borderBottom: "1px solid #E0E0E0",
-                overflowX: "auto",
-                scrollbarWidth: "none",
-                "&::-webkit-scrollbar": { display: "none" },
-              }}
-            >
+            {showTabs ? (
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: { xs: "flex-start", md: "center" },
-                  alignItems: "center",
-                  minWidth: "max-content",
+                  alignSelf: "stretch",
+                  borderBottom: "1px solid #E0E0E0",
+                  overflowX: "auto",
+                  scrollbarWidth: "none",
+                  "&::-webkit-scrollbar": { display: "none" },
                 }}
               >
-                {visibleTabs.map((tab) => {
-                  const isActive = tab.id === effectiveActiveTabId;
-                  return (
-                    <Box
-                      key={tab.id}
-                      onClick={() => setActiveTabId(tab.id)}
-                      sx={{
-                        px: { xs: "20px", sm: "40px", md: "60px" },
-                        pb: "12px",
-                        cursor: "pointer",
-                        borderBottom: isActive
-                          ? "2px solid #F6891F"
-                          : "2px solid transparent",
-                        mb: "-1px",
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <Typography
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: { xs: "flex-start", md: "center" },
+                    alignItems: "center",
+                    minWidth: "max-content",
+                  }}
+                >
+                  {visibleTabs.map((tab) => {
+                    const isActive = tab.id === effectiveActiveTabId;
+                    return (
+                      <Box
+                        key={tab.id}
+                        onClick={() => setActiveTabId(tab.id)}
                         sx={{
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: { xs: "14px", md: "16px" },
-                          fontWeight: isActive ? 600 : 400,
-                          lineHeight: "25.6px",
-                          color: isActive ? "#333" : "#707070",
-                          transition: "all 0.2s ease",
+                          px: { xs: "20px", sm: "40px", md: "60px" },
+                          pb: "12px",
+                          cursor: "pointer",
+                          borderBottom: isActive
+                            ? "2px solid #F6891F"
+                            : "2px solid transparent",
+                          mb: "-1px",
                           whiteSpace: "nowrap",
+                          flexShrink: 0,
                         }}
                       >
-                        {tab.label}
-                      </Typography>
-                    </Box>
-                  );
-                })}
+                        <Typography
+                          sx={{
+                            fontFamily: "Inter, sans-serif",
+                            fontSize: { xs: "14px", md: "16px" },
+                            fontWeight: isActive ? 600 : 400,
+                            lineHeight: "25.6px",
+                            color: isActive ? "#333" : "#707070",
+                            transition: "all 0.2s ease",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {tab.label}
+                        </Typography>
+                      </Box>
+                    );
+                  })}
+                </Box>
               </Box>
-            </Box>
+            ) : null}
 
             {renderTabContent()}
           </>

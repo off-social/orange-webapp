@@ -48,6 +48,7 @@ export default function BlogFeatured({ post }: BlogFeaturedProps) {
           alignItems: "stretch",
           alignSelf: "stretch",
           border: "1px solid var(--grey-outline, #E0E0E0)",
+          borderRadius: "8px",
           overflow: "hidden",
           cursor: "pointer",
           textDecoration: "none",
@@ -76,16 +77,17 @@ export default function BlogFeatured({ post }: BlogFeaturedProps) {
           <Box
             sx={{
               position: "absolute",
-              top: "16px",
-              left: "16px",
-              padding: "6px 12px",
+              top: { xs: "16px", md: "24px" },
+              left: { xs: "16px", md: "24px" },
+              px: "8px",
+              py: "6px",
               borderRadius: "4px",
-              bgcolor: "var(--white-surface, #FFF)",
+              bgcolor: "#FEF3E8",
             }}
           >
             <Typography
               sx={{
-                color: "#707070",
+                color: "#F6891F",
                 fontFamily: "Inter, sans-serif",
                 fontSize: "10px",
                 fontWeight: 500,

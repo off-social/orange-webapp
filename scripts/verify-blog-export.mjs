@@ -12,20 +12,39 @@ const client = createClient({
   useCdn: true,
 });
 
-const slugs = await client.fetch(
-  `*[_type == "post" && defined(slug.current)].slug.current`,
+/** Sections that have a dedicated static detail route in the Next.js export. */
+const SECTION_OUTPUT_DIR = {
+  insights: "blogs",
+  news: "news-events",
+  "success-stories": "blogs",
+};
+
+const posts = await client.fetch(
+  `*[_type == "post" && defined(slug.current)]{
+    "slug": slug.current,
+    "section": coalesce(section, "insights")
+  }`,
 );
 
-const missing = slugs.filter(
-  (slug) => !existsSync(join("out", "blogs", slug, "index.html")),
-);
+const missing = posts.filter((post) => {
+  const outputDir = SECTION_OUTPUT_DIR[post.section];
+  if (!outputDir) {
+    return false;
+  }
+
+  return !existsSync(join("out", outputDir, post.slug, "index.html"));
+});
 
 if (missing.length > 0) {
-  console.error("Missing static export for blog slugs:");
-  for (const slug of missing) {
-    console.error(`  - ${slug}`);
+  console.error("Missing static export for post slugs:");
+  for (const { slug, section } of missing) {
+    const outputDir = SECTION_OUTPUT_DIR[section];
+    console.error(`  - ${slug} (section: ${section}, expected: out/${outputDir}/)`);
   }
   process.exit(1);
 }
 
-console.log(`Verified ${slugs.length} blog page(s) in out/blogs/`);
+const verified = posts.filter((post) => SECTION_OUTPUT_DIR[post.section]);
+console.log(
+  `Verified ${verified.length} post page(s) across out/blogs/ and out/news-events/`,
+);

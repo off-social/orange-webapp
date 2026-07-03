@@ -1,6 +1,7 @@
 "use client";
 
 import { useConsultation } from "@/data/ConsultationContext";
+import type { BlogPostListItem } from "@/data/blog.types";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +21,7 @@ import TextileProcessing from "./TextileProcessing";
 import TheFutureofDigitalPrinting from "./TheFutureofDigitalPrinting";
 import ThePowerOfOrange from "./ThePowerOfOrange";
 
-const Home = () => {
+const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
   const [value, setValue] = useState(0);
   const { openModal } = useConsultation();
 
@@ -578,7 +579,7 @@ const Home = () => {
         <TheFutureofDigitalPrinting />
       </Grid>
       <Grid size={12}>
-        <IndustryPresence />
+        <IndustryPresence newsPosts={newsPosts} />
       </Grid>
       <Grid size={12}>
         <DrivingSustainablePrinting />

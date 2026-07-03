@@ -1,14 +1,20 @@
 import { notFound } from "next/navigation";
 
-import {
-  buildBlogPostMetadata,
-} from "@/lib/sanity/metadata";
+import { POST_SECTION_LABELS, type PostSection } from "@/data/blog.types";
+import { buildBlogPostMetadata } from "@/lib/sanity/metadata";
 import { getPostBySlug, getPostSlugs } from "@/lib/sanity/queries";
 
 import BlogArticle from "../BlogArticle";
 
 /** Used only so static export builds before any posts are published. */
 const BUILD_PLACEHOLDER_SLUG = "__build_placeholder__";
+const BLOG_SECTIONS: PostSection[] = ["insights", "success-stories"];
+
+function isBlogSection(
+  section: PostSection,
+): section is "insights" | "success-stories" {
+  return BLOG_SECTIONS.includes(section);
+}
 
 export async function generateStaticParams() {
   try {
@@ -36,13 +42,13 @@ export async function generateMetadata({
     return {};
   }
 
-  const post = await getPostBySlug(slug, "insights");
+  const post = await getPostBySlug(slug);
 
-  if (!post) {
+  if (!post || !isBlogSection(post.section)) {
     return {};
   }
 
-  return buildBlogPostMetadata(post);
+  return buildBlogPostMetadata(post, post.section);
 }
 
 export default async function BlogPostPage({
@@ -56,11 +62,16 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const post = await getPostBySlug(slug, "insights");
+  const post = await getPostBySlug(slug);
 
-  if (!post) {
+  if (!post || !isBlogSection(post.section)) {
     notFound();
   }
 
-  return <BlogArticle post={post} />;
+  const categoryLabel =
+    post.section === "success-stories"
+      ? POST_SECTION_LABELS["success-stories"]
+      : undefined;
+
+  return <BlogArticle post={post} categoryLabel={categoryLabel} />;
 }

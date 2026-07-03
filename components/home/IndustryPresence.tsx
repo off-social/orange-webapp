@@ -5,7 +5,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Box,
-  Button,
   IconButton,
   Typography,
   useMediaQuery,
@@ -147,10 +146,12 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
         <IconButton
           onClick={handlePrev}
           disabled={current === 0}
+          aria-label="Previous events"
           sx={{
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            left: { xs: 0, md: "-28px" },
-            top: "40%",
+            left: "-28px",
+            top: "108px",
             transform: "translateY(-50%)",
             zIndex: 2,
             bgcolor: "#FFF",
@@ -182,6 +183,7 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
               const coverAlt = getCoverImageAlt(post.coverImage, post.title);
               const subtitle =
                 post.excerpt?.trim() || formatBlogDate(post.publishedAt);
+              const articleHref = `/news-events/${post.slug}/`;
 
               return (
                 <Box
@@ -195,11 +197,13 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
                     alignItems: "flex-start",
                     gap: "16px",
                     flex: "1 0 0",
+                    position: "relative",
+                    zIndex: 1,
                   }}
                 >
                   <Box
                     component={Link}
-                    href={`/news-events/${post.slug}/`}
+                    href={articleHref}
                     sx={{
                       height: "264px",
                       alignSelf: "stretch",
@@ -209,6 +213,7 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
                       overflow: "hidden",
                       bgcolor: "#F0F0F0",
                       display: "block",
+                      textDecoration: "none",
                     }}
                   >
                     <Image
@@ -225,7 +230,7 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
                   >
                     <Typography
                       component={Link}
-                      href={`/news-events/${post.slug}/`}
+                      href={articleHref}
                       sx={{
                         color: "#111",
                         fontFamily: "Inter, sans-serif",
@@ -254,15 +259,14 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
                     >
                       {subtitle}
                     </Typography>
-                    <Button
+                    <Box
                       component={Link}
-                      href={`/news-events/${post.slug}/`}
-                      variant="outlined"
-                      endIcon={
-                        <ArrowForwardIcon sx={{ fontSize: "14px !important" }} />
-                      }
+                      href={articleHref}
                       sx={{
                         alignSelf: "flex-start",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
                         textTransform: "none",
                         color: "#111",
                         bgcolor: "#FFF",
@@ -273,18 +277,18 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
                         py: "6px",
                         mt: "4px",
                         borderRadius: "8px",
-                        borderColor: "#E0E0E0",
-                        boxShadow: "none",
+                        border: "1px solid #E0E0E0",
+                        textDecoration: "none",
                         "&:hover": {
                           bgcolor: "#FFF",
                           color: "#F6891F",
                           borderColor: "#F6891F",
-                          boxShadow: "none",
                         },
                       }}
                     >
                       Know more
-                    </Button>
+                      <ArrowForwardIcon sx={{ fontSize: "14px" }} />
+                    </Box>
                   </Box>
                 </Box>
               );
@@ -295,10 +299,12 @@ const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
         <IconButton
           onClick={handleNext}
           disabled={current >= maxIndex}
+          aria-label="Next events"
           sx={{
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            right: { xs: 0, md: "-28px" },
-            top: "40%",
+            right: "-28px",
+            top: "108px",
             transform: "translateY(-50%)",
             zIndex: 2,
             bgcolor: "#FFF",

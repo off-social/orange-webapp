@@ -47,11 +47,42 @@ export function buildBlogIndexMetadata(): Metadata {
   };
 }
 
-export function buildBlogPostMetadata(post: BlogPost): Metadata {
+export function buildNewsEventsIndexMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  const title = `News & Events | ${SITE_NAME}`;
+  const description =
+    "Stay up to date with Orange O Tec news, exhibitions, and industry events.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/news-events`,
+      siteName: SITE_NAME,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `${siteUrl}/news-events`,
+    },
+  };
+}
+
+export function buildBlogPostMetadata(
+  post: BlogPost,
+  section: "insights" | "news" = "insights",
+): Metadata {
   const siteUrl = getSiteUrl();
   const title = `${post.title} | ${SITE_NAME}`;
   const description = getDescription(post);
-  const url = `${siteUrl}/blogs/${post.slug}/`;
+  const basePath = section === "news" ? "news-events" : "blogs";
+  const url = `${siteUrl}/${basePath}/${post.slug}/`;
   const imageUrl = getCoverImageUrl(post.coverImage, 1200);
 
   return {

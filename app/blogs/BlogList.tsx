@@ -266,7 +266,9 @@ export default function BlogList({ posts }: BlogListProps) {
                           textTransform: "uppercase",
                         }}
                       >
-                        {BLOG_CATEGORY_LABELS[blog.category]}
+                        {blog.category
+                          ? BLOG_CATEGORY_LABELS[blog.category]
+                          : "Insights"}
                       </Typography>
 
                       <Typography

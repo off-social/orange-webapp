@@ -1,5 +1,7 @@
 import type { PortableTextBlock } from "@portabletext/react";
 
+export type PostSection = "insights" | "news" | "success-stories";
+
 export type BlogCategory = "products" | "industry";
 
 export type SanityImage = {
@@ -21,7 +23,8 @@ export type BlogPostListItem = {
   slug: string;
   excerpt?: string;
   publishedAt: string;
-  category: BlogCategory;
+  section: PostSection;
+  category?: BlogCategory;
   featured: boolean;
   readTime: number;
   coverImage: SanityImage;
@@ -31,6 +34,12 @@ export type BlogPostListItem = {
 /** Full article shape including body. */
 export type BlogPost = BlogPostListItem & {
   body: PortableTextBlock[];
+};
+
+export const POST_SECTION_LABELS: Record<PostSection, string> = {
+  insights: "Insights",
+  news: "News",
+  "success-stories": "Success Stories",
 };
 
 export const BLOG_CATEGORY_LABELS: Record<BlogCategory, string> = {

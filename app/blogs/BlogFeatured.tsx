@@ -129,7 +129,7 @@ export default function BlogFeatured({ post }: BlogFeaturedProps) {
                 textTransform: "uppercase",
               }}
             >
-              {BLOG_CATEGORY_LABELS[post.category]}
+              {post.category ? BLOG_CATEGORY_LABELS[post.category] : "Insights"}
             </Typography>
 
             <Typography

@@ -19,7 +19,6 @@ export default function BlogHero() {
         gap: { xs: "24px", md: "40px" },
         alignSelf: "stretch",
         bgcolor: "#FFF",
-        borderBottom: "1px solid #E0E0E0",
         pb: { xs: "16px", md: "24px" },
       }}
     >

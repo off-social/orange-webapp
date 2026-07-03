@@ -1,20 +1,17 @@
 import { notFound } from "next/navigation";
 
-import {
-  buildBlogPostMetadata,
-} from "@/lib/sanity/metadata";
-import { getPostBySlug, getPostSlugs } from "@/lib/sanity/queries";
+import BlogArticle from "@/app/blogs/BlogArticle";
+import { POST_SECTION_LABELS } from "@/data/blog.types";
+import { buildBlogPostMetadata } from "@/lib/sanity/metadata";
+import { getPostBySlug, getPostSlugsBySection } from "@/lib/sanity/queries";
 
-import BlogArticle from "../BlogArticle";
-
-/** Used only so static export builds before any posts are published. */
 const BUILD_PLACEHOLDER_SLUG = "__build_placeholder__";
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
   try {
-    const slugs = await getPostSlugs();
+    const slugs = await getPostSlugsBySection("news");
 
     if (slugs.length === 0) {
       return [{ slug: BUILD_PLACEHOLDER_SLUG }];
@@ -22,7 +19,7 @@ export async function generateStaticParams() {
 
     return slugs.map((slug) => ({ slug }));
   } catch (error) {
-    console.warn("Failed to fetch blog slugs from Sanity:", error);
+    console.warn("Failed to fetch news slugs from Sanity:", error);
     return [{ slug: BUILD_PLACEHOLDER_SLUG }];
   }
 }
@@ -38,16 +35,16 @@ export async function generateMetadata({
     return {};
   }
 
-  const post = await getPostBySlug(slug, "insights");
+  const post = await getPostBySlug(slug, "news");
 
   if (!post) {
     return {};
   }
 
-  return buildBlogPostMetadata(post);
+  return buildBlogPostMetadata(post, "news");
 }
 
-export default async function BlogPostPage({
+export default async function NewsArticlePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -58,11 +55,18 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const post = await getPostBySlug(slug, "insights");
+  const post = await getPostBySlug(slug, "news");
 
   if (!post) {
     notFound();
   }
 
-  return <BlogArticle post={post} />;
+  return (
+    <BlogArticle
+      post={post}
+      backHref="/news-events"
+      backLabel="Back to News & Events"
+      categoryLabel={POST_SECTION_LABELS.news}
+    />
+  );
 }

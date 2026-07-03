@@ -14,9 +14,17 @@ import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
 
 interface BlogArticleProps {
   post: BlogPost;
+  backHref?: string;
+  backLabel?: string;
+  categoryLabel?: string;
 }
 
-export default function BlogArticle({ post }: BlogArticleProps) {
+export default function BlogArticle({
+  post,
+  backHref = "/blogs",
+  backLabel = "Back to Blogs",
+  categoryLabel,
+}: BlogArticleProps) {
   const coverUrl =
     getCoverImageUrl(post.coverImage, 1400) ?? DEFAULT_COVER_IMAGE;
   const coverAlt = getCoverImageAlt(post.coverImage, post.title);
@@ -46,7 +54,7 @@ export default function BlogArticle({ post }: BlogArticleProps) {
       }}
     >
       <Link
-        href="/blogs"
+        href={backHref}
         style={{
           alignSelf: "flex-start",
           textDecoration: "none",
@@ -71,7 +79,7 @@ export default function BlogArticle({ post }: BlogArticleProps) {
               lineHeight: "22.4px",
             }}
           >
-            Back to Blogs
+            {backLabel}
           </Typography>
         </Box>
       </Link>
@@ -96,7 +104,8 @@ export default function BlogArticle({ post }: BlogArticleProps) {
             textTransform: "uppercase",
           }}
         >
-          {BLOG_CATEGORY_LABELS[post.category]}
+          {categoryLabel ??
+            (post.category ? BLOG_CATEGORY_LABELS[post.category] : "Insights")}
         </Typography>
 
         <Typography

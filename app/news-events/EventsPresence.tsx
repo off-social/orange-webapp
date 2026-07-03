@@ -3,25 +3,338 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const TABS = [
-  "Upcoming Exhibition",
-  "Past Events Gallery",
-  "Booth Highlights",
-  "Media Coverage",
+import {
+  DEFAULT_COVER_IMAGE,
+  POST_SECTION_LABELS,
+  type BlogPostListItem,
+} from "@/data/blog.types";
+import { formatBlogMeta } from "@/lib/sanity/format";
+import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
+
+const SHOW_SUCCESS_STORIES_TAB = false;
+
+type TabId =
+  | "news"
+  | "upcoming-exhibition"
+  | "past-events-gallery"
+  | "booth-highlights"
+  | "media-coverage"
+  | "success-stories";
+
+const TAB_DEFINITIONS: { id: TabId; label: string }[] = [
+  { id: "news", label: "News" },
+  { id: "upcoming-exhibition", label: "Upcoming Exhibition" },
+  { id: "past-events-gallery", label: "Past Events Gallery" },
+  { id: "booth-highlights", label: "Booth Highlights" },
+  { id: "media-coverage", label: "Media Coverage" },
 ];
 
-const ALL_EVENTS = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  img: "/blogImg1.webp",
-  title: "Orange O Tec at Gartex India 2025",
-  location: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-  isBlog: i === 3,
-}));
+interface EventsPresenceProps {
+  newsPosts: BlogPostListItem[];
+  featuredNews: BlogPostListItem | null;
+  successStories: BlogPostListItem[];
+  upcomingExhibitions?: BlogPostListItem[];
+  pastEventsGallery?: BlogPostListItem[];
+  boothHighlights?: BlogPostListItem[];
+  mediaCoverage?: BlogPostListItem[];
+}
 
-export default function EventsPresence() {
-  const [activeTab, setActiveTab] = useState(0);
+function EmptyState({ message = "No content available." }: { message?: string }) {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        minHeight: "160px",
+        pb: "64px",
+      }}
+    >
+      <Typography
+        sx={{
+          color: "#707070",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "14px",
+          fontWeight: 500,
+          lineHeight: "22.4px",
+          textAlign: "center",
+        }}
+      >
+        {message}
+      </Typography>
+    </Box>
+  );
+}
+
+function PostGrid({
+  posts,
+  basePath,
+  badgeLabel,
+}: {
+  posts: BlogPostListItem[];
+  basePath: "/news-events" | "/blogs";
+  badgeLabel?: string;
+}) {
+  if (posts.length === 0) {
+    return <EmptyState />;
+  }
+
+  return (
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
+        },
+        gap: "24px",
+        width: "100%",
+        pb: "64px",
+      }}
+    >
+      {posts.map((post) => {
+        const coverUrl =
+          getCoverImageUrl(post.coverImage, 800) ?? DEFAULT_COVER_IMAGE;
+        const coverAlt = getCoverImageAlt(post.coverImage, post.title);
+
+        return (
+          <Box
+            key={post._id}
+            component="a"
+            href={`${basePath}/${post.slug}/`}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              textDecoration: "none",
+              color: "inherit",
+              cursor: "pointer",
+              "&:hover .ev-title": { color: "#F6891F" },
+            }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "16/10",
+                borderRadius: "8px",
+                overflow: "hidden",
+                bgcolor: "#F0F0F0",
+              }}
+            >
+              <Image
+                src={coverUrl}
+                alt={coverAlt}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              {badgeLabel ? (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "12px",
+                    left: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    bgcolor: "#6B4EFF",
+                    borderRadius: "6px",
+                    px: "10px",
+                    py: "4px",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "#FFF",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      lineHeight: "19.2px",
+                    }}
+                  >
+                    {badgeLabel}
+                  </Typography>
+                </Box>
+              ) : null}
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "4px",
+                width: "100%",
+              }}
+            >
+              <Typography
+                className="ev-title"
+                sx={{
+                  color: "#333",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "20px",
+                  fontWeight: 500,
+                  lineHeight: "26px",
+                  transition: "color 0.2s ease",
+                }}
+              >
+                {post.title}
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#8D8D8D",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  lineHeight: "19.2px",
+                }}
+              >
+                {formatBlogMeta(post.publishedAt, post.readTime)}
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                padding: "8px 12px",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "4px",
+                borderRadius: "8px",
+                border: "1px solid #E0E0E0",
+                bgcolor: "#FFF",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#111",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12px",
+                  fontWeight: 500,
+                  lineHeight: "19.2px",
+                }}
+              >
+                Know more
+              </Typography>
+              <ArrowForwardIosIcon sx={{ fontSize: "10px", color: "#111" }} />
+            </Box>
+          </Box>
+        );
+      })}
+    </Box>
+  );
+}
+
+export default function EventsPresence({
+  newsPosts,
+  featuredNews,
+  successStories,
+  upcomingExhibitions = [],
+  pastEventsGallery = [],
+  boothHighlights = [],
+  mediaCoverage = [],
+}: EventsPresenceProps) {
+  const listNewsPosts = useMemo(() => {
+    if (!featuredNews) {
+      return newsPosts;
+    }
+
+    return newsPosts.filter((post) => post._id !== featuredNews._id);
+  }, [featuredNews, newsPosts]);
+
+  const visibleTabs = useMemo(() => {
+    const hasContent = (id: TabId): boolean => {
+      switch (id) {
+        case "news":
+          return newsPosts.length > 0 || featuredNews !== null;
+        case "upcoming-exhibition":
+          return upcomingExhibitions.length > 0;
+        case "past-events-gallery":
+          return pastEventsGallery.length > 0;
+        case "booth-highlights":
+          return boothHighlights.length > 0;
+        case "media-coverage":
+          return mediaCoverage.length > 0;
+        case "success-stories":
+          return successStories.length > 0;
+        default:
+          return false;
+      }
+    };
+
+    const tabs = TAB_DEFINITIONS.filter((tab) => hasContent(tab.id));
+
+    if (SHOW_SUCCESS_STORIES_TAB && hasContent("success-stories")) {
+      tabs.push({ id: "success-stories", label: "Success Stories" });
+    }
+
+    return tabs;
+  }, [
+    boothHighlights.length,
+    featuredNews,
+    mediaCoverage.length,
+    newsPosts.length,
+    pastEventsGallery.length,
+    successStories.length,
+    upcomingExhibitions.length,
+  ]);
+
+  const [activeTabId, setActiveTabId] = useState<TabId | null>(null);
+
+  const effectiveActiveTabId = useMemo(() => {
+    if (activeTabId && visibleTabs.some((tab) => tab.id === activeTabId)) {
+      return activeTabId;
+    }
+    return visibleTabs[0]?.id ?? null;
+  }, [activeTabId, visibleTabs]);
+
+  useEffect(() => {
+    if (visibleTabs.length === 0) {
+      setActiveTabId(null);
+      return;
+    }
+
+    const isCurrentTabVisible = visibleTabs.some((tab) => tab.id === activeTabId);
+    if (!isCurrentTabVisible) {
+      setActiveTabId(visibleTabs[0].id);
+    }
+  }, [activeTabId, visibleTabs]);
+
+  const showFeaturedNews =
+    featuredNews !== null && effectiveActiveTabId === "news";
+
+  const renderTabContent = () => {
+    switch (effectiveActiveTabId) {
+      case "news":
+        return listNewsPosts.length > 0 ? (
+          <PostGrid
+            posts={listNewsPosts}
+            basePath="/news-events"
+            badgeLabel="news"
+          />
+        ) : null;
+      case "upcoming-exhibition":
+        return (
+          <PostGrid posts={upcomingExhibitions} basePath="/news-events" />
+        );
+      case "past-events-gallery":
+        return <PostGrid posts={pastEventsGallery} basePath="/news-events" />;
+      case "booth-highlights":
+        return <PostGrid posts={boothHighlights} basePath="/news-events" />;
+      case "media-coverage":
+        return <PostGrid posts={mediaCoverage} basePath="/news-events" />;
+      case "success-stories":
+        return <PostGrid posts={successStories} basePath="/news-events" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <Box
@@ -41,7 +354,6 @@ export default function EventsPresence() {
         bgcolor: "#FFF",
       }}
     >
-      {/* Header */}
       <Box
         sx={{
           display: "flex",
@@ -103,7 +415,95 @@ export default function EventsPresence() {
         </Box>
       </Box>
 
-      {/* Tabs + Content */}
+      {showFeaturedNews && featuredNews ? (
+        <Box
+          component="a"
+          href={`/news-events/${featuredNews.slug}/`}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "stretch",
+            width: "100%",
+            border: "1px solid #E0E0E0",
+            borderRadius: "8px",
+            overflow: "hidden",
+            textDecoration: "none",
+            color: "inherit",
+            cursor: "pointer",
+            "&:hover .featured-news-title": { color: "#F6891F" },
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: "100%", md: "50%" },
+              minHeight: { xs: "240px", md: "320px" },
+            }}
+          >
+            <Image
+              src={
+                getCoverImageUrl(featuredNews.coverImage, 1200) ??
+                DEFAULT_COVER_IMAGE
+              }
+              alt={getCoverImageAlt(featuredNews.coverImage, featuredNews.title)}
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "16px",
+              p: { xs: "24px", md: "48px" },
+              flex: 1,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#F6891F",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "10px",
+                fontWeight: 500,
+                lineHeight: "16px",
+                letterSpacing: "1.5px",
+                textTransform: "uppercase",
+              }}
+            >
+              Featured · {POST_SECTION_LABELS.news}
+            </Typography>
+            <Typography
+              className="featured-news-title"
+              sx={{
+                color: "#333",
+                fontFamily: "Inter, sans-serif",
+                fontSize: { xs: "22px", md: "28px" },
+                fontWeight: 500,
+                lineHeight: { xs: "28px", md: "36px" },
+                transition: "color 0.2s ease",
+              }}
+            >
+              {featuredNews.title}
+            </Typography>
+            {featuredNews.excerpt?.trim() ? (
+              <Typography
+                sx={{
+                  color: "#707070",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  lineHeight: "22.4px",
+                }}
+              >
+                {featuredNews.excerpt}
+              </Typography>
+            ) : null}
+          </Box>
+        </Box>
+      ) : null}
+
       <Box
         sx={{
           display: "flex",
@@ -112,223 +512,67 @@ export default function EventsPresence() {
           width: "100%",
         }}
       >
-        {/* Tab bar */}
-        <Box
-          sx={{
-            alignSelf: "stretch",
-            borderBottom: "1px solid #E0E0E0",
-            overflowX: "auto",
-            scrollbarWidth: "none",
-            "&::-webkit-scrollbar": { display: "none" },
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: { xs: "flex-start", md: "center" },
-              alignItems: "center",
-              minWidth: "max-content",
-            }}
-          >
-            {TABS.map((tab, i) => {
-              const isActive = i === activeTab;
-              return (
-                <Box
-                  key={tab}
-                  onClick={() => setActiveTab(i)}
-                  sx={{
-                    px: { xs: "20px", sm: "40px", md: "60px" },
-                    pb: "12px",
-                    cursor: "pointer",
-                    borderBottom: isActive
-                      ? "2px solid #F6891F"
-                      : "2px solid transparent",
-                    mb: "-1px",
-                    whiteSpace: "nowrap",
-                    flexShrink: 0,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: { xs: "14px", md: "16px" },
-                      fontWeight: isActive ? 600 : 400,
-                      lineHeight: "25.6px",
-                      color: isActive ? "#333" : "#707070",
-                      transition: "all 0.2s ease",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {tab}
-                  </Typography>
-                </Box>
-              );
-            })}
-          </Box>
-        </Box>
-
-        {/* Tab 0: Upcoming Exhibition */}
-        {activeTab === 0 && (
+        {visibleTabs.length > 0 ? (
           <>
             <Box
               sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "1fr",
-                  sm: "repeat(2, 1fr)",
-                  md: "repeat(3, 1fr)",
-                },
-                gap: "24px",
-                width: "100%",
-                pb: "64px",
+                alignSelf: "stretch",
+                borderBottom: "1px solid #E0E0E0",
+                overflowX: "auto",
+                scrollbarWidth: "none",
+                "&::-webkit-scrollbar": { display: "none" },
               }}
             >
-              {ALL_EVENTS.map((event) => (
-                <Box
-                  key={event.id}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    gap: "16px",
-                    cursor: "pointer",
-                    "&:hover .ev-title": { color: "#F6891F" },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      aspectRatio: "16/10",
-                      borderRadius: "8px",
-                      overflow: "hidden",
-                      bgcolor: "#F0F0F0",
-                    }}
-                  >
-                    <Image
-                      src={event.img}
-                      alt={event.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                    {event.isBlog && (
-                      <Box
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: { xs: "flex-start", md: "center" },
+                  alignItems: "center",
+                  minWidth: "max-content",
+                }}
+              >
+                {visibleTabs.map((tab) => {
+                  const isActive = tab.id === effectiveActiveTabId;
+                  return (
+                    <Box
+                      key={tab.id}
+                      onClick={() => setActiveTabId(tab.id)}
+                      sx={{
+                        px: { xs: "20px", sm: "40px", md: "60px" },
+                        pb: "12px",
+                        cursor: "pointer",
+                        borderBottom: isActive
+                          ? "2px solid #F6891F"
+                          : "2px solid transparent",
+                        mb: "-1px",
+                        whiteSpace: "nowrap",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Typography
                         sx={{
-                          position: "absolute",
-                          bottom: "12px",
-                          left: "12px",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "5px",
-                          bgcolor: "#6B4EFF",
-                          borderRadius: "6px",
-                          px: "10px",
-                          py: "4px",
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: { xs: "14px", md: "16px" },
+                          fontWeight: isActive ? 600 : 400,
+                          lineHeight: "25.6px",
+                          color: isActive ? "#333" : "#707070",
+                          transition: "all 0.2s ease",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        <Box
-                          component="span"
-                          sx={{
-                            color: "#FFF",
-                            fontSize: "10px",
-                            lineHeight: 1,
-                          }}
-                        >
-                          ◇
-                        </Box>
-                        <Typography
-                          sx={{
-                            color: "#FFF",
-                            fontFamily: "Inter, sans-serif",
-                            fontSize: "12px",
-                            fontWeight: 600,
-                            lineHeight: "19.2px",
-                          }}
-                        >
-                          blog
-                        </Typography>
-                      </Box>
-                    )}
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      gap: "4px",
-                      width: "100%",
-                    }}
-                  >
-                    <Typography
-                      className="ev-title"
-                      sx={{
-                        color: "#333",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: "20px",
-                        fontWeight: 500,
-                        lineHeight: "26px",
-                        letterSpacing: 0,
-                        transition: "color 0.2s ease",
-                      }}
-                    >
-                      {event.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "#8D8D8D",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: "12px",
-                        fontWeight: 500,
-                        lineHeight: "19.2px",
-                      }}
-                    >
-                      {event.location}
-                    </Typography>
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      padding: "8px 12px",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: "4px",
-                      borderRadius: "8px",
-                      border: "1px solid #E0E0E0",
-                      bgcolor: "#FFF",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#111",
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: "12px",
-                        fontWeight: 500,
-                        lineHeight: "19.2px",
-                      }}
-                    >
-                      Know more
-                    </Typography>
-                    <ArrowForwardIosIcon
-                      sx={{ fontSize: "10px", color: "#111" }}
-                    />
-                  </Box>
-                </Box>
-              ))}
+                        {tab.label}
+                      </Typography>
+                    </Box>
+                  );
+                })}
+              </Box>
             </Box>
+
+            {renderTabContent()}
           </>
+        ) : (
+          <EmptyState />
         )}
-
-        {/* Tab 1: Past Events Gallery — blank */}
-        {/* {activeTab === 1 && <Box sx={{ pb: "64px" }} />} */}
-
-        {/* Tab 2: Booth Highlights — blank */}
-        {/* {activeTab === 2 && <Box sx={{ pb: "64px" }} />} */}
-
-        {/* Tab 3: Media Coverage — blank */}
-        {/* {activeTab === 3 && <Box sx={{ pb: "64px" }} />} */}
       </Box>
     </Box>
   );

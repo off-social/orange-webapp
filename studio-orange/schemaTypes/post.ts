@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const post = defineType({
   name: 'post',
-  title: 'Blog Post',
+  title: 'Post',
   type: 'document',
   fields: [
     defineField({
@@ -32,8 +32,26 @@ export const post = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'section',
+      title: 'Content section',
+      description:
+        'Insights appear on Blogs, News on News & Events, Success Stories on the Success Stories tab.',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Insights (Blogs)', value: 'insights'},
+          {title: 'News (News & Events)', value: 'news'},
+          {title: 'Success Stories', value: 'success-stories'},
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'insights',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'category',
-      title: 'Category',
+      title: 'Topic',
+      description: 'Products or Industry — used for filtering on the Blogs page.',
       type: 'string',
       options: {
         list: [
@@ -42,11 +60,20 @@ export const post = defineType({
         ],
         layout: 'radio',
       },
-      validation: (Rule) => Rule.required(),
+      hidden: ({parent}) => parent?.section !== 'insights',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const section = (context.parent as {section?: string})?.section
+          if (section === 'insights' && !value) {
+            return 'Topic is required for Insights posts'
+          }
+          return true
+        }),
     }),
     defineField({
       name: 'featured',
-      title: 'Featured on blog page',
+      title: 'Featured on listing page',
+      description: 'Highlights this post at the top of its content section.',
       type: 'boolean',
       initialValue: false,
     }),
@@ -125,10 +152,11 @@ export const post = defineType({
       title: 'title',
       media: 'coverImage',
       date: 'publishedAt',
+      section: 'section',
       category: 'category',
     },
-    prepare({title, media, date, category}) {
-      const subtitle = [category, date ? new Date(date).toLocaleDateString() : null]
+    prepare({title, media, date, section, category}) {
+      const subtitle = [section, category, date ? new Date(date).toLocaleDateString() : null]
         .filter(Boolean)
         .join(' · ')
       return {title, media, subtitle}

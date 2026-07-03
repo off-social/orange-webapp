@@ -4,7 +4,6 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import NextLink from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import {
@@ -205,10 +204,15 @@ export default function BlogList({ posts }: BlogListProps) {
               const coverAlt = getCoverImageAlt(blog.coverImage, blog.title);
 
               return (
-                <NextLink
+                <Box
                   key={blog._id}
+                  component="a"
                   href={`/blogs/${blog.slug}/`}
-                  style={{ textDecoration: "none", display: "block" }}
+                  sx={{
+                    textDecoration: "none",
+                    display: "block",
+                    color: "inherit",
+                  }}
                 >
                   <Box
                     sx={{
@@ -319,7 +323,7 @@ export default function BlogList({ posts }: BlogListProps) {
                       </Typography>
                     </Box>
                   </Box>
-                </NextLink>
+                </Box>
               );
             })}
           </Box>

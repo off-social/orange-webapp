@@ -47,6 +47,9 @@ jobs:
           export NODE_OPTIONS="--max_old_space_size=4196"
           npm run build
 
+      - name: Verify blog static pages exist
+        run: node scripts/verify-blog-export.mjs
+
       - name: Upload production build to S3 bucket
         run: |
           aws s3 sync out/ ${{ vars.S3_BUCKET_URI }} --delete

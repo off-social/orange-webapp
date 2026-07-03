@@ -1,22 +1,32 @@
 /**
- * CloudFront Function: attach to the default cache behavior (viewer request).
+ * CloudFront Function (viewer request).
  *
- * Next.js static export with trailingSlash writes pages as /path/index.html.
- * S3 REST origins do not resolve directory indexes automatically, so map:
+ * Maps clean URLs to Next.js static export files (trailingSlash: true):
  *   /blogs/my-post/  → /blogs/my-post/index.html
  *   /blogs/my-post   → /blogs/my-post/index.html
  *
- * AWS Console: CloudFront → your distribution → Behaviors → Edit →
- * Function associations → Viewer request → Create associated CloudFront function
- * (paste this file's handler body).
+ * Leaves assets and Next.js data files unchanged:
+ *   /_next/static/...  /blogs/my-post/index.txt  etc.
  */
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
 
+  if (uri.startsWith("/_next/")) {
+    return request;
+  }
+
+  var lastSlash = uri.lastIndexOf("/");
+  var lastDot = uri.lastIndexOf(".");
+  var hasFileExtension = lastDot > lastSlash;
+
+  if (hasFileExtension) {
+    return request;
+  }
+
   if (uri.endsWith("/")) {
     request.uri += "index.html";
-  } else if (!uri.includes(".")) {
+  } else {
     request.uri += "/index.html";
   }
 

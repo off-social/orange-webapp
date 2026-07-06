@@ -11,17 +11,15 @@ import EventsPresence from "./EventsPresence";
 export const metadata: Metadata = buildNewsEventsIndexMetadata();
 
 export default async function NewsEventsPage() {
-  const [newsPosts, featuredNews, successStories] = await Promise.all([
+  const [newsPosts, featuredNews] = await Promise.all([
     getPostsBySection("news"),
     getFeaturedPostBySection("news"),
-    getPostsBySection("success-stories"),
   ]);
 
   return (
     <EventsPresence
       newsPosts={newsPosts}
       featuredNews={featuredNews}
-      successStories={successStories}
     />
   );
 }

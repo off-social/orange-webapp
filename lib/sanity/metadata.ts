@@ -76,7 +76,7 @@ export function buildNewsEventsIndexMetadata(): Metadata {
 
 export function buildBlogPostMetadata(
   post: BlogPost,
-  section: "insights" | "news" = "insights",
+  section: "insights" | "news" | "success-stories" = "insights",
 ): Metadata {
   const siteUrl = getSiteUrl();
   const title = `${post.title} | ${SITE_NAME}`;

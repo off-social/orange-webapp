@@ -21,28 +21,68 @@ const TextileHero = () => {
       }}
     >
       {/* Mobile background image */}
-      <Box sx={{ display: { xs: "block", md: "none" }, position: "absolute", inset: 0 }}>
-        <Image src="/mobileimg01.webp" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
-      </Box>
-
-      {/* Desktop background image */}
-      <Box sx={{ display: { xs: "none", md: "block" }, position: "absolute", inset: 0 }}>
-        <Image src="/bgimg.webp" alt="Background" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
-      </Box>
-
-      {/* Mobile: dark blurred circle — right side */}
       <Box
         sx={{
           display: { xs: "block", md: "none" },
           position: "absolute",
-          right: 0,
-          top: "-0.426px",
-          width: "392px",
-          height: "482px",
-          borderRadius: "482px",
-          background: "#111",
-          filter: "blur(30px)",
+          inset: 0,
           zIndex: 0,
+        }}
+      >
+        <Image
+          src="/MOBILEIMG01.webp"
+          alt="Background"
+          fill
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
+      </Box>
+
+      {/* Desktop background image */}
+      <Box
+        sx={{
+          display: { xs: "none", md: "block" },
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+        }}
+      >
+        <Image
+          src="/bgimg.webp"
+          alt="Background"
+          fill
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
+      </Box>
+
+      {/* Mobile: dark scrim + centered blur for text legibility */}
+      <Box
+        sx={{
+          display: { xs: "block", md: "none" },
+          position: "absolute",
+          inset: 0,
+          background: "rgba(17, 17, 17, 0.45)",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      />
+      <Box
+        sx={{
+          display: { xs: "block", md: "none" },
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "110%",
+          height: "110%",
+          borderRadius: "50%",
+          background: "#111",
+          filter: "blur(40px)",
+          opacity: 0.92,
+          zIndex: 2,
           pointerEvents: "none",
         }}
       />
@@ -61,7 +101,7 @@ const TextileHero = () => {
           opacity: 0.99,
           background: "#111",
           filter: "blur(60px)",
-          zIndex: 0,
+          zIndex: 2,
           pointerEvents: "none",
         }}
       />
@@ -70,7 +110,7 @@ const TextileHero = () => {
       <Box
         sx={{
           position: "relative",
-          zIndex: 1,
+          zIndex: 4,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -85,13 +125,17 @@ const TextileHero = () => {
       >
         <Typography
           sx={{
-            color: "#EFEFEF",
+            color: "#FFF",
             textAlign: "center",
             fontFamily: "Inter, sans-serif",
             fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "40px" },
             fontWeight: 500,
             lineHeight: { xs: "31.2px", sm: "36px", md: "40px", lg: "52px" },
             letterSpacing: { xs: 0, sm: "-0.3px", md: "-0.5px", lg: "-1px" },
+            textShadow: {
+              xs: "0 2px 16px rgba(0, 0, 0, 0.45)",
+              md: "none",
+            },
           }}
         >
           Transform Your Textile Printing with

@@ -35,7 +35,7 @@ export const post = defineType({
       name: 'section',
       title: 'Content section',
       description:
-        'Insights appear on Blogs, News on News & Events, Success Stories on the Success Stories tab.',
+        'Insights appear on Blogs, News on News & Events, Success Stories on the Blogs page.',
       type: 'string',
       options: {
         list: [
@@ -128,6 +128,38 @@ export const post = defineType({
             {title: 'Bullet', value: 'bullet'},
             {title: 'Numbered', value: 'number'},
           ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  defineField({
+                    name: 'href',
+                    title: 'URL',
+                    type: 'url',
+                    validation: (Rule) =>
+                      Rule.uri({
+                        allowRelative: true,
+                        scheme: ['http', 'https', 'mailto', 'tel'],
+                      }),
+                  }),
+                  defineField({
+                    name: 'openInNewTab',
+                    title: 'Open in new tab',
+                    type: 'boolean',
+                    description: 'Use for external websites. Defaults to on for http(s) links.',
+                    initialValue: true,
+                  }),
+                ],
+              },
+            ],
+          },
         },
         {
           type: 'image',

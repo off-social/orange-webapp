@@ -5,80 +5,29 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Box,
-  Button,
   IconButton,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-type TabKey =
-  | "Upcoming Exhibition"
-  | "Past Events Gallery"
-  | "Booth Highlights"
-  | "Media Coverage";
-
-const data: Record<TabKey, { title: string; subtitle: string; img: string }[]> =
-  {
-    "Upcoming Exhibition": [
-      {
-        title: "Orange O Tec at Gartex India 2025",
-        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.webp",
-      },
-      {
-        title: "Orange O Tec at Gartex India 2025",
-        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.webp",
-      },
-      {
-        title: "Orange O Tec at Gartex India 2025",
-        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.webp",
-      },
-      {
-        title: "Orange O Tec at Gartex India 2025",
-        subtitle: "5th ITMACH India Helipad Exhibition Centre, Gandhinagar",
-        img: "/img1.webp",
-      },
-    ],
-    "Past Events Gallery": [
-      { title: "Past Event 1", subtitle: "Location here", img: "/img1.webp" },
-      { title: "Past Event 2", subtitle: "Location here", img: "/img1.webp" },
-      { title: "Past Event 3", subtitle: "Location here", img: "/img1.webp" },
-    ],
-    "Booth Highlights": [
-      {
-        title: "Booth Highlight 1",
-        subtitle: "Location here",
-        img: "/img1.webp",
-      },
-      {
-        title: "Booth Highlight 2",
-        subtitle: "Location here",
-        img: "/img1.webp",
-      },
-    ],
-    "Media Coverage": [
-      {
-        title: "Media Coverage 1",
-        subtitle: "Location here",
-        img: "/media1.webp",
-      },
-      {
-        title: "Media Coverage 2",
-        subtitle: "Location here",
-        img: "/media2.webp",
-      },
-    ],
-  };
+import {
+  DEFAULT_COVER_IMAGE,
+  type BlogPostListItem,
+} from "@/data/blog.types";
+import { formatBlogDate } from "@/lib/sanity/format";
+import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
 
 const GAP = 24;
 
-const IndustryPresence = () => {
-  const [active, setActive] = useState<TabKey>("Upcoming Exhibition");
+interface IndustryPresenceProps {
+  newsPosts: BlogPostListItem[];
+}
+
+const IndustryPresence = ({ newsPosts }: IndustryPresenceProps) => {
   const [current, setCurrent] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
   const touchStartX = useRef<number | null>(null);
@@ -92,13 +41,22 @@ const IndustryPresence = () => {
 
   useEffect(() => {
     const updateWidth = () => {
-      if (containerRef.current)
+      if (containerRef.current) {
         setContainerWidth(containerRef.current.offsetWidth);
+      }
     };
     updateWidth();
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [newsPosts.length, CARDS_PER_VIEW]);
+
+  if (newsPosts.length === 0) {
+    return null;
+  }
 
   const peekWidth = isMobile ? 32 : 0;
   const cardWidth =
@@ -107,13 +65,7 @@ const IndustryPresence = () => {
         CARDS_PER_VIEW
       : 380;
 
-  const cards = data[active];
-  const maxIndex = Math.max(cards.length - CARDS_PER_VIEW, 0);
-
-  const handleTabChange = (tab: TabKey) => {
-    setActive(tab);
-    setCurrent(0);
-  };
+  const maxIndex = Math.max(newsPosts.length - CARDS_PER_VIEW, 0);
 
   const handlePrev = () => setCurrent((c) => Math.max(c - 1, 0));
   const handleNext = () => setCurrent((c) => Math.min(c + 1, maxIndex));
@@ -146,7 +98,6 @@ const IndustryPresence = () => {
         bgcolor: "#F2F2F2",
       }}
     >
-      {/* Title + subtitle */}
       <Box
         sx={{
           display: "flex",
@@ -186,64 +137,21 @@ const IndustryPresence = () => {
         </Typography>
       </Box>
 
-      {/* Tabs */}
-      <Box
-        sx={{
-          display: "flex",
-          gap: "12px",
-          flexWrap: { xs: "nowrap", md: "wrap" },
-          justifyContent: { xs: "flex-start", sm: "center" },
-          overflowX: { xs: "auto", sm: "visible" },
-          width: "100%",
-          scrollbarWidth: "none",
-          "&::-webkit-scrollbar": { display: "none" },
-        }}
-      >
-        {(Object.keys(data) as TabKey[]).map((tab) => (
-          <Button
-            key={tab}
-            onClick={() => handleTabChange(tab)}
-            sx={{
-              display: "flex",
-              padding: "8px 20px",
-              alignItems: "center",
-              gap: "16px",
-              borderRadius: "32px",
-              bgcolor: active === tab ? "#111" : "#FFF",
-              color: active === tab ? "#FFF" : "#333",
-              border: active === tab ? "1px solid #111" : "1px solid #E0E0E0",
-              textTransform: "none",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "22.4px",
-              whiteSpace: "nowrap",
-              flexShrink: 0,
-              "&:hover": {
-                bgcolor: active === tab ? "#333" : "#f5f5f5",
-              },
-            }}
-          >
-            {tab}
-          </Button>
-        ))}
-      </Box>
-
-      {/* Carousel */}
       <Box
         sx={{
           position: "relative",
           width: "100%",
         }}
       >
-        {/* Left arrow */}
         <IconButton
           onClick={handlePrev}
           disabled={current === 0}
+          aria-label="Previous events"
           sx={{
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            left: { xs: 0, md: "-28px" },
-            top: "40%",
+            left: "-28px",
+            top: "108px",
             transform: "translateY(-50%)",
             zIndex: 2,
             bgcolor: "#FFF",
@@ -269,109 +177,134 @@ const IndustryPresence = () => {
               transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
           >
-            {cards.map((card, index) => (
-              <Box
-                key={index}
-                sx={{
-                  width: `${cardWidth}px`,
-                  minWidth: `${cardWidth}px`,
-                  flexShrink: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  gap: "16px",
-                  flex: "1 0 0",
-                }}
-              >
-                {/* Card — image only */}
+            {newsPosts.map((post) => {
+              const coverUrl =
+                getCoverImageUrl(post.coverImage, 800) ?? DEFAULT_COVER_IMAGE;
+              const coverAlt = getCoverImageAlt(post.coverImage, post.title);
+              const subtitle =
+                post.excerpt?.trim() || formatBlogDate(post.publishedAt);
+              const articleHref = `/news-events/${post.slug}/`;
+
+              return (
                 <Box
+                  key={post._id}
                   sx={{
-                    height: "264px",
-                    alignSelf: "stretch",
-                    aspectRatio: "352 / 264.17",
+                    width: `${cardWidth}px`,
+                    minWidth: `${cardWidth}px`,
+                    flexShrink: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    gap: "16px",
+                    flex: "1 0 0",
                     position: "relative",
-                    borderRadius: "8px",
-                    overflow: "hidden",
-                    bgcolor: "lightgray",
+                    zIndex: 1,
                   }}
                 >
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                  />
-                </Box>
-
-                {/* Content — outside card */}
-                <Box
-                  sx={{ display: "flex", flexDirection: "column", gap: "6px" }}
-                >
-                  <Typography
+                  <Box
+                    component={Link}
+                    href={articleHref}
                     sx={{
-                      color: "#111",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "16px",
-                      fontWeight: 500,
-                      lineHeight: "24px",
-                    }}
-                  >
-                    {card.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#707070",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "13px",
-                      fontWeight: 400,
-                      lineHeight: "20px",
-                    }}
-                  >
-                    {card.subtitle}
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    endIcon={
-                      <ArrowForwardIcon sx={{ fontSize: "14px !important" }} />
-                    }
-                    sx={{
-                      alignSelf: "flex-start",
-                      textTransform: "none",
-                      color: "#111",
-                      bgcolor: "#FFF",
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      px: "14px",
-                      py: "6px",
-                      mt: "4px",
+                      height: "264px",
+                      alignSelf: "stretch",
+                      aspectRatio: "352 / 264.17",
+                      position: "relative",
                       borderRadius: "8px",
-                      borderColor: "#E0E0E0",
-                      boxShadow: "none",
-                      "&:hover": {
-                        bgcolor: "#FFF",
-                        color: "#F6891F",
-                        borderColor: "#F6891F",
-                        boxShadow: "none",
-                      },
+                      overflow: "hidden",
+                      bgcolor: "#F0F0F0",
+                      display: "block",
+                      textDecoration: "none",
                     }}
                   >
-                    Know more
-                  </Button>
+                    <Image
+                      src={coverUrl}
+                      alt={coverAlt}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center" }}
+                      sizes="(max-width: 600px) 100vw, 352px"
+                    />
+                  </Box>
+
+                  <Box
+                    sx={{ display: "flex", flexDirection: "column", gap: "6px" }}
+                  >
+                    <Typography
+                      component={Link}
+                      href={articleHref}
+                      sx={{
+                        color: "#111",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        lineHeight: "24px",
+                        textDecoration: "none",
+                        "&:hover": { color: "#F6891F" },
+                      }}
+                    >
+                      {post.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: "#707070",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        fontWeight: 400,
+                        lineHeight: "20px",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2,
+                      }}
+                    >
+                      {subtitle}
+                    </Typography>
+                    <Box
+                      component={Link}
+                      href={articleHref}
+                      sx={{
+                        alignSelf: "flex-start",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        textTransform: "none",
+                        color: "#111",
+                        bgcolor: "#FFF",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "13px",
+                        fontWeight: 500,
+                        px: "14px",
+                        py: "6px",
+                        mt: "4px",
+                        borderRadius: "8px",
+                        border: "1px solid #E0E0E0",
+                        textDecoration: "none",
+                        "&:hover": {
+                          bgcolor: "#FFF",
+                          color: "#F6891F",
+                          borderColor: "#F6891F",
+                        },
+                      }}
+                    >
+                      Know more
+                      <ArrowForwardIcon sx={{ fontSize: "14px" }} />
+                    </Box>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              );
+            })}
           </Box>
         </Box>
 
-        {/* Right arrow */}
         <IconButton
           onClick={handleNext}
           disabled={current >= maxIndex}
+          aria-label="Next events"
           sx={{
+            display: { xs: "none", md: "flex" },
             position: "absolute",
-            right: { xs: 0, md: "-28px" },
-            top: "40%",
+            right: "-28px",
+            top: "108px",
             transform: "translateY(-50%)",
             zIndex: 2,
             bgcolor: "#FFF",
@@ -386,8 +319,7 @@ const IndustryPresence = () => {
         </IconButton>
       </Box>
 
-      {/* Dot indicators */}
-      {cards.length > CARDS_PER_VIEW && (
+      {newsPosts.length > CARDS_PER_VIEW ? (
         <Box
           sx={{
             display: "flex",
@@ -411,8 +343,7 @@ const IndustryPresence = () => {
             />
           ))}
         </Box>
-      )}
-
+      ) : null}
     </Box>
   );
 };

@@ -13,8 +13,8 @@ export default function GreenEdgeHero() {
     >
       {/* Background video */}
       <video
-        src="/GreenVideo.mp4"
-        poster="/GreenVideo-poster.webp"
+        src="/OrangeGreen.mp4"
+        poster="/OrangeGreen-poster.webp"
         autoPlay
         muted
         loop

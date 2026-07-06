@@ -9,11 +9,14 @@ import { useEffect, useMemo, useState } from "react";
 import {
   BLOG_CATEGORY_LABELS,
   DEFAULT_COVER_IMAGE,
+  POST_SECTION_LABELS,
   type BlogCategory,
   type BlogPostListItem,
 } from "@/data/blog.types";
 import { formatBlogMeta } from "@/lib/sanity/format";
 import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
+
+import type { BlogSectionTabId } from "./BlogSectionTabs";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -26,21 +29,30 @@ const FILTER_TO_CATEGORY: Record<Exclude<Filter, "All">, BlogCategory> = {
 };
 
 interface BlogListProps {
+  activeSection: BlogSectionTabId;
   posts: BlogPostListItem[];
+  successStories: BlogPostListItem[];
 }
 
-export default function BlogList({ posts }: BlogListProps) {
+export default function BlogList({
+  activeSection,
+  posts,
+  successStories,
+}: BlogListProps) {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState<Filter>("All");
 
+  const activePosts =
+    activeSection === "success-stories" ? successStories : posts;
+
   const filteredPosts = useMemo(() => {
-    if (filter === "All") {
-      return posts;
+    if (activeSection !== "insights" || filter === "All") {
+      return activePosts;
     }
 
     const category = FILTER_TO_CATEGORY[filter];
-    return posts.filter((post) => post.category === category);
-  }, [posts, filter]);
+    return activePosts.filter((post) => post.category === category);
+  }, [activePosts, activeSection, filter]);
 
   const totalPages = Math.max(
     1,
@@ -49,7 +61,12 @@ export default function BlogList({ posts }: BlogListProps) {
 
   useEffect(() => {
     setPage(1);
-  }, [filter, posts.length]);
+    setFilter("All");
+  }, [activeSection]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [filter, activePosts.length]);
 
   useEffect(() => {
     if (page > totalPages) {
@@ -104,318 +121,355 @@ export default function BlogList({ posts }: BlogListProps) {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            alignSelf: "stretch",
-            flexWrap: "wrap",
-            gap: "16px",
+            flexDirection: "column",
+            gap: "32px",
+            alignItems: "stretch",
             width: "100%",
           }}
         >
-          <Typography
-            sx={{
-              color: "var(--black-600, #111)",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "24px",
-              fontWeight: 500,
-              lineHeight: "31.2px",
-              letterSpacing: 0,
-            }}
-          >
-            Latest
-          </Typography>
-
-          <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            {FILTERS.map((f) => {
-              const isActive = filter === f;
-              return (
-                <Box
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  sx={{
-                    display: "flex",
-                    width: isActive ? "98px" : "auto",
-                    padding: "8px 16px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "4px",
-                    borderRadius: "32px",
-                    cursor: "pointer",
-                    flexShrink: 0,
-                    bgcolor: isActive
-                      ? "var(--black-600, #111)"
-                      : "var(--white-surface, #FFF)",
-                    border: isActive
-                      ? "1px solid var(--black-600, #111)"
-                      : "1px solid var(--grey-outline, #E0E0E0)",
-                    transition: "all 0.2s ease",
-                    "&:hover": isActive ? {} : { bgcolor: "#F2F2F2" },
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "14px",
-                      fontWeight: isActive ? 600 : 500,
-                      lineHeight: "22.4px",
-                      color: isActive ? "#FFF" : "#111",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {f}
-                  </Typography>
-                </Box>
-              );
-            })}
-          </Box>
-        </Box>
-
-        {blogs.length === 0 ? (
-          <Typography
-            sx={{
-              color: "var(--grey-500, #707070)",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "16px",
-              alignSelf: "stretch",
-              textAlign: "center",
-              py: "24px",
-            }}
-          >
-            No blog posts yet. Publish your first post in Sanity Studio.
-          </Typography>
-        ) : (
           <Box
             sx={{
-              display: "grid",
-              gridTemplateColumns: {
-                xs: "1fr",
-                sm: "repeat(2, 1fr)",
-                lg: "repeat(3, 1fr)",
-              },
-              columnGap: "24px",
-              rowGap: "48px",
-              alignItems: "flex-start",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              alignSelf: "stretch",
+              flexWrap: "wrap",
+              gap: "16px",
               width: "100%",
             }}
           >
-            {blogs.map((blog) => {
-              const coverUrl =
-                getCoverImageUrl(blog.coverImage, 800) ?? DEFAULT_COVER_IMAGE;
-              const coverAlt = getCoverImageAlt(blog.coverImage, blog.title);
+            <Typography
+              sx={{
+                color: "#111",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "31.2px",
+                letterSpacing: 0,
+              }}
+            >
+              Latest
+            </Typography>
 
-              return (
-                <Box
-                  key={blog._id}
-                  component="a"
-                  href={`/blogs/${blog.slug}/`}
-                  sx={{
-                    textDecoration: "none",
-                    display: "block",
-                    color: "inherit",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      gap: "16px",
-                      width: "100%",
-                      borderRadius: "12px",
-                      bgcolor: "var(--white-surface, #FFF)",
-                      cursor: "pointer",
-                      "&:hover .blog-title": { color: "#F6891F" },
-                    }}
-                  >
+            {activeSection === "insights" ? (
+              <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                {FILTERS.map((f) => {
+                  const isActive = filter === f;
+                  return (
                     <Box
+                      key={f}
+                      onClick={() => setFilter(f)}
                       sx={{
-                        position: "relative",
-                        width: "100%",
-                        aspectRatio: "16 / 10",
-                        borderRadius: "12px",
-                        overflow: "hidden",
+                        display: "flex",
+                        minWidth: isActive ? "98px" : "auto",
+                        px: "16px",
+                        py: "8px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: "4px",
+                        borderRadius: "32px",
+                        cursor: "pointer",
                         flexShrink: 0,
+                        bgcolor: isActive ? "#111" : "#FFF",
+                        border: isActive ? "1px solid #111" : "1px solid #E0E0E0",
+                        transition: "all 0.2s ease",
+                        "&:hover": isActive ? {} : { bgcolor: "#F2F2F2" },
                       }}
                     >
-                      <Image
-                        src={coverUrl}
-                        alt={coverAlt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 352px"
-                      />
+                      <Typography
+                        sx={{
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "12px",
+                          fontWeight: isActive ? 600 : 500,
+                          lineHeight: "19.2px",
+                          color: isActive ? "#FFF" : "#333",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {f}
+                      </Typography>
                     </Box>
+                  );
+                })}
+              </Box>
+            ) : null}
+          </Box>
 
+          {blogs.length === 0 ? (
+            <Typography
+              sx={{
+                color: "#707070",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "16px",
+                alignSelf: "stretch",
+                textAlign: "center",
+                py: "24px",
+              }}
+            >
+              No{" "}
+              {activeSection === "success-stories"
+                ? "success stories"
+                : "blog posts"}{" "}
+              yet. Publish your first post in Sanity Studio.
+            </Typography>
+          ) : (
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(2, 1fr)",
+                  lg: "repeat(3, 1fr)",
+                },
+                columnGap: "24px",
+                rowGap: "48px",
+                alignItems: "flex-start",
+                width: "100%",
+              }}
+            >
+              {blogs.map((blog) => {
+                const coverUrl =
+                  getCoverImageUrl(blog.coverImage, 800) ?? DEFAULT_COVER_IMAGE;
+                const coverAlt = getCoverImageAlt(blog.coverImage, blog.title);
+
+                return (
+                  <Box
+                    key={blog._id}
+                    component="a"
+                    href={`/blogs/${blog.slug}/`}
+                    sx={{
+                      textDecoration: "none",
+                      display: "block",
+                      color: "inherit",
+                    }}
+                  >
                     <Box
                       sx={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "flex-start",
-                        gap: "8px",
-                        alignSelf: "stretch",
+                        gap: "16px",
+                        width: "100%",
+                        borderRadius: "12px",
+                        bgcolor: "#FFF",
+                        cursor: "pointer",
+                        "&:hover .blog-title": { color: "#F6891F" },
                       }}
                     >
-                      <Typography
+                      <Box
                         sx={{
-                          color: "var(--primary-orange-primary-orange, #F6891F)",
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: "10px",
-                          fontWeight: 500,
-                          lineHeight: "16px",
-                          letterSpacing: "1.5px",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {blog.category
-                          ? BLOG_CATEGORY_LABELS[blog.category]
-                          : "Insights"}
-                      </Typography>
-
-                      <Typography
-                        className="blog-title"
-                        sx={{
-                          alignSelf: "stretch",
-                          color: "var(--grey-600, #333)",
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: "16px",
-                          fontWeight: 600,
-                          lineHeight: "25.6px",
+                          position: "relative",
+                          width: "100%",
+                          height: { xs: "220px", sm: "250px" },
+                          borderRadius: "8px",
                           overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "-webkit-box",
-                          WebkitBoxOrient: "vertical",
-                          WebkitLineClamp: 2,
-                          transition: "color 0.2s ease",
+                          flexShrink: 0,
                         }}
                       >
-                        {blog.title}
-                      </Typography>
+                        <Image
+                          src={coverUrl}
+                          alt={coverAlt}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 352px"
+                        />
+                      </Box>
 
-                      {blog.excerpt?.trim() ? (
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          gap: "12px",
+                          alignSelf: "stretch",
+                        }}
+                      >
                         <Typography
                           sx={{
-                            alignSelf: "stretch",
-                            height: "59px",
-                            color: "var(--grey-500, #707070)",
+                            color: "#F6891F",
                             fontFamily: "Inter, sans-serif",
-                            fontSize: "12px",
+                            fontSize: "10px",
                             fontWeight: 500,
-                            lineHeight: "19.2px",
+                            lineHeight: "16px",
+                            letterSpacing: "1.5px",
+                            textTransform: "uppercase",
+                            width: "100%",
+                          }}
+                        >
+                          {blog.section === "success-stories"
+                            ? POST_SECTION_LABELS["success-stories"]
+                            : blog.category
+                              ? BLOG_CATEGORY_LABELS[blog.category]
+                              : "Insights"}
+                        </Typography>
+
+                        <Typography
+                          className="blog-title"
+                          sx={{
+                            alignSelf: "stretch",
+                            color: "#333",
+                            fontFamily: "Inter, sans-serif",
+                            fontSize: "16px",
+                            fontWeight: 600,
+                            lineHeight: "25.6px",
                             overflow: "hidden",
                             textOverflow: "ellipsis",
                             display: "-webkit-box",
                             WebkitBoxOrient: "vertical",
-                            WebkitLineClamp: 3,
+                            WebkitLineClamp: 2,
+                            transition: "color 0.2s ease",
                           }}
                         >
-                          {blog.excerpt}
+                          {blog.title}
                         </Typography>
-                      ) : null}
 
-                      <Typography
-                        sx={{
-                          color: "var(--grey-400, #999)",
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          lineHeight: "19.2px",
-                        }}
-                      >
-                        {formatBlogMeta(blog.publishedAt, blog.readTime)}
-                      </Typography>
+                        {blog.excerpt?.trim() ? (
+                          <Typography
+                            sx={{
+                              alignSelf: "stretch",
+                              height: "59px",
+                              color: "#707070",
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "12px",
+                              fontWeight: 500,
+                              lineHeight: "19.2px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              WebkitLineClamp: 3,
+                            }}
+                          >
+                            {blog.excerpt}
+                          </Typography>
+                        ) : null}
+
+                        <Box
+                          sx={{
+                            alignSelf: "stretch",
+                            borderTop: "1px solid #E0E0E0",
+                            pt: "12px",
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              color: "#999",
+                              fontFamily: "Inter, sans-serif",
+                              fontSize: "12px",
+                              fontWeight: 400,
+                              lineHeight: "19.2px",
+                            }}
+                          >
+                            {formatBlogMeta(blog.publishedAt, blog.readTime)}
+                          </Typography>
+                        </Box>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              );
-            })}
-          </Box>
-        )}
+                );
+              })}
+            </Box>
+          )}
 
-        {filteredPosts.length > ITEMS_PER_PAGE ? (
-          <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          {filteredPosts.length > ITEMS_PER_PAGE ? (
             <Box
-              onClick={() => page > 1 && changePage(page - 1)}
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: "4px",
-                px: "12px",
-                py: "8px",
-                cursor: page === 1 ? "default" : "pointer",
-                opacity: page === 1 ? 0.4 : 1,
+                justifyContent: "space-between",
+                borderTop: "1px solid #E0E0E0",
+                pt: "20px",
+                minHeight: "61px",
+                width: "100%",
               }}
             >
-              <ArrowBackIcon sx={{ fontSize: "14px", color: "#333" }} />
-              <Typography
+              <Box
+                onClick={() => page > 1 && changePage(page - 1)}
                 sx={{
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  color: "#333",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  px: "12px",
+                  py: "8px",
+                  cursor: page === 1 ? "default" : "pointer",
+                  opacity: page === 1 ? 0.4 : 1,
                 }}
               >
-                Previous
-              </Typography>
-            </Box>
+                <ArrowBackIcon sx={{ fontSize: "14px", color: "#999" }} />
+                <Typography
+                  sx={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    color: "#999",
+                  }}
+                >
+                  Previous
+                </Typography>
+              </Box>
 
-            {getPageNumbers().map((p, i) => (
+              <Box sx={{ display: "flex", alignItems: "center", gap: "2px" }}>
+                {getPageNumbers().map((p, i) => (
+                  <Box
+                    key={i}
+                    onClick={() => typeof p === "number" && changePage(p)}
+                    sx={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: "32px",
+                      bgcolor: page === p ? "#F6891F" : "transparent",
+                      cursor: typeof p === "number" ? "pointer" : "default",
+                      "&:hover":
+                        typeof p === "number" && page !== p
+                          ? { bgcolor: "#F2F2F2" }
+                          : {},
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        lineHeight: "20px",
+                        color: page === p ? "#FFF" : "#707070",
+                      }}
+                    >
+                      {p}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+
               <Box
-                key={i}
-                onClick={() => typeof p === "number" && changePage(p)}
+                onClick={() => page < totalPages && changePage(page + 1)}
                 sx={{
-                  width: "36px",
-                  height: "36px",
                   display: "flex",
-                  justifyContent: "center",
                   alignItems: "center",
-                  borderRadius: "50%",
-                  bgcolor: page === p ? "#F6891F" : "transparent",
-                  cursor: typeof p === "number" ? "pointer" : "default",
-                  "&:hover":
-                    typeof p === "number" && page !== p
-                      ? { bgcolor: "#F2F2F2" }
-                      : {},
+                  gap: "8px",
+                  px: "12px",
+                  py: "8px",
+                  cursor: page === totalPages ? "default" : "pointer",
+                  opacity: page === totalPages ? 0.4 : 1,
                 }}
               >
                 <Typography
                   sx={{
                     fontFamily: "Inter, sans-serif",
-                    fontSize: "14px",
-                    fontWeight: page === p ? 600 : 400,
-                    color: page === p ? "#FFF" : "#333",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    color: "#111",
                   }}
                 >
-                  {p}
+                  Next
                 </Typography>
+                <ArrowForwardIcon sx={{ fontSize: "14px", color: "#111" }} />
               </Box>
-            ))}
-
-            <Box
-              onClick={() => page < totalPages && changePage(page + 1)}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                px: "12px",
-                py: "8px",
-                cursor: page === totalPages ? "default" : "pointer",
-                opacity: page === totalPages ? 0.4 : 1,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  color: "#333",
-                }}
-              >
-                Next
-              </Typography>
-              <ArrowForwardIcon sx={{ fontSize: "14px", color: "#333" }} />
             </Box>
-          </Box>
-        ) : null}
+          ) : null}
+        </Box>
       </Box>
     </Box>
   );

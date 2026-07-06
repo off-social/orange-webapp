@@ -76,5 +76,10 @@ export async function getPostSlugsBySection(
 }
 
 export async function getPostSlugs(): Promise<string[]> {
-  return getPostSlugsBySection("insights");
+  const [insightsSlugs, successStorySlugs] = await Promise.all([
+    getPostSlugsBySection("insights"),
+    getPostSlugsBySection("success-stories"),
+  ]);
+
+  return [...new Set([...insightsSlugs, ...successStorySlugs])];
 }

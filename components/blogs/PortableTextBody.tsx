@@ -7,6 +7,21 @@ import type { PortableTextBlock } from "@portabletext/react";
 
 import { urlFor } from "@/lib/sanity/image";
 
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
+function shouldOpenInNewTab(
+  href: string,
+  openInNewTab?: boolean,
+): boolean {
+  if (typeof openInNewTab === "boolean") {
+    return openInNewTab;
+  }
+
+  return isExternalHref(href);
+}
+
 const components: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
@@ -121,6 +136,32 @@ const components: PortableTextComponents = {
       </Box>
     ),
     em: ({ children }) => <Box component="em">{children}</Box>,
+    link: ({ children, value }) => {
+      const href = typeof value?.href === "string" ? value.href : "";
+
+      if (!href) {
+        return <>{children}</>;
+      }
+
+      const openInNewTab = shouldOpenInNewTab(href, value?.openInNewTab);
+
+      return (
+        <Box
+          component="a"
+          href={href}
+          target={openInNewTab ? "_blank" : undefined}
+          rel={openInNewTab ? "noopener noreferrer" : undefined}
+          sx={{
+            color: "#F6891F",
+            textDecoration: "underline",
+            textUnderlineOffset: "2px",
+            "&:hover": { color: "#111" },
+          }}
+        >
+          {children}
+        </Box>
+      );
+    },
   },
   types: {
     image: ({ value }) => {

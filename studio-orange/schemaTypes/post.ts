@@ -121,6 +121,7 @@ export const post = defineType({
             {title: 'Normal', value: 'normal'},
             {title: 'H2', value: 'h2'},
             {title: 'H3', value: 'h3'},
+            {title: 'H4', value: 'h4'},
             {title: 'Quote', value: 'blockquote'},
           ],
           lists: [
@@ -136,6 +137,7 @@ export const post = defineType({
             defineField({name: 'caption', title: 'Caption', type: 'string'}),
           ],
         },
+        {type: 'table'},
       ],
       validation: (Rule) => Rule.required(),
     }),

@@ -53,6 +53,21 @@ const components: PortableTextComponents = {
         {children}
       </Typography>
     ),
+    h4: ({ children }) => (
+      <Typography
+        component="h4"
+        sx={{
+          color: "var(--black-600, #111)",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "20px",
+          fontWeight: 600,
+          lineHeight: "24px",
+          mt: "8px",
+        }}
+      >
+        {children}
+      </Typography>
+    ),
     blockquote: ({ children }) => (
       <Box
         component="blockquote"
@@ -131,6 +146,60 @@ const components: PortableTextComponents = {
               {value.caption}
             </Typography>
           ) : null}
+        </Box>
+      );
+    },
+    table: ({ value }) => {
+      const rows = value?.rows;
+      if (!rows?.length) return null;
+
+      return (
+        <Box
+          sx={{
+            width: "100%",
+            overflowX: "auto",
+            border: "1px solid #E5E5E5",
+            borderRadius: "8px",
+          }}
+        >
+          <Box
+            component="table"
+            sx={{
+              width: "100%",
+              borderCollapse: "collapse",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              lineHeight: "25.6px",
+            }}
+          >
+            <Box component="tbody">
+              {rows.map((row: { _key?: string; cells?: string[] }, rowIndex: number) => (
+                <Box component="tr" key={row._key ?? rowIndex}>
+                  {row.cells?.map((cell: string, cellIndex: number) => (
+                    <Box
+                      component="td"
+                      key={cellIndex}
+                      sx={{
+                        px: "16px",
+                        py: "12px",
+                        color: "var(--grey-600, #333)",
+                        borderBottom:
+                          rowIndex < rows.length - 1 ? "1px solid #E5E5E5" : "none",
+                        borderRight:
+                          cellIndex < (row.cells?.length ?? 0) - 1
+                            ? "1px solid #E5E5E5"
+                            : "none",
+                        verticalAlign: "top",
+                        whiteSpace: "pre-wrap",
+                      }}
+                    >
+                      {cell}
+                    </Box>
+                  ))}
+                </Box>
+              ))}
+            </Box>
+          </Box>
         </Box>
       );
     },

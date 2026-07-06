@@ -75,7 +75,7 @@ export default function GreenEdgeHero() {
           >
             <Typography
               sx={{
-                color: "#FFF",
+                color: "#111",
                 textAlign: { xs: "center", md: "left" },
                 fontFamily: "Inter, sans-serif",
                 fontSize: { xs: "24px", sm: "32px", md: "40px" },
@@ -89,7 +89,7 @@ export default function GreenEdgeHero() {
 
             <Typography
               sx={{
-                color: "#E0E0E0",
+                color: "#111",
                 textAlign: { xs: "center", md: "left" },
                 fontFamily: "Inter, sans-serif",
                 fontSize: { xs: "12px", sm: "14px", md: "16px" },

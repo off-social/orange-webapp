@@ -44,7 +44,8 @@ const PRINTERS = [
   "VividPress-E",
   "MAS Digital Textile Printer",
   "MAS Vertical",
-  "MAS Twelve"
+  "MAS Twelve",
+  "FOUND Textile Processing Range"
 ];
 
 /**

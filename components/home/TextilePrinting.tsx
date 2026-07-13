@@ -71,23 +71,18 @@ const BRANDS: Brand[] = [
     ],
   },
   {
-    name: "MS",
-    image: "/ms.webp",
+    name: "MAS",
+    image: "/MAS.webp",
     products: [
       {
-        src: "/JP701.webp",
-        name: "JP7 Industrial Digital Textile Printer",
-        desc: "Intelligent Printing for Demanding Production Environments.",
+        src: "/MAS2.webp",
+        name: "MAS Vertical",
+        desc: "Smarter Way to Print Double-Sided Fabrics.",
       },
       {
-        src: "/JPK-Evo01.webp",
-        name: "JPK Evo Industrial Digital Textile Printer",
-        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
-      },
-      {
-        src: "/Minilario01.webp",
-        name: "Minilario Industrial Digital Textile Printer",
-        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
+        src: "/MAS1.webp",
+        name: "MAS Twelve",
+        desc: "Designed for Continuous Industrial Production.",
       },
     ],
   },
@@ -128,18 +123,23 @@ const BRANDS: Brand[] = [
     ],
   },
   {
-    name: "MAS",
-    image: "/MAS.webp",
+    name: "MS",
+    image: "/ms.webp",
     products: [
       {
-        src: "/MAS2.webp",
-        name: "MAS Vertical",
-        desc: "Smarter Way to Print Double-Sided Fabrics.",
+        src: "/JP701.webp",
+        name: "JP7 Industrial Digital Textile Printer",
+        desc: "Intelligent Printing for Demanding Production Environments.",
       },
       {
-        src: "/MAS1.webp",
-        name: "MAS Twelve",
-        desc: "Designed for Continuous Industrial Production.",
+        src: "/JPK-Evo01.webp",
+        name: "JPK Evo Industrial Digital Textile Printer",
+        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
+      },
+      {
+        src: "/Minilario01.webp",
+        name: "Minilario Industrial Digital Textile Printer",
+        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
       },
     ],
   },

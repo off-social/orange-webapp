@@ -1,10 +1,10 @@
 "use client";
 
-import { useConsultation } from "@/data/ConsultationContext";
-import { productHref } from "@/data/products";
 import MachineImageCarousel, {
   type MachineImageCarouselHandle,
 } from "@/components/products/MachineImageCarousel";
+import { useConsultation } from "@/data/ConsultationContext";
+import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
@@ -88,23 +88,18 @@ const brands: BrandItem[] = [
     ],
   },
   {
-    name: "MS",
-    image: "/ms.webp",
+    name: "MAS",
+    image: "/MAS.webp",
     previewImage: [
       {
-        src: "/JP701.webp",
-        name: "JP7 Industrial Digital Textile Printer",
-        desc: "Intelligent Printing for Demanding Production Environments.",
+        src: "/MAS2.webp",
+        name: "MAS Vertical",
+        desc: "Smarter Way to Print Double-Sided Fabrics.",
       },
       {
-        src: "/JPK-Evo01.webp",
-        name: "JPK Evo Industrial Digital Textile Printer",
-        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
-      },
-      {
-        src: "/Minilario01.webp",
-        name: "Minilario Industrial Digital Textile Printer",
-        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
+        src: "/MAS1.webp",
+        name: "MAS Twelve",
+        desc: "Designed for Continuous Industrial Production.",
       },
     ],
   },
@@ -113,21 +108,6 @@ const brands: BrandItem[] = [
     image: "/rado.webp",
     previewImage: [],
     tabs: [
-      {
-        label: "Foil",
-        previewImage: [
-          {
-            src: "/radoimg1.webp",
-            name: "FoilJet 8 Head Digital Printer",
-            desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
-          },
-          {
-            src: "/radoimg2.webp",
-            name: "FoilJet 16 Head Digital Printer",
-            desc: "Designed for Large-Scale Printing with Consistent Results.",
-          },
-        ],
-      },
       {
         label: "Alpha",
         previewImage: [
@@ -150,6 +130,21 @@ const brands: BrandItem[] = [
             src: "/radoimgAlpha4.webp",
             name: "Alpha 16 Industrial Sublimation Printer",
             desc: "Combining Power, Precision, and Production Efficiency.",
+          },
+        ],
+      },
+      {
+        label: "Foil",
+        previewImage: [
+          {
+            src: "/radoimg1.webp",
+            name: "FoilJet 8 Head Digital Printer",
+            desc: "Designed for High-Impact Effects and Superior Visual Appeal.",
+          },
+          {
+            src: "/radoimg2.webp",
+            name: "FoilJet 16 Head Digital Printer",
+            desc: "Designed for Large-Scale Printing with Consistent Results.",
           },
         ],
       },
@@ -182,18 +177,23 @@ const brands: BrandItem[] = [
     ],
   },
   {
-    name: "MAS",
-    image: "/MAS.webp",
+    name: "MS",
+    image: "/ms.webp",
     previewImage: [
       {
-        src: "/MAS2.webp",
-        name: "MAS Vertical",
-        desc: "Smarter Way to Print Double-Sided Fabrics.",
+        src: "/JP701.webp",
+        name: "JP7 Industrial Digital Textile Printer",
+        desc: "Intelligent Printing for Demanding Production Environments.",
       },
       {
-        src: "/MAS1.webp",
-        name: "MAS Twelve",
-        desc: "Designed for Continuous Industrial Production.",
+        src: "/JPK-Evo01.webp",
+        name: "JPK Evo Industrial Digital Textile Printer",
+        desc: "Engineered for Long-Run Performance and Uninterrupted Productivity.",
+      },
+      {
+        src: "/Minilario01.webp",
+        name: "Minilario Industrial Digital Textile Printer",
+        desc: "Optimized for Efficiency, Reliability, and Scalable Growth.",
       },
     ],
   },

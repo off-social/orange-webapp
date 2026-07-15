@@ -28,131 +28,139 @@ export default function CSRInitiatives() {
   return (
     <Box
       sx={{
-        display: "flex",
-        padding: {
-          xs: "48px 16px",
-          sm: "64px 40px",
-          md: "80px 80px",
-          lg: "80px 120px",
-          xl: "100px 400px",
-        },
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: "48px", md: "64px" },
-        alignSelf: "stretch",
         bgcolor: "#FFF",
+        py: { xs: "48px", sm: "64px", md: "80px" },
+        px: { xs: "16px", sm: "32px", md: "40px" },
       }}
     >
-      {/* Header */}
       <Box
         sx={{
+          mx: "auto",
+          width: "100%",
+          maxWidth: "914px",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-          textAlign: "center",
+          gap: { xs: "48px", md: "64px" },
         }}
       >
-        <Typography
-          sx={{
-            color: "#333",
-            fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "24px", md: "40px", xl: "48px" },
-            fontWeight: 500,
-            lineHeight: { xs: "31.2px", md: "52px", xl: "62.4px" },
-            letterSpacing: "-1px",
-          }}
-        >
-          Building a Better Tomorrow, Together
-        </Typography>
-        <Typography
-          sx={{
-            color: "#707070",
-            fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", md: "14px", xl: "16px" },
-            fontWeight: 400,
-            lineHeight: { xs: "19.2px", md: "22.4px", xl: "25.6px" },
-            maxWidth: { xs: "600px", xl: "700px" },
-          }}
-        >
-          Driven by purpose, we invest in communities and initiatives that create lasting positive impact and meaningful change.
-        </Typography>
-      </Box>
-
-      {/* Initiative rows */}
-      {initiatives.map((item, idx) => (
+        {/* Section header — 728px max per Figma */}
         <Box
-          key={idx}
           sx={{
-            display: "flex",
-            flexDirection: {
-              xs: "column",
-              sm: item.imgLeft ? "row" : "row-reverse",
-            },
-            alignItems: { xs: "flex-start", sm: "flex-start" },
-            gap: { xs: "24px", sm: "40px", md: "56px", xl: "72px" },
+            mx: "auto",
             width: "100%",
+            maxWidth: "728px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+            textAlign: "center",
           }}
         >
-          {/* Image */}
-          <Box
+          <Typography
             sx={{
-              flexShrink: 0,
-              width: { xs: "100%", sm: "351px", xl: "420px" },
-              height: { xs: "auto", sm: "468px", xl: "560px" },
-              aspectRatio: "3/4",
-              borderRadius: "10px",
-              overflow: "hidden",
-              position: "relative",
+              color: "#333",
+              fontFamily: "Inter, sans-serif",
+              fontSize: { xs: "24px", sm: "28px", md: "36px", lg: "40px" },
+              fontWeight: 500,
+              lineHeight: { xs: "31.2px", sm: "36.4px", md: "46.8px", lg: "52px" },
+              letterSpacing: { xs: 0, lg: "-1px" },
             }}
           >
-            <Image
-              src={item.img}
-              alt={item.title}
-              fill
-              style={{ objectFit: "cover", objectPosition: "50% center" }}
-            />
-          </Box>
+            Building a Better Tomorrow, Together
+          </Typography>
+          <Typography
+            sx={{
+              color: "#707070",
+              fontFamily: "Inter, sans-serif",
+              fontSize: { xs: "12px", sm: "13px", md: "14px" },
+              fontWeight: 500,
+              lineHeight: { xs: "19.2px", sm: "20.8px", md: "22.4px" },
+            }}
+          >
+            Driven by purpose, we invest in communities and initiatives that create
+            lasting positive impact and meaningful change.
+          </Typography>
+        </Box>
 
-          {/* Text */}
+        {initiatives.map((item, idx) => (
           <Box
+            key={idx}
             sx={{
               display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              flex: 1,
+              flexDirection: {
+                xs: "column",
+                md: item.imgLeft ? "row" : "row-reverse",
+              },
+              alignItems: { xs: "stretch", md: "center" },
+              gap: "24px",
             }}
           >
-            <Typography
+            <Box
               sx={{
-                color: "#333",
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "22px", md: "32px", xl: "40px" },
-                fontWeight: 500,
-                lineHeight: { xs: "28.6px", md: "41.6px", xl: "52px" },
-                letterSpacing: "-1px",
+                flexShrink: 0,
+                width: { xs: "100%", md: "351px" },
+                aspectRatio: "351 / 468",
+                borderRadius: "10px",
+                overflow: "hidden",
+                position: "relative",
               }}
             >
-              {item.title}
-            </Typography>
+              <Image
+                src={item.img}
+                alt={item.title}
+                fill
+                sizes="(max-width: 900px) 100vw, 350px"
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
+            </Box>
 
-            {item.paragraphs.map((para, pIdx) => (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "24px",
+                flex: 1,
+                minWidth: 0,
+              }}
+            >
               <Typography
-                key={pIdx}
                 sx={{
-                  color: "#707070",
+                  color: "#333",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: { xs: "14px", xl: "16px" },
+                  fontSize: { xs: "20px", sm: "24px", md: "28px", lg: "32px" },
                   fontWeight: 500,
-                  lineHeight: { xs: "22.4px", xl: "25.6px" },
+                  lineHeight: {
+                    xs: "26px",
+                    sm: "31.2px",
+                    md: "36.4px",
+                    lg: "41.6px",
+                  },
+                  letterSpacing: { xs: 0, lg: "-1px" },
                 }}
               >
-                {para}
+                {item.title}
               </Typography>
-            ))}
+
+              <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {item.paragraphs.map((para, pIdx) => (
+                  <Typography
+                    key={pIdx}
+                    sx={{
+                      color: "#707070",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      lineHeight: "22.4px",
+                    }}
+                  >
+                    {para}
+                  </Typography>
+                ))}
+              </Box>
+            </Box>
           </Box>
-        </Box>
-      ))}
+        ))}
+      </Box>
     </Box>
   );
 }

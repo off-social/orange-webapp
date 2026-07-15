@@ -41,7 +41,7 @@ const DrivingSustainablePrinting = () => {
             alignItems: "center",
             gap: { xs: "12px", md: "24px" },
             px: { xs: "16px", sm: "40px" },
-            pt: { xs: "32px", sm: "48px", md: "80px" },
+            pt: { xs: "64px", sm: "48px", md: "80px" },
             textAlign: "center",
           }}
         >

@@ -9,9 +9,9 @@ import { useRef, useState } from "react";
 // every embed eagerly downloads ~1MB+ of YouTube player JS on first paint.
 const videoIds = [
   "lNr9r16VmJ8",
-  "lNr9r16VmJ8",
-  "lNr9r16VmJ8",
-  "lNr9r16VmJ8",
+  "yUOXWmqz6Rw",
+  "VYZX8cwE-mg",
+  "QwQ3f4eImRw",
 ];
 
 const ScrollVideos = () => {

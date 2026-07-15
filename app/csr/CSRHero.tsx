@@ -5,29 +5,32 @@ import Image from "next/image";
 export default function CSRHero() {
   return (
     <Box sx={{ position: "relative", width: "100%", lineHeight: 0 }}>
-      {/* Mobile image (xs only) */}
-      <Box sx={{ display: { xs: "block", sm: "none" } }}>
+      {/* Mobile image — xs (<600px, e.g. 456px) */}
+      <Box
+        sx={{
+          display: { xs: "block", sm: "none" },
+          position: "relative",
+          width: "100%",
+          aspectRatio: "393 / 538",
+          overflow: "hidden",
+        }}
+      >
         <Image
           src="/TechnologyWithResponsibilityMobile.webp"
           alt="CSR – Technology with Responsibility"
-          width={393}
-          height={538}
+          fill
           priority
-          style={{
-            width: "100%",
-            aspectRatio: "84/115",
-            display: "block",
-            objectFit: "cover",
-          }}
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </Box>
 
-      {/* Tablet + Desktop image (sm+) */}
+      {/* Tablet + Desktop image — sm+ (768px, 1024px, 1440px) */}
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
           position: "relative",
-          height: { sm: "650px", md: "750px", lg: "800px", xl: "1000px" },
+          height: { sm: "580px", md: "720px", lg: "800px" },
           overflow: "hidden",
         }}
       >
@@ -36,6 +39,7 @@ export default function CSRHero() {
           alt="CSR – Technology with Responsibility"
           fill
           priority
+          sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center bottom" }}
         />
         {/* Top fade — blends image into page background */}
@@ -45,7 +49,7 @@ export default function CSRHero() {
             top: 0,
             left: 0,
             right: 0,
-            height: "120px",
+            height: { sm: "80px", md: "100px", lg: "120px" },
             background:
               "linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)",
             zIndex: 1,
@@ -64,19 +68,20 @@ export default function CSRHero() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: { xs: "24px", sm: "24px", md: "32px" },
-          px: { xs: "16px", sm: "40px", md: "40px" },
-          pt: { xs: "32px", sm: "64px", md: "80px", xl: "120px" },
+          gap: { xs: "24px", sm: "28px", md: "30px", lg: "32px" },
+          px: { xs: "16px", sm: "32px", md: "40px" },
+          pt: { xs: "64px", sm: "68px", md: "76px", lg: "80px" },
           textAlign: "center",
         }}
       >
-        {/* Label + Heading + Subtitle */}
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: "8px",
+            width: "100%",
+            maxWidth: { sm: "600px", md: "680px", lg: "728px" },
           }}
         >
           <Typography
@@ -84,10 +89,10 @@ export default function CSRHero() {
               color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "14px", md: "16px" },
+              fontSize: { xs: "14px", sm: "14px", md: "15px", lg: "16px" },
               fontWeight: 400,
               lineHeight: "25.6px",
-              letterSpacing: { xs: "5px", md: "10px" },
+              letterSpacing: "10px",
               textTransform: "uppercase",
               whiteSpace: "nowrap",
             }}
@@ -100,9 +105,14 @@ export default function CSRHero() {
               color: "#333",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "24px", sm: "32px", md: "40px" },
+              fontSize: { xs: "24px", sm: "28px", md: "36px", lg: "40px" },
               fontWeight: 500,
-              lineHeight: { xs: "31.2px", sm: "41.6px", md: "52px" },
+              lineHeight: {
+                xs: "31.2px",
+                sm: "36.4px",
+                md: "46.8px",
+                lg: "52px",
+              },
               letterSpacing: { xs: 0, md: "-1px" },
             }}
           >
@@ -114,34 +124,39 @@ export default function CSRHero() {
               color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "12px", md: "14px" },
+              fontSize: { xs: "12px", sm: "13px", md: "14px", lg: "14px" },
               fontWeight: 500,
-              lineHeight: { xs: "19.2px", md: "22.4px" },
+              lineHeight: {
+                xs: "19.2px",
+                sm: "20.8px",
+                md: "22.4px",
+                lg: "22.4px",
+              },
             }}
           >
             Built for a cleaner, more responsible textile future
           </Typography>
         </Box>
 
-        {/* Button */}
         <Button
           component="a"
           href="/contact"
           variant="contained"
-          endIcon={<ArrowForwardIcon sx={{ fontSize: "15px !important" }} />}
+          endIcon={<ArrowForwardIcon sx={{ fontSize: "16px !important" }} />}
           sx={{
-            width: { xs: "auto", sm: "200px" },
-            padding: { xs: "10px 18px", sm: "16px" },
+            width: { xs: "100%", sm: "200px" },
+            maxWidth: { sm: "200px" },
+            padding: { xs: "12px", sm: "16px" },
             borderRadius: "8px",
             bgcolor: "#111",
             color: "#FFF",
             fontFamily: "Inter, sans-serif",
-            fontSize: { xs: "12px", sm: "13px" },
+            fontSize: "13px",
             fontWeight: 500,
             lineHeight: "20.8px",
             textTransform: "none",
             whiteSpace: "nowrap",
-            alignSelf: "center",
+            alignSelf: { xs: "stretch", sm: "center" },
             justifyContent: "center",
             gap: "8px",
             boxShadow: "none",

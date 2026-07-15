@@ -157,9 +157,9 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
                   boxShadow: "none",
                 },
               }}
-              // onClick={() => openModal()}
+              onClick={() => openModal()}
             >
-              Get a Quote
+              Book a Consulation
             </Button>
             <Button
               component={Link}

@@ -4,69 +4,13 @@ import { useProduct } from "@/data/ProductContext";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box, Typography } from "@mui/material";
-import { useSyncExternalStore } from "react";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-} from "react-compare-slider";
-
-/** Custom drag handle: white line + centred circle with left/right arrows. */
-const SliderHandle = () => (
-  <Box
-    sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      height: "100%",
-      cursor: "ew-resize",
-    }}
-  >
-    <Box
-      sx={{
-        flex: 1,
-        width: "2px",
-        bgcolor: "#FFF",
-        boxShadow: "0 0 6px rgba(0,0,0,0.35)",
-      }}
-    />
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: { xs: "40px", md: "48px" },
-        height: { xs: "40px", md: "48px" },
-        borderRadius: "50%",
-        bgcolor: "rgba(255,255,255,0.95)",
-        color: "#F6891F",
-        boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
-        flexShrink: 0,
-      }}
-    >
-      <KeyboardArrowLeftIcon sx={{ fontSize: { xs: "20px", md: "24px" }, ml: "-4px" }} />
-      <KeyboardArrowRightIcon sx={{ fontSize: { xs: "20px", md: "24px" }, mr: "-4px" }} />
-    </Box>
-    <Box
-      sx={{
-        flex: 1,
-        width: "2px",
-        bgcolor: "#FFF",
-        boxShadow: "0 0 6px rgba(0,0,0,0.35)",
-      }}
-    />
-  </Box>
-);
+import { useRef, useState } from "react";
 
 export default function BeforeAfter() {
   const { beforeAfter } = useProduct();
-  // The slider measures the DOM, so it renders differently on the server than
-  // on the client. Mount it only after hydration (showing the printed result
-  // as a static placeholder first) to avoid a hydration mismatch.
-  const mounted = useSyncExternalStore(
-    () => () => { },
-    () => true,
-    () => false,
-  );
+  const containerRef = useRef<HTMLDivElement>(null);
+  const draggingRef = useRef(false);
+  const [pos, setPos] = useState(50); // divider position, %
 
   if (!beforeAfter) return null;
 
@@ -78,6 +22,31 @@ export default function BeforeAfter() {
     beforeLabel = "Before",
     afterLabel = "After",
   } = beforeAfter;
+
+  const updateFromClientX = (clientX: number) => {
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const p = ((clientX - rect.left) / rect.width) * 100;
+    setPos(Math.max(0, Math.min(100, p)));
+  };
+
+  // Pointer events cover mouse + touch + pen. setPointerCapture keeps the drag
+  // alive even if the finger/cursor leaves the element.
+  const handleDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    draggingRef.current = true;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    updateFromClientX(e.clientX);
+  };
+  const handleMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!draggingRef.current) return;
+    updateFromClientX(e.clientX);
+  };
+  const handleUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    draggingRef.current = false;
+    if (e.currentTarget.hasPointerCapture(e.pointerId))
+      e.currentTarget.releasePointerCapture(e.pointerId);
+  };
 
   return (
     <Box
@@ -133,43 +102,109 @@ export default function BeforeAfter() {
 
       {/* Comparison slider */}
       <Box
+        ref={containerRef}
+        onPointerDown={handleDown}
+        onPointerMove={handleMove}
+        onPointerUp={handleUp}
+        onPointerCancel={handleUp}
         sx={{
           position: "relative",
           width: "100%",
-          // A little taller on phones so the fabric detail reads well.
-          aspectRatio: { xs: "4 / 3", sm: "3 / 2" },
+          // shorter (wider) on laptop/desktop so it isn't too tall
+          aspectRatio: { xs: "4 / 3", sm: "3 / 2", md: "2 / 1", lg: "2 / 1" },
           borderRadius: { xs: "16px", md: "32px" },
           overflow: "hidden",
           boxShadow: "0px 20px 20px rgba(0,0,0,0.06)",
+          touchAction: "none", // all gestures drive the slider (mobile drag)
+          userSelect: "none",
+          cursor: "ew-resize",
         }}
       >
-        {mounted ? (
-          <ReactCompareSlider
-            itemOne={
-              <ReactCompareSliderImage
-                src={beforeImage}
-                alt={beforeLabel}
-                style={{ objectFit: "cover" }}
-              />
-            }
-            itemTwo={
-              <ReactCompareSliderImage
-                src={afterImage}
-                alt={afterLabel}
-                style={{ objectFit: "cover" }}
-              />
-            }
-            handle={<SliderHandle />}
-            style={{ width: "100%", height: "100%" }}
+        {/* before (base) */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={beforeImage}
+          alt={beforeLabel}
+          draggable={false}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            pointerEvents: "none",
+          }}
+        />
+        {/* after (revealed on the right of the divider) */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={afterImage}
+          alt={afterLabel}
+          draggable={false}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            pointerEvents: "none",
+            clipPath: `inset(0 0 0 ${pos}%)`,
+          }}
+        />
+
+        {/* divider + handle */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: `${pos}%`,
+            transform: "translateX(-50%)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            pointerEvents: "none",
+            zIndex: 2,
+          }}
+        >
+          <Box
+            sx={{
+              flex: 1,
+              width: "2px",
+              bgcolor: "#FFF",
+              boxShadow: "0 0 6px rgba(0,0,0,0.35)",
+            }}
           />
-        ) : (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={afterImage}
-            alt={afterLabel}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: { xs: "40px", md: "48px" },
+              height: { xs: "40px", md: "48px" },
+              borderRadius: "50%",
+              bgcolor: "rgba(255,255,255,0.95)",
+              color: "#F6891F",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+              flexShrink: 0,
+            }}
+          >
+            <KeyboardArrowLeftIcon
+              sx={{ fontSize: { xs: "20px", md: "24px" }, ml: "-4px" }}
+            />
+            <KeyboardArrowRightIcon
+              sx={{ fontSize: { xs: "20px", md: "24px" }, mr: "-4px" }}
+            />
+          </Box>
+          <Box
+            sx={{
+              flex: 1,
+              width: "2px",
+              bgcolor: "#FFF",
+              boxShadow: "0 0 6px rgba(0,0,0,0.35)",
+            }}
           />
-        )}
+        </Box>
       </Box>
     </Box>
   );

@@ -680,115 +680,6 @@ function SlideFabpro2i() {
 }
 
 /* ────────────────────────────────────────────────────────────
- * Slide — "Built with Precision"  (text to be added later)
- * Same per-width ratios as the other poster slides.
- * ──────────────────────────────────────────────────────────── */
-
-const BUILT_PRECISION_IMAGES = [
-  { src: "/BuiltwithPrecision393.webp", display: { block: "0px", none: "441px" } },
-  { src: "/BuiltwithPrecision500.webp", display: { block: "441px", none: "601px" } },
-  { src: "/BuiltwithPrecision768.webp", display: { block: "601px", none: "1025px" } },
-  { src: "/BuiltwithPrecision1336.webp", display: { block: "1025px", none: "1281px" } },
-  { src: "/BuiltwithPrecision1440.webp", display: { block: "1281px", none: "1441px" } },
-  { src: "/BuiltwithPrecision.webp", display: { block: "1441px", none: "" } },
-];
-
-function SlideBuiltWithPrecision() {
-  return (
-    <>
-      {BUILT_PRECISION_IMAGES.map((img) => (
-        <ResponsiveSlideImage
-          key={img.src}
-          src={img.src}
-          alt="Built with Precision. Proven in Performance."
-          showFrom={img.display.block}
-          hideFrom={img.display.none}
-        />
-      ))}
-
-      {/* Text overlay — mobile: top-centred; landscape: bottom-left */}
-      <Box
-        sx={{
-          position: "absolute",
-          left: { xs: "24px", sm: "40px", md: "80px", lg: "121px" },
-          right: { xs: "24px", sm: "auto" },
-          top: { xs: "60px", sm: "auto" },
-          bottom: { xs: "auto", sm: "10%", md: "12%", lg: "12%" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: { xs: "center", sm: "flex-start" },
-          textAlign: { xs: "center", sm: "left" },
-          gap: { xs: "10px", md: "16px" },
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "2px",
-            alignItems: { xs: "center", sm: "flex-start" },
-          }}
-        >
-          {[
-            "Built with,Precision.",
-            "Proven in,Performance.",
-          ].map((line) => {
-            const [gray, orange] = line.split(",");
-            return (
-              <Typography
-                key={line}
-                sx={{
-                  fontFamily: "Inter, sans-serif",
-                  textTransform: "uppercase",
-                  letterSpacing: "-0.23px",
-                  lineHeight: { xs: "36px", sm: "32px", md: "38px", lg: "42px" },
-                }}
-              >
-                <Box
-                  component="span"
-                  sx={{
-                    color: "#FFF",
-                    fontWeight: 300,
-                    fontSize: { xs: "32px", sm: "25px", md: "29px", lg: "32px" },
-                  }}
-                >
-                  {gray}{" "}
-                </Box>
-                <Box
-                  component="span"
-                  sx={{
-                    color: "#F6891F",
-                    fontWeight: 600,
-                    fontSize: { xs: "32px", sm: "25px", md: "29px", lg: "32px" },
-                  }}
-                >
-                  {orange}
-                </Box>
-              </Typography>
-            );
-          })}
-        </Box>
-        <Typography
-          sx={{
-            color: "#A3A3A3",
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 300,
-            letterSpacing: "-0.23px",
-            maxWidth: { xs: "260px", md: "340px" },
-            fontSize: { xs: "13px", sm: "14px", md: "16px", lg: "16px" },
-            lineHeight: { xs: "19px", sm: "20px", md: "23px", lg: "23px" },
-          }}
-        >
-          End-to-end digital printing solutions
-          <br />
-          for every application.
-        </Typography>
-      </Box>
-    </>
-  );
-}
-
-/* ────────────────────────────────────────────────────────────
  * Carousel
  * ──────────────────────────────────────────────────────────── */
 
@@ -796,7 +687,6 @@ const slides = [
   { render: () => <SlideRocket /> },
   { render: () => <SlideRedefining /> },
   { render: () => <SlideFabpro2i /> },
-  { render: () => <SlideBuiltWithPrecision /> },
   { render: () => <SlideAdvanced /> },
 ];
 

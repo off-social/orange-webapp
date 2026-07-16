@@ -202,6 +202,14 @@
       "Double-sided silk printing supported"
     ]
   },
+  "beforeAfter": {
+    "heading": "Every Print. Perfectly Positioned.",
+    "description": "Powered by intelligent registration technology, Position Pro aligns every design with exceptional precision, producing vibrant colours, intricate details, and consistent print quality on every fabric roll.",
+    "beforeImage": "/position-pro-before.jpeg",
+    "afterImage": "/position-pro-after.png",
+    "beforeLabel": "Before",
+    "afterLabel": "After"
+  },
   "contactCTA": {
     "headingTop": "Ready to unlock",
     "headingBottom": "Precision positioning printing?",

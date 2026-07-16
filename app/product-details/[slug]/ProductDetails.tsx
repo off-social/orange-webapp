@@ -1,5 +1,6 @@
 "use client";
 
+import BeforeAfter from "@/components/product-details/BeforeAfter";
 import ContactCTA from "@/components/product-details/ContactCTA";
 import Features from "@/components/product-details/Features";
 import GlobalComponents from "@/components/product-details/GlobalComponents";
@@ -254,6 +255,9 @@ export default function ProductDetails({ product }: { product: Product }) {
           />
         </Box>
       </Box>
+
+      {/* Before/after print comparison — directly under the hero image */}
+      <BeforeAfter />
 
       {/* Tab bar */}
       <Box

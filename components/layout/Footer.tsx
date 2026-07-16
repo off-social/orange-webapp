@@ -233,7 +233,7 @@ const Footer = () => {
                   textAlign: { xs: "center", md: "left" },
                 }}
               >
-                info@orange.com
+                info@orangeotec.com
               </Typography>
             </Box>
 

@@ -127,6 +127,19 @@ export interface Product {
     rightItems: string[];
   };
 
+  /** Optional before/after print-result comparison slider. Omit to hide the section. */
+  beforeAfter?: {
+    heading: string;
+    description?: string;
+    /** Path to the "before" image under /public. */
+    beforeImage: string;
+    /** Path to the "after" image under /public. */
+    afterImage: string;
+    /** Corner labels. Default "Before" / "After". */
+    beforeLabel?: string;
+    afterLabel?: string;
+  };
+
   contactCTA: {
     headingTop: string;
     headingBottom: string;

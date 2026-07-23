@@ -19,9 +19,13 @@ const architectsDaughter = Architects_Daughter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://orangeotec.com"),
   title: "Orange",
   description:
     "End-to-end digital textile printing solutions from high-speed sublimation to direct-to-fabric systems.",
+  alternates: {
+    canonical: "./",
+  },
 };
 
 export default function RootLayout({

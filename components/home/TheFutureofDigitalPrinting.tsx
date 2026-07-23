@@ -114,12 +114,12 @@ const TheFutureofDigitalPrinting = () => {
 
           {/* Overlay content on top of mobile image */}
           <div className="absolute inset-0 flex flex-col items-center justify-start pt-6 xs:pt-10 px-3">
-            <h1 className="text-[22px] xs:text-[26px] sm:text-[32px] font-medium text-black leading-[120%] whitespace-nowrap">
+            <h2 className="text-[22px] xs:text-[26px] sm:text-[32px] font-medium text-black leading-[120%] whitespace-nowrap">
               Building the Future of
-            </h1>
-            <h1 className="text-[22px] xs:text-[26px] sm:text-[32px] font-medium text-[#F6891F] leading-[120%]">
+            </h2>
+            <h2 className="text-[22px] xs:text-[26px] sm:text-[32px] font-medium text-[#F6891F] leading-[120%]">
               Digital Printing
-            </h1>
+            </h2>
 
             <p className="text-[11px] xs:text-xs sm:text-sm font-light text-[#404040] leading-[160%] w-full xs:w-[90%] text-center mt-2 xs:mt-3">
               Orange O Tec engineers high-performance digital printing solutions built for precision, consistency, and scale, with a vision to lead global innovation through intelligent, sustainable, and future-ready technologies.
@@ -130,7 +130,7 @@ const TheFutureofDigitalPrinting = () => {
         {/* ── DESKTOP: updated layout ── */}
         <div className="hidden md:block" style={{ paddingTop: "80px" }}>
           {/* Heading — single line, two colors */}
-          <h1
+          <h2
             style={{
               color: "#333",
               textAlign: "center",
@@ -144,7 +144,7 @@ const TheFutureofDigitalPrinting = () => {
           >
             Building the Future of{" "}
             <span style={{ color: "#F6891F" }}>Digital Printing</span>
-          </h1>
+          </h2>
 
           {/* Description — 8px gap from heading */}
           <p

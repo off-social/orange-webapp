@@ -280,6 +280,7 @@ export default function ContactPage() {
           sx={{ position: "relative", zIndex: 1, maxWidth: { lg: "500px" }, width: "100%", textAlign: { xs: "center", lg: "left" } }}
         >
           <Typography
+            component="h1"
             sx={{
               color: "#F6891F",
               fontFamily: "Inter, sans-serif",
@@ -287,6 +288,7 @@ export default function ContactPage() {
               fontWeight: 500,
               lineHeight: { xs: "41.6px", lg: "52px" },
               letterSpacing: "-1px",
+              m: 0,
             }}
           >
             Contact Us
@@ -422,6 +424,7 @@ export default function ContactPage() {
         {/* Address Details */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: "0" }}>
           <Typography
+            component="h2"
             sx={{
               color: "#111",
               fontFamily: "Inter, sans-serif",
@@ -429,6 +432,7 @@ export default function ContactPage() {
               fontWeight: 600,
               lineHeight: "22.4px",
               mb: "20px",
+              mt: 0,
             }}
           >
             Address Details:

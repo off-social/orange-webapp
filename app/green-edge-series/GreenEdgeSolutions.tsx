@@ -214,6 +214,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
         {/* Product name */}
         <Typography
+          component={index === 0 ? "h2" : "p"}
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
@@ -221,6 +222,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             fontWeight: 500,
             lineHeight: { xs: "31.2px", md: "41.6px" },
             letterSpacing: { xs: "0", md: "-1px" },
+            m: 0,
           }}
         >
           {product.name}

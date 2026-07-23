@@ -74,6 +74,7 @@ export default function GreenEdgeHero() {
             }}
           >
             <Typography
+              component="h1"
               sx={{
                 color: "#111",
                 textAlign: { xs: "center", md: "left" },
@@ -82,6 +83,7 @@ export default function GreenEdgeHero() {
                 fontWeight: 500,
                 lineHeight: { xs: "31.2px", sm: "41.6px", md: "52px" },
                 letterSpacing: { xs: "0px", md: "-1px" },
+                m: 0,
               }}
             >
               Digital Textile Pigment Ink

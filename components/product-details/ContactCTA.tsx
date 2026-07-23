@@ -82,6 +82,7 @@ export default function ContactCTA() {
             {contactCTA.headingTop}
           </Typography>
           <Typography
+            component="h2"
             sx={{
               color: "#F6891F",
               fontFamily: "Inter, sans-serif",
@@ -90,6 +91,7 @@ export default function ContactCTA() {
               lineHeight: { xs: "31.2px", md: "41.6px" },
               letterSpacing: { xs: "0", md: "-1px" },
               textAlign: { xs: "center", md: "left" },
+              m: 0,
             }}
           >
             {contactCTA.headingBottom}

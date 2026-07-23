@@ -243,6 +243,7 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
               A COMPLETE
             </Typography>
             <Typography
+              component="h1"
               sx={{
                 textAlign: "center",
                 fontSize: { xs: "24px", md: "40px" },
@@ -251,6 +252,7 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
                 lineHeight: { xs: "31.2px", md: "52px" },
                 letterSpacing: 0,
                 fontFamily: "Inter, sans-serif",
+                m: 0,
               }}
             >
               Digital Printing Ecosystem

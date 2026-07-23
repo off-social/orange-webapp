@@ -100,6 +100,7 @@ export default function ProductDetails({ product }: { product: Product }) {
           }}
         >
           <Typography
+            component="h1"
             sx={{
               color: "#333",
               textAlign: "center",
@@ -108,6 +109,7 @@ export default function ProductDetails({ product }: { product: Product }) {
               fontWeight: 500,
               lineHeight: { xs: "52px", md: "67.2px" },
               letterSpacing: "-1px",
+              m: 0,
             }}
           >
             {product.name}

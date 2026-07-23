@@ -92,7 +92,7 @@ function PostGrid({
         pb: "64px",
       }}
     >
-      {posts.map((post) => {
+      {posts.map((post, index) => {
         const coverUrl =
           getCoverImageUrl(post.coverImage, 800) ?? DEFAULT_COVER_IMAGE;
         const coverAlt = getCoverImageAlt(post.coverImage, post.title);
@@ -171,6 +171,7 @@ function PostGrid({
             >
               <Typography
                 className="ev-title"
+                component={index === 0 ? "h2" : "p"}
                 sx={{
                   color: "#333",
                   fontFamily: "Inter, sans-serif",
@@ -178,6 +179,7 @@ function PostGrid({
                   fontWeight: 500,
                   lineHeight: "26px",
                   transition: "color 0.2s ease",
+                  m: 0,
                 }}
               >
                 {post.title}
@@ -384,6 +386,7 @@ export default function EventsPresence({
         </Typography>
 
         <Typography
+          component="h1"
           sx={{
             color: "#333",
             fontFamily: "Inter, sans-serif",
@@ -391,6 +394,7 @@ export default function EventsPresence({
             fontWeight: 500,
             lineHeight: { xs: "34px", md: "52px" },
             letterSpacing: { xs: 0, md: "-1px" },
+            m: 0,
           }}
         >
           Events &amp; Industry Presence

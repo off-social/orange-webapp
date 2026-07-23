@@ -1,11 +1,11 @@
-import { Grid } from "@mui/material";
+import MovingToDigital from "@/components/home/MovingToDigital";
 import TextileHero from "@/components/home/TextileHero";
+import { Grid } from "@mui/material";
 import DigitalTextilePrinters from "./DigitalTextilePrinters";
 import Inks from "./Inks";
 import LabelPrinters from "./LabelPrinters";
-import PublicationPrinters from "./PublicationPrinters";
 import ProductsHero from "./ProductsHero";
-import MovingToDigital from "@/components/home/MovingToDigital";
+import PublicationPrinters from "./PublicationPrinters";
 
 export default function ProductsPage() {
   return (

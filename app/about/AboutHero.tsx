@@ -50,6 +50,7 @@ export default function AboutHero() {
         </Typography>
 
         <Typography
+          component="h1"
           sx={{
             color: "#FFF",
             textAlign: "center",
@@ -58,6 +59,7 @@ export default function AboutHero() {
             fontWeight: 500,
             lineHeight: { xs: "36px", md: "52px" },
             letterSpacing: "-1px",
+            m: 0,
           }}
         >
           Textile Printing

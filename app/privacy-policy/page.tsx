@@ -1,5 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Privacy Policy | Orange O Tec",
+  description:
+    "Read the Orange O Tec privacy policy covering how we collect, use and protect your information.",
+  path: "/privacy-policy/",
+  noindex: true,
+});
 
 const SECTIONS = [
   {

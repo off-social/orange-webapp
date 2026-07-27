@@ -1,11 +1,11 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { useConsultation } from "@/data/ConsultationContext";
 
 const products = [
   {

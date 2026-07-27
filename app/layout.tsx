@@ -20,7 +20,7 @@ const architectsDaughter = Architects_Daughter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://orangeotec.com"),
-  title: "Orange",
+  title: "Orange O Tec | Digital Textile Printing Machine Manufacturer",
   description:
     "End-to-end digital textile printing solutions from high-speed sublimation to direct-to-fabric systems.",
   alternates: {

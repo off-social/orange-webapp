@@ -6,6 +6,14 @@ import Inks from "./Inks";
 import LabelPrinters from "./LabelPrinters";
 import ProductsHero from "./ProductsHero";
 import PublicationPrinters from "./PublicationPrinters";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Sublimation, Direct-to-Fabric & Label Printers | Orange",
+  description:
+    "Browse Orange O Tec digital textile printers: sublimation, direct-to-fabric, single-pass, label and publication systems. Made in India, 600+ installations.",
+  path: "/products/",
+});
 
 export default function ProductsPage() {
   return (

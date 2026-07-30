@@ -100,17 +100,17 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.webp",
+        "image": "/Sequin1.webp",
         "title": "Lace & sequin",
         "desc": "Precise positioning on delicate, open-weave structures"
       },
       {
-        "image": "/Jacquard.webp",
+        "image": "/Jacquard1.webp",
         "title": "Jacquard",
         "desc": "High-end custom fabrics for home textiles & fashion"
       },
       {
-        "image": "/Embroidery.webp",
+        "image": "/Embroidery1.webp",
         "title": "Embroidery",
         "desc": "Perfect registration on textured raised surfaces"
       },

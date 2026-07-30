@@ -10,13 +10,14 @@ import KeySpecification from "@/components/product-details/KeySpecification";
 import PositionProShowcase from "@/components/product-details/PositionProShowcase";
 import ProductionCapacity from "@/components/product-details/ProductionCapacity";
 import Resources from "@/components/product-details/Resources";
+import SectionTabs from "@/components/product-details/SectionTabs";
 import { ProductProvider } from "@/data/ProductContext";
 import type { Product } from "@/data/product.types";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useConsultation } from "@/data/ConsultationContext";
 
 const TABS = [
@@ -32,38 +33,6 @@ export default function ProductDetails({ product }: { product: Product }) {
   const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
   const [downloading, setDownloading] = useState(false);
-
-  // Keep the sticky tab bar in sync with the auto-hiding navbar so it never
-  // gets covered: when the navbar is visible the tabs sit just below it, and
-  // when the navbar slides away the tabs snap to the top.
-  const [navVisible, setNavVisible] = useState(true);
-  const [navHeight, setNavHeight] = useState(0);
-  const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const measure = () => {
-      const header = document.querySelector("header");
-      if (header) setNavHeight(header.offsetHeight);
-    };
-    measure();
-
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY < lastScrollY.current || currentY < 80) {
-        setNavVisible(true);
-      } else {
-        setNavVisible(false);
-      }
-      lastScrollY.current = currentY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", measure);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", measure);
-    };
-  }, []);
 
   // The brochure downloads via a plain anchor link. On the deployed site
   // (Netlify) the `public/_headers` + `netlify.toml` config sends these PDFs
@@ -262,63 +231,7 @@ export default function ProductDetails({ product }: { product: Product }) {
       <BeforeAfter />
 
       {/* Tab bar */}
-      <Box
-        sx={{
-          position: "sticky",
-          top: navVisible ? `${navHeight}px` : 0,
-          zIndex: 10,
-          borderBottom: "1px solid #E0E0E0",
-          background: "#F2F2F2",
-          transition: "top 0.3s ease, background 0.3s, border-color 0.3s",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: { xs: "flex-start", sm: "center" },
-            alignItems: "center",
-            gap: "24px",
-            px: { xs: "16px", sm: "24px", md: "168px" },
-            overflowX: "auto",
-            scrollbarWidth: "none",
-            "&::-webkit-scrollbar": { display: "none" },
-          }}
-        >
-          {TABS.map((tab, index) => (
-            <Box
-              key={tab}
-              onClick={() => setActiveTab(index)}
-              sx={{
-                position: "relative",
-                px: { xs: "0", md: "4px" },
-                py: "16px",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "12px", md: "14px" },
-                fontWeight: activeTab === index ? 500 : 400,
-                color: "#707070",
-                transition: "color 0.2s",
-                display: "block",
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: "2px",
-                  bgcolor: activeTab === index ? "#F6891F" : "transparent",
-                  borderRadius: "2px 2px 0 0",
-                  transition: "background-color 0.2s",
-                },
-              }}
-            >
-              {tab}
-            </Box>
-          ))}
-        </Box>
-      </Box>
+      <SectionTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
 
       {/* Tab content */}
       {activeTab === 0 && <KeySpecification />}

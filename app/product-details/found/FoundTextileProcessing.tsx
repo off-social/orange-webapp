@@ -41,8 +41,8 @@ const PRODUCT_NAME = "FOUND Textile Processing Range";
 const CONTACT_CTA: Pick<Product, "name" | "contactCTA"> = {
   name: PRODUCT_NAME,
   contactCTA: {
-    headingTop: "Ready to upgrade your",
-    headingBottom: "fabric processing line?",
+    headingTop: "Ready to optimize your",
+    headingBottom: "fabric washing process?",
     description:
       "Talk to our team about pretreatment, washing and finishing machinery matched to your fabric type and daily output.",
     phone: "+91 90999 06555",

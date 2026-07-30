@@ -104,11 +104,27 @@ export function productSlug(name: string): string {
 }
 
 /**
+ * Machines with a hand-built details page instead of one rendered from the
+ * shared `Product` template. Keyed by the exact catalog name used in the
+ * section components, mapped to the route that page lives at.
+ *
+ * FOUND is processing machinery (pretreatment, washing, finishing), so it has
+ * none of the printer-shaped data the template needs — ink compatibility,
+ * printheads, LM/day speed tables — and gets its own page.
+ */
+const CUSTOM_PRODUCT_PAGES: Record<string, string> = {
+  "FOUND Textile Processing Range": "/product-details/found",
+};
+
+/**
  * Resolve a catalog product name to a details URL.
- * Links directly to the product page if its data is registered;
- * otherwise falls back to the /product-details redirect.
+ * Links directly to the product page if its data is registered or it has a
+ * hand-built page; otherwise falls back to the /product-details redirect.
  */
 export function productHref(name: string): string {
+  const custom = CUSTOM_PRODUCT_PAGES[name];
+  if (custom) return custom;
+
   const slug = productSlug(name);
   return products[slug] ? `/product-details/${slug}` : "/product-details";
 }

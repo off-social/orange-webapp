@@ -1,14 +1,31 @@
 "use client";
 
 import { useConsultation } from "@/data/ConsultationContext";
-import { useProduct } from "@/data/ProductContext";
+import { useOptionalProduct } from "@/data/ProductContext";
+import type { Product } from "@/data/product.types";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { Box, Button, Typography } from "@mui/material";
 
-export default function ContactCTA() {
-  const { contactCTA, name } = useProduct();
+/** Only these fields are read, so hand-built pages can pass them directly
+ *  instead of authoring a full product entry. */
+type ContactCTASource = Pick<Product, "name" | "contactCTA">;
+
+export default function ContactCTA({
+  product,
+}: {
+  /** Overrides ProductContext. Required on pages rendered outside a provider. */
+  product?: ContactCTASource;
+}) {
+  const fromContext = useOptionalProduct();
+  const source = product ?? fromContext;
+  if (!source) {
+    throw new Error(
+      "<ContactCTA> needs a `product` prop or a <ProductProvider> ancestor",
+    );
+  }
+  const { contactCTA, name } = source;
   const { openModal } = useConsultation();
 
   return (

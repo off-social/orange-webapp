@@ -1,10 +1,22 @@
 "use client";
 
-import { useProduct } from "@/data/ProductContext";
+import { useOptionalProduct } from "@/data/ProductContext";
+import type { Product } from "@/data/product.types";
 import { Box, Typography } from "@mui/material";
 
-export default function KeySpecification() {
-  const { keySpecification } = useProduct();
+export default function KeySpecification({
+  data,
+}: {
+  /** Overrides ProductContext. Required on pages rendered outside a provider. */
+  data?: Product["keySpecification"];
+}) {
+  const fromContext = useOptionalProduct();
+  const keySpecification = data ?? fromContext?.keySpecification;
+  if (!keySpecification) {
+    throw new Error(
+      "<KeySpecification> needs a `data` prop or a <ProductProvider> ancestor",
+    );
+  }
 
   return (
     <Box

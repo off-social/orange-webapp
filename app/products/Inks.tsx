@@ -69,6 +69,7 @@ export default function Inks() {
       {/* Heading */}
       <Box sx={{ textAlign: "center", width: "100%" }}>
         <Typography
+          component="h2"
           sx={{
             fontSize: { xs: "24px", md: "40px" },
             fontWeight: 500,
@@ -76,6 +77,7 @@ export default function Inks() {
             fontFamily: "Inter, sans-serif",
             lineHeight: { xs: "31.2px", md: "52px" },
             letterSpacing: "-1px",
+            m: 0,
           }}
         >
           Inks

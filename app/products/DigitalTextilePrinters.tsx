@@ -245,7 +245,7 @@ export default function DigitalTextilePrinters() {
       {/* Heading */}
       <Box sx={{ textAlign: "center", pt: { xs: 5, md: 8 }, pb: 2, px: 2 }}>
         <Typography
-          component="h2"
+          component="h1"
           sx={{
             fontSize: { xs: "24px", md: "40px" },
             fontWeight: 500,

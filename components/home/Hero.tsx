@@ -1,12 +1,11 @@
 "use client";
 
-import { useConsultation } from "@/data/ConsultationContext";
 import type { BlogPostListItem } from "@/data/blog.types";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import DrivingSustainablePrinting from "./DrivingSustainablePrinting";
+import HomeHero from "./HomeHero";
 import IndustryPresence from "./IndustryPresence";
 import InkSolutions from "./InkSolutions";
 import LabelPrinting from "./LabelPrinting";
@@ -23,184 +22,12 @@ import ThePowerOfOrange from "./ThePowerOfOrange";
 
 const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
   const [value, setValue] = useState(0);
-  const { openModal } = useConsultation();
 
   return (
     <>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          position: "relative",
-          width: "100%",
-          // Mobile frame is 393×603 (Figma); 600px on web.
-          height: { xs: "603px", sm: "600px" },
-          overflow: "hidden",
-        }}
-      >
-        {/* Full-width video */}
-        <video
-          src="/homePageVideo.mp4"
-          poster="/homePageVideo-poster.webp"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
-
-        {/* Frosted glass overlay — over the bottom of the video */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: { xs: "16px", sm: "24px", md: "40px" },
-            left: { xs: "16px", sm: "40px", md: "40px", lg: "168px" },
-            right: { xs: "16px", sm: "40px", md: "40px", lg: "168px" },
-            width: "auto",
-            transform: "none",
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            padding: {
-              xs: "24px 16px 16px 16px",
-              sm: "28px",
-              md: "32px",
-              lg: "40px",
-            },
-            justifyContent: "space-between",
-            alignItems: { xs: "stretch", sm: "center", md: "flex-end" },
-            borderRadius: "20px",
-            border: "1px solid #FFF",
-            background: "rgba(239, 239, 239, 0.10)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            gap: { xs: "24px", sm: "20px", md: "24px", lg: "32px" },
-          }}
-        >
-          {/* Left: Heading + subtitle */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: { xs: "center", md: "flex-start" },
-              gap: "16px",
-              maxWidth: { sm: "560px", md: "480px" },
-            }}
-          >
-            <Typography
-              sx={{
-                color: "#111",
-                textAlign: { xs: "center", md: "left" },
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "40px" },
-                fontWeight: 500,
-                lineHeight: { xs: "31.2px", md: "36px", lg: "52px" },
-                letterSpacing: { xs: 0, md: "-1px" },
-              }}
-            >
-              Built with Precision.
-              <br />
-              Proven in Performance.
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: "12px", sm: "14px", md: "16px" },
-                color: { xs: "#333", md: "#e6e6e6" },
-                textAlign: { xs: "center", md: "left" },
-                fontWeight: 500,
-                maxWidth: "480px",
-                lineHeight: { xs: "19.2px", md: "25.6px" },
-                fontFamily: "Inter, sans-serif",
-              }}
-            >
-              End-to-end digital textile printing solutions from high-speed
-              sublimation to direct-to-fabric systems.
-            </Typography>
-          </Box>
-
-          {/* Buttons */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "8px",
-              flexShrink: 0,
-              alignItems: "stretch",
-              justifyContent: "center",
-              width: { xs: "100%", sm: "auto", md: "auto" },
-            }}
-          >
-            <Button
-              variant="outlined"
-              sx={{
-                color: "#111",
-                bgcolor: "#FFF",
-                borderColor: "#E0E0E0",
-                borderRadius: "8px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "12px", sm: "13px" },
-                fontWeight: 500,
-                lineHeight: "20.8px",
-                p: { xs: "12px 10px", md: "16px" },
-                boxShadow: "none",
-                whiteSpace: { xs: "nowrap", sm: "nowrap" },
-                flex: { xs: "1 0 0", sm: "0 0 auto", md: "none" },
-                width: { xs: "auto", sm: "auto", md: "170px" },
-                "&:hover": {
-                  bgcolor: "#F2F2F2",
-                  borderColor: "#E0E0E0",
-                  boxShadow: "none",
-                },
-              }}
-              onClick={() => openModal()}
-            >
-              Book a Consulation
-            </Button>
-            <Button
-              component={Link}
-              href="/products"
-              variant="contained"
-              endIcon={
-                <Image
-                  src="/Arrow - Right.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  style={{
-                    objectFit: "contain",
-                    filter: "brightness(0) invert(1)",
-                  }}
-                />
-              }
-              sx={{
-                bgcolor: "#F6891F",
-                color: "#fff",
-                borderRadius: "8px",
-                textTransform: "none",
-                fontFamily: "Inter, sans-serif",
-                fontSize: { xs: "12px", sm: "13px" },
-                fontWeight: 500,
-                lineHeight: "20.8px",
-                p: { xs: "12px 10px", md: "16px" },
-                gap: { xs: "6px", md: "8px" },
-                boxShadow: "none",
-                flex: { xs: "1 0 0", sm: "0 0 auto", md: "none" },
-                width: { xs: "auto", sm: "auto", md: "auto" },
-                whiteSpace: "nowrap",
-                "& .MuiButton-endIcon": { ml: 0 },
-                "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
-              }}
-            >
-              Explore Printers
-            </Button>
-          </Box>
-        </Box>
-      </Box>
+      <Grid size={12}>
+        <HomeHero />
+      </Grid>
 
       {/* Logo Marquee */}
       <Grid size={12}>
@@ -243,7 +70,7 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
               A COMPLETE
             </Typography>
             <Typography
-              component="h1"
+              component="h2"
               sx={{
                 textAlign: "center",
                 fontSize: { xs: "24px", md: "40px" },

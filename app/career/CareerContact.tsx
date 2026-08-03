@@ -1,10 +1,17 @@
 "use client";
 
+import { FormError, FormSuccess } from "@/components/forms/FormStatus";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 import CheckIcon from "@mui/icons-material/Check";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
-import { Box, Button, InputAdornment, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 const INPUT_SX = {
   "& .MuiOutlinedInput-root": {
@@ -33,21 +40,28 @@ const LABEL_SX = {
 };
 
 const REQUIRED_DOT = (
-  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>*</Box>
+  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>
+    *
+  </Box>
 );
 
-export default function CareerContact() {
-  const [form, setForm] = useState({ name: "", email: "", position: "", message: "" });
+const EMPTY_FORM = { name: "", email: "", position: "", message: "" };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+export default function CareerContact() {
+  const { form, submitting, submitted, error, handleChange, handleSubmit } =
+    useFormSubmit("career", EMPTY_FORM);
 
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "48px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "80px 263px" },
+        padding: {
+          xs: "48px 16px",
+          sm: "64px 40px",
+          md: "80px 80px",
+          lg: "80px 168px",
+          xl: "80px 263px",
+        },
         alignItems: { xs: "stretch", sm: "flex-start" },
         gap: { xs: "40px", sm: "40px", md: "64px", lg: "126px" },
         alignSelf: "stretch",
@@ -67,7 +81,14 @@ export default function CareerContact() {
         }}
       >
         {/* Heading + subtitle */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: { xs: "center", sm: "flex-start" } }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            alignItems: { xs: "center", sm: "flex-start" },
+          }}
+        >
           <Typography
             sx={{
               color: "#333",
@@ -96,9 +117,23 @@ export default function CareerContact() {
         </Box>
 
         {/* Contact info */}
-        <Box sx={{ display: "flex", gap: "40px", flexWrap: "wrap", justifyContent: { xs: "center", sm: "flex-start" } }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "40px",
+            flexWrap: "wrap",
+            justifyContent: { xs: "center", sm: "flex-start" },
+          }}
+        >
           {/* Email */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: { xs: "center", sm: "flex-start" } }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              alignItems: { xs: "center", sm: "flex-start" },
+            }}
+          >
             <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <EmailOutlinedIcon sx={{ fontSize: "16px", color: "#707070" }} />
               <Typography
@@ -127,7 +162,14 @@ export default function CareerContact() {
           </Box>
 
           {/* Phone */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: { xs: "center", sm: "flex-start" } }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              alignItems: { xs: "center", sm: "flex-start" },
+            }}
+          >
             <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <PhoneOutlinedIcon sx={{ fontSize: "16px", color: "#707070" }} />
               <Typography
@@ -159,6 +201,9 @@ export default function CareerContact() {
 
       {/* Right — form */}
       <Box
+        component="form"
+        onSubmit={handleSubmit}
+        noValidate
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -170,7 +215,9 @@ export default function CareerContact() {
       >
         {/* Full Name */}
         <Box sx={{ width: "100%" }}>
-          <Box component="label" sx={LABEL_SX}>Full Name{REQUIRED_DOT}</Box>
+          <Box component="label" sx={LABEL_SX}>
+            Full Name{REQUIRED_DOT}
+          </Box>
           <TextField
             fullWidth
             name="name"
@@ -183,7 +230,9 @@ export default function CareerContact() {
 
         {/* Email ID */}
         <Box sx={{ width: "100%" }}>
-          <Box component="label" sx={LABEL_SX}>Email ID{REQUIRED_DOT}</Box>
+          <Box component="label" sx={LABEL_SX}>
+            Email ID{REQUIRED_DOT}
+          </Box>
           <TextField
             fullWidth
             name="email"
@@ -194,7 +243,9 @@ export default function CareerContact() {
               input: {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <EmailOutlinedIcon sx={{ fontSize: "18px", color: "#B0B0B0" }} />
+                    <EmailOutlinedIcon
+                      sx={{ fontSize: "18px", color: "#B0B0B0" }}
+                    />
                   </InputAdornment>
                 ),
               },
@@ -205,7 +256,9 @@ export default function CareerContact() {
 
         {/* Position */}
         <Box sx={{ width: "100%" }}>
-          <Box component="label" sx={LABEL_SX}>Position</Box>
+          <Box component="label" sx={LABEL_SX}>
+            Position
+          </Box>
           <TextField
             fullWidth
             name="position"
@@ -218,7 +271,9 @@ export default function CareerContact() {
 
         {/* Message */}
         <Box sx={{ width: "100%" }}>
-          <Box component="label" sx={LABEL_SX}>Message (Optional)</Box>
+          <Box component="label" sx={LABEL_SX}>
+            Message (Optional)
+          </Box>
           <TextField
             fullWidth
             multiline
@@ -233,10 +288,14 @@ export default function CareerContact() {
 
         {/* Submit */}
         <Button
+          type="submit"
           variant="contained"
+          disabled={submitting}
           startIcon={
             <CheckIcon
-              sx={{ fontSize: { xs: "14px !important", sm: "16px !important" } }}
+              sx={{
+                fontSize: { xs: "14px !important", sm: "16px !important" },
+              }}
             />
           }
           sx={{
@@ -254,10 +313,14 @@ export default function CareerContact() {
             boxShadow: "none",
             alignSelf: "flex-start",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+            "&:disabled": { bgcolor: "#F6891F", opacity: 0.6, color: "#fff" },
           }}
         >
-          Submit
+          {submitting ? "Sending…" : "Submit"}
         </Button>
+
+        {submitted && <FormSuccess />}
+        <FormError message={error} />
       </Box>
     </Box>
   );

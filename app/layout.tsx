@@ -5,7 +5,10 @@ import { ConsultationProvider } from "@/data/ConsultationContext";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 import { Architects_Daughter, Stack_Sans_Headline } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-6GDQT9SGY9";
 
 const stackSansHeadline = Stack_Sans_Headline({
   variable: "--font-stack-sans-headline",
@@ -47,6 +50,23 @@ export default function RootLayout({
             <ConsultationModal />
           </ConsultationProvider>
         </AppRouterCacheProvider>
+
+        {/* Google Analytics (gtag.js). afterInteractive keeps it out of the
+            critical path, so it never delays first paint. GA4 picks up
+            client-side route changes on its own via history events, so page
+            views need no extra wiring. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );

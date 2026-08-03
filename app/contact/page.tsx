@@ -1,11 +1,12 @@
 "use client";
 
+import { FormError, FormSuccess } from "@/components/forms/FormStatus";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import NextImage from "next/image";
-import { useState } from "react";
 
 const addresses = [
   {
@@ -46,10 +47,16 @@ const inputSx = {
 
 function FormCard({
   form,
+  submitting,
+  submitted,
+  error,
   onChange,
   onSubmit,
 }: {
   form: { name: string; email: string; subject: string; message: string };
+  submitting: boolean;
+  submitted: boolean;
+  error: string;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
@@ -217,6 +224,7 @@ function FormCard({
       <Button
         type="submit"
         variant="contained"
+        disabled={submitting}
         startIcon={<SendIcon sx={{ fontSize: "16px !important" }} />}
         sx={{
           bgcolor: "#F6891F",
@@ -230,30 +238,32 @@ function FormCard({
           px: "32px",
           boxShadow: "none",
           "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+          "&:disabled": { bgcolor: "#F6891F", opacity: 0.6, color: "#fff" },
         }}
       >
-        Send Message
+        {submitting ? "Sending…" : "Send Message"}
       </Button>
+
+      {submitted && <FormSuccess />}
+      <FormError message={error} />
     </Box>
   );
 }
 
+const EMPTY_FORM = { name: "", email: "", subject: "", message: "" };
+
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // The card is rendered twice — in flow on mobile, floating on desktop — and
+  // both instances have to share one piece of state.
+  const { form, submitting, submitted, error, handleChange, handleSubmit } =
+    useFormSubmit("contact", EMPTY_FORM);
+  const cardProps = {
+    form,
+    submitting,
+    submitted,
+    error,
+    onChange: handleChange,
+    onSubmit: handleSubmit,
   };
 
   return (
@@ -265,7 +275,10 @@ export default function ContactPage() {
           height: { xs: "auto", lg: "305px" },
           minHeight: { xs: "220px", md: "260px", lg: "305px" },
           backgroundColor: "#111",
-          backgroundImage: { xs: "url('/contactUsMobileImg1.webp')", lg: "url('/contactUsImg1.webp')" },
+          backgroundImage: {
+            xs: "url('/contactUsMobileImg1.webp')",
+            lg: "url('/contactUsImg1.webp')",
+          },
           backgroundRepeat: "no-repeat",
           backgroundPosition: { xs: "center", lg: "left center" },
           backgroundSize: { xs: "cover", lg: "auto 100%" },
@@ -277,7 +290,13 @@ export default function ContactPage() {
       >
         {/* Left: heading + subtitle */}
         <Box
-          sx={{ position: "relative", zIndex: 1, maxWidth: { lg: "500px" }, width: "100%", textAlign: { xs: "center", lg: "left" } }}
+          sx={{
+            position: "relative",
+            zIndex: 1,
+            maxWidth: { lg: "500px" },
+            width: "100%",
+            textAlign: { xs: "center", lg: "left" },
+          }}
         >
           <Typography
             component="h1"
@@ -329,11 +348,7 @@ export default function ContactPage() {
             mb: "40px",
           }}
         >
-          <FormCard
-            form={form}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-          />
+          <FormCard {...cardProps} />
         </Box>
 
         {/* Email + Phone */}
@@ -347,7 +362,14 @@ export default function ContactPage() {
           }}
         >
           {/* Email */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px", mb: { xs: "16px", sm: 0 } }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              mb: { xs: "16px", sm: 0 },
+            }}
+          >
             <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <EmailOutlinedIcon
                 sx={{ width: "16px", height: "16px", color: "#707070" }}
@@ -504,7 +526,7 @@ export default function ContactPage() {
           zIndex: 10,
         }}
       >
-        <FormCard form={form} onChange={handleChange} onSubmit={handleSubmit} />
+        <FormCard {...cardProps} />
       </Box>
     </Box>
   );

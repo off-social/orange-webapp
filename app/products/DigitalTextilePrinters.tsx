@@ -51,13 +51,8 @@ const brands: BrandItem[] = [
       },
       {
         src: "/radoimgA1.webp",
-        name: "SubPro S-16 Industrial Sublimation Printer",
+        name: "SubPro II Industrial Sublimation Printer",
         desc: "Designed to Handle Demanding Production with Ease.",
-      },
-      {
-        src: "/radoimgA2.webp",
-        name: "SubPro II Industrial Dye-Sublimation Printer",
-        desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       },
     ],
   },
@@ -153,13 +148,8 @@ const brands: BrandItem[] = [
       //   previewImage: [
       //     {
       //       src: "/radoimgA1.webp",
-      //       name: "SubPro S-16 Industrial Sublimation Printer",
+      //       name: "SubPro II Industrial Sublimation Printer",
       //       desc: "Designed to Handle Demanding Production with Ease.",
-      //     },
-      //     {
-      //       src: "/radoimgA2.webp",
-      //       name: "SubPro II Industrial Dye-Sublimation Printer",
-      //       desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       //     },
       //   ],
       // },

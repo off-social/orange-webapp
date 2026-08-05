@@ -21,7 +21,6 @@ import pengda from "./pengda.json";
 import positionPro from "./position-pro.json";
 import rocket from "./rocket.json";
 import subProII from "./subpro-ii.json";
-import subProS16 from "./subpro-s-16.json";
 import vividPressE from "./vividpress-e.json";
 
 /**
@@ -50,7 +49,6 @@ export const products: Record<string, Product> = {
   "alpha-15": alpha15 as Product,
   "alpha-16": alpha16 as Product,
   "subpro-ii": subProII as Product,
-  "subpro-s-16": subProS16 as Product,
   pengda: pengda as Product,
   "jetrix-e": jetrixE as Product,
   "vividpress-e": vividPressE as Product,

@@ -38,7 +38,6 @@ const PRINTERS = [
   "Alpha 15",
   "Alpha 16",
   "SubPro II",
-  "SubPro S-16",
   "Pengda 1000DIA",
   "JetRix-E",
   "VividPress-E",

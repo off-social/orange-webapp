@@ -3,8 +3,8 @@
   "name": "VividPress-E",
   "tagline": "High-Speed Single-Pass Digital Inkjet Solution for Books and Magazines",
   "heroImage": {
-    "desktop": "/PublicationPrinters1.webp",
-    "mobile": "/PublicationPrinters1.webp"
+    "desktop": "/PublicationPrinters1.png",
+    "mobile": "/PublicationPrinters1.png"
   },
   "sidebar": {
     "bullets": [

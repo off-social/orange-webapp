@@ -130,21 +130,6 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.webp",
-        "title": "Ultra High-Volume Fashion Textile Production",
-        "desc": "The highest-speed scanning printer in the MS range, purpose-built for large polyester fabric manufacturers supplying wholesale saree, dress material, and fashion textile markets at maximum daily output."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Wide-Format Home Textile and Furnishing Production",
-        "desc": "3200 mm print width handles extra-wide bedding, curtain fabric, upholstery, and large-format furnishing textiles without seam constraints that limit standard 1800 mm machines."
-      },
-      {
-        "image": "/Embroidery.webp",
-        "title": "Large-Scale Export Garment Manufacturing",
-        "desc": "Reactive printing on cotton at very high volume for major export facilities supplying international brands with consistent quality across large recurring orders."
-      },
-      {
         "image": "/Silk.webp",
         "title": "Flag, Banner, and Soft Signage Production",
         "desc": "Extra-wide 3200 mm format makes the MiniLaRIO the ideal choice for manufacturers producing flags, exhibition banners, retail soft signage, and event textile applications at scale."
@@ -153,21 +138,6 @@
         "image": "/Custom.webp",
         "title": "Sportswear and Performance Fabric Printing",
         "desc": "High-speed disperse and pigment output on stretch and technical fabrics for sportswear brands, gym wear producers, and performance apparel exporters serving high-volume order pipelines."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Sustainable Export-Focused Manufacturing",
-        "desc": "ACIMIT Green Label certification provides documented resource efficiency proof for manufacturers supplying European and international buyers with environmental compliance requirements."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Integrated Mills and Large Print Houses",
-        "desc": "Vertically integrated manufacturers and large dedicated print houses who need scanning-head versatility at volumes that match or exceed single-pass output requirements."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Accessories",
-        "desc": "Scarves, decorative fabrics, and specialty textile products."
       }
     ]
   },

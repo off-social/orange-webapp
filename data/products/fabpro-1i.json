@@ -147,29 +147,9 @@
         "desc": "Precise print registration on raised, textured embroidered surfaces"
       },
       {
-        "image": "/Silk.webp",
-        "title": "Export Garment Manufacturing",
-        "desc": "Reactive printing on cotton with ISO 4–5 wash fastness required by European and US export buyers"
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Fashion Textiles",
-        "desc": "Fast, vibrant disperse printing on polyester sarees, dress materials, and kurti fabrics for trend-responsive production"
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Home Textiles",
-        "desc": "Cotton bedding, polyester curtains, cushions, throws, and decorative fabrics — all on one machine"
-      },
-      {
         "image": "/Jacquard.webp",
         "title": "Silk & Luxury Fabrics",
         "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
-      },
-      {
-        "image": "/Embroidery.webp",
-        "title": "Custom & Personalised Printing",
-        "desc": "Photo textiles, corporate branding, wedding and event fabrics, and small-batch specialty orders"
       }
     ]
   },

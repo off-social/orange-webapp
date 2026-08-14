@@ -118,41 +118,6 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.webp",
-        "title": "Maximum-Volume Sublimation Transfer Paper Production",
-        "desc": "The highest-output SubPro machine for manufacturers supplying very large volumes of printed sublimation paper to heat press operations across polyester garment, fashion fabric, and activewear markets."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Large-Scale Polyester Fashion Fabric Printing",
-        "desc": "Direct sublimation output on polyester sarees, dress materials, and fashion fabrics for large wholesale and export operations where maximum daily output and colour repeatability are both essential."
-      },
-      {
-        "image": "/Embroidery.webp",
-        "title": "Industrial Sportswear and Activewear Production",
-        "desc": "High-speed, high-volume sublimation on polyester performance fabrics for major sportswear brands, gym wear producers, and activewear exporters with continuous large-order production requirements."
-      },
-      {
-        "image": "/Silk.webp",
-        "title": "Large-Scale Home Textile Sublimation Production",
-        "desc": "Very high-capacity sublimation printing on polyester curtains, cushion covers, upholstery, and decorative soft furnishings for large domestic and export home textile manufacturers."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "24/7 Continuous Round-the-Clock Operations",
-        "desc": "Maglev carriage, automated maintenance, servo media handling, and jumbo roll support are purpose-built for facilities running continuous multi-shift production schedules at maximum output."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Integrated Mills and Dedicated Print Houses",
-        "desc": "Vertically integrated manufacturers and large-scale print houses who need sublimation output volumes that match or exceed downstream heat press, finishing, and dispatch capacities."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Large Job Work and Multi-Buyer Sublimation Units",
-        "desc": "The highest daily output in the SubPro range makes the SubPro II the definitive choice for large job work printers managing very high-volume, diverse client order portfolios across polyester and transfer paper substrates."
-      },
-      {
         "image": "/Embroidery.webp",
         "title": "Garments",
         "desc": "Sublimation printing for polyester garment production"

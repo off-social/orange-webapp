@@ -118,11 +118,6 @@
     "description": "Built for value-added, design-driven textile production where synchronized double-sided printing, perfect registration, and digital yarn-dye replication unlock new possibilities.",
     "fabrics": [
       {
-        "image": "/Jacquard.webp",
-        "title": "Yarn-Dyed Shirting Production",
-        "desc": "Digital yarn-dye replication eliminates the long lead times of traditional yarn dyeing, allowing shirting fabric manufacturers to produce authentic-looking yarn-dye patterns in days instead of months."
-      },
-      {
         "image": "/Custom.webp",
         "title": "Denim Manufacturing",
         "desc": "Synchronized double-sided printing enables true reversible denim and complex face-and-back colour effects that conventional single-side printers cannot replicate, opening new design possibilities for denim mills."
@@ -136,16 +131,6 @@
         "image": "/Embroidery.webp",
         "title": "Technical Textiles",
         "desc": "Print width flexibility from 900 mm to 1850 mm combined with industrial drying capacity suits technical textile producers requiring precise, dual-sided functional or pattern printing."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Sustainable Supply Chain Production",
-        "desc": "Collapsing production lead times from months to days while reducing waste makes the Vertical the preferred choice for brands and mills prioritising environmental impact reduction and faster market response."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Reversible and Dual-Design Garment Manufacturing",
-        "desc": "Manufacturers producing reversible jackets, scarves, and dual-faced garments benefit directly from perfect front-to-back registration without the cost and complexity of running fabric through a printer twice."
       }
     ]
   },

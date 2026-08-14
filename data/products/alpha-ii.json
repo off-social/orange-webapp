@@ -131,11 +131,6 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.webp",
-        "title": "High-Volume Sublimation Transfer Paper Production",
-        "desc": "Fast, consistent sublimation printing on transfer paper for manufacturers supplying large volumes of printed paper to heat press operations across polyester garment and fabric production."
-      },
-      {
         "image": "/Jacquard.webp",
         "title": "Polyester Fashion Fabric Printing",
         "desc": "Direct sublimation output on polyester sarees, dress materials, sportswear fabrics, and fashion textiles for wholesale and export markets requiring vibrant, wash-fast colour at production volume."
@@ -144,21 +139,6 @@
         "image": "/Embroidery.webp",
         "title": "Sportswear and Activewear Production",
         "desc": "High-resolution sublimation on polyester performance fabrics for sportswear brands, gym wear manufacturers, and activewear exporters needing sharp detail and consistent colour across large orders."
-      },
-      {
-        "image": "/Silk.webp",
-        "title": "Home Textile Sublimation Production",
-        "desc": "Sublimation printing on polyester curtains, cushion covers, upholstery fabrics, and decorative soft furnishings for domestic retail and export home textile markets."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Job Work and Multi-Buyer Sublimation Operations",
-        "desc": "High daily output across 1-pass and 2-pass modes makes the Alpha II well suited to job work printers managing multiple buyers with varying order sizes and design complexities."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Custom and Short-Run Polyester Printing",
-        "desc": "Fast setup and consistent output make the Alpha II a practical choice for custom polyester printing, sampling, and shorter-run specialty orders for fashion designers and brand merchandising."
       }
     ]
   },

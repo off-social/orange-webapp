@@ -20,19 +20,23 @@ import Image from "next/image";
 import { useState } from "react";
 import { useConsultation } from "@/data/ConsultationContext";
 
-const TABS = [
-  "Key Specification",
-  "Ink Compatibility",
-  "Features",
-  "Ideal for",
-  "Production Capacity",
-  "Global Components",
-];
-
 export default function ProductDetails({ product }: { product: Product }) {
   const { openModal } = useConsultation();
   const [activeTab, setActiveTab] = useState(0);
   const [downloading, setDownloading] = useState(false);
+
+  // "Ideal for" is dropped entirely when a product has no ideal-application
+  // cards (e.g. Rocket) — the tab would otherwise open onto a bare heading.
+  const tabs = [
+    { label: "Key Specification", content: <KeySpecification /> },
+    { label: "Ink Compatibility", content: <InkCompatibility /> },
+    { label: "Features", content: <Features /> },
+    ...(product.idealFor.fabrics.length > 0
+      ? [{ label: "Ideal for", content: <IdealFor /> }]
+      : []),
+    { label: "Production Capacity", content: <ProductionCapacity /> },
+    { label: "Global Components", content: <GlobalComponents /> },
+  ];
 
   // The brochure downloads via a plain anchor link. On the deployed site
   // (Netlify) the `public/_headers` + `netlify.toml` config sends these PDFs
@@ -231,15 +235,14 @@ export default function ProductDetails({ product }: { product: Product }) {
       <BeforeAfter />
 
       {/* Tab bar */}
-      <SectionTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+      <SectionTabs
+        tabs={tabs.map((tab) => tab.label)}
+        activeTab={activeTab}
+        onChange={setActiveTab}
+      />
 
       {/* Tab content */}
-      {activeTab === 0 && <KeySpecification />}
-      {activeTab === 1 && <InkCompatibility />}
-      {activeTab === 2 && <Features />}
-      {activeTab === 3 && <IdealFor />}
-      {activeTab === 4 && <ProductionCapacity />}
-      {activeTab === 5 && <GlobalComponents />}
+      {tabs[activeTab]?.content}
 
       {/* Permanent sections */}
       <Resources />

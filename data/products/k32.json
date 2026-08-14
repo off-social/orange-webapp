@@ -115,21 +115,6 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Lace-sequin.webp",
-        "title": "High-Volume Fashion Textile Production",
-        "desc": "Non-stop disperse printing on polyester sarees, dress materials, and fashion fabrics for large wholesale and export operations requiring maximum daily output."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Large-Scale Export Garment Manufacturing",
-        "desc": "Reactive printing on cotton at high volume, consistently meeting ISO wash fastness standards required by international buyers across round-the-clock production shifts."
-      },
-      {
-        "image": "/Embroidery.webp",
-        "title": "Industrial Home Textile Manufacturing",
-        "desc": "Large-batch production of bedding, curtains, cushion covers, and upholstery across both cotton and polyester substrates for domestic retail and export markets."
-      },
-      {
         "image": "/Silk.webp",
         "title": "Jacquard and Textured Fabrics",
         "desc": "High-resolution output on complex woven and jacquard structures where sharp pattern definition and consistent repeat registration are critical across large production volumes."
@@ -138,21 +123,6 @@
         "image": "/Custom.webp",
         "title": "Silk and Luxury Fabrics",
         "desc": "Precise acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying boutique fashion brands and luxury garment producers at scale."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Multi-Buyer Job Work Operations",
-        "desc": "Wide fabric compatibility from 30 to 450 gsm and multi-ink support make the K32 ideal for large job work printing units serving diverse clients across different fabric categories."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Custom and Hi-End Export Production",
-        "desc": "International fashion and home textile buyers requiring tight colour repeatability, consistent large-batch quality, and fast turnaround on repeat orders."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Scalable Operations",
-        "desc": "Combination of speed, stability, and automation for growing production needs."
       }
     ]
   },

@@ -7,6 +7,7 @@ export type PageSeo = {
   description: string;
   keywords?: string | string[];
   path: string;
+  noindex?: boolean;
 };
 
 export function buildPageMetadata(seo: PageSeo): Metadata {
@@ -37,5 +38,6 @@ export function buildPageMetadata(seo: PageSeo): Metadata {
     alternates: {
       canonical: url,
     },
+    ...(seo.noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }

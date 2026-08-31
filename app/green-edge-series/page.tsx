@@ -1,9 +1,9 @@
 import { staticPageSeo } from "@/data/seo/pages";
-import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { buildPageMetadata } from "@/lib/seo";
 import GreenEdgeHero from "./GreenEdgeHero";
+import GreenEdgeTabs from "./GreenEdgeTabs";
 
 export const metadata = buildPageMetadata(staticPageSeo.greenEdgeSeries);
-import GreenEdgeTabs from "./GreenEdgeTabs";
 
 export default function GreenEdgeSeriesPage() {
   return (

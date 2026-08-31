@@ -1,4 +1,4 @@
-import type { PageSeo } from "@/lib/seo/build-metadata";
+import type { PageSeo } from "@/lib/seo";
 
 export const staticPageSeo = {
   home: {

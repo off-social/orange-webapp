@@ -3,8 +3,8 @@
   "name": "VividPress-E",
   "tagline": "High-Speed Single-Pass Digital Inkjet Solution for Books and Magazines",
   "heroImage": {
-    "desktop": "/PublicationPrinters1.webp",
-    "mobile": "/PublicationPrinters1.webp"
+    "desktop": "/PublicationPrinters1.png",
+    "mobile": "/PublicationPrinters1.png"
   },
   "sidebar": {
     "bullets": [
@@ -127,21 +127,6 @@
         "image": "/Silk.webp",
         "title": "Transactional and Data-Driven Print Operations",
         "desc": "Variable data printing capability and automated workflow management suit high-volume transactional document printers producing statements, reports, forms, and personalised communications at industrial output rates."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Government and Institutional Printers",
-        "desc": "Reliable, high-speed duplex output with consistent quality supports government print departments, institutional publishers, and large in-plant print operations requiring high-volume document and publication printing."
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Magazines and Periodical Publishers",
-        "desc": "High-resolution duplex colour output on standard coated offset media makes the VividPress-E a practical choice for magazine and periodical publishers requiring quality, speed, and production flexibility."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Print-on-Demand and Short-Run Production",
-        "desc": "No minimum run requirement, zero plate cost, and rapid job changeover make the VividPress-E the ideal platform for print-on-demand services managing high volumes of short-run and variable jobs simultaneously."
       }
     ]
   },

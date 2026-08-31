@@ -1,9 +1,16 @@
 "use client";
 
+import { FormError, FormSuccess } from "@/components/forms/FormStatus";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 import CheckIcon from "@mui/icons-material/Check";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { Box, Button, InputAdornment, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 const INPUT_SX = {
   "& .MuiOutlinedInput-root": {
@@ -31,21 +38,28 @@ const LABEL_SX = {
 };
 
 const REQUIRED_DOT = (
-  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>*</Box>
+  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>
+    *
+  </Box>
 );
 
-export default function UpgradeCTA() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+const EMPTY_FORM = { name: "", email: "", message: "" };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+export default function UpgradeCTA() {
+  const { form, submitting, submitted, error, handleChange, handleSubmit } =
+    useFormSubmit("about", EMPTY_FORM);
 
   return (
     <Box
       sx={{
         display: "flex",
-        padding: { xs: "64px 16px", sm: "64px 40px", md: "80px 80px", lg: "80px 168px", xl: "100px 263px" },
+        padding: {
+          xs: "64px 16px",
+          sm: "64px 40px",
+          md: "80px 80px",
+          lg: "80px 168px",
+          xl: "100px 263px",
+        },
         justifyContent: "space-between",
         alignItems: { xs: "flex-start", md: "center" },
         alignSelf: "stretch",
@@ -92,8 +106,8 @@ export default function UpgradeCTA() {
         >
           Don&apos;t miss the opportunity to embrace the digital revolution in
           textile printing. With Orange O Tec&apos;s high-speed, high-quality
-          technology, take your business to new heights of efficiency, precision,
-          and performance.
+          technology, take your business to new heights of efficiency,
+          precision, and performance.
         </Typography>
 
         <Typography
@@ -113,6 +127,9 @@ export default function UpgradeCTA() {
 
       {/* Right: form */}
       <Box
+        component="form"
+        onSubmit={handleSubmit}
+        noValidate
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -160,7 +177,9 @@ export default function UpgradeCTA() {
               input: {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <EmailOutlinedIcon sx={{ fontSize: "18px", color: "#B0B0B0" }} />
+                    <EmailOutlinedIcon
+                      sx={{ fontSize: "18px", color: "#B0B0B0" }}
+                    />
                   </InputAdornment>
                 ),
               },
@@ -183,13 +202,19 @@ export default function UpgradeCTA() {
             multiline
             rows={4}
             sx={INPUT_SX}
-            slotProps={{ htmlInput: { style: { fontFamily: "Inter, sans-serif", fontSize: "14px" } } }}
+            slotProps={{
+              htmlInput: {
+                style: { fontFamily: "Inter, sans-serif", fontSize: "14px" },
+              },
+            }}
           />
         </Box>
 
         {/* Submit */}
         <Button
+          type="submit"
           variant="contained"
+          disabled={submitting}
           startIcon={<CheckIcon sx={{ fontSize: "16px !important" }} />}
           sx={{
             alignSelf: { xs: "stretch", md: "flex-start" },
@@ -204,10 +229,14 @@ export default function UpgradeCTA() {
             py: "13px",
             boxShadow: "none",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+            "&:disabled": { bgcolor: "#F6891F", opacity: 0.6, color: "#fff" },
           }}
         >
-          Submit
+          {submitting ? "Sending…" : "Submit"}
         </Button>
+
+        {submitted && <FormSuccess />}
+        <FormError message={error} />
       </Box>
     </Box>
   );

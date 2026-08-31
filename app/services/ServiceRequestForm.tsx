@@ -1,5 +1,7 @@
 "use client";
 
+import { FormError, FormSuccess } from "@/components/forms/FormStatus";
+import { useFormSubmit } from "@/hooks/useFormSubmit";
 import CheckIcon from "@mui/icons-material/Check";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -11,7 +13,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 
 const INPUT_SX = {
   "& .MuiOutlinedInput-root": {
@@ -43,7 +44,9 @@ const LABEL_SX = {
 };
 
 const REQUIRED_DOT = (
-  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>*</Box>
+  <Box component="span" sx={{ color: "#F6891F", ml: "2px" }}>
+    *
+  </Box>
 );
 
 const contactItems = [
@@ -58,19 +61,20 @@ const contactItems = [
     value: "+91 74860 32990",
   },
   {
-    icon: <LocationOnOutlinedIcon sx={{ fontSize: "18px", color: "#707070" }} />,
+    icon: (
+      <LocationOnOutlinedIcon sx={{ fontSize: "18px", color: "#707070" }} />
+    ),
     label: "Address",
     value:
       "Titaanium The Business Hub, 9th floor, Office no 901, Bhimrad Road, Opp. Aakash Empire, Surat – 395017 (Gujarat) India.",
   },
 ];
 
-export default function ServiceRequestForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+const EMPTY_FORM = { name: "", email: "", message: "" };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+export default function ServiceRequestForm() {
+  const { form, submitting, submitted, error, handleChange, handleSubmit } =
+    useFormSubmit("services", EMPTY_FORM);
 
   return (
     <Box
@@ -88,7 +92,9 @@ export default function ServiceRequestForm() {
       }}
     >
       {/* Left — title + contact info */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "32px", flex: 1 }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", gap: "32px", flex: 1 }}
+      >
         {/* Title + subtitle */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <Typography
@@ -120,7 +126,10 @@ export default function ServiceRequestForm() {
         {/* Contact items */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           {contactItems.map((item) => (
-            <Box key={item.label} sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <Box
+              key={item.label}
+              sx={{ display: "flex", flexDirection: "column", gap: "4px" }}
+            >
               <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
                 {item.icon}
                 <Typography
@@ -154,6 +163,9 @@ export default function ServiceRequestForm() {
 
       {/* Right — form */}
       <Box
+        component="form"
+        onSubmit={handleSubmit}
+        noValidate
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -200,7 +212,9 @@ export default function ServiceRequestForm() {
               input: {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <EmailOutlinedIcon sx={{ fontSize: "18px", color: "#B0B0B0" }} />
+                    <EmailOutlinedIcon
+                      sx={{ fontSize: "18px", color: "#B0B0B0" }}
+                    />
                   </InputAdornment>
                 ),
               },
@@ -223,13 +237,19 @@ export default function ServiceRequestForm() {
             multiline
             rows={4}
             sx={INPUT_SX}
-            slotProps={{ htmlInput: { style: { fontFamily: "Inter, sans-serif", fontSize: "14px" } } }}
+            slotProps={{
+              htmlInput: {
+                style: { fontFamily: "Inter, sans-serif", fontSize: "14px" },
+              },
+            }}
           />
         </Box>
 
         {/* Submit */}
         <Button
+          type="submit"
           variant="contained"
+          disabled={submitting}
           startIcon={<CheckIcon sx={{ fontSize: "16px !important" }} />}
           sx={{
             alignSelf: "flex-start",
@@ -244,10 +264,14 @@ export default function ServiceRequestForm() {
             py: "13px",
             boxShadow: "none",
             "&:hover": { bgcolor: "#e07a18", boxShadow: "none" },
+            "&:disabled": { bgcolor: "#F6891F", opacity: 0.6, color: "#fff" },
           }}
         >
-          Submit
+          {submitting ? "Sending…" : "Submit"}
         </Button>
+
+        {submitted && <FormSuccess />}
+        <FormError message={error} />
       </Box>
     </Box>
   );

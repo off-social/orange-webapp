@@ -1,6 +1,6 @@
-import { staticPageSeo } from "@/data/seo/pages";
 import Hero from "@/components/home/Hero";
-import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { staticPageSeo } from "@/data/seo/pages";
+import { buildPageMetadata } from "@/lib/seo";
 import { getPostsBySection } from "@/lib/sanity/queries";
 
 export const metadata = buildPageMetadata(staticPageSeo.home);

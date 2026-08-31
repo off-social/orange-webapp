@@ -1,10 +1,10 @@
 import { staticPageSeo } from "@/data/seo/pages";
-import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { buildPageMetadata } from "@/lib/seo";
 import PioneeringSolutions from "./PioneeringSolutions";
-
-export const metadata = buildPageMetadata(staticPageSeo.services);
 import ReliableSupport from "./ReliableSupport";
 import ServiceRequestForm from "./ServiceRequestForm";
+
+export const metadata = buildPageMetadata(staticPageSeo.services);
 
 export default function ServicesPage() {
   return (

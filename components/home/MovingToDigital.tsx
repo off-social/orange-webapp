@@ -245,12 +245,14 @@ const MovingToDigital = () => {
           Industry Shift
         </Typography>
         <Typography
+          component="h2"
           sx={{
             color: "#333",
             fontSize: { xs: "22px", sm: "30px", md: "40px" },
             fontWeight: 500,
             lineHeight: { xs: "30px", sm: "40px", md: "52px" },
             letterSpacing: { xs: "-0.5px", md: "-1px" },
+            m: 0,
           }}
         >
           Why Industries are Moving to Digital

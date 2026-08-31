@@ -1,6 +1,6 @@
 import { getProduct, productSlugs } from "@/data/products";
 import { productSeo } from "@/data/seo/pages";
-import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductDetails from "./ProductDetails";
@@ -17,11 +17,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const seo = productSeo[slug as keyof typeof productSeo];
 
-  if (!seo) {
+  if (seo) {
+    return buildPageMetadata(seo);
+  }
+
+  const product = getProduct(slug);
+
+  if (!product) {
     return {};
   }
 
-  return buildPageMetadata(seo);
+  return buildPageMetadata({
+    title: `${product.name} Digital Textile Printer | Orange O Tec`,
+    description: `${product.name} by Orange O Tec — ${product.tagline}. Made in India with 600+ installations. Book a demo.`,
+    path: `/product-details/${slug}/`,
+  });
 }
 
 export default async function ProductDetailsPage({

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import type { BlogPost, BlogPostListItem } from "@/data/blog.types";
-import { getSiteUrl, SITE_NAME } from "@/lib/seo/site";
+import { getSiteUrl, SITE_NAME } from "@/lib/seo";
 
 import { getCoverImageUrl } from "./image";
 
@@ -13,6 +13,34 @@ function getDescription(
     `Read ${post.title} on the ${SITE_NAME} blog.`
   );
 }
+
+/**
+ * Per-post SEO overrides sourced from the meta-tags spec. The post title lives
+ * in Sanity, so these let us set the exact title/description crawlers should
+ * see without editing CMS content. Keyed by post slug.
+ */
+const POST_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+  "orange-o-tec-at-itmach-india-2025": {
+    title: "Orange O Tec at ITMACH India 2025 | Textile Print Expo",
+    description:
+      "Orange O Tec exhibited its digital textile printing machines at ITMACH India 2025. See the printers on show and highlights from the event.",
+  },
+  "orange-o-tec-at-jci-jetpur-expo-2025": {
+    title: "Orange O Tec at JCI Jetpur Expo 2025 | Textile Printing",
+    description:
+      "Orange O Tec brought its digital textile printers to the JCI Jetpur Expo 2025. Highlights, machines on display and coverage from Jetpur.",
+  },
+  "orange-o-tec-at-gartex-india-2025": {
+    title: "Orange O Tec at Gartex India 2025 | Textile Print Expo",
+    description:
+      "Orange O Tec showcased digital textile printing machines at Gartex India 2025. See the lineup and highlights from the exhibition.",
+  },
+  "orange-o-tec-at-garfab-itx-2025": {
+    title: "Orange O Tec at Garfab ITX 2025 | Textile Printing Expo",
+    description:
+      "Orange O Tec exhibited its digital textile printing range at Garfab ITX 2025. Machines on show and event highlights.",
+  },
+};
 
 export function buildBlogIndexMetadata(): Metadata {
   const siteUrl = getSiteUrl();
@@ -43,9 +71,9 @@ export function buildBlogIndexMetadata(): Metadata {
 
 export function buildNewsEventsIndexMetadata(): Metadata {
   const siteUrl = getSiteUrl();
-  const title = `News & Events | ${SITE_NAME}`;
+  const title = "News & Events | Orange O Tec Digital Textile Printers";
   const description =
-    "Stay up to date with Orange O Tec news, exhibitions, and industry events.";
+    "Latest news, trade show appearances and product launches from Orange O Tec. See where we exhibit across India's textile printing industry.";
 
   return {
     title,
@@ -73,8 +101,9 @@ export function buildBlogPostMetadata(
   section: "insights" | "news" | "success-stories" = "insights",
 ): Metadata {
   const siteUrl = getSiteUrl();
-  const title = `${post.title} | ${SITE_NAME}`;
-  const description = getDescription(post);
+  const override = POST_SEO_OVERRIDES[post.slug];
+  const title = override?.title ?? `${post.title} | ${SITE_NAME}`;
+  const description = override?.description ?? getDescription(post);
   const basePath = section === "news" ? "news-events" : "blogs";
   const url = `${siteUrl}/${basePath}/${post.slug}/`;
   const imageUrl = getCoverImageUrl(post.coverImage, 1200);

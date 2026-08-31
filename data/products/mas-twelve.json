@@ -113,34 +113,9 @@
     "description": "Built for manufacturers who need to flex between industrial throughput and colour-critical quality, the Twelve serves fashion, accessories, swimwear, sportswear, premium brands, and multi-brand job work from a single modular platform.",
     "fabrics": [
       {
-        "image": "/Custom.webp",
-        "title": "Fashion and Fast Fashion Production",
-        "desc": "Speed Configuration with up to 24 printheads in Double CMYK or Double 8 Colors setup delivers the industrial throughput required for fashion brands and fast fashion manufacturers operating on tight turnaround cycles."
-      },
-      {
-        "image": "/Silk.webp",
-        "title": "Accessories Manufacturing",
-        "desc": "High-speed modular configuration suits accessory producers needing fast colour changeovers and high-volume output across scarves, bags, and fashion accessory fabric printing."
-      },
-      {
         "image": "/Lace-sequin.webp",
         "title": "Swimwear and Sportswear Production",
         "desc": "Quality Configuration with 12 colors per row delivers the extended gamut and gradient smoothness required for vibrant, photorealistic swimwear and sportswear designs that demand maximum colour fidelity."
-      },
-      {
-        "image": "/Jacquard.webp",
-        "title": "Premium Accessories and High-Quality Fashion Brands",
-        "desc": "12-colour gamut and digital alignment precision suit premium fashion houses and accessory brands where colour accuracy and fine design detail are non-negotiable production requirements."
-      },
-      {
-        "image": "/Embroidery.webp",
-        "title": "Multi-Brand Job Work Operations",
-        "desc": "Open-system RIP compatibility and flexible ink support make the Twelve a practical choice for job work printers serving diverse brands with varying software workflows and ink preferences."
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Mixed Speed and Quality Production Environments",
-        "desc": "Modular ecosystem design allows manufacturers to reconfigure between Speed and Quality setups as order mix shifts between high-volume fashion and premium colour-critical work."
       }
     ]
   },

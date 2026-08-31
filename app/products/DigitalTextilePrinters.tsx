@@ -51,13 +51,8 @@ const brands: BrandItem[] = [
       },
       {
         src: "/radoimgA1.webp",
-        name: "SubPro S-16 Industrial Sublimation Printer",
+        name: "SubPro II Industrial Sublimation Printer",
         desc: "Designed to Handle Demanding Production with Ease.",
-      },
-      {
-        src: "/radoimgA2.webp",
-        name: "SubPro II Industrial Dye-Sublimation Printer",
-        desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       },
     ],
   },
@@ -153,13 +148,8 @@ const brands: BrandItem[] = [
       //   previewImage: [
       //     {
       //       src: "/radoimgA1.webp",
-      //       name: "SubPro S-16 Industrial Sublimation Printer",
+      //       name: "SubPro II Industrial Sublimation Printer",
       //       desc: "Designed to Handle Demanding Production with Ease.",
-      //     },
-      //     {
-      //       src: "/radoimgA2.webp",
-      //       name: "SubPro II Industrial Dye-Sublimation Printer",
-      //       desc: "Engineered for High-Volume Printing with Exceptional Clarity.",
       //     },
       //   ],
       // },
@@ -245,6 +235,7 @@ export default function DigitalTextilePrinters() {
       {/* Heading */}
       <Box sx={{ textAlign: "center", pt: { xs: 5, md: 8 }, pb: 2, px: 2 }}>
         <Typography
+          component="h1"
           sx={{
             fontSize: { xs: "24px", md: "40px" },
             fontWeight: 500,
@@ -252,6 +243,7 @@ export default function DigitalTextilePrinters() {
             fontFamily: "Inter, sans-serif",
             lineHeight: { xs: "31.2px", md: "52px" },
             letterSpacing: "-1px",
+            m: 0,
           }}
         >
           Digital Textile Printers

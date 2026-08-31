@@ -21,7 +21,6 @@ import pengda from "./pengda.json";
 import positionPro from "./position-pro.json";
 import rocket from "./rocket.json";
 import subProII from "./subpro-ii.json";
-import subProS16 from "./subpro-s-16.json";
 import vividPressE from "./vividpress-e.json";
 
 /**
@@ -50,7 +49,6 @@ export const products: Record<string, Product> = {
   "alpha-15": alpha15 as Product,
   "alpha-16": alpha16 as Product,
   "subpro-ii": subProII as Product,
-  "subpro-s-16": subProS16 as Product,
   pengda: pengda as Product,
   "jetrix-e": jetrixE as Product,
   "vividpress-e": vividPressE as Product,
@@ -104,11 +102,27 @@ export function productSlug(name: string): string {
 }
 
 /**
+ * Machines with a hand-built details page instead of one rendered from the
+ * shared `Product` template. Keyed by the exact catalog name used in the
+ * section components, mapped to the route that page lives at.
+ *
+ * FOUND is processing machinery (pretreatment, washing, finishing), so it has
+ * none of the printer-shaped data the template needs — ink compatibility,
+ * printheads, LM/day speed tables — and gets its own page.
+ */
+const CUSTOM_PRODUCT_PAGES: Record<string, string> = {
+  "FOUND Textile Processing Range": "/product-details/found",
+};
+
+/**
  * Resolve a catalog product name to a details URL.
- * Links directly to the product page if its data is registered;
- * otherwise falls back to the /product-details redirect.
+ * Links directly to the product page if its data is registered or it has a
+ * hand-built page; otherwise falls back to the /product-details redirect.
  */
 export function productHref(name: string): string {
+  const custom = CUSTOM_PRODUCT_PAGES[name];
+  if (custom) return custom;
+
   const slug = productSlug(name);
   return products[slug] ? `/product-details/${slug}` : "/product-details";
 }

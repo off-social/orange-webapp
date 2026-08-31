@@ -1,11 +1,11 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { useConsultation } from "@/data/ConsultationContext";
 
 const products = [
   {
@@ -51,6 +51,7 @@ export default function LabelPrinters() {
       {/* Heading */}
       <Box sx={{ textAlign: "center", pt: { xs: 5, md: 8 }, pb: 2, px: 2 }}>
         <Typography
+          component="h2"
           sx={{
             fontSize: { xs: "24px", md: "40px" },
             fontWeight: 500,
@@ -58,6 +59,7 @@ export default function LabelPrinters() {
             fontFamily: "Inter, sans-serif",
             lineHeight: { xs: "31.2px", md: "52px" },
             letterSpacing: "-1px",
+            m: 0,
           }}
         >
           Label Printers

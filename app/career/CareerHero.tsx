@@ -40,6 +40,7 @@ export default function CareerHero() {
           }}
         >
           <Typography
+            component="h1"
             sx={{
               color: "#F6891F",
               textAlign: "center",
@@ -53,6 +54,7 @@ export default function CareerHero() {
                 xl: "72.8px",
               },
               letterSpacing: { xs: 0, sm: "-0.5px", md: "-1px", xl: "-1.5px" },
+              m: 0,
             }}
           >
             Build the Future of Textile Tech with Us

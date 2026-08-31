@@ -1,5 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Privacy Policy | Orange O Tec",
+  description:
+    "Read the Orange O Tec privacy policy covering how we collect, use and protect your information.",
+  path: "/privacy-policy/",
+  noindex: true,
+});
 
 const SECTIONS = [
   {
@@ -447,6 +456,7 @@ export default function PrivacyPolicyPage() {
       >
         <Box sx={{ textAlign: { xs: "center", lg: "left" }, width: "100%" }}>
           <Typography
+            component="h1"
             sx={{
               color: "#F6891F",
               fontFamily: "Inter, sans-serif",
@@ -454,6 +464,7 @@ export default function PrivacyPolicyPage() {
               fontWeight: 500,
               lineHeight: { xs: "41.6px", lg: "52px" },
               letterSpacing: "-1px",
+              m: 0,
             }}
           >
             Privacy Policy
@@ -496,7 +507,7 @@ export default function PrivacyPolicyPage() {
             maxWidth: "860px",
           }}
         >
-          {SECTIONS.map((section) => (
+          {SECTIONS.map((section, sectionIndex) => (
             <Box key={section.title}>
               <Box
                 sx={{
@@ -506,6 +517,7 @@ export default function PrivacyPolicyPage() {
                 }}
               />
               <Typography
+                component={sectionIndex === 0 ? "h2" : "p"}
                 sx={{
                   color: "#111",
                   fontFamily: "Inter, sans-serif",
@@ -513,6 +525,7 @@ export default function PrivacyPolicyPage() {
                   fontWeight: 600,
                   lineHeight: "26px",
                   mb: "12px",
+                  mt: 0,
                 }}
               >
                 {section.title}

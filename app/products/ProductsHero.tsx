@@ -1,221 +1,123 @@
-import Image from "next/image";
 import { Box, Typography } from "@mui/material";
+import { HERO_ASPECT_RATIO, ResponsiveSlideImage } from "@/components/hero/HeroSlideImage";
 
-const textContent = {
-  heading: "Advanced",
-  gradient: "Textile Fabric Printer",
-  description:
-    "Equipped with 16 Kyocera industrial printheads, it delivers print speeds of Upto 2,000 LM/Day",
-};
+/* ────────────────────────────────────────────────────────────
+ * Slide — "Redefining Double-Sided Textile Printing" (MAS Vertical)
+ * Same per-width ratios as the rocket slide, so it shares the wrapper height.
+ * ──────────────────────────────────────────────────────────── */
 
-const GradientText = ({ fontSize, lineHeight, letterSpacing }: { fontSize: string; lineHeight: string; letterSpacing: string }) => (
-  <Typography
-    sx={{
-      background: "linear-gradient(90deg, #1D5C7B 0%, #D13D5A 25.96%, #DEA70D 55.29%, #CA4966 78.85%, #2F7993 100%)",
-      backgroundClip: "text",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      fontFamily: "Inter, sans-serif",
-      fontSize,
-      fontWeight: 500,
-      lineHeight,
-      letterSpacing,
-    }}
-  >
-    {textContent.gradient}
-  </Typography>
-);
+const REDEFINING_IMAGES = [
+  { src: "/Redefining393.webp", display: { block: "0px", none: "441px" } },
+  { src: "/Redefining500.webp", display: { block: "441px", none: "601px" } },
+  { src: "/Redefining768.webp", display: { block: "601px", none: "1025px" } },
+  { src: "/Redefining1336.webp", display: { block: "1025px", none: "1281px" } },
+  { src: "/Redefining1440.webp", display: { block: "1281px", none: "1441px" } },
+  { src: "/Redefining.webp", display: { block: "1441px", none: "" } },
+];
 
-export default function ProductsHero() {
+function SlideRedefining() {
   return (
     <>
-      {/* ── Desktop ≥ md (1024px+) ── */}
-      <Box
-        sx={{
-          display: { xs: "none", md: "none", lg: "block" },
-          position: "relative",
-          width: "100%",
-          height: "800px",
-          overflow: "hidden",
-        }}
-      >
-        <Image
-          src="/productPageImg.webp"
-          alt="Advanced Textile Fabric Printer"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center center" }}
-          priority
+      {REDEFINING_IMAGES.map((img) => (
+        <ResponsiveSlideImage
+          key={img.src}
+          src={img.src}
+          alt="Redefining Double-Sided Textile Printing — MAS Vertical"
+          showFrom={img.display.block}
+          hideFrom={img.display.none}
         />
-        <Box
-          sx={{
-            position: "absolute",
-            top: "305px",
-            left: "121px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-          }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column", width: "639px" }}>
-            <Typography
-              sx={{
-                color: "#FFF",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "54px",
-                fontWeight: 500,
-                lineHeight: "61px",
-                letterSpacing: "-1px",
-              }}
-            >
-              {textContent.heading}
-            </Typography>
-            <GradientText fontSize="54px" lineHeight="61px" letterSpacing="-1px" />
-          </Box>
-          <Typography
-            sx={{
-              width: "488px",
-              color: "#B8B8B8",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "16px",
-              fontWeight: 500,
-              lineHeight: "25.6px",
-            }}
-          >
-            {textContent.description}
-          </Typography>
-        </Box>
-      </Box>
+      ))}
 
-      {/* ── Tablet sm–md (600px – 1023px) ── */}
+      {/* Text overlay — top on mobile (white space), left on landscape */}
       <Box
         sx={{
-          display: { xs: "none", sm: "block", lg: "none" },
-          position: "relative",
-          width: "100%",
-          height: "600px",
-          overflow: "hidden",
+          position: "absolute",
+          left: { xs: "24px", sm: "40px", md: "80px", lg: "121px" },
+          right: { xs: "24px", sm: "auto" },
+          top: { xs: "70px", sm: "20%", md: "22%", lg: "22%" },
+          maxWidth: { xs: "none", sm: "256px", md: "294px", lg: "345px" },
+          display: "flex",
+          flexDirection: "column",
+          // Mobile: centred at top. Landscape: left-aligned.
+          alignItems: { xs: "center", sm: "flex-start" },
+          textAlign: { xs: "center", sm: "left" },
+          gap: { xs: "12px", md: "16px" },
         }}
       >
-        <Image
-          src="/productPageImg.webp"
-          alt="Advanced Textile Fabric Printer"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center center" }}
-          priority
-        />
-        {/* bottom fade overlay */}
         <Box
           sx={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75) 75%, rgba(0,0,0,0.95) 100%)",
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "48px",
-            left: "48px",
             display: "flex",
             flexDirection: "column",
-            gap: "10px",
+            gap: "2px",
+            width: "100%",
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography
-              sx={{
-                color: "#FFF",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "44px",
-                fontWeight: 500,
-                lineHeight: "52px",
-                letterSpacing: "-1px",
-              }}
-            >
-              {textContent.heading}
-            </Typography>
-            <GradientText fontSize="44px" lineHeight="52px" letterSpacing="-1px" />
-          </Box>
           <Typography
             sx={{
-              maxWidth: "480px",
-              color: "#B8B8B8",
+              color: "#0C0C0C",
               fontFamily: "Inter, sans-serif",
-              fontSize: "15px",
-              fontWeight: 500,
-              lineHeight: "24px",
+              fontWeight: 300,
+              letterSpacing: "-0.373px",
+              fontSize: { xs: "18px", sm: "18px", md: "22px", lg: "24px" },
+              lineHeight: { xs: "25px", sm: "25px", md: "31px", lg: "34px" },
             }}
           >
-            {textContent.description}
+            Redefining
+          </Typography>
+          <Typography
+            sx={{
+              color: "#569B17",
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "-0.373px",
+              maxWidth: { xs: "100%", sm: "256px", md: "294px", lg: "345px" },
+              fontSize: { xs: "28px", sm: "28px", md: "32px", lg: "35px" },
+              lineHeight: { xs: "36px", sm: "35px", md: "40px", lg: "44px" },
+            }}
+          >
+            Double-Sided{" "}
+            <Box component="br" sx={{ display: { xs: "block", sm: "none" } }} />
+            Textile Printing.
           </Typography>
         </Box>
-      </Box>
-
-      {/* ── Mobile xs (< 600px) ── */}
-      <Box
-        sx={{
-          display: { xs: "block", sm: "none" },
-          position: "relative",
-          width: "100%",
-          height: "620px",
-          overflow: "hidden",
-        }}
-      >
-        <Image
-          src="/prductimgMobile.webp"
-          alt="Advanced Textile Fabric Printer"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center top" }}
-          priority
-        />
-        {/* bottom-up black gradient */}
-        <Box
+        <Typography
           sx={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.70) 65%, rgba(0,0,0,0.95) 100%)",
-          }}
-        />
-        {/* text overlay at bottom */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "36px",
-            left: "24px",
-            right: "24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
+            color: "#4D4D4D",
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 400,
+            letterSpacing: "-0.1px",
+            maxWidth: { xs: "100%", sm: "345px", md: "345px", lg: "345px" },
+            fontSize: { xs: "14px", sm: "14px", md: "14px", lg: "14px" },
+            lineHeight: { xs: "20px", sm: "20px", md: "20px", lg: "20px" },
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography
-              sx={{
-                color: "#FFF",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "36px",
-                fontWeight: 500,
-                lineHeight: "44px",
-                letterSpacing: "-0.5px",
-              }}
-            >
-              {textContent.heading}
-            </Typography>
-            <GradientText fontSize="36px" lineHeight="44px" letterSpacing="-0.5px" />
-          </Box>
-          <Typography
-            sx={{
-              color: "#B8B8B8",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              lineHeight: "22.4px",
-            }}
-          >
-            {textContent.description}
-          </Typography>
-        </Box>
+          From fashion and scarves to technical textiles, VERTICAL delivers
+          flawless dual-side registration with exceptional quality and production
+          efficiency.
+        </Typography>
       </Box>
     </>
+  );
+}
+
+/**
+ * Products page hero. One poster, so there is nothing to page through and no
+ * nav arrows — but it keeps the shared hero sizing, so it occupies exactly the
+ * same space as the carousel on the home page.
+ */
+export default function ProductsHero() {
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        overflow: "hidden",
+        bgcolor: "#000",
+        ...HERO_ASPECT_RATIO,
+      }}
+    >
+      <SlideRedefining />
+    </Box>
   );
 }

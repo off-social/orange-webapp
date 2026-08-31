@@ -58,6 +58,7 @@ export default function WhoWeAre() {
         }}
       >
         <Typography
+          component="h2"
           sx={{
             color: "#FFF",
             textAlign: "center",
@@ -66,6 +67,7 @@ export default function WhoWeAre() {
             fontWeight: 500,
             lineHeight: { xs: "31.2px", md: "52px", xl: "67.6px" },
             letterSpacing: { xs: 0, md: "-1px", xl: "-1.5px" },
+            m: 0,
           }}
         >
           Who We Are

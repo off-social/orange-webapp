@@ -233,6 +233,7 @@ export default function CareerOpenings() {
         </Typography>
 
         <Typography
+          component="h2"
           sx={{
             color: "#333",
             textAlign: "center",
@@ -241,6 +242,7 @@ export default function CareerOpenings() {
             fontWeight: 500,
             lineHeight: { xs: "31.2px", md: "52px" },
             letterSpacing: { xs: 0, md: "-1px" },
+            m: 0,
           }}
         >
           Current Openings

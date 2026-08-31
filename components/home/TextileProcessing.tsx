@@ -16,7 +16,7 @@ const BRANDS: Brand[] = [
     logo: "/fIcon.webp",
     products: [
       {
-        src: "/FoundM1.webp",
+        src: "/MgSeries.png",
         name: "FOUND Textile Processing Range",
         desc: "Pretreatment, Washing, and Finishing Machinery for Knit and Woven Fabrics.",
       },
@@ -205,7 +205,6 @@ const TextileProcessing = () => {
           component={Link}
           href={productHref(currentProduct.name)}
           variant="outlined"
-          disabled
           sx={{
             color: "#111",
             bgcolor: "#fff",

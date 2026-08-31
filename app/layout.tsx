@@ -2,6 +2,9 @@ import ConsultationModal from "@/components/ConsultationModal";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { ConsultationProvider } from "@/data/ConsultationContext";
+import { staticPageSeo } from "@/data/seo/pages";
+import { buildPageMetadata } from "@/lib/seo/build-metadata";
+import { getSiteUrl } from "@/lib/seo/site";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 import { Architects_Daughter, Stack_Sans_Headline } from "next/font/google";
@@ -19,9 +22,8 @@ const architectsDaughter = Architects_Daughter({
 });
 
 export const metadata: Metadata = {
-  title: "Orange",
-  description:
-    "End-to-end digital textile printing solutions from high-speed sublimation to direct-to-fabric systems.",
+  metadataBase: new URL(getSiteUrl()),
+  ...buildPageMetadata(staticPageSeo.home),
 };
 
 export default function RootLayout({

@@ -1,4 +1,8 @@
+import { staticPageSeo } from "@/data/seo/pages";
+import { buildPageMetadata } from "@/lib/seo/build-metadata";
 import LogoMarquee from "@/components/home/LogoMarquee";
+
+export const metadata = buildPageMetadata(staticPageSeo.about);
 import AboutHero from "./AboutHero";
 import Leadership from "./Leadership";
 import OurAssociations from "./OurAssociations";

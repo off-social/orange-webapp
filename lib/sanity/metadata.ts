@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 
 import type { BlogPost, BlogPostListItem } from "@/data/blog.types";
+import { getSiteUrl, SITE_NAME } from "@/lib/seo/site";
 
 import { getCoverImageUrl } from "./image";
-
-const SITE_NAME = "Orange O Tec";
-
-function getSiteUrl(): string {
-  const base = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "");
-  return base || "https://orangeotec.com";
-}
 
 function getDescription(
   post: Pick<BlogPostListItem, "excerpt" | "title">,

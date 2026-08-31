@@ -1,5 +1,9 @@
+import { staticPageSeo } from "@/data/seo/pages";
+import { buildPageMetadata } from "@/lib/seo/build-metadata";
 import { Grid } from "@mui/material";
 import TextileHero from "@/components/home/TextileHero";
+
+export const metadata = buildPageMetadata(staticPageSeo.products);
 import DigitalTextilePrinters from "./DigitalTextilePrinters";
 import Inks from "./Inks";
 import LabelPrinters from "./LabelPrinters";

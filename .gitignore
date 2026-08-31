@@ -40,3 +40,5 @@ yarn-error.log*
 next-env.d.ts
 
 public/GreenVideo.mp4
+
+.tmp-payments/

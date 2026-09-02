@@ -8,18 +8,20 @@ import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import NextImage from "next/image";
 
+const COMPANY_NAME = "Orange O Tech Pvt. Ltd.";
+
 const addresses = [
   {
     label: "Head Office",
-    text: "Titaanium The Business Hub, 9th floor, Office no 901, Bhimrad Road, Opp. Aakash Empire, Surat – 395017 (Gujarat) India.",
+    text: "Titanium The Business Hub, 9th Floor, Office No. 904, Bhimrad Road, Opp. Aakash Empire, Surat – 395007, Gujarat, India.",
   },
   {
     label: "Branch Office",
-    text: "Orange O Tec Pvt. Ltd, Plot No.97, Ecotech-12, Greater Noida, Gautam Budh Nagar, Uttar Pradesh 201308",
+    text: "Plot No. B-115, Block B, Sector 67, Noida, Uttar Pradesh – 201301, India.",
   },
   {
     label: "Factory Address",
-    text: "Noida - ORANGE O TEC PVT. LTD, PLOT NO. B-115, DISTT, Block B, Sector 67, Noida, Uttar Pradesh 201301",
+    text: "Shed No. A2/7111, Road No. 71, Gate No.: 01, G.I.D.C Sachin, Surat – 394230, Gujarat.",
   },
 ];
 
@@ -498,6 +500,9 @@ export default function ContactPage() {
                   maxWidth: "336px",
                 }}
               >
+                <Box component="span" sx={{ display: "block" }}>
+                  {COMPANY_NAME}
+                </Box>
                 {item.text}
               </Typography>
               {i < addresses.length - 1 && (

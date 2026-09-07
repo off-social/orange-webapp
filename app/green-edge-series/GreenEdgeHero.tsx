@@ -86,7 +86,7 @@ export default function GreenEdgeHero() {
                 m: 0,
               }}
             >
-              Digital Textile Pigment Ink
+              Green Edge Series - Digital Textile Pigment Inks
             </Typography>
 
             <Typography
@@ -97,12 +97,10 @@ export default function GreenEdgeHero() {
                 fontSize: { xs: "12px", sm: "14px", md: "16px" },
                 fontWeight: 500,
                 lineHeight: { xs: "19.2px", md: "25.6px" },
-                maxWidth: { md: "360px" },
+                maxWidth: { md: "660px" },
               }}
             >
-              Sustainable, high-performance pigment inks engineered for vibrant
-              colors, exceptional fabric compatibility, and water-saving textile
-              production.
+              Green Edge Series is a range of high-quality textile pigment inks designed for efficient digital textile printing. These inks are compatible with selected Orange O Tec digital textile printers, helping businesses achieve consistent colour output and reliable printing performance.
             </Typography>
           </Box>
 

@@ -56,6 +56,7 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
             }}
           >
             <Typography
+              component="h2"
               sx={{
                 color: "#707070",
                 textAlign: "center",
@@ -285,21 +286,6 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
             >
               Solutions for Every Printing Need
             </Typography>
-            {/* <Typography
-              sx={{
-                color: "rgba(255,255,255,0.6)",
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "16px",
-                fontWeight: 400,
-                lineHeight: "25.6px",
-                maxWidth: "600px",
-              }}
-            >
-              Lorem ipsum dolor sit amet consectetur. Ut massa blandit pretium
-              velit ullamcorper. Eleifend duis donec cras quam ipsum auctor ut
-              semper in. In nunc ultrices eget in.
-            </Typography> */}
           </Box>
 
           {/* Industry rows */}

@@ -1,5 +1,6 @@
 "use client";
 
+import IndustryApplications from "@/components/product-details/IndustryApplications";
 import { useProduct } from "@/data/ProductContext";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
@@ -51,7 +52,7 @@ export default function IdealFor() {
               letterSpacing: { xs: "0", md: "-1px" },
             }}
           >
-            Ideal Applications
+            {idealFor.title ?? "Ideal Applications"}
           </Typography>
           <Typography
             sx={{
@@ -241,6 +242,9 @@ export default function IdealFor() {
             </Box>
           ))}
         </Box>
+
+        {/* Second block: broad industry segments (opt-in per product) */}
+        <IndustryApplications />
       </Box>
     </Box>
   );

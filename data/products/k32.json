@@ -115,16 +115,41 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Silk.webp",
-        "title": "Jacquard and Textured Fabrics",
-        "desc": "High-resolution output on complex woven and jacquard structures where sharp pattern definition and consistent repeat registration are critical across large production volumes."
+        "image": "/Sequin1.webp",
+        "title": "Lace & Sequin",
+        "desc": "Delicate positioning on open-weave and embellished structures"
       },
       {
-        "image": "/Custom.webp",
-        "title": "Silk and Luxury Fabrics",
-        "desc": "Precise acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying boutique fashion brands and luxury garment producers at scale."
+        "image": "/Jacquard1.webp",
+        "title": "Jacquard",
+        "desc": "High-resolution pattern printing on textured jacquard fabrics for fashion and home textiles"
+      },
+      {
+        "image": "/Embroidery1.webp",
+        "title": "Embroidery",
+        "desc": "Precise print registration on raised, textured embroidered surfaces"
+      },
+      {
+        "image": "/Silk1.webp",
+        "title": "Silk & Luxury Fabrics",
+        "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
       }
-    ]
+    ],
+    "industryApplications": {
+      "description": "From fashion and home textiles to technical and specialty fabrics, our printing solutions are designed to meet the evolving demands of modern textile industries with precision, flexibility, and reliable performance.",
+      "items": [
+        {
+          "image": "/FashionTextile.webp",
+          "title": "Fashion Textile",
+          "desc": "Dress fabrics, sarees, scarves, and apparel yardage printed to order for fashion labels and boutique studios."
+        },
+        {
+          "image": "/HomeFurniture.webp",
+          "title": "Home Furniture",
+          "desc": "Upholstery, cushion covers, curtains, and soft furnishing panels on natural and blended fabrics."
+        }
+      ]
+    }
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",

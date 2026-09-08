@@ -1,69 +1,52 @@
-# Book a Consultation → Google Sheet setup (2 minutes)
+# Website forms → Google Sheet
 
-The form posts to `/api/consultation`, which forwards the entry to a Google
-Apps Script Web App that appends a row to the sheet. You only need to create
-that Web App once and paste its URL into `.env.local`.
+Every form on the site (Book a Consultation modal, Contact, Career, Services,
+About) posts straight from the browser to one Google Apps Script Web App, which
+appends the row to a tab named after the form. The site is a static export, so
+there is no server to proxy through — that is why the URL lives in the
+`NEXT_PUBLIC_SHEET_WEBHOOK_URL` variable in `.env`.
 
-## Steps
+- Script source: `google-apps-script/Code.gs` (keep in sync with the deployed copy)
+- Client: `lib/forms.ts` → `hooks/useFormSubmit.ts`, and `components/ConsultationModal.tsx`
 
-1. Open the sheet:
-   https://docs.google.com/spreadsheets/d/1KEUITgxH6MpyDEDlip5cNoi7tMJXx2SOTAg5yhBtS54/edit
+## Tabs and columns
 
-2. Top menu → **Extensions → Apps Script**. A code editor opens in a new tab.
+| Form kind | Tab | Columns |
+|---|---|---|
+| consultation | Consultation | Timestamp, Name, Mobile, Printer, Message |
+| contact | Contact | Timestamp, Name, Email, Subject, Message |
+| career | Career | Timestamp, Name, Email, Position, Message |
+| services | Services | Timestamp, Name, Email, Message |
+| about | About | Timestamp, Name, Email, Message |
 
-3. Delete whatever is in `Code.gs` and paste this exactly:
+An existing tab is appended to as-is; only an empty tab gets a header row. A
+payload with an unknown `form` value lands in an `Other` tab rather than being
+dropped.
 
-   ```javascript
-   function doPost(e) {
-     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-     var data = JSON.parse(e.postData.contents);
-     var timestamp = Utilities.formatDate(new Date(), "Asia/Kolkata", "dd/MM/yyyy HH:mm:ss");
-     sheet.appendRow([
-       timestamp,
-       data.name || "",
-       data.mobile || "",
-       data.printer || "",
-       data.message || ""
-     ]);
-     return ContentService
-       .createTextOutput(JSON.stringify({ success: true }))
-       .setMimeType(ContentService.MimeType.JSON);
-   }
-   ```
+## Deploying (or re-pointing at a different sheet)
 
-4. Click **Save** (disk icon).
+1. Open the sheet → **Extensions → Apps Script**.
+2. Replace `Code.gs` with `google-apps-script/Code.gs` from this repo → **Save**.
+3. **Deploy → New deployment** → type **Web app**
+   - **Execute as:** Me
+   - **Who has access:** **Anyone** (not "Anyone with a Google account" — the
+     site posts unauthenticated, so anything else answers 403)
+4. Authorize when prompted. The "Google hasn't verified this app" screen is
+   expected for a personal script: **Advanced → Go to (project) (unsafe) → Allow**.
+5. Copy the Web app URL (`https://script.google.com/macros/s/AKfyc.../exec`) into
+   `NEXT_PUBLIC_SHEET_WEBHOOK_URL` in `.env`, then restart the dev server.
 
-5. Click **Deploy → New deployment**.
-   - Click the gear next to "Select type" → choose **Web app**.
-   - **Execute as:** Me (your account)
-   - **Who has access:** **Anyone**
-   - Click **Deploy**.
-
-6. Google will ask you to **Authorize access** the first time — click through,
-   choose your account, "Advanced" → "Go to (project) → Allow".
-
-7. Copy the **Web app URL** it shows (looks like
-   `https://script.google.com/macros/s/AKfyc.../exec`).
-
-8. Paste it into `.env.local`:
-
-   ```
-   CONSULTATION_SHEET_WEBHOOK_URL="https://script.google.com/macros/s/AKfyc.../exec"
-   ```
-
-9. **Restart the dev server** (`Ctrl+C`, then `npm run dev`) so the new env var
-   loads.
+If you ever edit the script, **Deploy → Manage deployments → Edit → New version**,
+otherwise the live URL keeps running the old code.
 
 ## Test
 
-Open the modal anywhere, fill the form, click Submit → a new row should appear
-in the sheet with columns: Timestamp | Name | Mobile | Printer | Message.
+Open any form, submit, and check the tab. From the CLI:
 
-## Notes
+```bash
+curl -s -L -X POST "$WEBHOOK_URL" \
+  -d '{"form":"consultation","name":"TEST","mobile":"9999999999","printer":"K64","message":"delete me"}'
+```
 
-- The form already opens from anywhere via the shared ConsultationContext, so
-  every "Book a Consultation" button writes to this same sheet.
-- (Optional) Add a header row in the sheet manually:
-  `Timestamp  Name  Mobile  Printer  Message`
-- If you ever edit the Apps Script code, you must **Deploy → Manage deployments
-  → Edit → New version** (or the live URL keeps running the old code).
+A working deployment answers `{"success":true}`. HTML or a 403 means the
+deployment's access is not set to **Anyone**.

@@ -53,6 +53,7 @@ export default function SlideRocket() {
           sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
         >
           <Typography
+            component="h1"
             sx={{
               color: "#FFF",
               fontFamily: "Inter, sans-serif",
@@ -63,20 +64,7 @@ export default function SlideRocket() {
               lineHeight: { xs: "30px", sm: "30px", md: "35px", lg: "35px" },
             }}
           >
-            Digital Textile Printing Machine
-          </Typography>
-          <Typography
-            sx={{
-              color: "#FFF",
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              textTransform: "uppercase",
-              letterSpacing: "-0.23px",
-              fontSize: { xs: "22px", sm: "22px", md: "26px", lg: "28px" },
-              lineHeight: { xs: "30px", sm: "30px", md: "35px", lg: "38px" },
-            }}
-          >
-            For Industrial Production
+            Digital Textile Printing Machine for Industrial Production
           </Typography>
         </Box>
         <Typography
@@ -90,9 +78,7 @@ export default function SlideRocket() {
             lineHeight: { xs: "20px", sm: "18px", md: "23px", lg: "23px" },
           }}
         >
-          Digital textile printing machine engineered for high-volume production
-          with single-pass technology, versatile printing capabilities, exceptional
-          colour precision and output of up to 70,000 linear metres per day.
+          Digital textile printing machine engineered for high-volume production with single-pass technology, versatile printing capabilities, exceptional colour precision and output of up to 70,000 linear metres per day.
         </Typography>
       </Box>
     </>

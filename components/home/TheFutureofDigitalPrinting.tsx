@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -213,6 +214,19 @@ const TheFutureofDigitalPrinting = () => {
               <br className="hidden md:block" />{" "}
               Installation Network
             </h2>
+            <Typography
+              sx={{
+                color: "#A3A3A3",
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 300,
+                letterSpacing: "-0.23px",
+                maxWidth: { xs: "88%", sm: "70%", md: "760px", lg: "820px" },
+                fontSize: { xs: "14px", sm: "13px", md: "16px", lg: "16px" },
+                lineHeight: { xs: "20px", sm: "18px", md: "23px", lg: "23px" },
+              }}
+            >
+              Orange O Tec provides installation and service support for digital printing equipment across India, helping textile manufacturers with machine setup and ongoing operational requirements.
+            </Typography>
           </div>
 
           {/* Stats */}

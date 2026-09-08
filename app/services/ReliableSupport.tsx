@@ -33,7 +33,7 @@ export default function ReliableSupport() {
         {/* Heading */}
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
           <Typography
-            component="span"
+            component="h1"
             sx={{
               fontFamily: "Inter, sans-serif",
               fontSize: { xs: "24px", md: "40px" },
@@ -44,9 +44,9 @@ export default function ReliableSupport() {
               display: "block",
             }}
           >
-            Reliable Support,
+            Digital Textile Printing Services
           </Typography>
-          <Typography
+          {/* <Typography
             component="span"
             sx={{
               fontFamily: "Inter, sans-serif",
@@ -59,25 +59,22 @@ export default function ReliableSupport() {
             }}
           >
             When You Need It Most
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* Description */}
         <Typography
           sx={{
             fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
+            fontSize: { xs: "14px", sm: "13px", md: "16px", lg: "16px" },
             fontWeight: 500,
-            lineHeight: "22.4px",
+            lineHeight: { xs: "20px", sm: "18px", md: "23px", lg: "23px" },
             color: "#707070",
             maxWidth: { md: "420px" },
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          At Orange O Tec, we believe the sale is just the beginning of our
-          relationship. Our dedicated after-sales team is equipped to ensure
-          your machines run at peak performance with fast response times, expert
-          engineers, and nationwide coverage.
+          At Orange O Tec, we provide installation, maintenance and technical support for digital textile printing machines, helping businesses keep their equipment running reliably and production on track.
         </Typography>
 
         {/* Button */}
@@ -91,7 +88,7 @@ export default function ReliableSupport() {
             />
           }
           sx={{
-            bgcolor: "#F6891F",
+            bgcolor: "#000",
             color: "#fff",
             borderRadius: "8px",
             textTransform: "none",

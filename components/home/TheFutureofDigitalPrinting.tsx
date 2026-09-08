@@ -177,9 +177,9 @@ const TheFutureofDigitalPrinting = () => {
       </div>
 
       {/* Section 2 - Presence + Stats + Map */}
-      <div className="w-full bg-white flex flex-col md:flex-row items-stretch gap-8 md:gap-10 xl:gap-16 px-4 md:px-[40px] xl:px-[168px] py-12 md:py-[60px] xl:py-[80px]">
+      <div className="w-full bg-white flex flex-col md:flex-row items-stretch gap-8 md:gap-10 xl:gap-12 px-4 md:px-[40px] xl:px-[168px] py-12 md:py-[60px] xl:py-[80px]">
         {/* Left: label + heading + stats */}
-        <div className="flex flex-col items-center md:items-start gap-8 md:gap-10 flex-shrink-0 w-full md:w-auto">
+        <div className="flex flex-col items-center md:items-start gap-8 md:gap-10 w-full md:w-[320px] xl:w-[420px] md:shrink-0">
           {/* Title group — 8px gap */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <p
@@ -210,7 +210,7 @@ const TheFutureofDigitalPrinting = () => {
               }}
             >
               Pan-India Service &amp;
-              <br />
+              <br className="hidden md:block" />{" "}
               Installation Network
             </h2>
           </div>
@@ -233,7 +233,7 @@ const TheFutureofDigitalPrinting = () => {
         </div>
 
         {/* Right: world map */}
-        <div className="flex-1 w-full flex items-end justify-center">
+        <div className="flex-1 min-w-0 w-full flex items-center justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/world-map1.webp"

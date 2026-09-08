@@ -1,6 +1,7 @@
 "use client";
 
 import { useConsultation } from "@/data/ConsultationContext";
+import { submitForm } from "@/lib/forms";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
@@ -162,12 +163,15 @@ function ConsultationForm({
     setSubmitting(true);
     setSubmitError("");
     try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+      // Same path as every other form on the site: the browser posts straight
+      // to the Apps Script Web App. The site is a static export, so there is no
+      // API route to proxy through.
+      await submitForm("consultation", {
+        name: form.name.trim(),
+        mobile: form.mobile.trim(),
+        printer: form.printer,
+        message: form.message.trim(),
       });
-      if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
       setSubmitError("Something went wrong. Please try again.");

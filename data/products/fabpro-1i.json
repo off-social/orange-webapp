@@ -147,11 +147,26 @@
         "desc": "Precise print registration on raised, textured embroidered surfaces"
       },
       {
-        "image": "/Jacquard.webp",
+        "image": "/Silk1.webp",
         "title": "Silk & Luxury Fabrics",
         "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
       }
-    ]
+    ],
+    "industryApplications": {
+      "description": "From fashion and home textiles to technical and specialty fabrics, our printing solutions are designed to meet the evolving demands of modern textile industries with precision, flexibility, and reliable performance.",
+      "items": [
+        {
+          "image": "/FashionTextile.webp",
+          "title": "Fashion Textile",
+          "desc": "Dress fabrics, sarees, scarves, and apparel yardage printed to order for fashion labels and boutique studios."
+        },
+        {
+          "image": "/HomeFurniture.webp",
+          "title": "Home Furniture",
+          "desc": "Upholstery, cushion covers, curtains, and soft furnishing panels on natural and blended fabrics."
+        }
+      ]
+    }
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",

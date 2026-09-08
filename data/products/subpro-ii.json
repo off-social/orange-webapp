@@ -115,42 +115,33 @@
     ]
   },
   "idealFor": {
+    "title": "Industry Application",
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Embroidery.webp",
+        "image": "/Garments.webp",
         "title": "Garments",
         "desc": "Sublimation printing for polyester garment production"
       },
       {
-        "image": "/Silk.webp",
-        "title": "Bedclothes",
-        "desc": "Printed polyester bedding and bed linen"
-      },
-      {
-        "image": "/Custom.webp",
-        "title": "Fashion Accessories",
-        "desc": "Vibrant sublimation output for fashion accessories"
-      },
-      {
-        "image": "/Lace-sequin.webp",
-        "title": "Furniture",
-        "desc": "Decorative printing for upholstery and furniture fabrics"
-      },
-      {
-        "image": "/Jacquard.webp",
+        "image": "/Curtains.webp",
         "title": "Curtains",
         "desc": "Polyester curtain and drapery printing"
       },
       {
-        "image": "/Embroidery.webp",
+        "image": "/Wallpaper.webp",
         "title": "Wallpaper",
         "desc": "Sublimation printing for decorative wallpaper"
       },
       {
-        "image": "/Silk.webp",
+        "image": "/Tablecloths.webp",
         "title": "Tablecloths",
         "desc": "Printed polyester tablecloths and table linen"
+      },
+      {
+        "image": "/HomeFurniture.webp",
+        "title": "Home Furnishing",
+        "desc": "Sublimation printing for cushion covers, curtains, and soft furnishing panels"
       }
     ]
   },

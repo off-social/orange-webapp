@@ -74,8 +74,20 @@ export interface Product {
   };
 
   idealFor: {
+    /** Heading override; defaults to "Ideal Applications". */
+    title?: string;
     description: string;
     fabrics: Fabric[];
+    /**
+     * Optional second block rendered below the fabric cards, with its own
+     * heading. Omit to hide — most products have no industry block.
+     */
+    industryApplications?: {
+      /** Heading override; defaults to "Industry Application". */
+      title?: string;
+      description?: string;
+      items: Fabric[];
+    };
   };
 
   productionCapacity: {

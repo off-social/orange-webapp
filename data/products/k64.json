@@ -120,21 +120,41 @@
     "description": "Perfectly suited for a wide range of textile applications, delivering exceptional print quality, color vibrancy, and production efficiency across diverse fabric categories.",
     "fabrics": [
       {
-        "image": "/Silk.webp",
-        "title": "Jacquard and Textured Fabric Printing",
-        "desc": "High-resolution output on complex woven and jacquard structures requiring precise registration and sharp pattern definition across very large production volumes."
+        "image": "/Sequin1.webp",
+        "title": "Lace & Sequin",
+        "desc": "Delicate positioning on open-weave and embellished structures"
       },
       {
-        "image": "/Custom.webp",
-        "title": "Silk and Luxury Textile Production",
-        "desc": "Acid ink printing on silk, viscose, and premium fabrics for manufacturers supplying luxury fashion brands and premium garment producers with tight quality requirements."
+        "image": "/Jacquard1.webp",
+        "title": "Jacquard",
+        "desc": "High-resolution pattern printing on textured jacquard fabrics for fashion and home textiles"
       },
       {
-        "image": "/Lace-sequin.webp",
-        "title": "Speciality and Technical Fabric Printing",
-        "desc": "Latex ink compatibility opens printing on coated, technical, and specialty substrates beyond standard textile applications, expanding business into new product categories."
+        "image": "/Embroidery1.webp",
+        "title": "Embroidery",
+        "desc": "Precise print registration on raised, textured embroidered surfaces"
+      },
+      {
+        "image": "/Silk1.webp",
+        "title": "Silk & Luxury Fabrics",
+        "desc": "Acid ink printing on silk, viscose, and modal for boutique fashion and premium garment producers"
       }
-    ]
+    ],
+    "industryApplications": {
+      "description": "From fashion and home textiles to technical and specialty fabrics, our printing solutions are designed to meet the evolving demands of modern textile industries with precision, flexibility, and reliable performance.",
+      "items": [
+        {
+          "image": "/FashionTextile.webp",
+          "title": "Fashion Textile",
+          "desc": "Dress fabrics, sarees, scarves, and apparel yardage printed to order for fashion labels and boutique studios."
+        },
+        {
+          "image": "/HomeFurniture.webp",
+          "title": "Home Furniture",
+          "desc": "Upholstery, cushion covers, curtains, and soft furnishing panels on natural and blended fabrics."
+        }
+      ]
+    }
   },
   "productionCapacity": {
     "description": "Choose the ideal speed and resolution combination to optimize production output and print performance.",

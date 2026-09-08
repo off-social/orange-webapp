@@ -42,3 +42,6 @@ next-env.d.ts
 public/GreenVideo.mp4
 
 .tmp-payments/
+
+# Playwright MCP session artifacts
+.playwright-mcp/

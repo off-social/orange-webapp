@@ -252,6 +252,9 @@ const TheFutureofDigitalPrinting = () => {
           <img
             src="/world-map1.webp"
             alt="World Presence Map"
+            // Nudged down to sit against the stats block; desktop only, the
+            // mobile stack has no room for it.
+            className="md:pt-[130px]"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>

@@ -8,7 +8,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import NextImage from "next/image";
 
-const COMPANY_NAME = "Orange O Tech Pvt. Ltd.";
+const COMPANY_NAME = "Orange O Tec Pvt. Ltd.";
 
 const addresses = [
   {

@@ -316,8 +316,8 @@ const Footer = () => {
                   maxWidth: "380px",
                 }}
               >
-                Titaanium The Business Hub, 9th floor, Office no 901, Bhimrad
-                Road, Opp. Aakash Empire, Surat – 395017 (Gujarat) India.
+                Titanium The Business Hub, 9th Floor, Office No. 904 - 908, Bhimrad
+                Road, Opp. Aakash Empire, Surat – 395007, Gujarat, India.
               </Typography>
             </Box>
           </Box>

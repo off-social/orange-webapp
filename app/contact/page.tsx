@@ -13,7 +13,7 @@ const COMPANY_NAME = "Orange O Tech Pvt. Ltd.";
 const addresses = [
   {
     label: "Head Office",
-    text: "Titanium The Business Hub, 9th Floor, Office No. 904, Bhimrad Road, Opp. Aakash Empire, Surat – 395007, Gujarat, India.",
+    text: "Titanium The Business Hub, 9th Floor, Office No. 904 - 908, Bhimrad Road, Opp. Aakash Empire, Surat – 395007, Gujarat, India.",
   },
   {
     label: "Branch Office",

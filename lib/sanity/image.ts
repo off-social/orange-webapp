@@ -21,3 +21,20 @@ export function getCoverImageUrl(
 export function getCoverImageAlt(image: SanityImage | undefined, fallback: string) {
   return image?.alt?.trim() || fallback;
 }
+
+/** Sanity asset refs encode dimensions, e.g. `image-<hash>-1400x937-jpg`. */
+export function getImageAspectRatio(
+  image: SanityImage | undefined,
+): number | null {
+  const ref = image?.asset?._ref;
+  if (!ref) return null;
+
+  const match = /-(\d+)x(\d+)-[a-z]+$/.exec(ref);
+  if (!match) return null;
+
+  const width = Number(match[1]);
+  const height = Number(match[2]);
+  if (!width || !height) return null;
+
+  return width / height;
+}

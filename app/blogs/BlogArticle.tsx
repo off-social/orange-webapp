@@ -10,7 +10,11 @@ import {
   type BlogPost,
 } from "@/data/blog.types";
 import { formatBlogMeta } from "@/lib/sanity/format";
-import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
+import {
+  getCoverImageAlt,
+  getCoverImageUrl,
+  getImageAspectRatio,
+} from "@/lib/sanity/image";
 
 interface BlogArticleProps {
   post: BlogPost;
@@ -29,6 +33,8 @@ export default function BlogArticle({
     getCoverImageUrl(post.coverImage, 1400) ?? DEFAULT_COVER_IMAGE;
   const coverAlt = getCoverImageAlt(post.coverImage, post.title);
   const authorName = post.author?.name ?? "Orange O Tec";
+  // Match the hero to the image's own ratio so nothing gets cropped away.
+  const coverAspectRatio = getImageAspectRatio(post.coverImage) ?? 728 / 417;
 
   return (
     <Box
@@ -177,7 +183,7 @@ export default function BlogArticle({
       <Box
         sx={{
           position: "relative",
-          height: { xs: "240px", sm: "320px", md: "417px" },
+          aspectRatio: String(coverAspectRatio),
           borderRadius: "8px",
           overflow: "hidden",
           maxWidth: "728px !important",
@@ -188,8 +194,8 @@ export default function BlogArticle({
           alt={coverAlt}
           fill
           style={{ objectFit: "cover" }}
-          sizes="728px"
-          priority
+          sizes="(max-width: 767px) 100vw, 728px"
+          preload
         />
         {post.featured ? (
           <Box

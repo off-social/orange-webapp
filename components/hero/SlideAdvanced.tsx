@@ -43,6 +43,8 @@ export default function SlideAdvanced({
           alt="Advanced Textile Fabric Printer"
           fill
           sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
           style={{ objectFit: "cover", objectPosition: "center center" }}
         />
       </Box>
@@ -58,6 +60,8 @@ export default function SlideAdvanced({
           alt="Advanced Textile Fabric Printer"
           fill
           sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
           style={{ objectFit: "cover", objectPosition: "center top" }}
         />
       </Box>

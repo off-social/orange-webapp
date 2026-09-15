@@ -13,9 +13,13 @@ import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-6GDQT9SGY9";
 
+// Next has no fallback metrics for this family, so it warns and skips the
+// generated fallback. Opt out and name the fallbacks ourselves instead.
 const stackSansHeadline = Stack_Sans_Headline({
   variable: "--font-stack-sans-headline",
   subsets: ["latin"],
+  adjustFontFallback: false,
+  fallback: ["system-ui", "arial"],
 });
 
 const architectsDaughter = Architects_Daughter({

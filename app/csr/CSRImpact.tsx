@@ -31,7 +31,14 @@ export default function CSRImpact() {
         }}
       >
         {/* Mobile */}
-        <Box sx={{ display: { xs: "block", sm: "none" }, width: "100%", height: "100%" }}>
+        <Box
+          sx={{
+            display: { xs: "block", sm: "none" },
+            position: "relative",
+            width: "100%",
+            height: "100%",
+          }}
+        >
           <Image
             src="/AtOrangeOMobile.webp"
             alt="At Orange O Tec"
@@ -40,7 +47,15 @@ export default function CSRImpact() {
           />
         </Box>
         {/* Desktop */}
-        <Box sx={{ display: { xs: "none", sm: "block" }, width: "100%", height: "100%", minHeight: { sm: "650px", md: "797px" } }}>
+        <Box
+          sx={{
+            display: { xs: "none", sm: "block" },
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            minHeight: { sm: "650px", md: "797px" },
+          }}
+        >
           <Image
             src="/AtOrangeO.webp"
             alt="At Orange O Tec"

@@ -95,10 +95,11 @@ export default function LogoMarquee() {
               src={logo.src}
               alt={logo.name}
               width={100}
-              height={50}
+              height={31}
               style={{
                 objectFit: "contain",
                 display: "block",
+                height: "auto",
               }}
             />
           </div>

@@ -16,8 +16,9 @@ const BRAND_LOGOS: Record<
   string,
   { src: string; width: number; height: number }
 > = {
-  Colorix: { src: "/logos/Colorix-4.svg", width: 100, height: 28 },
-  Homer: { src: "/logos/Homer-2-1.svg", width: 100, height: 28 },
+  // Both files are 169x52, so the heights here must keep that ratio.
+  Colorix: { src: "/logos/Colorix-4.svg", width: 100, height: 31 },
+  Homer: { src: "/logos/Homer-2-1.svg", width: 100, height: 31 },
 };
 
 interface Product {
@@ -168,7 +169,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               alt={product.brand}
               width={BRAND_LOGOS[product.brand].width}
               height={BRAND_LOGOS[product.brand].height}
-              style={{ objectFit: "contain", objectPosition: "left" }}
+              style={{
+                objectFit: "contain",
+                objectPosition: "left",
+                height: "auto",
+              }}
             />
           </Box>
         )}
@@ -207,7 +212,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               alt={product.brand}
               width={BRAND_LOGOS[product.brand].width}
               height={BRAND_LOGOS[product.brand].height}
-              style={{ objectFit: "contain", objectPosition: "left" }}
+              style={{
+                objectFit: "contain",
+                objectPosition: "left",
+                height: "auto",
+              }}
             />
           </Box>
         )}

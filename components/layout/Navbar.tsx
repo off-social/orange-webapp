@@ -151,8 +151,9 @@ export default function Navbar() {
               src="/ORANGE-LOGO.webp"
               alt="Orange"
               width={140}
-              height={35}
-              priority
+              height={43}
+              style={{ height: "auto" }}
+              preload
             />
           </Box>
 

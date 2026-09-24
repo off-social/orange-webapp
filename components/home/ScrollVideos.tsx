@@ -80,7 +80,13 @@ const ScrollVideos = () => {
               lineHeight: "20.8px",
             }}
           >
-            <Image src="/youtube-filled.svg" alt="youtube" width={18} height={18} style={{ objectFit: "contain" }} />
+            <Image
+              src="/youtube-filled.svg"
+              alt="youtube"
+              width={18}
+              height={13}
+              style={{ objectFit: "contain", height: "auto" }}
+            />
             Visit Our YouTube Channel
             <Image src="/shareIcon.svg" alt="share" width={14} height={14} style={{ objectFit: "contain" }} />
           </a>

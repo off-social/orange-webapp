@@ -83,3 +83,20 @@ export async function getPostSlugs(): Promise<string[]> {
 
   return [...new Set([...insightsSlugs, ...successStorySlugs])];
 }
+
+export type PostSitemapEntry = {
+  slug: string;
+  updatedAt: string;
+};
+
+export async function getPostSitemapEntries(
+  sections: PostSection[],
+): Promise<PostSitemapEntry[]> {
+  return sanityClient.fetch<PostSitemapEntry[]>(
+    `*[_type == "post" && defined(slug.current) && coalesce(section, "insights") in $sections] | order(publishedAt desc) {
+      "slug": slug.current,
+      "updatedAt": _updatedAt
+    }`,
+    { sections },
+  );
+}

@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://orangeotec.com/sitemap.xml
+Sitemap: https://orangeotec.com/blogs/sitemap/0.xml
+Sitemap: https://orangeotec.com/news-events/sitemap/0.xml

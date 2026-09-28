@@ -102,8 +102,14 @@ export function buildBlogPostMetadata(
 ): Metadata {
   const siteUrl = getSiteUrl();
   const override = POST_SEO_OVERRIDES[post.slug];
-  const title = override?.title ?? `${post.title} | ${SITE_NAME}`;
-  const description = override?.description ?? getDescription(post);
+  // Sanity SEO fields win, then the hardcoded overrides, then defaults.
+  const metaTitle = post.metaTitle?.trim();
+  const title = metaTitle || override?.title || `${post.title} | ${SITE_NAME}`;
+  const description =
+    post.metaDescription?.trim() ||
+    override?.description ||
+    getDescription(post);
+  const socialTitle = metaTitle || post.title;
   const basePath = section === "news" ? "news-events" : "blogs";
   const url = `${siteUrl}/${basePath}/${post.slug}/`;
   const imageUrl = getCoverImageUrl(post.coverImage, 1200);
@@ -112,7 +118,7 @@ export function buildBlogPostMetadata(
     title,
     description,
     openGraph: {
-      title: post.title,
+      title: socialTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -122,7 +128,7 @@ export function buildBlogPostMetadata(
     },
     twitter: {
       card: imageUrl ? "summary_large_image" : "summary",
-      title: post.title,
+      title: socialTitle,
       description,
       ...(imageUrl ? { images: [imageUrl] } : {}),
     },

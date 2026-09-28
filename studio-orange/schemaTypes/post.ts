@@ -4,6 +4,14 @@ export const post = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  fieldsets: [
+    {
+      name: 'seo',
+      title: 'SEO',
+      description: 'Optional. Leave empty to use the post title and excerpt.',
+      options: {collapsible: true, collapsed: true},
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -172,6 +180,26 @@ export const post = defineType({
         {type: 'table'},
       ],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'metaTitle',
+      title: 'Meta title',
+      description:
+        'Shown in Google results and the browser tab, used exactly as written. Aim for 50–60 characters.',
+      type: 'string',
+      fieldset: 'seo',
+      validation: (Rule) =>
+        Rule.max(70).warning('Titles over ~60 characters get cut off in search results'),
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Meta description',
+      description: 'Shown under the title in Google results. Aim for 120–160 characters.',
+      type: 'text',
+      rows: 3,
+      fieldset: 'seo',
+      validation: (Rule) =>
+        Rule.max(170).warning('Descriptions over ~160 characters get cut off in search results'),
     }),
   ],
   orderings: [

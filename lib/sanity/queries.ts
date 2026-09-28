@@ -61,6 +61,8 @@ export async function getPostBySlug(
   return sanityClient.fetch<BlogPost | null>(
     `*[_type == "post" && slug.current == $slug${sectionClause}][0] {
       ${postListFields},
+      metaTitle,
+      metaDescription,
       body
     }`,
     { slug },

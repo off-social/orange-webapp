@@ -33,6 +33,8 @@ export type BlogPostListItem = {
 
 /** Full article shape including body. */
 export type BlogPost = BlogPostListItem & {
+  metaTitle?: string;
+  metaDescription?: string;
   body: PortableTextBlock[];
 };
 

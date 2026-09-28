@@ -50,10 +50,7 @@ export const productSeo = {
     title: "Industrial Digital Textile Printer for Textile Production",
     description:
       "K24 is an industrial digital textile printer designed for efficient textile production and consistent digital printing across a range of fabric applications.",
-    keywords: [
-      "industrial digital textile printer",
-      "Textile printer",
-    ],
+    keywords: "industrial digital textile printer",
     path: "/product-details/k24/",
   },
   "mas-vertical": {
@@ -67,10 +64,7 @@ export const productSeo = {
     title: "Label Printers for Hybrid Label Production",
     description:
       "Jetrix E is a hybrid label printer designed for professional label production, delivering printing speeds of up to 50 m/min with UV ink technology.",
-    keywords: [
-      "label printers",
-      "Digital Label Printer",
-    ],
+    keywords: "label printers",
     path: "/product-details/jetrix-e/",
   },
   "foiljet-8": {
@@ -133,20 +127,14 @@ export const productSeo = {
     title: "Direct to Fabric Printer for Industrial Textile Printing",
     description:
       "The FabPro 1i direct to fabric printer is engineered for direct fabric printing, producing detailed prints for modern textile manufacturing.",
-    keywords: [
-      "direct to fabric printer",
-      "direct to fabric printing machine",
-    ],
+    keywords: "direct to fabric printer",
     path: "/product-details/fabpro-1i/",
   },
   "fabpro-2i": {
     title: "High-Speed Textile Printing Equipment for Fabric Printing",
     description:
       "Advanced textile printing equipment, the FabPro 2i supports high-speed fabric printing with direct-to-fabric technology and precise output.",
-    keywords: [
-      "Textile Printing Equipment",
-      "Industrial Printing Equipment",
-    ],
+    keywords: "Textile Printing Equipment",
     path: "/product-details/fabpro-2i/",
   },
   "subpro-ii": {
@@ -167,40 +155,28 @@ export const productSeo = {
     title: "Industrial Fabric Printing Machine for Multi-Color Printing",
     description:
       "The MAS Twelve industrial fabric printing machine features a 12-color printing system designed to produce detailed prints with enhanced color depth.",
-    keywords: [
-      "Textile Printing Machine",
-      "industrial fabric printing machine",
-    ],
+    keywords: "industrial fabric printing machine",
     path: "/product-details/mas-twelve/",
   },
   "alpha-15": {
     title: "Sublimation Transfer Printer for Paper to Fabric Printing",
     description:
       "The Alpha 15 sublimation transfer printer is designed for transfer paper printing, supporting textile, apparel, and soft signage applications.",
-    keywords: [
-      "dye sublimation printer",
-      "sublimation transfer printer",
-    ],
+    keywords: "sublimation transfer printer",
     path: "/product-details/alpha-15/",
   },
   "alpha-16": {
     title: "Dye Sublimation Printing Machine for Textile Production",
     description:
       "The Alpha 16 dye sublimation printing machine is built for transfer paper printing, supporting textile, apparel, and soft signage applications.",
-    keywords: [
-      "dye sublimation printing machine",
-      "Polyester Fabric Printer",
-    ],
+    keywords: "dye sublimation printing machine",
     path: "/product-details/alpha-16/",
   },
   "jpk-evo": {
     title: "Large Format Textile Printer for Fabric & Paper Printing",
     description:
       "The JPK EVO large format textile printer is designed for industrial fabric and paper printing, delivering dependable performance for high-volume production.",
-    keywords: [
-      "textile inkjet printer",
-      "large format textile printer",
-    ],
+    keywords: "large format textile printer",
     path: "/product-details/jpk-evo/",
   },
   minilario: {
@@ -214,10 +190,7 @@ export const productSeo = {
     title: "Textile Washing Machine for Fabric Processing & Finishing",
     description:
       "Textile washing machine designed for fabric processing, deoiling, and pre-shrinking applications with consistent performance for textile production.",
-    keywords: [
-      "textile washing machine",
-      "textile finishing machine",
-    ],
+    keywords: "textile washing machine",
     path: "/product-details/found/",
   },
   "foiljet-16": {

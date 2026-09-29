@@ -1,6 +1,7 @@
 import ConsultationModal from "@/components/ConsultationModal";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import { ConsultationProvider } from "@/data/ConsultationContext";
 import { staticPageSeo } from "@/data/seo/pages";
 import { buildPageMetadata } from "@/lib/seo";
@@ -45,12 +46,14 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ConsultationProvider>
-            <Navbar />
-            <div style={{ paddingTop: "59px" }}>{children}</div>
-            <Footer />
-            <ConsultationModal />
-          </ConsultationProvider>
+          <SmoothScroll>
+            <ConsultationProvider>
+              <Navbar />
+              <div style={{ paddingTop: "59px" }}>{children}</div>
+              <Footer />
+              <ConsultationModal />
+            </ConsultationProvider>
+          </SmoothScroll>
         </AppRouterCacheProvider>
 
         {/* Google Analytics (gtag.js). afterInteractive keeps it out of the

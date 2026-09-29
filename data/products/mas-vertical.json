@@ -1,5 +1,5 @@
 {
-  "slug": "mas-vertical",
+  "slug": "mas-vertical-double-sided-digital-textile-printer",
   "name": "MAS Vertical",
   "tagline": "One Fabric. Two Sides. Infinite Possibilities",
   "heroImage": {
@@ -192,21 +192,71 @@
     }
   },
   "showcase": {
-    "heading": "MAS Vertical Showcase",
+    "keySpecificationOnly": true,
+    "headingIsPageH1": true,
+    "heading": "Double Sided Digital Textile Printer",
     "description": "Synchronized double-sided digital textile printing with dual-carriage Kyocera KJ4B printheads, real-time onboard image processing, dual-zone drying, and digital yarn-dye replication — built for reversible denim, yarn-dyed shirting, and value-added dual-design production.",
-    "solutionTagline": "Synchronized dual-side printing",
-    "leftItems": [
-      "Months of lead time for yarn-dye fabric",
-      "Single-side printing only",
-      "Front-to-back misregistration",
-      "Two passes needed for double-sided designs"
+    "table": {
+      "heading": "What the Specs Mean for Your Production",
+      "columns": ["Feature", "Business Impact"],
+      "rows": [
+        ["2 synchronised carriages", "Double-sided output in one pass, roughly halving machine time and handling"],
+        ["Up to 8 colours (4 per side)", "Full colour on both faces, so neither side looks like the \"back\""],
+        ["Kyocera KJ4B heads", "Sharp stripes, checks and fine motifs over long runs"],
+        ["Dual drying zones", "Prints dry before take-up, which prevents set-off and rejects"]
+      ]
+    }
+  },
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "How a Double Sided Digital Textile Printer Works",
+        "paragraphs": [
+          "Printing the back of fabric usually means rewinding, flipping and reloading the roll, then trying to line up the second print with the first. MAS Vertical runs the fabric vertically between two print carriages, one on each side, and prints both faces at the same time in a single pass.",
+          "Because the fabric never leaves the machine and both carriages move in sync, front-to-back registration stays accurate. Two drying stages set both prints before take-up."
+        ],
+        "subsections": [
+          {
+            "type": "text",
+            "heading": "Three Ways to Print Both Sides",
+            "paragraphs": [
+              "Print the same design on both sides for scarves, flags and curtains, or to replicate yarn-dyed checks and stripes. Print the same design in different colourways for reversible garments. Or print completely different designs on each face for reversible jackets, printed linings and denim with a printed inner face."
+            ]
+          },
+          {
+            "type": "qa",
+            "heading": "Buyer's Questions, Answered",
+            "items": [
+              { "q": "Which fabrics suit it?", "a": "Woven fabrics where both faces matter, especially shirting, denim, scarves and home textiles. We'll run samples on your fabric." },
+              { "q": "Which ink should I use?", "a": "Reactive or pigment for cotton, disperse for polyester. Our team will configure inks for your fabric range." },
+              { "q": "How does the workflow run?", "a": "Load both designs as one job. The built-in image processor prepares them, the machine prints and dries both sides in line, and fixation follows your usual process." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "points",
+        "heading": "Where Double-Sided Printing Pays Off",
+        "items": [
+          { "title": "Yarn-dyed shirting", "desc": "printed checks and stripes that look woven from either face, taking new designs to market in days instead of months." },
+          { "title": "Reversible denim and garments", "desc": "two looks from one piece, with both faces aligned." },
+          { "title": "Scarves, stoles and dupattas", "desc": "finished from every angle as they drape." },
+          { "title": "Curtains and flags", "desc": "clean from both sides, without the mirrored look of show-through printing." }
+        ]
+      }
     ],
-    "rightItems": [
-      "Digital yarn-dye replication in days, not months",
-      "Synchronized double-sided printing in one pass",
-      "Perfect front-to-back registration",
-      "Two independent designs on a single fabric pass"
-    ]
+    "faq": {
+      "heading": "MAS Vertical: Double Sided Digital Textile Printer",
+      "items": [
+        { "q": "What is a double sided digital textile printer?", "a": "A double sided digital textile printer prints both faces of a fabric in a single pass. MAS Vertical runs the fabric vertically between two print carriages, one on each side, so the front and back are printed at the same time without rewinding, flipping or reloading the roll." },
+        { "q": "Can MAS Vertical print different designs on each side?", "a": "Yes. It prints two independent designs in one pass. You can print the same design on both sides, the same design in different colourways, or completely different designs on the front and back." },
+        { "q": "How accurate is the front-to-back registration?", "a": "Both sides are printed at the same time on the same fabric path by synchronised carriages. Since the fabric is never reloaded, the main cause of misregistration in two-pass printing is removed. An optional centering device helps keep the fabric edge steady on long runs." },
+        { "q": "What products is double-sided printing used for?", "a": "It's used for yarn-dyed-look shirting, reversible denim and garments, scarves, stoles and dupattas, curtains, flags and banners, which are all products seen from both sides." },
+        { "q": "What are the power and air requirements?", "a": "MAS Vertical needs a 400 V three-phase supply with 44 kW installed power, and compressed air at 6 bar with a maximum consumption of 20 litres per minute." },
+        { "q": "What print widths does it support?", "a": "It prints fabric from 900 mm up to 1,850 mm wide." }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

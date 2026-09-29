@@ -40,11 +40,47 @@ export type ComponentCard = {
   desc: string;
 };
 
+export type QA = { q: string; a: string };
+
+/** A table rendered as the orange/dark card, with optional copy around it. */
+export type ShowcaseTableData = {
+  /** Optional H2 shown directly above the table. */
+  heading?: string;
+  /** Optional line of copy between the heading and the table. */
+  intro?: string;
+  /** Column titles; the first column sits on orange, the rest on dark. */
+  columns: string[];
+  /** One entry per column, in the same order as `columns`. */
+  rows: string[][];
+  /** Optional line of copy shown under the table. */
+  note?: string;
+};
+
+/**
+ * A bullet (or numbered) list inside a text block. Text before an item's first
+ * ": " renders bold, e.g. "Numbering: sequential page numbers".
+ */
+export type SeoList = { list: string[]; ordered?: boolean };
+
+/** One block of long-form SEO copy shown under the Key Specification tab. */
+export type SeoBlock =
+  /** `heading` may be omitted for untitled copy, e.g. an intro right under the H1 */
+  | { type: "text"; heading?: string; paragraphs: (string | SeoList)[] }
+  | ({ type: "table"; heading: string } & ShowcaseTableData)
+  /** Points run together in one paragraph as "**title:** desc" */
+  | { type: "points"; heading: string; items: Fabric[] }
+  | { type: "qa"; heading: string; items: QA[] };
+
 export interface Product {
   /** URL segment, e.g. "position-pro" */
   slug: string;
   /** Display name, e.g. "Position Pro" */
   name: string;
+  /**
+   * Render the hero product name as a <p> instead of the page <h1>, keeping
+   * the same size. Default false.
+   */
+  nameAsParagraph?: boolean;
   tagline: string;
 
   heroImage: {
@@ -129,14 +165,29 @@ export interface Product {
   };
 
   showcase: {
+    /**
+     * Render the showcase only inside the Key Specification tab instead of
+     * permanently below every tab. Default false.
+     */
+    keySpecificationOnly?: boolean;
+    /**
+     * Render `heading` as the page's <h1> (e.g. a keyword-led title). The hero
+     * product name is then demoted to a plain paragraph. Default false.
+     */
+    headingIsPageH1?: boolean;
     heading: string;
     description: string;
     /** Short tagline shown under the product name in the solution panel (e.g. "Precision vision technology"). Omit to hide. */
     solutionTagline?: string;
     /** Pain points traditional printers struggle with */
-    leftItems: string[];
+    leftItems?: string[];
     /** How this product solves them */
-    rightItems: string[];
+    rightItems?: string[];
+    /**
+     * Table rendered in place of the solution/problem comparison card. Omit to
+     * show the comparison card.
+     */
+    table?: ShowcaseTableData;
   };
 
   /** Optional before/after print-result comparison slider. Omit to hide the section. */
@@ -150,6 +201,16 @@ export interface Product {
     /** Corner labels. Default "Before" / "After". */
     beforeLabel?: string;
     afterLabel?: string;
+  };
+
+  /**
+   * Optional long-form SEO copy rendered in the Key Specification tab, below
+   * the showcase. Each section is an H2; its `subsections` render as H3s.
+   * `faq` renders as an accordion and is also emitted as FAQPage JSON-LD.
+   */
+  seoContent?: {
+    sections: (SeoBlock & { subsections?: SeoBlock[] })[];
+    faq?: { heading: string; items: QA[] };
   };
 
   contactCTA: {

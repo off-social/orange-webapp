@@ -1,6 +1,7 @@
 {
-  "slug": "jetrix-e",
+  "slug": "jetrix-e-hybrid-digital-label-printer",
   "name": "JetRix-E",
+  "nameAsParagraph": true,
   "tagline": "Hybrid Digital Label Press — All-in-One Digital + Flexo + Foil",
   "heroImage": {
     "desktop": "/Label1.webp",
@@ -193,20 +194,67 @@
     }
   },
   "showcase": {
-    "heading": "JetRix-E Showcase",
+    "keySpecificationOnly": true,
+    "headingIsPageH1": true,
+    "heading": "Hybrid Digital Label Printer",
     "description": "All-in-one hybrid digital label press combining digital inkjet, flexo, and cold foil in a single modular system. Epson S3200 printhead, up to 50 m/min, 7-color G7 certified UV inks, automated camera inspection, and self-developed MES built for pharmaceutical, food, beverage, cosmetics, and premium label production.",
-    "leftItems": [
-      "Separate machines for print, flexo & foil",
-      "Plate costs on short-run jobs",
-      "Colour inconsistency across brand runs",
-      "Defects discovered after the roll is done"
+    "table": {
+      "heading": "Substrate and Application Guide",
+      "columns": ["Substrate", "Typical Applications"],
+      "rows": [
+        ["Coated and semi-gloss paper", "Food, FMCG, general labels"],
+        ["Textured and specialty paper", "Wine, spirits, gourmet products"],
+        ["White films (PP, BOPP, PE)", "Personal care, household, beverages"],
+        ["Clear films", "Cosmetics, \"no-label look\" packaging"],
+        ["Metallic films", "Premium cosmetics, spirits, festive packaging"],
+        ["Pharma label stocks", "Medicine labels, cartons"]
+      ],
+      "note": "Share your label stock and we'll run samples before you commit."
+    }
+  },
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "What Can You Print With a Hybrid Digital Label Printer?",
+        "paragraphs": [
+          "JetRix-E combines digital inkjet, flexo and cold foil on one press. It handles full-colour product labels for food, beverage, cosmetics and FMCG, premium labels with foil, varnish and white ink on clear or metallic films, multi-SKU and multi-language jobs with no plate changes, variable data like barcodes, QR codes and batch numbers, and short seasonal or promotional runs."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "How Automated Inline Camera Inspection Works",
+        "paragraphs": [
+          "An inline camera checks the printed web during the run and compares it with the approved reference. It flags streaks, missing nozzles, colour shifts, registration errors, spots and missing text or foil. Operators fix problems while the job is running, not after the roll is finished, which matters most on pharma, food and cosmetics labels, where one wrong label can mean a rejected consignment."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "The Role of Each Printing Technology",
+        "paragraphs": [
+          "Digital inkjet prints the image, fine text and variable data with Epson S3200 heads, with no plates. Flexo applies varnishes, primers, flood coats and the adhesive for foil. Cold foil adds gold, silver and holographic effects at press speed. Because all three run in one pass, layers stay aligned and the label comes off the press finished."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Short Run vs Long Run: Where JetRix-E Makes Sense",
+        "paragraphs": [
+          "JetRix-E is strongest on short and medium runs: many SKUs, new launches, variable data and frequent reorders, where plates and changeovers make flexo expensive. At 50 m/min, it prints up to 3,000 metres an hour. For very long runs of one unchanging design, compare the cost per label with dedicated flexo."
+        ]
+      }
     ],
-    "rightItems": [
-      "Digital + flexo + cold foil in one pass",
-      "No plates — fast short-run job switching",
-      "G7 certified UV inks for brand accuracy",
-      "Automated inline camera inspection"
-    ]
+    "faq": {
+      "heading": "JetRix-E: Hybrid Digital Label Printer",
+      "items": [
+        { "q": "What is a hybrid digital label printer?", "a": "A hybrid digital label printer combines digital inkjet printing with conventional processes like flexo and cold foil on one press. JetRix-E prints, coats and embellishes labels in a single pass." },
+        { "q": "How fast is JetRix-E?", "a": "JetRix-E prints at up to 50 metres per minute, at a resolution of up to 1200 × 600 dpi." },
+        { "q": "What colours can JetRix-E print?", "a": "It prints up to 7 colours: White, Cyan, Magenta, Yellow, Black and up to 2 spot colours. Its UV inks are G7-certified for consistent colour." },
+        { "q": "What is the maximum label width and repeat length?", "a": "JetRix-E handles webs up to 360 mm wide, with a print width of 350 mm and a repeat length from 203.2 mm to 635 mm." },
+        { "q": "Does JetRix-E check print quality automatically?", "a": "Yes. An automated inline camera inspects labels during the run, so defects are caught while the job is printing rather than after it's finished." },
+        { "q": "Which industries use JetRix-E?", "a": "It's used for pharmaceutical, food, beverage, cosmetics and premium labels, where short runs, frequent design changes and consistent colour matter." },
+        { "q": "How much space does JetRix-E need?", "a": "The machine measures 4.6 × 1.7 × 2.1 m and weighs about 2,500 kg." }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

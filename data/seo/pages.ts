@@ -53,19 +53,19 @@ export const productSeo = {
     keywords: "industrial digital textile printer",
     path: "/product-details/k24/",
   },
-  "mas-vertical": {
-    title: "Double Sided Vertical Textile Printing Single Pass",
+  "mas-vertical-double-sided-digital-textile-printer": {
+    title: "Single Pass Double Sided Digital Textile Printer",
     description:
-      "MAS Vertical enables double sided textile printing in a single pass with synchronized front-to-back registration and two independent designs on one fabric.",
+      "MAS Vertical is a single-pass double sided digital textile printer that delivers synchronized front-to-back registration and supports two independent designs on one fabric.",
     keywords: "Double sided textile printing",
-    path: "/product-details/mas-vertical/",
+    path: "/product-details/mas-vertical-double-sided-digital-textile-printer/",
   },
-  "jetrix-e": {
+  "jetrix-e-hybrid-digital-label-printer": {
     title: "Label Printers for Hybrid Label Production",
     description:
       "Jetrix E is a hybrid label printer designed for professional label production, delivering printing speeds of up to 50 m/min with UV ink technology.",
     keywords: "label printers",
-    path: "/product-details/jetrix-e/",
+    path: "/product-details/jetrix-e-hybrid-digital-label-printer/",
   },
   "foiljet-8": {
     title: "Industrial Sublimation Printer for Textile Production",
@@ -74,12 +74,12 @@ export const productSeo = {
     keywords: "industrial sublimation printer",
     path: "/product-details/foiljet-8/",
   },
-  "vividpress-e": {
+  "vividpress-e-digital-inkjet-printing-machine": {
     title: "Digital Book Printing Machine for Printing",
     description:
       "VividPress-E is a digital book printing machine with single-pass duplex printing and speeds up to 100 m/min for book and publication printing.",
     keywords: "Digital Book Printing Machine",
-    path: "/product-details/vividpress-e/",
+    path: "/product-details/vividpress-e-digital-inkjet-printing-machine/",
   },
   jp7: {
     title: "Fabric Printing Machine for Fabric and Paper Printing",
@@ -102,12 +102,12 @@ export const productSeo = {
     keywords: "Sublimation printer",
     path: "/product-details/alpha-ii/",
   },
-  rocket: {
+  "rocket-single-pass-digital-textile-printer": {
     title: "Industrial Textile Printing Machine for Fabric Printing",
     description:
       "Explore the Rocket industrial textile printing machine, developed for direct fabric printing with consistent print quality and reliable production performance.",
     keywords: "industrial textile printing machine",
-    path: "/product-details/rocket/",
+    path: "/product-details/rocket-single-pass-digital-textile-printer/",
   },
   k32: {
     title: "Industrial Fabric Printer for Direct Fabric Printing",

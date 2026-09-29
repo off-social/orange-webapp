@@ -9,6 +9,7 @@ import InkCompatibility from "@/components/product-details/InkCompatibility";
 import KeySpecification from "@/components/product-details/KeySpecification";
 import PositionProShowcase from "@/components/product-details/PositionProShowcase";
 import ProductionCapacity from "@/components/product-details/ProductionCapacity";
+import ProductSeoContent from "@/components/product-details/ProductSeoContent";
 import Resources from "@/components/product-details/Resources";
 import SectionTabs from "@/components/product-details/SectionTabs";
 import { ProductProvider } from "@/data/ProductContext";
@@ -27,8 +28,23 @@ export default function ProductDetails({ product }: { product: Product }) {
 
   // "Ideal for" is dropped entirely when a product has no ideal-application
   // cards (e.g. Rocket) — the tab would otherwise open onto a bare heading.
+  const showcaseInKeySpec = product.showcase.keySpecificationOnly === true;
+  // Only honoured inside the tab: the tab opens by default, so the H1 is in
+  // the server-rendered HTML. Below every tab it'd sit after the tab content.
+  const showcaseHeadingIsH1 =
+    showcaseInKeySpec && product.showcase.headingIsPageH1 === true;
+
   const tabs = [
-    { label: "Key Specification", content: <KeySpecification /> },
+    {
+      label: "Key Specification",
+      content: (
+        <>
+          <KeySpecification />
+          {showcaseInKeySpec && <PositionProShowcase />}
+          <ProductSeoContent />
+        </>
+      ),
+    },
     { label: "Ink Compatibility", content: <InkCompatibility /> },
     { label: "Features", content: <Features /> },
     ...(product.idealFor.fabrics.length > 0
@@ -72,8 +88,12 @@ export default function ProductDetails({ product }: { product: Product }) {
             alignSelf: "stretch",
           }}
         >
+          {/* The name drops to a <p> (same styling) when the product opts out,
+              or when the showcase heading is the page H1 */}
           <Typography
-            component="h1"
+            component={
+              product.nameAsParagraph || showcaseHeadingIsH1 ? "p" : "h1"
+            }
             sx={{
               color: "#333",
               textAlign: "center",
@@ -115,7 +135,9 @@ export default function ProductDetails({ product }: { product: Product }) {
             <Button
               variant="contained"
               endIcon={
-                <ArrowForwardIcon sx={{ fontSize: { xs: "15px", sm: "18px" } }} />
+                <ArrowForwardIcon
+                  sx={{ fontSize: { xs: "15px", sm: "18px" } }}
+                />
               }
               sx={{
                 color: "#fff",
@@ -246,7 +268,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
       {/* Permanent sections */}
       <Resources />
-      <PositionProShowcase />
+      {!showcaseInKeySpec && <PositionProShowcase />}
       <ContactCTA />
     </ProductProvider>
   );

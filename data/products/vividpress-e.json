@@ -1,5 +1,5 @@
 {
-  "slug": "vividpress-e",
+  "slug": "vividpress-e-digital-inkjet-printing-machine",
   "name": "VividPress-E",
   "tagline": "High-Speed Single-Pass Digital Inkjet Solution for Books and Magazines",
   "heroImage": {
@@ -186,20 +186,133 @@
     }
   },
   "showcase": {
-    "heading": "VividPress-E Showcase",
-    "description": "High-speed single-pass digital inkjet for books and magazines. Two models (440C and 6600), up to 100 m/min duplex output, 1200 x 600 dpi, water-based pigment inks, infrared drying, and end-to-end digital workflow management built for educational publishers, commercial book printers, transactional operations, and newspaper production.",
-    "leftItems": [
-      "Plate-making slows short-run jobs",
-      "Separate passes for double-sided printing",
-      "High inventory pressure on book runs",
-      "Energy-heavy drying raising costs"
+    "keySpecificationOnly": true,
+    "headingIsPageH1": true,
+    "heading": "Digital Inkjet Printing Machine for Books and Magazines",
+    "description": "High-speed single-pass digital inkjet for books and magazines. Two models (440C and 6600), up to 100 m/min duplex output, 1200 x 600 dpi, water-based pigment inks, infrared drying, and end-to-end digital workflow management built for educational publishers, commercial book printers, transactional operations, and newspaper production."
+  },
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "A digital inkjet printing machine doesn't need plates, so every page can be different from the one before it. That makes it possible to print variable content within a single production run:",
+          {
+            "list": [
+              "Personalised content: names on certificates, workbooks or children's books",
+              "Numbering: sequential page, copy or ticket numbers",
+              "Barcodes and QR codes: unique codes for tracking, authentication or linking to digital content",
+              "Version changes: different language, regional or school editions of the same book, printed back to back without stopping the press"
+            ]
+          },
+          "For educational publishers, this means one run can produce customised textbooks for different schools or boards. For commercial printers, it opens up personalised and transactional work that offset can't do."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Print-on-Demand and Short-Run Production Workflow",
+        "paragraphs": [
+          "Offset printing needs plates for every job, so short runs cost more per copy. VividPress-E goes straight from file to print, so 100 copies cost the same per copy as 1,000.",
+          {
+            "ordered": true,
+            "list": [
+              "Receive the file: the publisher sends a print-ready PDF",
+              "Prepare the job: the workflow software handles imposition, arranging pages on the paper web in the right order for folding and binding",
+              "Print: VividPress-E prints both sides in one pass at up to 100 m/min",
+              "Finish: printed output goes to cutting, folding and binding",
+              "Deliver: books ship in days, not weeks"
+            ]
+          },
+          "This workflow supports reprints of backlist titles, short first editions, textbook updates and print-to-order, so publishers print what they sell instead of storing what they might."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Post-Printing Workflow and Finishing Integration",
+        "paragraphs": [
+          "VividPress-E prints on paper rolls. How output moves into finishing depends on your setup:",
+          {
+            "list": [
+              "Roll-to-roll: printed paper is rewound onto a roll and taken to separate finishing equipment. The press and finishing run independently, so neither waits for the other.",
+              "Roll-to-sheet (optional): an inline sheeter cuts the printed web into flat sheets, ready for folding, gathering and binding on sheet-fed equipment.",
+              "Roll-to-fold: the printed web can feed into a folding line that produces folded signatures, ready for gathering and binding into books or magazines."
+            ]
+          },
+          "From there, signatures or sheets are gathered in page order, bound (perfect binding for paperbacks, saddle stitching for magazines, case binding for hardbacks) and trimmed to size. Our team can help plan the finishing line around your existing equipment."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Paper and Substrate Compatibility Guide",
+        "intro": "VividPress-E runs paper from 45 to 160 gsm, with media widths of 440 mm (440C) or 660 mm (6600).",
+        "columns": [
+          "Paper Type",
+          "Weight",
+          "Best For",
+          "Print Quality"
+        ],
+        "rows": [
+          [
+            "Newsprint",
+            "45–55 gsm",
+            "Newspapers, high page-count books",
+            "Good for text, lower colour depth"
+          ],
+          [
+            "Uncoated woodfree / offset",
+            "60–100 gsm",
+            "Textbooks, novels, workbooks",
+            "Sharp text, natural colour"
+          ],
+          [
+            "Inkjet-treated uncoated",
+            "70–120 gsm",
+            "Premium books, colour-heavy textbooks",
+            "Brighter colour, sharper images"
+          ],
+          [
+            "Inkjet-optimised coated",
+            "90–160 gsm",
+            "Magazines, brochures, photo-rich pages",
+            "Strongest colour and image detail"
+          ]
+        ],
+        "note": "How paper choice affects quality: uncoated papers absorb water-based pigment ink well and suit text-heavy books. Standard coated offset papers are designed for offset inks and may not absorb water-based inkjet ink properly. For magazines and colour-rich pages, use inkjet-optimised coated papers. We recommend testing your paper stock on the press before committing to a large order."
+      }
     ],
-    "rightItems": [
-      "Single-pass duplex up to 100 m/min",
-      "±0.5 mm front-to-back registration",
-      "No plates — print-on-demand ready",
-      "Infrared drying with auto energy saving"
-    ]
+    "faq": {
+      "heading": "VividPress-E: Digital Inkjet Printing Machine for Books and Magazines",
+      "items": [
+        {
+          "q": "What is a digital inkjet printing machine for books?",
+          "a": "It's a press that prints book pages directly from digital files using inkjet printheads, with no plates. VividPress-E prints both sides of a paper roll in a single pass, making short runs and reprints cost-effective."
+        },
+        {
+          "q": "How fast is VividPress-E?",
+          "a": "VividPress-E prints at up to 100 metres per minute, at a resolution of 1200 × 600 dpi."
+        },
+        {
+          "q": "Can VividPress-E print both sides at once?",
+          "a": "Yes. It prints CMYK on both sides in a single pass, with front-to-back registration accuracy of ±0.5 mm."
+        },
+        {
+          "q": "Which paper weights does it support?",
+          "a": "It prints on paper from 45 to 160 gsm, covering newsprint, uncoated book papers and inkjet-optimised coated papers."
+        },
+        {
+          "q": "What models and widths are available?",
+          "a": "The VividPress 440C handles 440 mm media with a 429 mm print width. The VividPress 6600 handles 660 mm media with a 645 mm print width."
+        },
+        {
+          "q": "Is it suitable for short runs and print-on-demand?",
+          "a": "Yes. With no plates, the cost per copy stays the same whether you print 100 books or 1,000, which suits reprints, short editions and print-to-order."
+        },
+        {
+          "q": "What ink does VividPress-E use?",
+          "a": "It uses water-based pigment ink, dried inline by an energy-saving infrared system."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

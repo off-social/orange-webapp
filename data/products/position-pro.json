@@ -200,8 +200,8 @@
   "beforeAfter": {
     "heading": "Every Print. Perfectly Positioned.",
     "description": "Powered by intelligent registration technology, Position Pro aligns every design with exceptional precision, producing vibrant colours, intricate details, and consistent print quality on every fabric roll.",
-    "beforeImage": "/position-pro-before.jpeg",
-    "afterImage": "/position-pro-after.png",
+    "beforeImage": "/position-pro-before.webp",
+    "afterImage": "/position-pro-after.webp",
     "beforeLabel": "Before",
     "afterLabel": "After"
   },

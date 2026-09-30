@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 
 const products = [
   {
-    src: "/PublicationPrinters1.png",
+    src: "/PublicationPrinters1.webp",
     name: "VividPress-E Digital Inkjet Press",
     desc: "Built for High-Quality Publishing and On-Demand Production.",
   },

@@ -3,10 +3,8 @@
 import { useProduct } from "@/data/ProductContext";
 import ShowcaseTable from "@/components/product-details/ShowcaseTable";
 import type { QA, SeoBlock, SeoList } from "@/data/product.types";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import { Box, Typography } from "@mui/material";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 const FONT = "Inter, sans-serif";
 
@@ -269,8 +267,6 @@ function Block({
 }
 
 function FAQ({ heading, items }: { heading: string; items: QA[] }) {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <Box
       sx={{
@@ -283,102 +279,74 @@ function FAQ({ heading, items }: { heading: string; items: QA[] }) {
     >
       <Heading level={2}>{heading}</Heading>
 
-      <Box sx={{ width: "100%", maxWidth: "900px" }}>
-        {items.map(({ q, a }, i) => {
-          const isOpen = open === i;
-          const id = `faq-${i}`;
-          return (
-            <Box
-              key={q}
+      <Box
+        component="ol"
+        sx={{ width: "100%", maxWidth: "900px", listStyle: "none", m: 0, p: 0 }}
+      >
+        {items.map(({ q, a }, i) => (
+          <Box
+            key={q}
+            component="li"
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "44px minmax(0, 1fr)",
+                md: "64px minmax(0, 1fr)",
+              },
+              columnGap: "16px",
+              padding: { xs: "20px 0", md: "24px 0" },
+              borderTop: "1px solid #E0E0E0",
+              "&:last-child": { borderBottom: "1px solid #E0E0E0" },
+            }}
+          >
+            <Typography
+              aria-hidden
               sx={{
-                borderTop: "1px solid #E0E0E0",
-                "&:last-child": { borderBottom: "1px solid #E0E0E0" },
+                color: "#F6891F",
+                fontFamily: FONT,
+                fontSize: { xs: "22px", md: "28px" },
+                fontWeight: 600,
+                lineHeight: { xs: "25.6px", md: "30px" },
+                fontVariantNumeric: "tabular-nums",
               }}
             >
-              <Box
-                component="button"
-                type="button"
-                aria-expanded={isOpen}
-                aria-controls={id}
-                onClick={() => setOpen(isOpen ? null : i)}
+              {String(i + 1).padStart(2, "0")}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+                minWidth: 0,
+              }}
+            >
+              <Typography
+                component="h3"
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  gap: "16px",
-                  width: "100%",
-                  padding: { xs: "20px 0", md: "24px 0" },
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  textAlign: "left",
+                  color: "#000",
+                  fontFamily: FONT,
+                  fontSize: { xs: "16px", md: "18px" },
+                  fontWeight: 600,
+                  lineHeight: { xs: "25.6px", md: "27px" },
+                  m: 0,
                 }}
               >
-                <Typography
-                  component="h3"
-                  sx={{
-                    color: isOpen ? "#F6891F" : "#333",
-                    fontFamily: FONT,
-                    fontSize: { xs: "16px", md: "18px" },
-                    fontWeight: 500,
-                    lineHeight: { xs: "25.6px", md: "27px" },
-                    m: 0,
-                    transition: "color 0.2s ease",
-                  }}
-                >
-                  {q}
-                </Typography>
-                <Box
-                  sx={{
-                    flexShrink: 0,
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    bgcolor: isOpen ? "#F6891F" : "#F0F0F0",
-                    color: isOpen ? "#FFF" : "#333",
-                    transition: "background-color 0.2s ease, color 0.2s ease",
-                  }}
-                >
-                  {isOpen ? (
-                    <RemoveIcon sx={{ fontSize: "18px" }} />
-                  ) : (
-                    <AddIcon sx={{ fontSize: "18px" }} />
-                  )}
-                </Box>
-              </Box>
-
-              {/* Answer stays in the DOM when collapsed so crawlers still read it */}
-              <Box
-                id={id}
+                {q}
+              </Typography>
+              <Typography
                 sx={{
-                  display: "grid",
-                  gridTemplateRows: isOpen ? "1fr" : "0fr",
-                  transition:
-                    "grid-template-rows 0.35s cubic-bezier(0.16,1,0.3,1)",
+                  color: "#707070",
+                  fontFamily: FONT,
+                  fontSize: { xs: "14px", md: "16px" },
+                  fontWeight: { xs: 500, md: 400 },
+                  lineHeight: { xs: "22.4px", md: "25.6px" },
                 }}
               >
-                <Box sx={{ overflow: "hidden" }}>
-                  <Typography
-                    sx={{
-                      color: "#707070",
-                      fontFamily: FONT,
-                      fontSize: { xs: "14px", md: "16px" },
-                      fontWeight: { xs: 500, md: 400 },
-                      lineHeight: { xs: "22.4px", md: "25.6px" },
-                      pb: { xs: "20px", md: "24px" },
-                      pr: { xs: 0, md: "48px" },
-                    }}
-                  >
-                    {a}
-                  </Typography>
-                </Box>
-              </Box>
+                {a}
+              </Typography>
             </Box>
-          );
-        })}
+          </Box>
+        ))}
       </Box>
     </Box>
   );
@@ -410,7 +378,7 @@ export default function ProductSeoContent() {
         },
         flexDirection: "column",
         alignItems: "center",
-        gap: { xs: "64px", md: "100px" },
+        gap: { xs: "48px", md: "60px" },
         alignSelf: "stretch",
         background: "#FFF",
       }}

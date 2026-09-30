@@ -2,7 +2,6 @@
 
 import ShowcaseTable from "@/components/product-details/ShowcaseTable";
 import { useProduct } from "@/data/ProductContext";
-import BoltIcon from "@mui/icons-material/Bolt";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Typography } from "@mui/material";
@@ -26,7 +25,7 @@ export default function PositionProShowcase() {
         ...(!hasComparison && { pb: { xs: 0, md: 0, lg: 0 } }),
         flexDirection: "column",
         alignItems: "center",
-        gap: "64px",
+        gap: showcase.table ? "60px" : "64px",
         alignSelf: "stretch",
         background: "#FFF",
       }}
@@ -135,7 +134,6 @@ export default function PositionProShowcase() {
                 >
                   {name}
                 </Typography>
-                <BoltIcon sx={{ color: "#FFF", fontSize: "24px" }} />
               </Box>
               <Typography
                 sx={{

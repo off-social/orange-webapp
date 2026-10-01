@@ -2,7 +2,8 @@
 
 import { ReactLenis, useLenis } from "lenis/react";
 import "lenis/dist/lenis.css";
-import { useEffect, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, type ReactNode } from "react";
 
 /**
  * Pauses Lenis while an MUI overlay (Consultation dialog, mobile nav drawer)
@@ -32,6 +33,25 @@ function PauseWhileScrollLocked() {
   return null;
 }
 
+/**
+ * Hands the scroll position to Next.js on navigation. Lenis keeps easing
+ * toward its target for a moment after the wheel stops; click a link in that
+ * window and the next frame drags the new page back to the old offset, undoing
+ * Next's scroll-to-top. Rendered after the page, its layout effect runs after
+ * Next's own scroll handling, so Lenis just adopts wherever Next left the
+ * window — top for a new page, the element for a hash link.
+ */
+function SyncOnNavigation() {
+  const lenis = useLenis();
+  const pathname = usePathname();
+
+  useLayoutEffect(() => {
+    lenis?.scrollTo(window.scrollY, { immediate: true, force: true });
+  }, [lenis, pathname]);
+
+  return null;
+}
+
 /** Site-wide smooth scrolling on the window, via Lenis. */
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   return (
@@ -48,6 +68,9 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     >
       <PauseWhileScrollLocked />
       {children}
+      {/* After children: sibling layout effects run in order, so this one
+          lands after Next's scroll handling inside the page tree */}
+      <SyncOnNavigation />
     </ReactLenis>
   );
 }

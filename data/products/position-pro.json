@@ -1,5 +1,5 @@
 {
-  "slug": "position-pro",
+  "slug": "position-printing-machine",
   "name": "Position Pro",
   "tagline": "High-speed Direct-to-Fabric Positioning Printer",
   "heroImage": {
@@ -181,21 +181,95 @@
     }
   },
   "showcase": {
-    "heading": "Position Pro Showcase",
-    "description": "Designed for high-value textile applications, Position Pro delivers unmatched print alignment, superior registration accuracy, and reliable performance across textured and specialty fabrics.",
-    "solutionTagline": "Precision vision technology",
-    "leftItems": [
-      "Fabric distortion on complex textures",
-      "Costly registration errors on lace and jacquard",
-      "Misaligned prints on embroidery and sequins",
-      "No double-sided silk capability"
+    "keySpecificationOnly": true,
+    "headingIsPageH1": true,
+    "heading": "Position Printing Machine",
+    "description": "Designed for high-value textile applications, Position Pro delivers unmatched print alignment, superior registration accuracy, and reliable performance across textured and specialty fabrics."
+  },
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "How a Vision-Based Position Printing Machine Works",
+        "paragraphs": [
+          "Regular digital printing assumes the fabric is exactly where the file says it should be. Position printing works differently. Position Pro scans the fabric before the print heads fire, reads embroidery, jacquard motifs, lace patterns, pre-printed outlines and panel edges, then matches the artwork to what is actually on the fabric. The vision system corrects offset, skew, rotation, stretch and shrink in real time, so the print lands exactly where it needs to be."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "What the Technology Means for Your Production",
+        "columns": ["Feature", "Business Impact"],
+        "rows": [
+          ["Vision scanning system", "Reads the fabric surface and aligns artwork before printing"],
+          ["Real-time position correction", "Compensates for offset, skew, rotation, stretch and shrink"],
+          ["Texture mapping", "Maintains placement on woven, knit, elastic and textured fabrics"],
+          ["12-colour ink setup", "Supports a wide range of fabrics and colour requirements"]
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Three Ways Position Printing Adds Value",
+        "paragraphs": [
+          "Print directly over embroidery and textured motifs so colour fills stay inside the intended design. Use position printing for garment panels where logos, borders and engineered patterns need to sit in a precise location. Or print on specialty fabrics such as lace, jacquard, sequined and elastic materials where conventional printing can struggle with alignment."
+        ]
+      },
+      {
+        "type": "qa",
+        "heading": "Buyer's Questions, Answered",
+        "items": [
+          { "q": "Which fabrics suit it?", "a": "Position Pro handles woven fabrics such as cotton, linen, silk, viscose and jacquard, along with knits, lycra, spandex blends, lace, embroidered and sequined fabrics." },
+          { "q": "Which ink should I use?", "a": "Reactive works for cotton, viscose, linen and silk. Acid suits silk, wool and nylon. Pigment works across cotton and blends, while disperse is designed for polyester and polyester blends." },
+          { "q": "How does the workflow run?", "a": "Load the fabric and artwork as a print job. The vision system scans the fabric surface, maps its position and adjusts the artwork before the print heads fire. The machine then prints according to the corrected position." }
+        ]
+      },
+      {
+        "type": "points",
+        "heading": "Where Position Printing Pays Off",
+        "items": [
+          { "title": "Embroidered fabrics", "desc": "align colour fills with embroidery and keep prints inside the intended motif." },
+          { "title": "Garment panels", "desc": "place logos, borders and engineered artwork accurately on collars, sleeves, cuffs, pockets and front or back panels." },
+          { "title": "Ethnic wear", "desc": "position pallus, borders and buttas on sarees, dupattas and other pre-defined layouts." },
+          { "title": "Specialty fabrics", "desc": "maintain accurate placement on lace, jacquard, sequined and elastic fabrics where fabric movement can cause registration problems." }
+        ]
+      }
     ],
-    "rightItems": [
-      "Real-time vision scanning & compensation",
-      "Perfect alignment every print, every time",
-      "Precision mapping on woven & knit textures",
-      "Double-sided silk printing supported"
-    ]
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is a position printing machine?",
+          "a": "A position printing machine is a digital textile printer that detects where a design or fabric feature sits and prints exactly on it. It uses vision scanning to align artwork with embroidery, motifs, lace patterns or garment panels, so every print lands in the intended position."
+        },
+        {
+          "q": "How is a position printing machine different from a regular digital textile printer?",
+          "a": "A regular digital printer prints the file as-is and assumes the fabric is correctly positioned. A position printing machine scans the fabric first, then corrects for offset, skew and stretch in real time. This makes it suited to pre-embroidered, textured and elastic fabrics where small registration errors can affect the finished piece."
+        },
+        {
+          "q": "Which fabrics can Position Pro print on?",
+          "a": "Position Pro handles woven fabrics including cotton, linen, silk, viscose and jacquard, as well as single jersey, interlock, rib, lycra and spandex blends. It also supports lace, embroidered fabric, sequined fabric and double-sided silk printing."
+        },
+        {
+          "q": "Can Position Pro print on embroidered or sequined fabric?",
+          "a": "Yes. The vision system maps the embroidery or sequin layout and aligns the print to it, helping colour fills stay within the intended motif instead of shifting beside it."
+        },
+        {
+          "q": "What ink types does Position Pro support?",
+          "a": "Position Pro supports reactive, acid, pigment and disperse inks. Reactive is suited to cotton, viscose, linen and silk. Acid is suited to silk, wool and nylon. Pigment works across cotton and blends, while disperse is for polyester and polyester blends."
+        },
+        {
+          "q": "What is the production capacity of Position Pro?",
+          "a": "Position Pro runs 16 Kyocera industrial print heads, with a maximum print width of 1,850 mm, resolution up to 1,800 DPI and a 12-colour ink setup."
+        },
+        {
+          "q": "What is the price of a position printing machine in India?",
+          "a": "The price depends on the machine configuration, including print head count, ink system, print width and software. Contact our team for a quote based on your fabric range and production volume."
+        },
+        {
+          "q": "Does Orange O Tec provide installation and service support?",
+          "a": "Yes. Orange O Tec is based in Surat and has 750+ installations and 85+ service engineers across India, covering installation, operator training and after-sales support."
+        }
+      ]
+    }
   },
   "beforeAfter": {
     "heading": "Every Print. Perfectly Positioned.",

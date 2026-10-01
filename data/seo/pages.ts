@@ -39,12 +39,12 @@ export const staticPageSeo = {
 } as const satisfies Record<string, PageSeo>;
 
 export const productSeo = {
-  "position-pro": {
-    title: "Textile Position Printing Machine for Precise Fabric Printing",
+  "position-printing-machine": {
+    title: "Position Printing Machine for Precise Textile Printing",
     description:
-      "Position Pro is a position printing machine designed for precise fabric printing, with intelligent registration technology for accurate design alignment.",
+      "Position Pro is a vision-based position printing machine designed for precise textile printing on embroidery, jacquard, lace and specialty fabrics.",
     keywords: "Position Printing Machine",
-    path: "/product-details/position-pro/",
+    path: "/product-details/position-printing-machine/",
   },
   k24: {
     title: "Industrial Digital Textile Printer for Textile Production",

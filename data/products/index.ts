@@ -31,7 +31,7 @@ import vividPressE from "./vividpress-e.json";
  *   2. Import it here and add one entry to the object below.
  */
 export const products: Record<string, Product> = {
-  "position-pro": positionPro as Product,
+  "position-printing-machine": positionPro as Product,
   "fabpro-1i": fabPro1i as Product,
   "fabpro-2i": fabPro2i as Product,
   k24: k24 as Product,
@@ -63,6 +63,7 @@ export const productSlugs = Object.keys(products);
  * catalog name (e.g. a keyword-led slug). Keyed by the derived slug.
  */
 const SLUG_OVERRIDES: Record<string, string> = {
+  "position-pro": "position-printing-machine",
   "mas-vertical": "mas-vertical-double-sided-digital-textile-printer",
   "jetrix-e": "jetrix-e-hybrid-digital-label-printer",
   rocket: "rocket-single-pass-digital-textile-printer",
@@ -73,7 +74,7 @@ export function getProduct(slug: string): Product | undefined {
   return products[slug];
 }
 
-export const DEFAULT_PRODUCT_SLUG = "position-pro";
+export const DEFAULT_PRODUCT_SLUG = "position-printing-machine";
 
 /**
  * Marketing suffix words trimmed from a catalog product name before slugifying,

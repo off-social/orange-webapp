@@ -50,7 +50,8 @@ function Paragraph({ children }: { children: string }) {
   );
 }
 
-function QAList({ items }: { items: QA[] }) {
+/** Questions are H3s under an H2 block; under an H3 they stay plain text. */
+function QAList({ items, level }: { items: QA[]; level: 2 | 3 }) {
   return (
     <Box
       sx={{
@@ -73,6 +74,7 @@ function QAList({ items }: { items: QA[] }) {
           }}
         >
           <Typography
+            component={level === 2 ? "h3" : "p"}
             sx={{
               color: "#F6891F",
               fontFamily: FONT,
@@ -261,7 +263,7 @@ function Block({
           table={{ columns: block.columns, rows: block.rows, note: block.note }}
         />
       )}
-      {block.type === "qa" && <QAList items={block.items} />}
+      {block.type === "qa" && <QAList items={block.items} level={level} />}
     </Box>
   );
 }

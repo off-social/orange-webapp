@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const logos = [
-  { name: "Colorix", src: "/logos/Colorix-4.svg" },
-  { name: "Kolorado", src: "/logos/Kolorado-2.svg" },
-  { name: "Kiian", src: "/logos/kiian.svg" },
-  { name: "Twine", src: "/logos/twine.svg" },
-  { name: "Homer", src: "/logos/Homer-2-1.svg" },
-  { name: "Huntsman", src: "/logos/huntsman.svg" },
+  { name: "Colorix", src: "/logos/Colorix-4.webp" },
+  { name: "Kolorado", src: "/logos/Kolorado-2.webp" },
+  { name: "Kiian", src: "/logos/kiian.webp" },
+  { name: "Twine", src: "/logos/twine.webp" },
+  { name: "Homer", src: "/logos/Homer-2-1.webp" },
+  { name: "Huntsman", src: "/logos/huntsman.webp" },
 ];
 
 const allLogos = [...logos, ...logos, ...logos];

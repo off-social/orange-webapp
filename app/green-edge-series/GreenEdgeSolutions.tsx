@@ -17,8 +17,8 @@ const BRAND_LOGOS: Record<
   { src: string; width: number; height: number }
 > = {
   // Both files are 169x52, so the heights here must keep that ratio.
-  Colorix: { src: "/logos/Colorix-4.svg", width: 100, height: 31 },
-  Homer: { src: "/logos/Homer-2-1.svg", width: 100, height: 31 },
+  Colorix: { src: "/logos/Colorix-4.webp", width: 100, height: 31 },
+  Homer: { src: "/logos/Homer-2-1.webp", width: 100, height: 31 },
 };
 
 interface Product {

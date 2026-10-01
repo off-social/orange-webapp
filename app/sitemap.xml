@@ -33,7 +33,7 @@
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://orangeotec.com/product-details/rocket/</loc>
+       <loc>https://orangeotec.com/product-details/rocket-single-pass-digital-textile-printer/</loc>
        <lastmod>2026-09-08T07:33:10+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
@@ -108,14 +108,19 @@
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://orangeotec.com/product-details/jetrix-e/</loc>
+       <loc>https://orangeotec.com/product-details/jetrix-e-hybrid-digital-label-printer/</loc>
        <lastmod>2026-09-08T07:33:05+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
-       <loc>https://orangeotec.com/product-details/vividpress-e/</loc>
+       <loc>https://orangeotec.com/product-details/vividpress-e-digital-inkjet-printing-machine/</loc>
        <lastmod>2026-09-08T07:33:11+00:00</lastmod>
        <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://orangeotec.com/product-details/mas-vertical-double-sided-digital-textile-printer/</loc>
+       <lastmod>2026-09-28T00:00:00+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/brochures/FabPro-1i.pdf</loc>

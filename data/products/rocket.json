@@ -1,5 +1,5 @@
 {
-  "slug": "rocket",
+  "slug": "rocket-single-pass-digital-textile-printer",
   "name": "Rocket",
   "tagline": "Single-Pass Industrial Digital Textile Printer",
   "heroImage": {
@@ -270,20 +270,125 @@
     }
   },
   "showcase": {
-    "heading": "Rocket Showcase",
+    "keySpecificationOnly": true,
+    "headingIsPageH1": true,
+    "heading": "Single Pass Digital Textile Printer",
     "description": "The world's fastest digital textile printer in its class. Single-pass architecture, up to 70,000 lm/day, 2588mm print width, and full inline automation built for manufacturers who operate at mass-production scale.",
-    "leftItems": [
-      "Scanning printers can't match mill output",
-      "High per-metre cost on volume runs",
-      "Manual handling between print stages",
-      "Air bubbles causing nozzle inconsistency"
+    "table": {
+      "heading": "Fabric and Ink Selection for Single Pass Digital Textile Printing",
+      "intro": "At up to 70,000 metres a day, the wrong ink choice gets repeated across the whole run. Match the ink to the fibre first.",
+      "columns": [
+        "Fabric",
+        "Ink",
+        "Applications"
+      ],
+      "rows": [
+        [
+          "Cotton, viscose, linen",
+          "Reactive",
+          "Bedsheets, shirting, kurtis, dress material"
+        ],
+        [
+          "Silk",
+          "Reactive, acid",
+          "Sarees, dupattas, premium fashion"
+        ],
+        [
+          "Nylon, lycra, wool",
+          "Acid",
+          "Swimwear, activewear, lingerie"
+        ],
+        [
+          "Poly-cotton, mixed",
+          "Pigment",
+          "Uniforms, home textiles"
+        ],
+        [
+          "Polyester",
+          "Disperse",
+          "Sarees, curtains, upholstery, sportswear"
+        ]
+      ],
+      "note": "On single pass, fabric consistency matters as much as ink. Keep fabric sources and pretreatment uniform across rolls to avoid colour shifts in a batch. The 2,588 mm print width fits double bedsheets in a single width."
+    }
+  },
+  "seoContent": {
+    "sections": [
+      {
+        "type": "table",
+        "heading": "Real-World Production Capacity",
+        "columns": [
+          "Speed",
+          "Per Hour",
+          "8-Hour Shift"
+        ],
+        "rows": [
+          [
+            "90 m/min",
+            "5,400 lm",
+            "43,200 lm"
+          ],
+          [
+            "75 m/min",
+            "4,500 lm",
+            "36,000 lm"
+          ],
+          [
+            "60 m/min",
+            "3,600 lm",
+            "28,800 lm"
+          ]
+        ],
+        "note": "After roll changes, design changes and maintenance, 70,000 metres a day is realistic across three shifts. That's a 1 lakh metre order in under 2 days. But plan your pretreatment, steaming and washing lines to match, because at these speeds downstream capacity is usually the real limit."
+      },
+      {
+        "type": "text",
+        "heading": "Infrastructure and Setup Requirements",
+        "paragraphs": [
+          "Plan floor space for the full inline line plus pretreatment, finishing and roll storage. You'll need stable power with backup, fixation equipment sized to Rocket's output, bulk ink storage with a reliable supply, and water and effluent treatment if you print reactive or acid. Staff each shift with a print operator, fabric handlers and someone for RIP and colour profiles, and agree service response times in advance."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Quality Control During Continuous Production",
+        "paragraphs": [
+          "At 90 m/min, a problem missed for 10 minutes affects 900 metres. Rocket's inline degassing prevents air bubbles, a main cause of nozzle dropouts, while variable droplets (5–18 pl) give fine detail and solid coverage in one pass. On the floor, run nozzle checks at every shift start, use fabric-specific colour profiles, check fabric tension at feeding and inspect fabric at collection so problems are caught during the run."
+        ]
+      }
     ],
-    "rightItems": [
-      "Single-pass output up to 70,000 lm/day",
-      "Variable droplet tech for detail & solids",
-      "Fully integrated inline print-dry-collect",
-      "Stable ink supply with inline degassing"
-    ]
+    "faq": {
+      "heading": "Rocket: Single Pass Digital Textile Printer",
+      "items": [
+        {
+          "q": "What is a single pass digital textile printer?",
+          "a": "A single pass digital textile printer uses fixed rows of printheads that cover the full fabric width. The fabric passes underneath once and the whole design is printed in that one pass, which makes it much faster than scanning printers."
+        },
+        {
+          "q": "How fast is Rocket?",
+          "a": "Rocket prints at 60, 75 or 90 metres per minute, with a production capacity of up to 70,000 linear metres a day."
+        },
+        {
+          "q": "What is the maximum print width?",
+          "a": "Rocket prints up to 2,588 mm wide, which fits wide home textiles like double bedsheets in a single width."
+        },
+        {
+          "q": "What does it cost to print per metre?",
+          "a": "Ink cost averages about ₹4.2 per metre, from around ₹2.5 for light designs up to ₹5.8 for deep designs."
+        },
+        {
+          "q": "Can Rocket replace rotary screen printing?",
+          "a": "For many jobs, yes. Rocket reduces production turnaround from 30 days to 5 because there are no screens to engrave. It can also combine digital printing with rotary screen printing in a single pass."
+        },
+        {
+          "q": "Which inks and fabrics does Rocket support?",
+          "a": "Rocket supports reactive, acid, pigment and disperse inks on all fabric types, including elastic and new-generation fibres."
+        },
+        {
+          "q": "How many printheads does Rocket use?",
+          "a": "Rocket is scalable up to 212 printheads, with 4 to 8 colours."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

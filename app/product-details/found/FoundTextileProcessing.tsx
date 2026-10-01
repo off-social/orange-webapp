@@ -192,7 +192,7 @@ export default function FoundTextileProcessing() {
           }}
         >
           <Image
-            src="/MgSeries.png"
+            src="/MgSeries.webp"
             alt={`${MACHINE_NAME} ${MACHINE_MODEL}`}
             fill
             sizes="(min-width: 900px) calc(100vw - 336px), calc(100vw - 32px)"

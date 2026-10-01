@@ -16,7 +16,7 @@ const BRANDS: Brand[] = [
     logo: "/fIcon.webp",
     products: [
       {
-        src: "/MgSeries.png",
+        src: "/MgSeries.webp",
         name: "FOUND Textile Processing Range",
         desc: "Pretreatment, Washing, and Finishing Machinery for Knit and Woven Fabrics.",
       },

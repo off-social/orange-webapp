@@ -37,7 +37,7 @@ export const products: Record<string, Product> = {
   k24: k24 as Product,
   k32: k32 as Product,
   k64: k64 as Product,
-  rocket: rocket as Product,
+  "rocket-single-pass-digital-textile-printer": rocket as Product,
   jp7: jp7 as Product,
   "jpk-evo": jpkEvo as Product,
   minilario: minilario as Product,
@@ -50,13 +50,24 @@ export const products: Record<string, Product> = {
   "alpha-16": alpha16 as Product,
   "subpro-ii": subProII as Product,
   pengda: pengda as Product,
-  "jetrix-e": jetrixE as Product,
-  "vividpress-e": vividPressE as Product,
-  "mas-vertical": masVertical as Product,
+  "jetrix-e-hybrid-digital-label-printer": jetrixE as Product,
+  "vividpress-e-digital-inkjet-printing-machine": vividPressE as Product,
+  "mas-vertical-double-sided-digital-textile-printer": masVertical as Product,
   "mas-twelve": masTwelve as Product,
 };
 
 export const productSlugs = Object.keys(products);
+
+/**
+ * Products whose URL slug is not the one `productSlug()` derives from their
+ * catalog name (e.g. a keyword-led slug). Keyed by the derived slug.
+ */
+const SLUG_OVERRIDES: Record<string, string> = {
+  "mas-vertical": "mas-vertical-double-sided-digital-textile-printer",
+  "jetrix-e": "jetrix-e-hybrid-digital-label-printer",
+  rocket: "rocket-single-pass-digital-textile-printer",
+  "vividpress-e": "vividpress-e-digital-inkjet-printing-machine",
+};
 
 export function getProduct(slug: string): Product | undefined {
   return products[slug];
@@ -123,6 +134,7 @@ export function productHref(name: string): string {
   const custom = CUSTOM_PRODUCT_PAGES[name];
   if (custom) return custom;
 
-  const slug = productSlug(name);
+  const derived = productSlug(name);
+  const slug = SLUG_OVERRIDES[derived] ?? derived;
   return products[slug] ? `/product-details/${slug}` : "/product-details";
 }

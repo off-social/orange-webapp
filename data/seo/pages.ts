@@ -54,16 +54,16 @@ export const productSeo = {
     path: "/product-details/k24/",
   },
   "mas-vertical-double-sided-digital-textile-printer": {
-    title: "Single Pass Double Sided Digital Textile Printer",
+    title: "Double Sided Digital Textile Printer for Fabric Printing",
     description:
-      "MAS Vertical is a single-pass double sided digital textile printer that delivers synchronized front-to-back registration and supports two independent designs on one fabric.",
+      "MAS Vertical is a double sided digital textile printer designed for precise front-to-back printing with synchronized registration in a single pass.",
     keywords: "Double sided textile printing",
     path: "/product-details/mas-vertical-double-sided-digital-textile-printer/",
   },
   "jetrix-e-hybrid-digital-label-printer": {
-    title: "Label Printers for Hybrid Label Production",
+    title: "Hybrid Digital Label Printer for High Quality Printing",
     description:
-      "Jetrix E is a hybrid label printer designed for professional label production, delivering printing speeds of up to 50 m/min with UV ink technology.",
+      "Jetrix E is a hybrid digital label printer designed for high quality label printing with flexible production and efficient performance.",
     keywords: "label printers",
     path: "/product-details/jetrix-e-hybrid-digital-label-printer/",
   },
@@ -75,9 +75,9 @@ export const productSeo = {
     path: "/product-details/foiljet-8/",
   },
   "vividpress-e-digital-inkjet-printing-machine": {
-    title: "Digital Book Printing Machine for Printing",
+    title: "Digital Inkjet Printing Machine for Textile Production",
     description:
-      "VividPress-E is a digital book printing machine with single-pass duplex printing and speeds up to 100 m/min for book and publication printing.",
+      "Vividpress E is a digital inkjet printing machine designed for efficient textile production with precise printing and consistent output.",
     keywords: "Digital Book Printing Machine",
     path: "/product-details/vividpress-e-digital-inkjet-printing-machine/",
   },
@@ -103,9 +103,9 @@ export const productSeo = {
     path: "/product-details/alpha-ii/",
   },
   "rocket-single-pass-digital-textile-printer": {
-    title: "Industrial Textile Printing Machine for Fabric Printing",
+    title: "Single Pass Digital Textile Printer for High-Speed Printing",
     description:
-      "Explore the Rocket industrial textile printing machine, developed for direct fabric printing with consistent print quality and reliable production performance.",
+      "Rocket is a single pass digital textile printer with speeds up to 90 m/min, built for continuous, high-volume textile production.",
     keywords: "industrial textile printing machine",
     path: "/product-details/rocket-single-pass-digital-textile-printer/",
   },

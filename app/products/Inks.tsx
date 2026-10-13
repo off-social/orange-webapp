@@ -1,39 +1,39 @@
 "use client";
 
+import { useConsultation } from "@/data/ConsultationContext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
-import { useConsultation } from "@/data/ConsultationContext";
 
 const INK_TABS = [
   {
     label: "Reactive",
-    src: "/Reactive1.webp",
+    src: "/Reactive-Ink.webp",
     name: "Reactive Ink Series",
     desc: "Vivid, long-lasting reactive inks for cotton and natural fibre printing.",
   },
   {
     label: "Sublimation",
-    src: "/Reactive1.webp",
+    src: "/Sublimation-Ink.webp",
     name: "Sublimation Ink Series",
     desc: "High-performance sublimation inks for vibrant polyester fabric printing.",
   },
   {
     label: "Pigment",
-    src: "/Reactive1.webp",
+    src: "/Pigment-Ink.webp",
     name: "Pigment Ink Series",
     desc: "Eco-friendly pigment inks compatible with direct-to-fabric printing.",
   },
   {
     label: "UV",
-    src: "/Reactive1.webp",
+    src: "/UV-Ink.webp",
     name: "UV Ink Series",
     desc: "UV-curable inks for instant curing on rigid and flexible substrates.",
   },
   {
     label: "Disperse",
-    src: "/Reactive1.webp",
+    src: "/Disperse-Ink.webp",
     name: "Disperse Ink Series",
     desc: "High-energy disperse inks for direct polyester and sportswear printing.",
   },

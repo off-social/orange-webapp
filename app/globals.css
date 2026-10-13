@@ -27,6 +27,12 @@ body {
   overflow-x: clip;
 }
 
+/* Direct-only document route. Site chrome stays out of this screen. */
+body:has(.instructions-doc) header,
+body:has(.instructions-doc) footer {
+  display: none !important;
+}
+
 html {
   overflow-y: scroll;
   scrollbar-width: thin;

@@ -40,7 +40,7 @@ const PRINTERS = [
   "Alpha 16",
   "SubPro II",
   "Pengda 1000DIA",
-  "JetRix-E",
+  "JetixLab-E",
   "VividPress-E",
   "MAS Digital Textile Printer",
   "MAS Vertical",

@@ -7,7 +7,7 @@ import fabPro1i from "./fabpro-1i.json";
 import fabPro2i from "./fabpro-2i.json";
 import foilJet8 from "./foiljet-8.json";
 import foilJet16 from "./foiljet-16.json";
-import jetixLabE from "./jetixlab-e.json";
+import jetixLab from "./jetixlab.json";
 import jp7 from "./jp7.json";
 import jpkEvo from "./jpk-evo.json";
 import k24 from "./k24.json";
@@ -50,7 +50,7 @@ export const products: Record<string, Product> = {
   "alpha-16": alpha16 as Product,
   "subpro-ii": subProII as Product,
   pengda: pengda as Product,
-  "jetixlab-e-hybrid-digital-label-printer": jetixLabE as Product,
+  "jetixlab-hybrid-digital-label-printer": jetixLab as Product,
   "vividpress-e-digital-inkjet-printing-machine": vividPressE as Product,
   "mas-vertical-double-sided-digital-textile-printer": masVertical as Product,
   "mas-twelve": masTwelve as Product,
@@ -65,7 +65,7 @@ export const productSlugs = Object.keys(products);
 const SLUG_OVERRIDES: Record<string, string> = {
   "position-pro": "position-printing-machine",
   "mas-vertical": "mas-vertical-double-sided-digital-textile-printer",
-  "jetixlab-e": "jetixlab-e-hybrid-digital-label-printer",
+  "jetixlab": "jetixlab-hybrid-digital-label-printer",
   rocket: "rocket-single-pass-digital-textile-printer",
   "vividpress-e": "vividpress-e-digital-inkjet-printing-machine",
 };

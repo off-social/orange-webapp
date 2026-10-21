@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 const products = [
   {
     src: "/LabelPrinters.webp",
-    name: "JetixLab-E Industrial Digital Label Printer",
+    name: "JetixLab Industrial Digital Label Printer",
     desc: "Delivering Precision, Flexibility, and Consistent Output.",
   },
 ];

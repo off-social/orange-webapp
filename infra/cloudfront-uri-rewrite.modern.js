@@ -2,7 +2,7 @@
 // keep working. Keys and values are directory paths with a trailing slash.
 const REDIRECTS = {
   "/product-details/jetrix-e-hybrid-digital-label-printer/":
-    "/product-details/jetixlab-e-hybrid-digital-label-printer/",
+    "/product-details/jetixlab-hybrid-digital-label-printer/",
 };
 
 function handler(event) {

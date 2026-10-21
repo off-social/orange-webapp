@@ -60,12 +60,12 @@ export const productSeo = {
     keywords: "Double sided textile printing",
     path: "/product-details/mas-vertical-double-sided-digital-textile-printer/",
   },
-  "jetixlab-e-hybrid-digital-label-printer": {
+  "jetixlab-hybrid-digital-label-printer": {
     title: "Hybrid Digital Label Printer for High Quality Printing",
     description:
-      "JetixLab E is a hybrid digital label printer designed for high quality label printing with flexible production and efficient performance.",
+      "JetixLab is a hybrid digital label printer designed for high quality label printing with flexible production and efficient performance.",
     keywords: "label printers",
-    path: "/product-details/jetixlab-e-hybrid-digital-label-printer/",
+    path: "/product-details/jetixlab-hybrid-digital-label-printer/",
   },
   "foiljet-8": {
     title: "Industrial Sublimation Printer for Textile Production",

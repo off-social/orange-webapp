@@ -1,6 +1,6 @@
 {
-  "slug": "jetrix-e-hybrid-digital-label-printer",
-  "name": "JetRix-E",
+  "slug": "jetixlab-e-hybrid-digital-label-printer",
+  "name": "JetixLab-E",
   "nameAsParagraph": true,
   "tagline": "Hybrid Digital Label Press — All-in-One Digital + Flexo + Foil",
   "heroImage": {
@@ -115,7 +115,7 @@
       {
         "image": "/Lace-sequin.webp",
         "title": "Pharma and Agro Labels",
-        "desc": "High-resolution variable data printing and G7 colour accuracy make the JetRix-E well suited to pharmaceutical, agrochemical, and crop protection label production requiring regulatory compliance and precise colour consistency."
+        "desc": "High-resolution variable data printing and G7 colour accuracy make the JetixLab-E well suited to pharmaceutical, agrochemical, and crop protection label production requiring regulatory compliance and precise colour consistency."
       },
       {
         "image": "/Jacquard.webp",
@@ -189,7 +189,7 @@
     "description": "Access product videos, brochures, and technical information to explore the full capabilities of printers",
     "brochure": {
       "title": "Product Brochure",
-      "desc": "Full technical specifications, substrate compatibility details, ink configuration options, modular design overview, and installation requirements for the JetRix-E.",
+      "desc": "Full technical specifications, substrate compatibility details, ink configuration options, modular design overview, and installation requirements for the JetixLab-E.",
       "coverImage": "/ProductBrochure.webp"
     }
   },
@@ -218,7 +218,7 @@
         "type": "text",
         "heading": "What Can You Print With a Hybrid Digital Label Printer?",
         "paragraphs": [
-          "JetRix-E combines digital inkjet, flexo and cold foil on one press. It handles full-colour product labels for food, beverage, cosmetics and FMCG, premium labels with foil, varnish and white ink on clear or metallic films, multi-SKU and multi-language jobs with no plate changes, variable data like barcodes, QR codes and batch numbers, and short seasonal or promotional runs."
+          "JetixLab-E combines digital inkjet, flexo and cold foil on one press. It handles full-colour product labels for food, beverage, cosmetics and FMCG, premium labels with foil, varnish and white ink on clear or metallic films, multi-SKU and multi-language jobs with no plate changes, variable data like barcodes, QR codes and batch numbers, and short seasonal or promotional runs."
         ]
       },
       {
@@ -237,22 +237,22 @@
       },
       {
         "type": "text",
-        "heading": "Short Run vs Long Run: Where JetRix-E Makes Sense",
+        "heading": "Short Run vs Long Run: Where JetixLab-E Makes Sense",
         "paragraphs": [
-          "JetRix-E is strongest on short and medium runs: many SKUs, new launches, variable data and frequent reorders, where plates and changeovers make flexo expensive. At 50 m/min, it prints up to 3,000 metres an hour. For very long runs of one unchanging design, compare the cost per label with dedicated flexo."
+          "JetixLab-E is strongest on short and medium runs: many SKUs, new launches, variable data and frequent reorders, where plates and changeovers make flexo expensive. At 50 m/min, it prints up to 3,000 metres an hour. For very long runs of one unchanging design, compare the cost per label with dedicated flexo."
         ]
       }
     ],
     "faq": {
-      "heading": "JetRix-E: Hybrid Digital Label Printer",
+      "heading": "JetixLab-E: Hybrid Digital Label Printer",
       "items": [
-        { "q": "What is a hybrid digital label printer?", "a": "A hybrid digital label printer combines digital inkjet printing with conventional processes like flexo and cold foil on one press. JetRix-E prints, coats and embellishes labels in a single pass." },
-        { "q": "How fast is JetRix-E?", "a": "JetRix-E prints at up to 50 metres per minute, at a resolution of up to 1200 × 600 dpi." },
-        { "q": "What colours can JetRix-E print?", "a": "It prints up to 7 colours: White, Cyan, Magenta, Yellow, Black and up to 2 spot colours. Its UV inks are G7-certified for consistent colour." },
-        { "q": "What is the maximum label width and repeat length?", "a": "JetRix-E handles webs up to 360 mm wide, with a print width of 350 mm and a repeat length from 203.2 mm to 635 mm." },
-        { "q": "Does JetRix-E check print quality automatically?", "a": "Yes. An automated inline camera inspects labels during the run, so defects are caught while the job is printing rather than after it's finished." },
-        { "q": "Which industries use JetRix-E?", "a": "It's used for pharmaceutical, food, beverage, cosmetics and premium labels, where short runs, frequent design changes and consistent colour matter." },
-        { "q": "How much space does JetRix-E need?", "a": "The machine measures 4.6 × 1.7 × 2.1 m and weighs about 2,500 kg." }
+        { "q": "What is a hybrid digital label printer?", "a": "A hybrid digital label printer combines digital inkjet printing with conventional processes like flexo and cold foil on one press. JetixLab-E prints, coats and embellishes labels in a single pass." },
+        { "q": "How fast is JetixLab-E?", "a": "JetixLab-E prints at up to 50 metres per minute, at a resolution of up to 1200 × 600 dpi." },
+        { "q": "What colours can JetixLab-E print?", "a": "It prints up to 7 colours: White, Cyan, Magenta, Yellow, Black and up to 2 spot colours. Its UV inks are G7-certified for consistent colour." },
+        { "q": "What is the maximum label width and repeat length?", "a": "JetixLab-E handles webs up to 360 mm wide, with a print width of 350 mm and a repeat length from 203.2 mm to 635 mm." },
+        { "q": "Does JetixLab-E check print quality automatically?", "a": "Yes. An automated inline camera inspects labels during the run, so defects are caught while the job is printing rather than after it's finished." },
+        { "q": "Which industries use JetixLab-E?", "a": "It's used for pharmaceutical, food, beverage, cosmetics and premium labels, where short runs, frequent design changes and consistent colour matter." },
+        { "q": "How much space does JetixLab-E need?", "a": "The machine measures 4.6 × 1.7 × 2.1 m and weighs about 2,500 kg." }
       ]
     }
   },

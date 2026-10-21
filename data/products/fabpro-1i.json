@@ -1,10 +1,12 @@
 {
   "slug": "fabpro-1i",
   "name": "FabPro 1i",
+  "nameAsParagraph": true,
   "tagline": "High-Performance Direct-to-Fabric Industrial Printer",
   "heroImage": {
     "desktop": "/FabPro1i1.webp",
-    "mobile": "/FabPro1i1.webp"
+    "mobile": "/FabPro1i1.webp",
+    "alt": "Digital Fabric Printing Machine"
   },
   "sidebar": {
     "bullets": [
@@ -268,21 +270,176 @@
       "brochureUrl": "/brochures/FabPro-1i.pdf"
     }
   },
-  "showcase": {
-    "heading": "FabPro 1i Showcase",
-    "description": "Engineered for high-performance textile production, FabPro 1i delivers vibrant color, reliable output, and consistent quality across a wide range of fabrics.",
-    "leftItems": [
-      "Inconsistent ink flow on long production runs",
-      "Printhead damage from fabric obstructions",
-      "Wrinkles and misfeeds on delicate fabrics",
-      "Frequent downtime for cleaning and maintenance"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "table",
+        "heading": "Fabric Compatibility and Post-Printing Process",
+        "headingIsPageH1": true,
+        "hideCheckIcon": true,
+        "intro": "FabPro 1i prints on fabrics from 30 to 450 gsm, from lightweight silk to heavier furnishing fabrics. Each fabric needs the right ink and the right finishing process for the colour to fix permanently.",
+        "columns": [
+          "Fabric",
+          "Ink",
+          "Post-Printing Process"
+        ],
+        "rows": [
+          [
+            "Cotton, linen",
+            "Reactive",
+            "Steaming, then washing"
+          ],
+          [
+            "Silk",
+            "Reactive or acid",
+            "Steaming, then washing"
+          ],
+          [
+            "Nylon",
+            "Acid",
+            "Steaming, then washing"
+          ],
+          [
+            "Polyester",
+            "Disperse",
+            "Heat fixation"
+          ],
+          [
+            "Blends",
+            "Reactive or disperse, based on the main fibre",
+            "As per ink type"
+          ]
+        ],
+        "note": "Fabric should be pretreated before printing for the best colour yield and sharpness."
+      },
+      {
+        "type": "table",
+        "heading": "Production Output and Print Quality on a Digital Fabric Printing Machine",
+        "hideCheckIcon": true,
+        "intro": "FabPro 1i prints at up to 80 lm/hr in standard mode and up to 110 lm/hr at maximum speed.",
+        "columns": [
+          "Mode",
+          "Per Hour",
+          "8-Hour Shift",
+          "24 Hours"
+        ],
+        "rows": [
+          [
+            "Standard",
+            "80 lm",
+            "640 lm",
+            "1,920 lm"
+          ],
+          [
+            "Maximum",
+            "110 lm",
+            "880 lm",
+            "2,640 lm"
+          ]
+        ],
+        "note": "Speed and quality depend on the print mode. Bi-directional printing is faster and suits most production. Single-direction printing is slower but gives the cleanest results on fine detail and gradients. Fabric type matters too: dense, absorbent fabrics and dark designs often need slower modes for even coverage. With 8 colours (CMYK plus Orange, Red, Blue and Green) and up to 600 × 900 dpi resolution, FabPro 1i reproduces bright, saturated shades across all supported fabrics."
+      },
+      {
+        "type": "text",
+        "heading": "Production Setup and Installation",
+        "paragraphs": [
+          "FabPro 1i takes rolls up to 400 mm in diameter and 200 kg, with a maximum media width of 1,850 mm. A 15-litre ink tank supports long runs without frequent refills, and the machine runs on neoStampa RIP software.",
+          {
+            "title": "Before installation, plan for:",
+            "plainItems": true,
+            "list": [
+              "Floor space for the machine, roll loading, operator access and fabric storage",
+              "Stable power with voltage stabilisation and backup",
+              "Auxiliary equipment: pretreatment before printing, plus a steamer and washer for reactive and acid inks, or heat fixation for disperse",
+              "A controlled print room with stable temperature and humidity and minimal dust"
+            ],
+            "footnote": "Our team shares exact dimensions and power requirements during site planning."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Printhead Maintenance and Downtime Prevention",
+        "paragraphs": [
+          "FabPro 1i is built to reduce the downtime that slows most textile printers:",
+          {
+            "list": [
+              "Sensor-based head crash protection detects fabric obstructions and protects the Ricoh Gen 6 heads from damage",
+              "Real-time wrinkle control keeps fabric flat and feeding smoothly, even on delicate fabrics",
+              "Automated capping and wiping keeps nozzles moist and clean between jobs",
+              "One-touch maintenance makes routine cleaning quick and simple",
+              "An efficient ink supply keeps ink flow steady on long runs"
+            ]
+          },
+          "For daily operation, run a nozzle check at the start of each shift, use the one-touch cleaning when nozzles drop out, and keep the print belt clean."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Applications and End Products",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "columns": [
+          "Application",
+          "End Products"
+        ],
+        "rows": [
+          [
+            "Fashion garments",
+            "Kurtis, shirts, dresses, ethnic wear"
+          ],
+          [
+            "Scarves and accessories",
+            "Silk scarves, stoles, dupattas"
+          ],
+          [
+            "Home textiles",
+            "Cushion covers, curtains, bedsheets"
+          ],
+          [
+            "Sampling and short runs",
+            "Design samples, strike-offs, small-batch orders"
+          ],
+          [
+            "Polyester products",
+            "Sportswear fabric, polyester dress material"
+          ]
+        ]
+      }
     ],
-    "rightItems": [
-      "Efficient ink supply for uninterrupted production",
-      "Sensor-based head crash protection",
-      "Real-time wrinkle control for smooth conveying",
-      "Automated capping, wiping & one-touch maintenance"
-    ]
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is a digital fabric printing machine?",
+          "a": "A digital fabric printing machine prints designs directly onto fabric from a digital file, without screens. FabPro 1i uses 8 Ricoh Gen 6 industrial printheads to print on cotton, linen, silk, nylon, polyester and blends."
+        },
+        {
+          "q": "What is the price of FabPro 1i?",
+          "a": "The price depends on configuration and the auxiliary equipment you need. Contact our team for a quote based on your fabric range and production volume."
+        },
+        {
+          "q": "What does it cost to run?",
+          "a": "Running cost includes ink, fabric pretreatment, post-processing (steaming, washing or heat fixation), power and labour. Ink use varies with design coverage and print mode, so dark, full-coverage designs cost more per metre than light ones."
+        },
+        {
+          "q": "What other equipment do I need?",
+          "a": "You’ll need pretreatment equipment, plus a steamer and washer for reactive and acid inks, or a heat fixation unit for disperse ink."
+        },
+        {
+          "q": "What maintenance does FabPro 1i need?",
+          "a": "Automated capping, wiping and one-touch maintenance handle most routine care. Operators should run a nozzle check every shift and keep the print belt clean."
+        },
+        {
+          "q": "Does Orange O Tec provide installation and training?",
+          "a": "Yes. Our team handles installation and operator training, and Orange O Tec’s 85+ service engineers provide after-sales support across India."
+        },
+        {
+          "q": "Which RIP software does FabPro 1i use?",
+          "a": "FabPro 1i runs on neoStampa."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

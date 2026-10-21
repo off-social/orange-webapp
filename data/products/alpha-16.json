@@ -1,10 +1,12 @@
 {
   "slug": "alpha-16",
   "name": "Alpha 16",
+  "nameAsParagraph": true,
   "tagline": "High-Speed Industrial Sublimation Transfer Printer",
   "heroImage": {
     "desktop": "/radoimgAlpha4.webp",
-    "mobile": "/radoimgAlpha4.webp"
+    "mobile": "/radoimgAlpha4.webp",
+    "alt": "Industrial Sublimation Printer"
   },
   "sidebar": {
     "bullets": [
@@ -248,21 +250,176 @@
       "coverImage": "/ProductBrochure.webp"
     }
   },
-  "showcase": {
-    "heading": "Alpha 16 Showcase",
-    "description": "The highest-output Kolorado Alpha sublimation printer. 16 Epson i3200-A1 heads, up to 9,200 lm/day, Maglev carriage, THK silent dual rail, 25-litre bulk ink, 3,000-metre roll support, and external multi-stage drying built for maximum-volume polyester and transfer paper sublimation production.",
-    "leftItems": [
-      "Throughput limits on maximum-volume runs",
-      "Carriage vibration affecting print quality",
-      "Paper bulging causing misalignment",
-      "Frequent roll changes and ink refills"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "Paper Handling on an Industrial Sublimation Printer",
+        "headingIsPageH1": true,
+        "paragraphs": [
+          "Transfer paper tends to bulge and lift during long runs, which causes misalignment and head strikes. Alpha 16’s air-guided suction platform holds the paper flat against the print bed, so every pass lands where it should. The machine supports rolls of up to 3,000 metres, which means fewer roll changes and longer uninterrupted runs. A Maglev X-axis drive and THK silent dual guide rails keep carriage movement smooth and vibration-free, protecting print quality at full speed."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Ink System and Printhead Maintenance",
+        "paragraphs": [
+          "Alpha 16 runs 16 Epson i3200-A1 printheads with a 3.5 pl droplet size. A 25-litre bulk ink system feeds them, so the machine runs long jobs without frequent refills. It uses high-concentration heat transfer ink, which gives strong colour with less ink laid on the paper.",
+          "For consistent output, run a nozzle check at the start of every shift and after idle periods, clean heads as soon as nozzles drop out, and keep the print room free of paper dust."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Drying System and Production Workflow",
+        "paragraphs": [
+          "Alpha 16 uses an external multi-stage drying system that dries the printed paper in stages before it’s rolled, so ink doesn’t smudge or transfer onto the next layer. From there, the workflow runs in four steps:",
+          {
+            "list": [
+              "Print: the design is printed in mirror image on transfer paper",
+              "Dry and roll: multi-stage drying sets the ink before rewinding",
+              "Transfer: paper and polyester fabric pass through a heat press or calender, where the ink turns to gas and bonds into the fibres",
+              "Finish: the paper is removed, leaving a permanent print"
+            ],
+            "ordered": true
+          },
+          "The heat press or calender for step 3 is separate equipment and needs to be arranged alongside the printer."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Print Quality and Colour Management",
+        "paragraphs": [
+          "Colour consistency on a sublimation printer depends on three things working together:",
+          {
+            "list": [
+              "Print mode: 1-pass mode prints up to 460 lm/hr for bulk orders, while 2-pass mode prints up to 230 lm/hr with richer colour and finer detail",
+              "Colour profiles: each combination of transfer paper, fabric and transfer temperature needs its own ICC profile, because colour only fully develops after heat transfer",
+              "RIP settings: ink limits and colour conversion in the RIP control saturation, prevent over-inking and keep shades consistent between orders"
+            ]
+          },
+          "The 3.5 pl droplet size gives fine lines and smooth gradients, while high-concentration ink delivers deep colour even in 1-pass mode. For repeat orders, keep transfer temperature, time and paper consistent, since these affect final colour as much as the printer does."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Technical Specifications",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "columns": [
+          "Specification",
+          "Alpha 16"
+        ],
+        "rows": [
+          [
+            "Printheads",
+            "16 × Epson i3200-A1 (3.5 pl)"
+          ],
+          [
+            "Max print width",
+            "1,900 mm"
+          ],
+          [
+            "Machine width",
+            "1,950 mm"
+          ],
+          [
+            "Print speed",
+            "460 lm/hr (1 pass), 230 lm/hr (2 pass)"
+          ],
+          [
+            "Max output",
+            "Up to 9,200 lm/day"
+          ],
+          [
+            "Max resolution",
+            "360 × 1200 dpi"
+          ],
+          [
+            "Ink",
+            "CMYK, high-concentration sublimation"
+          ],
+          [
+            "Bulk ink",
+            "25 litres"
+          ],
+          [
+            "Max media load",
+            "3,000 m"
+          ],
+          [
+            "Media",
+            "Transfer paper, polyester fabric"
+          ],
+          [
+            "Carriage",
+            "Maglev X-axis, THK silent dual rails"
+          ]
+        ],
+        "note": "Plan floor space for the printer, roll loading, the drying system and your heat transfer equipment. Our team shares full installation requirements during site planning."
+      },
+      {
+        "type": "table",
+        "heading": "Applications and End Products",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "intro": "Sublimation works on polyester and high-polyester blends, giving bright, permanent prints that don’t crack or fade.",
+        "columns": [
+          "Application",
+          "End Products"
+        ],
+        "rows": [
+          [
+            "Sportswear",
+            "Jerseys, team kits, activewear"
+          ],
+          [
+            "Polyester apparel",
+            "Sarees, dress materials, kurtis"
+          ],
+          [
+            "Fashion textiles",
+            "Printed polyester and blended fashion fabrics"
+          ],
+          [
+            "Home furnishings",
+            "Curtains, cushion covers, upholstery, bedspreads"
+          ],
+          [
+            "Soft signage",
+            "Flags, banners, fabric displays"
+          ]
+        ]
+      }
     ],
-    "rightItems": [
-      "Up to 9,200 lm/day output",
-      "THK silent dual guide rail",
-      "Air-guided suction platform",
-      "25-litre bulk ink + 3,000 m roll support"
-    ]
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is an industrial sublimation printer?",
+          "a": "An industrial sublimation printer is a high-speed printer built for continuous, high-volume sublimation transfer printing. Alpha 16 prints up to 9,200 linear metres a day on transfer paper, which is then heat-pressed onto polyester fabric."
+        },
+        {
+          "q": "How fast is Alpha 16?",
+          "a": "Alpha 16 prints up to 460 lm/hr in 1-pass mode and 230 lm/hr in 2-pass mode."
+        },
+        {
+          "q": "What is the difference between Alpha 15 and Alpha 16?",
+          "a": "Alpha 16 is built for higher volumes, with 16 printheads, up to 9,200 lm/day, a 25-litre bulk ink system and 3,000-metre roll support. Alpha 15 uses 15 printheads and produces up to 5,100 lm/day."
+        },
+        {
+          "q": "How long can Alpha 16 run without a roll change?",
+          "a": "Alpha 16 supports rolls of up to 3,000 metres of transfer paper."
+        },
+        {
+          "q": "Do I need a separate heat press?",
+          "a": "Yes. Alpha 16 prints and dries the transfer paper. Transferring the design to fabric needs a separate heat press or calender."
+        },
+        {
+          "q": "Can sublimation print on cotton?",
+          "a": "No. Sublimation bonds with polyester, so it works on polyester and high-polyester blends, not cotton."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

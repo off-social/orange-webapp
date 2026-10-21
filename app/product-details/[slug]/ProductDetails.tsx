@@ -28,11 +28,12 @@ export default function ProductDetails({ product }: { product: Product }) {
 
   // "Ideal for" is dropped entirely when a product has no ideal-application
   // cards (e.g. Rocket) — the tab would otherwise open onto a bare heading.
-  const showcaseInKeySpec = product.showcase.keySpecificationOnly === true;
+  const hasShowcase = product.showcase !== undefined;
+  const showcaseInKeySpec = product.showcase?.keySpecificationOnly === true;
   // Only honoured inside the tab: the tab opens by default, so the H1 is in
   // the server-rendered HTML. Below every tab it'd sit after the tab content.
   const showcaseHeadingIsH1 =
-    showcaseInKeySpec && product.showcase.headingIsPageH1 === true;
+    showcaseInKeySpec && product.showcase?.headingIsPageH1 === true;
 
   const tabs = [
     {
@@ -222,7 +223,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         >
           <Image
             src={product.heroImage.mobile}
-            alt={product.name}
+            alt={product.heroImage.alt ?? product.name}
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
             priority
@@ -239,7 +240,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         >
           <Image
             src={product.heroImage.desktop}
-            alt={product.name}
+            alt={product.heroImage.alt ?? product.name}
             width={1920}
             height={900}
             style={{
@@ -268,7 +269,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
       {/* Permanent sections */}
       <Resources />
-      {!showcaseInKeySpec && <PositionProShowcase />}
+      {hasShowcase && !showcaseInKeySpec && <PositionProShowcase />}
       <ContactCTA />
     </ProductProvider>
   );

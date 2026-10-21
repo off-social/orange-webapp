@@ -8,6 +8,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function PositionProShowcase() {
   const { name, showcase } = useProduct();
+  if (!showcase) return null;
   const PROBLEM_ITEMS = showcase.leftItems ?? [];
   const SOLUTION_ITEMS = showcase.rightItems ?? [];
   // No table and no comparison lists: just the heading and description, with

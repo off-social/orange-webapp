@@ -37,17 +37,31 @@ function Card({
   label,
   columns,
   rows,
+  hideCheckIcon,
+  variant,
 }: {
   label: string;
   columns: string[];
   rows: string[][];
+  hideCheckIcon?: boolean;
+  variant?: ShowcaseTableData["variant"];
 }) {
   const wide = columns.length > 2;
+  // Spec sheet: tighter padding, a divider under every row and a capped width.
+  // Two columns also get a fixed, narrower label column; wider tables keep
+  // their stacked phone layout and only tighten up from md
+  const compact = variant === "spec";
+  const spec = compact && !wide;
+  const split = { xs: "40%", md: "32%" };
+  const rowLine = (orange: boolean) =>
+    `1px solid ${orange ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.1)"}`;
   const padX = wide
     ? columns.length > 3
       ? { xs: "16px", sm: "32px", md: "20px", lg: "24px" }
       : { xs: "16px", sm: "32px", md: "32px", lg: "40px" }
-    : { xs: "16px", sm: "32px", md: "48px" };
+    : spec
+      ? { xs: "16px", sm: "24px", md: "40px" }
+      : { xs: "16px", sm: "32px", md: "48px" };
   // From md up the orange column sizes to its content, so a split can't be
   // painted behind the cells; each orange cell bleeds 1px down instead to
   // cover the sub-pixel seams between rows
@@ -62,18 +76,31 @@ function Card({
         // From md up, columns size to their content, so a short column
         // (e.g. "Ink") hands its spare width to a long one instead of
         // forcing it to wrap
-        gridTemplateColumns: {
-          xs: wide ? "1fr" : "42% 58%",
-          md: `repeat(${columns.length}, auto)`,
-        },
+        gridTemplateColumns: spec
+          ? {
+              xs: `${split.xs} 1fr`,
+              md: `${split.md} 1fr`,
+            }
+          : {
+              xs: wide ? "1fr" : "42% 58%",
+              md: `repeat(${columns.length}, auto)`,
+            },
         // Two-column phones paint the split behind the cells to hide sub-pixel
         // seams between rows
-        background: {
-          xs: wide ? DARK : `linear-gradient(to right, ${ORANGE} 42%, ${DARK} 42%)`,
-          md: DARK,
-        },
+        background: spec
+          ? {
+              xs: `linear-gradient(to right, ${ORANGE} ${split.xs}, ${DARK} ${split.xs})`,
+              md: `linear-gradient(to right, ${ORANGE} ${split.md}, ${DARK} ${split.md})`,
+            }
+          : {
+              xs: wide
+                ? DARK
+                : `linear-gradient(to right, ${ORANGE} 42%, ${DARK} 42%)`,
+              md: DARK,
+            },
         width: "100%",
-        borderRadius: "32px",
+        maxWidth: compact ? "760px" : undefined,
+        borderRadius: compact ? "24px" : "32px",
         overflow: "hidden",
         boxShadow: "0px 20px 20px rgba(0,0,0,0.06)",
       }}
@@ -91,30 +118,45 @@ function Card({
               display: wide && i > 0 ? { xs: "none", md: "flex" } : "flex",
               flexDirection: "column",
               gap: "8px",
-              pt: { xs: "32px", md: wide ? "48px" : "64px" },
+              pt: compact
+                ? { xs: "20px", md: "28px" }
+                : { xs: "32px", md: wide ? "48px" : "64px" },
               px: padX,
+              // Spec sheet: a full-width rule, matching the row dividers
+              ...(compact && {
+                pb: { xs: "14px", md: "18px" },
+                borderBottom: rowLine(i === 0),
+              }),
             }}
           >
             <Typography
               sx={{
                 color: "#FFF",
                 fontFamily: FONT,
-                fontSize: { xs: "20px", md: "24px" },
+                fontSize: compact
+                  ? { xs: "18px", md: "20px" }
+                  : { xs: "20px", md: "24px" },
                 fontWeight: 500,
-                lineHeight: { xs: "26px", md: "31.2px" },
+                lineHeight: compact
+                  ? { xs: "24px", md: "26px" }
+                  : { xs: "26px", md: "31.2px" },
               }}
             >
               {col}
             </Typography>
-            <Box
-              sx={{
-                mt: "16px",
-                width: "100%",
-                height: "1px",
-                bgcolor:
-                  i === 0 ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.1)",
-              }}
-            />
+            {!compact && (
+              <Box
+                sx={{
+                  mt: "16px",
+                  width: "100%",
+                  height: "1px",
+                  bgcolor:
+                    i === 0
+                      ? "rgba(255,255,255,0.25)"
+                      : "rgba(255,255,255,0.1)",
+                }}
+              />
+            )}
           </Box>
         ))}
       </Box>
@@ -122,7 +164,9 @@ function Card({
       {/* Body rows */}
       {rows.map((row, r) => {
         const lastRow = r === rows.length - 1;
-        const endPad = { xs: "32px", md: wide ? "48px" : "64px" };
+        const endPad = compact
+          ? { xs: "20px", md: "24px" }
+          : { xs: "32px", md: wide ? "48px" : "64px" };
         return (
           <Box key={row[0]} role="row" sx={{ display: "contents" }}>
             {row.map((value, c) => {
@@ -130,9 +174,11 @@ function Card({
               const pt = wide
                 ? {
                     xs: c === 0 ? "20px" : c === 1 ? "16px" : "8px",
-                    md: "24px",
+                    md: compact ? "14px" : "24px",
                   }
-                : { xs: "20px", md: "24px" };
+                : spec
+                  ? { xs: "12px", md: "14px" }
+                  : { xs: "20px", md: "24px" };
               const pb = wide
                 ? {
                     xs:
@@ -143,11 +189,21 @@ function Card({
                             ? "32px"
                             : "20px"
                           : 0,
-                    md: lastRow ? endPad.md : 0,
+                    md: lastRow ? endPad.md : compact ? "14px" : 0,
                   }
                 : lastRow
                   ? endPad
-                  : 0;
+                  : spec
+                    ? { xs: "12px", md: "14px" }
+                    : 0;
+              // The header rule already sits above the first row. Stacked phone
+              // rows keep their orange title bars as separators instead
+              const borderTop =
+                compact && r > 0
+                  ? wide
+                    ? { xs: "none", md: rowLine(c === 0) }
+                    : rowLine(c === 0)
+                  : undefined;
 
               if (c === 0) {
                 return (
@@ -160,20 +216,29 @@ function Card({
                       pt,
                       pb,
                       px: padX,
+                      borderTop,
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "8px",
                     }}
                   >
-                    <CheckIcon
+                    {!hideCheckIcon && (
+                      <CheckIcon
+                        sx={{
+                          color: "#FFF",
+                          fontSize: "20px",
+                          flexShrink: 0,
+                          mt: "2px",
+                        }}
+                      />
+                    )}
+                    <Typography
                       sx={{
+                        ...cellText,
                         color: "#FFF",
-                        fontSize: "20px",
-                        flexShrink: 0,
-                        mt: "2px",
+                        fontWeight: compact ? 600 : cellText.fontWeight,
                       }}
-                    />
-                    <Typography sx={{ ...cellText, color: "#FFF" }}>
+                    >
                       {value}
                     </Typography>
                   </Box>
@@ -183,7 +248,7 @@ function Card({
                 <Box
                   key={c}
                   role="cell"
-                  sx={{ background: DARK, pt, pb, px: padX }}
+                  sx={{ background: DARK, pt, pb, px: padX, borderTop }}
                 >
                   <Typography sx={{ ...cellText, color: "#EFEFEF" }}>
                     {wide && (
@@ -254,13 +319,19 @@ export default function ShowcaseTable({
               {table.heading}
             </Typography>
           )}
-          {table.intro && <Typography sx={copy}>{table.intro}</Typography>}
+          {[table.intro ?? []].flat().map((p) => (
+            <Typography key={p} sx={copy}>
+              {p}
+            </Typography>
+          ))}
         </Box>
       )}
       <Card
         label={`${name} ${table.heading ?? table.columns.join(" and ")}`}
         columns={table.columns}
         rows={table.rows}
+        hideCheckIcon={table.hideCheckIcon}
+        variant={table.variant}
       />
       {table.note && <Typography sx={copy}>{table.note}</Typography>}
     </Box>

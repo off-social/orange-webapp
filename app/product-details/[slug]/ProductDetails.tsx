@@ -28,11 +28,12 @@ export default function ProductDetails({ product }: { product: Product }) {
 
   // "Ideal for" is dropped entirely when a product has no ideal-application
   // cards (e.g. Rocket) — the tab would otherwise open onto a bare heading.
-  const showcaseInKeySpec = product.showcase.keySpecificationOnly === true;
+  const hasShowcase = product.showcase !== undefined;
+  const showcaseInKeySpec = product.showcase?.keySpecificationOnly === true;
   // Only honoured inside the tab: the tab opens by default, so the H1 is in
   // the server-rendered HTML. Below every tab it'd sit after the tab content.
   const showcaseHeadingIsH1 =
-    showcaseInKeySpec && product.showcase.headingIsPageH1 === true;
+    showcaseInKeySpec && product.showcase?.headingIsPageH1 === true;
 
   const tabs = [
     {
@@ -98,14 +99,22 @@ export default function ProductDetails({ product }: { product: Product }) {
               color: "#333",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "40px", md: "72px" },
+              // A long heroTitle gets a smaller size so it doesn't wrap heavily
+              ...(product.heroTitle
+                ? {
+                    fontSize: { xs: "32px", md: "50px" },
+                    lineHeight: { xs: "40px", md: "60px" },
+                  }
+                : {
+                    fontSize: { xs: "40px", md: "72px" },
+                    lineHeight: { xs: "52px", md: "67.2px" },
+                  }),
               fontWeight: 500,
-              lineHeight: { xs: "52px", md: "67.2px" },
               letterSpacing: "-1px",
               m: 0,
             }}
           >
-            {product.name}
+            {product.heroTitle ?? product.name}
           </Typography>
 
           <Typography
@@ -113,9 +122,12 @@ export default function ProductDetails({ product }: { product: Product }) {
               color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "14px", md: "20px" },
+              fontSize: { xs: "14px", md: product.heroTitle ? "16px" : "20px" },
               fontWeight: 500,
-              lineHeight: { xs: "22.4px", md: "26px" },
+              lineHeight: {
+                xs: "22.4px",
+                md: product.heroTitle ? "25.6px" : "26px",
+              },
               letterSpacing: 0,
             }}
           >
@@ -222,7 +234,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         >
           <Image
             src={product.heroImage.mobile}
-            alt={product.name}
+            alt={product.heroImage.alt ?? product.name}
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
             priority
@@ -239,7 +251,7 @@ export default function ProductDetails({ product }: { product: Product }) {
         >
           <Image
             src={product.heroImage.desktop}
-            alt={product.name}
+            alt={product.heroImage.alt ?? product.name}
             width={1920}
             height={900}
             style={{
@@ -268,7 +280,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 
       {/* Permanent sections */}
       <Resources />
-      {!showcaseInKeySpec && <PositionProShowcase />}
+      {hasShowcase && !showcaseInKeySpec && <PositionProShowcase />}
       <ContactCTA />
     </ProductProvider>
   );

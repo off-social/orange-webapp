@@ -1,10 +1,12 @@
 {
   "slug": "alpha-15",
   "name": "Alpha 15",
+  "nameAsParagraph": true,
   "tagline": "High-Speed Industrial Sublimation Transfer Printer",
   "heroImage": {
     "desktop": "/radoimgAlpha3.webp",
-    "mobile": "/radoimgAlpha3.webp"
+    "mobile": "/radoimgAlpha3.webp",
+    "alt": "Sublimation Transfer Printer"
   },
   "sidebar": {
     "bullets": [
@@ -191,21 +193,145 @@
       "brochureUrl": "/brochures/Alpha-15.pdf"
     }
   },
-  "showcase": {
-    "heading": "Alpha 15 Showcase",
-    "description": "Industrial sublimation transfer printing with 15 staggered Epson i3200-A1 heads, up to 5,100 lm/day, Maglev linear motor, static-free rollers, intelligent drying, and broad RIP software support built for high-volume polyester and transfer paper sublimation production.",
-    "leftItems": [
-      "Straight head layouts limit coverage",
-      "Static causing ink misting & paper shift",
-      "Locked into one RIP software",
-      "Airborne ink contaminating the workspace"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "Paper Handling and Feed Accuracy on a Sublimation Transfer Printer",
+        "headingIsPageH1": true,
+        "paragraphs": [
+          "Transfer paper is thin and light, so it’s prone to static, curling and shifting. Any movement during printing shows up as banding or blurred edges. Alpha 15’s pinch roller system grips the paper evenly across the 1,900 mm width and advances it precisely between passes. Static-free fluororubber rollers stop the static that causes paper shift and ink misting, and a Maglev linear motor drives the carriage smoothly so every pass lines up with the last."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Ink System and Printhead Reliability",
+        "paragraphs": [
+          "Alpha 15 runs 15 Epson i3200-A1 heads with 3,200 nozzles each, arranged in a staggered layout for wider coverage per pass. That’s how it reaches 505 lm/hr in 1-pass mode. Its fully enclosed body reduces ink misting, keeping airborne ink off the paper and out of the workspace. For reliable daily output, run a nozzle check at the start of each shift, clean heads as soon as nozzles drop out and use genuine sublimation ink."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Drying System and Print Readiness",
+        "paragraphs": [
+          "Sublimation ink must be dry before the paper is rolled, or it can transfer onto the next layer and cause smudges and ghost images. Alpha 15’s intelligent drying system dries the paper as it leaves the print zone, so it can be rolled and sent to transfer straight away."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Technical Specifications",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "columns": [
+          "Specification",
+          "Alpha 15"
+        ],
+        "rows": [
+          [
+            "Printheads",
+            "15 × Epson i3200-A1, staggered"
+          ],
+          [
+            "Max print width",
+            "1,900 mm"
+          ],
+          [
+            "Print speed",
+            "505 lm/hr (1 pass), 255 lm/hr (2 pass)"
+          ],
+          [
+            "Max output",
+            "Up to 5,100 lm/day"
+          ],
+          [
+            "Max resolution",
+            "360 × 1200 dpi"
+          ],
+          [
+            "Ink colours",
+            "CMYK, optional 6 colours"
+          ],
+          [
+            "Media",
+            "Transfer paper, polyester fabric"
+          ],
+          [
+            "RIP software",
+            "Maintop, FlexiPRINT, ONYX, neoStampa"
+          ]
+        ],
+        "note": "Plan floor space for the printer, paper roll storage and your heat transfer equipment. Our team shares installation requirements during site planning."
+      },
+      {
+        "type": "table",
+        "heading": "Production Applications and the Transfer Workflow",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "intro": "Sublimation transfer is a two-stage process. Alpha 15 prints the design in mirror image onto transfer paper and dries it. Then the paper and fabric go through a separate heat press or calender, where heat turns the ink into gas that bonds permanently into the polyester. Sublimation works on polyester and high-polyester blends, not cotton.",
+        "columns": [
+          "Application",
+          "Products"
+        ],
+        "rows": [
+          [
+            "Sportswear",
+            "Jerseys, activewear, team kits"
+          ],
+          [
+            "Polyester apparel",
+            "Sarees, dress materials, fashion fabrics"
+          ],
+          [
+            "Soft signage",
+            "Flags, banners, fabric displays"
+          ],
+          [
+            "Home textiles",
+            "Curtains, cushion covers, upholstery"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Ink Consumption and Running Cost",
+        "paragraphs": [
+          "Ink cost per metre depends on design coverage, print mode, ink limits set in the RIP, colour configuration and transfer paper quality. Dark, full-coverage designs use much more ink than light ones, and good paper releases more ink into the fabric, so you need less for the same depth. To estimate running cost, add ink, transfer paper, power and labour per metre. All four supported RIPs can estimate a design’s ink use before printing."
+        ]
+      }
     ],
-    "rightItems": [
-      "Staggered 15-head layout for max coverage",
-      "Static-free fluororubber rollers",
-      "Maintop, FlexiPRINT, ONYX & neoStampa support",
-      "Fully enclosed body reduces ink misting"
-    ]
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is a sublimation transfer printer?",
+          "a": "A sublimation transfer printer prints designs onto special transfer paper using sublimation ink. The paper is then heat-pressed onto polyester fabric, where the ink bonds permanently into the fibres."
+        },
+        {
+          "q": "How fast is Alpha 15?",
+          "a": "Alpha 15 prints up to 505 lm/hr in 1-pass mode and 255 lm/hr in 2-pass mode, with a maximum output of 5,100 lm/day."
+        },
+        {
+          "q": "Which printheads does Alpha 15 use?",
+          "a": "It uses 15 Epson i3200-A1 printheads with 3,200 nozzles each, arranged in a staggered layout for maximum coverage."
+        },
+        {
+          "q": "Do I need a separate heat press?",
+          "a": "Yes. Alpha 15 prints and dries the transfer paper. Transferring the design onto fabric needs a separate heat press or calender."
+        },
+        {
+          "q": "Can sublimation print on cotton?",
+          "a": "No. Sublimation bonds with polyester fibres, so it works on polyester and high-polyester blends, not on cotton or other natural fibres."
+        },
+        {
+          "q": "Which RIP software does Alpha 15 support?",
+          "a": "Alpha 15 works with Maintop, FlexiPRINT, ONYX and neoStampa."
+        },
+        {
+          "q": "What is the maximum print width?",
+          "a": "Alpha 15 prints up to 1,900 mm wide."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

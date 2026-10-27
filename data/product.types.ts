@@ -46,27 +46,56 @@ export type QA = { q: string; a: string };
 export type ShowcaseTableData = {
   /** Optional H2 shown directly above the table. */
   heading?: string;
-  /** Optional line of copy between the heading and the table. */
-  intro?: string;
+  /** Optional copy between the heading and the table; an array is one paragraph each. */
+  intro?: string | string[];
   /** Column titles; the first column sits on orange, the rest on dark. */
   columns: string[];
   /** One entry per column, in the same order as `columns`. */
   rows: string[][];
   /** Optional line of copy shown under the table. */
   note?: string;
+  /** Drop the check icon beside each first-column value. Default false. */
+  hideCheckIcon?: boolean;
+  /**
+   * "spec": compact spec sheet with a divider under every row; two-column
+   * tables also get a narrow label column. Default: the comparison card.
+   */
+  variant?: "spec";
 };
 
 /**
  * A bullet (or numbered) list inside a text block. Text before an item's first
  * ": " renders bold, e.g. "Numbering: sequential page numbers".
  */
-export type SeoList = { list: string[]; ordered?: boolean };
+export type SeoList = {
+  /** Optional lead-in shown bold and left-aligned above the items. */
+  title?: string;
+  /** Optional lead-in shown left-aligned above the items, in regular weight. */
+  intro?: string;
+  list: string[];
+  ordered?: boolean;
+  /** Keep text before ": " in items unbolded. Default false. */
+  plainItems?: boolean;
+  /** Optional line shown left-aligned below the items. */
+  footnote?: string;
+};
 
 /** One block of long-form SEO copy shown under the Key Specification tab. */
 export type SeoBlock =
   /** `heading` may be omitted for untitled copy, e.g. an intro right under the H1 */
-  | { type: "text"; heading?: string; paragraphs: (string | SeoList)[] }
-  | ({ type: "table"; heading: string } & ShowcaseTableData)
+  | {
+      type: "text";
+      heading?: string;
+      /** Render `heading` as the page's <h1>, styled like an H2. Default false. */
+      headingIsPageH1?: boolean;
+      paragraphs: (string | SeoList)[];
+    }
+  | ({
+      type: "table";
+      heading: string;
+      /** Render `heading` as the page's <h1>, styled like an H2. Default false. */
+      headingIsPageH1?: boolean;
+    } & ShowcaseTableData)
   /** Points run together in one paragraph as "**title:** desc" */
   | { type: "points"; heading: string; items: Fabric[] }
   | { type: "qa"; heading: string; items: QA[] };
@@ -81,11 +110,15 @@ export interface Product {
    * the same size. Default false.
    */
   nameAsParagraph?: boolean;
+  /** Hero heading text in place of `name`, e.g. a keyword-rich H1. */
+  heroTitle?: string;
   tagline: string;
 
   heroImage: {
     desktop: string;
     mobile: string;
+    /** Alt text for both hero images. Defaults to `name`. */
+    alt?: string;
   };
 
   sidebar: {
@@ -164,7 +197,8 @@ export interface Product {
     };
   };
 
-  showcase: {
+  /** Omit to hide the showcase section. */
+  showcase?: {
     /**
      * Render the showcase only inside the Key Specification tab instead of
      * permanently below every tab. Default false.

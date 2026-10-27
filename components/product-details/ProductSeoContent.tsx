@@ -8,10 +8,31 @@ import { Fragment } from "react";
 
 const FONT = "Inter, sans-serif";
 
-function Heading({ level, children }: { level: 2 | 3; children: string }) {
+/** Body copy aligned with a list's left edge, for its intro and footnote. */
+const leftCopy = {
+  width: "100%",
+  maxWidth: "730px",
+  color: "#707070",
+  textAlign: "left",
+  fontFamily: FONT,
+  fontSize: { xs: "14px", md: "16px" },
+  fontWeight: { xs: 500, md: 400 },
+  lineHeight: { xs: "22.4px", md: "25.6px" },
+} as const;
+
+/** `asH1` keeps the H2 look but makes it the page's H1. */
+function Heading({
+  level,
+  asH1,
+  children,
+}: {
+  level: 2 | 3;
+  asH1?: boolean;
+  children: string;
+}) {
   return (
     <Typography
-      component={level === 2 ? "h2" : "h3"}
+      component={asH1 ? "h1" : level === 2 ? "h2" : "h3"}
       sx={{
         color: "#333",
         textAlign: "center",
@@ -102,92 +123,117 @@ function QAList({ items, level }: { items: QA[]; level: 2 | 3 }) {
   );
 }
 
-/** Text before an item's first ": " renders bold, like the "points" block. */
-function List({ list, ordered }: SeoList) {
+/**
+ * Text before an item's first ": " renders bold, like the "points" block,
+ * unless `plainItems` is set. The optional title (bold) and intro sit
+ * left-aligned above the items, the optional footnote left-aligned below them.
+ */
+function List({ title, intro, list, ordered, plainItems, footnote }: SeoList) {
   return (
-    <Box
-      component={ordered ? "ol" : "ul"}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
-        width: "100%",
-        maxWidth: "730px",
-        m: "4px 0",
-        p: 0,
-        listStyle: "none",
-        counterReset: "seo-list",
-      }}
-    >
-      {list.map((item) => {
-        const split = item.indexOf(": ");
-        return (
-          <Box
-            component="li"
-            key={item}
-            sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              gap: "12px",
-              textAlign: "left",
-              counterIncrement: "seo-list",
-            }}
-          >
+    <>
+      {title && (
+        <Typography
+          sx={{
+            width: "100%",
+            maxWidth: "730px",
+            mt: "4px",
+            color: "#333",
+            textAlign: "left",
+            fontFamily: FONT,
+            fontSize: { xs: "14px", md: "16px" },
+            fontWeight: 600,
+            lineHeight: { xs: "22.4px", md: "25.6px" },
+          }}
+        >
+          {title}
+        </Typography>
+      )}
+      {intro && <Typography sx={leftCopy}>{intro}</Typography>}
+      <Box
+        component={ordered ? "ol" : "ul"}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px",
+          width: "100%",
+          maxWidth: "730px",
+          m: "4px 0",
+          p: 0,
+          listStyle: "none",
+          counterReset: "seo-list",
+        }}
+      >
+        {list.map((item) => {
+          const split = plainItems ? -1 : item.indexOf(": ");
+          return (
             <Box
-              aria-hidden
+              component="li"
+              key={item}
               sx={{
-                flexShrink: 0,
-                mt: { xs: "1px", md: "2px" },
-                ...(ordered
-                  ? {
-                      width: "22px",
-                      height: "22px",
-                      borderRadius: "50%",
-                      bgcolor: "#F6891F",
-                      color: "#FFF",
-                      fontFamily: FONT,
-                      fontSize: "12px",
-                      fontWeight: 600,
-                      lineHeight: "22px",
-                      textAlign: "center",
-                      "&::before": { content: "counter(seo-list)" },
-                    }
-                  : {
-                      width: "6px",
-                      height: "6px",
-                      borderRadius: "50%",
-                      bgcolor: "#F6891F",
-                      mt: { xs: "8px", md: "10px" },
-                    }),
-              }}
-            />
-            <Typography
-              sx={{
-                color: "#707070",
-                fontFamily: FONT,
-                fontSize: { xs: "14px", md: "16px" },
-                fontWeight: { xs: 500, md: 400 },
-                lineHeight: { xs: "22.4px", md: "25.6px" },
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "12px",
+                textAlign: "left",
+                counterIncrement: "seo-list",
               }}
             >
-              {split > 0 ? (
-                <>
-                  <Box
-                    component="strong"
-                    sx={{ color: "#333", fontWeight: 600 }}
-                  >
-                    {item.slice(0, split + 1)}
-                  </Box>{" "}
-                  {item.slice(split + 2)}
-                </>
-              ) : (
-                item
-              )}
-            </Typography>
-          </Box>
-        );
-      })}
-    </Box>
+              <Box
+                aria-hidden
+                sx={{
+                  flexShrink: 0,
+                  mt: { xs: "1px", md: "2px" },
+                  ...(ordered
+                    ? {
+                        width: "22px",
+                        height: "22px",
+                        borderRadius: "50%",
+                        bgcolor: "#F6891F",
+                        color: "#FFF",
+                        fontFamily: FONT,
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        lineHeight: "22px",
+                        textAlign: "center",
+                        "&::before": { content: "counter(seo-list)" },
+                      }
+                    : {
+                        width: "6px",
+                        height: "6px",
+                        borderRadius: "50%",
+                        bgcolor: "#F6891F",
+                        mt: { xs: "8px", md: "10px" },
+                      }),
+                }}
+              />
+              <Typography
+                sx={{
+                  color: "#707070",
+                  fontFamily: FONT,
+                  fontSize: { xs: "14px", md: "16px" },
+                  fontWeight: { xs: 500, md: 400 },
+                  lineHeight: { xs: "22.4px", md: "25.6px" },
+                }}
+              >
+                {split > 0 ? (
+                  <>
+                    <Box
+                      component="strong"
+                      sx={{ color: "#333", fontWeight: 600 }}
+                    >
+                      {item.slice(0, split + 1)}
+                    </Box>{" "}
+                    {item.slice(split + 2)}
+                  </>
+                ) : (
+                  item
+                )}
+              </Typography>
+            </Box>
+          );
+        })}
+      </Box>
+      {footnote && <Typography sx={leftCopy}>{footnote}</Typography>}
+    </>
   );
 }
 
@@ -219,7 +265,17 @@ function Block({
           width: "100%",
         }}
       >
-        {block.heading && <Heading level={level}>{block.heading}</Heading>}
+        {block.heading && (
+          <Heading
+            level={level}
+            asH1={
+              (block.type === "text" || block.type === "table") &&
+              block.headingIsPageH1
+            }
+          >
+            {block.heading}
+          </Heading>
+        )}
         {block.type === "text" &&
           block.paragraphs.map((p, i) =>
             typeof p === "string" ? (
@@ -228,9 +284,10 @@ function Block({
               <List key={i} {...p} />
             ),
           )}
-        {block.type === "table" && block.intro && (
-          <Paragraph>{block.intro}</Paragraph>
-        )}
+        {block.type === "table" &&
+          [block.intro ?? []]
+            .flat()
+            .map((p) => <Paragraph key={p}>{p}</Paragraph>)}
         {block.type === "points" && (
           <Typography
             sx={{
@@ -260,7 +317,13 @@ function Block({
         // Heading and intro render above with the section's own styles
         <ShowcaseTable
           name={name}
-          table={{ columns: block.columns, rows: block.rows, note: block.note }}
+          table={{
+            columns: block.columns,
+            rows: block.rows,
+            note: block.note,
+            hideCheckIcon: block.hideCheckIcon,
+            variant: block.variant,
+          }}
         />
       )}
       {block.type === "qa" && <QAList items={block.items} level={level} />}

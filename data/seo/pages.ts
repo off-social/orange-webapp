@@ -124,16 +124,16 @@ export const productSeo = {
     path: "/product-details/k64/",
   },
   "fabpro-1i": {
-    title: "Direct to Fabric Printer for Industrial Textile Printing",
+    title: "Digital Fabric Printing Machine – FabPro 1i | Orange O Tec",
     description:
-      "The FabPro 1i direct to fabric printer is engineered for direct fabric printing, producing detailed prints for modern textile manufacturing.",
+      "FabPro 1i digital fabric printing machine with 8 Ricoh Gen 6 heads, printing up to 110 lm/hr on cotton, silk, linen, nylon, polyester and blends, with automated maintenance and head crash protection.",
     keywords: "direct to fabric printer",
     path: "/product-details/fabpro-1i/",
   },
   "fabpro-2i": {
-    title: "High-Speed Textile Printing Equipment for Fabric Printing",
+    title: "Direct to Fabric Printing Machine – FabPro 2i | Orange O Tec",
     description:
-      "Advanced textile printing equipment, the FabPro 2i supports high-speed fabric printing with direct-to-fabric technology and precise output.",
+      "FabPro 2i direct to fabric printing machine, made in India with Ricoh Gen 6 heads, printing up to 250 lm/hr on cotton, silk, linen, nylon, polyester and blends.",
     keywords: "Textile Printing Equipment",
     path: "/product-details/fabpro-2i/",
   },
@@ -159,16 +159,16 @@ export const productSeo = {
     path: "/product-details/mas-twelve/",
   },
   "alpha-15": {
-    title: "Sublimation Transfer Printer for Paper to Fabric Printing",
+    title: "Alpha 15 – Sublimation Transfer Printer | Orange O Tec",
     description:
-      "The Alpha 15 sublimation transfer printer is designed for transfer paper printing, supporting textile, apparel, and soft signage applications.",
+      "Alpha 15 is a high-speed sublimation transfer printer with 15 Epson i3200-A1 heads, printing up to 505 lm/hr on transfer paper for sportswear, polyester apparel and soft signage.",
     keywords: "sublimation transfer printer",
     path: "/product-details/alpha-15/",
   },
   "alpha-16": {
-    title: "Dye Sublimation Printing Machine for Textile Production",
+    title: "Alpha 16 – Industrial Sublimation Printer | Orange O Tec",
     description:
-      "The Alpha 16 dye sublimation printing machine is built for transfer paper printing, supporting textile, apparel, and soft signage applications.",
+      "Alpha 16 is an industrial sublimation printer with 16 Epson i3200-A1 heads, printing up to 9,200 lm/day on transfer paper for sportswear, polyester apparel, home textiles and soft signage.",
     keywords: "dye sublimation printing machine",
     path: "/product-details/alpha-16/",
   },

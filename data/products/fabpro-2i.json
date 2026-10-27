@@ -1,10 +1,12 @@
 {
   "slug": "fabpro-2i",
   "name": "FabPro 2i",
-  "tagline": "High-Speed Direct-to-Fabric Industrial Printer",
+  "heroTitle": "FabPro 2i Direct to Fabric Printing Machine",
+  "tagline":"High-speed, made-in-India printing for fashion, garment and home textile production",
   "heroImage": {
     "desktop": "/FabPro2i1.webp",
-    "mobile": "/FabPro2i1.webp"
+    "mobile": "/FabPro2i1.webp",
+    "alt": "FabPro 2i Direct to Fabric Printing Machine by Orange O Tec"
   },
   "sidebar": {
     "bullets": [
@@ -276,21 +278,160 @@
       "brochureUrl": "/brochures/FabPro-2i.pdf"
     }
   },
-  "showcase": {
-    "heading": "FabPro 2i Showcase",
-    "description": "Industrial-scale digital textile printing for high-volume fashion, garment, and home textile manufacturers. Made in India. Built on 16 Ricoh Gen 6 printheads for double the capacity of the FabPro 1i.",
-    "leftItems": [
-      "Slow throughput on high-volume orders",
-      "Colour drift across long production runs",
-      "Printhead damage from fabric obstructions",
-      "Frequent downtime for cleaning and ink refills"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "paragraphs": [
+          "FabPro 2i is a direct-to-fabric printing machine built for high-volume fashion, garment, and home textile manufacturers. Made in India with Ricoh Gen 6 industrial printheads and an 8-colour ink setup, it prints vibrant designs directly onto fabric at up to 250 linear metres an hour, with automatic maintenance and head crash protection for uninterrupted production."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Fabric Preparation and Post-Printing Process",
+        "hideCheckIcon": true,
+        "intro": [
+          "Direct to fabric printing needs preparation before printing and finishing after it. The exact steps depend on the fabric and the ink.",
+          "Before printing: fabric is pretreated so the ink fixes properly and prints sharply. FabPro 2i handles fabrics from 30 to 450 gsm.",
+          "After printing:"
+        ],
+        "columns": [
+          "Fabric",
+          "Ink",
+          "Finishing"
+        ],
+        "rows": [
+          [
+            "Cotton, linen",
+            "Reactive",
+            "Steaming, then washing"
+          ],
+          [
+            "Silk",
+            "Reactive or acid",
+            "Steaming, then washing"
+          ],
+          [
+            "Nylon",
+            "Acid",
+            "Steaming, then washing"
+          ],
+          [
+            "Polyester",
+            "Disperse",
+            "Heat fixation"
+          ],
+          [
+            "Blends",
+            "Based on the main fibre",
+            "As per ink type"
+          ]
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Real-World Production Capacity of a Direct to Fabric Printing Machine",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "intro": "FabPro 2i has two speed figures: up to 150 lm/hr standard and up to 250 lm/hr maximum.",
+        "columns": [
+          "Speed",
+          "Per Hour",
+          "8-Hour Shift",
+          "24 Hours"
+        ],
+        "rows": [
+          [
+            "Standard",
+            "150 lm",
+            "1,200 lm",
+            "3,600 lm"
+          ],
+          [
+            "Maximum",
+            "250 lm",
+            "2,000 lm",
+            "6,000 lm"
+          ]
+        ],
+        "note": "Maximum speed is best for bi-directional printing on lighter designs where speed matters most. Standard speed is the everyday production setting, balancing speed with print quality. Single-direction printing, dense fabrics and dark, full-coverage designs all slow output further. Real daily output also depends on roll changes, design changes and maintenance time."
+      },
+      {
+        "type": "text",
+        "heading": "Production Setup and Auxiliary Equipment",
+        "paragraphs": [
+          "FabPro 2i takes fabric rolls up to 400 mm in diameter and 200 kg, runs on neoStampa RIP software and holds 15 litres of ink.",
+          {
+            "title": "Before installation, plan for:",
+            "plainItems": true,
+            "list": [
+              "Floor space for the machine, fabric feeding and collection, and roll storage",
+              "Stable power with voltage stabilisation and backup",
+              "Pretreatment equipment before printing",
+              "Finishing equipment: a steamer and washer for reactive and acid inks, or heat fixation for disperse",
+              "Operator training, which Orange O Tec provides at installation"
+            ],
+            "footnote": "Our team shares exact dimensions and power requirements during site planning."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Print Quality on Long Production Runs",
+        "paragraphs": [
+          "On long runs, quality problems usually come from three sources: colour drift, nozzle dropouts and fabric problems. FabPro 2i is designed to address all three. Its uninterrupted ink supply keeps ink flow steady, so colour stays consistent across the full fabric width from the first metre to the last. Automatic capping and wiping keep nozzles clean between jobs. Sensor-based head crash protection stops fabric obstructions from damaging heads mid-run.",
+          "On the floor, operators should check nozzles at the start of every shift and compare printed colour against an approved sample at regular intervals."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Maintenance and Printhead Protection",
+        "paragraphs": [
+          {
+            "intro": "FabPro 2i protects its Ricoh Gen 6 printheads in three ways:",
+            "list": [
+              "Sensor-based head crash protection detects raised fabric or obstructions before they hit the heads",
+              "Automatic capping seals the heads when idle so ink doesn’t dry in the nozzles",
+              "Automatic wiping cleans the nozzle plates to keep printing sharp"
+            ],
+            "footnote": "For routine maintenance, run a nozzle check every shift, clean the heads when nozzles drop out, keep the print blanket clean and keep the ink tank topped up."
+          }
+        ]
+      }
     ],
-    "rightItems": [
-      "16 dual-channel Ricoh heads for double the output",
-      "Consistent colour across the full 1850mm width",
-      "Sensor-based head crash protection",
-      "Automatic capping, wiping & uninterrupted ink supply"
-    ]
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is a direct to fabric printing machine?",
+          "a": "A direct to fabric printing machine prints designs straight onto fabric from a digital file, without transfer paper or screens. FabPro 2i prints on cotton, linen, silk, nylon, polyester and blends."
+        },
+        {
+          "q": "How fast is FabPro 2i?",
+          "a": "FabPro 2i prints up to 150 lm/hr at standard speed and up to 250 lm/hr at maximum speed."
+        },
+        {
+          "q": "What is the difference between FabPro 1i and FabPro 2i?",
+          "a": "FabPro 2i is built for higher volumes. It prints up to 250 lm/hr, compared with up to 110 lm/hr on FabPro 1i."
+        },
+        {
+          "q": "Which inks does FabPro 2i use?",
+          "a": "It uses reactive, acid and disperse inks with an 8-colour setup: C, M, Y, K, Orange, Red, Blue and Green."
+        },
+        {
+          "q": "Is FabPro 2i made in India?",
+          "a": "Yes. FabPro 2i is made in India."
+        },
+        {
+          "q": "What equipment do I need besides the printer?",
+          "a": "You’ll need pretreatment equipment, plus a steamer and washer for reactive and acid inks, or heat fixation for disperse ink."
+        },
+        {
+          "q": "Does Orange O Tec provide installation and support?",
+          "a": "Yes. Our team handles installation and operator training, and Orange O Tec’s 85+ service engineers provide after-sales support across India."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

@@ -1,8 +1,8 @@
 {
   "slug": "fabpro-2i",
   "name": "FabPro 2i",
-  "nameAsParagraph": true,
-  "tagline": "High-Speed Direct-to-Fabric Industrial Printer",
+  "heroTitle": "FabPro 2i Direct to Fabric Printing Machine",
+  "tagline":"High-speed, made-in-India printing for fashion, garment and home textile production",
   "heroImage": {
     "desktop": "/FabPro2i1.webp",
     "mobile": "/FabPro2i1.webp",
@@ -281,9 +281,14 @@
   "seoContent": {
     "sections": [
       {
+        "type": "text",
+        "paragraphs": [
+          "FabPro 2i is a direct-to-fabric printing machine built for high-volume fashion, garment, and home textile manufacturers. Made in India with Ricoh Gen 6 industrial printheads and an 8-colour ink setup, it prints vibrant designs directly onto fabric at up to 250 linear metres an hour, with automatic maintenance and head crash protection for uninterrupted production."
+        ]
+      },
+      {
         "type": "table",
         "heading": "Fabric Preparation and Post-Printing Process",
-        "headingIsPageH1": true,
         "hideCheckIcon": true,
         "intro": [
           "Direct to fabric printing needs preparation before printing and finishing after it. The exact steps depend on the fabric and the ink.",

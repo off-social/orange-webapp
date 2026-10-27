@@ -110,6 +110,8 @@ export interface Product {
    * the same size. Default false.
    */
   nameAsParagraph?: boolean;
+  /** Hero heading text in place of `name`, e.g. a keyword-rich H1. */
+  heroTitle?: string;
   tagline: string;
 
   heroImage: {

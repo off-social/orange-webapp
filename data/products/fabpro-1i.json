@@ -1,8 +1,8 @@
 {
   "slug": "fabpro-1i",
   "name": "FabPro 1i",
-  "nameAsParagraph": true,
-  "tagline": "High-Performance Direct-to-Fabric Industrial Printer",
+  "heroTitle": "FabPro 1i Digital Fabric Printing Machine",
+  "tagline": "High-performance direct printing on cotton, silk, linen, nylon, polyester and blends",
   "heroImage": {
     "desktop": "/FabPro1i1.webp",
     "mobile": "/FabPro1i1.webp",
@@ -273,9 +273,14 @@
   "seoContent": {
     "sections": [
       {
+        "type": "text",
+        "paragraphs": [
+          "FabPro 1i is a digital fabric printing machine built for textile manufacturers who need reliable, high-quality output across a wide range of fabrics. With 8 Ricoh Gen 6 industrial printheads, an 8-colour ink setup and automated maintenance, it prints vibrant designs directly onto fabric at up to 110 linear metres an hour."
+        ]
+      },
+      {
         "type": "table",
         "heading": "Fabric Compatibility and Post-Printing Process",
-        "headingIsPageH1": true,
         "hideCheckIcon": true,
         "intro": "FabPro 1i prints on fabrics from 30 to 450 gsm, from lightweight silk to heavier furnishing fabrics. Each fabric needs the right ink and the right finishing process for the colour to fix permanently.",
         "columns": [

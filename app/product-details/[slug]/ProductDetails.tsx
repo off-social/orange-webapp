@@ -99,14 +99,22 @@ export default function ProductDetails({ product }: { product: Product }) {
               color: "#333",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "40px", md: "72px" },
+              // A long heroTitle gets a smaller size so it doesn't wrap heavily
+              ...(product.heroTitle
+                ? {
+                    fontSize: { xs: "32px", md: "50px" },
+                    lineHeight: { xs: "40px", md: "60px" },
+                  }
+                : {
+                    fontSize: { xs: "40px", md: "72px" },
+                    lineHeight: { xs: "52px", md: "67.2px" },
+                  }),
               fontWeight: 500,
-              lineHeight: { xs: "52px", md: "67.2px" },
               letterSpacing: "-1px",
               m: 0,
             }}
           >
-            {product.name}
+            {product.heroTitle ?? product.name}
           </Typography>
 
           <Typography
@@ -114,9 +122,12 @@ export default function ProductDetails({ product }: { product: Product }) {
               color: "#707070",
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
-              fontSize: { xs: "14px", md: "20px" },
+              fontSize: { xs: "14px", md: product.heroTitle ? "16px" : "20px" },
               fontWeight: 500,
-              lineHeight: { xs: "22.4px", md: "26px" },
+              lineHeight: {
+                xs: "22.4px",
+                md: product.heroTitle ? "25.6px" : "26px",
+              },
               letterSpacing: 0,
             }}
           >

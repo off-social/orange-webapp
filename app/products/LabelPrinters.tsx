@@ -3,13 +3,14 @@
 import { useConsultation } from "@/data/ConsultationContext";
 import { productHref } from "@/data/products";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 const products = [
   {
-    src: "/LabelPrinters.webp",
+    src: "/LabelPrinters-JetixLab.webp",
     name: "JetixLab Industrial Digital Label Printer",
     desc: "Delivering Precision, Flexibility, and Consistent Output.",
   },

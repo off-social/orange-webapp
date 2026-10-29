@@ -1,10 +1,12 @@
 {
-  "slug": "k64",
+  "slug": "64-head-digital-textile-printer",
   "name": "K64",
+  "nameAsParagraph": true,
   "tagline": "Ultra High-Speed Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/K641.webp",
-    "mobile": "/K641.webp"
+    "desktop": "/64-head-digital-textile-printer.webp",
+    "mobile": "/64-head-digital-textile-printer.webp",
+    "alt": "64 Head Digital Textile Printer"
   },
   "sidebar": {
     "bullets": [
@@ -224,21 +226,79 @@
       "brochureUrl": "/brochures/K64.pdf"
     }
   },
-  "showcase": {
-    "heading": "K64 Showcase",
-    "description": "The most powerful machine in the Homer series. Up to 64 piezoelectric printheads, 1,100 lm/hr maximum output, and five-ink compatibility built for manufacturers who operate at the highest production volumes.",
-    "leftItems": [
-      "Output limits at the highest volumes",
-      "Heat-related print inconsistencies",
-      "Overspray reducing print clarity",
-      "Locked into a single ink chemistry"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "Automated Print Recovery on a 64 Head Digital Textile Printer",
+        "headingIsPageH1": true,
+        "headingFontSize": 36,
+        "paragraphs": [
+          "On a machine running up to 15,000 metres a day, stops happen: a roll ends, ink runs low or a nozzle check is needed. With a print resume function, the software records where the job stopped, the operator fixes the cause, runs a nozzle check and continues from that point instead of restarting. At 1,020 lm/hr, avoiding even a 10-minute restart saves around 170 metres."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Ink Supply Monitoring and Refill Management",
+        "paragraphs": [
+          "A 64-head printer uses ink fast. Good ink management includes level sensing, low-ink alerts before a colour runs out, refilling without stopping the job, and filtration and degassing before ink reaches the heads. Check levels every shift, estimate ink for heavy designs and keep buffer stock on site. K64 supports reactive, acid, pigment, disperse and latex inks. Group jobs by ink type, since switching chemistries needs a system flush."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Repeat Orders and Design Reproduction",
+        "paragraphs": [
+          "Repeat orders drift when conditions change: a new ink batch, fabric lot or pretreatment. To hold colour, save the full RIP job with its profile, print mode and ink limits, record fabric and ink batches, keep an approved swatch, measure key colours with a spectrophotometer and recalibrate if anything has changed. Setup for a repeat order drops from hours to minutes."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Printhead Alignment and Calibration",
+        "paragraphs": [
+          "With up to 64 heads, 8 per colour, alignment decides quality. Heads must join seamlessly, colours must land on top of each other, and fabric must advance exactly between passes, or you get banding. Calibrate after head replacement, on fabric changes and whenever banding appears. K64’s head chilling keeps heads at a stable temperature so colour doesn’t drift over a shift, and ink misting control keeps edges sharp at high speed."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Reducing Waste in Digital Textile Printing",
+        "paragraphs": [
+          "Waste hides in strike-offs, colour mismatches, restarted jobs, nozzle defects, banding, over-inking and unused print width. Cut it by getting colour right the first time with saved profiles, resuming jobs instead of restarting, calibrating on schedule, setting proper ink limits and nesting designs across the 1,800 mm width. K64’s head chilling and misting control reduce rejects on long runs, and pigment and latex inks skip washing on suitable fabrics."
+        ]
+      }
     ],
-    "rightItems": [
-      "Up to 64 heads for 1,100 lm/hr output",
-      "Exceptional head chilling system",
-      "Ink misting control for sharp edges",
-      "Reactive, acid, pigment, disperse & latex inks"
-    ]
+    "faq": {
+      "heading": "K64: 64 Head Digital Textile Printer",
+      "items": [
+        {
+          "q": "What is a 64 head digital textile printer?",
+          "a": "A 64 head digital textile printer uses up to 64 industrial printheads to print directly onto fabric at very high speed. K64 is built for large mills and bulk production."
+        },
+        {
+          "q": "How fast is K64?",
+          "a": "K64 prints up to 1,020 lm/hr in 1-pass mode, 700 lm/hr at 508×1200 dpi and 600 lm/hr at 600×1200 dpi. Daily capacity is up to 15,000 linear metres."
+        },
+        {
+          "q": "Which inks does K64 support?",
+          "a": "K64 supports five ink types: reactive, acid, pigment, disperse and latex."
+        },
+        {
+          "q": "How does K64 keep colour consistent on long runs?",
+          "a": "Its head chilling system keeps printheads at a stable temperature, preventing the colour drift that heat causes over long shifts."
+        },
+        {
+          "q": "How does K64 keep prints sharp at high speed?",
+          "a": "K64’s ink misting control stops fine ink mist from drifting off target, keeping edges sharp and fine details clean."
+        },
+        {
+          "q": "What is the maximum print width?",
+          "a": "K64 prints up to 1,800 mm wide."
+        },
+        {
+          "q": "Who is K64 for?",
+          "a": "K64 suits textile mills and exporters with high, steady volumes who need scanning-printer flexibility at bulk-production speed."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

@@ -1,10 +1,12 @@
 {
-  "slug": "k32",
+  "slug": "k32-head-digital-textile-printer",
   "name": "K32",
+  "nameAsParagraph": true,
   "tagline": "High-Speed Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/K321.webp",
-    "mobile": "/K321.webp"
+    "desktop": "/k32-head-digital-textile-printer.webp",
+    "mobile": "/k32-head-digital-textile-printer.webp",
+    "alt": "K32 Head Digital Textile Printer"
   },
   "sidebar": {
     "bullets": [
@@ -206,21 +208,102 @@
       "coverImage": "/ProductBrochure.webp"
     }
   },
-  "showcase": {
-    "heading": "K32 Showcase",
-    "description": "The highest-output machine in the Homer series. 32 Kyocera printheads, up to 570 lm/hr, and 1900mm print width built for manufacturers who need maximum production capacity without compromise.",
-    "leftItems": [
-      "Capacity ceilings on mass-volume orders",
-      "Operator overload running multiple machines",
-      "Nozzle blockages from continuous output",
-      "High noise during long production shifts"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "Colour Management on a 32 Head Digital Textile Printer",
+        "headingIsPageH1": true,
+        "paragraphs": [
+          "At up to 7,500 metres a day, a small colour shift can run across thousands of metres. K32 manages colour at three levels. Calibration sets each ink channel to a known state. ICC profiles are built for each combination of fabric, ink and print mode. The RIP converts artwork into the right mix of K32’s 8 inks and maps Pantone and buyer shades to tested recipes. The extra Orange, Red, Blue and Green inks help match bright colours that four-colour printing can’t. Recalibrate whenever ink batch, fabric or pretreatment changes."
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "RIP Software and File Workflow",
+        "paragraphs": [
+          {
+            "intro": "K32 works with Caldera, Neostampa and Texprint. A job moves through five steps:",
+            "list": [
+              "Artwork: set the repeat, resolution and colour mode",
+              "Colour setup: define standard or spot colours",
+              "RIP processing: apply the profile, then step-and-repeat, nesting, scaling and ink limits",
+              "Print queue: line up the next job while the current one prints",
+              "Print and fix: print, then fix according to ink type"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Printhead Technology and Print Quality",
+        "intro": "K32 runs 32 Kyocera industrial piezo heads, 4 per colour. That’s how it reaches 570 lm/hr. Variable drop sizes give fine lines with small drops and smooth solids with large ones, in the same print. An automatic moisturising and cleaning system keeps nozzles clear through long shifts.",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "columns": [
+          "Mode",
+          "Speed",
+          "Best For"
+        ],
+        "rows": [
+          [
+            "600×600 dpi, 1 pass",
+            "570 lm/hr",
+            "High-volume, simpler designs"
+          ],
+          [
+            "508×1200 dpi, 2 pass",
+            "375 lm/hr",
+            "Everyday production"
+          ],
+          [
+            "600×1200 dpi, 2 pass",
+            "265 lm/hr",
+            "Fine detail and premium prints"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Fabric Feeding and Roll Handling",
+        "paragraphs": [
+          "Fabric is mounted and centred on the unwinder, guided so the edges run straight, and fed under steady tension so it neither slackens nor stretches. Spreading rollers remove wrinkles, and a moving print belt holds it flat through every pass. Then it’s dried and rewound. THK mute rails keep carriage movement precise and quiet on long shifts."
+        ]
+      }
     ],
-    "rightItems": [
-      "32 Kyocera heads for up to 570 lm/hr",
-      "Single-operator visual control interface",
-      "Automatic moisturising & cleaning system",
-      "THK mute rail for excellent noise reduction"
-    ]
+    "faq": {
+      "heading": "K32: 32 Head Digital Textile Printer",
+      "items": [
+        {
+          "q": "What is a 32 head digital textile printer?",
+          "a": "A 32 head digital textile printer uses 32 industrial printheads to print directly onto fabric. K32 uses 32 Kyocera heads across 8 colours, giving 4 heads per colour for high-speed production."
+        },
+        {
+          "q": "How fast is K32?",
+          "a": "K32 prints up to 570 lm/hr in 1-pass mode, 375 lm/hr at 508×1200 dpi and 265 lm/hr at 600×1200 dpi. Daily capacity is up to 7,500 linear metres."
+        },
+        {
+          "q": "Which RIP software does K32 support?",
+          "a": "K32 works with Caldera, Neostampa and Texprint."
+        },
+        {
+          "q": "Which inks can K32 use?",
+          "a": "K32 supports reactive, acid, pigment and disperse inks, covering cotton, silk, wool, nylon, polyester and blends."
+        },
+        {
+          "q": "How does K32 keep printheads from clogging?",
+          "a": "An automatic moisturising and cleaning system keeps nozzles from drying out during idle periods and cleans them automatically."
+        },
+        {
+          "q": "How many operators does K32 need?",
+          "a": "K32’s visual control interface is designed for single-operator control of the machine."
+        },
+        {
+          "q": "What is the maximum print width?",
+          "a": "K32 prints up to 1,900 mm wide."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

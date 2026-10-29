@@ -88,6 +88,8 @@ export type SeoBlock =
       heading?: string;
       /** Render `heading` as the page's <h1>, styled like an H2. Default false. */
       headingIsPageH1?: boolean;
+      /** Desktop font size of `heading` in px, in place of the level's size. */
+      headingFontSize?: number;
       paragraphs: (string | SeoList)[];
     }
   | ({

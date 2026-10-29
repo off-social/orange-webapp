@@ -20,14 +20,19 @@ const leftCopy = {
   lineHeight: { xs: "22.4px", md: "25.6px" },
 } as const;
 
-/** `asH1` keeps the H2 look but makes it the page's H1. */
+/**
+ * `asH1` keeps the H2 look but makes it the page's H1. `fontSize` overrides
+ * the desktop size, keeping the 1.3 line-height ratio.
+ */
 function Heading({
   level,
   asH1,
+  fontSize,
   children,
 }: {
   level: 2 | 3;
   asH1?: boolean;
+  fontSize?: number;
   children: string;
 }) {
   return (
@@ -37,11 +42,18 @@ function Heading({
         color: "#333",
         textAlign: "center",
         fontFamily: FONT,
-        fontSize:
-          level === 2 ? { xs: "24px", md: "40px" } : { xs: "20px", md: "28px" },
+        fontSize: fontSize
+          ? { xs: level === 2 ? "24px" : "20px", md: `${fontSize}px` }
+          : level === 2
+            ? { xs: "24px", md: "40px" }
+            : { xs: "20px", md: "28px" },
         fontWeight: 500,
-        lineHeight:
-          level === 2
+        lineHeight: fontSize
+          ? {
+              xs: level === 2 ? "31.2px" : "26px",
+              md: `${+(fontSize * 1.3).toFixed(1)}px`,
+            }
+          : level === 2
             ? { xs: "31.2px", md: "52px" }
             : { xs: "26px", md: "36.4px" },
         letterSpacing: level === 2 ? { xs: "0", md: "-1px" } : "-0.5px",
@@ -271,6 +283,9 @@ function Block({
             asH1={
               (block.type === "text" || block.type === "table") &&
               block.headingIsPageH1
+            }
+            fontSize={
+              block.type === "text" ? block.headingFontSize : undefined
             }
           >
             {block.heading}

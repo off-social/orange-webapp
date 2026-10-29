@@ -1,10 +1,12 @@
 {
-  "slug": "k24",
+  "slug": "k24-head-digital-textile-printer",
   "name": "K24",
+  "nameAsParagraph": true,
   "tagline": "High-Speed Industrial Digital Textile Printer",
   "heroImage": {
-    "desktop": "/K241.webp",
-    "mobile": "/K241.webp"
+    "desktop": "/k24-head-digital-textile-printer.webp",
+    "mobile": "/k24-head-digital-textile-printer.webp",
+    "alt": "K24 Head Digital Textile Printer"
   },
   "sidebar": {
     "bullets": [
@@ -201,21 +203,133 @@
       "coverImage": "/ProductBrochure.webp"
     }
   },
-  "showcase": {
-    "heading": "K24 Showcase",
-    "description": "Industrial-scale digital textile printing with configurable printhead capacity, up to 300 lm/hr output, and 1900mm print width. Built for high-volume fashion, garment, and home textile manufacturers.",
-    "leftItems": [
-      "Fixed capacity that can't scale with demand",
-      "Colour deviation across ink channels",
-      "Fabric wrinkles and feeding errors",
-      "Unplanned stops from pressure fluctuations"
+  "seoContent": {
+    "sections": [
+      {
+        "type": "text",
+        "heading": "24 Head Digital Textile Printer with Consistent Print Quality",
+        "headingIsPageH1": true,
+        "headingFontSize": 36,
+        "paragraphs": [
+          "On a digital textile printer running two or three shifts, the challenge isn’t printing one good metre. It’s printing the 5,000th metre exactly like the first.",
+          "K24 is built for that. Its symmetrical ink supply delivers the same ink flow to every colour channel, so no colour drifts ahead of the others. Real-time ink and air pressure monitoring catches supply problems before they show up as streaks or a stopped machine. Kyocera industrial printheads are designed for continuous duty, and de-wrinkle media handling keeps the fabric flat so image quality holds from the first roll to the last."
+        ]
+      },
+      {
+        "type": "table",
+        "heading": "Production Challenges K24 Solves",
+        "hideCheckIcon": true,
+        "variant": "spec",
+        "columns": [
+          "Challenge",
+          "How K24 Handles It"
+        ],
+        "rows": [
+          [
+            "High-volume orders",
+            "24 heads, up to 280 lm/hr and 5,000 LM/day"
+          ],
+          [
+            "Frequent design changes",
+            "Digital printing with no screens, so switching designs takes minutes"
+          ],
+          [
+            "Difficult fabrics",
+            "De-wrinkle handling, with support for elastic and new-generation fibres"
+          ],
+          [
+            "Colour drift over long runs",
+            "Symmetrical ink supply and real-time pressure monitoring"
+          ],
+          [
+            "Growing capacity",
+            "Available with 8, 16 or 24 heads, so you can scale without replacing the machine"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Artwork and File Preparation for Digital Textile Printing",
+        "paragraphs": [
+          {
+            "intro": "Good output starts with a good file. Before sending artwork to print:",
+            "list": [
+              "Format: use TIFF or PSD for best quality. High-quality JPEG and PDF also work. Flatten layers before final output.",
+              "Resolution: 150–300 dpi at actual print size. Don’t upscale small images, because it makes the print look soft.",
+              "Size and repeat: set up files at the final print size, and check that all-over repeats join seamlessly.",
+              "Colour: embed the colour profile and supply Pantone or TCX references for brand colours, so the RIP can match them using K24’s 8-colour gamut.",
+              "Strike-off: always print a sample on the actual production fabric before running the full order."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Industrial Textile Printer Installation Requirements",
+        "paragraphs": [
+          {
+            "intro": "Before installing K24, plan for these requirements:",
+            "list": [
+              "Floor space: the machine, plus room for roll loading, the dryer, operator access and fabric storage",
+              "Power: a stable industrial supply with voltage stabilisation and backup",
+              "Environment: a controlled print room with stable temperature and humidity, and minimal dust",
+              "Fabric workflow: pretreatment before printing, and fixation afterwards (steaming and washing for reactive and acid inks, heat fixation for disperse, curing for pigment)",
+              "Maintenance access: clear space around the carriage and ink system for daily printhead care"
+            ],
+            "footnote": "Our team shares exact dimensions and power specifications during site planning."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "K24 in the Digital Textile Production Workflow",
+        "paragraphs": [
+          {
+            "list": [
+              "Artwork preparation: the design is finalised, sized and colour-checked",
+              "RIP processing: RIP software applies the fabric’s colour profile, sets repeats and prepares the file for printing",
+              "Fabric loading: the pretreated roll is loaded, aligned and fed through the de-wrinkle system",
+              "Printing: K24 prints at the selected mode, from 2-pass for speed to 3-pass for detail",
+              "Monitoring: ink and air pressure are tracked in real time while the operator checks print quality",
+              "Finished-fabric handling: printed fabric is dried, rewound and sent for fixation and finishing"
+            ]
+          }
+        ]
+      }
     ],
-    "rightItems": [
-      "Scalable 8 / 16 / 24-head configuration",
-      "Symmetrical ink supply for consistent colour",
-      "Best-in-class de-wrinkle media handling",
-      "Real-time ink & air pressure monitoring"
-    ]
+    "faq": {
+      "heading": "K24: 24 Head Digital Textile Printer",
+      "items": [
+        {
+          "q": "What is a 24 head digital textile printer?",
+          "a": "A 24 head digital textile printer uses 24 industrial printheads to print designs directly onto fabric. K24 uses 24 Kyocera heads with 8 ink colours, giving 3 heads per colour for faster printing without losing quality."
+        },
+        {
+          "q": "How fast is the K24?",
+          "a": "K24 prints up to 280 linear metres an hour in 2-pass mode and 250 lm/hr in 3-pass mode at 600×1200 dpi. Its daily capacity is up to 5,000 linear metres."
+        },
+        {
+          "q": "What is the difference between 16 and 24 heads?",
+          "a": "The 24-head K24 prints up to 280 lm/hr, against 185 lm/hr on the 16-head version, which is about 50% more output. K24 is also available with 8 heads, and you can scale up as production grows."
+        },
+        {
+          "q": "Which fabrics and inks does K24 support?",
+          "a": "K24 prints on all fabric types, including elastic and new-generation fibres. It supports reactive, acid, pigment and disperse inks, covering cotton, silk, viscose, wool, nylon, polyester and blends."
+        },
+        {
+          "q": "Can K24 print polyester like a sublimation printer?",
+          "a": "Yes. Using disperse ink printed directly onto polyester, K24 gives sublimation-quality colour without transfer paper or a heat press."
+        },
+        {
+          "q": "What is the maximum print width?",
+          "a": "K24 prints up to 1,900 mm wide."
+        },
+        {
+          "q": "What is the price of a 24 head digital textile printer in India?",
+          "a": "The price depends on configuration, including head count, ink system and software. Contact our team for a quote based on your fabric range and production volume."
+        }
+      ]
+    }
   },
   "contactCTA": {
     "headingTop": "Ready to unlock",

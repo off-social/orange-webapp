@@ -46,12 +46,12 @@ export const productSeo = {
     keywords: "Position Printing Machine",
     path: "/product-details/position-printing-machine/",
   },
-  k24: {
-    title: "Industrial Digital Textile Printer for Textile Production",
+  "k24-head-digital-textile-printer": {
+    title: "24 Head Digital Textile Printer | Orange O Tec",
     description:
-      "K24 is an industrial digital textile printer designed for efficient textile production and consistent digital printing across a range of fabric applications.",
-    keywords: "industrial digital textile printer",
-    path: "/product-details/k24/",
+      "Explore the 24 Head Digital Textile Printer by Orange O Tec, designed for high-speed textile printing with consistent print quality and production efficiency.",
+    keywords: "Digital textile printer",
+    path: "/product-details/k24-head-digital-textile-printer/",
   },
   "mas-vertical-double-sided-digital-textile-printer": {
     title: "Double Sided Digital Textile Printer for Fabric Printing",
@@ -109,19 +109,19 @@ export const productSeo = {
     keywords: "industrial textile printing machine",
     path: "/product-details/rocket-single-pass-digital-textile-printer/",
   },
-  k32: {
-    title: "Industrial Fabric Printer for Direct Fabric Printing",
+  "k32-head-digital-textile-printer": {
+    title: "K32 Head Digital Textile Printer for High-Speed Printing",
     description:
-      "Explore the K32 industrial fabric printer, engineered for industrial textile printing with high-speed output and precise print performance.",
-    keywords: "industrial fabric printer",
-    path: "/product-details/k32/",
+      "K32 Head Digital Textile Printer is designed for textile manufacturers looking for reliable fabric printing, consistent print quality, and efficient production.",
+    keywords: "32 Head Digital Textile Printer",
+    path: "/product-details/k32-head-digital-textile-printer/",
   },
-  k64: {
-    title: "Digital Cloth Printing Machine for High-Volume Printing",
+  "64-head-digital-textile-printer": {
+    title: "64 Head Digital Textile Printer for Textile Production",
     description:
-      "The K64 digital cloth printing machine is engineered for high-volume textile printing, delivering precise print results and smooth production efficiency.",
-    keywords: "digital cloth printing machine",
-    path: "/product-details/k64/",
+      "The 64 Head Digital Textile Printer is designed for high-volume textile production, delivering consistent print quality and efficient fabric printing.",
+    keywords: "64 Head Digital Textile Printer",
+    path: "/product-details/64-head-digital-textile-printer/",
   },
   "fabpro-1i": {
     title: "Digital Fabric Printing Machine – FabPro 1i | Orange O Tec",

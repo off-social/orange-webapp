@@ -1,7 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { ResponsiveSlideImage } from "./HeroSlideImage";
 
-/** Hero slide — "The Future of Industrial Textile Printing" (Rocket). */
+/**
+ * Hero slide — "The Future of Industrial Textile Printing" (Rocket).
+ *
+ * `headingComponent` exists because the carousel clones slides to loop: the
+ * real slide can be the page's `h1`, a clone of it cannot.
+ */
 
 const ROCKET_IMAGES = [
   { src: "/TheFutureofRocket-500.webp", display: { block: "0px", none: "601px" } },
@@ -20,7 +25,11 @@ const ROCKET_IMAGES = [
   { src: "/TheFutureofRocket.webp", display: { block: "1441px", none: "" } },
 ];
 
-export default function SlideRocket() {
+export default function SlideRocket({
+  headingComponent = "p",
+}: {
+  headingComponent?: "h1" | "p";
+}) {
   return (
     <>
       {ROCKET_IMAGES.map((img) => (
@@ -53,8 +62,9 @@ export default function SlideRocket() {
           sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
         >
           <Typography
-            component="h1"
+            component={headingComponent}
             sx={{
+              m: 0,
               color: "#FFF",
               fontFamily: "Inter, sans-serif",
               fontWeight: 300,

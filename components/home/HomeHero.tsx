@@ -95,14 +95,13 @@ export default function HomeHero() {
 
   const slides: HeroSlide[] = [
     {
+      render: () => <SlideAdvanced actions={actions} />,
+    },
+    {
       render: ({ isClone }) => (
-        <SlideAdvanced
-          actions={actions}
-          headingComponent={isClone ? "p" : "h1"}
-        />
+        <SlideRocket headingComponent={isClone ? "p" : "h1"} />
       ),
     },
-    { render: () => <SlideRocket /> },
     { render: () => <SlideFabpro2i /> },
   ];
 

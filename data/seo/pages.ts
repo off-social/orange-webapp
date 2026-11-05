@@ -131,9 +131,9 @@ export const productSeo = {
     path: "/product-details/fabpro-1i/",
   },
   "fabpro-2i": {
-    title: "Direct to Fabric Printing Machine – FabPro 2i | Orange O Tec",
+    title: "Direct to Fabric Printer – FabPro 2i | Orange O Tec",
     description:
-      "FabPro 2i direct to fabric printing machine, made in India with Ricoh Gen 6 heads, printing up to 250 lm/hr on cotton, silk, linen, nylon, polyester and blends.",
+      "FabPro 2i direct to fabric printer, made in India with Ricoh Gen 6 heads, printing up to 250 lm/hr on cotton, silk, linen, nylon, polyester and blends.",
     keywords: "Textile Printing Equipment",
     path: "/product-details/fabpro-2i/",
   },

@@ -1,12 +1,12 @@
 {
   "slug": "fabpro-2i",
   "name": "FabPro 2i",
-  "heroTitle": "FabPro 2i Direct to Fabric Printing Machine",
+  "heroTitle": "FabPro 2i Direct to Fabric Printer",
   "tagline":"High-speed, made-in-India printing for fashion, garment and home textile production",
   "heroImage": {
     "desktop": "/FabPro2i1.webp",
     "mobile": "/FabPro2i1.webp",
-    "alt": "FabPro 2i Direct to Fabric Printing Machine by Orange O Tec"
+    "alt": "FabPro 2i Direct to Fabric Printer by Orange O Tec"
   },
   "sidebar": {
     "bullets": [
@@ -283,7 +283,7 @@
       {
         "type": "text",
         "paragraphs": [
-          "FabPro 2i is a direct-to-fabric printing machine built for high-volume fashion, garment, and home textile manufacturers. Made in India with Ricoh Gen 6 industrial printheads and an 8-colour ink setup, it prints vibrant designs directly onto fabric at up to 250 linear metres an hour, with automatic maintenance and head crash protection for uninterrupted production."
+          "FabPro 2i is a direct-to-fabric printer built for high-volume fashion, garment, and home textile manufacturers. Made in India with Ricoh Gen 6 industrial printheads and an 8-colour ink setup, it prints vibrant designs directly onto fabric at up to 250 linear metres an hour, with automatic maintenance and head crash protection for uninterrupted production."
         ]
       },
       {
@@ -330,7 +330,7 @@
       },
       {
         "type": "table",
-        "heading": "Real-World Production Capacity of a Direct to Fabric Printing Machine",
+        "heading": "Real-World Production Capacity of a Direct to Fabric Printer",
         "hideCheckIcon": true,
         "variant": "spec",
         "intro": "FabPro 2i has two speed figures: up to 150 lm/hr standard and up to 250 lm/hr maximum.",
@@ -403,8 +403,8 @@
       "heading": "Frequently Asked Questions",
       "items": [
         {
-          "q": "What is a direct to fabric printing machine?",
-          "a": "A direct to fabric printing machine prints designs straight onto fabric from a digital file, without transfer paper or screens. FabPro 2i prints on cotton, linen, silk, nylon, polyester and blends."
+          "q": "What is a direct to fabric printer?",
+          "a": "A direct to fabric printer prints designs straight onto fabric from a digital file, without transfer paper or screens. FabPro 2i prints on cotton, linen, silk, nylon, polyester and blends."
         },
         {
           "q": "How fast is FabPro 2i?",

@@ -231,21 +231,24 @@ export default function IndiaItmePage() {
                   Explore Our Printing Solutions
                 </a>
               </div>
-              <dl className={s.where}>
-                <div>
-                  <dt>Dates</dt>
-                  <dd>4–9 Dec 2026</dd>
-                </div>
-                <div>
-                  <dt>Find us at</dt>
-                  <dd>{ITME.stand}</dd>
-                </div>
-                <div>
-                  <dt>Venue</dt>
-                  <dd>IEML, Greater Noida</dd>
-                </div>
-              </dl>
-              <Countdown />
+              <div className={s.eventCard}>
+                <p className={s.calTile} aria-label="4 to 9 December 2026">
+                  <span className={s.calMonth}>Dec 2026</span>
+                  <span className={s.calDays}>4–9</span>
+                  <span className={s.calWeek}>Fri – Wed</span>
+                </p>
+                <dl className={s.eventFacts}>
+                  <div>
+                    <dt>Find us at</dt>
+                    <dd className={s.accent}>{ITME.stand}</dd>
+                  </div>
+                  <div>
+                    <dt>Venue</dt>
+                    <dd>India Exposition Mart (IEML), Greater Noida</dd>
+                  </div>
+                </dl>
+                <Countdown />
+              </div>
             </div>
 
             <div className={s.formCard} id="book">
@@ -347,6 +350,7 @@ export default function IndiaItmePage() {
           aria-labelledby="tech-title"
         >
           <div className={s.wrap}>
+            <p className={s.eyebrow}>Live at {ITME.stand}</p>
             <h2 className={s.headline} id="tech-title">
               Technologies built for industrial performance.
             </h2>

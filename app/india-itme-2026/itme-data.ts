@@ -43,29 +43,35 @@ export const INTEREST_OPTIONS = [
   "Other",
 ] as const;
 
-export type Gauge = {
+export type Spec = {
   label: string;
   value: string;
   unit?: string;
-  /** How full the dial is drawn, 0–100. */
-  fill: number;
-  notes: string[];
-  featured?: boolean;
+  note: string;
 };
 
 export type Machine = {
   id: string;
   name: string;
-  icon: "target" | "printer" | "bolt" | "gantry" | "star";
+  /** What kind of machine it is; shown on its picker card and above its name. */
+  category: string;
+  /** One highlight worth calling out, e.g. "Made in India". */
+  highlight?: string;
   isNew?: boolean;
+  /** "wide" for very long lines (Rocket); "veiled" for the covered Oval photo. */
   layout?: "wide" | "veiled";
-  badge: string;
   lead?: string;
   tagline: string;
-  fabrics?: string;
+  fabrics?: string[];
   image: { src: string; width: number; height: number; alt: string };
-  gauges: Gauge[];
+  specs: Spec[];
   interest: string;
+  /**
+   * Entry in the site-wide consultation modal's printer list. When set, the
+   * button opens that modal; when not (the unreleased Oval Printer, which the
+   * list does not carry), it falls back to this page's form.
+   */
+  consultPrinter?: string;
   bookLabel?: string;
   learnMore?: string;
 };
@@ -74,143 +80,102 @@ export const MACHINES: Machine[] = [
   {
     id: "position-pro",
     name: "Position Pro",
-    icon: "target",
-    badge: "Positioning printing",
+    category: "Position printing",
+    highlight: "Vision-guided placement",
     tagline: "Precision positioning for high-speed fabric printing.",
-    fabrics: "Jacquard, embroidery, lace sequin, silk, jari-jacquard, shiffli",
+    fabrics: ["Jacquard", "Embroidery", "Lace sequin", "Silk", "Jari-jacquard", "Shiffli"],
     image: {
       src: "/india-itme/position-pro.webp",
       width: 1300,
       height: 644,
       alt: "Position Pro position printing machine",
     },
-    gauges: [
-      { label: "Output", value: "2,000", unit: "lm/day", fill: 62, notes: ["Max output per day"] },
-      {
-        label: "Print heads",
-        value: "16",
-        unit: "×",
-        fill: 72,
-        notes: ["Kyocera industrial", "print heads"],
-        featured: true,
-      },
-      { label: "Print width", value: "1850", unit: "mm", fill: 58, notes: ["Maximum print width"] },
+    specs: [
+      { label: "Output", value: "2,000", unit: "linear m / day", note: "Maximum output per day" },
+      { label: "Print heads", value: "16", note: "Kyocera industrial print heads" },
+      { label: "Print width", value: "1,850", unit: "mm", note: "Maximum print width" },
     ],
     interest: "Digital Textile Printing",
+    consultPrinter: "Position Pro",
     learnMore: "/product-details/position-printing-machine/",
   },
   {
     id: "fabpro-2i",
     name: "FabPro 2i",
-    icon: "printer",
-    badge: "Made in India",
+    category: "Digital textile printing",
+    highlight: "Made in India",
     tagline:
       "Industrial digital textile printing for precision, productivity and reliable production.",
-    fabrics: "Cotton, linen, silk, nylon, polyester, blends",
+    fabrics: ["Cotton", "Linen", "Silk", "Nylon", "Polyester", "Blends"],
     image: {
-      src: "/india-itme/fabpro-2i.webp",
-      width: 1300,
-      height: 708,
-      alt: "FabPro 2i industrial digital textile printer",
+      // Same photo as the FabPro 2i product page
+      src: "/FabPro2i1.webp",
+      width: 854,
+      height: 362,
+      alt: "FabPro 2i Direct to Fabric Printing Machine by Orange O Tec",
     },
-    gauges: [
-      {
-        label: "Print heads",
-        value: "24",
-        unit: "×",
-        fill: 66,
-        notes: ["Ricoh Gen 6", "industrial print heads"],
-      },
-      {
-        label: "Output",
-        value: "250",
-        unit: "lm/hr",
-        fill: 74,
-        notes: ["Up to 250 linear", "metres per hour"],
-        featured: true,
-      },
-      { label: "Print width", value: "1850", unit: "mm", fill: 58, notes: ["Maximum print width"] },
+    specs: [
+      { label: "Output", value: "250", unit: "linear m / hr", note: "Up to 250 linear metres per hour" },
+      { label: "Print heads", value: "24", note: "Ricoh Gen 6 industrial print heads" },
+      { label: "Print width", value: "1,850", unit: "mm", note: "Maximum print width" },
     ],
     interest: "Digital Textile Printing",
+    consultPrinter: "FabPro 2i",
     learnMore: "/product-details/fabpro-2i/",
   },
   {
     id: "rocket",
     name: "Rocket",
-    icon: "bolt",
+    category: "Single-pass printing",
+    highlight: "World’s fastest single-pass",
     layout: "wide",
-    badge: "Single pass",
     tagline:
       "The world’s fastest single-pass digital textile printer, designed for demanding industrial environments.",
-    fabrics: "All types, including elastic and new fibre",
+    fabrics: ["All fabric types", "Elastic", "New fibres"],
     image: {
       src: "/india-itme/rocket.webp",
       width: 1800,
       height: 303,
       alt: "Rocket single-pass digital textile printer",
     },
-    gauges: [
-      {
-        label: "Output",
-        value: "70,000",
-        unit: "lm/day",
-        fill: 88,
-        notes: ["Up to 70,000 linear", "metres per day"],
-      },
-      {
-        label: "Mode",
-        value: "1",
-        unit: "pass",
-        fill: 80,
-        notes: ["Hybrid workflow:", "digital + rotary screen"],
-        featured: true,
-      },
-      { label: "Print width", value: "2588", unit: "mm", fill: 76, notes: ["Maximum print width"] },
+    specs: [
+      { label: "Output", value: "70,000", unit: "linear m / day", note: "Up to 70,000 linear metres per day" },
+      { label: "Print mode", value: "Single pass", note: "Hybrid workflow: digital + rotary screen" },
+      { label: "Print width", value: "2,588", unit: "mm", note: "Maximum print width" },
     ],
     interest: "Industrial Single-Pass Printing",
+    consultPrinter: "Rocket",
     learnMore: "/product-details/rocket-single-pass-digital-textile-printer/",
   },
   {
     id: "homer-k64",
     name: "HOMER K-64",
-    icon: "gantry",
-    badge: "Industrial textile",
+    category: "Industrial textile printing",
+    highlight: "64-head platform",
     tagline: "An industrial digital printing platform designed for textile printing applications.",
-    fabrics: "All types, including elastic and new fibre",
+    fabrics: ["All fabric types", "Elastic", "New fibres"],
     image: {
       src: "/india-itme/homer-k64.webp",
       width: 1400,
       height: 542,
       alt: "HOMER K-64 industrial digital textile printer",
     },
-    gauges: [
-      {
-        label: "Output",
-        value: "1,020",
-        unit: "lm/hr",
-        fill: 70,
-        notes: ["Up to 1,020 linear", "metres per hour"],
-      },
-      {
-        label: "Print heads",
-        value: "64",
-        unit: "×",
-        fill: 84,
-        notes: ["Industrial", "piezoelectric heads"],
-        featured: true,
-      },
-      { label: "Print width", value: "1800", unit: "mm", fill: 57, notes: ["Maximum print width"] },
+    specs: [
+      { label: "Output", value: "1,020", unit: "linear m / hr", note: "Up to 1,020 linear metres per hour" },
+      { label: "Print heads", value: "64", note: "Industrial piezoelectric heads" },
+      { label: "Print width", value: "1,800", unit: "mm", note: "Maximum print width" },
     ],
     interest: "Digital Textile Printing",
+    consultPrinter: "K64",
     learnMore: "/product-details/64-head-digital-textile-printer/",
   },
   {
     id: "oval",
     name: "Oval Printer",
-    icon: "star",
+    category: "Garment printing",
+    highlight: "World premiere",
     isNew: true,
     layout: "veiled",
-    badge: "World premiere",
     lead: "Experience garment printing where the print feels more integrated with the fabric.",
     tagline:
       "Under wraps until Hall 5. See the live launch during the expo and be among the first to see it running.",
@@ -220,16 +185,10 @@ export const MACHINES: Machine[] = [
       height: 1048,
       alt: "The Oval Printer under a red velvet cover ahead of its launch",
     },
-    gauges: [
-      { label: "Launch", value: "Live", fill: 100, notes: ["Unveiled during", "India ITME 2026"] },
-      {
-        label: "Hall",
-        value: "5",
-        fill: 50,
-        notes: ["India Exposition Mart", "Greater Noida"],
-        featured: true,
-      },
-      { label: "Stall", value: "5", fill: 50, notes: ["Orange O Tec stand"] },
+    specs: [
+      { label: "Launch", value: "Live", note: "Unveiled during India ITME 2026" },
+      { label: "Where", value: "Hall 5", note: "India Exposition Mart, Greater Noida" },
+      { label: "Stand", value: "Stall 5", note: "Orange O Tec stand" },
     ],
     interest: "Digital Textile Printing",
     bookLabel: "Reserve a launch slot",

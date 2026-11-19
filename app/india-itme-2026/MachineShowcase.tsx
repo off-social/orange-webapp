@@ -39,7 +39,9 @@ function Panel({ m, active }: { m: Machine; active: boolean }) {
       aria-labelledby={`tab-${m.id}`}
       hidden={!active}
     >
-      <div className={s.mStudio}>
+      <div
+        className={`${s.mStudio} ${m.image.studio === "dark" ? s.mStudioDark : ""}`}
+      >
         <Image
           src={m.image.src}
           width={m.image.width}
@@ -172,7 +174,9 @@ export default function MachineShowcase() {
             onClick={() => select(i)}
             onKeyDown={(e) => onKey(e, i)}
           >
-            <span className={s.pickShot}>
+            <span
+              className={`${s.pickShot} ${m.image.studio === "dark" ? s.pickShotDark : ""}`}
+            >
               <Image
                 src={m.image.src}
                 width={m.image.width}

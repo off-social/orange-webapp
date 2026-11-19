@@ -20,6 +20,7 @@
   --dark-2: #a1a1a6;
   --wrap: 1040px;
   --wide: 1260px;
+  --page-gutter: 22px;
 
   color: var(--ink);
   background: #fff;
@@ -27,6 +28,7 @@
   line-height: 1.47;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 .page h1,
@@ -66,12 +68,12 @@
 }
 
 .wrap {
-  width: min(100% - 44px, var(--wrap));
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--wrap));
   margin-inline: auto;
 }
 
 .wide {
-  width: min(100% - 44px, var(--wide));
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--wide));
   margin-inline: auto;
 }
 
@@ -203,12 +205,12 @@
 }
 
 .headline {
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(28px, 6vw, 64px);
   line-height: 1.06;
 }
 
 .sub {
-  font-size: clamp(21px, 2.4vw, 28px);
+  font-size: clamp(17px, 2.4vw, 28px);
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: 0.007em;
@@ -229,19 +231,41 @@
 }
 
 @media (max-width: 734px) {
+  .page {
+    --page-gutter: 16px;
+    font-size: 16px;
+  }
+
   .tile {
-    padding: 64px 0;
+    padding: 56px 0;
   }
 
   .copy {
+    font-size: 16px;
+  }
+
+  .eyebrow {
     font-size: 17px;
+  }
+
+  .more {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 0 16px;
+    min-height: 42px;
+    white-space: normal;
+    text-align: center;
   }
 }
 
 /* ---------- Hero ---------- */
 
 .hero {
-  background: var(--gray-bg);
+  background: #fff;
+  border-bottom: 1px solid var(--hair);
   padding: 48px 0 56px;
 }
 
@@ -277,7 +301,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(34px, 4.4vw, 58px);
+  font-size: clamp(28px, 4.4vw, 58px);
   line-height: 1.05;
   letter-spacing: -0.03em !important;
   text-wrap: balance;
@@ -285,7 +309,7 @@
 
 .hero .sub {
   margin-top: 12px !important;
-  font-size: clamp(18px, 1.8vw, 22px);
+  font-size: clamp(16px, 1.8vw, 22px);
   line-height: 1.3;
 }
 
@@ -497,6 +521,100 @@
   }
 }
 
+@media (max-width: 734px) {
+  .hero {
+    padding: 32px 0 44px;
+  }
+
+  .hero .ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .itmeTag {
+    flex-wrap: wrap;
+  }
+
+  .lede {
+    font-size: 15px;
+  }
+
+  .formCard h2 {
+    font-size: 21px;
+  }
+
+  .brandline {
+    font-size: clamp(30px, 8vw, 48px);
+    max-width: none;
+  }
+
+  .xp li {
+    font-size: 14px;
+    padding: 20px 12px 18px;
+  }
+
+  .bento,
+  .visitFacts,
+  .contactRow {
+    width: min(calc(100% - 2 * var(--page-gutter)), 1100px);
+  }
+
+  .visitFacts dd {
+    font-size: 16px;
+  }
+
+  .stallNo {
+    font-size: clamp(32px, 9vw, 52px);
+  }
+
+  .contact b {
+    font-size: 17px;
+  }
+
+  .contact {
+    padding: 28px 16px;
+  }
+
+  .faq summary {
+    font-size: 16px;
+    padding: 18px 0;
+    gap: 14px;
+  }
+
+  .faq details p {
+    font-size: 15px;
+    padding: 0 0 20px;
+  }
+
+  .mLead {
+    font-size: 16px;
+  }
+
+  .mTagline {
+    font-size: 15px;
+  }
+
+  .mName {
+    font-size: clamp(26px, 6vw, 34px);
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 24px 20px 26px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .ctas {
+    gap: 12px 16px;
+  }
+}
+
 @media (max-width: 560px) {
   .eventCard {
     grid-template-areas:
@@ -538,6 +656,18 @@
   .cdTile {
     flex: 1;
     min-width: 0;
+  }
+
+  .cdTile b {
+    font-size: 20px;
+  }
+
+  .cdLabel {
+    font-size: 13px;
+  }
+
+  .heroTitle {
+    font-size: clamp(26px, 7vw, 34px);
   }
 }
 
@@ -855,7 +985,7 @@
   grid-template-columns: 252px 1fr;
   gap: 20px;
   align-items: stretch;
-  width: min(100% - 44px, 1240px);
+  width: min(calc(100% - 2 * var(--page-gutter)), 1240px);
   margin: 48px auto 0;
   text-align: left;
 }
@@ -924,17 +1054,12 @@
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(180deg, #fafafb 0%, #eceef1 100%);
 }
 
 .pickShot img {
   width: 90% !important;
   height: 82% !important;
   object-fit: contain;
-}
-
-.pickVeiled .pickShot {
-  background: #0d0e0e;
 }
 
 .pickVeiled .pickShot img {
@@ -1000,7 +1125,6 @@
   place-items: center;
   min-height: 460px;
   padding: 40px 32px;
-  background: radial-gradient(120% 85% at 50% 100%, #e6e8ec 0%, #f3f4f6 55%, #fafafb 100%);
 }
 
 /* multiply lets photos shot on white (e.g. FabPro 2i) sit on the grey
@@ -1014,6 +1138,16 @@
 .mVeiled .mStudio img,
 .pickVeiled .pickShot img {
   mix-blend-mode: normal;
+}
+
+.mStudioDark img,
+.pickShotDark img {
+  mix-blend-mode: normal;
+}
+
+.pickShotDark img {
+  width: 94% !important;
+  height: 88% !important;
 }
 
 .mStudio img {
@@ -1196,6 +1330,10 @@
   width: 100% !important;
 }
 
+.mWide .mStudioDark img {
+  max-height: min(42vw, 320px);
+}
+
 .mWide .mInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1227,10 +1365,9 @@
   align-self: end;
 }
 
-/* Oval Printer: still under its cover, so the photo fills the left side */
+/* Oval DTG: still under its cover, so the photo fills the left side */
 .mVeiled .mStudio {
   padding: 0;
-  background: #0d0e0e;
 }
 
 .mVeiled .mStudio img {
@@ -1351,6 +1488,22 @@
   .mActs .btn {
     flex: 1;
   }
+
+  .mValue {
+    font-size: 19px;
+  }
+
+  .mSpecs > div {
+    grid-template-columns: 84px 1fr;
+    gap: 10px;
+  }
+
+  .portfolioLink .more {
+    display: inline-flex;
+    max-width: calc(calc(100% - 2 * var(--page-gutter)));
+    text-align: center;
+    line-height: 1.35;
+  }
 }
 
 /* ---------- Why (bento) ---------- */
@@ -1359,7 +1512,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  width: min(100% - 44px, 1100px);
+  width: min(calc(100% - 2 * var(--page-gutter)), 1100px);
   margin: 56px auto 0;
   text-align: left;
 }
@@ -1425,7 +1578,7 @@
 .visitFacts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: min(100% - 44px, 900px);
+  width: min(calc(100% - 2 * var(--page-gutter)), 900px);
   margin: 56px auto 0;
   border-top: 1px solid #333336;
   text-align: center;
@@ -1491,7 +1644,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: min(100% - 44px, 960px);
+  width: min(calc(100% - 2 * var(--page-gutter)), 960px);
   margin: 52px auto 0;
 }
 
@@ -1598,6 +1751,86 @@
 
 .faq details a {
   color: var(--orange-link);
+}
+
+/* ---------- Very small phones ---------- */
+
+@media (max-width: 400px) {
+  .page {
+    --page-gutter: 12px;
+    font-size: 15px;
+  }
+
+  .tile {
+    padding: 48px 0;
+  }
+
+  .headline {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .sub {
+    font-size: clamp(16px, 4.2vw, 20px);
+  }
+
+  .copy,
+  .faq details p {
+    font-size: 15px;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+  }
+
+  .heroTitle {
+    font-size: clamp(24px, 6.5vw, 30px);
+  }
+
+  .calDays {
+    font-size: 32px;
+  }
+
+  .calTile {
+    width: 92px;
+  }
+
+  .eventFacts dd {
+    font-size: 14px;
+  }
+
+  .pick {
+    flex: 0 0 176px;
+  }
+
+  .picker {
+    padding-inline: var(--page-gutter);
+    scroll-padding-inline: var(--page-gutter);
+  }
+
+  .mPanel {
+    margin-inline: var(--page-gutter);
+    border-radius: 16px;
+  }
+
+  .mStudio {
+    min-height: 200px;
+    padding: 24px 12px;
+  }
+
+  .mInfo {
+    padding: 22px 16px 20px;
+  }
+
+  .floatCta {
+    left: 8px;
+    right: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .floatCta .btn {
+    font-size: 13px;
+    padding: 0 12px;
+  }
 }
 
 /* ---------- Mobile sticky CTA ---------- */

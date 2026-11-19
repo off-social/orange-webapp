@@ -63,12 +63,19 @@ export type Machine = {
   lead?: string;
   tagline: string;
   fabrics?: string[];
-  image: { src: string; width: number; height: number; alt: string };
+  image: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+    /** Product shots on black need a dark studio, not multiply on grey. */
+    studio?: "dark";
+  };
   specs: Spec[];
   interest: string;
   /**
    * Entry in the site-wide consultation modal's printer list. When set, the
-   * button opens that modal; when not (the unreleased Oval Printer, which the
+   * button opens that modal; when not (the unreleased Oval DTG, which the
    * list does not carry), it falls back to this page's form.
    */
   consultPrinter?: string;
@@ -85,10 +92,11 @@ export const MACHINES: Machine[] = [
     tagline: "Precision positioning for high-speed fabric printing.",
     fabrics: ["Jacquard", "Embroidery", "Lace sequin", "Silk", "Jari-jacquard", "Shiffli"],
     image: {
-      src: "/india-itme/position-pro.webp",
-      width: 1300,
-      height: 644,
+      src: "/india-itme/position-pro.png",
+      width: 1024,
+      height: 629,
       alt: "Position Pro position printing machine",
+      studio: "dark",
     },
     specs: [
       { label: "Output", value: "2,000", unit: "linear m / day", note: "Maximum output per day" },
@@ -108,11 +116,11 @@ export const MACHINES: Machine[] = [
       "Industrial digital textile printing for precision, productivity and reliable production.",
     fabrics: ["Cotton", "Linen", "Silk", "Nylon", "Polyester", "Blends"],
     image: {
-      // Same photo as the FabPro 2i product page
-      src: "/FabPro2i1.webp",
-      width: 854,
-      height: 362,
-      alt: "FabPro 2i Direct to Fabric Printing Machine by Orange O Tec",
+      src: "/india-itme/fabpro-2i.png",
+      width: 1024,
+      height: 673,
+      alt: "FabPro 2i direct-to-fabric printing machine by Colorix",
+      studio: "dark",
     },
     specs: [
       { label: "Output", value: "250", unit: "linear m / hr", note: "Up to 250 linear metres per hour" },
@@ -133,10 +141,11 @@ export const MACHINES: Machine[] = [
       "The world’s fastest single-pass digital textile printer, designed for demanding industrial environments.",
     fabrics: ["All fabric types", "Elastic", "New fibres"],
     image: {
-      src: "/india-itme/rocket.webp",
-      width: 1800,
-      height: 303,
+      src: "/india-itme/rocket.png",
+      width: 1024,
+      height: 346,
       alt: "Rocket single-pass digital textile printer",
+      studio: "dark",
     },
     specs: [
       { label: "Output", value: "70,000", unit: "linear m / day", note: "Up to 70,000 linear metres per day" },
@@ -171,7 +180,7 @@ export const MACHINES: Machine[] = [
   },
   {
     id: "oval",
-    name: "Oval Printer",
+    name: "Oval DTG",
     category: "Garment printing",
     highlight: "World premiere",
     isNew: true,
@@ -183,7 +192,7 @@ export const MACHINES: Machine[] = [
       src: "/india-itme/oval-printer-unveil.webp",
       width: 1400,
       height: 1048,
-      alt: "The Oval Printer under a red velvet cover ahead of its launch",
+      alt: "The Oval DTG under a red velvet cover ahead of its launch",
     },
     specs: [
       { label: "Launch", value: "Live", note: "Unveiled during India ITME 2026" },

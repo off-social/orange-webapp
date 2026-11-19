@@ -17,7 +17,7 @@ import s from "./itme.module.css";
 export const metadata = buildPageMetadata({
   title: "Orange O Tec at India ITME 2026 | Hall 5, Stall 5 | IEML Greater Noida",
   description:
-    "Meet Orange O Tec at India ITME 2026, Hall 5, Stall 5, IEML Greater Noida, 4–9 December. See Position Pro, FabPro 2i, Rocket and HOMER K-64, witness the Oval Printer launch and book a meeting.",
+    "Meet Orange O Tec at India ITME 2026, Hall 5, Stall 5, IEML Greater Noida, 4–9 December. See Position Pro, FabPro 2i, Rocket and HOMER K-64, witness the Oval DTG launch and book a meeting.",
   keywords:
     "India ITME 2026, ITME Expo 2026, India ITME 2026 exhibitors, textile machinery exhibition, digital textile printing machine, Orange O Tec, Hall 5 Stall 5",
   path: ITME.path,
@@ -35,7 +35,7 @@ const jsonLd = {
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       url: `https://orangeotec.com${ITME.path}`,
       description:
-        "Meet Orange O Tec at Hall 5, Stall 5 of India ITME 2026, the 12th India International Textile Machinery Exhibition, to explore digital textile printing technologies and the live launch of the Oval Printer.",
+        "Meet Orange O Tec at Hall 5, Stall 5 of India ITME 2026, the 12th India International Textile Machinery Exhibition, to explore digital textile printing technologies and the live launch of the Oval DTG.",
       image: "https://orangeotec.com/newRocket.webp",
       location: {
         "@type": "Place",
@@ -226,7 +226,7 @@ export default function IndiaItmePage() {
                 manufacturing goals.
               </p>
               <div className={s.ctas}>
-                <BookLink className={s.btn}>Book a Meeting with Our Team</BookLink>
+                <BookLink className={s.btn}>Book a Demo</BookLink>
                 <a className={s.more} href="#technology">
                   Explore Our Printing Solutions
                 </a>
@@ -257,7 +257,31 @@ export default function IndiaItmePage() {
           </div>
         </section>
 
-        {/* 2 · About India ITME */}
+        {/* 2 · Machines on the stand */}
+        <section
+          className={`${s.tile} ${s.gray} ${s.techSection}`}
+          id="technology"
+          aria-labelledby="tech-title"
+        >
+          <div className={s.wrap}>
+            <p className={s.eyebrow}>Live at {ITME.stand}</p>
+            <h2 className={s.headline} id="tech-title">
+              Technologies built for industrial performance.
+            </h2>
+            <p className={s.copy}>
+              Explore selected printing platforms from Orange O Tec and its
+              technology ecosystem, live at {ITME.stand}.
+            </p>
+          </div>
+          <MachineShowcase />
+          <div className={s.portfolioLink}>
+            <Link className={s.more} href="/products">
+              Explore Our Complete Printing Portfolio
+            </Link>
+          </div>
+        </section>
+
+        {/* 3 · About India ITME */}
         <section className={s.tile} id="about-itme" aria-labelledby="about-title">
           <div className={s.wrap}>
             <p className={s.eyebrow}>India ITME 2026</p>
@@ -276,16 +300,6 @@ export default function IndiaItmePage() {
               technologies, machinery, digital printing developments and
               industrial innovations.
             </p>
-            <div className={s.ctas}>
-              <a
-                className={s.more}
-                href={ITME.officialSite}
-                target="_blank"
-                rel="noopener"
-              >
-                Visit the official India ITME website
-              </a>
-            </div>
             <Image
               className={s.itmeLogo}
               src="/india-itme/india-itme-2026-logo.webp"
@@ -296,7 +310,7 @@ export default function IndiaItmePage() {
           </div>
         </section>
 
-        {/* 3 · Meet Orange O Tec */}
+        {/* 4 · Meet Orange O Tec */}
         <section className={`${s.meet} ${s.onDark}`} aria-labelledby="meet-title">
           <div className={s.wrap}>
             <p className={s.eyebrow} id="meet-title">
@@ -341,30 +355,6 @@ export default function IndiaItmePage() {
             alt=""
             aria-hidden="true"
           />
-        </section>
-
-        {/* 4 · Machines on the stand */}
-        <section
-          className={`${s.tile} ${s.gray} ${s.techSection}`}
-          id="technology"
-          aria-labelledby="tech-title"
-        >
-          <div className={s.wrap}>
-            <p className={s.eyebrow}>Live at {ITME.stand}</p>
-            <h2 className={s.headline} id="tech-title">
-              Technologies built for industrial performance.
-            </h2>
-            <p className={s.copy}>
-              Explore selected printing platforms from Orange O Tec and its
-              technology ecosystem, live at {ITME.stand}.
-            </p>
-          </div>
-          <MachineShowcase />
-          <div className={s.portfolioLink}>
-            <Link className={s.more} href="/products">
-              Explore Our Complete Printing Portfolio
-            </Link>
-          </div>
         </section>
 
         {/* 5 · Why Orange O Tec */}

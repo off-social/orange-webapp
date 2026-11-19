@@ -55,11 +55,14 @@ export function IcsDownload() {
 export function FloatingCta() {
   const [heroVisible, setHeroVisible] = useState(true);
   const [formVisible, setFormVisible] = useState(true);
+  const [footerInView, setFooterInView] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById("itme-hero");
     const form = document.getElementById("book");
+    const footer = document.querySelector("footer");
     if (!hero || !form) return;
+
     const heroObs = new IntersectionObserver(
       ([e]) => setHeroVisible(e.isIntersecting),
       { threshold: 0.05 },
@@ -68,15 +71,28 @@ export function FloatingCta() {
       ([e]) => setFormVisible(e.isIntersecting),
       { threshold: 0.1 },
     );
+    // Hide before overlap: treat the bottom ~80px as part of the sticky CTA.
+    const footerObs = footer
+      ? new IntersectionObserver(
+          ([e]) => setFooterInView(e.isIntersecting),
+          {
+            threshold: 0,
+            rootMargin: "0px 0px -80px 0px",
+          },
+        )
+      : null;
+
     heroObs.observe(hero);
     formObs.observe(form);
+    footerObs?.observe(footer);
     return () => {
       heroObs.disconnect();
       formObs.disconnect();
+      footerObs?.disconnect();
     };
   }, []);
 
-  const visible = !heroVisible && !formVisible;
+  const visible = !heroVisible && !formVisible && !footerInView;
 
   return (
     <div

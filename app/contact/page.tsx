@@ -397,7 +397,7 @@ export default function ContactPage() {
                 lineHeight: "22.4px",
               }}
             >
-              info@orange.com
+              info@orangeotec.com
             </Typography>
           </Box>
 

@@ -28,11 +28,14 @@ export function ResponsiveSlideImage({
   alt,
   showFrom,
   hideFrom,
+  objectPosition = "center center",
 }: {
   src: string;
   alt: string;
   showFrom: string;
   hideFrom: string;
+  /** Which part survives when the poster's ratio differs from the frame's. */
+  objectPosition?: string;
 }) {
   const sx: Record<string, unknown> = {
     position: "absolute",
@@ -49,7 +52,7 @@ export function ResponsiveSlideImage({
         src={src}
         alt={alt}
         fill
-        style={{ objectFit: "cover", objectPosition: "center center" }}
+        style={{ objectFit: "cover", objectPosition }}
       />
     </Box>
   );

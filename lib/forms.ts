@@ -14,7 +14,8 @@ export type FormKind =
   | "contact"
   | "career"
   | "services"
-  | "about";
+  | "about"
+  | "itme";
 
 // Referenced literally, not through a variable or destructuring, because Next
 // only inlines NEXT_PUBLIC_ values into the browser bundle for literal lookups.

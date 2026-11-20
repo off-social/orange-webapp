@@ -50,6 +50,7 @@ const navLinks: NavItem[] = [
     ],
   },
   { label: "Career", to: "/career" },
+  { label: "IndiaITME", to: "/india-itme-2026" },
 ];
 
 export default function Navbar() {

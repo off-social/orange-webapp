@@ -72,19 +72,24 @@ export function FloatingCta() {
       { threshold: 0.1 },
     );
     // Hide before overlap: treat the bottom ~80px as part of the sticky CTA.
+    
     const footerObs = footer
-      ? new IntersectionObserver(
-          ([e]) => setFooterInView(e.isIntersecting),
-          {
-            threshold: 0,
-            rootMargin: "0px 0px -80px 0px",
-          },
-        )
-      : null;
+    ? new IntersectionObserver(
+      ([e]) => setFooterInView(e.isIntersecting),
+      {
+        threshold: 0,
+        rootMargin: "0px 0px -80px 0px",
+      },
+    )
+    : null;
 
     heroObs.observe(hero);
     formObs.observe(form);
-    footerObs?.observe(footer);
+
+    if (footer && footerObs) {
+       footerObs.observe(footer);
+    }
+
     return () => {
       heroObs.disconnect();
       formObs.disconnect();

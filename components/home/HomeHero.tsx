@@ -3,6 +3,7 @@
 import HeroCarousel, { type HeroSlide } from "@/components/hero/HeroCarousel";
 import SlideAdvanced from "@/components/hero/SlideAdvanced";
 import SlideFabpro2i from "@/components/hero/SlideFabpro2i";
+import SlideItme2026 from "@/components/hero/SlideItme2026";
 import SlideRocket from "@/components/hero/SlideRocket";
 import { useConsultation } from "@/data/ConsultationContext";
 import { Box, Button } from "@mui/material";
@@ -11,8 +12,9 @@ import Link from "next/link";
 
 /**
  * Home page hero: a poster carousel at the shared hero size, cycling the
- * Advanced Textile Fabric Printer, Rocket and FabPro 2i slides. The site's two
- * primary calls to action sit under the first slide's specification line.
+ * India ITME 2026 banner, Advanced Textile Fabric Printer, Rocket and FabPro 2i
+ * slides. The site's two primary calls to action sit under the Advanced slide's
+ * specification line.
  */
 export default function HomeHero() {
   const { openModal } = useConsultation();
@@ -94,6 +96,7 @@ export default function HomeHero() {
   );
 
   const slides: HeroSlide[] = [
+    { render: () => <SlideItme2026 /> },
     {
       render: () => <SlideAdvanced actions={actions} />,
     },

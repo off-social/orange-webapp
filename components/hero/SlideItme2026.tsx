@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ResponsiveSlideImage } from "./HeroSlideImage";
 
 /**
@@ -8,6 +9,10 @@ import { ResponsiveSlideImage } from "./HeroSlideImage";
  * frame's ratio, so nothing is cropped. (The 393×700 poster is taller than the
  * frame and lost the machines at the bottom.) The 1440 poster is also taller
  * than its frame, but only empty background is trimmed.
+ *
+ * The whole poster links to the India ITME 2026 page. The carousel's arrows sit
+ * above it, so they still work. A clone's link is taken out of the tab order,
+ * because the clone is hidden from assistive technology.
  */
 
 const ITME_IMAGES = [
@@ -17,9 +22,17 @@ const ITME_IMAGES = [
   { src: "/ITME-2026.webp", display: { block: "1441px", none: "" } },
 ];
 
-export default function SlideItme2026() {
+export default function SlideItme2026({
+  isClone = false,
+}: {
+  isClone?: boolean;
+}) {
   return (
-    <>
+    <Link
+      href="/india-itme-2026/"
+      tabIndex={isClone ? -1 : undefined}
+      style={{ position: "absolute", inset: 0, display: "block" }}
+    >
       {ITME_IMAGES.map((img) => (
         <ResponsiveSlideImage
           key={img.src}
@@ -29,6 +42,6 @@ export default function SlideItme2026() {
           hideFrom={img.display.none}
         />
       ))}
-    </>
+    </Link>
   );
 }

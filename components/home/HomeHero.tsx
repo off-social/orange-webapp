@@ -96,7 +96,7 @@ export default function HomeHero() {
   );
 
   const slides: HeroSlide[] = [
-    { render: () => <SlideItme2026 /> },
+    { render: ({ isClone }) => <SlideItme2026 isClone={isClone} /> },
     {
       render: () => <SlideAdvanced actions={actions} />,
     },

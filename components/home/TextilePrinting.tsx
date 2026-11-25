@@ -18,7 +18,7 @@ const BRANDS: Brand[] = [
     image: "/colorix.webp",
     products: [
       {
-        src: "/PositionPro1.webp",
+        src: "/PositionPro2i-home.webp",
         name: "Position Pro Digital Textile Printer",
         desc: "Precision Positioning for High-Speed Fabric Printing.",
       },

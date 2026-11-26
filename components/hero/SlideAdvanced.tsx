@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import type { ReactNode } from "react";
+import { ResponsiveSlideImage } from "./HeroSlideImage";
 
 /**
- * Hero slide — "Advanced Textile Fabric Printer".
+ * Hero slide — "Advanced Textile Fabric Printer" (Position Pro 2i).
  *
- * Two posters rather than the per-width set the other slides use: the mobile
- * crop is a different composition, and between them they cover every width.
+ * A per-width poster set like the other slides: a phone portrait, a tablet
+ * landscape and a wide cut.
  *
  * `actions` is an optional slot under the description, for the calls to action
  * the home page puts there. `headingComponent` exists because the carousel
@@ -18,6 +18,13 @@ const HEADING = "Advanced";
 const HEADING_GRADIENT = "Textile Fabric Printer";
 const DESCRIPTION =
   "Equipped with 16 Kyocera industrial printheads, it delivers print speeds of Upto 2,000 LM/Day";
+
+const POSTERS = [
+  { src: "/POSITION-PRO-2I-393.webp", showFrom: "0px", hideFrom: "441px" },
+  { src: "/POSITION-PRO-2I-500.webp", showFrom: "441px", hideFrom: "601px" },
+  { src: "/POSITION-PRO-2I-768.webp", showFrom: "601px", hideFrom: "1025px" },
+  { src: "/POSITION-PRO-2I-wide.webp", showFrom: "1025px", hideFrom: "" },
+];
 
 const TEXT_GRADIENT =
   "linear-gradient(90deg, #1D5C7B 0%, #D13D5A 25.96%, #DEA70D 55.29%, #CA4966 78.85%, #2F7993 100%)";
@@ -31,40 +38,15 @@ export default function SlideAdvanced({
 }) {
   return (
     <>
-      <Box
-        sx={{
-          display: { xs: "none", sm: "block" },
-          position: "absolute",
-          inset: 0,
-        }}
-      >
-        <Image
-          src="/productPageImg.webp"
-          alt="Advanced Textile Fabric Printer"
-          fill
-          sizes="100vw"
-          loading="eager"
-          fetchPriority="high"
-          style={{ objectFit: "cover", objectPosition: "center center" }}
+      {POSTERS.map((img) => (
+        <ResponsiveSlideImage
+          key={img.src}
+          src={img.src}
+          alt="Advanced Textile Fabric Printer — Position Pro 2i"
+          showFrom={img.showFrom}
+          hideFrom={img.hideFrom}
         />
-      </Box>
-      <Box
-        sx={{
-          display: { xs: "block", sm: "none" },
-          position: "absolute",
-          inset: 0,
-        }}
-      >
-        <Image
-          src="/prductimgMobile.webp"
-          alt="Advanced Textile Fabric Printer"
-          fill
-          sizes="100vw"
-          loading="eager"
-          fetchPriority="high"
-          style={{ objectFit: "cover", objectPosition: "center top" }}
-        />
-      </Box>
+      ))}
 
       {/* Below lg the text sits at the bottom of the frame, where the artwork is
           busiest, so it needs the fade to stay legible. The desktop crop places

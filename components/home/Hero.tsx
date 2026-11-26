@@ -212,7 +212,7 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
           {/* Full-width printer image */}
           <Box sx={{ width: "100%", lineHeight: 0 }}>
             <Image
-              src="/ExceptionalQualityImg.webp"
+              src="/ExceptionalQuality-PositionPro2i.webp"
               alt="Exceptional Quality Printer"
               width={1920}
               height={700}

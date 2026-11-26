@@ -28,7 +28,7 @@ const BRANDS: Brand[] = [
         desc: "Engineered for Vibrant Prints, Faster Production & Superior Quality",
       },
       {
-        src: "/FabPro2i1.webp",
+        src: "/FabPro2i-colorix.webp",
         name: "FabPro 2i Digital Textile Printer (Made in India)",
         desc: "High-Speed Precision Textile Printing.",
       },

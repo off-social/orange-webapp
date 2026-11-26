@@ -209,34 +209,26 @@ export type Faq = { q: string; a: string };
 export const FAQS: Faq[] = [
   {
     q: "What is India ITME 2026?",
-    a: "India ITME 2026 is the 12th India International Textile Machinery Exhibition, bringing together textile machinery manufacturers, technology providers, suppliers and professionals.",
+    a: "India ITME 2026 is the 12th India International Textile Machinery Exhibition, bringing together textile machinery manufacturers, technology providers, suppliers and industry professionals to explore innovations across the textile and textile engineering sectors.",
   },
   {
-    q: "When is India ITME 2026 scheduled?",
-    a: "India ITME 2026 is scheduled from 4 to 9 December 2026.",
+    q: "When and where will India ITME 2026 take place?",
+    a: "India ITME 2026 will take place from 4 to 9 December 2026 at India Exposition Mart Limited (IEML), Greater Noida, Uttar Pradesh, India.",
   },
   {
-    q: "Where will India ITME 2026 be held?",
-    a: "The exhibition is scheduled at India Exposition Mart Limited (IEML), Greater Noida, Uttar Pradesh, India.",
+    q: "How can visitors register for India ITME 2026?",
+    a: "Visitors can register through the official India ITME 2026 website. Check the visitor registration section for available passes and entry requirements.",
   },
   {
-    q: "Will Orange O Tec participate in India ITME 2026?",
-    a: "Yes. Orange O Tec will participate as an exhibitor at Hall 5, Stall 5. Visitors can connect with the team to explore digital printing technologies and discuss their business requirements.",
+    q: "What types of textile machinery and technologies will be showcased at India ITME 2026?",
+    a: "The exhibition will showcase technologies across the textile manufacturing process, including spinning, weaving, knitting, textile processing, digital textile printing, garment manufacturing and technical textiles.",
   },
   {
-    q: "What digital printing solutions does Orange O Tec offer?",
-    a: "Orange O Tec’s portfolio includes digital printing technologies across textile, label and publication printing, along with relevant ink solutions.",
+    q: "Will Orange O Tec participate in India ITME 2026, and which machines will it showcase?",
+    a: "Yes, Orange O Tec will participate in India ITME 2026 at Hall 5, Stall 5. Visitors can explore Position Pro, FabPro 2i, Rocket, HOMER K-64 and Oval DTG, featuring technologies for position printing, direct-to-fabric printing, single-pass production and garment printing.",
   },
   {
     q: "How can I schedule a meeting with Orange O Tec at India ITME 2026?",
-    a: "Submit the enquiry form on this page with your contact information and printing requirements. The Orange O Tec team can follow up to coordinate a meeting.",
-  },
-  {
-    q: "Which industries does Orange O Tec serve?",
-    a: "Relevant applications include textile manufacturing, apparel, packaging, labels, books and publications.",
-  },
-  {
-    q: "How can I contact Orange O Tec?",
-    a: "Email info@orangeotec.com, call +91 74860 32990, or submit the enquiry form on this page.",
+    a: "Visitors can schedule a meeting by submitting the enquiry form on this page or contacting the Orange O Tec team directly. Visit Hall 5, Stall 5 during the exhibition to discuss your digital printing requirements.",
   },
 ];

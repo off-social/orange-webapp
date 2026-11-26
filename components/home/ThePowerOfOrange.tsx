@@ -215,7 +215,7 @@ const ThePowerOfOrange = () => {
           bgcolor: "#fff",
         }}
       >
-        <Image src="/thePowerofOrange1.webp" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
+        <Image src="/thePowerofOrange-FabPro2i.webp" alt="The Power of Orange" fill style={{ objectFit: "cover", objectPosition: "right center" }} priority />
         <Box sx={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 35%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 70%)", pointerEvents: "none" }} />
         <Box sx={{ position: "relative", width: { md: "58%", lg: "52%" }, display: "flex", flexDirection: "column", py: { md: "48px", lg: "80px" }, pl: { md: "40px", lg: "168px" }, pr: { md: "24px", lg: "32px" } }}>
           <TextContent />

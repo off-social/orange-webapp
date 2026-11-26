@@ -212,10 +212,10 @@ const Home = ({ newsPosts = [] }: { newsPosts?: BlogPostListItem[] }) => {
           {/* Full-width printer image */}
           <Box sx={{ width: "100%", lineHeight: 0 }}>
             <Image
-              src="/ExceptionalQuality-PositionPro2i.webp"
-              alt="Exceptional Quality Printer"
-              width={1920}
-              height={700}
+              src="/ExceptionalQuality-PositionPro-Marble.webp"
+              alt="Colorix Position Pro digital textile printer printing a marble design, with an operator at the control panel"
+              width={1877}
+              height={838}
               style={{
                 width: "100%",
                 height: "auto",

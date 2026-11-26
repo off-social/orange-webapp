@@ -3,8 +3,8 @@
   "name": "Position Pro",
   "tagline": "High-speed Direct-to-Fabric Positioning Printer",
   "heroImage": {
-    "desktop": "/PositionPro2i-details.webp",
-    "mobile": "/PositionPro2i-details-mobile.webp"
+    "desktop": "/PositionPro-front-details.webp",
+    "mobile": "/PositionPro-front-details-mobile.webp"
   },
   "sidebar": {
     "bullets": [

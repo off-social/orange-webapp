@@ -92,10 +92,10 @@ export const MACHINES: Machine[] = [
     tagline: "Precision positioning for high-speed fabric printing.",
     fabrics: ["Jacquard", "Embroidery", "Lace sequin", "Silk", "Jari-jacquard", "Shiffli"],
     image: {
-      src: "/PositionPro2i-home.webp",
-      width: 1671,
-      height: 830,
-      alt: "Position Pro position printing machine",
+      src: "/india-itme/position-pro-titled.webp",
+      width: 1380,
+      height: 849,
+      alt: "Colorix Position Pro position printing machine",
     },
     specs: [
       { label: "Output", value: "2,000", unit: "linear m / day", note: "Maximum output per day" },

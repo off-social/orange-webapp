@@ -3,10 +3,12 @@ import type { ReactNode } from "react";
 import { ResponsiveSlideImage } from "./HeroSlideImage";
 
 /**
- * Hero slide — "Advanced Textile Fabric Printer" (Position Pro 2i).
+ * Hero slide — "Advanced Textile Fabric Printer" (Position Pro).
  *
  * A per-width poster set like the other slides: a phone portrait, a tablet
- * landscape and a wide cut.
+ * landscape and a wide cut, plus a 1440 cut for 1281–1440. The 1440 cut sits
+ * the machine further left than the wide one, so it is kept out of 1025–1280,
+ * where the frame is shorter and the machine would run under the text.
  *
  * `actions` is an optional slot under the description, for the calls to action
  * the home page puts there. `headingComponent` exists because the carousel
@@ -20,10 +22,12 @@ const DESCRIPTION =
   "Equipped with 16 Kyocera industrial printheads, it delivers print speeds of Upto 2,000 LM/Day";
 
 const POSTERS = [
-  { src: "/POSITION-PRO-2I-393.webp", showFrom: "0px", hideFrom: "441px" },
-  { src: "/POSITION-PRO-2I-500.webp", showFrom: "441px", hideFrom: "601px" },
-  { src: "/POSITION-PRO-2I-768.webp", showFrom: "601px", hideFrom: "1025px" },
-  { src: "/POSITION-PRO-2I-wide.webp", showFrom: "1025px", hideFrom: "" },
+  { src: "/POSITION-PRO-393.webp", showFrom: "0px", hideFrom: "441px" },
+  { src: "/POSITION-PRO-500.webp", showFrom: "441px", hideFrom: "601px" },
+  { src: "/POSITION-PRO-768.webp", showFrom: "601px", hideFrom: "1025px" },
+  { src: "/POSITION-PRO-wide.webp", showFrom: "1025px", hideFrom: "1281px" },
+  { src: "/POSITION-PRO-1440.webp", showFrom: "1281px", hideFrom: "1441px" },
+  { src: "/POSITION-PRO-wide.webp", showFrom: "1441px", hideFrom: "" },
 ];
 
 const TEXT_GRADIENT =
@@ -40,9 +44,9 @@ export default function SlideAdvanced({
     <>
       {POSTERS.map((img) => (
         <ResponsiveSlideImage
-          key={img.src}
+          key={img.showFrom}
           src={img.src}
-          alt="Advanced Textile Fabric Printer — Position Pro 2i"
+          alt="Advanced Textile Fabric Printer — Position Pro"
           showFrom={img.showFrom}
           hideFrom={img.hideFrom}
         />

@@ -156,7 +156,7 @@ const ThePowerOfOrange = () => {
         {/* Machine image */}
         <Box sx={{ width: "100%", aspectRatio: "361 / 187", position: "relative", mt: "40px" }}>
           <Image
-            src="/theorngeimg1.webp"
+            src="/thePowerofOrange-mobile.webp"
             alt="The Power of Orange"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}

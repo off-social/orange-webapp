@@ -4,12 +4,11 @@ import { ResponsiveSlideImage } from "./HeroSlideImage";
 /** Hero slide — "FabPro 2i". Its own copy still to come. */
 
 const FABPRO2I_IMAGES = [
-  { src: "/FABPRO-2I-393.webp", display: { block: "0px", none: "441px" } },
-  { src: "/FABPRO-2I-500.webp", display: { block: "441px", none: "601px" } },
-  { src: "/FABPRO-2I-768.webp", display: { block: "601px", none: "1025px" } },
-  { src: "/FABPRO-2I-1336.webp", display: { block: "1025px", none: "1281px" } },
-  { src: "/FABPRO-2I1440.webp", display: { block: "1281px", none: "1441px" } },
-  { src: "/FABPRO-2I.webp", display: { block: "1441px", none: "" } },
+  { src: "/FABPRO-2I-NEW-mobile.webp", display: { block: "0px", none: "601px" } },
+  { src: "/FABPRO-2I-NEW-768.webp", display: { block: "601px", none: "1025px" } },
+  { src: "/FABPRO-2I-NEW-1336.webp", display: { block: "1025px", none: "1281px" } },
+  { src: "/FABPRO-2I-NEW-1440.webp", display: { block: "1281px", none: "1441px" } },
+  { src: "/FABPRO-2I-NEW-2560.webp", display: { block: "1441px", none: "" } },
 ];
 
 export default function SlideFabpro2i() {
@@ -24,6 +23,21 @@ export default function SlideFabpro2i() {
           hideFrom={img.display.none}
         />
       ))}
+
+      {/* Phones only: the portrait posters put the light tower and the orange
+          streaks right where the heading sits, so darken the top to keep it
+          legible. Landscape cuts leave the left side empty and need none. */}
+      <Box
+        aria-hidden
+        sx={{
+          display: { xs: "block", sm: "none" },
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 28%, rgba(0,0,0,0) 48%)",
+        }}
+      />
 
       {/* Text overlay — mobile: heading top + description bottom (space-between);
           landscape: left block (top-anchored sm/md, centred lg). */}

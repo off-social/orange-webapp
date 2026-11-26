@@ -47,7 +47,7 @@ const PRODUCTS: Product[] = [
   },
   {
     brand: "Colorix",
-    image: "/fabPro2i.webp",
+    image: "/FabPro2i-green-edge.webp",
     alt: "FabPro 2i",
     name: "FabPro 2i",
     description:

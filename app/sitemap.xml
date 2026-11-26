@@ -1,140 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
        <loc>https://orangeotec.com/</loc>
-       <lastmod>2026-09-08T07:32:56+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:20+00:00</lastmod>
        <priority>1.0000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/products/</loc>
-       <lastmod>2026-09-08T07:33:12+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:31+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/green-edge-series/</loc>
-       <lastmod>2026-09-08T07:32:57+00:00</lastmod>
-       <priority>0.8000</priority>
-  </url>
-  <url>
-       <loc>https://orangeotec.com/india-itme-2026/</loc>
-       <lastmod>2026-11-17T00:00:00+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:20+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/career/</loc>
-       <lastmod>2026-09-08T07:32:54+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://orangeotec.com/india-itme-2026/</loc>
+       <lastmod>2026-11-25T09:50:21+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/contact/</loc>
-       <lastmod>2026-09-08T07:32:54+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:19+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/position-printing-machine/</loc>
-       <lastmod>2026-09-08T07:33:10+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:29+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/rocket-single-pass-digital-textile-printer/</loc>
-       <lastmod>2026-09-08T07:33:10+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:29+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/fabpro-2i/</loc>
-       <lastmod>2026-09-08T07:33:03+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:25+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://orangeotec.com/news-events/colorix-goes-live-at-loupe-india-2026/</loc>
+       <lastmod>2026-11-25T09:50:22+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/news-events/orange-o-tec-at-gartex-india-2025/</loc>
-       <lastmod>2026-09-08T07:32:59+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:23+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/news-events/orange-o-tec-at-garfab-itx-2025/</loc>
-       <lastmod>2026-09-08T07:32:58+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:23+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/news-events/orange-o-tec-at-jci-jetpur-expo-2025/</loc>
-       <lastmod>2026-09-08T07:32:59+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:23+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/news-events/orange-o-tec-at-itmach-india-2025/</loc>
-       <lastmod>2026-09-08T07:32:59+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:23+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/about/</loc>
-       <lastmod>2026-09-08T07:32:41+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:09+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
+       <loc>https://orangeotec.com/product-details/jetixlab-hybrid-digital-label-printer/</loc>
+       <lastmod>2026-11-25T09:50:26+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://orangeotec.com/product-details/vividpress-e-digital-inkjet-printing-machine/</loc>
+       <lastmod>2026-11-25T09:50:30+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
        <loc>https://orangeotec.com/brochures/Greenedge-Series.pdf</loc>
-       <lastmod>2026-09-08T07:32:53+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/fabpro-1i/</loc>
-       <lastmod>2026-09-08T07:33:03+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:25+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/k24-head-digital-textile-printer/</loc>
-       <lastmod>2026-09-08T07:33:06+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:27+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/64-head-digital-textile-printer/</loc>
-       <lastmod>2026-09-08T07:33:07+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:24+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/product-details/k32-head-digital-textile-printer/</loc>
-       <lastmod>2026-09-08T07:33:06+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:27+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/brochures/Position-Pro.pdf</loc>
-       <lastmod>2026-09-08T07:32:51+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/brochures/FabPro-2i.pdf</loc>
-       <lastmod>2026-09-08T07:32:52+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/news-events/</loc>
-       <lastmod>2026-09-08T07:32:58+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:22+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://orangeotec.com/product-details/jetixlab-hybrid-digital-label-printer/</loc>
-       <lastmod>2026-09-08T07:33:05+00:00</lastmod>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://orangeotec.com/product-details/vividpress-e-digital-inkjet-printing-machine/</loc>
-       <lastmod>2026-09-08T07:33:11+00:00</lastmod>
-       <priority>0.5120</priority>
-  </url>
-  <url>
-       <loc>https://orangeotec.com/product-details/mas-vertical-double-sided-digital-textile-printer/</loc>
-       <lastmod>2026-09-28T00:00:00+00:00</lastmod>
-       <priority>0.8000</priority>
-  </url>
-  <url>
        <loc>https://orangeotec.com/brochures/FabPro-1i.pdf</loc>
-       <lastmod>2026-09-08T07:32:52+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
   <url>
        <loc>https://orangeotec.com/brochures/K64.pdf</loc>
-       <lastmod>2026-09-08T07:32:51+00:00</lastmod>
+       <lastmod>2026-11-25T09:50:17+00:00</lastmod>
        <priority>0.5120</priority>
   </url>
 </urlset>

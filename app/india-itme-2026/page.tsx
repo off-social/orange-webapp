@@ -15,9 +15,9 @@ import {
 import s from "./itme.module.css";
 
 export const metadata = buildPageMetadata({
-  title: "Orange O Tec at India ITME 2026 | Hall 5, Stall 5 | IEML Greater Noida",
+  title: "India ITME 2026: Textile Machinery & Printing | Orange O Tec",
   description:
-    "Meet Orange O Tec at India ITME 2026, Hall 5, Stall 5, IEML Greater Noida, 4–9 December. See Position Pro, FabPro 2i, Rocket and HOMER K-64, witness the Oval DTG launch and book a meeting.",
+    "Meet Orange O Tec at India ITME 2026 to explore advanced textile printing machinery, digital textile printing technology and industrial printing solutions.",
   keywords:
     "India ITME 2026, ITME Expo 2026, India ITME 2026 exhibitors, textile machinery exhibition, digital textile printing machine, Orange O Tec, Hall 5 Stall 5",
   path: ITME.path,
@@ -164,24 +164,13 @@ const WHY = [
 
 /** FAQ answers with links layered on; the schema uses the plain text. */
 const FAQ_RICH: Record<number, React.ReactNode> = {
-  4: (
-    <>
-      {FAQS[4].a} <Link href="/products">See all products</Link>.
-    </>
-  ),
   5: (
     <>
-      Submit the <BookLink>enquiry form</BookLink> on this page with your
-      contact information and printing requirements. The Orange O Tec team can
-      follow up to coordinate a meeting.
-    </>
-  ),
-  7: (
-    <>
-      Email <a href={`mailto:${ITME.email}`}>{ITME.email}</a>, call{" "}
-      <a href={ITME.phoneHref}>{ITME.phone}</a>, visit our{" "}
-      <Link href="/contact">contact page</Link>, or submit the enquiry form on
-      this page.
+      Visitors can schedule a meeting by submitting the{" "}
+      <BookLink>enquiry form</BookLink> on this page or{" "}
+      <Link href="/contact">contacting the Orange O Tec team</Link> directly.
+      Visit Hall 5, Stall 5 during the exhibition to discuss your digital
+      printing requirements.
     </>
   ),
 };
@@ -216,14 +205,15 @@ export default function IndiaItmePage() {
               <h1 className={s.heroTitle} id="itme-title">
                 Meet Orange O Tec at India ITME 2026.
               </h1>
-              <p className={s.sub}>
-                Discover the next generation of digital printing technologies.
+              <p className={s.lede}>
+                Explore advanced digital textile printing machines and
+                industrial printing technologies at India ITME 2026, the 12th
+                India International Textile Machinery Exhibition.
               </p>
               <p className={s.lede}>
-                Explore advanced digital textile printing solutions engineered
-                for industrial production, precision, productivity and
-                consistent print quality, and see how they can support your
-                manufacturing goals.
+                Meet Orange O Tec to discover printing solutions for textile,
+                garment, label and publication applications, and explore
+                technologies designed for industrial production.
               </p>
               <div className={s.ctas}>
                 <BookLink className={s.btn}>Book a Demo</BookLink>
@@ -266,11 +256,14 @@ export default function IndiaItmePage() {
           <div className={s.wrap}>
             <p className={s.eyebrow}>Live at {ITME.stand}</p>
             <h2 className={s.headline} id="tech-title">
-              Technologies built for industrial performance.
+              Digital Textile Printing Machines and Industrial Printing
+              Solutions
             </h2>
             <p className={s.copy}>
-              Explore selected printing platforms from Orange O Tec and its
-              technology ecosystem, live at {ITME.stand}.
+              Explore Orange O Tec&apos;s textile printing machinery and digital
+              printing solutions showcased at India ITME 2026. Discover
+              technologies for position printing, direct-to-fabric printing,
+              single-pass production and garment printing.
             </p>
           </div>
           <MachineShowcase />
@@ -286,7 +279,7 @@ export default function IndiaItmePage() {
           <div className={s.wrap}>
             <p className={s.eyebrow}>India ITME 2026</p>
             <h2 className={s.headline} id="about-title">
-              Where textile technology meets innovation.
+              India ITME 2026: International Textile Machinery Exhibition
             </h2>
             <p className={s.copy}>
               India ITME 2026 is the 12th edition of the India International
@@ -296,9 +289,12 @@ export default function IndiaItmePage() {
             </p>
             <p className={s.copy}>
               Scheduled from 4 to 9 December 2026 at India Exposition Mart,
-              Greater Noida, it is a platform to explore textile manufacturing
-              technologies, machinery, digital printing developments and
-              industrial innovations.
+              Greater Noida, this ITME exhibition in Noida brings together
+              textile machinery manufacturers, technology providers and
+              industry professionals to explore textile manufacturing
+              technologies, digital printing and industrial innovations. It is
+              also a major textile exhibition in Noida for exploring emerging
+              technologies and business opportunities.
             </p>
             <Image
               className={s.itmeLogo}
@@ -499,11 +495,11 @@ export default function IndiaItmePage() {
         >
           <div className={s.wrap}>
             <h2 className={s.headline} id="faq-title">
-              Questions? Answers.
+              Frequently Asked Questions
             </h2>
             <div className={s.faq}>
               {FAQS.map((f, i) => (
-                <details key={f.q}>
+                <details key={f.q} open>
                   <summary>
                     {f.q}
                     <i className={s.plus} aria-hidden="true" />

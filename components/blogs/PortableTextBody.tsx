@@ -5,6 +5,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import type { PortableTextBlock } from "@portabletext/react";
 
+import { canonicalizeInternalHref } from "@/data/products";
 import { urlFor } from "@/lib/sanity/image";
 
 function isExternalHref(href: string): boolean {
@@ -137,7 +138,12 @@ const components: PortableTextComponents = {
     ),
     em: ({ children }) => <Box component="em">{children}</Box>,
     link: ({ children, value }) => {
-      const href = typeof value?.href === "string" ? value.href : "";
+      // CMS links to our product pages often use short aliases or the full
+      // domain; point them straight at the canonical URL (no redirect hop).
+      const href =
+        typeof value?.href === "string"
+          ? canonicalizeInternalHref(value.href)
+          : "";
 
       if (!href) {
         return <>{children}</>;

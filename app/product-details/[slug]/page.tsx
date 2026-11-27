@@ -3,6 +3,9 @@ import { productSeo } from "@/data/seo/pages";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import RelatedLinks from "@/components/RelatedLinks";
+import { getRelatedProducts } from "@/data/products/related";
 import ProductDetails from "./ProductDetails";
 
 export function generateStaticParams() {
@@ -46,5 +49,27 @@ export default async function ProductDetailsPage({
     notFound();
   }
 
-  return <ProductDetails product={product} />;
+  const related = getRelatedProducts(slug);
+
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/products/" },
+          { name: product.name, path: `/product-details/${slug}/` },
+        ]}
+      />
+      <ProductDetails product={product} />
+      <RelatedLinks
+        heading="Related Products"
+        items={related.map((p) => ({
+          href: p.href,
+          title: p.name,
+          subtitle: p.tagline,
+          image: p.image,
+        }))}
+      />
+    </>
+  );
 }

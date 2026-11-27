@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import { ConsultationProvider } from "@/data/ConsultationContext";
+import { allProductLinks } from "@/data/products";
 import { staticPageSeo } from "@/data/seo/pages";
 import { buildPageMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/seo/site";
@@ -50,7 +51,7 @@ export default function RootLayout({
             <ConsultationProvider>
               <Navbar />
               <div style={{ paddingTop: "59px" }}>{children}</div>
-              <Footer />
+              <Footer productLinks={allProductLinks()} />
               <ConsultationModal />
             </ConsultationProvider>
           </SmoothScroll>

@@ -13,12 +13,14 @@ interface BlogPageClientProps {
   posts: BlogPostListItem[];
   featured: BlogPostListItem | null;
   successStories: BlogPostListItem[];
+  initialPage?: number;
 }
 
 export default function BlogPageClient({
   posts,
   featured,
   successStories,
+  initialPage,
 }: BlogPageClientProps) {
   const [activeSection, setActiveSection] =
     useState<BlogSectionTabId>("insights");
@@ -36,6 +38,7 @@ export default function BlogPageClient({
         activeSection={activeSection}
         posts={posts}
         successStories={successStories}
+        initialPage={initialPage}
       />
     </>
   );

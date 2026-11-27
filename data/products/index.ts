@@ -126,19 +126,60 @@ export function productSlug(name: string): string {
  * printheads, LM/day speed tables — and gets its own page.
  */
 const CUSTOM_PRODUCT_PAGES: Record<string, string> = {
-  "FOUND Textile Processing Range": "/product-details/found",
+  "FOUND Textile Processing Range": "/product-details/found/",
 };
 
+/** Registry slug for a catalog name, or undefined if it has no template page. */
+function resolveSlug(name: string): string | undefined {
+  const derived = productSlug(name);
+  const slug = SLUG_OVERRIDES[derived] ?? derived;
+  return products[slug] ? slug : undefined;
+}
+
 /**
- * Resolve a catalog product name to a details URL.
- * Links directly to the product page if its data is registered or it has a
- * hand-built page; otherwise falls back to the /product-details redirect.
+ * Rewrite a link to one of our own product pages to its canonical form:
+ * relative, trailing slash, short alias (e.g. /product-details/k24) resolved
+ * to the keyword slug. Used on CMS content, whose editors type aliases. Any
+ * other href is returned unchanged.
+ */
+export function canonicalizeInternalHref(href: string): string {
+  const m = href.match(
+    /^(?:https?:\/\/(?:www\.)?orangeotec\.com)?\/product-details\/([^/?#]+)\/?([?#].*)?$/i,
+  );
+  if (!m) return href;
+  const alias = m[1].toLowerCase();
+  const slug = SLUG_OVERRIDES[alias] ?? alias;
+  return `/product-details/${slug}/${m[2] ?? ""}`;
+}
+
+/** True if the catalog name has a details page (template or hand-built). */
+export function hasProductPage(name: string): boolean {
+  return Boolean(CUSTOM_PRODUCT_PAGES[name] || resolveSlug(name));
+}
+
+/**
+ * Resolve a catalog product name to a details URL (always with the trailing
+ * slash `trailingSlash: true` serves). Unknown names fall back to the
+ * /products/ listing, which is a real page — never a soft-404.
  */
 export function productHref(name: string): string {
   const custom = CUSTOM_PRODUCT_PAGES[name];
   if (custom) return custom;
 
-  const derived = productSlug(name);
-  const slug = SLUG_OVERRIDES[derived] ?? derived;
-  return products[slug] ? `/product-details/${slug}` : "/product-details";
+  const slug = resolveSlug(name);
+  return slug ? `/product-details/${slug}/` : "/products/";
+}
+
+/**
+ * Every product details page as { name, href }, for site-wide crawlable links
+ * (footer, related products). Server-side only: it reads the full registry.
+ */
+export function allProductLinks(): { name: string; href: string }[] {
+  return [
+    ...Object.entries(products).map(([slug, p]) => ({
+      name: p.name,
+      href: `/product-details/${slug}/`,
+    })),
+    { name: "FOUND Textile Processing", href: "/product-details/found/" },
+  ];
 }

@@ -26,39 +26,46 @@ import {
 } from "@mui/material";
 
 type DropdownItem = { label: string; to: string };
-type NavItem = { label: string; to: string; dropdown?: DropdownItem[] };
+type NavItem =
+  | { label: string; to: string; dropdown?: undefined }
+  | { label: string; to?: undefined; dropdown: DropdownItem[] };
 
+// Every href ends in "/" to match `trailingSlash: true`, so crawlers never see
+// the slashless duplicate. Dropdown parents have no page of their own.
 const navLinks: NavItem[] = [
   // { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
-  { label: "Green Edge Series", to: "/green-edge-series" },
+  { label: "Products", to: "/products/" },
+  { label: "Green Edge Series", to: "/green-edge-series/" },
   {
     label: "Company",
-    to: "/company",
     dropdown: [
-      { label: "About Us", to: "/about" },
-      { label: "CSR", to: "/csr" },
-      { label: "Support and Services", to: "/services" },
+      { label: "About Us", to: "/about/" },
+      { label: "CSR", to: "/csr/" },
+      { label: "Support and Services", to: "/services/" },
     ],
   },
   {
     label: "Insights",
-    to: "/insights",
     dropdown: [
-      { label: "News & Events", to: "/news-events" },
-      { label: "Blogs", to: "/blogs" },
+      { label: "News & Events", to: "/news-events/" },
+      { label: "Blogs", to: "/blogs/" },
     ],
   },
-  { label: "Career", to: "/career" },
-  { label: "IndiaITME", to: "/india-itme-2026" },
+  { label: "Career", to: "/career/" },
+  { label: "IndiaITME", to: "/india-itme-2026/" },
 ];
+
+/** usePathname() may or may not carry the trailing slash; compare without it. */
+const trimSlash = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState<Record<string, boolean>>({});
   const [visible, setVisible] = useState(true);
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = trimSlash(rawPathname ?? "/");
+  const isCurrent = (to?: string) => !!to && trimSlash(to) === pathname;
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastScrollY = useRef(0);
 
@@ -107,7 +114,7 @@ export default function Navbar() {
   // Auto-expand the dropdown that contains the current page.
   useEffect(() => {
     const active = navLinks.find((item) =>
-      item.dropdown?.some((s) => s.to === pathname),
+      item.dropdown?.some((s) => trimSlash(s.to) === pathname),
     );
     if (active) {
       setMobileOpen((prev) => ({ ...prev, [active.label]: true }));
@@ -182,7 +189,9 @@ export default function Navbar() {
                       alignItems: "center",
                       gap: "2px",
                       fontSize: "14px",
-                      color: pathname.startsWith(item.to) ? "#fff" : "#d2d2d2",
+                      color: item.dropdown.some((s) => isCurrent(s.to))
+                        ? "#fff"
+                        : "#d2d2d2",
                       textDecoration: "none",
                       whiteSpace: "nowrap",
                       cursor: "default",
@@ -205,11 +214,18 @@ export default function Navbar() {
                     />
                   </Box>
 
-                  {activeDropdown === item.label && (
-                    <Box
+                  {/* Always rendered so the links are in the server HTML for
+                      crawlers; hover only toggles visibility. */}
+                  <Box
                       onMouseEnter={() => handleEnter(item.label)}
                       onMouseLeave={handleLeave}
                       sx={{
+                        visibility:
+                          activeDropdown === item.label ? "visible" : "hidden",
+                        opacity: activeDropdown === item.label ? 1 : 0,
+                        pointerEvents:
+                          activeDropdown === item.label ? "auto" : "none",
+                        transition: "opacity 0.15s",
                         position: "absolute",
                         top: "calc(100% + 12px)",
                         left: 0,
@@ -233,7 +249,7 @@ export default function Navbar() {
                             px: "16px",
                             py: "10px",
                             fontSize: "13px",
-                            color: pathname === sub.to ? "#F6891F" : "#d2d2d2",
+                            color: isCurrent(sub.to) ? "#F6891F" : "#d2d2d2",
                             textDecoration: "none",
                             whiteSpace: "nowrap",
                             "&:hover": {
@@ -246,7 +262,6 @@ export default function Navbar() {
                         </Box>
                       ))}
                     </Box>
-                  )}
                 </Box>
               ) : (
                 <Typography
@@ -255,7 +270,7 @@ export default function Navbar() {
                   href={item.to}
                   sx={{
                     fontSize: "14px",
-                    color: pathname === item.to ? "#fff" : "#d2d2d2",
+                    color: isCurrent(item.to) ? "#fff" : "#d2d2d2",
                     textDecoration: "none",
                     whiteSpace: "nowrap",
                     "&:hover": { color: "#fff" },
@@ -271,7 +286,7 @@ export default function Navbar() {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Button
               component={Link}
-              href="/contact"
+              href="/contact/"
               variant="contained"
               endIcon={
                 <ArrowForwardIcon sx={{ fontSize: "15px !important" }} />
@@ -314,6 +329,7 @@ export default function Navbar() {
         anchor="right"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        ModalProps={{ keepMounted: true }}
         sx={{
           "& .MuiDrawer-paper": {
             width: 270,
@@ -354,7 +370,7 @@ export default function Navbar() {
                     sx={{
                       py: "12px",
                       px: 2,
-                      borderLeft: item.dropdown?.some((s) => s.to === pathname)
+                      borderLeft: item.dropdown?.some((s) => isCurrent(s.to))
                         ? "3px solid #F6891F"
                         : "3px solid transparent",
                     }}
@@ -380,7 +396,6 @@ export default function Navbar() {
                   <Collapse
                     in={!!mobileOpen[item.label]}
                     timeout="auto"
-                    unmountOnExit
                   >
                     <List disablePadding>
                       {item.dropdown.map((sub) => (
@@ -394,11 +409,11 @@ export default function Navbar() {
                               pl: 4,
                               pr: 2,
                               borderLeft:
-                                pathname === sub.to
+                                isCurrent(sub.to)
                                   ? "3px solid #F6891F"
                                   : "3px solid transparent",
                               bgcolor:
-                                pathname === sub.to
+                                isCurrent(sub.to)
                                   ? "rgba(246,137,31,0.12)"
                                   : "transparent",
                             }}
@@ -411,7 +426,7 @@ export default function Navbar() {
                                     fontFamily: "Inter, sans-serif",
                                     fontSize: "13px",
                                     color:
-                                      pathname === sub.to
+                                      isCurrent(sub.to)
                                         ? "#F6891F"
                                         : "#b0b0b0",
                                   },
@@ -434,11 +449,11 @@ export default function Navbar() {
                       py: "12px",
                       px: 2,
                       borderLeft:
-                        pathname === item.to
+                        isCurrent(item.to)
                           ? "3px solid #fff"
                           : "3px solid transparent",
                       bgcolor:
-                        pathname === item.to
+                        isCurrent(item.to)
                           ? "rgba(255,255,255,.08)"
                           : "transparent",
                     }}
@@ -467,7 +482,7 @@ export default function Navbar() {
           <Button
             fullWidth
             component={Link}
-            href="/contact"
+            href="/contact/"
             onClick={toggleDrawer(false)}
             variant="contained"
             sx={{

@@ -38,7 +38,24 @@ var REDIRECTS = {
   "/product-details/": "/products/",
   "/support-services/": "/services/",
   "/company/": "/about/",
-  "/insights/": "/blogs/"
+  "/insights/": "/blogs/",
+  // Old WordPress URLs
+  "/alpha-iii/": "/product-details/alpha-iii/",
+  "/support-services-of-fabric-digital-printer/": "/services/",
+  "/category/success-stories/": "/blogs/",
+  "/category/news-and-events/": "/news-events/",
+  "/sublimation-printing/": "/products/",
+  "/2025/12/19/export-opportunities-for-digital-textile-printers/":
+    "/blogs/export-opportunities-for-digital-textile-printers-beyond-the-buzz/",
+  // Corrected blog slug
+  "/blogs/how-position-printing-improves-print-accuracy-and-reducing-fabric-waste/":
+    "/blogs/how-position-printing-improves-print-accuracy-and-reduces-fabric-waste/"
+};
+
+// Old file URLs (exact, case-sensitive match) → current page.
+var FILE_REDIRECTS = {
+  "/wp-content/uploads/2025/06/MS-MINILARIO.pdf": "/product-details/minilario/",
+  "/wp-content/uploads/2025/06/COLORIX-Subpro-2-2.pdf": "/product-details/subpro-ii/"
 };
 
 function buildQuery(qs) {
@@ -53,9 +70,22 @@ function buildQuery(qs) {
   return parts.length ? "?" + parts.join("&") : "";
 }
 
+function redirect(location, request) {
+  return {
+    statusCode: 301,
+    statusDescription: "Moved Permanently",
+    headers: {
+      location: { value: location + buildQuery(request.querystring || {}) },
+      "cache-control": { value: "max-age=86400" }
+    }
+  };
+}
+
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+
+  if (FILE_REDIRECTS[uri]) return redirect(FILE_REDIRECTS[uri], request);
 
   // Next.js assets and any URL that names a file go straight to S3.
   if (uri.indexOf("/_next/") === 0) return request;
@@ -67,16 +97,7 @@ function handler(event) {
   if (target.charAt(target.length - 1) !== "/") target += "/";
   if (REDIRECTS[target]) target = REDIRECTS[target];
 
-  if (target !== uri) {
-    return {
-      statusCode: 301,
-      statusDescription: "Moved Permanently",
-      headers: {
-        location: { value: target + buildQuery(request.querystring || {}) },
-        "cache-control": { value: "max-age=86400" }
-      }
-    };
-  }
+  if (target !== uri) return redirect(target, request);
 
   request.uri = uri + "index.html";
   return request;

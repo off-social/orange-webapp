@@ -1,0 +1,28 @@
+# Netlify _redirects: put in public/ (copied to the site root on build)
+# Blog duplicates at the bottom: enable only after client approval
+
+/product-details/rocket/                                                                            /product-details/rocket-single-pass-digital-textile-printer/  301
+/product-details/k32/                                                                               /product-details/k32-head-digital-textile-printer/  301
+/product-details/k64/                                                                               /product-details/64-head-digital-textile-printer/  301
+/product-details/position-pro/                                                                      /product-details/position-printing-machine/  301
+/product-details/k24/                                                                               /product-details/k24-head-digital-textile-printer/  301
+/product-details/vividpress-e/                                                                      /product-details/vividpress-e-digital-inkjet-printing-machine/  301
+/product-details/jetixlab/                                                                          /product-details/jetixlab-hybrid-digital-label-printer/  301
+/product-details/mas-vertical/                                                                      /product-details/mas-vertical-double-sided-digital-textile-printer/  301
+/alpha-iii/                                                                                         /product-details/alpha-iii/  301
+/wp-content/uploads/2025/06/MS-MINILARIO.pdf                                                        /product-details/minilario/  301
+/wp-content/uploads/2025/06/COLORIX-Subpro-2-2.pdf                                                  /product-details/subpro-ii/  301
+/2025/12/19/export-opportunities-for-digital-textile-printers/                                      /blogs/export-opportunities-for-digital-textile-printers-beyond-the-buzz/  301
+/blogs/how-position-printing-improves-print-accuracy-and-reducing-fabric-waste/                     /blogs/how-position-printing-improves-print-accuracy-and-reduces-fabric-waste/  301
+/support-services-of-fabric-digital-printer/                                                        /services/  301
+/support-services/                                                                                  /services/  301
+/category/success-stories/                                                                          /blogs/  301
+/category/news-and-events/                                                                          /news-events/  301
+/company/                                                                                           /about/  301
+/insights/                                                                                          /blogs/  301
+/sublimation-printing/                                                                              /products/  301
+# forced (!): the build ships a page at /product-details/, so a plain 301 would be ignored
+/product-details/                                                                                   /products/  301!
+# /blogs/breaking-barriers-in-the-textile-printing-industry-with-orange-o-tec/                        /blogs/india-s-best-digital-textile-printing-machine-orangeotec-setting-new-standards/  301
+# /blogs/how-digital-textile-printers-eliminate-the-hidden-cost-of-downtime-in-traditional-printing/  /blogs/the-hidden-cost-of-downtime-in-traditional-printing-and-how-digital-textile-printers-eliminate/  301
+# /blogs/government-schemes-and-support-driving-growth-in-india-s-textile-printing-industry/          /blogs/how-government-schemes-are-fuelling-india-s-digital-textile-printing-revolution/  301

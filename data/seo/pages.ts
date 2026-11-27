@@ -29,6 +29,12 @@ export const staticPageSeo = {
     keywords: "digital textile printer manufacturer",
     path: "/about/",
   },
+  csr: {
+    title: "CSR at Orange O Tec | Technology with Responsibility",
+    description:
+      "Orange O Tec's corporate social responsibility work: community giving, health and well-being initiatives, and our commitment to sustainable textile printing.",
+    path: "/csr/",
+  },
   services: {
     title: "Digital Textile Printing Services for Businesses",
     description:

@@ -1,7 +1,7 @@
 "use client";
 
 import { useConsultation } from "@/data/ConsultationContext";
-import { productHref } from "@/data/products";
+import { hasProductPage, productHref } from "@/data/products";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Typography } from "@mui/material";
@@ -267,9 +267,8 @@ const TextilePrinting = () => {
   const currentProduct = currentProducts[displayIndex];
   const animKey = `${selectedBrand}-${displayIndex}`;
   // Enable "Know More" only for products that have a registered details page.
-  // productHref() returns the "/product-details" fallback for unregistered ones.
   const knowMoreDisabled =
-    !currentProduct || productHref(currentProduct.name) === "/product-details";
+    !currentProduct || !hasProductPage(currentProduct.name);
 
   return (
     <Box sx={{ width: "100%" }}>

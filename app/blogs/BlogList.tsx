@@ -4,7 +4,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   BLOG_CATEGORY_LABELS,
@@ -17,8 +17,9 @@ import { formatBlogMeta } from "@/lib/sanity/format";
 import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
 
 import type { BlogSectionTabId } from "./BlogSectionTabs";
+import { blogPageHref, ITEMS_PER_PAGE } from "./pagination";
 
-const ITEMS_PER_PAGE = 6;
+
 
 const FILTERS = ["All", "Products", "Industry"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -32,15 +33,27 @@ interface BlogListProps {
   activeSection: BlogSectionTabId;
   posts: BlogPostListItem[];
   successStories: BlogPostListItem[];
+  /** Page to open on; set by the static /blogs/page/N/ routes. */
+  initialPage?: number;
 }
 
 export default function BlogList({
   activeSection,
   posts,
   successStories,
+  initialPage = 1,
 }: BlogListProps) {
-  const [page, setPage] = useState(1);
+  const [requestedPage, setPage] = useState(initialPage);
   const [filter, setFilter] = useState<Filter>("All");
+  const [prevSection, setPrevSection] = useState(activeSection);
+
+  // Reset paging when the section tab changes (adjust-state-on-prop-change
+  // pattern, so the initial page from the URL survives the first render).
+  if (prevSection !== activeSection) {
+    setPrevSection(activeSection);
+    setPage(1);
+    setFilter("All");
+  }
 
   const activePosts =
     activeSection === "success-stories" ? successStories : posts;
@@ -59,28 +72,35 @@ export default function BlogList({
     Math.ceil(filteredPosts.length / ITEMS_PER_PAGE),
   );
 
-  useEffect(() => {
-    setPage(1);
-    setFilter("All");
-  }, [activeSection]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [filter, activePosts.length]);
-
-  useEffect(() => {
-    if (page > totalPages) {
-      setPage(totalPages);
-    }
-  }, [page, totalPages]);
+  // Clamp instead of correcting state in an effect.
+  const page = Math.min(requestedPage, totalPages);
 
   const start = (page - 1) * ITEMS_PER_PAGE;
   const blogs = filteredPosts.slice(start, start + ITEMS_PER_PAGE);
 
+  // The default view (Insights, All) is the one the static /blogs/page/N/
+  // routes render, so only there do page controls carry real hrefs that
+  // crawlers can follow. Clicks still page in place without a reload.
+  const linkable = activeSection === "insights" && filter === "All";
+
   const changePage = (p: number) => {
     setPage(p);
+    if (linkable) window.history.pushState(null, "", blogPageHref(p));
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const pageLinkProps = (p: number, enabled: boolean) =>
+    enabled && linkable
+      ? {
+          component: "a" as const,
+          href: blogPageHref(p),
+          onClick: (e: React.MouseEvent) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+            e.preventDefault();
+            changePage(p);
+          },
+        }
+      : { onClick: () => enabled && changePage(p) };
 
   const getPageNumbers = (): (number | "...")[] => {
     if (totalPages <= 7) {
@@ -158,7 +178,10 @@ export default function BlogList({
                   return (
                     <Box
                       key={f}
-                      onClick={() => setFilter(f)}
+                      onClick={() => {
+                        setFilter(f);
+                        setPage(1);
+                      }}
                       sx={{
                         display: "flex",
                         minWidth: isActive ? "98px" : "auto",
@@ -384,8 +407,10 @@ export default function BlogList({
               }}
             >
               <Box
-                onClick={() => page > 1 && changePage(page - 1)}
+                {...pageLinkProps(page - 1, page > 1)}
+                aria-label="Previous page"
                 sx={{
+                  textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",
@@ -412,8 +437,12 @@ export default function BlogList({
                 {getPageNumbers().map((p, i) => (
                   <Box
                     key={i}
-                    onClick={() => typeof p === "number" && changePage(p)}
+                    {...(typeof p === "number"
+                      ? pageLinkProps(p, p !== page)
+                      : {})}
+                    aria-current={p === page ? "page" : undefined}
                     sx={{
+                      textDecoration: "none",
                       width: "40px",
                       height: "40px",
                       display: "flex",
@@ -444,8 +473,10 @@ export default function BlogList({
               </Box>
 
               <Box
-                onClick={() => page < totalPages && changePage(page + 1)}
+                {...pageLinkProps(page + 1, page < totalPages)}
+                aria-label="Next page"
                 sx={{
+                  textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",

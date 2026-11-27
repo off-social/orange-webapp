@@ -8,13 +8,52 @@ import Image from "next/image";
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "About Us", href: "/about/" },
+  { label: "Contact Us", href: "/contact/" },
+  { label: "Privacy Policy", href: "/privacy-policy/" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions/" },
 ];
 
-const Footer = () => {
+// Site sections every page links to, so no section depends on the hover-only
+// header menu to be found by crawlers.
+const EXPLORE_LINKS = [
+  { label: "All Products", href: "/products/" },
+  { label: "Green Edge Series", href: "/green-edge-series/" },
+  { label: "CSR", href: "/csr/" },
+  { label: "Support and Services", href: "/services/" },
+  { label: "News & Events", href: "/news-events/" },
+  { label: "Blogs", href: "/blogs/" },
+  { label: "Career", href: "/career/" },
+  { label: "India ITME 2026", href: "/india-itme-2026/" },
+];
+
+const HEADING_SX = {
+  color: "#FFF",
+  fontFamily: "Inter, sans-serif",
+  fontSize: "14px",
+  fontWeight: 600,
+  letterSpacing: "2.94px",
+  textTransform: "uppercase",
+  lineHeight: "normal",
+  textAlign: { xs: "center", md: "left" },
+} as const;
+
+const SMALL_LINK_SX = {
+  color: "#CFCFCF",
+  fontFamily: "Inter, sans-serif",
+  fontSize: "12px",
+  fontWeight: 400,
+  lineHeight: "18px",
+  textDecoration: "none",
+  "&:hover": { color: "#fff", textDecoration: "underline" },
+} as const;
+
+type FooterProps = {
+  /** Every product details page; passed from the server layout. */
+  productLinks: { name: string; href: string }[];
+};
+
+const Footer = ({ productLinks }: FooterProps) => {
   return (
     <Box
       component="footer"
@@ -321,6 +360,69 @@ const Footer = () => {
                 Road, Opp. Aakash Empire, Surat – 395007, Gujarat, India.
               </Typography>
             </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* ── Site links: every product page and section, crawlable from
+          every page ── */}
+      <Box
+        component="nav"
+        aria-label="Footer"
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: "32px", md: 8 },
+          px: { xs: "16px", md: "168px" },
+          pb: "48px",
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <Typography sx={{ ...HEADING_SX, mb: 2 }}>PRODUCTS</Typography>
+          <Box
+            component="ul"
+            sx={{
+              listStyle: "none",
+              p: 0,
+              m: 0,
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+              },
+              gap: "10px 24px",
+            }}
+          >
+            {productLinks.map(({ name, href }) => (
+              <li key={href}>
+                <Box component={Link} href={href} sx={SMALL_LINK_SX}>
+                  {name}
+                </Box>
+              </li>
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ minWidth: { md: "200px" } }}>
+          <Typography sx={{ ...HEADING_SX, mb: 2 }}>EXPLORE</Typography>
+          <Box
+            component="ul"
+            sx={{
+              listStyle: "none",
+              p: 0,
+              m: 0,
+              display: "grid",
+              gridTemplateColumns: { xs: "repeat(2, 1fr)", md: "1fr" },
+              gap: "10px 24px",
+            }}
+          >
+            {EXPLORE_LINKS.map(({ label, href }) => (
+              <li key={href}>
+                <Box component={Link} href={href} sx={SMALL_LINK_SX}>
+                  {label}
+                </Box>
+              </li>
+            ))}
           </Box>
         </Box>
       </Box>

@@ -42,9 +42,12 @@ const POST_SEO_OVERRIDES: Record<string, { title: string; description: string }>
   },
 };
 
-export function buildBlogIndexMetadata(): Metadata {
+/** Metadata for /blogs/ (page 1) and the paginated /blogs/page/N/ routes. */
+export function buildBlogIndexMetadata(page = 1): Metadata {
   const siteUrl = getSiteUrl();
-  const title = `Blogs | ${SITE_NAME}`;
+  const path = page > 1 ? `/blogs/page/${page}/` : "/blogs/";
+  const title =
+    page > 1 ? `Blogs – Page ${page} | ${SITE_NAME}` : `Blogs | ${SITE_NAME}`;
   const description =
     "Explore the latest trends in textile printing technology and industry insights from Orange O Tec.";
 
@@ -54,7 +57,7 @@ export function buildBlogIndexMetadata(): Metadata {
     openGraph: {
       title,
       description,
-      url: `${siteUrl}/blogs`,
+      url: `${siteUrl}${path}`,
       siteName: SITE_NAME,
       type: "website",
     },
@@ -64,7 +67,7 @@ export function buildBlogIndexMetadata(): Metadata {
       description,
     },
     alternates: {
-      canonical: `${siteUrl}/blogs`,
+      canonical: `${siteUrl}${path}`,
     },
   };
 }
@@ -81,7 +84,7 @@ export function buildNewsEventsIndexMetadata(): Metadata {
     openGraph: {
       title,
       description,
-      url: `${siteUrl}/news-events`,
+      url: `${siteUrl}/news-events/`,
       siteName: SITE_NAME,
       type: "website",
     },
@@ -91,7 +94,7 @@ export function buildNewsEventsIndexMetadata(): Metadata {
       description,
     },
     alternates: {
-      canonical: `${siteUrl}/news-events`,
+      canonical: `${siteUrl}/news-events/`,
     },
   };
 }

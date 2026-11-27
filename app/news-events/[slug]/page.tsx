@@ -62,7 +62,7 @@ export default async function NewsArticlePage({
   return (
     <BlogArticle
       post={post}
-      backHref="/news-events"
+      backHref="/news-events/"
       backLabel="Back to News & Events"
       categoryLabel={POST_SECTION_LABELS.news}
     />

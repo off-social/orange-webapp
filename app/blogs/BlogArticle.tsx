@@ -25,7 +25,7 @@ interface BlogArticleProps {
 
 export default function BlogArticle({
   post,
-  backHref = "/blogs",
+  backHref = "/blogs/",
   backLabel = "Back to Blogs",
   categoryLabel,
 }: BlogArticleProps) {

@@ -2,7 +2,14 @@ import { notFound } from "next/navigation";
 
 import { POST_SECTION_LABELS, type PostSection } from "@/data/blog.types";
 import { buildBlogPostMetadata } from "@/lib/sanity/metadata";
-import { getPostBySlug, getPostSlugs } from "@/lib/sanity/queries";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import RelatedLinks from "@/components/RelatedLinks";
+import { getCoverImageAlt, getCoverImageUrl } from "@/lib/sanity/image";
+import {
+  getPostBySlug,
+  getPostSlugs,
+  getPostsBySection,
+} from "@/lib/sanity/queries";
 
 import BlogArticle from "../BlogArticle";
 
@@ -73,5 +80,53 @@ export default async function BlogPostPage({
       ? POST_SECTION_LABELS["success-stories"]
       : undefined;
 
-  return <BlogArticle post={post} categoryLabel={categoryLabel} />;
+  // Related articles: the posts that follow this one in its section (wrapping
+  // round), same category first. Walking the list cyclically spreads inlinks
+  // over every post, old ones included. Insights posts also link one Success
+  // Story, since that section is otherwise only reachable through a JS tab.
+  const [sectionPosts, stories] = await Promise.all([
+    getPostsBySection(post.section),
+    post.section === "insights"
+      ? getPostsBySection("success-stories")
+      : Promise.resolve([]),
+  ]);
+  const idx = Math.max(
+    0,
+    sectionPosts.findIndex((p) => p.slug === post.slug),
+  );
+  const following = [
+    ...sectionPosts.slice(idx + 1),
+    ...sectionPosts.slice(0, idx),
+  ].filter((p) => p.slug !== post.slug);
+  const sameCategoryFirst = [
+    ...following.filter((p) => p.category && p.category === post.category),
+    ...following.filter((p) => !p.category || p.category !== post.category),
+  ];
+  const story = stories.length ? stories[idx % stories.length] : undefined;
+  const related = story
+    ? [...sameCategoryFirst.slice(0, 2), story]
+    : sameCategoryFirst.slice(0, 3);
+
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Blogs", path: "/blogs/" },
+          { name: post.title, path: `/blogs/${post.slug}/` },
+        ]}
+      />
+      <BlogArticle post={post} categoryLabel={categoryLabel} />
+      <RelatedLinks
+        heading="Related Articles"
+        items={related.map((p) => ({
+          href: `/blogs/${p.slug}/`,
+          title: p.title,
+          subtitle: p.excerpt,
+          image: getCoverImageUrl(p.coverImage, 600) ?? undefined,
+          imageAlt: getCoverImageAlt(p.coverImage, p.title),
+        }))}
+      />
+    </>
+  );
 }
